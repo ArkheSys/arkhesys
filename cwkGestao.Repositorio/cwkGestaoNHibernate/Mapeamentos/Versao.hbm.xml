@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Versao" table="Versao">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <many-to-one name="Sistema" column="IDSistema" class="Sistema" />
+    <property name="Numero" column="Numero" type="string" length="15" />
+    <property name="DataLiberacao" column="DataLiberacao" type="DateTime" />
+    <property name="Observacao" column="Observacao" type="string" length="2147483647" />
+    <property name="Incdata" column="Incdata" type="DateTime" />
+    <property name="Incusuario" column="Incusuario" type="string" length="20" />
+    <property name="Altdata" column="Altdata" type="DateTime" />
+    <property name="Altusuario" column="Altusuario" type="string" length="20" />
+    <property name="Caminhobancolimpo" column="Caminhobancolimpo" type="string" length="500" />
+    <property name="Tipobanco" column="Tipobanco" type="Int16" />
+    <property name="Servidor" column="Servidor" type="string" length="50" />
+    <property name="Banco" column="Banco" type="string" length="50" />
+    <property name="Usuario" column="Usuario" type="string" length="50" />
+    <property name="Senha" column="Senha" type="string" length="50" />
+    <property name="Parametros" column="Parametros" type="string" length="50" />
+    <property name="CaminhoBackup" column="CaminhoBackup" type="string" length="2000" />
+    <property name="CaminhoWebAPI" column="CaminhoWebAPI" type="string" length="2000" />
+    <property name="CaminhoCentralCliente" column="CaminhoCentralCliente" type="string" length="2000" />
+
+  </class>
+</hibernate-mapping>

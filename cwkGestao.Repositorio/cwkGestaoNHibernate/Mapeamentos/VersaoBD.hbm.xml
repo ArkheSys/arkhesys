@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="VersaoBD" table="VersaoBD">
+
+	<id name="Codigo" column="Codigo">
+		<generator class="identity" /> 
+	</id>
+	<property name="Data" column="Data" type="DateTime" />
+	<property name="Versao" column="Versao" type="string" length="20" />
+	<property name="Alteracao" column="Alteracao" type="string" length="60" />
+</class>
+</hibernate-mapping>
+		

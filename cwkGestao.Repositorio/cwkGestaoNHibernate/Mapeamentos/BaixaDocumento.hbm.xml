@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="BaixaDocumento" table="BaixaDocumento">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<many-to-one name="Baixa" column="IDBaixa" class="Baixa" />
+					<many-to-one name="Documento" column="IDDocumento" class="Documento" />
+					<property name="VlrDocumento" column="VlrDocumento" type="decimal" />
+	<property name="VlrMulta" column="VlrMulta" type="decimal" />
+	<property name="VlrJuro" column="VlrJuro" type="decimal" />
+	<property name="VlrDesc" column="VlrDesc" type="decimal" />
+	<property name="VlrTotalBx" column="VlrTotalBx" type="decimal" />
+</class>
+</hibernate-mapping>
+		

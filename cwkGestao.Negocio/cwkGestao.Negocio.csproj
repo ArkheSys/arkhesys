@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9DADF10-38EB-476C-92ED-E189D54DD9FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cwkGestao.Negocio</RootNamespace>
+    <AssemblyName>cwkGestao.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cwkAcesso.Licenca">
+      <HintPath>..\Dependencias\cwkAcesso.Licenca.dll</HintPath>
+    </Reference>
+    <Reference Include="cwkControleUsuario">
+      <HintPath>..\Dependencias\cwkControleUsuario.dll</HintPath>
+    </Reference>
+    <Reference Include="cwkNFe.Licenca">
+      <HintPath>..\Dependencias\cwkNFe.Licenca.dll</HintPath>
+    </Reference>
+    <Reference Include="cwkNotaFiscalEletronica, Version=1.0.0.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\cwkNotaFiscalEletronica.dll</HintPath>
+    </Reference>
+    <Reference Include="cwkPontoMT_MD5Empresa">
+      <HintPath>..\Dependencias\cwkPontoMT_MD5Empresa.dll</HintPath>
+    </Reference>
+    <Reference Include="Cwork.Utilitarios.Componentes">
+      <HintPath>..\Dependencias\Cwork.Utilitarios.Componentes.dll</HintPath>
+    </Reference>
+    <Reference Include="Cwork.Utilitarios.Funcoes">
+      <HintPath>..\Dependencias\Cwork.Utilitarios.Funcoes.dll</HintPath>
+    </Reference>
+    <Reference Include="Cwork.Utilitarios.Tributacao">
+      <HintPath>..\Dependencias\Cwork.Utilitarios.Tributacao.dll</HintPath>
+    </Reference>
+    <Reference Include="DFe.Classes">
+      <HintPath>..\Dependencias\DFe.Classes.dll</HintPath>
+    </Reference>
+    <Reference Include="DFe.Utils">
+      <HintPath>..\Dependencias\DFe.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="MatrixReporter, Version=1.0.3839.18770, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\MatrixReporter.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUI.2.0.0\lib\net20\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dependencias\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.2.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.2.0\lib\netstandard1.0\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NFe.Classes">
+      <HintPath>..\Dependencias\NFe.Classes.dll</HintPath>
+    </Reference>
+    <Reference Include="NFe.Servicos">
+      <HintPath>..\Dependencias\NFe.Servicos.dll</HintPath>
+    </Reference>
+    <Reference Include="NFe.Utils">
+      <HintPath>..\Dependencias\NFe.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Log">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backup\Backup.cs" />
+    <Compile Include="Comercial\CookieAwareWebClient .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comercial\HeaderControleRPS.cs" />
+    <Compile Include="Comercial\HttpManager.cs" />
+    <Compile Include="Componente NFe\FactoryNFeZeus.cs" />
+    <Compile Include="Contratos\IFaturadorContrato.cs" />
+    <Compile Include="Contratos\FaturadorContratoProduto.cs" />
+    <Compile Include="Contratos\FaturadorContratoServico.cs" />
+    <Compile Include="ControleEstoque\GeradorInventario.cs" />
+    <Compile Include="Faturamento\Holders\IServicoHolder.cs" />
+    <Compile Include="Faturamento\NotaBuilder.cs" />
+    <Compile Include="Financeiro\BaixaDocumentoRetorno.cs" />
+    <Compile Include="Financeiro\MovimentacaoCheque.cs" />
+    <Compile Include="Impressao\ImpressaoGs1DataBar.cs" />
+    <Compile Include="Integracao\BConfiguraçãoMagento.cs" />
+    <Compile Include="Integracao\BConfiguraçãoSisECommerce.cs" />
+    <Compile Include="Obras_Fundacoes\FaturadorPropostaMedicao.cs" />
+    <Compile Include="Padroes\AtendimentoController.cs" />
+    <Compile Include="Padroes\ClassificacaoFiscalController.cs" />
+    <Compile Include="Padroes\EventoMdfeController.cs" />
+    <Compile Include="Padroes\ImpostosTributosController.cs" />
+    <Compile Include="Padroes\ImpostosTributosExcessoesController.cs" />
+    <Compile Include="Padroes\NaturezaOperacaoController.cs" />
+    <Compile Include="Padroes\PisCofinsNaturezaOperacaoController.cs" />
+    <Compile Include="Padroes\TabelaCOFINSController.cs" />
+    <Compile Include="Padroes\TabelaImpostosTributosExcessoesController.cs" />
+    <Compile Include="Padroes\MovimentoFiscalMdfeController.cs" />
+    <Compile Include="Padroes\NfeReferenciadaMdfeController.cs" />
+    <Compile Include="Padroes\NotaReferenciaController.cs" />
+    <Compile Include="Padroes\OpcaoTributacaoController.cs" />
+    <Compile Include="Padroes\PerfilPisCofinsController.cs" />
+    <Compile Include="Padroes\PerfilTributarioClienteController.cs" />
+    <Compile Include="Padroes\PromocaoProdutoController.cs" />
+    <Compile Include="Padroes\PromocaoController.cs" />
+    <Compile Include="Padroes\TabelaPISController.cs" />
+    <Compile Include="Padroes\Tel_FaturaD8Controller.cs" />
+    <Compile Include="Padroes\VeiculoTracaoMdfeController.cs" />
+    <Compile Include="Padroes\SeguradoraMdfeController.cs" />
+    <Compile Include="Padroes\LacreRodoviarioMdfeController.cs" />
+    <Compile Include="Padroes\CarregamentoMdfeController.cs" />
+    <Compile Include="Padroes\ContratanteMdfeController.cs" />
+    <Compile Include="Padroes\ValePedagioMdfeController.cs" />
+    <Compile Include="Padroes\ResponsavelSeguroCargaMdfeController.cs" />
+    <Compile Include="Padroes\PercursoMdfeController.cs" />
+    <Compile Include="Padroes\MdfeController - Cópia .cs" />
+    <Compile Include="Padroes\CondutorController.cs" />
+    <Compile Include="Padroes\VeiculoController.cs" />
+    <Compile Include="Padroes\ProprietarioVeiculoMdfeController.cs" />
+    <Compile Include="Padroes\SeguradoraController.cs" />
+    <Compile Include="Padroes\AverbacaoSeguradoraMdfeController.cs" />
+    <Compile Include="Padroes\ProdutoEcommerceSimplificadoController.cs" />
+    <Compile Include="Padroes\CtePrestacaoComplementoController.cs" />
+    <Compile Include="Padroes\CtePrestacaoController.cs" />
+    <Compile Include="Padroes\CteIdentificacaoController.cs" />
+    <Compile Include="Padroes\CteSeguradoraController.cs" />
+    <Compile Include="Padroes\CteDocumentosInformadosController.cs" />
+    <Compile Include="Padroes\CteCargaInfoController.cs" />
+    <Compile Include="Padroes\LogExportacaoNotaController.cs" />
+    <Compile Include="Padroes\CartaCorrecaoController.cs" />
+    <Compile Include="Padroes\cepbr_bairroController.cs" />
+    <Compile Include="Padroes\cepbr_cidadeController.cs" />
+    <Compile Include="Padroes\cepbr_enderecoController.cs" />
+    <Compile Include="Padroes\cepbr_estadoController.cs" />
+    <Compile Include="Padroes\ChequeController.cs" />
+    <Compile Include="Padroes\CodigoImpostoController.cs" />
+    <Compile Include="Padroes\CondicaoFornecimentoController.cs" />
+    <Compile Include="Padroes\ConfiguracaoManagerController.cs" />
+    <Compile Include="Padroes\ContatoController.cs" />
+    <Compile Include="Padroes\ContatoDetalheController.cs" />
+    <Compile Include="Padroes\ContratoControleController.cs" />
+    <Compile Include="Padroes\CotacaoMoedaController.cs" />
+    <Compile Include="Padroes\CotacaoTransportadoraPedidoController.cs" />
+    <Compile Include="Padroes\CustoController.cs" />
+    <Compile Include="Padroes\FechamentoCaixaRateioController.cs" />
+    <Compile Include="Padroes\FluxoCaixaController.cs" />
+    <Compile Include="Padroes\FollowUpController.cs" />
+    <Compile Include="Padroes\ImeiController.cs" />
+    <Compile Include="Padroes\ContratoController.cs" />
+    <Compile Include="Padroes\ContratoProdutoController.cs" />
+    <Compile Include="Padroes\ContratoServicoController.cs" />
+    <Compile Include="Padroes\ArquivoRemessaController.cs" />
+    <Compile Include="Padroes\ConversaoUnidadeController.cs" />
+    <Compile Include="Padroes\DadosSubstitutoController.cs" />
+    <Compile Include="Padroes\EntregaController.cs" />
+    <Compile Include="Padroes\EntregaItemController.cs" />
+    <Compile Include="Padroes\FaturamentoAtendimentoController.cs" />
+    <Compile Include="Padroes\ImpostoController.cs" />
+    <Compile Include="Padroes\LogAlteracaoParticipanteController.cs" />
+    <Compile Include="Padroes\LogAlteracaoPedidoItemController.cs" />
+    <Compile Include="Padroes\CteCargaController.cs" />
+    <Compile Include="Padroes\ServicoResponsavelController.cs" />
+    <Compile Include="Padroes\PessoaResponsavelServicoController.cs" />
+    <Compile Include="Padroes\OrdemServicoMaquinaController.cs" />
+    <Compile Include="Padroes\ResponsavelController .cs" />
+    <Compile Include="Padroes\PedidoMaquinaController.cs" />
+    <Compile Include="Padroes\MoedaController.cs" />
+    <Compile Include="Padroes\MovimentacaoChequeController.cs" />
+    <Compile Include="Padroes\NotaItemServicoPedidoItemServicoController.cs" />
+    <Compile Include="Padroes\Ofd_AgendamentoMaquinaController.cs" />
+    <Compile Include="Padroes\Ofd_AgendamentoMaquinaOcorrenciaController.cs" />
+    <Compile Include="Padroes\Ofd_MedicaoAcompanhamentoController.cs" />
+    <Compile Include="Padroes\CorreiosPrecoPrazoController.cs" />
+    <Compile Include="Padroes\FechamentoCaixaController.cs" />
+    <Compile Include="Padroes\FilaDavController.cs" />
+    <Compile Include="Padroes\LogRetornoController.cs" />
+    <Compile Include="Padroes\LogRetornoDetalheController.cs" />
+    <Compile Include="Padroes\EstoqueIdentificadorExpedicaoController.cs" />
+    <Compile Include="Padroes\EventosCorreioController.cs" />
+    <Compile Include="Padroes\ExpedicaoHistoricoController.cs" />
+    <Compile Include="Padroes\ExpedicaoRastreamentoController.cs" />
+    <Compile Include="Padroes\EstoqueIdentificadorController.cs" />
+    <Compile Include="Padroes\ExpedicaoItemController.cs" />
+    <Compile Include="Padroes\FichaTecnicaPCPController.cs" />
+    <Compile Include="Padroes\FichaTecnicaPCPItemController.cs" />
+    <Compile Include="Padroes\FichaTecnicaPCPRegraController.cs" />
+    <Compile Include="Padroes\FormatoPacoteTransporteController.cs" />
+    <Compile Include="Padroes\IdentificadorController.cs" />
+    <Compile Include="Padroes\InventarioController.cs" />
+    <Compile Include="Padroes\InventarioProdutoController.cs" />
+    <Compile Include="Padroes\LocalEstoqueController.cs" />
+    <Compile Include="Padroes\MercadoLivreConfiguracaoController.cs" />
+    <Compile Include="Padroes\NotaImpostoServicoController.cs" />
+    <Compile Include="Padroes\NotaInutilizadaController.cs" />
+    <Compile Include="Padroes\NotaItemEstoqueController.cs" />
+    <Compile Include="Padroes\NotaItemPedidoItemController.cs" />
+    <Compile Include="Padroes\Ofd_MedicaoController.cs" />
+    <Compile Include="Padroes\Ofd_MedicaoServicosController.cs" />
+    <Compile Include="Padroes\Ofd_ObraArquivosController.cs" />
+    <Compile Include="Padroes\Ofd_OcorrenciasController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaMedicaoController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaMedicaoOcorrenciasController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaMedicaoPerfuracaoController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaOrcamentoServicosController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaRevisaoPerfuracoesController.cs" />
+    <Compile Include="Padroes\ParametrosContratoProdutoController.cs" />
+    <Compile Include="Padroes\PCP_LoteController.cs" />
+    <Compile Include="Padroes\FabricanteController.cs" />
+    <Compile Include="Padroes\MaquinaController.cs" />
+    <Compile Include="Padroes\ProdutoAnexoController.cs" />
+    <Compile Include="Padroes\PedidoItemEstoqueController.cs" />
+    <Compile Include="Padroes\PedidoItemServicoController.cs" />
+    <Compile Include="Padroes\PedidoItemTrocaController.cs" />
+    <Compile Include="Padroes\PeriodoApuracaoContabilController.cs" />
+    <Compile Include="Padroes\PessoaContabilistaController.cs" />
+    <Compile Include="Padroes\PessoaTipoServicoTransporteController.cs" />
+    <Compile Include="Padroes\PlanoContaReferencialController.cs" />
+    <Compile Include="Padroes\PLPController.cs" />
+    <Compile Include="Padroes\PLPDetalheController.cs" />
+    <Compile Include="Padroes\ProdutoCodBarraController.cs" />
+    <Compile Include="Padroes\PedidoAnexoController.cs" />
+    <Compile Include="Padroes\ProdutoConversaoController.cs" />
+    <Compile Include="Padroes\ProdutoFCIController.cs" />
+    <Compile Include="Padroes\ProdutoMercadoLivreController.cs" />
+    <Compile Include="Padroes\ProdutoServicoController.cs" />
+    <Compile Include="Padroes\ProdutoVarejoController.cs" />
+    <Compile Include="Padroes\RastreamentoCorreioController.cs" />
+    <Compile Include="Padroes\ProdutoSKUController.cs" />
+    <Compile Include="Padroes\RotaController.cs" />
+    <Compile Include="Padroes\RotaDetalheController.cs" />
+    <Compile Include="Padroes\SangriaCaixaController.cs" />
+    <Compile Include="Padroes\ServicoEnvioCorreioController.cs" />
+    <Compile Include="Padroes\SHLConfiguracaoController.cs" />
+    <Compile Include="Padroes\SincronismoPendenteController.cs" />
+    <Compile Include="Padroes\SincronismoPendenteMercadoLivreController.cs" />
+    <Compile Include="Padroes\SincronismoPendenteSHLController.cs" />
+    <Compile Include="Padroes\SincronismoPendenteSisECommerceController.cs" />
+    <Compile Include="Padroes\SisECommerceConfiguracaoController.cs" />
+    <Compile Include="Padroes\StatusAtendimentoController.cs" />
+    <Compile Include="Padroes\StatusContatoController.cs" />
+    <Compile Include="Padroes\StatusEntEventoCorreioController.cs" />
+    <Compile Include="Padroes\StatusEntregaController.cs" />
+    <Compile Include="Padroes\StatusOSController.cs" />
+    <Compile Include="Padroes\SuprimentoCaixaController.cs" />
+    <Compile Include="Padroes\TextoLeiController.cs" />
+    <Compile Include="Padroes\MovimentacaoCreditoPedidoController.cs" />
+    <Compile Include="Padroes\TipoServicoTransporteController.cs" />
+    <Compile Include="Padroes\VersaoEfdIcmsIpiController.cs" />
+    <Compile Include="Padroes\VinculoController.cs" />
+    <Compile Include="Relatorios\CreditoDebito.cs" />
+    <Compile Include="Relatorios\FluxoCaixaRealizado.cs" />
+    <Compile Include="Telefonia\SelecionadorPrecos.cs" />
+    <Compile Include="Tributacao\TributacaoServico.cs" />
+    <Compile Include="Utils\ArquivosUtil.cs" />
+    <Compile Include="Utils\BemaFI32.cs" />
+    <Compile Include="Comercial\FinalizadorVendaFrenteCaixa.cs" />
+    <Compile Include="Padroes\ConfiguracaoLocalController.cs" />
+    <Compile Include="ControleEstoque\AtualizaEstoque.cs" />
+    <Compile Include="ControleEstoque\FechaBalanco.cs" />
+    <Compile Include="ControleEstoque\NotaAtualizaEstoque.cs" />
+    <Compile Include="ControleEstoque\PedidoAtualizaEstoque.cs" />
+    <Compile Include="ControleEstoque\GeradorLogBalanco.cs" />
+    <Compile Include="Padroes\Ofd_MaquinasController.cs" />
+    <Compile Include="Padroes\Ofd_ObraController.cs" />
+    <Compile Include="Padroes\Ofd_ObraDiarioController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaArquivosController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaController.cs" />
+    <Compile Include="Padroes\Ofd_PropostaPerfuracoesController.cs" />
+    <Compile Include="Padroes\PessoaEngenheiroController.cs" />
+    <Compile Include="Faturamento\Holders\RequisicaoHolder.cs" />
+    <Compile Include="Faturamento\Requisicao.cs" />
+    <Compile Include="Financeiro\BoletoRemessa\DocumentoBoletoImpl.cs" />
+    <Compile Include="Financeiro\BoletoRemessa\LogicaImpressaoBoletoRemessa.cs" />
+    <Compile Include="Financeiro\GeradorMovCaixa.cs" />
+    <Compile Include="Interfaces\ICwkAviso.cs" />
+    <Compile Include="Padroes\ChequeHistoricoController.cs" />
+    <Compile Include="Padroes\AdicaoNotaItemController.cs" />
+    <Compile Include="Padroes\ArquivoLigacaoController.cs" />
+    <Compile Include="Padroes\Tel_ConfiguracaoController.cs" />
+    <Compile Include="Padroes\Tel_FaturaServicoController.cs" />
+    <Compile Include="Padroes\Tel_FaturaLigacaoController.cs" />
+    <Compile Include="Padroes\Tel_FaturaController.cs" />
+    <Compile Include="Padroes\Tel_ClienteTelefoneController.cs" />
+    <Compile Include="Padroes\Tel_ServicoController.cs" />
+    <Compile Include="Padroes\Tel_ClienteServicoController.cs" />
+    <Compile Include="Padroes\Tel_ClientePrecoController.cs" />
+    <Compile Include="Padroes\Tel_ClienteController.cs" />
+    <Compile Include="Padroes\Tel_GrupoClienteTelefoneController.cs" />
+    <Compile Include="Padroes\Tel_GrupoClientePrecoController.cs" />
+    <Compile Include="Padroes\Tel_GrupoClienteController.cs" />
+    <Compile Include="Padroes\FrenteCaixaNotaController.cs" />
+    <Compile Include="Padroes\LigacaoController.cs" />
+    <Compile Include="Padroes\MagentoConfiguracaoController.cs" />
+    <Compile Include="Padroes\NotaItemServicoController.cs" />
+    <Compile Include="Padroes\RegistrosTipo60Controller.cs" />
+    <Compile Include="Padroes\Tel_TipoLigacaoController.cs" />
+    <Compile Include="Padroes\Tel_TipoLigacaoPrecoController.cs" />
+    <Compile Include="Financeiro\BaixaDocumento.cs" />
+    <Compile Include="Utils\BemaFI64.cs" />
+    <Compile Include="Comercial\DadosRPS.cs" />
+    <Compile Include="Comercial\HeaderRPS.cs" />
+    <Compile Include="Comercial\NFSE.cs" />
+    <Compile Include="Utils\Compactador.cs" />
+    <Compile Include="Utils\ImagemUtil.cs" />
+    <Compile Include="Utils\CupomFiscal.cs" />
+    <Compile Include="Faturamento\Holders\PedidoHolder.cs" />
+    <Compile Include="Faturamento\Holders\OSProdutoHolder.cs" />
+    <Compile Include="Faturamento\Orcamento.cs" />
+    <Compile Include="Faturamento\Holders\IProdutoHolder.cs" />
+    <Compile Include="Comercial\LogicaTelaNotaFiscal.cs" />
+    <Compile Include="Comercial\LogicaTelaNotaItem.cs" />
+    <Compile Include="Comercial\LogicaTelaNotaFiscalServico.cs" />
+    <Compile Include="Faturamento\OrdemServico_ProdutoServico.cs" />
+    <Compile Include="Faturamento\OrdemServico_Produto.cs" />
+    <Compile Include="Faturamento\OrdemServico.cs" />
+    <Compile Include="Faturamento\OrdemServico_Servico.cs" />
+    <Compile Include="Financeiro\Parcelamento.cs" />
+    <Compile Include="ImpOrdemServico\Cabecalho.cs" />
+    <Compile Include="ImpOrdemServico\ImpressaoTag.cs" />
+    <Compile Include="ImpOrdemServico\ImpresaoMatricial.cs" />
+    <Compile Include="ImpOrdemServico\ImpressaoFormatterFactory.cs" />
+    <Compile Include="ImpOrdemServico\LinhasImpressao.cs" />
+    <Compile Include="ImpOrdemServico\Marcadores.cs" />
+    <Compile Include="Padroes\NCMItemController.cs" />
+    <Compile Include="Padroes\NCMController.cs" />
+    <Compile Include="Padroes\FinanceiroPlanoContasController.cs" />
+    <Compile Include="Padroes\ProjetoParcelaController.cs" />
+    <Compile Include="Padroes\Grupo3Controller.cs" />
+    <Compile Include="Padroes\Grupo2Controller.cs" />
+    <Compile Include="Padroes\Grupo1Controller.cs" />
+    <Compile Include="Padroes\OSAgendamentoController.cs" />
+    <Compile Include="Padroes\ServicoImpostoController.cs" />
+    <Compile Include="Utils\CupomFiscal64Bits.cs" />
+    <Compile Include="Utils\CupomFiscalFactory.cs" />
+    <Compile Include="Utils\CupomFiscal32Bits.cs" />
+    <Compile Include="Utils\EmailUtil.cs" />
+    <Compile Include="Comercial\NFSEManager.cs" />
+    <Compile Include="Utils\ICupomFiscal.cs" />
+    <Compile Include="Utils\InfoImpressora.cs" />
+    <Compile Include="Utils\NFSEUtils.cs" />
+    <Compile Include="Utils\ParcelasBuilder.cs" />
+    <Compile Include="Padroes\OSOrdemServicoController.cs" />
+    <Compile Include="Padroes\PedidoHistoricoController.cs" />
+    <Compile Include="Padroes\OSTipoEquipamentoController.cs" />
+    <Compile Include="Enums\EmpresaST.cs" />
+    <Compile Include="RelatoriosMatriciais\NotaProdutoMatricial.cs" />
+    <Compile Include="RelatoriosMatriciais\OrcamentoMatricial.cs" />
+    <Compile Include="RelatoriosMatriciais\Utilitarios.cs" />
+    <Compile Include="Relatorios\FluxoDeCaixa.cs" />
+    <Compile Include="Telefonia\FechadorFaturas.cs" />
+    <Compile Include="Telefonia\GeradorFaturas.cs" />
+    <Compile Include="Telefonia\ImportadorLigacoes.cs" />
+    <Compile Include="Padroes\FormaPagamentoController.cs" />
+    <Compile Include="Padroes\FormaPgtoMovimentoController.cs" />
+    <Compile Include="Padroes\NotaServicoItemController.cs" />
+    <Compile Include="Padroes\NotaServicoController.cs" />
+    <Compile Include="RelatoriosMatriciais\NotaServicoMatricial.cs" />
+    <Compile Include="Relatorios\ProdutosEstoque.cs" />
+    <Compile Include="Factory\ControllerFactory.cs" />
+    <Compile Include="Padroes\FeriadoController.cs" />
+    <Compile Include="Padroes\GrupoEstoqueController.cs" />
+    <Compile Include="Padroes\AcompanhamentoOSController.cs" />
+    <Compile Include="Padroes\AcrescimoController.cs" />
+    <Compile Include="Padroes\BaixaController.cs" />
+    <Compile Include="Padroes\BaixaDocumentoController.cs" />
+    <Compile Include="Padroes\BalancoController.cs" />
+    <Compile Include="Padroes\BalancoItemController.cs" />
+    <Compile Include="Padroes\BancoController.cs" />
+    <Compile Include="Padroes\CentroCustoController.cs" />
+    <Compile Include="Padroes\ClassificacaoController.cs" />
+    <Compile Include="Padroes\ClassificacaoOrdemProducaoController.cs" />
+    <Compile Include="Padroes\CondicaoController.cs" />
+    <Compile Include="Padroes\CondicaoParcelaController.cs" />
+    <Compile Include="Padroes\ConfiguracaoController.cs" />
+    <Compile Include="Padroes\ControleQualidadeController.cs" />
+    <Compile Include="Padroes\CorController.cs" />
+    <Compile Include="Padroes\CotacaoController.cs" />
+    <Compile Include="Padroes\CotacaoProdutoController.cs" />
+    <Compile Include="Padroes\CotacaoProdutoPedidoItemController.cs" />
+    <Compile Include="Padroes\CQEquipamentoController.cs" />
+    <Compile Include="Padroes\CQFuncionarioController.cs" />
+    <Compile Include="Padroes\CQProdutoController.cs" />
+    <Compile Include="Padroes\CwkPedidoEmpresaController.cs" />
+    <Compile Include="Padroes\CwkPedidoController.cs" />
+    <Compile Include="Padroes\Cw_acessocampoController.cs" />
+    <Compile Include="Padroes\Cw_acessoController.cs" />
+    <Compile Include="Padroes\Cw_grupoController.cs" />
+    <Compile Include="Padroes\Cw_usuarioController.cs" />
+    <Compile Include="Padroes\DocumentoController.cs" />
+    <Compile Include="Padroes\EmpresaController.cs" />
+    <Compile Include="Padroes\OSEquipamentoController.cs" />
+    <Compile Include="Padroes\EstoqueController.cs" />
+    <Compile Include="Padroes\EtapaProducaoController.cs" />
+    <Compile Include="Padroes\FichaController.cs" />
+    <Compile Include="Padroes\FichaTecnicaController.cs" />
+    <Compile Include="Padroes\Ficha_ProdutoController.cs" />
+    <Compile Include="Padroes\FilialController.cs" />
+    <Compile Include="Padroes\HistMovimentoRemessaDocController.cs" />
+    <Compile Include="Padroes\HistoricoController.cs" />
+    <Compile Include="Padroes\ICMSController.cs" />
+    <Compile Include="Padroes\ICMS_InterestadualController.cs" />
+    <Compile Include="Padroes\ImpressoraController.cs" />
+    <Compile Include="Padroes\ItemFichaTecnicaController.cs" />
+    <Compile Include="Padroes\MovCaixaController.cs" />
+    <Compile Include="Padroes\MovimentoController.cs" />
+    <Compile Include="Padroes\NFe_ErroController.cs" />
+    <Compile Include="Padroes\NotaICMSController.cs" />
+    <Compile Include="Padroes\NotaItemController.cs" />
+    <Compile Include="Padroes\NotaParcelaController.cs" />
+    <Compile Include="Padroes\OperacaoController.cs" />
+    <Compile Include="Padroes\OrdemProducaoController.cs" />
+    <Compile Include="Padroes\OrdemProducaoExecucaoController.cs" />
+    <Compile Include="Padroes\OrdemProducaoExecucaoProdutoController.cs" />
+    <Compile Include="Padroes\OrdemProducaoHistoricoController.cs" />
+    <Compile Include="Padroes\PedidoController.cs" />
+    <Compile Include="Padroes\PedidoItemController.cs" />
+    <Compile Include="Padroes\PedidoParcelaController.cs" />
+    <Compile Include="Padroes\PessoaAvisoController.cs" />
+    <Compile Include="Padroes\PessoaClienteController.cs" />
+    <Compile Include="Padroes\PessoaEmailController.cs" />
+    <Compile Include="Padroes\PessoaEnderecoController.cs" />
+    <Compile Include="Padroes\PessoaFuncionarioController.cs" />
+    <Compile Include="Padroes\PessoaSocioController.cs" />
+    <Compile Include="Padroes\PessoaTelefoneController.cs" />
+    <Compile Include="Padroes\PessoaVendedorController.cs" />
+    <Compile Include="Padroes\PlanoContaController.cs" />
+    <Compile Include="Padroes\PlanoNegocioController.cs" />
+    <Compile Include="Padroes\PlanoNegocioOperacaoController.cs" />
+    <Compile Include="Padroes\PortadorController.cs" />
+    <Compile Include="Padroes\ProdutoController.cs" />
+    <Compile Include="Padroes\ProdutoVendedorComissaoController.cs" />
+    <Compile Include="Padroes\Produto_IcmsController.cs" />
+    <Compile Include="Padroes\ProjetoController.cs" />
+    <Compile Include="Padroes\ProjetoHistoricoController.cs" />
+    <Compile Include="Padroes\Projeto_MaterialController.cs" />
+    <Compile Include="Padroes\Projeto_ProdutoServicoController.cs" />
+    <Compile Include="Padroes\Rateio_MovController.cs" />
+    <Compile Include="Padroes\Rateio_NotaItemController.cs" />
+    <Compile Include="Padroes\RemessaController.cs" />
+    <Compile Include="Padroes\ReparcelamentoController.cs" />
+    <Compile Include="Padroes\ReparcelamentoDocController.cs" />
+    <Compile Include="Padroes\ServicoOSController.cs" />
+    <Compile Include="Padroes\SocioController.cs" />
+    <Compile Include="Padroes\TabelaCFOPController.cs" />
+    <Compile Include="Padroes\TabelaComissaoController.cs" />
+    <Compile Include="Padroes\TabelaComissaoProdutoController.cs" />
+    <Compile Include="Padroes\TabelaFaixaFatSimplesController.cs" />
+    <Compile Include="Padroes\TabelaICMSController.cs" />
+    <Compile Include="Padroes\TabelaPrecoController.cs" />
+    <Compile Include="Padroes\TabelaPrecoProdutoController.cs" />
+    <Compile Include="Padroes\TipoDocumentoController.cs" />
+    <Compile Include="Padroes\TipoNotaController.cs" />
+    <Compile Include="Padroes\TipoPedidoController.cs" />
+    <Compile Include="Padroes\UnidadeController.cs" />
+    <Compile Include="Padroes\VersaoBDController.cs" />
+    <Compile Include="Tributacao\ConversorCsts.cs" />
+    <Compile Include="Tributacao\ICstCalculoProvider.cs" />
+    <Compile Include="Tributacao\Impl\CstCalculoProviderFromXml.cs" />
+    <Compile Include="Tributacao\Impl\NotaItemTributadaMediator.cs" />
+    <Compile Include="Tributacao\Impl\PedidoItemTributadoMediator.cs" />
+    <Compile Include="Tributacao\ITributavel.cs" />
+    <Compile Include="Tributacao\Tributacao.cs" />
+    <Compile Include="Tributacao\TributacaoServicoOld.cs" />
+    <Compile Include="Utils\ClsExtenso.cs" />
+    <Compile Include="Utils\ThreadEnviaEmailCorreios.cs" />
+    <Compile Include="Utils\ValidaPRController.cs" />
+    <Compile Include="Utils\ValidaPRTipo60 .cs" />
+    <Compile Include="Padroes\BaseController.cs" />
+    <Compile Include="Padroes\CidadeController.cs" />
+    <Compile Include="Padroes\ClienteRevendaController.cs" />
+    <Compile Include="Padroes\VersaoController.cs" />
+    <Compile Include="Padroes\OrdemServicoController.cs" />
+    <Compile Include="Padroes\ServicoController.cs" />
+    <Compile Include="Padroes\SistemaController.cs" />
+    <Compile Include="Padroes\StatusOrdemServicoController.cs" />
+    <Compile Include="Padroes\TipoAtendimentoController.cs" />
+    <Compile Include="Padroes\NotaController.cs" />
+    <Compile Include="Padroes\PessoaController.cs" />
+    <Compile Include="Padroes\PaisController.cs" />
+    <Compile Include="Padroes\UFController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cwkGestao.Integracao.ACBr\cwkGestao.Integracao.ACBr.csproj">
+      <Project>{7DD04629-7F96-4493-AB0D-BFEB3B3DA342}</Project>
+      <Name>cwkGestao.Integracao.ACBr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cwkGestao.Integracao.Ecommerce\cwkGestao.Integracao.Ecommerce.csproj">
+      <Project>{BA2A837B-8749-4E8A-AE2D-2B5ABFEB297B}</Project>
+      <Name>cwkGestao.Integracao.Ecommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cwkGestao.Integracao.SHL\cwkGestao.Integracao.SHL.csproj">
+      <Project>{CF3F514D-E284-41F0-BDB5-469E0520D621}</Project>
+      <Name>cwkGestao.Integracao.SHL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cwkGestao.Integracao.Telefonia\cwkGestao.Integracao.Telefonia.csproj">
+      <Project>{C604E960-EDD4-494C-9B48-CEF9AEE3B3C7}</Project>
+      <Name>cwkGestao.Integracao.Telefonia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cwkGestao.Modelo\cwkGestao.Modelo.csproj">
+      <Project>{55A7F92E-10A9-4DB0-8F8B-F359BF537C43}</Project>
+      <Name>cwkGestao.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cwkGestao.Repositorio\cwkGestao.Repositorio.csproj">
+      <Project>{9EEF11AE-5542-4AA9-8B9E-DEB90EF9E32B}</Project>
+      <Name>cwkGestao.Repositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{3BB9E501-1901-4180-B9D7-04AE4F913C99}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Relatorio\Relatorio.csproj">
+      <Project>{969DEB9C-5400-45EF-8C62-4DCAA4FC0CB5}</Project>
+      <Name>Relatorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Expedicao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

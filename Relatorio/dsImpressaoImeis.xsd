@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsImpressaoImeis" targetNamespace="http://tempuri.org/dsImpressaoImeis.xsd" xmlns:mstns="http://tempuri.org/dsImpressaoImeis.xsd" xmlns="http://tempuri.org/dsImpressaoImeis.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DEMOConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DEMOConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.DEMOConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkcwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkcwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkcwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DEMOConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DEMOConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.DEMOConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TestecwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TestecwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.TestecwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtImpressaoControleVendaA5TableAdapter" GeneratorDataComponentClassName="dtImpressaoControleVendaA5TableAdapter" Name="dtImpressaoControleVendaA5" UserDataComponentName="dtImpressaoControleVendaA5TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectName="SELECT n.ID AS IDNota, CONVERT(varchar(50), i.CodigoIMEI) AS CodigoImei, nis.Unidade, nis.ProdutoNome, 1 AS Quantidade, nis.Valor, nis.Valor AS Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, pendCliente.Endereco AS EnderecoCliente, pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, pendCliente.CEP AS CepCliente, pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, telCliente.Numero AS TelefoneCliente, pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento FROM NotaItem AS nis INNER JOIN Imei AS i ON i.IDNotaItemSaida = nis.ID INNER JOIN Produto AS p ON p.ID = i.IDProduto INNER JOIN Nota AS n ON n.ID = nis.IDNota INNER JOIN Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID = (SELECT TOP (1) ID FROM PessoaEmail AS email WHERE (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN NotaParcela AS np ON np.IDNota = n.ID INNER JOIN FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN Pessoa AS pv ON pv.ID = vend.IDPessoa LEFT OUTER JOIN FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID UNION SELECT n.ID AS IDNota, '' AS CodigoImei, nis.Unidade, nis.ProdutoNome, nis.Quantidade, nis.Valor, nis.Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, pendCliente.Endereco AS EnderecoCliente, pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, pendCliente.CEP AS CepCliente, pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, telCliente.Numero AS TelefoneCliente, pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento FROM NotaItem AS nis INNER JOIN Nota AS n ON n.ID = nis.IDNota INNER JOIN Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID = (SELECT TOP (1) ID FROM PessoaEmail AS email WHERE (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN Pessoa AS pv ON pv.ID = vend.IDPessoa INNER JOIN NotaParcela AS np ON np.IDNota = n.ID INNER JOIN FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN Produto AS p ON p.ID = nis.IDProduto LEFT OUTER JOIN Imei AS i ON i.IDNotaItemSaida = nis.ID LEFT OUTER JOIN FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID WHERE (i.ID IS NULL)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        IDNota, CodigoImei, Unidade, ProdutoNome, Quantidade, Valor, Total, Cliente, DataVenda, EnderecoCliente, NumeroEnderecoCliente, BairroCliente, CidadeCliente, EstadoCliente, CepCliente, IECliente, EmailCliente, 
+                         CPFCNPJCliente, RGCliente, TelefoneCliente, Vendedor, Observacao, Desconto, TotalPago, Troco, DescFormaPagamento
+FROM            (SELECT        n.ID AS IDNota, CONVERT(varchar(50), i.CodigoIMEI) AS CodigoImei, nis.Unidade, nis.ProdutoNome, 1 AS Quantidade, nis.Valor, nis.Valor AS Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, 
+                                                    pendCliente.Endereco AS EnderecoCliente, pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, 
+                                                    pendCliente.CEP AS CepCliente, pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, 
+                                                    telCliente.Numero AS TelefoneCliente, pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) 
+                                                    &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, 
+                                                    CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento
+                          FROM            NotaItem AS nis INNER JOIN
+                                                    Imei AS i ON i.IDNotaItemSaida = nis.ID INNER JOIN
+                                                    Produto AS p ON p.ID = i.IDProduto INNER JOIN
+                                                    Nota AS n ON n.ID = nis.IDNota INNER JOIN
+                                                    Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN
+                                                    PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN
+                                                    Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN
+                                                    UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN
+                                                    PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN
+                                                    PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID =
+                                                        (SELECT        TOP (1) ID
+                                                          FROM            PessoaEmail AS email
+                                                          WHERE        (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN
+                                                    PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN
+                                                    NotaParcela AS np ON np.IDNota = n.ID INNER JOIN
+                                                    FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN
+                                                    Pessoa AS pv ON pv.ID = vend.IDPessoa LEFT OUTER JOIN
+                                                    FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID
+                          UNION
+                          SELECT        n.ID AS IDNota, '' AS CodigoImei, nis.Unidade, nis.ProdutoNome, nis.Quantidade, nis.Valor, nis.Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, pendCliente.Endereco AS EnderecoCliente, 
+                                                   pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, pendCliente.CEP AS CepCliente, 
+                                                   pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, telCliente.Numero AS TelefoneCliente, 
+                                                   pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) 
+                                                   END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, CASE WHEN ISNULL(fcn.TotalProdutos, 0) 
+                                                   &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento
+                          FROM            NotaItem AS nis INNER JOIN
+                                                   Nota AS n ON n.ID = nis.IDNota INNER JOIN
+                                                   Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN
+                                                   PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN
+                                                   Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN
+                                                   UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN
+                                                   PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN
+                                                   PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID =
+                                                       (SELECT        TOP (1) ID
+                                                         FROM            PessoaEmail AS email
+                                                         WHERE        (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN
+                                                   PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN
+                                                   Pessoa AS pv ON pv.ID = vend.IDPessoa INNER JOIN
+                                                   NotaParcela AS np ON np.IDNota = n.ID INNER JOIN
+                                                   FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN
+                                                   Produto AS p ON p.ID = nis.IDProduto LEFT OUTER JOIN
+                                                   Imei AS i ON i.IDNotaItemSaida = nis.ID LEFT OUTER JOIN
+                                                   FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID
+                          WHERE        (i.ID IS NULL)) AS ImeisItens
+WHERE        (IDNota = @IDNota)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDNota" ColumnName="IDNota" DataSourceName="SELECT n.ID AS IDNota, CONVERT(varchar(50), i.CodigoIMEI) AS CodigoImei, nis.Unidade, nis.ProdutoNome, 1 AS Quantidade, nis.Valor, nis.Valor AS Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, pendCliente.Endereco AS EnderecoCliente, pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, pendCliente.CEP AS CepCliente, pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, telCliente.Numero AS TelefoneCliente, pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento FROM NotaItem AS nis INNER JOIN Imei AS i ON i.IDNotaItemSaida = nis.ID INNER JOIN Produto AS p ON p.ID = i.IDProduto INNER JOIN Nota AS n ON n.ID = nis.IDNota INNER JOIN Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID = (SELECT TOP (1) ID FROM PessoaEmail AS email WHERE (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN NotaParcela AS np ON np.IDNota = n.ID INNER JOIN FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN Pessoa AS pv ON pv.ID = vend.IDPessoa LEFT OUTER JOIN FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID UNION SELECT n.ID AS IDNota, '' AS CodigoImei, nis.Unidade, nis.ProdutoNome, nis.Quantidade, nis.Valor, nis.Total, pesCliente.Nome AS Cliente, n.IncData AS DataVenda, pendCliente.Endereco AS EnderecoCliente, pendCliente.Numero AS NumeroEnderecoCliente, pendCliente.Bairro AS BairroCliente, cidCliente.Nome AS CidadeCliente, estCliente.Sigla AS EstadoCliente, pendCliente.CEP AS CepCliente, pesCliente.Inscricao AS IECliente, ISNULL(pesEmailCliente.Email, '') AS EmailCliente, pesCliente.CNPJ_CPF AS CPFCNPJCliente, pesCliente.RG AS RGCliente, telCliente.Numero AS TelefoneCliente, pv.Nome AS Vendedor, ISNULL(n.Observacao1, '') AS Observacao, n.ValorDesconto AS Desconto, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.TotalPago, 0) END AS TotalPago, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN 0 ELSE ISNULL(fcn.Troco, 0) END AS Troco, CASE WHEN ISNULL(fcn.TotalProdutos, 0) &lt;&gt; n.TotalProduto THEN fp.Nome ELSE ISNULL(fcn.DescFormaPagamento, '') END AS DescFormaPagamento FROM NotaItem AS nis INNER JOIN Nota AS n ON n.ID = nis.IDNota INNER JOIN Pessoa AS pesCliente ON pesCliente.ID = n.IDPessoa INNER JOIN PessoaEndereco AS pendCliente ON pendCliente.IDPessoa = pesCliente.ID AND pendCliente.bPrincipal = 1 INNER JOIN Cidade AS cidCliente ON cidCliente.ID = pendCliente.IDCidade INNER JOIN UF AS estCliente ON estCliente.ID = cidCliente.IDUF INNER JOIN PessoaTelefone AS telCliente ON telCliente.IDPessoa = pesCliente.ID AND telCliente.bPrincipal = 1 LEFT OUTER JOIN PessoaEmail AS pesEmailCliente ON pesEmailCliente.ID = (SELECT TOP (1) ID FROM PessoaEmail AS email WHERE (IDPessoa = pesCliente.ID) AND (bVenda = 1)) INNER JOIN PessoaVendedor AS vend ON vend.ID = n.IDVendedor INNER JOIN Pessoa AS pv ON pv.ID = vend.IDPessoa INNER JOIN NotaParcela AS np ON np.IDNota = n.ID INNER JOIN FormaPagamento AS fp ON fp.Codigo = np.TipoFormaPagamento INNER JOIN Produto AS p ON p.ID = nis.IDProduto LEFT OUTER JOIN Imei AS i ON i.IDNotaItemSaida = nis.ID LEFT OUTER JOIN FrenteCaixaNota AS fcn ON fcn.IDNota = n.ID WHERE (i.ID IS NULL)" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDNota" Precision="0" Scale="0" Size="4" SourceColumn="IDNota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Unidade" DataSetColumn="Unidade" />
+              <Mapping SourceColumn="ProdutoNome" DataSetColumn="ProdutoNome" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="DataVenda" DataSetColumn="DataVenda" />
+              <Mapping SourceColumn="EnderecoCliente" DataSetColumn="EnderecoCliente" />
+              <Mapping SourceColumn="NumeroEnderecoCliente" DataSetColumn="NumeroEnderecoCliente" />
+              <Mapping SourceColumn="BairroCliente" DataSetColumn="BairroCliente" />
+              <Mapping SourceColumn="CidadeCliente" DataSetColumn="CidadeCliente" />
+              <Mapping SourceColumn="EstadoCliente" DataSetColumn="EstadoCliente" />
+              <Mapping SourceColumn="CepCliente" DataSetColumn="CepCliente" />
+              <Mapping SourceColumn="IECliente" DataSetColumn="IECliente" />
+              <Mapping SourceColumn="EmailCliente" DataSetColumn="EmailCliente" />
+              <Mapping SourceColumn="CPFCNPJCliente" DataSetColumn="CPFCNPJCliente" />
+              <Mapping SourceColumn="RGCliente" DataSetColumn="RGCliente" />
+              <Mapping SourceColumn="TelefoneCliente" DataSetColumn="TelefoneCliente" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="Observacao" DataSetColumn="Observacao" />
+              <Mapping SourceColumn="IDNota" DataSetColumn="IDNota" />
+              <Mapping SourceColumn="CodigoImei" DataSetColumn="CodigoImei" />
+              <Mapping SourceColumn="Desconto" DataSetColumn="Desconto" />
+              <Mapping SourceColumn="TotalPago" DataSetColumn="TotalPago" />
+              <Mapping SourceColumn="Troco" DataSetColumn="Troco" />
+              <Mapping SourceColumn="DescFormaPagamento" DataSetColumn="DescFormaPagamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtImpressaoOrdemServicoA5TableAdapter" GeneratorDataComponentClassName="dtImpressaoOrdemServicoA5TableAdapter" Name="dtImpressaoOrdemServicoA5" UserDataComponentName="dtImpressaoOrdemServicoA5TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT os.ID IDOS, os.Codigo Numero, p.Nome Cliente, os.Data Entrada, p.CNPJ_CPF CPF, 
+
+ISNULL(STUFF(REPLACE((SELECT '#!' + LTRIM(RTRIM(Fone.Numero)) AS 'data()' 
+FROM
+(SELECT pt.Numero 
+FROM PessoaTelefone pt
+WHERE pt.bPrincipal = 1
+AND pt.IDPessoa = p.ID
+UNION
+SELECT TOP 1 pt.Numero
+FROM PessoaTelefone pt 
+WHERE pt.Tipo = 'Celular'
+AND pt.IDPessoa = p.ID) Fone
+FOR XML PATH('')),' #!',', '), 1, 2, ''),'') as Fones, 
+
+pe.Endereco,  pe.Numero NumeroEndereco, pe.Bairro, cid.Nome Cidade, es.Sigla Estado, pe.CEP, 
+
+ISNULL((SELECT STUFF(REPLACE((SELECT '#!' + LTRIM(RTRIM(pe.Email)) AS 'data()' FROM PessoaEmail pe where pe.IDPessoa = p.ID and (pe.bNFe = 1 or pe.bNFSe = 1)
+FOR XML PATH('')),' #!',', '), 1, 2, '')), '') as Emails,
+
+ISNULL(equip.Marca,'') Marca, ISNULL(equip.Modelo,'') Modelo, ISNULL(os.Imei, 0) Imei, ISNULL(os.NumSerie,'') Serie, tecnico.Nome  Tecnico, os.Acessorios, os.ProblemaRelatado DefeitoInformado, os.ResultadoTecnico LaudoTecnico, os.Total ValorTotal
+
+from osordemservico os
+join OSEquipamento equip on equip.ID = os.IDEquipamento
+left join Pessoa tecnico on tecnico.ID = os.IDTecnico
+join Pessoa p on p.ID = os.IDPessoa
+join PessoaEndereco pe on pe.IDPessoa = p.ID and pe.bPrincipal = 1
+join Cidade cid on cid.ID = pe.IDCidade
+join UF es on es.ID = cid.IDUF
+WHERE os.ID = @IDOS
+
+
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDOS" ColumnName="ID" DataSourceName="DEMO.dbo.OSOrdemServico" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDOS" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IDOS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="Entrada" DataSetColumn="Entrada" />
+              <Mapping SourceColumn="CPF" DataSetColumn="CPF" />
+              <Mapping SourceColumn="Fones" DataSetColumn="Fones" />
+              <Mapping SourceColumn="Endereco" DataSetColumn="Endereco" />
+              <Mapping SourceColumn="Bairro" DataSetColumn="Bairro" />
+              <Mapping SourceColumn="Cidade" DataSetColumn="Cidade" />
+              <Mapping SourceColumn="CEP" DataSetColumn="CEP" />
+              <Mapping SourceColumn="Emails" DataSetColumn="Emails" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Serie" DataSetColumn="Serie" />
+              <Mapping SourceColumn="Acessorios" DataSetColumn="Acessorios" />
+              <Mapping SourceColumn="DefeitoInformado" DataSetColumn="DefeitoInformado" />
+              <Mapping SourceColumn="LaudoTecnico" DataSetColumn="LaudoTecnico" />
+              <Mapping SourceColumn="ValorTotal" DataSetColumn="ValorTotal" />
+              <Mapping SourceColumn="IDOS" DataSetColumn="IDOS" />
+              <Mapping SourceColumn="Numero" DataSetColumn="Numero" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="Tecnico" DataSetColumn="Tecnico" />
+              <Mapping SourceColumn="Imei" DataSetColumn="Imei" />
+              <Mapping SourceColumn="NumeroEndereco" DataSetColumn="NumeroEndereco" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsImpressaoImeis" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsImpressaoImeis" msprop:Generator_UserDSName="dsImpressaoImeis">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtImpressaoControleVendaA5" msprop:Generator_TableClassName="dtImpressaoControleVendaA5DataTable" msprop:Generator_TableVarName="tabledtImpressaoControleVendaA5" msprop:Generator_TablePropName="dtImpressaoControleVendaA5" msprop:Generator_RowDeletingName="dtImpressaoControleVendaA5RowDeleting" msprop:Generator_RowChangingName="dtImpressaoControleVendaA5RowChanging" msprop:Generator_RowEvHandlerName="dtImpressaoControleVendaA5RowChangeEventHandler" msprop:Generator_RowDeletedName="dtImpressaoControleVendaA5RowDeleted" msprop:Generator_UserTableName="dtImpressaoControleVendaA5" msprop:Generator_RowChangedName="dtImpressaoControleVendaA5RowChanged" msprop:Generator_RowEvArgName="dtImpressaoControleVendaA5RowChangeEvent" msprop:Generator_RowClassName="dtImpressaoControleVendaA5Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Unidade" msprop:Generator_ColumnVarNameInTable="columnUnidade" msprop:Generator_ColumnPropNameInRow="Unidade" msprop:Generator_ColumnPropNameInTable="UnidadeColumn" msprop:Generator_UserColumnName="Unidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProdutoNome" msprop:Generator_ColumnVarNameInTable="columnProdutoNome" msprop:Generator_ColumnPropNameInRow="ProdutoNome" msprop:Generator_ColumnPropNameInTable="ProdutoNomeColumn" msprop:Generator_UserColumnName="ProdutoNome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_UserColumnName="Quantidade" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataVenda" msprop:Generator_ColumnVarNameInTable="columnDataVenda" msprop:Generator_ColumnPropNameInRow="DataVenda" msprop:Generator_ColumnPropNameInTable="DataVendaColumn" msprop:Generator_UserColumnName="DataVenda" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EnderecoCliente" msprop:Generator_ColumnVarNameInTable="columnEnderecoCliente" msprop:Generator_ColumnPropNameInRow="EnderecoCliente" msprop:Generator_ColumnPropNameInTable="EnderecoClienteColumn" msprop:Generator_UserColumnName="EnderecoCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroEnderecoCliente" msprop:Generator_ColumnVarNameInTable="columnNumeroEnderecoCliente" msprop:Generator_ColumnPropNameInRow="NumeroEnderecoCliente" msprop:Generator_ColumnPropNameInTable="NumeroEnderecoClienteColumn" msprop:Generator_UserColumnName="NumeroEnderecoCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BairroCliente" msprop:Generator_ColumnVarNameInTable="columnBairroCliente" msprop:Generator_ColumnPropNameInRow="BairroCliente" msprop:Generator_ColumnPropNameInTable="BairroClienteColumn" msprop:Generator_UserColumnName="BairroCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CidadeCliente" msprop:Generator_ColumnVarNameInTable="columnCidadeCliente" msprop:Generator_ColumnPropNameInRow="CidadeCliente" msprop:Generator_ColumnPropNameInTable="CidadeClienteColumn" msprop:Generator_UserColumnName="CidadeCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstadoCliente" msprop:Generator_ColumnVarNameInTable="columnEstadoCliente" msprop:Generator_ColumnPropNameInRow="EstadoCliente" msprop:Generator_ColumnPropNameInTable="EstadoClienteColumn" msprop:Generator_UserColumnName="EstadoCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CepCliente" msprop:Generator_ColumnVarNameInTable="columnCepCliente" msprop:Generator_ColumnPropNameInRow="CepCliente" msprop:Generator_ColumnPropNameInTable="CepClienteColumn" msprop:Generator_UserColumnName="CepCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IECliente" msprop:Generator_ColumnVarNameInTable="columnIECliente" msprop:Generator_ColumnPropNameInRow="IECliente" msprop:Generator_ColumnPropNameInTable="IEClienteColumn" msprop:Generator_UserColumnName="IECliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailCliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmailCliente" msprop:Generator_ColumnPropNameInRow="EmailCliente" msprop:Generator_ColumnPropNameInTable="EmailClienteColumn" msprop:Generator_UserColumnName="EmailCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPFCNPJCliente" msprop:Generator_ColumnVarNameInTable="columnCPFCNPJCliente" msprop:Generator_ColumnPropNameInRow="CPFCNPJCliente" msprop:Generator_ColumnPropNameInTable="CPFCNPJClienteColumn" msprop:Generator_UserColumnName="CPFCNPJCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RGCliente" msprop:Generator_ColumnVarNameInTable="columnRGCliente" msprop:Generator_ColumnPropNameInRow="RGCliente" msprop:Generator_ColumnPropNameInTable="RGClienteColumn" msprop:Generator_UserColumnName="RGCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefoneCliente" msprop:Generator_ColumnVarNameInTable="columnTelefoneCliente" msprop:Generator_ColumnPropNameInRow="TelefoneCliente" msprop:Generator_ColumnPropNameInTable="TelefoneClienteColumn" msprop:Generator_UserColumnName="TelefoneCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" msprop:Generator_UserColumnName="Observacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDNota" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDNota" msprop:Generator_ColumnPropNameInRow="IDNota" msprop:Generator_ColumnPropNameInTable="IDNotaColumn" msprop:Generator_UserColumnName="IDNota" type="xs:int" minOccurs="0" />
+              <xs:element name="CodigoImei" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCodigoImei" msprop:Generator_ColumnPropNameInRow="CodigoImei" msprop:Generator_ColumnPropNameInTable="CodigoImeiColumn" msprop:Generator_UserColumnName="CodigoImei" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Desconto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDesconto" msprop:Generator_ColumnPropNameInRow="Desconto" msprop:Generator_ColumnPropNameInTable="DescontoColumn" msprop:Generator_UserColumnName="Desconto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPago" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPago" msprop:Generator_ColumnPropNameInRow="TotalPago" msprop:Generator_ColumnPropNameInTable="TotalPagoColumn" msprop:Generator_UserColumnName="TotalPago" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Troco" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTroco" msprop:Generator_ColumnPropNameInRow="Troco" msprop:Generator_ColumnPropNameInTable="TrocoColumn" msprop:Generator_UserColumnName="Troco" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DescFormaPagamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescFormaPagamento" msprop:Generator_ColumnPropNameInRow="DescFormaPagamento" msprop:Generator_ColumnPropNameInTable="DescFormaPagamentoColumn" msprop:Generator_UserColumnName="DescFormaPagamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtImpressaoOrdemServicoA5" msprop:Generator_TableClassName="dtImpressaoOrdemServicoA5DataTable" msprop:Generator_TableVarName="tabledtImpressaoOrdemServicoA5" msprop:Generator_TablePropName="dtImpressaoOrdemServicoA5" msprop:Generator_RowDeletingName="dtImpressaoOrdemServicoA5RowDeleting" msprop:Generator_RowChangingName="dtImpressaoOrdemServicoA5RowChanging" msprop:Generator_RowEvHandlerName="dtImpressaoOrdemServicoA5RowChangeEventHandler" msprop:Generator_RowDeletedName="dtImpressaoOrdemServicoA5RowDeleted" msprop:Generator_UserTableName="dtImpressaoOrdemServicoA5" msprop:Generator_RowChangedName="dtImpressaoOrdemServicoA5RowChanged" msprop:Generator_RowEvArgName="dtImpressaoOrdemServicoA5RowChangeEvent" msprop:Generator_RowClassName="dtImpressaoOrdemServicoA5Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Entrada" msprop:Generator_ColumnVarNameInTable="columnEntrada" msprop:Generator_ColumnPropNameInRow="Entrada" msprop:Generator_ColumnPropNameInTable="EntradaColumn" msprop:Generator_UserColumnName="Entrada" type="xs:dateTime" />
+              <xs:element name="CPF" msprop:Generator_ColumnVarNameInTable="columnCPF" msprop:Generator_ColumnPropNameInRow="CPF" msprop:Generator_ColumnPropNameInTable="CPFColumn" msprop:Generator_UserColumnName="CPF" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fones" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFones" msprop:Generator_ColumnPropNameInRow="Fones" msprop:Generator_ColumnPropNameInTable="FonesColumn" msprop:Generator_UserColumnName="Fones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Endereco" msprop:Generator_ColumnVarNameInTable="columnEndereco" msprop:Generator_ColumnPropNameInRow="Endereco" msprop:Generator_ColumnPropNameInTable="EnderecoColumn" msprop:Generator_UserColumnName="Endereco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Bairro" msprop:Generator_ColumnVarNameInTable="columnBairro" msprop:Generator_ColumnPropNameInRow="Bairro" msprop:Generator_ColumnPropNameInTable="BairroColumn" msprop:Generator_UserColumnName="Bairro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cidade" msprop:Generator_ColumnVarNameInTable="columnCidade" msprop:Generator_ColumnPropNameInRow="Cidade" msprop:Generator_ColumnPropNameInTable="CidadeColumn" msprop:Generator_UserColumnName="Cidade">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CEP" msprop:Generator_ColumnVarNameInTable="columnCEP" msprop:Generator_ColumnPropNameInRow="CEP" msprop:Generator_ColumnPropNameInTable="CEPColumn" msprop:Generator_UserColumnName="CEP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emails" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmails" msprop:Generator_ColumnPropNameInRow="Emails" msprop:Generator_ColumnPropNameInTable="EmailsColumn" msprop:Generator_UserColumnName="Emails" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSerie" msprop:Generator_ColumnPropNameInRow="Serie" msprop:Generator_ColumnPropNameInTable="SerieColumn" msprop:Generator_UserColumnName="Serie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Acessorios" msprop:Generator_ColumnVarNameInTable="columnAcessorios" msprop:Generator_ColumnPropNameInRow="Acessorios" msprop:Generator_ColumnPropNameInTable="AcessoriosColumn" msprop:Generator_UserColumnName="Acessorios">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefeitoInformado" msprop:Generator_ColumnVarNameInTable="columnDefeitoInformado" msprop:Generator_ColumnPropNameInRow="DefeitoInformado" msprop:Generator_ColumnPropNameInTable="DefeitoInformadoColumn" msprop:Generator_UserColumnName="DefeitoInformado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LaudoTecnico" msprop:Generator_ColumnVarNameInTable="columnLaudoTecnico" msprop:Generator_ColumnPropNameInRow="LaudoTecnico" msprop:Generator_ColumnPropNameInTable="LaudoTecnicoColumn" msprop:Generator_UserColumnName="LaudoTecnico" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorTotal" msprop:Generator_ColumnVarNameInTable="columnValorTotal" msprop:Generator_ColumnPropNameInRow="ValorTotal" msprop:Generator_ColumnPropNameInTable="ValorTotalColumn" msprop:Generator_UserColumnName="ValorTotal" type="xs:decimal" />
+              <xs:element name="IDOS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDOS" msprop:Generator_ColumnPropNameInRow="IDOS" msprop:Generator_ColumnPropNameInTable="IDOSColumn" msprop:Generator_UserColumnName="IDOS" type="xs:int" />
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tecnico" msprop:Generator_ColumnVarNameInTable="columnTecnico" msprop:Generator_ColumnPropNameInRow="Tecnico" msprop:Generator_ColumnPropNameInTable="TecnicoColumn" msprop:Generator_UserColumnName="Tecnico" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imei" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImei" msprop:Generator_ColumnPropNameInRow="Imei" msprop:Generator_ColumnPropNameInTable="ImeiColumn" msprop:Generator_UserColumnName="Imei" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroEndereco" msprop:Generator_ColumnVarNameInTable="columnNumeroEndereco" msprop:Generator_ColumnPropNameInRow="NumeroEndereco" msprop:Generator_ColumnPropNameInTable="NumeroEnderecoColumn" msprop:Generator_UserColumnName="NumeroEndereco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtImpressaoOrdemServicoA5" />
+      <xs:field xpath="mstns:IDOS" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="PessoaEndereco" table="PessoaEndereco">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+    <property name="Sequencia" column="Sequencia" type="Int32" />
+    <property name="Descricao" column="Descricao" type="string" length="100" />
+    <property name="Endereco" column="Endereco" type="string" length="100" />
+    <property name="Bairro" column="Bairro" type="string" length="50" />
+    <many-to-one name="Cidade" column="IDCidade" class="Cidade" lazy="false" />
+    <property name="CEP" column="CEP" type="string" length="15" />
+    <property name="Telefone" column="Telefone" type="string" length="50" />
+    <property name="Contato" column="Contato" type="string" length="100" />
+    <property name="BEntrega" column="bEntrega" type="bool" />
+    <property name="BCobranca" column="bCobranca" type="bool" />
+    <property name="BAtivo" column="bAtivo" type="bool" />
+    <property name="BPrincipal" column="bPrincipal" type="bool" />
+    <property name="RemetenteDestinatario" column="RemetenteDestinatario" type="bool" />
+    <property name="Numero" column="Numero" type="string" length="6" />
+    <property name="Complemento" column="Complemento" type="string" length="200" />
+    <property name="IDIntegracao" column="IDIntegracao" type="Int32" />
+  </class>
+</hibernate-mapping>

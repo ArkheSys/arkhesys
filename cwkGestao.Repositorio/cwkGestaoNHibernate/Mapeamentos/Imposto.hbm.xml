@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Imposto" table="Imposto">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<property name="Nome" column="ImpostoNome" type="string" />
+  <bag name="CSTs" table="CodigoImposto" inverse="true" cascade="save-update" lazy="false" >
+    <key column="IDImposto" />
+    <one-to-many class="CodigoImposto" />
+  </bag>
+
+  </class>
+</hibernate-mapping>

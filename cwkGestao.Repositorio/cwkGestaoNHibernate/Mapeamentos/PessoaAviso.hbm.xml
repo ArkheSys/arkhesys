@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="PessoaAviso" table="PessoaAviso">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+					<property name="Sequencia" column="Sequencia" type="Int32" />
+	<property name="DtCadastro" column="DtCadastro" type="DateTime" />
+	<property name="DtValidade" column="DtValidade" type="DateTime" />
+	<property name="Ordem" column="Ordem" type="string" length="5" />
+	<property name="Aviso" column="Aviso" type="string" length="300" />
+</class>
+</hibernate-mapping>
+		

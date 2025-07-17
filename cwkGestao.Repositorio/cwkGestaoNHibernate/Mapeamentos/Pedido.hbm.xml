@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Pedido" table="Pedido">
+
+		<id name="ID" column="ID" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<many-to-one name="Filial" column="IDFilial" class="Filial" lazy="false"/>
+		<many-to-one name="TipoPedido" column="IDTipoPedido" class="TipoPedido" lazy="false"/>
+		<property name="Ent_Sai" column="Ent_Sai" type="Int32" />
+		<property name="Dt" column="Dt" type="DateTime" />
+		<property name="DtDigitacao" column="DtDigitacao" type="DateTime" />
+		<property name="DtValidade" />
+		<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa"/>
+		<property name="PessoaNome" column="PessoaNome" type="string" length="60" />
+		<property name="PessoaCNPJCPF" column="PessoaCNPJCPF" type="string" length="20" />
+		<property name="PessoaInscRG" column="PessoaInscRG" type="string" length="20" />
+		<property name="PessoaEndereco" column="PessoaEndereco" type="string" length="100" />
+		<property name="PessoaBairro" column="PessoaBairro" type="string" length="60" />
+		<property name="PessoaCidade" column="PessoaCidade" type="string" length="60" />
+		<property name="PessoaUF" column="PessoaUF" type="string" length="2" />
+		<property name="PessoaTelefone" column="PessoaTelefone" type="string" length="20" />
+		<property name="IDVendedor" column="IDVendedor" type="Int32" />
+		<many-to-one name="Vendedor" column="IDVendedor2" class="Pessoa" />
+		<many-to-one name="TabelaPreco" column="IDTabelaPreco" class="TabelaPreco" />
+		<many-to-one name="Condicao" column="IDCondicao" class="Condicao" />
+		<property name="TotalProduto" column="TotalProduto" type="decimal" precision="18" scale="3" />
+		<property name="TotalServico" column="TotalServico" type="decimal" precision="18" scale="3" />
+		<property name="PercDesconto" column="PercDesconto" type="decimal" precision="16" scale="6"/>
+		<property name="PercComissao" column="PercComissao" type="decimal" precision="16" scale="6"/>
+		<property name="ValorComissao" column="ValorComissao" type ="decimal" precision ="18" scale ="3"/>
+		<property name="ValorDesconto" column="ValorDesconto" type="decimal" precision="18" scale="3" />
+		<property name="ValorAcrescimo" column="ValorAcrescimo" type="decimal" precision="18" scale="3" />
+		<property name="TotalPedido" column="TotalPedido" type="decimal" precision="18" scale="3" />
+		<property name="Observacao1" column="Observacao1" type="string" length="1000" />
+		<property name="Observacao2" column="Observacao2" type="string" length="1000" />
+		<property name="Observacao3" column="Observacao3" type="string" length="1000" />
+		<property name="Status" column="Status" />
+		<property name="BImpressa" column="bImpressa" type="bool" />
+		<many-to-one name="Projeto" column="IDProjeto" class="Projeto" />
+		<property name="PessoaCEP" column="PessoaCEP" type="string" length="15" />
+		<property name="Numero" column="Numero" type="Int32" />
+		<property name="ComplementoNumero" column="ComplementoNumero" type="string" length="5" />
+		<property name="Complemento" column="Complemento" type="string" length="200" />
+		<property name="ValorFrete" column="ValorFrete" type="decimal" precision="18" scale="3" />
+		<property name="TipoFrete" column="TipoFrete" />
+		<many-to-one name="PessoaTransportadora" column="IDPessoaTransportadora" class="Pessoa"/>
+		<property name="IncData" column="IncData" type="DateTime" />
+		<property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+		<property name="AltData" column="AltData" type="DateTime" not-null="false"/>
+		<property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+		<property name="DtPrazoEntrega" column="DtPrazoEntrega" type="DateTime" />
+		<property name="Validade" column="Validade" type="Int32" />
+		<property name="Observacao1Licitacao" column="Observacao1Licitacao" type="string" length="400" />
+		<property name="Observacao2Licitacao" column="Observacao2Licitacao" type="string" length="500" />
+		<many-to-one name="EnderecoEntrega" column="IDEnderecoEntrega" class="PessoaEndereco"/>
+		<property name="TotalST" column="TotalST" type="decimal" precision="18" scale="2" />
+		<property name="GerenteDesconto" column="GerenteDesconto" type="string" length="20"/>
+		<property name="IDIntegracao" column="IDIntegracao" type="Int32" />
+		<many-to-one name="LocalEstoquePedido" column="IdLocalEstoque" class="LocalEstoque"/>
+		<property name="UsuarioExpedicao" column="UsuarioExpedicao" type="string" length="20"/>
+		<property name="TransNome" column="TransNome" type="string" length="60" />
+		<property name="TransEndereco" column="TransEndereco" type="string" length="100" />
+		<property name="TransCidade" column="TransCidade" type="string" length="60" />
+		<property name="TransUF" column="TransUF" type="string" length="2" />
+		<property name="TransCNPJCPF" column="TransCNPJCPF" type="string" length="20" />
+		<property name="TransPlaca" column="TransPlaca" type="string" length="15" />
+		<property name="TransPlacaUF" column="TransPlacaUF" type="string" length="50" />
+		<many-to-one name="CondicaoTransportadora" column="IDCondicaoTransportadora" class="Condicao" />
+		<property name="TotalIPI" column="TotalIPI" type="decimal" precision="18" scale="3" />
+		<property name="bEnviadoEmail" column="bEnviadoEmail" type="bool" />
+		<many-to-one name="StatusEntEventoCorreio" column="IDStatusEntEventoCorreio" class="StatusEntEventoCorreio" />
+		<property name="bRealizouRotinaCorreios" column="bRealizouRotinaCorreios" type="bool" />
+		<property name="CodigoPedidoMagento" column="CodigoPedidoMagento" type="Int32" />
+		<property name="CodigoEntregaMagento" column="CodigoEntregaMagento" type="string" />
+		<property name="IDPedidoMercadoLivre" column="IDPedidoMercadoLivre" type="int"/>
+
+		<property name="bTransCorreiosAR" column="bTransCorreiosAR" type="bool"/>
+		<property name="bTransCorreiosMP" column="bTransCorreiosMP" type="bool"/>
+		<property name="TransCorreiosValorDeclarado" column="TransCorreiosValorDeclarado" type="decimal" precision="18" scale="2"/>
+
+		<property name="UsuarioAprovacao" column="UsuarioAprovacao" type="string" />
+		<property name="UsuarioRevogacao" column="UsuarioRevogacao" type="string" />
+		<property name="dtAprovacao" column="dtAprovacao" type="DateTime" not-null="false"/>
+		<property name="dtRevogacao" column="dtRevogacao" type="DateTime" not-null="false"/>
+		<property name="primeiraParcela" column="primeiraParcela" type="string" not-null="false"/>
+
+		<property name="UsuarioCancelamento" column="UsuarioCancelamento" type="string" />
+		<property name="DtCancelamento" column="DtCancelamento" type="DateTime"/>
+		<property name="MotivoCancelamento" column="MotivoCancelamento" type="string"/>
+		<property name="CodShl" column="CodShl" type="int"/>
+		<property name="IDPedidoSISeCommerce" column="IDPedidoSISeCommerce" type="int"/>
+		<property name="StatusSHL" column="StatusSHL" type="int"/>
+		<property name="CupomEnviado" column="CupomEnviado" type="bool"/>
+		<many-to-one name="TipoServicoTransportePedido" column="IDPessoaTipoServicoTransporte" class="PessoaTipoServicoTransporte" lazy="false"/>
+		<property name="bConsiderarFreteFaturamento" column="bConsiderarFreteFaturamento" type="bool" />
+		<property name="RespRetencao" column="RespRetencao" type="Int32" />
+		<property name="StatusEntrega" column="StatusEntrega" type="Int32" />
+		<property name="StatusEntregaVisivel" column="StatusEntregaVisivel" type="string" />
+		<property name="MargemLucroMedia" column="MargemLucroMedia" type="decimal" precision="18" scale="6" />
+		<property name="MargemLucroMediaMenosDesconto" column="MargemLucroMediaMenosDesconto" type="decimal" precision="18" scale="6" />
+
+		<property name="Garantia" column="Garantia" type="string" />
+		<property name="NumeroBanheirosPUnidade" column="NumeroBanheirosPUnidade" type="string" />
+		<property name="NumeroUnidades" column="NumeroUnidades" type="string" />
+		<property name="bCaixasAcopladas" column="bCaixasAcopladas" type="bool" />
+		<property name="ReferenciasEmpresa" column="ReferenciasEmpresa" type="string" />
+		<property name="GerouPedidoCompra" column="GerouPedidoCompra" type="bool" />
+		<property name="PercFatProdNota" column="PercFatProdNota" type="decimal" precision="12" scale="2" />
+		<property name="BDelivery" column="BDelivery" type="int"/>
+		<property name="BReserva" column="BReserva" type="int"/>
+		<property name="NumeroPos" column="NumeroPos" type="string" />
+		<property name="IDEntregador" column="IDEntregador" type="int"/>
+		<property name="StatusDelivery" column="StatusDelivery" type="int"/>
+		<property name="DataSaidaEntrega" column="DataSaidaEntrega" type="DateTime"/>
+		<property name="DataChegadaEntrega" column="DataChegadaEntrega" type="DateTime"/>
+		<property name="NomeMaquina" column="NomeMaquina" type="string" />
+		<property name="SerialImpressora" column="SerialImpressora" type="string" />
+
+		<many-to-one name="PCP_Lote" column="IDPCP_Lote" class="PCP_Lote" not-null="false" lazy="false"/>
+
+		<bag name="Items" table="PedidoItem" inverse="true" cascade="all-delete-orphan" lazy="false" >
+			<key column="IDPedido" />
+			<one-to-many class="PedidoItem" />
+		</bag>
+
+		<bag name="ItemsServicos" table="PedidoItemServico" inverse="true" cascade="all-delete-orphan" lazy="false" >
+			<key column="IDPedido" />
+			<one-to-many class="PedidoItemServico" />
+		</bag>
+
+		<bag name="PedidoHistoricos" table="PedidoHistorico" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDPedido" />
+			<one-to-many class="PedidoHistorico" />
+		</bag>
+
+		<bag name="Parcelas" table="PedidoParcela" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDPedido" />
+			<one-to-many class="PedidoParcela" />
+		</bag>
+
+		<bag name="ItemsExpedicao" table="ExpedicaoItem" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDPedido" />
+			<one-to-many class="ExpedicaoItem" />
+		</bag>
+
+		<bag name="CorreiosPrecoPrazo" table="CorreiosPrecoPrazo" inverse="true" cascade="all-delete-orphan" lazy="false">
+			<key column="IDPedido" />
+			<one-to-many class="CorreiosPrecoPrazo" />
+		</bag>
+
+		<bag name="Entregas" table="Entrega" inverse="true" cascade="all-delete-orphan" lazy="false">
+			<key column="IDPedido" />
+			<one-to-many class="Entrega" />
+		</bag>
+
+
+	</class>
+</hibernate-mapping>

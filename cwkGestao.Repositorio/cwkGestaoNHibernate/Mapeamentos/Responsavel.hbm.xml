@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Responsavel" table="Responsavel">
+    <id name="ID" column="ID" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" />
+    <property name="Descricao" column="Descricao" />
+  </class>
+</hibernate-mapping>

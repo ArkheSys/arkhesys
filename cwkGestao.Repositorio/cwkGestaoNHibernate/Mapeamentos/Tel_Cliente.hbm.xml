@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Tel_Cliente" table="Tel_Cliente">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+        
+    <many-to-one name="Pessoa" column="IdPessoa" class="Pessoa" lazy="false" cascade="all-delete-orphan" />
+    <many-to-one name="GrupoCliente" column="IdTel_GrupoCliente" lazy="false" class="Tel_GrupoCliente" />
+    <property name="NumeroPiloto" column="NumeroPiloto" type="string" length="10" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="ImprimirLigacoesLocais" column="ImprimirLigacoesLocais" type="bool" />
+    <property name="CpfProp" column="Cpf_cliente" type="string" />
+    <property name="DtNascimentoProp" column="DtNascimento" type="DateTime" />
+    <property name="NomeProp" column="Nome" type="string" />
+    <property name="EnderecoProp" column="Endereco" type="string" />
+    <property name="NumeroEnderecoProp" column="NumeroEndereco" type="int" />
+    <property name="ComplementoProp" column="Complemento" type="string" />
+    <property name="BairroProp" column="Bairro" type="string" />
+    <property name ="CalculaTotalMinutos" column="CalculaTotalMinutos" type ="bool" />
+    <many-to-one name="CidadeProp" column="IDCidade" class="Cidade" lazy="false" />
+    <property name="TelefoneProp" column="Telefone" type="string" />
+    <many-to-one name="Acrescimo" column="IdAcrescimo" class="Acrescimo" />
+    <bag name="Precos" table="Tel_ClientePreco" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDTel_Cliente" />
+      <one-to-many class="Tel_ClientePreco" />
+    </bag>
+    <bag name="Telefones" table="Tel_ClienteTelefone" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDTel_Cliente" />
+      <one-to-many class="Tel_ClienteTelefone" />
+    </bag>
+    <bag name="Servicos" table="Tel_ClienteServico" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDTel_Cliente" />
+      <one-to-many class="Tel_ClienteServico" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

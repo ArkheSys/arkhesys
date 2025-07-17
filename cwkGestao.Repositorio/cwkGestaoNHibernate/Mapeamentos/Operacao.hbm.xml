@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Operacao" table="Operacao">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Nome" column="Nome" type="string" length="60" />
+    <many-to-one name="CFOP_DEstado" column="IDCFOP_DEstado" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="CFOP_FEstado_C" column="IDCFOP_FEstado_C" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="CFOP_FEstado_NC" column="IDCFOP_FEstado_NC" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="CFOP_DEstado_ST" column="IDCFOP_DEstado_ST" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="CFOP_FEstado_C_ST" column="IDCFOP_FEstado_C_ST" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="CFOP_FEstado_NC_ST" column="IDCFOP_FEstado_NC_ST" class="TabelaCFOP" lazy="false"/>
+    <many-to-one name="NatBcCred" column="IDNatBcCred" class="CodigoImposto" lazy="false"/>
+
+  </class>
+</hibernate-mapping>

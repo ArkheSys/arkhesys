@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Tel_Fatura" table="Tel_Fatura">
+    <id name="ID" column="id">
+      <generator class="identity" />
+    </id>
+
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Data" column="Data" type="DateTime" />
+    <property name="Referencia" column="Referencia" type="DateTime" />
+    <property name="Vencimento" column="Vencimento" type="DateTime" />
+    <property name="Valor" column="Valor" type="Decimal" />
+    <property name="DataInicial" column="DataInicial" type="DateTime" />
+    <property name="DataFinal" column="DataFinal" type="DateTime" />
+    <many-to-one name="Cliente" column="IdTel_Cliente" class="Tel_Cliente" />
+    <many-to-one name="Documento" column="IdDocumento" class="Documento" lazy="false"/>
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="NossoNumero" column="NossoNumero" type="string" length="25" />
+    <property name="DataEnvio" column="DataEnvio" type="DateTime" not-null="false"/>
+    <property name="bEnviadoEmail" column="bEnviadoEmail" type="bool" />
+
+    <bag name="Servicos" table="Tel_FaturaServico" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDTel_Fatura" />
+      <one-to-many class="Tel_FaturaServico" />
+    </bag>
+
+    <bag name="Ligacoes" table="Tel_FaturaLigacao" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDTel_Fatura" />
+      <one-to-many class="Tel_FaturaLigacao" />
+    </bag>
+  </class>
+</hibernate-mapping>

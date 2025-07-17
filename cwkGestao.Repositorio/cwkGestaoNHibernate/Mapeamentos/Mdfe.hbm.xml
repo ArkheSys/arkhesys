@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Mdfe" table="Mdfe">
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+
+		<property name="TipoAmbiente" column="TipoAmbiente" type="Int32" />
+		<property name="TipoEmitente" column="TipoEmitente" type="Int32" />
+		<property name="TipoTransportador" column="TipoTransportador" type="Int32" />
+		<property name="Modelo" column="Modelo" type="Int32" />
+		<property name="Serie" column="Serie" type="Int32" />
+		<property name="NMDF" column="NMDF" type="Int32" />
+		<property name="CMDF" column="CMDF" type="Int32" />
+		<property name="ModalidadeTransporte" column="ModalidadeTransporte" type="Int32" />
+		<property name="Emissao" column="Emissao" type="DateTime" />
+		<property name="TipoEmissao" column="TipoEmissao" type="Int32" />
+		<property name="InformacoesAdicionais" column="InformacoesAdicionais" type="string" />
+		<property name="InformacoesComplementares" column="InformacoesComplementares" type="string" />
+		<property name="DataCadastro" column="DataCadastro" type="DateTime" />
+		<property name="CodigoUnPesoCarga" column="CodigoUnPesoCarga" type="Int32" />
+		<property name="PesoBrutoTotal" column="PesoBrutoTotal" type="decimal" />
+
+		<many-to-one name="Filial" column="IDFilial" class="Filial" lazy="false" />
+		<many-to-one name="UFDescarregamento" column="IDUnidadeFederativaDescarregamento" class="UF" lazy="false" />
+		<many-to-one name="CidadeDescarga" column="IDMunicipioDescarga" class="Cidade" lazy="false" />
+	</class>
+</hibernate-mapping>

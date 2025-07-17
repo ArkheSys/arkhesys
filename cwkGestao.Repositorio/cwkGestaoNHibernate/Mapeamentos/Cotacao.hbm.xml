@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Cotacao" table="Cotacao">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="TipoCotacao" />
+    <property name="Dt" column="Dt" type="DateTime" />
+    <property name="Resumo" column="Resumo" type="string" length="200" />
+    <property name="Observacao" column="Observacao" type="string" length="2147483647" />
+    <property name="DtBaixa" column="DtBaixa" type="DateTime" />
+    <property name="DtCanc" column="DtCanc" type="DateTime" />
+    <property name="IDFornecedor_01" column="IDFornecedor_01" type="Int32" />
+    <property name="IDFornecedor_02" column="IDFornecedor_02" type="Int32" />
+    <property name="IDFornecedor_03" column="IDFornecedor_03" type="Int32" />
+    <property name="IDFornecedor_04" column="IDFornecedor_04" type="Int32" />
+    <property name="IDFornecedor_05" column="IDFornecedor_05" type="Int32" />
+    <property name="IDFornecedor_06" column="IDFornecedor_06" type="Int32" />
+    <property name="IDCondicao_01" column="IDCondicao_01" type="Int32" />
+    <property name="IDCondicao_02" column="IDCondicao_02" type="Int32" />
+    <property name="IDCondicao_03" column="IDCondicao_03" type="Int32" />
+    <property name="IDCondicao_04" column="IDCondicao_04" type="Int32" />
+    <property name="IDCondicao_05" column="IDCondicao_05" type="Int32" />
+    <property name="IDCondicao_06" column="IDCondicao_06" type="Int32" />
+    <property name="Frete_01" column="Frete_01" type="decimal" />
+    <property name="Frete_02" column="Frete_02" type="decimal" />
+    <property name="Frete_03" column="Frete_03" type="decimal" />
+    <property name="Frete_04" column="Frete_04" type="decimal" />
+    <property name="Frete_05" column="Frete_05" type="decimal" />
+    <property name="Frete_06" column="Frete_06" type="decimal" />
+    <property name="IPI_01" column="IPI_01" type="decimal" />
+    <property name="IPI_02" column="IPI_02" type="decimal" />
+    <property name="IPI_03" column="IPI_03" type="decimal" />
+    <property name="IPI_04" column="IPI_04" type="decimal" />
+    <property name="IPI_05" column="IPI_05" type="decimal" />
+    <property name="IPI_06" column="IPI_06" type="decimal" />
+    <property name="Desconto_01" column="Desconto_01" type="decimal" />
+    <property name="Desconto_02" column="Desconto_02" type="decimal" />
+    <property name="Desconto_03" column="Desconto_03" type="decimal" />
+    <property name="Desconto_04" column="Desconto_04" type="decimal" />
+    <property name="Desconto_05" column="Desconto_05" type="decimal" />
+    <property name="Desconto_06" column="Desconto_06" type="decimal" />
+    <property name="PrazoEntrega_01" column="PrazoEntrega_01" type="string" length="30" />
+    <property name="PrazoEntrega_02" column="PrazoEntrega_02" type="string" length="30" />
+    <property name="PrazoEntrega_03" column="PrazoEntrega_03" type="string" length="30" />
+    <property name="PrazoEntrega_04" column="PrazoEntrega_04" type="string" length="30" />
+    <property name="PrazoEntrega_05" column="PrazoEntrega_05" type="string" length="30" />
+    <property name="PrazoEntrega_06" column="PrazoEntrega_06" type="string" length="30" />
+    <property name="UsuarioAutorizacao" column="UsuarioAutorizacao" type="string" length="60" />
+    <property name="DtAutorizacao" column="DtAutorizacao" type="DateTime" />
+    <many-to-one name="Filial" column="IDFilial" class="Filial" />
+    <property name="Status" column="Status" type="Int32" />
+    <bag name="CotacaoProdutos" table="CotacaoProduto" cascade="all-delete-orphan">
+      <key column="IDCotacao" />
+      <one-to-many class="CotacaoProduto" />
+    </bag>
+  </class>
+</hibernate-mapping>

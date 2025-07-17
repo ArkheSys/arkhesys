@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Projeto" table="Projeto">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Nome" column="Nome" type="string" length="60" />
+    <property name="Descricao" column="Descricao" type="string" length="3000" />
+    <many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+    <many-to-one name="Filial" column="IDFilial" class="Filial" />
+    <property name="Status" column="Status" type="Int32" />
+    <property name="Data" />
+    <property name="MarLucroMaoObra" column="MarLucroMaoObra" type="decimal" />
+    <property name="MarLucroProduto" column="MarLucroProduto" type="decimal" />    
+    
+    <property name="PercDescontoMaoObra" column="PercDescontoMaoObra" type="decimal" />
+    <property name="ValorDescontoMaoObra" column="ValorDescontoMaoObra" type="decimal" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="PercDescontoProduto" column="PercDescontoProduto" type="decimal" />
+    <property name="ValorDescontoProduto" column="ValorDescontoProduto" type="decimal" />
+    <property name="TotalProdutos" column="TotalProdutos" type="decimal" />
+    <property name="TotalServicos" column="TotalServicos" type="decimal" />
+    <property name="TotalGeral" column="TotalGeral" type="decimal" />
+    <property name="CaminhoDocumento" column="CaminhoDocumento" type="string" length="500" />
+    <property name="InstrucoesProducao" column="InstrucoesProducao" type="string" length="3000" />
+    <property name="BCentroDeCusto" column="bCentroDeCusto" type="bool" />
+    <property name="MotivoCancelamento" column="MotivoCancelamento" type="Int16" />
+
+    <many-to-one name="Banco" column="IDBanco" class="Banco" />
+    <many-to-one name="Condicao" column="IDCondicao" class="Condicao" />
+    <many-to-one name="Portador" column="IDPortador" class="Portador" />
+    <many-to-one name="Historico" column="IDHistorico" class="Historico" />
+    <many-to-one name="PlanoConta" column="IDPlanoConta" class="PlanoConta" />
+    <many-to-one name="PlanoContaServico" column="IDPlanoContaServico" class="PlanoConta" />
+    <many-to-one name="Acrescimo" column="IDAcrescimo" class="Acrescimo" />
+    <property name="ComplementoHist" column="HistoricoComplemento" type="string" length="200" />
+    <property name="NumeroProposta" column="NumeroProposta" type="string" />
+
+    <bag name="OrdemProducaos" table="OrdemProducao">
+      <key column="IdProjeto" />
+      <one-to-many class="OrdemProducao" />
+    </bag>
+    <!--
+    <bag name="Pedidos" table="Pedido">
+      <key column="IDProjeto" />
+      <one-to-many class="Pedido" />
+    </bag>
+    <bag name="Projeto_Materials" table="Projeto_Material">
+      <key column="IDProjeto" />
+      <one-to-many class="Projeto_Material" />
+    </bag>
+    <bag name="Projeto_ProdutoServicos" table="Projeto_ProdutoServico">
+      <key column="IDProjeto" />
+      <one-to-many class="Projeto_ProdutoServico" />
+    </bag>
+    <bag name="ProjetoHistoricos" table="ProjetoHistorico">
+      <key column="IDProjeto" />
+      <one-to-many class="ProjetoHistorico" />
+    </bag>
+    <bag name="Rateio_Movs" table="Rateio_Mov">
+      <key column="IDProjeto" />
+      <one-to-many class="Rateio_Mov" />
+    </bag>
+    <bag name="Rateio_NotaItems" table="Rateio_NotaItem">
+      <key column="IDProjeto" />
+      <one-to-many class="Rateio_NotaItem" />
+    </bag>-->
+  </class>
+</hibernate-mapping>

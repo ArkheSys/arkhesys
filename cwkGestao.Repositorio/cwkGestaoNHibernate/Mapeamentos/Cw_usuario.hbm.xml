@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Cw_usuario" table="cw_usuario">
+
+	<id name="ID" column="id">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="codigo" type="Int32" />
+	<property name="Login" column="login" type="string" length="20" />
+	<property name="Senha" column="senha" type="string" length="20" />
+	<property name="Nome" column="nome" type="string" length="60" />
+	<property name="Tipo" column="tipo" type="Int32" />
+	<many-to-one name="Grupo" column="idgrupo" class="Cw_grupo" lazy="false"/>
+					<property name="Incdata" column="incdata" type="DateTime" />
+	<property name="Inchora" column="inchora" type="DateTime" />
+	<property name="Incusuario" column="incusuario" type="string" length="20" />
+	<property name="Altdata" column="altdata" type="DateTime" />
+	<property name="Althora" column="althora" type="DateTime" />
+	<property name="Altusuario" column="altusuario" type="string" length="20" />
+    <property name="Email" column="EMAIL" type="string" length="200" />
+    <property name="SenhaEmail" column="SENHAEMAIL" type="string" length="200" />
+    <property name="Smtp" column="SMTP" type="string" length="50" />
+    <property name="Porta" column="PORTA" type="string" length="6" />
+    <property name="SSL" column="SSL" type="Boolean" />
+
+    <bag name="Vendedor" table="PessoaFuncionario" cascade="save-update" >
+      <key column="IDCwUsuario" />
+      <one-to-many class="PessoaFuncionario" />
+    </bag>
+    
+    <bag name="AcompanhamentoOSs" table="AcompanhamentoOS">					
+			<key column="IDResponsavelAnt" />
+			<one-to-many class="AcompanhamentoOS" />
+		</bag>
+
+		<bag name="OrdemServicos" table="OrdemServico">					
+			<key column="IDResponsavel" />
+			<one-to-many class="OrdemServico" />
+		</bag>
+		<bag name="ServicoOSs" table="ServicoOS">					
+			<key column="IDResponsavel" />
+			<one-to-many class="ServicoOS" />
+		</bag>
+    <bag name="Atendimentos" table="Atendimento">
+      <key column="IDCw_usuario" />
+      <one-to-many class="Atendimento" />
+    </bag>
+</class>
+</hibernate-mapping>
+		

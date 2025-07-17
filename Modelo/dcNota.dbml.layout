@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.625" name="dcNota">
+  <DataContextMoniker Name="/dcNotaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="314ab4e3-fe46-4b40-94a5-76ade4e4d99e" absoluteBounds="4.125, 0.5, 2, 13.885887044270833">
+      <DataClassMoniker Name="/dcNotaDataContext/NotaImpressao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="546b4d9a-4d80-4035-bc45-d426567ef9b4" absoluteBounds="4.14, 0.96, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

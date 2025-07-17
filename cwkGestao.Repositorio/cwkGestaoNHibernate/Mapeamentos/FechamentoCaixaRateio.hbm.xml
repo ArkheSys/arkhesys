@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="FechamentoCaixaRateio" table="FechamentoCaixaRateio">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <property name="IDFechamentoCaixa" column="IDFechamentoCaixa" />
+    <property name="IDFormaDePagamento" column="IDFormaDePagamento"/>
+    <property name="ValorCaixa" column="ValorCaixa"/>
+    <property name="ValorInformado" column="ValorInformado"/>
+  </class>
+</hibernate-mapping>

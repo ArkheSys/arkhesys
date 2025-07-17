@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Configuracao" table="Configuracao">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="TipoOrcamento"/>
+		<property name="ListagemAbertos" column="ListagemAbertos" type="Int32" />
+		<property name="ListagemBaixados" column="ListagemBaixados" type="Int32" />
+		<property name="NotaFiltroListagem" column="NotaFiltroListagem" type="Int32" />
+		<property name="ComprasFiltroListagem" column="ComprasFiltroListagem" type="Int32" />
+		<property name="BListarBaixados" column="bListarBaixados" type="bool" />
+		<property name="Observacao" column="Observacao" type="string" length="150" />
+		<property name="CodigoProdutoStr" column="CodigoProdutoStr" type="bool" />
+		<property name="BloqAltPedImpresso" column="BloqAltPedImpresso" type="bool" />
+		<property name="BSalvarFiltroGrid" column="BSalvarFiltroGrid" type="bool" />
+		<property name="PermitirFatClienteNaoAtivo" column="PermitirFatClienteNaoAtivo" type="bool" />
+		<property name="ImprimirOrcClienteNaoAtivo" column="ImprimirOrcClienteNaoAtivo" type="bool" />
+		<property name="AlteracaoDescricaoProduto" column="AlteracaoDescricaoProduto" type="bool" />
+		<property name="PermitirAlteracaoVendedorPedido" column="PermitirAlteracaoVendedorPedido" type="bool" />
+		<property name="OSTermoCompromisso" column="OSTermoCompromisso" type="string" />
+		<property name="OSAssistenciaTecnica" column="OSAssistenciaTecnica" type="string" />
+		<property name="NomeGrupo1" column="NomeGrupo1" type="string" />
+		<property name="NomeImpressora" column="NomeImpressora" type="string" />
+		<property name="VisualizarNFCe" column="VisualizarNFCe" type="Int32" />
+		<property name="EmailPDV" column="EmailPDV" type="string" />
+		<property name="EnviarEmailPDV" column="EnviarEmailPDV" type="Int32" />
+		<property name="NomeGrupo2" column="NomeGrupo2" type="string" />
+		<property name="NomeGrupo3" column="NomeGrupo3" type="string" />
+		<property name="PrecisaoPrecoProd" column="PrecisaoPrecoProd" type="bool" />
+		<property name="NotaConjugada" column ="NotaConjugada" type="bool" />
+		<property name="BExcluirOrcamentoFaturado" column ="BExcluirOrcamentoFaturado" type="bool" />
+		<property name="ModeloImpressaoGrafica" column="ModeloImpressaoGrafica" type="int" />
+		<property name="ModeloImpressaoPedidoCompra" column="ModeloImpressaoPedidoCompra" type="int" />
+		<property name="ModeloDuplicata" column="ModeloDuplicata" type="int" />
+		<property name="PercentualMaxDesconto" column="PercentualMaxDesconto" type="decimal" />
+		<property name="UtilizaLayout4" column="UtilizaLayout4" type="bool" />
+		<property name="ModoBaixaEstoque" column="ModoBaixaEstoque" type="Int32" />
+		<property name="UtilizaIdentificadorEstoque" column="UtilizaIdentificadorEstoque" type="bool" />
+		<property name="MostraProdutosInativos" column="MostraProdutosInativos" type="bool"/>
+		<property name="CincoFornec" column="CincoFornec" type="bool"/>
+		<property name="NaoSomarIpiTotalNota" column="NaoSomarIpiTotalNota" type="Int32"/>
+		<property name="NaoSomarIcmsDesonTotalNota" column="NaoSomarIcmsDesonTotalNota" type="Int32"/>
+		<property name="ReducaoMagento" column="ReducaoMagento" type="Int32"/>
+		<property name="EditarAssuntoEmailPedido" column="EditarAssuntoEmailPedido" type="bool"/>
+		<many-to-one name="Filial" column="IDFilial" class="Filial" />
+		<many-to-one name="IDPlanoContaJurosRecebidos" column="IDPlanoContaJurosRecebidos" class="PlanoConta" lazy="false"  not-null="false" />
+		<many-to-one name="IDPlanoContaJurosPagos" column="IDPlanoContaJurosPagos" class="PlanoConta" lazy="false" not-null="false" />
+		<many-to-one name="IDPlanoContaMultasRecebidas" column="IDPlanoContaMultasRecebidas" class="PlanoConta" lazy="false" not-null="false"/>
+		<many-to-one name="IDPlanoContaMultasPagas" column="IDPlanoContaMultasPagas" class="PlanoConta" lazy="false" not-null="false"/>
+		<many-to-one name="PlanoContaTroco" column="IDPlanoContaTroco" class="PlanoConta" lazy="false" />
+		<many-to-one name="TabelaPreco" column="IDTabelaPreco" class="TabelaPreco" />
+		<many-to-one name="TipoNotaBalancoEnt" column="IDTipoNotaBalancoEnt" class="TipoNota" />
+		<many-to-one name="TipoNotaBalancoSai" column="IDTipoNotaBalancoSai" class="TipoNota" />
+		<many-to-one name="PlanoContaDescontoPagar" column="IDPlanoContaDescontoPagar" class="PlanoConta" lazy="false" />
+		<many-to-one name="PlanoContaDescontoReceber" column="IDPlanoContaDescontoReceber" class="PlanoConta" lazy="false" />
+		<many-to-one name="FilialFrenteCaixa" column="IDFilialFrenteCaixa" class="Filial" lazy="false" />
+		<many-to-one name="TabelaPrecoFrenteCaixa" column="IDTabelaPrecoFrenteCaixa" class="TabelaPreco" lazy="false" />
+		<many-to-one name="CondicaoFrenteCaixa" column="IDCondicaoFrenteCaixa" class="Condicao" lazy="false" />
+		<many-to-one name="ClienteFrenteCaixa" column="IDClienteFrenteCaixa" class="Pessoa" lazy="false" />
+		<many-to-one name="TipoOrcamentoFrenteCaixa" column="IDTipoOrcamentoFrenteCaixa" class="TipoPedido" lazy="false" />
+		<many-to-one name="TipoDocumentoFrenteCaixa" column="IDTipoDocumentoFrenteCaixa" class="TipoDocumento" lazy="false" />
+		<many-to-one name="VendedorFrenteCaixa" column="IDVendedorFrenteCaixa" class="Pessoa" lazy="false" />
+		<many-to-one name="PlanoContaRenegociacao" column="IdPlanoContaRenegociacao" class="PlanoConta" lazy="false" />
+		<many-to-one name="TipoNotaObrasFundacoes" column="IDTipoNotaObrasFundacoes" class="TipoNota" lazy="false" />
+		<many-to-one name="VendedorObrasFundacoes" column="IDVendedorObrasFundacoes" class="PessoaVendedor" lazy="false" />
+		<many-to-one name="CondicaoObrasFundacoes" column="IDCondicaoObrasFundacoes" class="Condicao" lazy="false" />
+		<property name="TelaProduto" column="TelaProduto" type="Int32" />
+		<property name="ComissaoPedido" column="ComissaoPedido" type="Int32"/>
+		<property name="UtilizaTelefonia" column="UtilizaTelefonia" type="Int32"/>
+		<property name="UtilizaOrcamentoDeServico" column="UtilizaOrcamentoDeServico" type="Int32"/>
+		<property name="UtilizaControleDaRevenda" column="UtilizaControleDaRevenda" type="Int32"/>
+		<property name="UtilizaObrasEFundacoes" column="UtilizaObrasEFundacoes" type="Int32"/>
+		<property name="UtilizaContratos" column="UtilizaContratos" type="Int32"/>
+		<property name="UtilizaControleAvisos" column="UtilizaControleAvisos" type="Int32"/>
+		<property name="AssuntoEmail" column="AssuntoEmail" type="string"/>
+		<property name="TextoEmail" column="TextoEmail" type="string"/>
+		<property name="IDRemessa" column="IDRemessa" type="Int32"/>
+		<property name="IDRemessaPadrao" column="IDRemessaPadrao" type="Int32"/>
+		<property name="RotinaCorreios" column="RotinaCorreios" type="bool"/>
+		<property name="NaoSomarFrete" column="NaoSomarFrete" type="bool"/>
+		<property name="ExportarCodigoDeRastreamento" column="ExportarCodigoDeRastreamento" type="bool"/>
+		<property name="UtilizaTrocaProdutoPedido" column="UtilizaTrocaProdutoPedido" type="bool"/>
+		<property name="Assunto" column="Assunto" type="string" not-null="true"/>
+		<property name="TextoEmailPedido" column="TextoEmailPedido" type="string" not-null="true"/>
+		<property name="UtilizaProducao" column="UtilizaProducao" type="Int32"/>
+		<property name="UtilizaPCP" column="UtilizaPCP" type="Int32"/>
+		<property name="EnvioAutomaticoNfe" column="EnvioAutomaticoNfe" type="bool"/>
+		<property name="UtilizaCustoNota" column="UtilizaCustoNota" type="bool"/>
+		<property name="UtilizaRotinaCartao" column="UtilizaRotinaCartao" type="bool"/>
+		<property name="AssuntoEmailNfe" column="AssuntoEmailNfe" type="string"/>
+		<property name="TextoEmailNfe" column="TextoEmailNfe" type="string"/>
+		<property name="Temp_EnviaTotalImpostos" column="Temp_EnviaTotalImpostos" type="bool"/>
+		<property name="bUtilizaWsCorreios" column="bUtilizaWsCorreios" type="bool"/>
+		<property name="TempoEsperaNFe" column="TempoEsperaNFe" type="int"/>
+		<property name="HoraEnvioEmail" column="HoraEnvioEmail" type="string"/>
+		<property name="SolicitaConfirmaEmailNota" column="SolicitaConfirmaEmailNota" type="bool"/>
+		<property name="SolicitaRecebimentoEmail" column="SolicitaRecebimentoEmail" type="bool"/>
+		<property name="SolicitaConfirmaEmailContrato" column="SolicitaConfirmaEmailContrato" type="bool"/>
+		<property name="SolicitaConfirmaEmailPedido" column="SolicitaConfirmaEmailPedido" type="bool"/>
+		<property name="UtilizaNumeroEmpenhoNota" column ="UtilizaNumeroEmpenhoNota" type="bool" />
+		<property name="DiretorioSalc" column="DiretorioSalc" type="string"/>
+		<property name="UtilizaPafECF" column="UtilizaPafECF" type="bool"/>
+		<property name="ServidorSHL" column="ServidorSHL" type="Int32"/>
+		<property name="UtilizaAtendimento" column="UtilizaAtendimento" type="bool" />
+		<property name="UtilizaServicoPorExtenso" column="UtilizaServicoPorExtenso" type="bool" />
+		<property name="BImprimeRelatorioControleVenda" column="BImprimeRelatorioControleVenda" type="bool" />
+		<property name="CondicaoRelatorioControleVenda" column="CondicaoRelatorioControleVenda" type="string" />
+		<property name="ObservacaoTroca" column="ObservacaoTroca" type="string"/>
+		<many-to-one name="TipoNotaNF" column="IDTipoNotaNF" class="TipoNota" lazy="false" />
+		<many-to-one name="TipoNotaCupom" column="IDTipoNotaCupom" class="TipoNota" lazy="false" />
+		<many-to-one name="TipoRequisicaoProduto" column="IDTipoRequisicaoProduto" class="TipoPedido" lazy="false" />
+		<many-to-one name="TipoRequisicaoMaterial" column="IDTipoRequisicaoMaterial" class="TipoPedido" lazy="false" />
+		<property name="ModeloImpressaoOS" column ="ModeloImpressaoOS" type="int" />
+		<property name="IDFilialOS" column="IDFilialOS" type="Int32"/>
+		<property name="bExibeMargemLucroPedido" column="bExibeMargemLucroPedido" type="bool" />
+		<property name="PermiteFatDtRetroativa" column="PermiteFatDtRetroativa" type="bool" />
+		<property name="DiasInativacaoCliente" column="DiasInativacaoCliente" type="Int32"/>
+		<property name="DtUltimaInativacao" column="DtUltimaInativacao" type="DateTime"/>
+		<property name="MotivoInativacaoAutomatica" column="MotivoInativacaoAutomatica" type="string" length="200"/>
+		<property name="LayoutNFe" column="LayoutNFe" type="Int32" />
+		<property name="bBloquearStatus" column="bBloquearStatus" type="bool" />
+		<property name="EnviarEmailAutomaticoOS" column="EnviarEmailAutomaticoOS" type="bool" />
+		<property name="ReiniciarNumeracaoPedido" column="ReiniciarNumeracaoPedido" type="bool" />
+		<property name="UtilizaControleIMEI" column="UtilizaControleIMEI" type="bool"/>
+		<property name="LayoutControleVenda" column="LayoutControleVenda" type="Int32"/>
+		<property name="CarregarVendedor" column="CarregarVendedor" type="bool"/>
+		<property name="GerarPedidoCompra" column="GerarPedidoCompra" type="bool"/>
+		<many-to-one name="IdPlanoContaBaixaCartao" column="IdPlanoContaBaixaCartao" class="PlanoConta" lazy="false" />
+		<many-to-one name="IdPlanoContaBaixaTaxaCartao" column="IdPlanoContaBaixaTaxaCartao" class="PlanoConta" lazy="false" />
+		<!--<property name="Codigo" column="Codigo" type="Int32" />
+    <property name="IDTipoPedidoCupomFiscal" column="IDTipoPedidoCupomFiscal" type="Int32" />
+    <property name="UtilizarProjeto" column="UtilizarProjeto" type="bool" />    
+    <property name="UtilizarFichaTecnica" column="UtilizarFichaTecnica" type="bool" />-->
+		<property name="UtilizaCadastro" column="UtilizaCadastro" type="Int32" />
+		<property name="UtilizaComercial" column="UtilizaComercial" type="Int32" />
+		<property name="UtilizaCompra" column="UtilizaCompra" type="Int32" />
+		<property name="UtilizaEstoque" column="UtilizaEstoque" type="Int32" />
+		<property name="UtilizaFinanceiro" column="UtilizaFinanceiro" type="Int32" />
+		<property name="UtilizaCaixa" column="UtilizaCaixa" type="Int32" />
+		<property name="UtilizaUtilitarios" column="UtilizaUtilitarios" type="Int32" />
+		<property name="UtilizaConfiguracao" column="UtilizaConfiguracao" type="Int32" />
+		<property name="UtilizaSeguranca" column="UtilizaSeguranca" type="Int32" />
+		<property name="UtilizaDashboard" column="UtilizaDashboard" type="Int32" />
+		<property name="UtilizaPDV" column="UtilizaPDV" type="Int32" />
+		<property name="UtilizaDelivery" column="UtilizaDelivery" type="Int32" />
+		<property name="TaxaEntregaDelivery" column="TaxaEntregaDelivery" type="decimal" />
+		<property name="IDTipoPedidoDelivery" column="IDTipoPedidoDelivery" type="Int32" />
+		<property name="ObservacaoDelivery" column="ObservacaoDelivery" type="string" />
+		<property name="BPedidoAberto" column="BPedidoAberto" type="Int32" />
+		<property name="BPedidoEmPreparacao" column="BPedidoEmPreparacao" type="Int32" />
+		<property name="BPedidoCancelado" column="BPedidoCancelado" type="Int32" />
+		<property name="BPedidoPendente" column="BPedidoPendente" type="Int32" />
+		<property name="BPedidoEmEntrega" column="BPedidoEmEntrega" type="Int32" />
+		<property name="BPedidoFinalizado" column="BPedidoFinalizado" type="Int32" />
+		<property name="IsencaoTaxaEntrega" column="IsencaoTaxaEntrega" type="decimal" />
+		<property name="ValorMinimoDelivery" column="ValorMinimoDelivery" type="decimal" />
+		<property name="ImprimeSangriaPDV" column="ImprimeSangriaPDV" type="Int32" not-null="false"/>
+		<property name="UltimoNSU" column="UltimoNSU" type="Int32" not-null="false"/>
+		<property name="ImprimeSurpimentoPDV" column="ImprimeSurpimentoPDV" type="Int32" not-null="false"/>
+		<property name="HabilitaBandeira" column="HabilitaBandeira" type="Int32" not-null="false"/>
+		<property name="EnviaNfceTabelaPedido" column="EnviaNfceTabelaPedido" type="Int32" not-null="false"/>
+		<property name="EnviaEmailSangria" column="EnviaEmailSangria" type="Int32" not-null="false"/>
+		<property name="EnviaEmailSuprimento" column="EnviaEmailSuprimento" type="Int32" not-null="false"/>
+		<property name="IDCidadePadraoNFCe" column="IDCidadePadraoNFCe" type="Int32" not-null="false"/>
+		<property name="HabilitaFechamentoCego" column="HabilitaFechamentoCego" type="Int32" not-null="false"/>
+		<property name="EnviarMensagemLimiteSangria" column="EnviarMensagemLimiteSangria" type="Int32" not-null="false"/>
+		<property name="ValorLimiteSangria" column="ValorLimiteSangria" type="decimal" />
+		<property name="AbrirTelaDadosClienteDelivery" column="AbrirTelaDadosClienteDelivery" type="Int32" not-null="false"/>
+		<property name="IncluirProdutosDiretoListaDelivery" column="IncluirProdutosDiretoListaDelivery" type="Int32" not-null="false"/>
+		<property name="UtilizaSenhaGerente" column="UtilizaSenhaGerente" type="Int32" not-null="false"/>
+		<property name="FormaPesquisaClienteDelivery" column="FormaPesquisaClienteDelivery" type="Int32" not-null="false"/>
+		<property name="GravarEnviarNfe" column="GravarEnviarNfe" type="Int32" not-null="false"/>
+		<property name="GravarEnviarNfce" column="GravarEnviarNfce" type="Int32" not-null="false"/>
+		<property name="GravarEnviarNfse" column="GravarEnviarNfse" type="Int32" not-null="false"/>
+		<property name="TipoMovimentacaoCompras" column="TipoMovimentacaoCompras" type="Int32" not-null="false"/>
+		<property name="CondicaoPagamentoCompras" column="CondicaoPagamentoCompras" type="Int32" not-null="false"/>
+		<property name="TabelaPrecoCompras" column="TabelaPrecoCompras" type="Int32" not-null="false"/>
+		<property name="TrazerComoPadraoNoLancamentoNFe" column="TrazerComoPadraoNoLancamentoNFe" type="Int32" not-null="false"/>
+		<property name="ClienteEmiteNFSe" column="ClienteEmiteNFSe" type="Int32" not-null="false"/>
+		<property name="IDUnidadeMedidaEntradaProduto" column="IDUnidadeMedidaEntradaProduto" type="Int32" />
+		<property name="IDGrupoEstoqueProduto" column="IDGrupoEstoqueProduto" type="Int32" />
+		<property name="IDTabelaPrecoProduto" column="IDTabelaPrecoProduto" type="Int32" />
+		<property name="CodigoEnquadramentoIPI" column="CodigoEnquadramentoIPI" type="Int32" />
+		<property name="IDFornecedorProduto" column="IDFornecedorProduto" type="Int32" />
+		<property name="IDNcmProduto" column="IDNcmProduto" type="Int32" />
+		<property name="IDUnidadeEstoqueSaidaProduto" column="IDUnidadeEstoqueSaidaProduto" type="Int32" />
+		<property name="GerarCodigoBarrasProduto" column="GerarCodigoBarrasProduto" type="Int32" />
+		<property name="GerarCodigoBarrasSemGetin" column="GerarCodigoBarrasSemGetin" type="Int32" />
+		<property name="UrlEcommerce" column="UrlEcommerce" type="string" />
+		<property name="UsuarioEcommerce" column="UsuarioEcommerce" type="string" />
+		<property name="SenhaEcommerce" column="SenhaEcommerce" type="string" />
+		<property name="CaminhoImagens" column="CaminhoImagens" type="string" />
+		<property name="DesejaImprimirCupom" column="DesejaImprimirCupom" type="Int32" />
+		<property name="BotaoPdv1" column="BotaoPdv1" type="Int32" />
+		<property name="BotaoPdv2" column="BotaoPdv2" type="Int32" />
+		<property name="BotaoPdv3" column="BotaoPdv3" type="Int32" />
+		<property name="BotaoPdv4" column="BotaoPdv4" type="Int32" />
+		<property name="BotaoPdv5" column="BotaoPdv5" type="Int32" />
+		<property name="BotaoPdv6" column="BotaoPdv6" type="Int32" />
+		<property name="BotaoPDVFormaPagamento1" column="BotaoPDVFormaPagamento1" type="Int32" />
+		<property name="BotaoPDVFormaPagamento2" column="BotaoPDVFormaPagamento2" type="Int32" />
+		<property name="BotaoPDVFormaPagamento3" column="BotaoPDVFormaPagamento3" type="Int32" />
+		<property name="BotaoPDVFormaPagamento4" column="BotaoPDVFormaPagamento4" type="Int32" />
+		<property name="BotaoPDVFormaPagamento5" column="BotaoPDVFormaPagamento5" type="Int32" />
+		<property name="BotaoPDVFormaPagamento6" column="BotaoPDVFormaPagamento6" type="Int32" />
+		<property name="ImprimirNomeClienteCupom" column="ImprimirNomeClienteCupom" type="Int32" />
+		<property name="ImprimirEnderecoClienteCupom" column="ImprimirEnderecoClienteCupom" type="Int32" />
+		<property name="ImprimirTelefoneClienteCupom" column="ImprimirTelefoneClienteCupom" type="Int32" />
+		<property name="ImprimirCnpjCpfClienteCupom" column="ImprimirCnpjCpfClienteCupom" type="Int32" />
+		<property name="ImprimirAssinaturaNaoDinheiro" column="ImprimirAssinaturaNaoDinheiro" type="Int32" />
+		<property name="SenhaGerenteCancelarItemPDV" column="SenhaGerenteCancelarItemPDV" type="Int32" />
+		<property name="ObservacaoPDV" column="ObservacaoPDV" type="string" />
+		<property name="ImprimirItensCanceladosPDV" column="ImprimirItensCanceladosPDV" type="Int32" />
+		<property name="SenhaGerenteSairPDV" column="SenhaGerenteSairPDV" type="Int32" />
+		<property name="ImprimirFechamentoCaixaDireto" column="ImprimirFechamentoCaixaDireto" type="Int32" />
+		<property name="SenhaGerenteDescontoItemPDV" column="SenhaGerenteDescontoItemPDV" type="Int32" />
+		<property name="SenhaGerenteLimiteDescontoPDV" column="SenhaGerenteLimiteDescontoPDV" type="Int32" />
+		<property name="FocarQuantidadeDescontoPDV" column="FocarQuantidadeDescontoPDV" type="Int32" />
+		<property name="SenhaAoEntrarNoPDV" column="SenhaAoEntrarNoPDV" type="Int32" />
+		<property name="PedirSenhaCancelarVendaPDV" column="PedirSenhaCancelarVendaPDV" type="Int32" />
+		<property name="ObservacaoNoItemPedido" column="ObservacaoNoItemPedido" type="Int32" />
+		<property name="BuscarProdutoPesquisaDinamica" column="BuscarProdutoPesquisaDinamica" type="Int32" />
+		<property name="IDClienteFrenteCaixaDelivery" column="IDClienteFrenteCaixaDelivery" type="Int32" not-null="false" />
+		<property name="ImprimirOutrasBaixas" column="ImprimirOutrasBaixas" type="Int32" />
+		<property name="Habilitar6CondicoesPagamento" column="Habilitar6CondicoesPagamento" type="Int32" />
+		<property name="IdentificacaoTipoClienteNFCe" column="IdentificacaoTipoClienteNFCe" type="Int32" />
+		<property name="IDTipoClienteNFCeIdentificado" column="IDTipoClienteNFCeIdentificado" type="Int32" />
+		<property name="VincularNumeroTransacaoPos" column="VincularNumeroTransacaoPos" type="Int32" />
+		<property name="EmitirSinalSangriaPorCor" column="EmitirSinalSangriaPorCor" type="Int32" />
+		<property name="ValorLimiteSangriaPorCor" column="ValorLimiteSangriaPorCor" type="decimal" />
+		<property name="HabilitaIdentificacaoVendas" column="HabilitaIdentificacaoVendas" type="Int32" />
+		<property name="SenhaGerentePorCodigoBarras" column="SenhaGerentePorCodigoBarras" type="Int32" />
+		<property name="IDTipoPedidoDevolucaoPDV" column="IDTipoPedidoDevolucaoPDV" type="Int32" />
+
+		<property name="IDPessoaOrcamentoPadrao" column="IDPessoaOrcamentoPadrao" type="Int32" />
+		<property name="IDTipoPedidoOrcamentoPadrao" column="IDTipoPedidoOrcamentoPadrao" type="Int32" />
+		<property name="IDVendedorPedidoOrcamentoPadrao" column="IDVendedorPedidoOrcamentoPadrao" type="Int32" />
+		<property name="IDTabelaPrecoPadraoPedido" column="IDTabelaPrecoPadraoPedido" type="Int32" />
+		<property name="IDCondicaoPadraoPedido" column="IDCondicaoPadraoPedido" type="Int32" />
+
+		<property name="ExibirTrocoPDV" column="ExibirTrocoPDV" type="bool" />
+		<property name="FocoDescontoPDV" column="FocoDescontoPDV" type="bool" />
+		<property name="SenhaTrocaTabelaPDV" column="SenhaTrocaTabelaPDV" type="bool" />
+		<property name="FechamentoDetalhadoPDV" column="FechamentoDetalhadoPDV" type="bool" />
+		<property name="BuscaProdutoDetalhada" column="BuscaProdutoDetalhada" type="bool" />
+		<property name="ImpressaoPreVendaOrcamento" column="ImpressaoPreVendaOrcamento" type="bool" />
+		<property name="NomeImpressoraPedido" column="NomeImpressoraPedido" type="string"/>
+		<property name="PesagemAutomaticaPDV" column="PesagemAutomaticaPDV" type="bool" />
+		<property name="UsaListaReferenciaNota" column="UsaListaReferenciaNota" type="bool" />
+		<property name="ZerarSaldoCliente" column="ZerarSaldoCliente" type="bool" />
+
+		<property name="IDTabelaPrecoNota" column="IDTabelaPrecoNota" type="Int32" />
+		<property name="IDCondicaoNota" column="IDCondicaoNota" type="Int32" />
+		<property name="IDTipoNotaNota" column="IDTipoNotaNota" type="Int32" />
+
+		<property name="IDFormaPagamentoCreditoPDV" column="IDFormaPagamentoCreditoPDV" type="Int32" />
+		<property name="TipoEnvioFechamentoPDV" column="TipoEnvioFechamentoPDV" type="Int32" />
+		<property name="PermiteDescontoGridPDV" column="PermiteDescontoGridPDV" type="bool" />
+	</class>
+</hibernate-mapping>
+

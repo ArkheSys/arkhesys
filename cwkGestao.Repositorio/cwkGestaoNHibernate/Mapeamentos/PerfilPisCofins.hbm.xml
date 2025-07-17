@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="PerfilPisCofins" table="PerfilPisCofins">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Descricao" column="Descricao" type="string"/>
+    <property name="BComulativo" column="BComulativo" type="Boolean" />
+    <property name="BNaoComulativo" column="BNaoComulativo" type="Boolean" />
+    <property name="BSubstituicaoTributaria" column="BSubstituicaoTributaria" type="Boolean" />
+    <property name="BSemInsidencia" column="BSemInsidencia" type="Boolean" />
+    <property name="AliquotaPIS" column="AliquotaPIS" type="decimal" />
+    <property name="AliquotaCOFINS" column="AliquotaCOFINS" type="decimal" />
+
+    <property name="EntVinculoCredito" column="EntVinculoCredito" type="Int32" />
+    <property name="EntBaseCredito" column="EntBaseCredito" type="Int32" />
+    <property name="EntAliquotaPISDif" column="EntAliquotaPISDif" type="decimal" />
+    <property name="EntAliquotaCOFINSDif" column="EntAliquotaCOFINSDif" type="decimal" />
+
+    <many-to-one name="UnidadeEntrada" column="IDUnidadeEntrada" class="Unidade" lazy="false" />
+    <property name="EntFatorConversao" column="EntFatorConversao" type="decimal" />
+    <property name="EntValorPis" column="EntValorPis" type="decimal" />
+    <property name="EntValorCofins" column="EntValorCofins" type="decimal" />
+
+    <property name="SaiNaturezaReceita" column="SaiNaturezaReceita" type="string"/>
+
+    <property name="SaiAliquotaPISDif" column="SaiAliquotaPISDif" type="decimal" />
+    <property name="SaiAliquotaCOFINSDif" column="SaiAliquotaCOFINSDif" type="decimal" />
+    <many-to-one name="UnidadeSaida" column="IDUnidadeSaida" class="Unidade" lazy="false" />
+    <property name="SaiFatorConversao" column="SaiFatorConversao" type="decimal" />
+    <property name="SaiValorPis" column="SaiValorPis" type="decimal" />
+    <property name="SaiValorCofins" column="SaiValorCofins" type="decimal" />
+
+    <many-to-one name="EntPisCofinsNaturezaOperacao" column="IDEntPisCofinsNatOpe" class="PisCofinsNaturezaOperacao" lazy="false" />
+    <many-to-one name="SaiPisCofinsNaturezaOperacao" column="IDSaiPisCofinsNatOpe" class="PisCofinsNaturezaOperacao" lazy="false" />
+  </class>
+</hibernate-mapping>

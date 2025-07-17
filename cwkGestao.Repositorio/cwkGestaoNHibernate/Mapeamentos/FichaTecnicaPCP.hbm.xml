@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="FichaTecnicaPCP" table="PCP_FichaTecnica">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<property name="Codigo" column="Codigo" type="string" />
+	<property name="Nome" column="Nome" type="string" />
+	<property name="Barra" column="Barra" type="string" />
+	<property name="Data" column="Data" type="DateTime" />
+	<property name="NumeroRevisao" column="NumeroRevisao" type="Int32" />
+	<property name="PecasOP" column="PecasOP" type="Int32" />
+	<property name="ComprimentoBruto" column="ComprimentoBruto" type="decimal" />
+	<property name="ComprimentoLiquido" column="ComprimentoLiquido" type="decimal" />
+	<property name="LarguraBruta" column="LarguraBruta" type="decimal" />
+	<property name="LarguraLiquida" column="LarguraLiquida" type="decimal" />
+	<property name="EspessuraBruta" column="EspessuraBruta" type="decimal" />
+	<property name="EspessuraLiquida" column="EspessuraLiquida" type="decimal" />
+	<property name="AreaBruta" column="AreaBruta" type="decimal" />
+	<property name="AreaLiquida" column="AreaLiquida" type="decimal" />
+	<property name="VolumeBruto" column="VolumeBruto" type="decimal" />
+	<property name="VolumeLiquido" column="VolumeLiquido" type="decimal" />
+	<property name="PesoBruto" column="PesoBruto" type="decimal" />
+	<property name="PesoLiquido" column="PesoLiquido" type="decimal" />
+	<property name="Imagem" column="Imagem" type="BinaryBlob" />
+	<property name="Formula" column="Formula" type="string" />
+	<property name="Observacao" column="Observacao" type="string" />
+    
+  <many-to-one name="Produto" column="IdProduto" class="Produto" lazy="false" />
+    
+  <bag name="FichaTecnicaPCPItens" table="PCP_ItemFichaTecnica" inverse="true" cascade="all" lazy="false" >
+    <key column="IDFichaTecnicaPCP" />
+    <one-to-many class="FichaTecnicaPCPItem" />
+  </bag>
+  <bag name="FichaTecnicaPCPRegras" table="PCP_RegraFichaTecnica" inverse="true" cascade="all" lazy="false" >
+    <key column="IDFichaTecnicaPCP" />
+    <one-to-many class="FichaTecnicaPCPRegra" />
+  </bag>
+
+  </class>
+</hibernate-mapping>

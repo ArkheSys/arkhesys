@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="ICMS" table="ICMS">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Descricao" column="Descricao" type="string" length="100" />
+	<many-to-one name="TabelaICMS" column="IDTabelaICMS" class="TabelaICMS" />
+					<many-to-one name="Filial" column="IDFilial" class="Filial" />
+					<many-to-one name="UF" column="IDUF" class="UF" />
+					<property name="TextoLeiContrib" column="TextoLeiContrib" type="string" length="100" />
+	<property name="TextoLeiNContrib" column="TextoLeiNContrib" type="string" length="100" />
+	<property name="AliqContrib" column="AliqContrib" type="decimal" />
+	<property name="AliqContribNormal" column="AliqContribNormal" type="decimal" />
+	<property name="AliqNContrib" column="AliqNContrib" type="decimal" />
+	<property name="AliqNContribNormal" column="AliqNContribNormal" type="decimal" />
+	<property name="ReducaoContrib" column="ReducaoContrib" type="decimal" />
+	<property name="ReducaoNContrib" column="ReducaoNContrib" type="decimal" />
+	<property name="SubstLucro" column="SubstLucro" type="decimal" />
+	<property name="SitTrib" column="SitTrib" type="string" length="3" />
+	<property name="BIcmsIsento" column="bIcmsIsento" type="bool" />
+	<property name="AliqSubstTributaria" column="AliqSubstTributaria" type="decimal" />
+	<property name="BOrgaoPublico" column="bOrgaoPublico" type="bool" />
+	<property name="Subst_Trib" column="Subst_Trib" type="bool" />
+	<property name="AliqSimplesSubst" column="AliqSimplesSubst" type="decimal" />
+	<property name="TAG_CST" column="TAG_CST" type="Int32" />
+	<property name="modBC_N13" column="modBC_N13" type="Int32" />
+	<property name="modBCST_N18" column="modBCST_N18" type="Int32" />
+	<property name="CST_Pis" column="CST_Pis" type="Int32" />
+	<property name="pPIS_Q08" column="pPIS_Q08" type="decimal" />
+	<property name="CST_Cofins" column="CST_Cofins" type="Int32" />
+	<property name="pCOFINS_S08" column="pCOFINS_S08" type="decimal" />
+</class>
+</hibernate-mapping>
+		

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Tel_ClienteTelefone" table="Tel_ClienteTelefone">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <property name="DataAtivacao" column="DataAtivacao" type="DateTime" />
+    <property name="DataDesligamento" column="DataDesligamento" />
+    <property name="MotivoDesligamento" column="MotivoDesligamento" type="string" />
+    <property name="ContatoPediuDesligamento" column="ContatoPediuDesligamento" type="string" />
+    <property name="BAgrupador" column="bAgrupador" type="Boolean" />
+    <many-to-one name="Cliente" column="IdTel_Cliente" class="Tel_Cliente" />
+    <many-to-one name="GrupoClienteTelefone" column="IdTel_GrupoClienteTelefone" class="Tel_GrupoClienteTelefone" lazy="false" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="LEN" column="LEN" type="string" />
+  </class>
+</hibernate-mapping>

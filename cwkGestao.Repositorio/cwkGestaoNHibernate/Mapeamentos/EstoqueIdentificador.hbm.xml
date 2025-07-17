@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="EstoqueIdentificador" table="EstoqueIdentificador">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="Estoque" column="IDEstoque" class="Estoque" />
+	<many-to-one name="Identificador" column="IDIdentificador" class="Identificador" />
+	<property name="CustoUnitario" column="CustoUnitario" type="decimal" />
+	<property name="Quantidade" column="Quantidade" type="Int32" />
+  <property name="QuantidadeBaixada" column="QuantidadeBaixada" type="Int32" />
+	<property name="IncData" column="IncData" type="DateTime" />
+	<property name="IncUsuario" column="IncUsuario" type="string" />
+	<property name="AltData" column="AltData" type="DateTime" />
+	<property name="AltUsuario" column="AltUsuario" type="string" />
+
+  </class>
+</hibernate-mapping>

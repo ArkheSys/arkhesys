@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Tel_Ligacao" table="Tel_Ligacao">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    
+    <property name="TipoUso" column="TipoUso" type="Int32" />
+    <property name="DescricaoUso" column="DescricaoUso" type="string" />
+    <property name="Origem" column="Origem" type="string" />
+    <property name="Destino" column="Destino" type="string" />
+    <property name="Cidade" column="Cidade" type="string" />
+    <property name="UF" column="UF" type="string" />    
+    <property name="DataHora" column="DataHora" type="DateTime" />
+    <property name="TempoSegundos" column="TempoSegundos" type="Int32" />
+    <property name="Horario" column="Horario" type="string" />
+    <property name="ValorComImposto" column="ValorComImposto" type="string" />
+    <many-to-one name="ArquivoLigacao" column="IdTel_ArquivoLigacao" class="Tel_ArquivoLigacao" cascade="all-delete-orphan" />
+    <bag name="FaturaLigacao" table="Tel_FaturaLigacao" inverse="true">
+      <key column="IDTel_Ligacao" />
+      <one-to-many class="Tel_FaturaLigacao" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

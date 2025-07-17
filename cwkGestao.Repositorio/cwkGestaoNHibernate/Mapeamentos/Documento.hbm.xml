@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Documento" table="Documento">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Tipo" column="Tipo" type="Int32" />
+    <many-to-one name="Filial" column="IDFilial" class="Filial" />
+    <many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+    <many-to-one name="TipoDocumento" column="IDTipoDocumento" class="TipoDocumento" lazy="false"/>
+    <many-to-one name="Banco" column="IDBanco" class="Banco" />
+    <many-to-one name="Portador" column="IDPortador" class="Portador" />
+    <many-to-one name="Acrescimo" column="IDAcrescimo" class="Acrescimo" />
+    <property name="Dt" column="Dt" type="DateTime" />
+    <property name="DtDigitacao" column="DtDigitacao" type="DateTime" />
+    <property name="DtVencimento" column="DtVencimento" type="DateTime" />
+    <property name="DtPrevisao" column="DtPrevisao" type="DateTime" />
+    <property name="NumDocumento" column="NumDocumento" type="string" length="10" />
+    <property name="NumRequisicao" column="NumRequisicao" type="string" length="10" />
+    <many-to-one name="Condicao" column="IDCondicao" class="Condicao" lazy="false" />
+    <property name="Parcela" column="Parcela" type="Int32" />
+    <property name="QtParcela" column="QtParcela" type="Int32" />
+    <property name="Valor" column="Valor" type="decimal" />
+    <property name="ValorTotal" column="ValorTotal" type="decimal" />
+    <many-to-one name="Historico" column="IDHistorico" class="Historico" lazy="false"/>
+    <property name="ComplementoHist" column="ComplementoHist" type="string" />
+    <property name="CodBanco" column="CodBanco" type="Int32" />
+    <property name="Banco_Str" column="Banco_Str" type="string" length="60" />
+    <property name="Agencia" column="Agencia" type="string" length="6" />
+    <property name="Conta" column="Conta" type="string" length="15" />
+    <property name="Cheque" column="Cheque" type="string" length="6" />
+    <property name="Emitente" column="Emitente" type="string" length="50" />
+    <property name="BEntrada" column="bEntrada" type="bool" />
+    <many-to-one name="Nota" column="IDNota" class="Nota" />
+    <property name="Saldo" column="Saldo" type="decimal" />
+    <property name="Situacao" column="Situacao" type="string" length="10" />
+    <property name="DtUltimaBaixa" />
+    <property name="BImpresso" column="bImpresso" type="bool" />
+    <property name="BGeradoPDF" column="bGeradoPDF" type="bool" />
+    <property name="BGeradoRemessa" column="bGeradoRemessa" type="bool" />
+    <property name="BEnviadoEmail" column="bEnviadoEmail" type="bool" />
+    <property name="MovimentoRemessa" column="MovimentoRemessa" type="string" length="2" />
+    <property name="NumBanco" column="NumBanco" type="string" length="4" />
+    <property name="CpfCnpj" column="CpfCnpj" type="string" length="19" />
+    <property name="NomeBanco" column="NomeBanco" type="string" length="100" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="IdPedidoMagento" column="IdPedidoMagento" type="string" />
+    <property name="NossoNumero" column="NossoNumero" type="string" /> 
+    <property name="DtEmailEnviado" column="DtEmailEnviado" type="DateTime" />
+    <property name="DataDesconto" column="DataDesconto" type="DateTime" />
+    <property name ="NumeroPedido" column="NumeroPedido" type ="int" />
+    <property name="DtTransferenciaOuBaixaRet" column="DtTransferenciaOuBaixaRet" type="DateTime" />
+    <many-to-one name="Contrato" column="IDContrato" class="Contrato" lazy="false"/>
+    <many-to-one name="ArquivoRemessa" column="IDArquivoRemessa" class="ArquivoRemessa" lazy="false"/>
+  
+    <bag name="Movimentos" table="Movimento" inverse="true" cascade="all-delete-orphan" lazy="false" >
+      <key column="IDDocumento" />
+      <one-to-many class="Movimento" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="ImpostosTributos" table="ImpostosTributos">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Descricao" column="Descricao" type="string" />
+
+    <property name="CSTCSOSNIcms" column="CSTCSOSNIcms" type="Int32" />
+    <property name="CstIpi" column="CstIpi" type="Int32" />
+    <property name="ModBaseCalculoIcms" column="ModBaseCalculoIcms" type="Int32" />
+    <property name="ModBaseCalculoIcmsSt" column="ModBaseCalculoIcmsSt" type="Int32" />
+    
+    <property name="InfAdicionaisDentroEstado" column="InfAdicionaisDentroEstado" type="string" length="500" />
+    <property name="InfAdicionaisForaEstado" column="InfAdicionaisForaEstado" type="string" length="500" />
+    
+    <property name="PIcmsInterno" column="PIcmsInterno" type="decimal" />
+    <property name="PReducaoIcms" column="PReducaoIcms" type="decimal" />
+    <property name="PReducaoIcmsST" column="PReducaoIcmsST" type="decimal" />
+    <property name="PDeferimento" column="PDeferimento" type="decimal" />
+    <property name="PDesoneracao" column="PDesoneracao" type="decimal" />
+    <property name="PMVA" column="PMVA" type="decimal" />
+    
+    <property name="DestacarIcms" column="DestacarIcms" type="Boolean" />
+    <property name="DestacarIPI" column="DestacarIPI" type="Boolean" />
+    <property name="DestacarIcmsST" column="DestacarIcmsST" type="Boolean" />
+    <property name="IPIFazBaseIcms" column="IPIFazBaseIcms" type="Boolean" />
+    <property name="IcmsFazBasePisCofins" column="IcmsFazBasePisCofins" type="Boolean" />
+
+
+
+    <many-to-one name="ClassificacaoFiscal" column="IDClassificacaoFiscal" class="ClassificacaoFiscal"  lazy ="false" />
+    <many-to-one name="TipoNota" column="IDMovimento" class="TipoNota"  lazy ="false" />
+    <many-to-one name="PerfilTributarioCliente" column="IDPerfilTributarioCliente" class="PerfilTributarioCliente"  lazy ="false" />
+    <many-to-one name="CfopDentroDoEstado" column="IDCfopDentroDoEstado" class="TabelaCFOP" lazy ="false" />
+    <many-to-one name="CfopForaDoEstado" column="IDCfopForaDoEstado" class="TabelaCFOP" lazy ="false"  />
+    
+    <bag name="ImpostosTributosExcessoesItens" table="ImpostosTributosExcessoes"  inverse="true" cascade="all-delete-orphan" lazy ="false" >
+      <key column="IDImpostosTributos" />
+      <one-to-many class="ImpostosTributosExcessoes" />
+    </bag>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="StatusEntEventoCorreio" table="StatusEntEventoCorreio">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="StatusEntrega" column="IDStatusEntrega" class="StatusEntrega"  lazy="false"/>
+	<many-to-one name="EventosCorreio" column="IDEventosCorreios" class="EventosCorreio" lazy="false"/>
+
+  </class>
+</hibernate-mapping>

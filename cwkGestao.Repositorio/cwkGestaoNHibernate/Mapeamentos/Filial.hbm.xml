@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Filial" table="Filial">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<property name="Nome" column="Nome" type="string" length="60" />
+		<property name="CNPJ" column="CNPJ" type="string" length="20" />
+		<property name="Inscricao" column="Inscricao" type="string" length="20" />
+		<property name="Endereco" column="Endereco" type="string" length="100" />
+		<property name="Bairro" column="Bairro" type="string" length="60" />
+		<property name="Complemento" column="Complemento" type="string" length="60" />
+		<many-to-one name="Cidade" column="IDCidade" class="Cidade" lazy="false" />
+		<property name="Telefone" column="Telefone" type="string" length="20" />
+		<property name="Fax" column="Fax" type="string" length="20" />
+		<property name="FilialNF" column="FilialNF" type="Int32" />
+		<many-to-one name="Empresa" column="IDEmpresa" class="Empresa" lazy="false" />
+		<property name="Tipo" column="Tipo" type="string" length="50" />
+		<property name="Numero" column="Numero" type="string" length="6" />
+		<property name="Responsavel" column="Responsavel" type="string" length="60" />
+		<property name="CEP" column="CEP" type="string" length="10" />
+		<property name="Certificado" column="Certificado" type="string" length="500" />
+		<property name="UsuarioEmail" column="UsuarioEmail" type="string" length="255" />
+		<property name="SenhaEmail" column="SenhaEmail" type="string" length="255" />
+		<property name="ServidorSMTP" column="ServidorSMTP" type="string" length="255" />
+		<property name="TipoCertificadoNFe" column="TipoCertificadoNFe" type="Int16" />
+		<property name="ModeloDanfe" column="ModeloDanfe" type="Int32" />
+		<property name="ModeloDanfeNFCe" column="ModeloDanfeNFCe" type="Int32" />
+		<property name="FormaEmissao" column="FormaEmissao" type="Int32" />
+		<property name="Ambiente" column="Ambiente" type="Int32" />
+		<property name="TipoST" column="TipoST" type="Int32" />
+		<property name="SimplesNacional" column="SimplesNacional" type="byte" />
+		<property name="AliqSimplesSubst" column="AliqSimplesSubst" type="decimal" />
+		<many-to-one name="TabelaFaixaFatSimples" column="IDTabelaFaixaFatSimples" class="TabelaFaixaFatSimples" />
+		<property name="Email" column="Email" type="string" length="255" />
+		<property name="Site" column="Site" type="string" length="255" />
+		<property name="HoraScan" column="HoraScan" type="DateTime" />
+		<property name="EmailNFe" column="EmailNFe" type="string" length="255" />
+		<property name="SerieScan" column="SerieScan" type="Int32" />
+		<property name="JustificativaScan" column="JustificativaScan" type="string" length="255" />
+		<property name="BEnviarCopiaEmail" column="BEnviarCopiaEmail" type="bool" />
+		<property name="PortaSmtp" column="PortaSmtp" type="int" />
+		<property name="VersaoEsquema" column="VersaoEsquema" type="string" length="10" />
+		<property name="DiretorioPadraoNFe" column="DiretorioPadraoNFe" type="string" />
+		<property name="PinNfe" column="PinNfe" type="string" length="20" />
+		<property name="GMailAutenticacao" column="GMailAutenticacao" type="bool" />
+		<property name="CNAE" column="CNAE" type="string" />
+		<property name="InscricaoMunicipal" column="InscricaoMunicipal" type="string" />
+		<property name="IncentivadorCultural" column="IncentivadorCultural" type="Int32" />
+		<property name="NaturezaTributacao" column="NaturezaTributacao" type="Int32" />
+		<property name="GrupoManager" column="GrupoManager" type="string" />
+		<property name="DiretorioMonitoramento" column="DiretorioMonitoramento" type="string" />
+		<property name="RegimeEspecialTributacao" column="RegimeEspecialTributacao" type="Int32" />
+		<property name="bSTSomenteRevenda" column="bSTSomenteRevenda" type="bool" />
+		<property name="nCdEmpresa" column="nCdEmpresa" type="string" />
+		<property name="sDsSenha" column="sDsSenha" type="string" />
+		<property name="correioCartaoPostagem" column="correioCartaoPostagem" type="string" />
+		<property name="correioUsuario" column="correioUsuario" type="string" />
+		<property name="correioSenha" column="correioSenha" type="string" />
+		<property name="correioContrato" column="correioContrato" type="string" />
+		<property name="correioCodigoAdministrativo" column="correioCodigoAdministrativo" type="string" />
+		<property name="EmailRecebimentoNFe" column="EmailRecebimentoNFe" type="string" length="255" />
+		<property name="ChaveValidade" column="ChaveValidade" type="string" length="1000" />
+		<property name="UltimoAcesso" column="UltimoAcesso" type="string" length="1000" />
+
+		<property name="CodSuframa" column="CodSuframa" type="string" length="9"  />
+		<property name="TipoAtividadePreponderante" column="TipoAtividadePreponderante" type="string" length="3" />
+		<property name="CodigoIndicadorIncidenciaTributaria" column="CodigoIndicadorIncidenciaTributaria" type="string" length="3" />
+		<property name="CodigoIndicadorTipoContribuicaoApuradaPeriodo" column="CodigoIndicadorTipoContribuicaoApuradaPeriodo" type="string" length="3" />
+		<property name="CodigoIndicadorCriterioEscrituracaoRegimeCumulativo" column="CodigoIndicadorCriterioEscrituracaoRegimeCumulativo" type="string" length="3" />
+		<property name="IND_NAT_PJ" column="IND_NAT_PJ" type="string" length="3" />
+		<property name="CodigoIndicadorMetodoApropCreditos" column="CodigoIndicadorMetodoApropCreditos" type="string" length="3" />
+
+		<property name="Fantasia" column="Fantasia" type="string" />
+		<property name="TipoAtividade" column="TipoAtividade" type="Int32" />
+		<property name="PerfilSped" column="PerfilSped" type="string" />
+		<property name="IND_PERFIL" column="IND_PERFIL" type="string" />
+
+		<property name="PercentualImpostoTributo" column="PercentualImpostoTributo" type="decimal" />
+		<property name="TextoTributo" column="TextoTributo" type="string" length="300" />
+
+		<property name="ComponenteDfe" column="ComponenteDfe" type="Int32"  />
+		<property name="FileCertificado" column="FileCertificado" type="string" length="255" />
+		<property name="CIdToken" column="CIdToken" type="string" length="6" />
+		<property name="Csc" column="Csc" type="string" length="36" />
+		<property name="QrCode" column="QrCode" type="Int32" />
+		<property name="CacheCertificado" column="CacheCertificado" type="bool" />
+		<property name="PinCert" column="PinCert" type="string" length="50" />
+
+		<property name="QuantDiasVencCertificado" column="QuantDiasVencCertificado" type="Int32" />
+		<property name="AmbienteNFSe" column="AmbienteNFSe" type="Int32" />
+		<property name="CaminhoLogoEmpresa" column="CaminhoLogoEmpresa" type="string" length="8000" />
+		<property name="CaminhoLogoNfe" column="CaminhoLogoNfe" type="string" length="8000" />
+		<property name="CaminhoLogoPrefeitura" column="CaminhoLogoPrefeitura" type="string" length="8000" />
+
+		<property name="CaminhoNFSeXML" column="CaminhoNFSeXML" type="string" />
+		<property name="CaminhoNFSePDF" column="CaminhoNFSePDF" type="string" />
+
+		<bag name="DadosSubstituto" table="DadosSubstituto"  inverse="true" cascade="all-delete-orphan" >
+			<key column="IDFilial" />
+			<one-to-many class="DadosSubstituto" />
+		</bag>
+		<bag name="MovimentacaoCheque" table="MovimentacaoCheque"  inverse="true" cascade="all-delete-orphan" >
+			<key column="IDFilial" />
+			<one-to-many class="MovimentacaoCheque" />
+		</bag>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="SincronismoPendenteSHL" table="SincronismoPendenteSHL">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	  <property name="Erro" column="Erro" type="string" />
+	  <property name="TipoErro" column="TipoErro" type="string" />
+    <property name="CodigoErro" column="CodigoErro" type="int" />
+    <property name="Chave" column="Chave" type="string" />
+    <property name="InterfaceSHL" column="InterfaceSHL" type="int" />
+    <many-to-one name="Pedido" column="IDpedido" class="Pedido" lazy="false"/>
+    <many-to-one name="Nota" column="IDNota" class="Nota"  lazy="false"/>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMovimento" targetNamespace="http://tempuri.org/dsMovimento.xsd" xmlns:mstns="http://tempuri.org/dsMovimento.xsd" xmlns="http://tempuri.org/dsMovimento.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMovimento" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMovimento" msprop:Generator_DataSetName="dsMovimento" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PorPlanoContas" msprop:Generator_UserTableName="PorPlanoContas" msprop:Generator_RowDeletedName="PorPlanoContasRowDeleted" msprop:Generator_RowChangedName="PorPlanoContasRowChanged" msprop:Generator_RowClassName="PorPlanoContasRow" msprop:Generator_RowChangingName="PorPlanoContasRowChanging" msprop:Generator_RowEvArgName="PorPlanoContasRowChangeEvent" msprop:Generator_RowEvHandlerName="PorPlanoContasRowChangeEventHandler" msprop:Generator_TableClassName="PorPlanoContasDataTable" msprop:Generator_TableVarName="tablePorPlanoContas" msprop:Generator_RowDeletingName="PorPlanoContasRowDeleting" msprop:Generator_TablePropName="PorPlanoContas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MovimentoID" msprop:Generator_UserColumnName="MovimentoID" msprop:Generator_ColumnPropNameInRow="MovimentoID" msprop:Generator_ColumnVarNameInTable="columnMovimentoID" msprop:Generator_ColumnPropNameInTable="MovimentoIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DocumentoNumero" msprop:Generator_UserColumnName="DocumentoNumero" msprop:Generator_ColumnPropNameInRow="DocumentoNumero" msprop:Generator_ColumnVarNameInTable="columnDocumentoNumero" msprop:Generator_ColumnPropNameInTable="DocumentoNumeroColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MovimentoData" msprop:Generator_UserColumnName="MovimentoData" msprop:Generator_ColumnPropNameInRow="MovimentoData" msprop:Generator_ColumnVarNameInTable="columnMovimentoData" msprop:Generator_ColumnPropNameInTable="MovimentoDataColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DocumentoPessoa" msprop:Generator_UserColumnName="DocumentoPessoa" msprop:Generator_ColumnPropNameInRow="DocumentoPessoa" msprop:Generator_ColumnVarNameInTable="columnDocumentoPessoa" msprop:Generator_ColumnPropNameInTable="DocumentoPessoaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MovimentoValor" msprop:Generator_UserColumnName="MovimentoValor" msprop:Generator_ColumnPropNameInRow="MovimentoValor" msprop:Generator_ColumnVarNameInTable="columnMovimentoValor" msprop:Generator_ColumnPropNameInTable="MovimentoValorColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Nivel0" msprop:Generator_UserColumnName="Nivel0" msprop:Generator_ColumnPropNameInRow="Nivel0" msprop:Generator_ColumnVarNameInTable="columnNivel0" msprop:Generator_ColumnPropNameInTable="Nivel0Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel1" msprop:Generator_UserColumnName="Nivel1" msprop:Generator_ColumnPropNameInRow="Nivel1" msprop:Generator_ColumnVarNameInTable="columnNivel1" msprop:Generator_ColumnPropNameInTable="Nivel1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel2" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel2" msprop:Generator_ColumnPropNameInRow="Nivel2" msprop:Generator_ColumnVarNameInTable="columnNivel2" msprop:Generator_ColumnPropNameInTable="Nivel2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel3" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel3" msprop:Generator_ColumnPropNameInRow="Nivel3" msprop:Generator_ColumnVarNameInTable="columnNivel3" msprop:Generator_ColumnPropNameInTable="Nivel3Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel4" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel4" msprop:Generator_ColumnPropNameInRow="Nivel4" msprop:Generator_ColumnVarNameInTable="columnNivel4" msprop:Generator_ColumnPropNameInTable="Nivel4Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel5" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel5" msprop:Generator_ColumnPropNameInRow="Nivel5" msprop:Generator_ColumnVarNameInTable="columnNivel5" msprop:Generator_ColumnPropNameInTable="Nivel5Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel6" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel6" msprop:Generator_ColumnPropNameInRow="Nivel6" msprop:Generator_ColumnVarNameInTable="columnNivel6" msprop:Generator_ColumnPropNameInTable="Nivel6Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel7" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel7" msprop:Generator_ColumnPropNameInRow="Nivel7" msprop:Generator_ColumnVarNameInTable="columnNivel7" msprop:Generator_ColumnPropNameInTable="Nivel7Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel8" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel8" msprop:Generator_ColumnPropNameInRow="Nivel8" msprop:Generator_ColumnVarNameInTable="columnNivel8" msprop:Generator_ColumnPropNameInTable="Nivel8Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel9" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel9" msprop:Generator_ColumnPropNameInRow="Nivel9" msprop:Generator_ColumnVarNameInTable="columnNivel9" msprop:Generator_ColumnPropNameInTable="Nivel9Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel10" msdata:Caption="Nivel1" msprop:Generator_UserColumnName="Nivel10" msprop:Generator_ColumnPropNameInRow="Nivel10" msprop:Generator_ColumnVarNameInTable="columnNivel10" msprop:Generator_ColumnPropNameInTable="Nivel10Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel11" msprop:Generator_UserColumnName="Nivel11" msprop:Generator_ColumnVarNameInTable="columnNivel11" msprop:Generator_ColumnPropNameInRow="Nivel11" msprop:Generator_ColumnPropNameInTable="Nivel11Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel12" msprop:Generator_UserColumnName="Nivel12" msprop:Generator_ColumnVarNameInTable="columnNivel12" msprop:Generator_ColumnPropNameInRow="Nivel12" msprop:Generator_ColumnPropNameInTable="Nivel12Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel13" msprop:Generator_UserColumnName="Nivel13" msprop:Generator_ColumnVarNameInTable="columnNivel13" msprop:Generator_ColumnPropNameInRow="Nivel13" msprop:Generator_ColumnPropNameInTable="Nivel13Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel14" msprop:Generator_UserColumnName="Nivel14" msprop:Generator_ColumnVarNameInTable="columnNivel14" msprop:Generator_ColumnPropNameInRow="Nivel14" msprop:Generator_ColumnPropNameInTable="Nivel14Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Nivel15" msprop:Generator_UserColumnName="Nivel15" msprop:Generator_ColumnVarNameInTable="columnNivel15" msprop:Generator_ColumnPropNameInRow="Nivel15" msprop:Generator_ColumnPropNameInTable="Nivel15Column" type="xs:string" minOccurs="0" />
+              <xs:element name="ParcelaDocumento" msprop:Generator_UserColumnName="ParcelaDocumento" msprop:Generator_ColumnPropNameInRow="ParcelaDocumento" msprop:Generator_ColumnVarNameInTable="columnParcelaDocumento" msprop:Generator_ColumnPropNameInTable="ParcelaDocumentoColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

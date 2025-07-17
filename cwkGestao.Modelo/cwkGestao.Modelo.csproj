@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55A7F92E-10A9-4DB0-8F8B-F359BF537C43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cwkGestao.Modelo</RootNamespace>
+    <AssemblyName>cwkGestao.Modelo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cwkControleUsuario">
+      <HintPath>..\Dependencias\cwkControleUsuario.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUI.2.0.0\lib\net20\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.2.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.2.0\lib\netstandard1.0\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.RtfToHtml, Version=3.5.12.26, Culture=neutral, PublicKeyToken=c666a5e96a3d5457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\SautinSoft.RtfToHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acrescimo.cs" />
+    <Compile Include="Atendimento.cs" />
+    <Compile Include="Auxiliares\ConverterNumerico.cs" />
+    <Compile Include="Auxiliares\DatasUtil.cs" />
+    <Compile Include="CartaCorrecao.cs" />
+    <Compile Include="cepbr_bairro.cs" />
+    <Compile Include="cepbr_cidade.cs" />
+    <Compile Include="cepbr_endereco.cs" />
+    <Compile Include="cepbr_estado.cs" />
+    <Compile Include="ClassificacaoFiscal.cs" />
+    <Compile Include="CodigoImposto.cs" />
+    <Compile Include="CondicaoFornecimento.cs" />
+    <Compile Include="ConfiguracaoManager.cs" />
+    <Compile Include="Contato.cs" />
+    <Compile Include="ContatoDetalhe.cs" />
+    <Compile Include="ImpostosTributos.cs" />
+    <Compile Include="ImpostosTributosExcessoes.cs" />
+    <Compile Include="NaturezaOperacao.cs" />
+    <Compile Include="NotaReferencia.cs" />
+    <Compile Include="OpcaoTributacao.cs" />
+    <Compile Include="PerfilPisCofins.cs" />
+    <Compile Include="PerfilTributarioCliente.cs" />
+    <Compile Include="PisCofinsNaturezaOperacao.cs" />
+    <Compile Include="Proxy\pxImpostosTributosExcessoes.cs" />
+    <Compile Include="Proxy\pxyDetalhesFechamento.cs" />
+    <Compile Include="Proxy\pxyMovCaixaPorFluxoCaixa.cs" />
+    <Compile Include="TabelaCOFINS.cs" />
+    <Compile Include="TabelaImpostosTributosExcessoes.cs" />
+    <Compile Include="TabelaPIS.cs" />
+    <Compile Include="Tel_FaturaD8.cs" />
+    <Compile Include="Mdfe\AverbacaoSeguradoraMdfe.cs" />
+    <Compile Include="Mdfe\CarregamentoMdfe.cs" />
+    <Compile Include="Mdfe\Condutor.cs" />
+    <Compile Include="Mdfe\ContratanteMdfe.cs" />
+    <Compile Include="Mdfe\EventoMdfe.cs" />
+    <Compile Include="Mdfe\LacreRodoviarioMdfe.cs" />
+    <Compile Include="Mdfe\Mdfe.cs" />
+    <Compile Include="Mdfe\MovimentoFiscalMdfe.cs" />
+    <Compile Include="Mdfe\NfeReferenciadaMdfe.cs" />
+    <Compile Include="Mdfe\PercursoMdfe.cs" />
+    <Compile Include="Mdfe\ProprietarioVeiculoMdfe.cs" />
+    <Compile Include="Mdfe\ResponsavelSeguroCargaMdfe.cs" />
+    <Compile Include="Mdfe\Seguradora.cs" />
+    <Compile Include="Mdfe\SeguradoraMdfe.cs" />
+    <Compile Include="Mdfe\Veiculo.cs" />
+    <Compile Include="Mdfe\VeiculoTracaoMdfe.cs" />
+    <Compile Include="ProdutoEcommerceSimplificado.cs" />
+    <Compile Include="Cte\CteCarga.cs" />
+    <Compile Include="Cte\CteCargaInfo.cs" />
+    <Compile Include="Cte\CteDocumentosInformados.cs" />
+    <Compile Include="Cte\CteIdentificacao.cs" />
+    <Compile Include="Cte\CtePrestacao.cs" />
+    <Compile Include="Cte\CtePrestacaoComplemento.cs" />
+    <Compile Include="Cte\CteSeguradora.cs" />
+    <Compile Include="LogExportacaoNota.cs" />
+    <Compile Include="ModeloFiltro.cs" />
+    <Compile Include="Promocao.cs" />
+    <Compile Include="PromocaoProduto.cs" />
+    <Compile Include="Proxy\pxClientesEPagamentosPedidoFrenteCaixa.cs" />
+    <Compile Include="Proxy\pxInventarioProduto.cs" />
+    <Compile Include="Proxy\pxPedidosDashBoard.cs" />
+    <Compile Include="Proxy\pxRelatorioItensCanceladosPDV.cs" />
+    <Compile Include="Proxy\pxRelatorioProdutoContratoValor.cs" />
+    <Compile Include="Proxy\pxRelatorioProdutosPorDataCadastro.cs" />
+    <Compile Include="Proxy\pxRelatorioTabelaPreco.cs" />
+    <Compile Include="Proxy\pxRelatorioTabelaPrecoPorVenda.cs" />
+    <Compile Include="Proxy\pxResponsavelServicoCliente.cs" />
+    <Compile Include="Proxy\pxProdutosPedidoFrenteCaixa.cs" />
+    <Compile Include="Proxy\pxPedidoParcelaFrenteCaixa.cs" />
+    <Compile Include="Proxy\pxyPedidoFrenteCaixaCarregar.cs" />
+    <Compile Include="Proxy\pxyProdutoTabelaPreco.cs" />
+    <Compile Include="ServicoResponsavel.cs" />
+    <Compile Include="CotacaoMoeda.cs" />
+    <Compile Include="CotacaoTransportadoraPedido.cs" />
+    <Compile Include="Custo.cs" />
+    <Compile Include="FechamentoCaixaRateio.cs" />
+    <Compile Include="FluxoCaixa.cs" />
+    <Compile Include="FollowUp.cs" />
+    <Compile Include="Imei.cs" />
+    <Compile Include="Contrato.cs" />
+    <Compile Include="ContratoControle.cs" />
+    <Compile Include="ContratoProduto.cs" />
+    <Compile Include="ContratoServico.cs" />
+    <Compile Include="ArquivoRemessa.cs" />
+    <Compile Include="ConversaoUnidade.cs" />
+    <Compile Include="DadosSubstituto.cs" />
+    <Compile Include="Entrega.cs" />
+    <Compile Include="EntregaItem.cs" />
+    <Compile Include="FaturamentoAtendimento.cs" />
+    <Compile Include="Imposto.cs" />
+    <Compile Include="LogAlteracaoParticipante.cs" />
+    <Compile Include="LogAlteracaoPedidoItem.cs" />
+    <Compile Include="Moeda .cs" />
+    <Compile Include="PessoaResponsavelServico.cs" />
+    <Compile Include="MovimentacaoCheque.cs" />
+    <Compile Include="MovimentacaoCreditoPedido.cs" />
+    <Compile Include="NotaItemServicoPedidoItemServico.cs" />
+    <Compile Include="Ofd_AgendamentoMaquina.cs" />
+    <Compile Include="Ofd_AgendamentoMaquinaOcorrencia.cs" />
+    <Compile Include="Ofd_MedicaoAcompanhamento.cs" />
+    <Compile Include="CorreiosPrecoPrazo.cs" />
+    <Compile Include="FechamentoCaixa.cs" />
+    <Compile Include="FechamentoCaixaEmMemoria.cs" />
+    <Compile Include="FilaDav.cs" />
+    <Compile Include="LogRetornoDetalhe.cs" />
+    <Compile Include="LogRetorno.cs" />
+    <Compile Include="EstoqueIdentificadorExpedicao.cs" />
+    <Compile Include="ExpedicaoHistorico.cs" />
+    <Compile Include="FichaTecnicaPCP.cs" />
+    <Compile Include="FichaTecnicaPCPItem.cs" />
+    <Compile Include="FichaTecnicaPCPRegra.cs" />
+    <Compile Include="FormatoPacoteTransporte.cs" />
+    <Compile Include="MercadoLivreConfiguracao.cs" />
+    <Compile Include="MovCaixaMemoria.cs" />
+    <Compile Include="NotaEmMemoriaComContrato.cs" />
+    <Compile Include="NotaInutilizada.cs" />
+    <Compile Include="NotaItemPedidoItem.cs" />
+    <Compile Include="Ofd_Ocorrencias.cs" />
+    <Compile Include="Ofd_PropostaMedicaoOcorrencias.cs" />
+    <Compile Include="Ofd_PropostaOrcamentoServicos.cs" />
+    <Compile Include="Ofd_PropostaRevisaoPerfuracoes.cs" />
+    <Compile Include="OrdemServicoMaquina.cs" />
+    <Compile Include="ParametrosContratoProduto.cs" />
+    <Compile Include="PCP_Lote.cs" />
+    <Compile Include="Fabricante.cs" />
+    <Compile Include="Maquina.cs" />
+    <Compile Include="Responsavel.cs" />
+    <Compile Include="PedidoMaquina.cs" />
+    <Compile Include="ProdutoAnexo.cs" />
+    <Compile Include="PedidoItemServico.cs" />
+    <Compile Include="PedidoItemTroca.cs" />
+    <Compile Include="PeriodoApuracaoContabil.cs" />
+    <Compile Include="PessoaContabilista.cs" />
+    <Compile Include="PessoaTipoServicoTransporte.cs" />
+    <Compile Include="PlanoContaReferencial.cs" />
+    <Compile Include="ProdutoConversao.cs" />
+    <Compile Include="ProdutoFCI.cs" />
+    <Compile Include="ProdutoMercadoLivre.cs" />
+    <Compile Include="PLP.cs" />
+    <Compile Include="PLPDetalhe.cs" />
+    <Compile Include="ProdutoServico.cs" />
+    <Compile Include="ProdutoVarejo.cs" />
+    <Compile Include="PedidoAnexo.cs" />
+    <Compile Include="Proxy\pxCotacaoMoeda.cs" />
+    <Compile Include="Proxy\pxMargemLucroProduto.cs" />
+    <Compile Include="Proxy\pxRelatorioPedidoModelo08.cs" />
+    <Compile Include="Proxy\pxRelatorioProdutosMargemDeLucro.cs" />
+    <Compile Include="Proxy\pxFluxoCaixa.cs" />
+    <Compile Include="Proxy\pxFrenteCaixaNota.cs" />
+    <Compile Include="Proxy\pxFechamentoCaixaRateio.cs" />
+    <Compile Include="Proxy\pxRelatorioProdutosMaisvendidos.cs" />
+    <Compile Include="Proxy\pxRelatorioProdutoContrato.cs" />
+    <Compile Include="Proxy\pxSuprimentoCaixa.cs" />
+    <Compile Include="Proxy\pxSangriaCaixa.cs" />
+    <Compile Include="Proxy\pxyContratoProduto.cs" />
+    <Compile Include="Proxy\pxyAvisosPorPeriodo.cs" />
+    <Compile Include="Proxy\pxyAvisos.cs" />
+    <Compile Include="Proxy\pxyContratoServico.cs" />
+    <Compile Include="Proxy\pxyEntregas.cs" />
+    <Compile Include="Proxy\pxyEntregaPedidoItem.cs" />
+    <Compile Include="Proxy\pxyEntregaPedido.cs" />
+    <Compile Include="Proxy\pxyChequeSaldoRestante.cs" />
+    <Compile Include="Proxy\pxyDocumentoArquivoRemessa.cs" />
+    <Compile Include="Proxy\pxyGerarPedido.cs" />
+    <Compile Include="Proxy\pxyRegistro60R.cs" />
+    <Compile Include="Proxy\pxyRelCustoPorNota.cs" />
+    <Compile Include="Proxy\pxyRelNotasPeriodo.cs" />
+    <Compile Include="Proxy\pxyTipoRelRecebimentos.cs" />
+    <Compile Include="Proxy\pxyOperacaoRelRecebimentos.cs" />
+    <Compile Include="Proxy\pxyConversaoUnidade.cs" />
+    <Compile Include="Proxy\pxyProdutoFCI.cs" />
+    <Compile Include="Proxy\pxyPedidoItemTroca.cs" />
+    <Compile Include="Proxy\pxyPLPDetalhe.cs" />
+    <Compile Include="Proxy\pxyRelTempoEstoque.cs" />
+    <Compile Include="Proxy\pxyCreditoDebito.cs" />
+    <Compile Include="Proxy\pxyStatusNfe.cs" />
+    <Compile Include="Rota.cs" />
+    <Compile Include="RotaDetalhe.cs" />
+    <Compile Include="SangriaCaixa.cs" />
+    <Compile Include="ServicoEnvioCorreio.cs" />
+    <Compile Include="SHLConfiguracao.cs" />
+    <Compile Include="SincronismoPendenteMercadoLivre.cs" />
+    <Compile Include="SincronismoPendenteSHL.cs" />
+    <Compile Include="SincronismoPendenteSisECommerce.cs" />
+    <Compile Include="SisECommerceConfiguracao.cs" />
+    <Compile Include="StatusAtendimento.cs" />
+    <Compile Include="StatusContato.cs" />
+    <Compile Include="StatusCorreios.cs" />
+    <Compile Include="EventosCorreio.cs" />
+    <Compile Include="ExpedicaoRastreamento.cs" />
+    <Compile Include="ExpedicaoItem.cs" />
+    <Compile Include="ProdutoCodBarra.cs" />
+    <Compile Include="EstoqueIdentificador.cs" />
+    <Compile Include="Identificador.cs" />
+    <Compile Include="Inventario.cs" />
+    <Compile Include="InventarioProduto.cs" />
+    <Compile Include="LocalEstoque.cs" />
+    <Compile Include="NotaItemEstoque.cs" />
+    <Compile Include="Ofd_Maquinas.cs" />
+    <Compile Include="Ofd_Medicao.cs" />
+    <Compile Include="Ofd_MedicaoServicos.cs" />
+    <Compile Include="Ofd_Obra.cs" />
+    <Compile Include="Ofd_ObraArquivos.cs" />
+    <Compile Include="Ofd_ObraDiario.cs" />
+    <Compile Include="Ofd_Proposta.cs" />
+    <Compile Include="Ofd_PropostaArquivos.cs" />
+    <Compile Include="Ofd_PropostaMedicao.cs" />
+    <Compile Include="Ofd_PropostaMedicaoPerfuracao.cs" />
+    <Compile Include="Ofd_PropostaPerfuracoes.cs" />
+    <Compile Include="PedidoItemEstoque.cs" />
+    <Compile Include="PessoaEgenheiro.cs" />
+    <Compile Include="ProdutoSKU.cs" />
+    <Compile Include="Proxy\pxyEstoque.cs" />
+    <Compile Include="Proxy\pxyEstoqueIdentificador.cs" />
+    <Compile Include="Proxy\pxyEstoqueInventario.cs" />
+    <Compile Include="Proxy\pxyEstoqueProduto.cs" />
+    <Compile Include="Proxy\pxyFaturamentoPerfuracao.cs" />
+    <Compile Include="Proxy\pxyFechamentoMedicao.cs" />
+    <Compile Include="Proxy\pxyImpressaoEtiquetaExpedicao.cs" />
+    <Compile Include="Proxy\pxyListaEstoque.cs" />
+    <Compile Include="Proxy\pxyListagemPreco.cs" />
+    <Compile Include="Proxy\pxyMovimentoEstoqueProduto.cs" />
+    <Compile Include="Proxy\pxyOrcamento.cs" />
+    <Compile Include="Proxy\pxyRelatorioMedicaoMes.cs" />
+    <Compile Include="Proxy\pxyTel_LigacaoCliente.cs" />
+    <Compile Include="Proxy\pxyHistoricoFaturaCliente.cs" />
+    <Compile Include="Proxy\pxyPesquisaTel_Fatura.cs" />
+    <Compile Include="Proxy\pxyTel_Fatura.cs" />
+    <Compile Include="Proxy\pxyTel_FaturaLigacao.cs" />
+    <Compile Include="RastreamentoCorreio.cs" />
+    <Compile Include="SincronismoPendente.cs" />
+    <Compile Include="StatusEntEventoCorreio.cs" />
+    <Compile Include="StatusEntrega.cs" />
+    <Compile Include="StatusOS.cs" />
+    <Compile Include="SuprimentoCaixa.cs" />
+    <Compile Include="Tel_Configuracao.cs" />
+    <Compile Include="Tel_PrecoBase.cs" />
+    <Compile Include="Tel_ArquivoLigacao.cs" />
+    <Compile Include="Auxiliares\IEnumInterpreter.cs" />
+    <Compile Include="Auxiliares\MovCaixaBaixa.cs" />
+    <Compile Include="Auxiliares\ParametroAtualizaEstoque.cs" />
+    <Compile Include="Auxiliares\ParametrosBaixa.cs" />
+    <Compile Include="Auxiliares\PreDanfe.cs" />
+    <Compile Include="Auxiliares\UsuarioProvider.cs" />
+    <Compile Include="Auxiliares\Util.cs" />
+    <Compile Include="Baixa.cs" />
+    <Compile Include="BaixaDocumento.cs" />
+    <Compile Include="Balanco.cs" />
+    <Compile Include="BalancoItem.cs" />
+    <Compile Include="Banco.cs" />
+    <Compile Include="CentroCusto.cs" />
+    <Compile Include="Cheque.cs" />
+    <Compile Include="ChequeHistorico.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="Classificacao.cs" />
+    <Compile Include="ClassificacaoOrdemProducao.cs" />
+    <Compile Include="ClienteRevenda.cs" />
+    <Compile Include="AdicaoNotaItem.cs" />
+    <Compile Include="Tel_FaturaServico.cs" />
+    <Compile Include="Tel_FaturaLigacao.cs" />
+    <Compile Include="Tel_Fatura.cs" />
+    <Compile Include="Tel_ClienteTelefone.cs" />
+    <Compile Include="Tel_Servico.cs" />
+    <Compile Include="Tel_ClienteServico.cs" />
+    <Compile Include="Tel_ClientePreco.cs" />
+    <Compile Include="Tel_Cliente.cs" />
+    <Compile Include="Tel_GrupoClienteTelefone.cs" />
+    <Compile Include="Tel_TipoLigacaoPreco.cs" />
+    <Compile Include="Tel_GrupoClientePreco.cs" />
+    <Compile Include="Tel_GrupoCliente.cs" />
+    <Compile Include="Exceptions\FechamentoFrenteCaixaVendaException.cs" />
+    <Compile Include="FrenteCaixaNota.cs" />
+    <Compile Include="FrenteCaixaNotaItem.cs" />
+    <Compile Include="Exceptions\ConfiguracaoIncorretaException.cs" />
+    <Compile Include="Tel_Ligacao.cs" />
+    <Compile Include="MagentoConfiguracao.cs" />
+    <Compile Include="Proxy\ImpressaoEtiquetaPessoaView.cs" />
+    <Compile Include="Proxy\ImpressaoEtiquetaProdutoView.cs" />
+    <Compile Include="Exceptions\AtribuicaoException.cs" />
+    <Compile Include="Exceptions\DescontoException.cs" />
+    <Compile Include="Exceptions\EstoqueNegativoException.cs" />
+    <Compile Include="Exceptions\FormException.cs" />
+    <Compile Include="Exceptions\PrinterNotFoundException.cs" />
+    <Compile Include="IcmsBase.cs" />
+    <Compile Include="NCMItem.cs" />
+    <Compile Include="NCM.cs" />
+    <Compile Include="Exceptions\TabelaPrecoProdutoException.cs" />
+    <Compile Include="Grupo3.cs" />
+    <Compile Include="Grupo2.cs" />
+    <Compile Include="Grupo1.cs" />
+    <Compile Include="NotaImpostoServico.cs" />
+    <Compile Include="NotaItemServico.cs" />
+    <Compile Include="NotaServicoItem.cs" />
+    <Compile Include="NotaServico.cs" />
+    <Compile Include="InformacaoExibicao.cs" />
+    <Compile Include="Condicao.cs" />
+    <Compile Include="CondicaoParcela.cs" />
+    <Compile Include="Configuracao.cs" />
+    <Compile Include="AcompanhamentoOS.cs" />
+    <Compile Include="ControleQualidade.cs" />
+    <Compile Include="Feriado.cs" />
+    <Compile Include="FinanceiroParcela.cs" />
+    <Compile Include="FinanceiroPlanoContas.cs" />
+    <Compile Include="FormaPagamento.cs" />
+    <Compile Include="FormaPgtoMovimento.cs" />
+    <Compile Include="Cor.cs" />
+    <Compile Include="Cotacao.cs" />
+    <Compile Include="CotacaoProduto.cs" />
+    <Compile Include="CotacaoProdutoPedidoItem.cs" />
+    <Compile Include="CQEquipamento.cs" />
+    <Compile Include="CQFuncionario.cs" />
+    <Compile Include="CQProduto.cs" />
+    <Compile Include="CwkPedido.cs" />
+    <Compile Include="CwkPedidoEmpresa.cs" />
+    <Compile Include="Cw_acesso.cs" />
+    <Compile Include="Cw_acessocampo.cs" />
+    <Compile Include="Cw_grupo.cs" />
+    <Compile Include="Cw_usuario.cs" />
+    <Compile Include="OSAcompanhamento.cs" />
+    <Compile Include="OSAgendamento.cs" />
+    <Compile Include="OSEquipamento.cs" />
+    <Compile Include="EtapaProducao.cs" />
+    <Compile Include="Ficha.cs" />
+    <Compile Include="FichaTecnica.cs" />
+    <Compile Include="Ficha_Produto.cs" />
+    <Compile Include="HistMovimentoRemessaDoc.cs" />
+    <Compile Include="ItemFichaTecnica.cs" />
+    <Compile Include="NFe_Erro.cs" />
+    <Compile Include="OrdemProducao.cs" />
+    <Compile Include="OrdemProducaoExecucao.cs" />
+    <Compile Include="OrdemProducaoExecucaoProduto.cs" />
+    <Compile Include="OrdemProducaoHistorico.cs" />
+    <Compile Include="OSOrdemServico.cs" />
+    <Compile Include="OSProdutoItem.cs" />
+    <Compile Include="OSServicoItem.cs" />
+    <Compile Include="Parcela.cs" />
+    <Compile Include="PedidoHistorico.cs" />
+    <Compile Include="PessoaEmail.cs" />
+    <Compile Include="PessoaSocio.cs" />
+    <Compile Include="PlanoNegocio.cs" />
+    <Compile Include="PlanoNegocioOperacao.cs" />
+    <Compile Include="ProdutoVendedorComissao.cs" />
+    <Compile Include="Projeto.cs" />
+    <Compile Include="ProjetoHistorico.cs" />
+    <Compile Include="ProjetoOP.cs" />
+    <Compile Include="ProjetoParcela.cs" />
+    <Compile Include="Projeto_Material.cs" />
+    <Compile Include="Projeto_ProdutoServico.cs" />
+    <Compile Include="Proxy\pxyMovimentoCaixa.cs" />
+    <Compile Include="Proxy\pxyApontamentoHoras.cs" />
+    <Compile Include="Proxy\pxyBaixaRequisicao.cs" />
+    <Compile Include="EstoqueProdutoView.cs" />
+    <Compile Include="Proxy\pxyFormaPagamentoBaixaDoc.cs" />
+    <Compile Include="Proxy\pxyRemessa.cs" />
+    <Compile Include="Proxy\pxyRelCworkOrdemServico.cs" />
+    <Compile Include="Proxy\pxyFaturamentoOS.cs" />
+    <Compile Include="Proxy\pxyRelImpostosPorServico.cs" />
+    <Compile Include="Proxy\pxyOSOrdemServico.cs" />
+    <Compile Include="Proxy\pxyRelClientePorVendedor.cs" />
+    <Compile Include="Proxy\pxyRelFluxoCaixa.cs" />
+    <Compile Include="Proxy\pxyRelServicoImposto.cs" />
+    <Compile Include="Proxy\pxySaldoBanco.cs" />
+    <Compile Include="Proxy\pxyRelOSOrdemServico.cs" />
+    <Compile Include="Proxy\pxyRelOSEquipamento.cs" />
+    <Compile Include="Proxy\pxyRelMovimentoPorProduto.cs" />
+    <Compile Include="Proxy\pxyFormaPgtoDocumento.cs" />
+    <Compile Include="Proxy\pxyRelProduto.cs" />
+    <Compile Include="Proxy\pxyContasPorPortador.cs" />
+    <Compile Include="Proxy\pxyAcompanhamentoOS.cs" />
+    <Compile Include="Proxy\pxyFaturamentoRevendas.cs" />
+    <Compile Include="Proxy\pxyGridOrdemServico.cs" />
+    <Compile Include="Proxy\pxyCwkPedido.cs" />
+    <Compile Include="Rateio_Mov.cs" />
+    <Compile Include="Rateio_NotaItem.cs" />
+    <Compile Include="RegistrosTipo60.cs" />
+    <Compile Include="Remessa.cs" />
+    <Compile Include="Reparcelamento.cs" />
+    <Compile Include="ReparcelamentoDoc.cs" />
+    <Compile Include="ServicoImposto.cs" />
+    <Compile Include="ServicoOS.cs" />
+    <Compile Include="OrdemServico.cs" />
+    <Compile Include="ServicoServicoImposto.cs" />
+    <Compile Include="Socio.cs" />
+    <Compile Include="TabelaComissao.cs" />
+    <Compile Include="TabelaComissaoProduto.cs" />
+    <Compile Include="TabelaFaixaFatSimples.cs" />
+    <Compile Include="OSTipoEquipamento.cs" />
+    <Compile Include="Tel_TipoLigacao.cs" />
+    <Compile Include="TextoLei.cs" />
+    <Compile Include="TipoServicoTransporte.cs" />
+    <Compile Include="Util\EnumUtil.cs" />
+    <Compile Include="Util\Extensions.cs" />
+    <Compile Include="Util\FormProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\FormProgressBar.Designer.cs">
+      <DependentUpon>FormProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\FormProgressWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\FormProgressWindow.Designer.cs">
+      <DependentUpon>FormProgressWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\StringUtil.cs" />
+    <Compile Include="ValidaPR\RegistroOrdem.cs" />
+    <Compile Include="ValidaPR\Tipo10.cs" />
+    <Compile Include="ValidaPR\Tipo11.cs" />
+    <Compile Include="ValidaPR\Tipo50.cs" />
+    <Compile Include="ValidaPR\Tipo53.cs" />
+    <Compile Include="ValidaPR\Tipo54.cs" />
+    <Compile Include="ValidaPR\Tipo60.cs" />
+    <Compile Include="ValidaPR\Tipo61.cs" />
+    <Compile Include="ValidaPR\Tipo74.cs" />
+    <Compile Include="ValidaPR\Tipo75.cs" />
+    <Compile Include="ValidaPR\Tipo90.cs" />
+    <Compile Include="ValidaPR\ValidaParana.cs" />
+    <Compile Include="Versao.cs" />
+    <Compile Include="Servico.cs" />
+    <Compile Include="Sistema.cs" />
+    <Compile Include="StatusOrdemServico.cs" />
+    <Compile Include="TipoAtendimento.cs" />
+    <Compile Include="Documento.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Estoque.cs" />
+    <Compile Include="Filial.cs" />
+    <Compile Include="GrupoEstoque.cs" />
+    <Compile Include="Historico.cs" />
+    <Compile Include="ICMS.cs" />
+    <Compile Include="ICMS_Interestadual.cs" />
+    <Compile Include="Impressora.cs" />
+    <Compile Include="ModeloBase.cs" />
+    <Compile Include="MovCaixa.cs" />
+    <Compile Include="Movimento.cs" />
+    <Compile Include="Nota.cs" />
+    <Compile Include="NotaICMS.cs" />
+    <Compile Include="NotaItem.cs" />
+    <Compile Include="NotaParcela.cs" />
+    <Compile Include="Operacao.cs" />
+    <Compile Include="Pais.cs" />
+    <Compile Include="Pedido.cs" />
+    <Compile Include="PedidoItem.cs" />
+    <Compile Include="PedidoParcela.cs" />
+    <Compile Include="Pessoa.cs" />
+    <Compile Include="PessoaAviso.cs" />
+    <Compile Include="PessoaCliente.cs" />
+    <Compile Include="PessoaEndereco.cs" />
+    <Compile Include="PessoaFuncionario.cs" />
+    <Compile Include="PessoaTelefone.cs" />
+    <Compile Include="PessoaVendedor.cs" />
+    <Compile Include="PlanoConta.cs" />
+    <Compile Include="Portador.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="Produto_Icms.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabelaCFOP.cs" />
+    <Compile Include="TabelaICMS.cs" />
+    <Compile Include="TabelaPreco.cs" />
+    <Compile Include="TabelaPrecoProduto.cs" />
+    <Compile Include="TipoDocumento.cs" />
+    <Compile Include="TipoNota.cs" />
+    <Compile Include="TipoPedido.cs" />
+    <Compile Include="Tipos.cs" />
+    <Compile Include="UF.cs" />
+    <Compile Include="Unidade.cs" />
+    <Compile Include="VersaoBD.cs" />
+    <Compile Include="VersaoEfdIcmsIpi.cs" />
+    <Compile Include="Vinculo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Proxy\pxyItemFrenteCaixaPorFilial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Util\FormProgressBar.resx">
+      <DependentUpon>FormProgressBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

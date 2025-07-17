@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="ContatoDetalhe" table="ContatoDetalhe">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<property name="Data" column="Data" type="DateTime" />
+	<property name="HoraInicial" column="HoraInicial" type="TimeAsTimeSpan" />
+	<property name="HoraFinal" column="HoraFinal" type="TimeAsTimeSpan" />
+	<many-to-one name="StatusContato" column="IDStatusContato" class="StatusContato" lazy="false"/>
+	<property name="Assunto" column="Assunto" type="string" />
+	<property name="Observacao" column="Observacao" type="string" />
+	<many-to-one name="Contato" column="IDContato" class="Contato" lazy ="false"/>
+	<property name="IncData" column="IncData" type="DateTime" />
+	<property name="AltData" column="AltData" type="DateTime" />
+	<property name="IncUsuario" column="IncUsuario" type="string" />
+	<property name="AltUsuario" column="AltUsuario" type="string" />
+
+  </class>
+</hibernate-mapping>

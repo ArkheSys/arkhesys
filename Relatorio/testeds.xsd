@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="testeds" targetNamespace="http://tempuri.org/testeds.xsd" xmlns:mstns="http://tempuri.org/testeds.xsd" xmlns="http://tempuri.org/testeds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkcwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkcwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkcwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="testeTableAdapter" GeneratorDataComponentClassName="testeTableAdapter" Name="teste" UserDataComponentName="testeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        p.Codigo AS CodProduto, g.Nome AS Grupo, g.Classificacao, ni.Dt AS DataEntrada, i.Ano, i.Sequencia, ni.Quantidade, DATEDIFF(day, ni.Dt, GETDATE()) 
+                         AS TempoEstoque
+FROM            Produto AS p INNER JOIN
+                         GrupoEstoque AS g ON p.IDGrupoEstoque = g.Codigo INNER JOIN
+                         NotaItem AS ni ON ni.IDProduto = p.ID INNER JOIN
+                         Nota AS n ON ni.IDNota = n.ID INNER JOIN
+                         Identificador AS i ON n.IDIdentificador = i.ID
+ORDER BY TempoEstoque DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodProduto" DataSetColumn="CodProduto" />
+              <Mapping SourceColumn="Grupo" DataSetColumn="Grupo" />
+              <Mapping SourceColumn="Classificacao" DataSetColumn="Classificacao" />
+              <Mapping SourceColumn="DataEntrada" DataSetColumn="DataEntrada" />
+              <Mapping SourceColumn="Ano" DataSetColumn="Ano" />
+              <Mapping SourceColumn="Sequencia" DataSetColumn="Sequencia" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+              <Mapping SourceColumn="TempoEstoque" DataSetColumn="TempoEstoque" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="testeds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="testeds" msprop:Generator_DataSetName="testeds" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="teste" msprop:Generator_UserTableName="teste" msprop:Generator_RowDeletedName="testeRowDeleted" msprop:Generator_TableClassName="testeDataTable" msprop:Generator_RowChangedName="testeRowChanged" msprop:Generator_RowClassName="testeRow" msprop:Generator_RowChangingName="testeRowChanging" msprop:Generator_RowEvArgName="testeRowChangeEvent" msprop:Generator_RowEvHandlerName="testeRowChangeEventHandler" msprop:Generator_TablePropName="teste" msprop:Generator_TableVarName="tableteste" msprop:Generator_RowDeletingName="testeRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodProduto" msprop:Generator_UserColumnName="CodProduto" msprop:Generator_ColumnPropNameInRow="CodProduto" msprop:Generator_ColumnVarNameInTable="columnCodProduto" msprop:Generator_ColumnPropNameInTable="CodProdutoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Grupo" msprop:Generator_UserColumnName="Grupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Classificacao" msprop:Generator_UserColumnName="Classificacao" msprop:Generator_ColumnPropNameInRow="Classificacao" msprop:Generator_ColumnVarNameInTable="columnClassificacao" msprop:Generator_ColumnPropNameInTable="ClassificacaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataEntrada" msprop:Generator_UserColumnName="DataEntrada" msprop:Generator_ColumnPropNameInRow="DataEntrada" msprop:Generator_ColumnVarNameInTable="columnDataEntrada" msprop:Generator_ColumnPropNameInTable="DataEntradaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Ano" msprop:Generator_UserColumnName="Ano" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInTable="AnoColumn" type="xs:int" />
+              <xs:element name="Sequencia" msprop:Generator_UserColumnName="Sequencia" msprop:Generator_ColumnPropNameInRow="Sequencia" msprop:Generator_ColumnVarNameInTable="columnSequencia" msprop:Generator_ColumnPropNameInTable="SequenciaColumn" type="xs:int" />
+              <xs:element name="Quantidade" msprop:Generator_UserColumnName="Quantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" type="xs:decimal" />
+              <xs:element name="TempoEstoque" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TempoEstoque" msprop:Generator_ColumnPropNameInRow="TempoEstoque" msprop:Generator_ColumnVarNameInTable="columnTempoEstoque" msprop:Generator_ColumnPropNameInTable="TempoEstoqueColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

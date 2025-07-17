@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Veiculo" table="Veiculo">
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+
+		<property name="Placa" column="Placa" type="string" />
+		<property name="Modelo" column="Modelo" type="string" />
+		<property name="Renavam" column="Renavam" type="string" />
+		<property name="TaraEmKg" column="TaraEmKg" type="decimal" />
+		<property name="CapacidadeEmKg" column="CapacidadeEmKg" type="decimal" />
+		<property name="CapacidadeEmM3" column="CapacidadeEmM3" type="decimal" />
+		<property name="AnoFabricacao" column="AnoFabricacao" type="Int32" />
+		<property name="AnoModelo" column="AnoModelo" type="Int32" />
+		<property name="TipoPropriedade" column="TipoPropriedade" type="Int32" />
+		<property name="TipoVeiculo" column="TipoVeiculo" type="Int32" />
+		<property name="TipoRodado" column="TipoRodado" type="Int32" />
+		<property name="TipoCarroceria" column="TipoCarroceria" type="Int32" />
+		<property name="Ativo" column="Ativo" type="Int32" />
+		<property name="Marca" column="Marca" type="string" />
+
+		<many-to-one name="Uf" column="IDUf" class="UF" lazy="false" />
+	</class>
+</hibernate-mapping>

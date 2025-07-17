@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cliente.bean.master.sigep.bsb.correios.com.br/" targetNamespace="http://cliente.bean.master.sigep.bsb.correios.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AutenticacaoException" nillable="true" type="xs:string" />
+  <xs:element name="SigepClienteException" nillable="true" type="xs:string" />
+  <xs:element name="buscaCliente" type="tns:buscaCliente" />
+  <xs:element name="buscaClienteResponse" type="tns:buscaClienteResponse" />
+  <xs:element name="buscaContrato" type="tns:buscaContrato" />
+  <xs:element name="buscaContratoResponse" type="tns:buscaContratoResponse" />
+  <xs:element name="buscaServicos" type="tns:buscaServicos" />
+  <xs:element name="buscaServicosResponse" type="tns:buscaServicosResponse" />
+  <xs:element name="cancelarPedidoScol" type="tns:cancelarPedidoScol" />
+  <xs:element name="cancelarPedidoScolResponse" type="tns:cancelarPedidoScolResponse" />
+  <xs:element name="consultaCEP" type="tns:consultaCEP" />
+  <xs:element name="consultaCEPResponse" type="tns:consultaCEPResponse" />
+  <xs:element name="consultaSRO" type="tns:consultaSRO" />
+  <xs:element name="consultaSROResponse" type="tns:consultaSROResponse" />
+  <xs:element name="consultarPedidosInformacao" type="tns:consultarPedidosInformacao" />
+  <xs:element name="consultarPedidosInformacaoResponse" type="tns:consultarPedidosInformacaoResponse" />
+  <xs:element name="fechaPlp" type="tns:fechaPlp" />
+  <xs:element name="fechaPlpResponse" type="tns:fechaPlpResponse" />
+  <xs:element name="fechaPlpVariosServicos" type="tns:fechaPlpVariosServicos" />
+  <xs:element name="fechaPlpVariosServicosResponse" type="tns:fechaPlpVariosServicosResponse" />
+  <xs:element name="geraDigitoVerificadorEtiquetas" type="tns:geraDigitoVerificadorEtiquetas" />
+  <xs:element name="geraDigitoVerificadorEtiquetasResponse" type="tns:geraDigitoVerificadorEtiquetasResponse" />
+  <xs:element name="getStatusCartaoPostagem" type="tns:getStatusCartaoPostagem" />
+  <xs:element name="getStatusCartaoPostagemResponse" type="tns:getStatusCartaoPostagemResponse" />
+  <xs:element name="integrarUsuarioScol" type="tns:integrarUsuarioScol" />
+  <xs:element name="integrarUsuarioScolResponse" type="tns:integrarUsuarioScolResponse" />
+  <xs:element name="obterAssuntosPI" type="tns:obterAssuntosPI" />
+  <xs:element name="obterAssuntosPIResponse" type="tns:obterAssuntosPIResponse" />
+  <xs:element name="obterClienteAtualizacao" type="tns:obterClienteAtualizacao" />
+  <xs:element name="obterClienteAtualizacaoResponse" type="tns:obterClienteAtualizacaoResponse" />
+  <xs:element name="obterEmbalagemLRS" type="tns:obterEmbalagemLRS" />
+  <xs:element name="obterEmbalagemLRSResponse" type="tns:obterEmbalagemLRSResponse" />
+  <xs:element name="obterMensagemRetornoPI" type="tns:obterMensagemRetornoPI" />
+  <xs:element name="obterMensagemRetornoPIResponse" type="tns:obterMensagemRetornoPIResponse" />
+  <xs:element name="obterMotivosPI" type="tns:obterMotivosPI" />
+  <xs:element name="obterMotivosPIResponse" type="tns:obterMotivosPIResponse" />
+  <xs:element name="registrarPedidosInformacao" type="tns:registrarPedidosInformacao" />
+  <xs:element name="registrarPedidosInformacaoResponse" type="tns:registrarPedidosInformacaoResponse" />
+  <xs:element name="solicitaEtiquetas" type="tns:solicitaEtiquetas" />
+  <xs:element name="solicitaEtiquetasResponse" type="tns:solicitaEtiquetasResponse" />
+  <xs:element name="solicitaXmlPlp" type="tns:solicitaXmlPlp" />
+  <xs:element name="solicitaXmlPlpResponse" type="tns:solicitaXmlPlpResponse" />
+  <xs:element name="solicitarPostagemScol" type="tns:solicitarPostagemScol" />
+  <xs:element name="solicitarPostagemScolResponse" type="tns:solicitarPostagemScolResponse" />
+  <xs:element name="validaPlp" type="tns:validaPlp" />
+  <xs:element name="validaPlpResponse" type="tns:validaPlpResponse" />
+  <xs:element name="validarPostagemReversa" type="tns:validarPostagemReversa" />
+  <xs:element name="validarPostagemReversaResponse" type="tns:validarPostagemReversaResponse" />
+  <xs:element name="validarPostagemSimultanea" type="tns:validarPostagemSimultanea" />
+  <xs:element name="validarPostagemSimultaneaResponse" type="tns:validarPostagemSimultaneaResponse" />
+  <xs:element name="verificaDisponibilidadeServico" type="tns:verificaDisponibilidadeServico" />
+  <xs:element name="verificaDisponibilidadeServicoResponse" type="tns:verificaDisponibilidadeServicoResponse" />
+  <xs:complexType name="solicitaXmlPlp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idPlpMaster" type="xs:long" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitaXmlPlpResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarPedidosInformacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pedidosInformacao" type="tns:pedidoInformacaoRegistro" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedidoInformacaoRegistro">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:pedidoInformacao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+          <xs:element minOccurs="0" name="codigoRegistro" type="xs:string" />
+          <xs:element minOccurs="0" name="conta" type="tns:conta" />
+          <xs:element minOccurs="0" name="conteudoObjeto" type="xs:string" />
+          <xs:element minOccurs="0" name="cpfCnpj" type="xs:string" />
+          <xs:element minOccurs="0" name="destinatario" type="tns:destinatario" />
+          <xs:element minOccurs="0" name="embalagem" type="xs:string" />
+          <xs:element minOccurs="0" name="motivo" type="xs:int" />
+          <xs:element minOccurs="0" name="observacao" type="xs:string" />
+          <xs:element minOccurs="0" name="postagem" type="tns:postagem" />
+          <xs:element minOccurs="0" name="remetente" type="tns:remetente" />
+          <xs:element minOccurs="0" name="servico" type="xs:int" />
+          <xs:element minOccurs="0" name="tipoDocumento" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pedidoInformacao" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroContrato" type="xs:string" />
+      <xs:element minOccurs="0" name="possuiContrato" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="conta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoBanco" type="xs:string" />
+      <xs:element minOccurs="0" name="nomeBanco" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroAgencia" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroConta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="destinatario">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:pessoa">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pessoa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bairro" type="xs:string" />
+      <xs:element minOccurs="0" name="cep" type="xs:string" />
+      <xs:element minOccurs="0" name="cidade" type="xs:string" />
+      <xs:element minOccurs="0" name="complemento" type="xs:string" />
+      <xs:element minOccurs="0" name="ddd" type="xs:string" />
+      <xs:element minOccurs="0" name="endereco" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="pais" type="xs:string" />
+      <xs:element minOccurs="0" name="telefone" type="xs:string" />
+      <xs:element minOccurs="0" name="uf" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="postagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agencia" type="xs:string" />
+      <xs:element minOccurs="0" name="avisoRecebimento" type="xs:string" />
+      <xs:element minOccurs="0" name="data" type="xs:string" />
+      <xs:element minOccurs="0" name="local" type="xs:string" />
+      <xs:element minOccurs="0" name="valorDeclarado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remetente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:pessoa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="empresa" type="xs:string" />
+          <xs:element minOccurs="0" name="fax" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="registrarPedidosInformacaoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:retorno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retorno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoPI" type="xs:long" />
+      <xs:element minOccurs="0" name="codigoRegistro" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoRetorno" type="xs:string" />
+      <xs:element minOccurs="0" name="dataPrazoResposta" type="xs:string" />
+      <xs:element minOccurs="0" name="dataRegistro" type="xs:string" />
+      <xs:element minOccurs="0" name="dataResposta" type="xs:string" />
+      <xs:element minOccurs="0" name="dataUltimaRecorrencia" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="mensagemRetorno" type="xs:string" />
+      <xs:element minOccurs="0" name="resposta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarPostagemReversa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoServico" type="xs:int" />
+      <xs:element minOccurs="0" name="cepDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="coleta" type="tns:coletaReversaTO" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coletaReversaTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:coletaTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ag" type="xs:string" />
+          <xs:element minOccurs="0" name="ar" type="xs:int" />
+          <xs:element minOccurs="0" name="cartao" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="obj_col" nillable="true" type="tns:objetoTO" />
+          <xs:element minOccurs="0" name="servico_adicional" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="coletaTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cklist" type="xs:string" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="produto" nillable="true" type="tns:produtoTO" />
+      <xs:element minOccurs="0" name="remetente" type="tns:remetenteTO" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+      <xs:element minOccurs="0" name="valor_declarado" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="objetoTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="desc" type="xs:string" />
+      <xs:element minOccurs="0" name="entrega" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="item" type="xs:string" />
+      <xs:element minOccurs="0" name="num" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="produtoTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:long" />
+      <xs:element minOccurs="0" name="qtd" type="xs:long" />
+      <xs:element minOccurs="0" name="tipo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="remetenteTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:pessoaTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificacao" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pessoaTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bairro" type="xs:string" />
+      <xs:element minOccurs="0" name="cep" type="xs:string" />
+      <xs:element minOccurs="0" name="cidade" type="xs:string" />
+      <xs:element minOccurs="0" name="complemento" type="xs:string" />
+      <xs:element minOccurs="0" name="ddd" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="logradouro" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="referencia" type="xs:string" />
+      <xs:element minOccurs="0" name="telefone" type="xs:string" />
+      <xs:element minOccurs="0" name="uf" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarPostagemReversaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterAssuntosPI">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obterAssuntosPIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:assuntoPIMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="assuntoPIMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fechaPlp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="idPlpCliente" type="xs:long" />
+      <xs:element minOccurs="0" name="cartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="faixaEtiquetas" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fechaPlpResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelarPedidoScol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="idPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelarPedidoScolResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:retornoCancelamentoTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retornoCancelamentoTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_erro" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo_administrativo" type="xs:string" />
+      <xs:element minOccurs="0" name="data" type="xs:string" />
+      <xs:element minOccurs="0" name="hora" type="xs:string" />
+      <xs:element minOccurs="0" name="msg_erro" type="xs:string" />
+      <xs:element minOccurs="0" name="objeto_postal" type="tns:objetoSimplificadoTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="objetoSimplificadoTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datahora_cancelamento" type="xs:string" />
+      <xs:element minOccurs="0" name="numero_pedido" type="xs:int" />
+      <xs:element minOccurs="0" name="status_pedido" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificaDisponibilidadeServico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroServico" type="xs:string" />
+      <xs:element minOccurs="0" name="cepOrigem" type="xs:string" />
+      <xs:element minOccurs="0" name="cepDestino" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificaDisponibilidadeServicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fechaPlpVariosServicos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="idPlpCliente" type="xs:long" />
+      <xs:element minOccurs="0" name="cartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaEtiquetas" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fechaPlpVariosServicosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterEmbalagemLRS">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obterEmbalagemLRSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:embalagemLRSMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="embalagemLRSMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterMensagemRetornoPI">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obterMensagemRetornoPIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:mensagemRetornoPIMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mensagemRetornoPIMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="mensagem" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterMotivosPI">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obterMotivosPIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:motivoPIMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="motivoPIMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaPlp">
+    <xs:sequence>
+      <xs:element name="cliente" type="xs:long" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element name="diretoria" type="xs:long" />
+      <xs:element minOccurs="0" name="cartao" type="xs:string" />
+      <xs:element minOccurs="0" name="unidadePostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="servico" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="servicosAdicionais" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaPlpResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaContrato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element name="diretoria" type="xs:long" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaContratoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:contratoERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contratoERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cartoesPostagem" nillable="true" type="tns:cartaoPostagemERP" />
+      <xs:element minOccurs="0" name="cliente" type="tns:clienteERP" />
+      <xs:element name="codigoCliente" type="xs:long" />
+      <xs:element minOccurs="0" name="codigoDiretoria" type="xs:string" />
+      <xs:element minOccurs="0" name="contratoPK" type="tns:contratoERPPK" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataAtualizacaoDDMMYYYY" type="xs:string" />
+      <xs:element minOccurs="0" name="dataVigenciaFim" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataVigenciaFimDDMMYYYY" type="xs:string" />
+      <xs:element minOccurs="0" name="dataVigenciaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataVigenciaInicioDDMMYYYY" type="xs:string" />
+      <xs:element minOccurs="0" name="datajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="datajVigenciaFim" type="xs:int" />
+      <xs:element minOccurs="0" name="datajVigenciaInicio" type="xs:int" />
+      <xs:element minOccurs="0" name="descricaoDiretoriaRegional" type="xs:string" />
+      <xs:element minOccurs="0" name="descricaoStatus" type="xs:string" />
+      <xs:element minOccurs="0" name="diretoriaRegional" type="tns:unidadePostagemERP" />
+      <xs:element minOccurs="0" name="horajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="statusCodigo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartaoPostagemERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoAdministrativo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contratos" nillable="true" type="tns:contratoERP" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataVigenciaFim" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataVigenciaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="datajVigenciaFim" type="xs:int" />
+      <xs:element minOccurs="0" name="datajVigenciaInicio" type="xs:int" />
+      <xs:element minOccurs="0" name="descricaoStatusCartao" type="xs:string" />
+      <xs:element minOccurs="0" name="descricaoUnidadePostagemGenerica" type="xs:string" />
+      <xs:element minOccurs="0" name="horajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="servicos" nillable="true" type="tns:servicoERP" />
+      <xs:element minOccurs="0" name="statusCartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="statusCodigo" type="xs:string" />
+      <xs:element minOccurs="0" name="unidadeGenerica" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="unidadesPostagem" nillable="true" type="tns:unidadePostagemERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="servicoERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="horajAtualizacao" type="xs:int" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="servicoSigep" type="tns:servicoSigep" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="servicosAdicionais" nillable="true" type="tns:servicoAdicionalERP" />
+      <xs:element minOccurs="0" name="tipo1Codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo1Descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo2Codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo2Descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" type="tns:vigenciaERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="servicoSigep">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoriaServico" type="tns:categoriaServico" />
+      <xs:element minOccurs="0" name="chancela" type="tns:chancelaMaster" />
+      <xs:element minOccurs="0" name="exigeDimensoes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="exigeValorCobrar" type="xs:boolean" />
+      <xs:element name="imitm" type="xs:long" />
+      <xs:element name="servico" type="xs:long" />
+      <xs:element minOccurs="0" name="servicoERP" type="tns:servicoERP" />
+      <xs:element minOccurs="0" name="ssiCoCodigoPostal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="chancelaMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chancela" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="servicosSigep" nillable="true" type="tns:servicoSigep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="servicoAdicionalERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="descricao" type="xs:string" />
+      <xs:element minOccurs="0" name="horajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="sigla" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vigenciaERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInicial" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datajFim" type="xs:int" />
+      <xs:element minOccurs="0" name="datajIni" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unidadePostagemERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diretoriaRegional" type="xs:string" />
+      <xs:element minOccurs="0" name="endereco" type="tns:enderecoERP" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enderecoERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bairro" type="xs:string" />
+      <xs:element minOccurs="0" name="cep" type="xs:string" />
+      <xs:element minOccurs="0" name="cidade" type="xs:string" />
+      <xs:element minOccurs="0" name="complemento" type="xs:string" />
+      <xs:element minOccurs="0" name="complemento2" type="xs:string" />
+      <xs:element minOccurs="0" name="end" type="xs:string" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="uf" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="unidadesPostagem" nillable="true" type="tns:unidadePostagemERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clienteERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cnpj" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contratos" nillable="true" type="tns:contratoERP" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datajAtualizacao" type="xs:int" />
+      <xs:element minOccurs="0" name="descricaoStatusCliente" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="gerenteConta" nillable="true" type="tns:gerenteConta" />
+      <xs:element minOccurs="0" name="horajAtualizacao" type="xs:long" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="inscricaoEstadual" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="statusCodigo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerenteConta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clientesVisiveis" nillable="true" type="tns:clienteERP" />
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataSenha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="login" type="xs:string" />
+      <xs:element minOccurs="0" name="matricula" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="tns:statusGerente" />
+      <xs:element minOccurs="0" name="tipoGerente" type="tns:tipoGerente" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="usuariosInstalacao" nillable="true" type="tns:usuarioInstalacao" />
+      <xs:element minOccurs="0" name="validade" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuarioInstalacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataAtualizacao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInclusao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataSenha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gerenteMaster" type="tns:gerenteConta" />
+      <xs:element minOccurs="0" name="hashSenha" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="login" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parametros" nillable="true" type="tns:parametroMaster" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="tns:statusUsuario" />
+      <xs:element minOccurs="0" name="validade" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="parametroMaster">
+    <xs:sequence>
+      <xs:element name="prmCoParametro" type="xs:long" />
+      <xs:element minOccurs="0" name="prmTxParametro" type="xs:string" />
+      <xs:element minOccurs="0" name="prmTxValor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contratoERPPK">
+    <xs:sequence>
+      <xs:element name="diretoria" type="xs:long" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="integrarUsuarioScol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="integrarUsuarioScolResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idContrato" type="xs:string" />
+      <xs:element minOccurs="0" name="idCartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:clienteERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validarPostagemSimultanea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="codigoServico" type="xs:int" />
+      <xs:element minOccurs="0" name="cepDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="coleta" type="tns:coletaSimultaneaTO" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coletaSimultaneaTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:coletaTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="obj" type="xs:string" />
+          <xs:element minOccurs="0" name="obs" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="validarPostagemSimultaneaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitaEtiquetas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoDestinatario" type="xs:string" />
+      <xs:element minOccurs="0" name="identificador" type="xs:string" />
+      <xs:element minOccurs="0" name="idServico" type="xs:long" />
+      <xs:element minOccurs="0" name="qtdEtiquetas" type="xs:int" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitaEtiquetasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultarPedidosInformacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pedidosInformacao" type="tns:pedidoInformacaoConsulta" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedidoInformacaoConsulta">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:pedidoInformacao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numero" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="consultarPedidosInformacaoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:retorno" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterClienteAtualizacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cnpjCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterClienteAtualizacaoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatusCartaoPostagem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroCartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatusCartaoPostagemResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:statusCartao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCEP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cep" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCEPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enderecoERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaSRO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaSROResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaServicos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idContrato" type="xs:string" />
+      <xs:element minOccurs="0" name="idCartaoPostagem" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscaServicosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:servicoERP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitarPostagemScol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codAdministrativo" type="xs:int" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="solicitarPostagemScolResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="geraDigitoVerificadorEtiquetas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="etiquetas" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="geraDigitoVerificadorEtiquetasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="categoriaServico">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SEM_CATEGORIA" />
+      <xs:enumeration value="PAC" />
+      <xs:enumeration value="SEDEX" />
+      <xs:enumeration value="CARTA_REGISTRADA" />
+      <xs:enumeration value="SERVICO_COM_RESTRICAO" />
+      <xs:enumeration value="REVERSO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="statusGerente">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ativo" />
+      <xs:enumeration value="Inativo" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoGerente">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GerenteConta" />
+      <xs:enumeration value="GerenteContaMaster" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="statusUsuario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ativo" />
+      <xs:enumeration value="Inativo" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="statusCartao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Desconhecido" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Suspenso" />
+      <xs:enumeration value="Cancelado" />
+      <xs:enumeration value="Irregular" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCreditoDebito" targetNamespace="http://tempuri.org/dsCreditoDebito.xsd" xmlns:mstns="http://tempuri.org/dsCreditoDebito.xsd" xmlns="http://tempuri.org/dsCreditoDebito.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCreditoDebito" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsCreditoDebito" msprop:Generator_DataSetName="dsCreditoDebito" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Valores" msprop:Generator_UserTableName="Valores" msprop:Generator_RowDeletedName="ValoresRowDeleted" msprop:Generator_RowChangedName="ValoresRowChanged" msprop:Generator_RowClassName="ValoresRow" msprop:Generator_RowChangingName="ValoresRowChanging" msprop:Generator_RowEvArgName="ValoresRowChangeEvent" msprop:Generator_RowEvHandlerName="ValoresRowChangeEventHandler" msprop:Generator_TableClassName="ValoresDataTable" msprop:Generator_TableVarName="tableValores" msprop:Generator_RowDeletingName="ValoresRowDeleting" msprop:Generator_TablePropName="Valores">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mes" msprop:Generator_UserColumnName="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Ipi_Cre" msprop:Generator_UserColumnName="Ipi_Cre" msprop:Generator_ColumnVarNameInTable="columnIpi_Cre" msprop:Generator_ColumnPropNameInRow="Ipi_Cre" msprop:Generator_ColumnPropNameInTable="Ipi_CreColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Pis_Cre" msprop:Generator_UserColumnName="Pis_Cre" msprop:Generator_ColumnVarNameInTable="columnPis_Cre" msprop:Generator_ColumnPropNameInRow="Pis_Cre" msprop:Generator_ColumnPropNameInTable="Pis_CreColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cofins_Cre" msprop:Generator_UserColumnName="Cofins_Cre" msprop:Generator_ColumnVarNameInTable="columnCofins_Cre" msprop:Generator_ColumnPropNameInRow="Cofins_Cre" msprop:Generator_ColumnPropNameInTable="Cofins_CreColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Icms_Cre" msprop:Generator_UserColumnName="Icms_Cre" msprop:Generator_ColumnVarNameInTable="columnIcms_Cre" msprop:Generator_ColumnPropNameInRow="Icms_Cre" msprop:Generator_ColumnPropNameInTable="Icms_CreColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Ipi_Deb" msprop:Generator_UserColumnName="Ipi_Deb" msprop:Generator_ColumnVarNameInTable="columnIpi_Deb" msprop:Generator_ColumnPropNameInRow="Ipi_Deb" msprop:Generator_ColumnPropNameInTable="Ipi_DebColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Pis_Deb" msprop:Generator_UserColumnName="Pis_Deb" msprop:Generator_ColumnVarNameInTable="columnPis_Deb" msprop:Generator_ColumnPropNameInRow="Pis_Deb" msprop:Generator_ColumnPropNameInTable="Pis_DebColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cofins_Deb" msprop:Generator_UserColumnName="Cofins_Deb" msprop:Generator_ColumnVarNameInTable="columnCofins_Deb" msprop:Generator_ColumnPropNameInRow="Cofins_Deb" msprop:Generator_ColumnPropNameInTable="Cofins_DebColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Icms_Deb" msprop:Generator_UserColumnName="Icms_Deb" msprop:Generator_ColumnVarNameInTable="columnIcms_Deb" msprop:Generator_ColumnPropNameInRow="Icms_Deb" msprop:Generator_ColumnPropNameInTable="Icms_DebColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

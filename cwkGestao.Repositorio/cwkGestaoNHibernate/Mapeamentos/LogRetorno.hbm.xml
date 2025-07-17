@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="LogRetorno" table="LogRetorno">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<property name="NomeArquivo" column="NomeArquivo" type="String" />
+  <property name="IncData" column="IncData" type="DateTime" />
+  <property name="IncUsuario" column="IncUsuario" type="String" />
+  <many-to-one name="remessa" column="IDRemessa" class="Remessa" lazy="false"/>
+  <bag name="LogRetornoDetalhe" table="LogRetornoDetalhe" inverse="true">
+    <key column="IDLogRetorno" />
+    <one-to-many class="LogRetornoDetalhe" />
+  </bag>
+    
+  </class>
+</hibernate-mapping>

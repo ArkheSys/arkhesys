@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Tel_FaturaServico" table="Tel_FaturaServico">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <property name="Sequencia" column="Sequencia" type="Int32" />
+    <property name="Quantidade" column="Quantidade" type="Int32" />    
+    <property name="ValorUnitario" column="ValorUnitario" type="Decimal" />
+    <property name="Total" column="Total" type="Decimal" />
+    <many-to-one name="Fatura" column="IdTel_Fatura" class="Tel_Fatura" />
+    <many-to-one name="Servico" column="IdTel_Servico" class="Tel_Servico" lazy="false" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="Operacao" column="Operacao" type="Int32" />
+    <many-to-one name="Documento" column="IdDocumento" class="Documento" />
+  </class>
+</hibernate-mapping>

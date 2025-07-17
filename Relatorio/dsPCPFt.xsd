@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPCPFt" targetNamespace="http://tempuri.org/dsPCPFt.xsd" xmlns:mstns="http://tempuri.org/dsPCPFt.xsd" xmlns="http://tempuri.org/dsPCPFt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT fl.nome                AS 'Emp Nome', 
+       fl.cnpj                AS 'Emp CNPJ', 
+       fl.endereco + ', ' + fl.Numero + ', '  + fl.Bairro +  ' - ' + fl.[Nome Cidade] + ' - ' + fl.Sigla + ' - CEP: ' + fl.CEP   AS 'Emp Endereço', 
+       fl.telefone            AS 'Emp Telefone', 
+       ftp.codigo             AS 'FT Código', 
+       ftp.pecasop            AS 'FT Pecas OP', 
+       ftp.barra              AS 'FT Código de Barras', 
+       ftp.id                 AS 'FT id', 
+       ftp.numerorevisao      AS 'FT Numero Revisão', 
+       ftp.nome               AS 'FT Versão', 
+       ftp.Data				  AS 'FT Data',
+       ftp.comprimentobruto   AS 'FT Compr Bruto', 
+       ftp.comprimentoliquido AS 'FT Compr Liquido', 
+       ftp.largurabruta       AS 'FT Largura Bruta', 
+       ftp.larguraliquida     AS 'FT Largura Liquida', 
+       ftp.espessurabruta     AS 'FT Espessura Bruta', 
+       ftp.espessuraliquida   AS 'FT Espessura Liquida', 
+       ftp.areabruta          AS 'FT Area Bruta', 
+       ftp.arealiquida        AS 'FT Area Liquida', 
+       ftp.volumebruto        AS 'FT Volume Bruto', 
+       ftp.volumeliquido      AS 'FT Volume Liquido', 
+       ftp.pesobruto          AS 'FT Peso Bruto', 
+       ftp.pesoliquido        AS 'FT Peso Liquido', 
+       ftp.imagem             AS 'FT Imagem Produto', 
+       ftp.observacao         AS 'FT Observações', 
+       p.desclonga1           AS 'Prod Descrição', 
+       ftp.formula 
+  FROM (SELECT TOP (1) f.id, 
+                       f.codigo, 
+                       f.nome, 
+                       c.Nome as 'Nome Cidade',
+                       cnpj, 
+                       inscricao, 
+                       endereco, 
+                       bairro, 
+                       idcidade, 
+                       telefone, 
+                       fax, 
+                       filialnf, 
+                       idempresa, 
+                       tipo, 
+                       numero, 
+                       responsavel, 
+                       cep, 
+                       certificado, 
+                       usuarioemail, 
+                       senhaemail, 
+                       servidorsmtp, 
+                       tipocertificadonfe, 
+                       modelodanfe, 
+                       formaemissao, 
+                       ambiente, 
+                       tipost, 
+                       simplesnacional, 
+                       aliqsimplessubst, 
+                       idtabelafaixafatsimples, 
+                       email, 
+                       site, 
+                       benviarcopiaemail, 
+                       emailnfe, 
+                       horascan, 
+                       justificativascan, 
+                       seriescan, 
+                       portasmtp, 
+                       versaoesquema, 
+                       diretoriopadraonfe, 
+                       pinnfe, 
+                       gmailautenticacao, 
+                       cnae, 
+                       u.Sigla,
+                       inscricaomunicipal, 
+                       incentivadorcultural, 
+                       naturezatributacao, 
+                       grupomanager, 
+                       diretoriomonitoramento, 
+                       regimeespecialtributacao, 
+                       bstsomenterevenda, 
+                       ncdempresa, 
+                       sdssenha 
+          FROM filial AS f 
+          INNER JOIN Cidade c ON c.ID = f.IDCidade
+          INNER JOIN UF u ON u.ID = c.IDUF
+         ORDER BY f.id) AS fl 
+       CROSS JOIN pcp_fichatecnica AS ftp 
+       
+       INNER JOIN produto AS p 
+               ON p.id = ftp.idproduto               
+       WHERE ftp.Id IN (SELECT * FROM F_RetornaTabelaLista(@IdFT, ','))       </CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdFT" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@IdFT" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Emp Nome" DataSetColumn="Emp Nome" />
+              <Mapping SourceColumn="Emp CNPJ" DataSetColumn="Emp CNPJ" />
+              <Mapping SourceColumn="Emp Endereço" DataSetColumn="Emp Endereço" />
+              <Mapping SourceColumn="Emp Telefone" DataSetColumn="Emp Telefone" />
+              <Mapping SourceColumn="FT Código" DataSetColumn="FT Código" />
+              <Mapping SourceColumn="FT Pecas OP" DataSetColumn="FT Pecas OP" />
+              <Mapping SourceColumn="FT Código de Barras" DataSetColumn="FT Código de Barras" />
+              <Mapping SourceColumn="FT Numero Revisão" DataSetColumn="FT Numero Revisão" />
+              <Mapping SourceColumn="FT Versão" DataSetColumn="FT Versão" />
+              <Mapping SourceColumn="FT Compr Bruto" DataSetColumn="FT Compr Bruto" />
+              <Mapping SourceColumn="FT Compr Liquido" DataSetColumn="FT Compr Liquido" />
+              <Mapping SourceColumn="FT Largura Bruta" DataSetColumn="FT Largura Bruta" />
+              <Mapping SourceColumn="FT Largura Liquida" DataSetColumn="FT Largura Liquida" />
+              <Mapping SourceColumn="FT Espessura Bruta" DataSetColumn="FT Espessura Bruta" />
+              <Mapping SourceColumn="FT Espessura Liquida" DataSetColumn="FT Espessura Liquida" />
+              <Mapping SourceColumn="FT Area Bruta" DataSetColumn="FT Area Bruta" />
+              <Mapping SourceColumn="FT Area Liquida" DataSetColumn="FT Area Liquida" />
+              <Mapping SourceColumn="FT Volume Bruto" DataSetColumn="FT Volume Bruto" />
+              <Mapping SourceColumn="FT Volume Liquido" DataSetColumn="FT Volume Liquido" />
+              <Mapping SourceColumn="FT Peso Bruto" DataSetColumn="FT Peso Bruto" />
+              <Mapping SourceColumn="FT Peso Liquido" DataSetColumn="FT Peso Liquido" />
+              <Mapping SourceColumn="FT Imagem Produto" DataSetColumn="FT Imagem Produto" />
+              <Mapping SourceColumn="Prod Descrição" DataSetColumn="Prod Descrição" />
+              <Mapping SourceColumn="FT Observações" DataSetColumn="FT Observações" />
+              <Mapping SourceColumn="FT id" DataSetColumn="FT id" />
+              <Mapping SourceColumn="formula" DataSetColumn="formula" />
+              <Mapping SourceColumn="FT Data" DataSetColumn="FT Data" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPCPFt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:Generator_UserDSName="dsPCPFt" msprop:Generator_DataSetName="dsPCPFt" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Emp_x0020_Nome" msprop:Generator_UserColumnName="Emp Nome" msprop:Generator_ColumnPropNameInRow="Emp_Nome" msprop:Generator_ColumnVarNameInTable="columnEmp_Nome" msprop:Generator_ColumnPropNameInTable="Emp_NomeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emp_x0020_CNPJ" msprop:Generator_UserColumnName="Emp CNPJ" msprop:Generator_ColumnPropNameInRow="Emp_CNPJ" msprop:Generator_ColumnVarNameInTable="columnEmp_CNPJ" msprop:Generator_ColumnPropNameInTable="Emp_CNPJColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emp_x0020_Endereço" msprop:Generator_UserColumnName="Emp Endereço" msprop:Generator_ColumnPropNameInRow="Emp_Endereço" msprop:Generator_ColumnVarNameInTable="columnEmp_Endereço" msprop:Generator_ColumnPropNameInTable="Emp_EndereçoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emp_x0020_Telefone" msprop:Generator_UserColumnName="Emp Telefone" msprop:Generator_ColumnPropNameInRow="Emp_Telefone" msprop:Generator_ColumnVarNameInTable="columnEmp_Telefone" msprop:Generator_ColumnPropNameInTable="Emp_TelefoneColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Código" msprop:Generator_UserColumnName="FT Código" msprop:Generator_ColumnPropNameInRow="FT_Código" msprop:Generator_ColumnVarNameInTable="columnFT_Código" msprop:Generator_ColumnPropNameInTable="FT_CódigoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Pecas_x0020_OP" msprop:Generator_UserColumnName="FT Pecas OP" msprop:Generator_ColumnPropNameInRow="FT_Pecas_OP" msprop:Generator_ColumnVarNameInTable="columnFT_Pecas_OP" msprop:Generator_ColumnPropNameInTable="FT_Pecas_OPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FT_x0020_Código_x0020_de_x0020_Barras" msprop:Generator_UserColumnName="FT Código de Barras" msprop:Generator_ColumnPropNameInRow="FT_Código_de_Barras" msprop:Generator_ColumnVarNameInTable="columnFT_Código_de_Barras" msprop:Generator_ColumnPropNameInTable="FT_Código_de_BarrasColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Numero_x0020_Revisão" msprop:Generator_UserColumnName="FT Numero Revisão" msprop:Generator_ColumnPropNameInRow="FT_Numero_Revisão" msprop:Generator_ColumnVarNameInTable="columnFT_Numero_Revisão" msprop:Generator_ColumnPropNameInTable="FT_Numero_RevisãoColumn" type="xs:int" />
+              <xs:element name="FT_x0020_Versão" msprop:Generator_UserColumnName="FT Versão" msprop:Generator_ColumnPropNameInRow="FT_Versão" msprop:Generator_ColumnVarNameInTable="columnFT_Versão" msprop:Generator_ColumnPropNameInTable="FT_VersãoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Compr_x0020_Bruto" msprop:Generator_UserColumnName="FT Compr Bruto" msprop:Generator_ColumnPropNameInRow="FT_Compr_Bruto" msprop:Generator_ColumnVarNameInTable="columnFT_Compr_Bruto" msprop:Generator_ColumnPropNameInTable="FT_Compr_BrutoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Compr_x0020_Liquido" msprop:Generator_UserColumnName="FT Compr Liquido" msprop:Generator_ColumnPropNameInRow="FT_Compr_Liquido" msprop:Generator_ColumnVarNameInTable="columnFT_Compr_Liquido" msprop:Generator_ColumnPropNameInTable="FT_Compr_LiquidoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Largura_x0020_Bruta" msprop:Generator_UserColumnName="FT Largura Bruta" msprop:Generator_ColumnPropNameInRow="FT_Largura_Bruta" msprop:Generator_ColumnVarNameInTable="columnFT_Largura_Bruta" msprop:Generator_ColumnPropNameInTable="FT_Largura_BrutaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Largura_x0020_Liquida" msprop:Generator_UserColumnName="FT Largura Liquida" msprop:Generator_ColumnPropNameInRow="FT_Largura_Liquida" msprop:Generator_ColumnVarNameInTable="columnFT_Largura_Liquida" msprop:Generator_ColumnPropNameInTable="FT_Largura_LiquidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Espessura_x0020_Bruta" msprop:Generator_UserColumnName="FT Espessura Bruta" msprop:Generator_ColumnPropNameInRow="FT_Espessura_Bruta" msprop:Generator_ColumnVarNameInTable="columnFT_Espessura_Bruta" msprop:Generator_ColumnPropNameInTable="FT_Espessura_BrutaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Espessura_x0020_Liquida" msprop:Generator_UserColumnName="FT Espessura Liquida" msprop:Generator_ColumnPropNameInRow="FT_Espessura_Liquida" msprop:Generator_ColumnVarNameInTable="columnFT_Espessura_Liquida" msprop:Generator_ColumnPropNameInTable="FT_Espessura_LiquidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Area_x0020_Bruta" msprop:Generator_UserColumnName="FT Area Bruta" msprop:Generator_ColumnPropNameInRow="FT_Area_Bruta" msprop:Generator_ColumnVarNameInTable="columnFT_Area_Bruta" msprop:Generator_ColumnPropNameInTable="FT_Area_BrutaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Area_x0020_Liquida" msprop:Generator_UserColumnName="FT Area Liquida" msprop:Generator_ColumnPropNameInRow="FT_Area_Liquida" msprop:Generator_ColumnVarNameInTable="columnFT_Area_Liquida" msprop:Generator_ColumnPropNameInTable="FT_Area_LiquidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Volume_x0020_Bruto" msprop:Generator_UserColumnName="FT Volume Bruto" msprop:Generator_ColumnPropNameInRow="FT_Volume_Bruto" msprop:Generator_ColumnVarNameInTable="columnFT_Volume_Bruto" msprop:Generator_ColumnPropNameInTable="FT_Volume_BrutoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Volume_x0020_Liquido" msprop:Generator_UserColumnName="FT Volume Liquido" msprop:Generator_ColumnPropNameInRow="FT_Volume_Liquido" msprop:Generator_ColumnVarNameInTable="columnFT_Volume_Liquido" msprop:Generator_ColumnPropNameInTable="FT_Volume_LiquidoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Peso_x0020_Bruto" msprop:Generator_UserColumnName="FT Peso Bruto" msprop:Generator_ColumnPropNameInRow="FT_Peso_Bruto" msprop:Generator_ColumnVarNameInTable="columnFT_Peso_Bruto" msprop:Generator_ColumnPropNameInTable="FT_Peso_BrutoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Peso_x0020_Liquido" msprop:Generator_UserColumnName="FT Peso Liquido" msprop:Generator_ColumnPropNameInRow="FT_Peso_Liquido" msprop:Generator_ColumnVarNameInTable="columnFT_Peso_Liquido" msprop:Generator_ColumnPropNameInTable="FT_Peso_LiquidoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FT_x0020_Imagem_x0020_Produto" msprop:Generator_UserColumnName="FT Imagem Produto" msprop:Generator_ColumnPropNameInRow="FT_Imagem_Produto" msprop:Generator_ColumnVarNameInTable="columnFT_Imagem_Produto" msprop:Generator_ColumnPropNameInTable="FT_Imagem_ProdutoColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Prod_x0020_Descrição" msprop:Generator_UserColumnName="Prod Descrição" msprop:Generator_ColumnPropNameInRow="Prod_Descrição" msprop:Generator_ColumnVarNameInTable="columnProd_Descrição" msprop:Generator_ColumnPropNameInTable="Prod_DescriçãoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Observações" msprop:Generator_UserColumnName="FT Observações" msprop:Generator_ColumnPropNameInRow="FT_Observações" msprop:Generator_ColumnVarNameInTable="columnFT_Observações" msprop:Generator_ColumnPropNameInTable="FT_ObservaçõesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="FT id" msprop:Generator_ColumnPropNameInRow="FT_id" msprop:Generator_ColumnVarNameInTable="columnFT_id" msprop:Generator_ColumnPropNameInTable="FT_idColumn" type="xs:int" />
+              <xs:element name="formula" msprop:Generator_UserColumnName="formula" msprop:Generator_ColumnVarNameInTable="columnformula" msprop:Generator_ColumnPropNameInRow="formula" msprop:Generator_ColumnPropNameInTable="formulaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Data" msprop:Generator_UserColumnName="FT Data" msprop:Generator_ColumnVarNameInTable="columnFT_Data" msprop:Generator_ColumnPropNameInRow="FT_Data" msprop:Generator_ColumnPropNameInTable="FT_DataColumn" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:FT_x0020_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

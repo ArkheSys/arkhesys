@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="PedidoHistorico" table="PedidoHistorico">
+
+	<id name="ID" column="id">
+		<generator class="identity" /> 
+	</id>
+	<property name="UsuarioLogado" column="UsuarioLogado" type="string" length="100" />
+	<property name="GerenteResponsavel" column="GerenteResponsavel" type="string" length="100" />
+	<property name="Data" column="Data" type="DateTime"  />
+	<property name="ValorTotalAnterior" column="ValorTotalAnterior" type="decimal"  />
+	<property name="ValorTotalPosterior" column="ValorTotalPosterior" type="decimal" />
+	<property name="Descricao" column="Descricao" type="string"  length="2000"/>
+  <many-to-one name="Pedido" column="IDPedido" class="Pedido" />
+	
+</class>
+</hibernate-mapping>
+		

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="ProjetoParcela" table="ProjetoParcela">
+
+    <id name="ID" column="ID" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Projeto" column="IDProjeto" class="Projeto" not-null="true"/>
+    <property name="Parcela" column="Parcela" type="Int32" />
+    <property name="BEntrada" column="bEntrada" type="bool" />
+    <many-to-one name="TipoDocumento" column="IDTipoDocumento" class="TipoDocumento" />
+    <many-to-one name="Portador" column="IDPortador" class="Portador" />
+    <many-to-one name="Banco" column="IDBanco" class="Banco" />
+    <property name="Vencimento" column="Vencimento" type="DateTime" />
+    <property name="Valor" column="Valor" type="decimal" />
+    <property name="BAlterado" column="bAlterado" type="bool" />
+    <property name="NumBanco" column="NumBanco" type="string" length="4" />
+    <property name="NumAgencia" column="NumAgencia" type="string" length="8" />
+    <property name="NumContaCorrente" column="NumContaCorrente" type="string" length="8" />
+    <property name="NumCheque" column="NumCheque" type="string" length="8" />
+    <property name="Emitente" column="Emitente" type="string" length="60" />
+    <property name="CpfCnpj" column="CpfCnpj" type="string" length="19" />
+    <property name="NomeBanco" column="NomeBanco" type="string" length="100" />
+
+  </class>
+</hibernate-mapping>

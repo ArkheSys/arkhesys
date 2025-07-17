@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="cwkGestao.Integracao.Magento.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="cwkGestao_Integracao_Magento_br_com_redfeet_cwork_MagentoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://179.184.50.7:81/index.php/api/v2_soap/index/</Value>
+    </Setting>
+    <Setting Name="cwkGestao_Integracao_Magento_MagentoV1_MagentoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://loja.bringit.com.br/index.php/api/soap/index/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

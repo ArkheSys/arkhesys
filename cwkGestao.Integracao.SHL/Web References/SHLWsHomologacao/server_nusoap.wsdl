@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="pDestino">
+        <xsd:all>
+          <xsd:element name="id_mailing" type="xsd:int" />
+          <xsd:element name="id_distribuicao" type="xsd:int" />
+          <xsd:element name="codigo_destino" type="xsd:string" />
+          <xsd:element name="codigo_transporte" type="xsd:int" />
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+          <xsd:element name="nome" type="xsd:string" />
+          <xsd:element name="razao_social" type="xsd:string" />
+          <xsd:element name="logradouro" type="xsd:string" />
+          <xsd:element name="numero" type="xsd:string" />
+          <xsd:element name="complemento" type="xsd:string" />
+          <xsd:element name="bairro" type="xsd:string" />
+          <xsd:element name="cidade" type="xsd:string" />
+          <xsd:element name="sigla_estado" type="xsd:string" />
+          <xsd:element name="pais" type="xsd:string" />
+          <xsd:element name="cep" type="xsd:string" />
+          <xsd:element name="cnpj" type="xsd:string" />
+          <xsd:element name="cpf" type="xsd:string" />
+          <xsd:element name="email" type="xsd:string" />
+          <xsd:element name="telefone" type="xsd:string" />
+          <xsd:element name="observacao" type="xsd:string" />
+          <xsd:element name="tipo_pedido" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="pMaterial">
+        <xsd:all>
+          <xsd:element name="codigo" type="xsd:string" />
+          <xsd:element name="quantidade" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="pMaterial_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:pMaterial[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="pServicos_adicionais">
+        <xsd:all>
+          <xsd:element name="codigo_servico" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="pServicos_adicionais_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:pServicos_adicionais[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="cPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="materiais" type="tns:pMaterial_lista" />
+          <xsd:element name="servicos_adicionais" type="tns:pServicos_adicionais_lista" />
+          <xsd:element name="destino" type="tns:pDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cMailing">
+        <xsd:all>
+          <xsd:element name="mail_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cMailingParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="mailing" type="tns:cMailing" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sPostXmlPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+          <xsd:element name="numero_nota_fiscal" type="xsd:int" />
+          <xsd:element name="arquivo_xml" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sPostXmlPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:sPostXmlPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="pXmlRetorno">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sLinkBoletoPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+          <xsd:element name="link_boleto" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sLinkBoletoPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:sLinkBoletoPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sLinkXmlPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+          <xsd:element name="numero_nota_fiscal" type="xsd:int" />
+          <xsd:element name="link_xml" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sLinkXmlPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:sLinkXmlPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sCancelarPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sCancelarPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:sCancelarPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sTipoPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+          <xsd:element name="tipo_pedido" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sTipoPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:sTipoPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cServicoTransporte">
+        <xsd:all>
+          <xsd:element name="cnpj_fornecedor" type="xsd:string" />
+          <xsd:element name="codigo_servico" type="xsd:string" />
+          <xsd:element name="descricao_servico" type="xsd:string" />
+          <xsd:element name="numero_contrato_servico" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cCadastraServicoTransporteRetorno">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cServicoTransporteParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="servico_transporte" type="tns:cServicoTransporte" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cFornecedor">
+        <xsd:all>
+          <xsd:element name="nome_fantasia" type="xsd:string" />
+          <xsd:element name="razao_social" type="xsd:string" />
+          <xsd:element name="telefone" type="xsd:string" />
+          <xsd:element name="cnpj" type="xsd:string" />
+          <xsd:element name="ie" type="xsd:string" />
+          <xsd:element name="logradouro" type="xsd:string" />
+          <xsd:element name="numero" type="xsd:string" />
+          <xsd:element name="complemento" type="xsd:string" />
+          <xsd:element name="cep" type="xsd:string" />
+          <xsd:element name="bairro" type="xsd:string" />
+          <xsd:element name="cidade" type="xsd:string" />
+          <xsd:element name="uf" type="xsd:string" />
+          <xsd:element name="pais" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cCadastraFornecedorRetorno">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cFornecedorParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="dados_fornecedor" type="tns:cFornecedor" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cTransporte">
+        <xsd:all>
+          <xsd:element name="codigo_transporte" type="xsd:string" />
+          <xsd:element name="trans_descricao" type="xsd:string" />
+          <xsd:element name="trans_contato" type="xsd:string" />
+          <xsd:element name="trans_email" type="xsd:string" />
+          <xsd:element name="trans_telefone" type="xsd:string" />
+          <xsd:element name="trans_nome_remetente" type="xsd:string" />
+          <xsd:element name="trans_endereco_remetente" type="xsd:string" />
+          <xsd:element name="trans_endereco_complemento" type="xsd:string" />
+          <xsd:element name="trans_nome_contrato" type="xsd:string" />
+          <xsd:element name="trans_numero_contrato" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cTransporteParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="transporte" type="tns:cTransporte" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cDistribuicao">
+        <xsd:all>
+          <xsd:element name="dist_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cDistribuicaoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="distribuicao" type="tns:cDistribuicao" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cMaterialCadastro">
+        <xsd:all>
+          <xsd:element name="codigo" type="xsd:string" />
+          <xsd:element name="camp_id" type="xsd:int" />
+          <xsd:element name="descricao_material" type="xsd:string" />
+          <xsd:element name="largura" type="xsd:int" />
+          <xsd:element name="comprimento" type="xsd:int" />
+          <xsd:element name="altura" type="xsd:int" />
+          <xsd:element name="peso" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cMaterialParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="material" type="tns:cMaterialCadastro" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cCampanhas">
+        <xsd:all>
+          <xsd:element name="camp_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cCampanhasParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="campanha" type="tns:cCampanhas" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gValidaEmissaoFiscalRetorno">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="tns:gProdutos_lista" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gProdutos_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gProdutosEmitidos[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gProdutosEmitidos">
+        <xsd:all>
+          <xsd:element name="codigo" type="xsd:string" />
+          <xsd:element name="lote" type="xsd:int" />
+          <xsd:element name="quantidade" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gValidaFiscalPedido">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gValidaEmissaoFiscalParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:gValidaFiscalPedido" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gStatusPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gStatusPedidoArray">
+        <xsd:all>
+          <xsd:element name="sta_ped_id" type="xsd:int" />
+          <xsd:element name="sta_ped_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gRetornoStatusPedido">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="tns:gStatusPedidoArray" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gStatusPedidoParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:gStatusPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gTransportes">
+        <xsd:all>
+          <xsd:element name="trans_descricao" type="xsd:string" />
+          <xsd:element name="codigo_transporte" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gTransportes_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gTransportes[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gTransportesParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gDistribuicoes">
+        <xsd:all>
+          <xsd:element name="dist_id" type="xsd:int" />
+          <xsd:element name="dist_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gDistribuicoes_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gDistribuicoes[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gDistribuicoesParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gCampanhas">
+        <xsd:all>
+          <xsd:element name="camp_id" type="xsd:int" />
+          <xsd:element name="camp_descricao" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gCampanhas_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gCampanhas[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gCampanhasParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="cMaterial">
+        <xsd:all>
+          <xsd:element name="codigo" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriaisLotes">
+        <xsd:all>
+          <xsd:element name="est_lot_numero" type="xsd:string" />
+          <xsd:element name="est_lot_data_validade" type="xsd:date" />
+          <xsd:element name="est_lot_quantidade_total" type="xsd:int" />
+          <xsd:element name="est_lot_status" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriaislotes_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gMateriaisLotes[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriaisLotesParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="materiais" type="tns:cMaterial" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gPackingPickingMateriais">
+        <xsd:all>
+          <xsd:element name="codigo" type="xsd:string" />
+          <xsd:element name="quantidade" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gPackingPickingMateriais_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gPackingPickingMateriais[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gPackingPickingMateriaisCustos">
+        <xsd:all>
+          <xsd:element name="erro" type="xsd:string" />
+          <xsd:element name="custo_packing" type="xsd:float" />
+          <xsd:element name="custo_picking" type="xsd:float" />
+          <xsd:element name="prazo" type="xsd:int" />
+          <xsd:element name="peso" type="xsd:int" />
+          <xsd:element name="total_itens" type="xsd:int" />
+          <xsd:element name="media" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="sPackingPickingDadosPedidoDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gPackingPickingParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="materiais" type="tns:gPackingPickingMateriais_lista" />
+          <xsd:element name="destino" type="tns:sPackingPickingDadosPedidoDestino" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriais">
+        <xsd:all>
+          <xsd:element name="est_codigo" type="xsd:string" />
+          <xsd:element name="est_descricao" type="xsd:string" />
+          <xsd:element name="est_peso" type="xsd:string" />
+          <xsd:element name="est_larg" type="xsd:string" />
+          <xsd:element name="est_comp" type="xsd:string" />
+          <xsd:element name="est_alt" type="xsd:string" />
+          <xsd:element name="quantidade_total" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriais_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gMateriais[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gMateriaisParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gRastreio">
+        <xsd:all>
+          <xsd:element name="reg_registro" type="xsd:string" />
+          <xsd:element name="reg_data_envio" type="xsd:date" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gRastreio_lista">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:gRastreio[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="gRastreioRetorno">
+        <xsd:all>
+          <xsd:element name="falha" type="xsd:string" />
+          <xsd:element name="retorno" type="tns:gRastreio_lista" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gDestino">
+        <xsd:all>
+          <xsd:element name="numero_pedido_origem" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="gRastreioParam">
+        <xsd:all>
+          <xsd:element name="ambiente" type="xsd:string" />
+          <xsd:element name="chave" type="xsd:string" />
+          <xsd:element name="interface" type="xsd:int" />
+          <xsd:element name="destino" type="tns:gDestino" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="cadastraPedidoRequest">
+    <wsdl:part name="cPedidoParam" type="tns:cPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraPedidoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadastraMailingRequest">
+    <wsdl:part name="cMailingParam" type="tns:cMailingParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraMailingResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="postXmlDanfePedidoRequest">
+    <wsdl:part name="sPostXmlPedidoParam" type="tns:sPostXmlPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="postXmlDanfePedidoResponse">
+    <wsdl:part name="return" type="tns:pXmlRetorno" />
+  </wsdl:message>
+  <wsdl:message name="setLinkBoletoPedidoRequest">
+    <wsdl:part name="sLinkBoletoPedidoParam" type="tns:sLinkBoletoPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="setLinkBoletoPedidoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setLinkXmlPedidoRequest">
+    <wsdl:part name="sLinkXmlPedidoParam" type="tns:sLinkXmlPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="setLinkXmlPedidoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setCancelarPedidoRequest">
+    <wsdl:part name="sCancelarPedidoParam" type="tns:sCancelarPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="setCancelarPedidoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setTipoPedidoRequest">
+    <wsdl:part name="sTipoPedidoParam" type="tns:sTipoPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="setTipoPedidoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadastraServicoTransporteRequest">
+    <wsdl:part name="cServicoTransporteParam" type="tns:cServicoTransporteParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraServicoTransporteResponse">
+    <wsdl:part name="return" type="tns:cCadastraServicoTransporteRetorno" />
+  </wsdl:message>
+  <wsdl:message name="cadastraFornecedorRequest">
+    <wsdl:part name="cTransporteParam" type="tns:cFornecedorParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraFornecedorResponse">
+    <wsdl:part name="return" type="tns:cCadastraFornecedorRetorno" />
+  </wsdl:message>
+  <wsdl:message name="cadastraTransporteRequest">
+    <wsdl:part name="cTransporteParam" type="tns:cTransporteParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraTransporteResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadastraDistribuicaoRequest">
+    <wsdl:part name="cDistribuicaoParam" type="tns:cDistribuicaoParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraDistribuicaoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadastraMaterialRequest">
+    <wsdl:part name="cMaterialParam" type="tns:cMaterialParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraMaterialResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="cadastraCampanhaRequest">
+    <wsdl:part name="cCampanhasParam" type="tns:cCampanhasParam" />
+  </wsdl:message>
+  <wsdl:message name="cadastraCampanhaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getValidaEmissaoFiscalRequest">
+    <wsdl:part name="gValidaEmissaoFiscalParam" type="tns:gValidaEmissaoFiscalParam" />
+  </wsdl:message>
+  <wsdl:message name="getValidaEmissaoFiscalResponse">
+    <wsdl:part name="return" type="tns:gValidaEmissaoFiscalRetorno" />
+  </wsdl:message>
+  <wsdl:message name="getStatusPedidoRequest">
+    <wsdl:part name="gStatusPedidoParam" type="tns:gStatusPedidoParam" />
+  </wsdl:message>
+  <wsdl:message name="getStatusPedidoResponse">
+    <wsdl:part name="return" type="tns:gRetornoStatusPedido" />
+  </wsdl:message>
+  <wsdl:message name="getServicosTransportesRequest">
+    <wsdl:part name="gTransportesParam" type="tns:gTransportesParam" />
+  </wsdl:message>
+  <wsdl:message name="getServicosTransportesResponse">
+    <wsdl:part name="return" type="tns:gTransportes_lista" />
+  </wsdl:message>
+  <wsdl:message name="getDistribuicoesRequest">
+    <wsdl:part name="gDistribuicoesParam" type="tns:gDistribuicoesParam" />
+  </wsdl:message>
+  <wsdl:message name="getDistribuicoesResponse">
+    <wsdl:part name="return" type="tns:gDistribuicoes_lista" />
+  </wsdl:message>
+  <wsdl:message name="getCampanhasRequest">
+    <wsdl:part name="gCampanhasParam" type="tns:gCampanhasParam" />
+  </wsdl:message>
+  <wsdl:message name="getCampanhasResponse">
+    <wsdl:part name="return" type="tns:gCampanhas_lista" />
+  </wsdl:message>
+  <wsdl:message name="getMateriaisLotesRequest">
+    <wsdl:part name="gMateriaisLotesParam" type="tns:gMateriaisLotesParam" />
+  </wsdl:message>
+  <wsdl:message name="getMateriaisLotesResponse">
+    <wsdl:part name="return" type="tns:gMateriaislotes_lista" />
+  </wsdl:message>
+  <wsdl:message name="getPackingPickingRequest">
+    <wsdl:part name="gPackingPickingParam" type="tns:gPackingPickingParam" />
+  </wsdl:message>
+  <wsdl:message name="getPackingPickingResponse">
+    <wsdl:part name="return" type="tns:gPackingPickingMateriaisCustos" />
+  </wsdl:message>
+  <wsdl:message name="getMateriaisRequest">
+    <wsdl:part name="gMateriaisParam" type="tns:gMateriaisParam" />
+  </wsdl:message>
+  <wsdl:message name="getMateriaisResponse">
+    <wsdl:part name="return" type="tns:gMateriais_lista" />
+  </wsdl:message>
+  <wsdl:message name="getRastreioRequest">
+    <wsdl:part name="gRastreioParam" type="tns:gRastreioParam" />
+  </wsdl:message>
+  <wsdl:message name="getRastreioResponse">
+    <wsdl:part name="return" type="tns:gRastreioRetorno" />
+  </wsdl:message>
+  <wsdl:portType name="Webservice - HOMOLOGAÇÃO SHLPortType">
+    <wsdl:operation name="cadastraPedido">
+      <documentation>&lt;p&gt;Cadastra "pedido" (pedido da loja virtual)&lt;/p&gt;
+         &lt;li&gt;[id_mailing] -  ID do mailing - identifica a lista de pontos a que pertence o cadastro - vide função getMailings&lt;/li&gt;
+         &lt;li&gt;[id_distribuicao] -  ID da distribuição - identifica a lista de pedidos a que pertence este vide função getDistribuicoes&lt;/li&gt;
+         &lt;li&gt;[codigo_destino] -  Código de identificação do cadastro, número que identifica o destinatário no sistema de origem Ex: CODIDO-SAP, NUM_BIR&lt;/li&gt;
+         &lt;li&gt;[codigo_transporte] -  Código do transportador vide função getTransportes&lt;/li&gt;
+         &lt;li&gt;[numero_pedido_origem] -  Número do pedido de origem, número do pedido cadastrado na loja virtual&lt;/li&gt;
+         &lt;li&gt;[nome] -  Nome do destinatario&lt;/li&gt;
+         &lt;li&gt;[razao_social] -  Razão social do destinatario&lt;/li&gt;
+         &lt;li&gt;[logradouro] -  Logradouro do destinatario&lt;/li&gt;
+         &lt;li&gt;[numero] - Número no logradouro  do destinatario&lt;/li&gt;
+         &lt;li&gt;[complemento] -  Complemento ao endereço do destinatario&lt;/li&gt;
+         &lt;li&gt;[bairro] -  Bairro do destinatario&lt;/li&gt;
+         &lt;li&gt;[cidade] -  Cidade do destinatario&lt;/li&gt;
+         &lt;li&gt;[sigla_estado] -  Sigla do estado do destinatario&lt;/li&gt;
+         &lt;li&gt;[pais] -  País do destinatario&lt;/li&gt;
+         &lt;li&gt;[cep] -  Código postal do destinatario&lt;/li&gt;
+         &lt;li&gt;[cnpj] -  CNPJ&lt;/li&gt;
+         &lt;li&gt;[cpf] -  CPF&lt;/li&gt;
+         &lt;li&gt;[email] -  Email do destinatario&lt;/li&gt;
+         &lt;li&gt;[telefone] -  Telefone do destinatario&lt;/li&gt;
+         &lt;li&gt;[observacao] -  Observação para o pedido.&lt;/li&gt;
+         &lt;li&gt;[tipo_pedido] -  Tipo pedido : 1 - Pré-Cotação; 2 - Despacho autorizado; 3 - Aguardar confirmação para despacho; 4 - Pendente - Verificar; 5 - Despacho autorizado - URGENTE&lt;/li&gt;
+         &lt;li&gt;[servicos_adicionais][int() increment][codigo_servico] -  Serviços Adicionais : 1 - (AR) - Aviso de Recebimento; 2 - (MP) - Mão Própria; 3 - (VD) - Valor Declarado;&lt;/li&gt;
+         &lt;p&gt;ITENS DO PEDIDO&lt;/p&gt;
+         &lt;li&gt;[materiais] [ ] [codigo] - Array de produtos com o codigo de cada item que compôe o pedido.&lt;/li&gt;
+         &lt;li&gt;[materiais] [ ] [quantidade] - Quantidades de cada codigo que compôe o pedido.&lt;/li&gt;
+         &lt;li&gt;No cadastro do pedido são verificados todos os códigos de produto, assim como o código do transportador responsável pela entrega além dos dados padrões para cadastro do destinatário&lt;/li&gt;
+         &lt;li&gt;Para documentar e vincular informações entre os sistemas é possivel enviar o numero do pedido de origem gerado na loja virtual, chamado de [numero_pedido_origem] este número facilita consultas futuras de status de pedido, códigos de rastreio.&lt;/li&gt;
+         &lt;li&gt;O destinatário da mercadoria também pode ser identificado por um número de origem e este deve ser transmitido através do campo [codigo_destino], este código é utilizado para atualizar as informações do cadastro, ou será inserido como um novo destinatário&lt;/li&gt;
+         &lt;p&gt;RETORNO : após o cadastro o sistema retorna o número do pedido dentro do sistema da SHL.&lt;/p&gt;</documentation>
+      <wsdl:input message="tns:cadastraPedidoRequest" />
+      <wsdl:output message="tns:cadastraPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraMailing">
+      <documentation>&lt;p&gt;Cadastra "mailing" (Nome para uma lista de clientes ou pontos de distribuição)&lt;/p&gt;
+        &lt;li&gt;[mail_descricao] -  Nome do mailing&lt;/li&gt;
+        &lt;li&gt;Por exemplo : Clientes Atacado, Clientes Varejo, Clientes Loja Virtual, etc..." &lt;/li&gt;
+        &lt;p&gt;RETORNO : ID do Mailing cadastrado.&lt;/p&gt;</documentation>
+      <wsdl:input message="tns:cadastraMailingRequest" />
+      <wsdl:output message="tns:cadastraMailingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="postXmlDanfePedido">
+      <documentation>&lt;p&gt;Envia arquivo XML - DANFE&lt;/p&gt;
+        &lt;li&gt;O campo [numero_pedido_origem] deve ser preenchido com o número do pedido a ser alterado.&lt;/li&gt;
+        &lt;li&gt;O campo [numero_nota_fiscal] deve ser preenchido com o número nota emitida para o pedido.&lt;/li&gt;
+        &lt;li&gt;O campo [arquivo_xml] deve ser inserido xml da nota emitida para o pedido.&lt;/li&gt;
+        &lt;p&gt;Retorno&lt;/p&gt;
+        &lt;li&gt;[falha] - Erro&lt;/li&gt;
+        &lt;li&gt;[retorno] Retorno.&lt;/li&gt;
+        &lt;li&gt;A alteração de xml e número da nota deve ser feita para liberar o despacho dos pedidos.&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:postXmlDanfePedidoRequest" />
+      <wsdl:output message="tns:postXmlDanfePedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setLinkBoletoPedido">
+      <documentation>&lt;p&gt;Seta tipo de pedido&lt;/p&gt;
+        &lt;li&gt;O campo [numero_pedido_origem] deve ser preenchido com o número do pedido a ser alterado.&lt;/li&gt;
+        &lt;li&gt;O campo [link_boleto] deve ser preenchido com o link(válido) para o xml da nota emitida para o pedido.&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:setLinkBoletoPedidoRequest" />
+      <wsdl:output message="tns:setLinkBoletoPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setLinkXmlPedido">
+      <documentation>&lt;p&gt;Seta tipo de pedido&lt;/p&gt;
+        &lt;li&gt;O campo [numero_pedido_origem] deve ser preenchido com o número do pedido a ser alterado.&lt;/li&gt;
+        &lt;li&gt;O campo [numero_nota_fiscal] deve ser preenchido com o número nota emitida para o pedido.&lt;/li&gt;
+        &lt;li&gt;O campo [link_xml] deve ser preenchido com o link(válido) para o xml da nota emitida para o pedido.&lt;/li&gt;
+        &lt;li&gt;A alteração de xml e numero da nota deve ser feita para liberar o despacho dos pedidos.&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:setLinkXmlPedidoRequest" />
+      <wsdl:output message="tns:setLinkXmlPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setCancelarPedido">
+      <documentation>&lt;p&gt;CANCELA pedido&lt;/p&gt;
+        &lt;li&gt;O campo [numero_pedido_origem] deve ser preenchido com o número de origem do pedido&lt;/li&gt;
+        &lt;li&gt;O cancelamento do pedido só é permitido enquanto o mesmo ainda não saiu do centro de distribuição.&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:setCancelarPedidoRequest" />
+      <wsdl:output message="tns:setCancelarPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setTipoPedido">
+      <documentation>&lt;p&gt;Seta tipo de pedido&lt;/p&gt;
+        &lt;li&gt;O campo [tipo_pedido] deve ser preenchido com o número identificador : 1 - Pré-Cotação; 2 - Despacho autorizado; 3 - Aguardar confirmação para despacho; 4 - Pendente - Verificar; 5 - Despacho autorizado - URGENTE&lt;/li&gt;
+        &lt;li&gt;A alteração de tipo de pedido deve ser feita para start da operação no centro de distribuição.&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:setTipoPedidoRequest" />
+      <wsdl:output message="tns:setTipoPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraServicoTransporte">
+      <documentation>&lt;p&gt;Cadastra um novo Serviço de Transporte&lt;/p&gt;
+        &lt;li&gt;O campo [servico_transporte][cnpj_fornecedor] deve ser preenchido com o CNPJ do fornecedor de transporte&lt;/li&gt;
+        &lt;li&gt;O campo [servico_transporte][codigo_servico] deve ser preenchido com o número de identificação para o transporte&lt;/li&gt;
+        &lt;li&gt;O campo [servico_transporte][descricao_servico] deve ser preenchido com o nome do transporte&lt;/li&gt;
+        &lt;li&gt;O campo [servico_transporte][numero_contrato_servico] deve ser preenchido com o Nº contrato do serviço&lt;/li&gt;
+        &lt;li&gt;Todos os pedidos devem ser transmitidos informando este código do transporte&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:cadastraServicoTransporteRequest" />
+      <wsdl:output message="tns:cadastraServicoTransporteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraFornecedor">
+      <documentation>&lt;p&gt;Cadastra um novo transporte&lt;/p&gt;
+        &lt;li&gt;O campo [nome_fantasia] deve ser preenchido com o NOME FANTASIA do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [razao_social] deve ser preenchido com o RAZÃO SOCIAL do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [telefone] deve ser preenchido com o TELEFONE do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [cnpj] deve ser preenchido com o CNPJ do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [ie] deve ser preenchido com o INSCRIÇÃO ESTADUAL (não obrigatórico) do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [logradouro] deve ser preenchido com o NOME DA RUA do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [numero] deve ser preenchido com o NUMERO NO ENDEREÇO do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [complemento] deve ser preenchido com o COMPLEMENTO DO ENDEREÇO do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [cep] deve ser preenchido com o CEP do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [bairro] deve ser preenchido com o BAIRRO do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [cidade] deve ser preenchido com o CIDADE do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [uf] deve ser preenchido com o SIGLA DO ESTADO do fornecedor&lt;/li&gt;
+        &lt;li&gt;O campo [pais] deve ser preenchido com o Nome do País do fornecedor&lt;/li&gt;
+        &lt;li&gt;Todos os pedidos devem ser transmitidos informando este código do transporte&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:cadastraFornecedorRequest" />
+      <wsdl:output message="tns:cadastraFornecedorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraTransporte">
+      <documentation>&lt;p&gt;EM PROCESSO DE DESATIVAÇÃO USAR AS FUNÇÕES cadastraFornecedor e cadastraServicoTransporte &lt;/p&gt;
+        &lt;li&gt;Todos os pedidos devem ser transmitidos informando este código do transporte&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:cadastraTransporteRequest" />
+      <wsdl:output message="tns:cadastraTransporteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraDistribuicao">
+      <documentation>&lt;p&gt;Cadastra "distribuição" (Nome para uma lista de pedidos)&lt;/p&gt;
+        &lt;li&gt;[dist_descricao] -  Nome da distribuição&lt;/li&gt;
+        &lt;li&gt;Por exemplo : Pedidos de natal, Black Friday, etc...&lt;/li&gt;
+        &lt;li&gt;Este distribuição facilida a analise e o planejamento logístico para o cliente assim como ações de marketing&lt;/li&gt;
+        &lt;p&gt;RETORNO : ID da Distribuição cadastrada.&lt;/p&gt;</documentation>
+      <wsdl:input message="tns:cadastraDistribuicaoRequest" />
+      <wsdl:output message="tns:cadastraDistribuicaoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraMaterial">
+      <documentation>&lt;p&gt;Cadastra "material" (Produto)&lt;/p&gt;
+        &lt;li&gt;[codigo] -  Código do material&lt;/li&gt;
+        &lt;li&gt;[camp_id] -  ID da campanha (verifique função getCampanhas)&lt;/li&gt;
+        &lt;li&gt;[descricao_material] -  Nome do material&lt;/li&gt;
+        &lt;li&gt;[largura] -  Largura de 1 unidade&lt;/li&gt;
+        &lt;li&gt;[comprimento] -  Comprimento  de 1 unidade&lt;/li&gt;
+        &lt;li&gt;[altura] -  Altura de 1 unidade&lt;/li&gt;
+        &lt;li&gt;[peso] -  Peso de 1 unidade.&lt;/li&gt;
+        &lt;p&gt;RETORNO : String de sucesso ou erro.&lt;/p&gt;</documentation>
+      <wsdl:input message="tns:cadastraMaterialRequest" />
+      <wsdl:output message="tns:cadastraMaterialResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastraCampanha">
+      <documentation>&lt;p&gt;Cadastra "campanha" (Nome para uma lista de produtos similar a categorias de produtos usualmente utilizado em lojas virtuais)&lt;/p&gt;
+        &lt;li&gt;[camp_descricao] -  Nome da campanha&lt;/li&gt;
+        &lt;li&gt;Por exemplo : Eletrônicos, Informática, Beleza, etc...&lt;/li&gt;
+        &lt;li&gt;Este campanha facilida a analise e o planejamento logístico otimiza operações de disponibilidade e indisponibilidade de produtos.&lt;/li&gt;
+        &lt;p&gt;RETORNO : ID da campanha cadastrada.&lt;/p&gt;</documentation>
+      <wsdl:input message="tns:cadastraCampanhaRequest" />
+      <wsdl:output message="tns:cadastraCampanhaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidaEmissaoFiscal">
+      <documentation>&lt;p&gt;RETORNO : todos os códigos respectivo lote e quantidades operados para o pedido [numero_pedido_origem].&lt;/p&gt;
+	    &lt;li&gt;[retorno][][codigo] - Código&lt;/li&gt;
+	    &lt;li&gt;[retorno][][lote] - Lote&lt;/li&gt;
+	    &lt;li&gt;[retorno][][quantidade] - Quantidade&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getValidaEmissaoFiscalRequest" />
+      <wsdl:output message="tns:getValidaEmissaoFiscalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusPedido">
+      <documentation>&lt;p&gt;Retorna um array com o status do pedido no sistema da SHL  &lt;/p&gt;
+        &lt;li&gt;[retorno][sta_ped_id] - ID do status&lt;/li&gt;
+        &lt;li&gt;[retorno][sta_ped_descricao] - Descrição do status&lt;/li&gt;
+        &lt;li&gt;[falha] - Erro&lt;/li&gt;
+        &lt;li&gt;STATUS POSSÍVEIS&lt;/li&gt;
+        &lt;li&gt;1	Lançado&lt;/li&gt;
+        &lt;li&gt;2	Em separação&lt;/li&gt;
+        &lt;li&gt;3	Em conferência&lt;/li&gt;
+        &lt;li&gt;4	Em Expedição&lt;/li&gt;
+        &lt;li&gt;5	Despachado incompleto&lt;/li&gt;
+        &lt;li&gt;6	Despachado completo&lt;/li&gt;
+        &lt;li&gt;7	Despachado (Sem análise)&lt;/li&gt;
+        &lt;li&gt;8	Aguardando separação&lt;/li&gt;
+        &lt;li&gt;9	Cancelado&lt;/li&gt;
+        &lt;li&gt;10	Aguardando separação IMPRESSO&lt;/li&gt;
+        &lt;li&gt;11	Aguardando retirada&lt;/li&gt;
+        &lt;li&gt;12	Devolvido&lt;/li&gt;
+        &lt;li&gt;13	Pendente (Falha na operação)&lt;/li&gt;
+        &lt;li&gt;14	Pendente (Verificar Situação)&lt;/li&gt;
+        &lt;li&gt;15	Em conferência(Falta material)&lt;/li&gt;
+        &lt;li&gt;17	Aguardando Conferência&lt;/li&gt;
+        &lt;li&gt;18	Aguardando Reenvio&lt;/li&gt;
+        &lt;li&gt;19	Cancelado - Não extornar&lt;/li&gt;
+        &lt;li&gt;20	Aguardando Nota Fiscal&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getStatusPedidoRequest" />
+      <wsdl:output message="tns:getStatusPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicosTransportes">
+      <documentation>&lt;p&gt;Retorna um array os transportadores cadastrados&lt;/p&gt;
+        &lt;li&gt;[trans_descricao] - Nome do transportador&lt;/li&gt;
+        &lt;li&gt;[codigo_transporte] - Código de identificação do transportador&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getServicosTransportesRequest" />
+      <wsdl:output message="tns:getServicosTransportesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDistribuicoes">
+      <documentation>&lt;p&gt;Retorna um array com o nome de todas os nomes de "Distribuições"&lt;/p&gt;
+        &lt;li&gt;[dist_id] - ID da Distribuição&lt;/li&gt;
+        &lt;li&gt;[dist_descricao] - Nome da Distribuição&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getDistribuicoesRequest" />
+      <wsdl:output message="tns:getDistribuicoesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCampanhas">
+      <documentation>&lt;p&gt;Retorna um array com o nome de todas as "campanhas"(Nome para uma lista de produtos similar a categorias de produtos usualmente utilizado em lojas virtuais) cadastradas no sistema da SHL  &lt;/p&gt;
+        &lt;li&gt;[camp_id] - ID da campanha&lt;/li&gt;
+        &lt;li&gt;[camp_descricao] - Nome da campanha&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getCampanhasRequest" />
+      <wsdl:output message="tns:getCampanhasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMateriaisLotes">
+      <documentation>&lt;p&gt;Retorna um array com todos os lotes cadastrados, para o codigo do material [codigo] solicitado.&lt;/p&gt;
+    &lt;li&gt;[est_lot_numero] - NÚMERO DO LOTE&lt;/li&gt;
+    &lt;li&gt;[est_lot_data_validade] - DATA DE VALIDADE&lt;/li&gt;
+    &lt;li&gt;[est_lot_quantidade_total] - QUANTIDADE TOTAL&lt;/li&gt;
+    &lt;li&gt;[est_lot_status] - STATUS&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getMateriaisLotesRequest" />
+      <wsdl:output message="tns:getMateriaisLotesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackingPicking">
+      <documentation>&lt;p&gt;Retorna os custos de separação e embalagem de um pedido&lt;/p&gt;
+    &lt;p&gt;ITENS DO PEDIDO&lt;/p&gt;
+    &lt;li&gt;[materiais] [ ] [codigo] - Array de produtos com o codigo de cada item que compôe o pedido.&lt;/li&gt;
+    &lt;li&gt;[materiais] [ ] [quantidade] - Quantidades de cada codigo que compôe o pedido.&lt;/li&gt;
+    &lt;p&gt;Retorna um array com 2 chaves, [custos] e [prazo].&lt;/p&gt;
+    &lt;li&gt;[custo_picking] - Custos para separação do pedido&lt;/li&gt;
+    &lt;li&gt;[custo_packing] - Custos para embalagem do pedido&lt;/li&gt;
+    &lt;li&gt;[prazo] - Prazo para separação e embalagem do pedido&lt;/li&gt;
+    &lt;li&gt;[peso] - Peso em gramas(g) considerado (Maior valor comparativo entre peso REAL e peso CUBICO)&lt;/li&gt;
+    &lt;li&gt;[total_itens] - Total de itens em operação (ACUMULADO)&lt;/li&gt;
+    &lt;li&gt;[media] - Média de itens (MEDIA MÊS ANTERIOR)&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getPackingPickingRequest" />
+      <wsdl:output message="tns:getPackingPickingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMateriais">
+      <documentation>&lt;p&gt;Retorna um array com todos os materiais cadastrados no sistema da SHL&lt;/p&gt;
+    &lt;li&gt;[est_codigo] - Código do material&lt;/li&gt;
+    &lt;li&gt;[est_descricao] - Descrição do material&lt;/li&gt;
+    &lt;li&gt;[est_peso] - Peso(g)do material&lt;/li&gt;
+    &lt;li&gt;[est_larg] - Largura(mm) do material&lt;/li&gt;
+    &lt;li&gt;[est_comp] - Comprimento(mm) do material&lt;/li&gt;
+    &lt;li&gt;[est_alt] - Altura(mm) do material&lt;/li&gt;
+    &lt;li&gt;[quantidade_total] - Quantidade total disponível em estoque&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getMateriaisRequest" />
+      <wsdl:output message="tns:getMateriaisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRastreio">
+      <documentation>&lt;p&gt;Retorna um array com o código de rastreio para acompanhamento das encomendas junto ao transportador&lt;/p&gt;
+    &lt;li&gt;Um pedido pode ter um ou mais códigos sendo um para cada volume a ser transportado&lt;/li&gt;
+    &lt;p&gt;RETORNO : todos os códigos vinculados ao [numero_pedido_origem].&lt;/p&gt;
+    &lt;li&gt;[retorno][][reg_registro] - Código de rastreio&lt;/li&gt;
+    &lt;li&gt;[retorno][][reg_data_envio] - Data de envio do volume&lt;/li&gt;
+    &lt;li&gt;[falha] - Erro&lt;/li&gt;</documentation>
+      <wsdl:input message="tns:getRastreioRequest" />
+      <wsdl:output message="tns:getRastreioResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Webservice - HOMOLOGAÇÃO SHLBinding" type="tns:Webservice - HOMOLOGAÇÃO SHLPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="cadastraPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraMailing">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraMailing" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postXmlDanfePedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#postXmlDanfePedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLinkBoletoPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#setLinkBoletoPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLinkXmlPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#setLinkXmlPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCancelarPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#setCancelarPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTipoPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#setTipoPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraServicoTransporte">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraServicoTransporte" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraFornecedor">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraFornecedor" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraTransporte">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraTransporte" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraDistribuicao">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraDistribuicao" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraMaterial">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraMaterial" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraCampanha">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#cadastraCampanha" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValidaEmissaoFiscal">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getValidaEmissaoFiscal" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusPedido">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getStatusPedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicosTransportes">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getServicosTransportes" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistribuicoes">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getDistribuicoes" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCampanhas">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getCampanhas" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMateriaisLotes">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getMateriaisLotes" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackingPicking">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getPackingPicking" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMateriais">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getMateriais" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRastreio">
+      <soap:operation soapAction="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl#getRastreio" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.slomp.com.br/sistema/webservice/homologacao/server_nusoap.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Webservice - HOMOLOGAÇÃO SHL">
+    <wsdl:port name="Webservice - HOMOLOGAÇÃO SHLPort" binding="tns:Webservice - HOMOLOGAÇÃO SHLBinding">
+      <soap:address location="http://slomp.com.br/sistema/webservice/homologacao/server_nusoap.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

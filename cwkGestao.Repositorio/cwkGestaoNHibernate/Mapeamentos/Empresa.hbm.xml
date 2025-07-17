@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Empresa" table="Empresa">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<property name="Nome" column="Nome" type="string" length="60" />
+		<bag name="Filials" table="Filial">					
+			<key column="IDEmpresa" />
+			<one-to-many class="Filial" />
+		</bag>
+</class>
+</hibernate-mapping>
+		

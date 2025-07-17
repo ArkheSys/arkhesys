@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Reparcelamento" table="Reparcelamento">
+
+    <id name="ID" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Data" column="Data" type="DateTime" />
+    <many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+    <property name="ValorTotal" column="ValorTotal" type="decimal" />
+    <property name="Juros" column="Juros" type="decimal" />
+    <property name="Observacao" column="Observacao" type="string" length="2147483647" />
+    <property name="Data_Base" column="Data_Base" type="DateTime" />
+    <bag name="ReparcelamentoDocs" table="ReparcelamentoDocs" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDReparcelamento" />
+      <one-to-many class="ReparcelamentoDoc" />
+    </bag>
+  </class>
+</hibernate-mapping>

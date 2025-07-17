@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Promocao" table="Promocao">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="TabelaPreco" column="IDTabelaPreco" class="TabelaPreco" lazy="false"/>
+		<property name="Nome" column="Nome" type="string" />
+		<property name="DataInicio" column="DataInicio" type="DateTime" />
+		<property name="DataFim" column="DataFim" type="DateTime" />
+		<property name="Percentual" column="Percentual" type="decimal" />
+		<property name="Tipo" column="Tipo" type="Int32" />
+
+		<bag name="Itens" table="PromocaoProduto" lazy="false" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDPromocao" />
+			<one-to-many class="PromocaoProduto" />
+		</bag>
+	</class>
+</hibernate-mapping>

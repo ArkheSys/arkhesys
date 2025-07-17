@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Modelo.Objeto
+{
+    public class pxyProjetoProduto
+    {
+        public Modelo.Produto Produto { get; set; }
+        public decimal Quantidade { get; set; }
+    }
+}

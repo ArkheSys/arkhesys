@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<templates>C:\Program Files\cwkGestaoCRUDGenerator\Templates\</templates>
+  <connString>Data Source=ANDRE-DV\SQLEXPRESS;Initial Catalog=BancoDemo;User Id=sa;Password=35789512;</connString>
+</configuration>

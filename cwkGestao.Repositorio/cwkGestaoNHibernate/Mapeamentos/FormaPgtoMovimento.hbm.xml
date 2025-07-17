@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="FormaPgtoMovimento" table="FormaPgtoMovimento">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="int" />
+    <many-to-one name="Movimento" column="IDMovimento" class="Movimento" />
+    <many-to-one name="FormaPagamento" column="IDFormaPagamento" class="FormaPagamento" />
+    <property name="Valor" column="Valor" type="decimal" />
+    <property name="NomeBanco" column="NomeBanco" type="string" length="100" />
+    <property name="NumBanco" column="NumBanco" type="string" length="4" />
+    <property name="Agencia" column="Agencia" type="string" length="8" />
+    <property name="Conta" column="Conta" type="string" length="15" />
+    <property name="Cheque" column="Cheque" type="string" length="8" />
+    <property name="CpfCnpjEmitente" column="CpfCnpjEmitente" type="string" length="19" />
+    <property name="NomeEmitente" column="NomeEmitente" type="string" length="60" />
+    <property name="DataCheque" column="DataCheque" type="DateTime" />
+
+    <property name="BandeiraCartao" column="BandeiraCartao" type="int" />
+    <property name="Operadora" column="Operadora" type="string" length="100" />
+    <property name="CAut" column="CAut" type="string" length="50" />
+  </class>
+</hibernate-mapping>

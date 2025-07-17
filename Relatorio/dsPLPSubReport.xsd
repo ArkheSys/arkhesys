@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPLPSubReport" targetNamespace="http://tempuri.org/dsPLPSubReport.xsd" xmlns:mstns="http://tempuri.org/dsPLPSubReport.xsd" xmlns="http://tempuri.org/dsPLPSubReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GestaoTesteCorreiosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GestaoTesteCorreiosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.GestaoTesteCorreiosConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GestaoCorreiosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GestaoCorreiosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.GestaoCorreiosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPLPTableAdapter" GeneratorDataComponentClassName="dtPLPTableAdapter" Name="dtPLP" UserDataComponentName="dtPLPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkGestaoConnectionString (Settings)" DbObjectName="SELECT plp.IDPLPWS AS [NumeroPLP], f.correioCartaoPostagem AS 'CartãoPostagem', plp.ID AS 'IdPLP', tt.CodigoServico AS 'Serviço', COUNT(rc.Numero) AS 'Quantidade' FROM PLP AS plp INNER JOIN PLPDetalhe AS plpd ON plpd.IDPLP = plp.ID INNER JOIN pedido AS p ON p.id = plpd.IDPedido INNER JOIN CorreiosPrecoPrazo AS cpp ON cpp.IDPedido = p.ID INNER JOIN RastreamentoCorreio AS rc ON cpp.IDRastreamento = rc.ID AND rc.SolicitadoWScorreios = 1 INNER JOIN TipoServicoTransporte tt ON RC.IDTipoServico = tt.ID AND tt.Correios = 1 INNER JOIN Filial F ON f.ID = p.IDFilial GROUP BY f.correioCartaoPostagem, tt.CodigoServico, plp.IDPLPWS, plp.ID" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select t.*
+  from ( 
+select plp.IDPLPWS as "NumeroPLP",
+       f.correioCartaoPostagem as 'CartãoPostagem',
+       plp.ID as 'IdPLP',
+	   tt.CodigoServico as 'Serviço',
+       COUNT(rc.Numero) as 'Quantidade'
+  from PLP as plp
+ inner join PLPDetalhe as plpd on plpd.IDPLP = plp.ID
+ inner join pedido as p on p.id = plpd.IDPedido
+ inner join CorreiosPrecoPrazo as cpp on cpp.IDPedido = p.ID
+ inner join RastreamentoCorreio as rc on cpp.IDRastreamento = rc.ID and rc.SolicitadoWScorreios = 1
+ INNER JOIN TipoServicoTransporte tt on RC.IDTipoServico = tt.ID and tt.Correios = 1
+ INNER JOIN Filial F on f.ID = p.IDFilial
+ group by f.correioCartaoPostagem,
+	      tt.CodigoServico,
+	      plp.IDPLPWS,
+          plp.ID
+         ) t</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CartãoPostagem" DataSetColumn="CartãoPostagem" />
+              <Mapping SourceColumn="Serviço" DataSetColumn="Serviço" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+              <Mapping SourceColumn="NumeroPLP" DataSetColumn="NumeroPLP" />
+              <Mapping SourceColumn="IdPLP" DataSetColumn="IdPLP" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPLPSubReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsPLPSubReport" msprop:Generator_DataSetName="dsPLPSubReport" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPLP" msprop:Generator_UserTableName="dtPLP" msprop:Generator_RowDeletedName="dtPLPRowDeleted" msprop:Generator_RowChangedName="dtPLPRowChanged" msprop:Generator_RowClassName="dtPLPRow" msprop:Generator_RowChangingName="dtPLPRowChanging" msprop:Generator_RowEvArgName="dtPLPRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPLPRowChangeEventHandler" msprop:Generator_TableClassName="dtPLPDataTable" msprop:Generator_TableVarName="tabledtPLP" msprop:Generator_RowDeletingName="dtPLPRowDeleting" msprop:Generator_TablePropName="dtPLP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CartãoPostagem" msprop:Generator_UserColumnName="CartãoPostagem" msprop:Generator_ColumnPropNameInRow="CartãoPostagem" msprop:Generator_ColumnVarNameInTable="columnCartãoPostagem" msprop:Generator_ColumnPropNameInTable="CartãoPostagemColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serviço" msprop:Generator_UserColumnName="Serviço" msprop:Generator_ColumnPropNameInRow="Serviço" msprop:Generator_ColumnVarNameInTable="columnServiço" msprop:Generator_ColumnPropNameInTable="ServiçoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantidade" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Quantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NumeroPLP" msprop:Generator_UserColumnName="NumeroPLP" msprop:Generator_ColumnPropNameInRow="NumeroPLP" msprop:Generator_ColumnVarNameInTable="columnNumeroPLP" msprop:Generator_ColumnPropNameInTable="NumeroPLPColumn" type="xs:int" />
+              <xs:element name="IdPLP" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IdPLP" msprop:Generator_ColumnPropNameInRow="IdPLP" msprop:Generator_ColumnVarNameInTable="columnIdPLP" msprop:Generator_ColumnPropNameInTable="IdPLPColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtPLP" />
+      <xs:field xpath="mstns:IdPLP" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

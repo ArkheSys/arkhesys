@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="PedidoItemServico" table="PedidoItemServico">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="Pedido" column="IDPedido" class="Pedido" not-null="true" lazy="false"/>
+	<property name="Sequencia" column="Sequencia" type="Int32" />
+	<many-to-one name="Servico" column="IDServico" class="Servico" lazy="false" />
+	<property name="ServicoNome" column="ServicoNome" type="string" />
+  <property name="CustoEFormasDePagamento" column="CustoEFormasDePagamento" type="string" />
+  <property name="Quantidade" column="Quantidade" type="decimal" />
+	<property name="Valor" column="Valor" type="decimal" />
+	<property name="PercDesconto" column="PercDesconto" type="decimal" />
+	<property name="Total" column="Total" type="decimal" />
+  <property name="ValorDesconto" column="ValorDesconto" type="decimal" />
+  <property name="RAT_Desconto" column="RAT_Desconto" type="decimal" />
+  <property name="RAT_Acrescimo" column="RAT_Acrescimo" type="decimal" />
+  <property name="BFaturado" column="BFaturado" type="bool" />
+
+  <!--<bag name="NotaItemSvcPedItemSvcs" table="NotaItemServicoPedidoItemServico" lazy="false" inverse="true" cascade="all-delete-orphan" >
+        <key column="IDPedidoItemServico" />
+        <one-to-many class="NotaItemServicoPedidoItemServico" />
+      </bag>-->
+    
+  </class>
+</hibernate-mapping>

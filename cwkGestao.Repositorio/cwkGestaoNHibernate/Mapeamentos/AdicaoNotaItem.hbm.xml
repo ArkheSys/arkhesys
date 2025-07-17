@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="AdicaoNotaItem" table="AdicaoNotaItem">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<many-to-one name="NotaItem" column="IDNotaItem" class="NotaItem" />
+    <property name="I26_nAdicao"  column="I26_nAdicao" type="decimal" />
+    <property name="I27_nSeqAdic"  column="I27_nSeqAdic" type="decimal" />
+    <property name="I28_cFabricante" column="I28_cFabricante" type="string" length="60" />
+    <property name="I29_vDescDI"  column="I29_vDescDI" type="decimal" />
+    <property name="I30_xPed"  column="I30_xPed" type="string" length="60" />
+    <property name="I31_nItemPed"  column="I31_nItemPed" type="decimal" />
+</class>
+</hibernate-mapping>
+		

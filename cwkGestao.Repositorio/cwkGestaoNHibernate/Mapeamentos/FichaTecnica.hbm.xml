@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="FichaTecnica" table="FichaTecnica">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Versao" column="Versao" type="bool" />
+	<property name="Descricao" column="Descricao" type="string" length="600" />
+	<many-to-one name="Produto" column="IDProduto" class="Produto" />
+					<property name="DataVersao" column="DataVersao" type="DateTime" />
+		<bag name="ItemFichaTecnicas" table="ItemFichaTecnica">					
+			<key column="IDFichaTecnica" />
+			<one-to-many class="ItemFichaTecnica" />
+		</bag>
+</class>
+</hibernate-mapping>
+		

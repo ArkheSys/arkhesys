@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="AcompanhamentoOS" table="AcompanhamentoOS">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <many-to-one name="OrdemServico" column="IDOrdemServico" class="OrdemServico" />
+    <many-to-one name="ResponsavelAnt" column="IDResponsavelAnt" class="Cw_usuario" />
+    <many-to-one name="ResponsavelAtu" column="IDResponsavelAtu" class="Cw_usuario" />
+    <many-to-one name="StatusAnt" column="IDStatusAnt" class="StatusOrdemServico" />
+    <many-to-one name="StatusAtu" column="IDStatusAtu" class="StatusOrdemServico" />
+    <property name="Incdata" column="Incdata" type="DateTime" />
+    <property name="Incusuario" column="Incusuario" type="string" length="20" />
+    <property name="Altdata" column="Altdata" type="DateTime" />
+    <property name="Altusuario" column="Altusuario" type="string" length="20" />
+  </class>
+</hibernate-mapping>

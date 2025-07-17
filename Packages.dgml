@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Aplicacao" Label="Aplicacao" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="Package" />
+    <Node Id="SimpleCrypto 0.3.30.26" Label="SimpleCrypto 0.3.30.26" Category="Package" />
+    <Node Id="cwkGestao" Label="cwkGestao" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Async 1.0.168" Label="Microsoft.Bcl.Async 1.0.168" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Solution Items\cwkGestao.UnitTest" Label="cwkGestao.UnitTest" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Apresentacao\Relatorio" Label="Relatorio" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.Sped.Fiscal" Label="cwkGestao.Integracao.Sped.Fiscal" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\CwkGestao.Integracao.PafEcf.Salc" Label="CwkGestao.Integracao.PafEcf.Salc" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.SHL" Label="cwkGestao.Integracao.SHL" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.SISeCommerce" Label="cwkGestao.Integracao.SISeCommerce" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.MercadoLivre" Label="cwkGestao.Integracao.MercadoLivre" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.Correios" Label="cwkGestao.Integracao.Correios" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.Telefonia" Label="cwkGestao.Integracao.Telefonia" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Integracao\cwkGestao.Integracao.Magento" Label="cwkGestao.Integracao.Magento" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Legado\Modelo" Label="Modelo" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Legado\BLL" Label="BLL" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Negocio\cwkGestao.NFe" Label="cwkGestao.NFe" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Negocio\cwkGestao.Negocio" Label="cwkGestao.Negocio" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Negocio\cwkGestao.Modelo" Label="cwkGestao.Modelo" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+    <Node Id="Infraestrutura\cwkGestao.Repositorio" Label="cwkGestao.Repositorio" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.1.10" Label="Microsoft.Bcl 1.1.10" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.14" Label="Microsoft.Bcl.Build 1.0.14" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.2.29" Label="Microsoft.Net.Http 2.2.29" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Aplicacao" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Aplicacao" Target="Newtonsoft.Json 6.0.8" Category="Installed Package" />
+    <Link Source="Aplicacao" Target="SimpleCrypto 0.3.30.26" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Bcl.Async 1.0.168" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="cwkGestao" Target="Microsoft.Bcl.Async 1.0.168" Category="Installed Package" />
+    <Link Source="cwkGestao" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Solution Items\cwkGestao.UnitTest" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Apresentacao\Relatorio" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.Sped.Fiscal" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\CwkGestao.Integracao.PafEcf.Salc" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.SHL" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.SISeCommerce" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.MercadoLivre" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.Correios" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.Telefonia" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Integracao\cwkGestao.Integracao.Magento" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Legado\Modelo" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Legado\BLL" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Negocio\cwkGestao.NFe" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Negocio\cwkGestao.Negocio" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Negocio\cwkGestao.Modelo" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+    <Link Source="Microsoft.Bcl 1.1.10" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl 1.1.10" Category="Package Dependency" />
+    <Link Source="Microsoft.Net.Http 2.2.29" Target="Microsoft.Bcl.Build 1.0.14" Category="Package Dependency" />
+    <Link Source="Infraestrutura\cwkGestao.Repositorio" Target="Microsoft.Net.Http 2.2.29" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

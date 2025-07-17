@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Remessa" table="Remessa">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<property name="Descricao" column="Descricao" type="string" length="100" />
+		<property name="ArquivoDeLicensa" column="ArquivoDeLicensa" type="string" length="255" />
+		<property name="CodigoAgencia" column="CodigoAgencia" type="string" length="10" />
+		<property name="DigitoAgencia" column="DigitoAgencia" type="string" length="10" />
+		<property name="ContaCorrente" column="ContaCorrente" type="string" length="15" />
+		<property name="DigitoConta" column="DigitoConta" type="string" length="10" />
+		<property name="CodigoCedente" column="CodigoCedente" type="string" length="20" />
+		<property name="DigitoAgenciaConta" column="DigitoAgenciaConta" type="string" length="5" />
+		<property name="CaminhoImagem" column="CaminhoImagem" type="string" length="255" />
+		<property name="LayoutBoleto" column="LayoutBoleto" type="string" length="100" />
+		<property name="CaminhoLayoutBoleto" column="CaminhoLayoutBoleto" type="string" length="255" />
+		<property name="InstrucoesCaixa" column="InstrucoesCaixa" type="string" length="255" />
+		<property name="Logotipo" column="Logotipo" type="string" length="255" />
+		<property name="LayoutRemessa" column="LayoutRemessa" type="string" length="100" />
+		<property name="LayoutRetorno" column="LayoutRetorno" type="string" length="100" />
+		<property name="LayoutBoletoEmail" column="LayoutBoletoEmail" type="string" length="100" />
+		<property name="VersaoLayoutArquivo" column="VersaoLayoutArquivo" type="string" length="10" />
+		<property name="VersaoLayoutLote" column="VersaoLayoutLote" type="string" length="10" />
+		<property name="Sequencia" column="Sequencia" type="Int32" />
+		<property name="CaminhoRemessa" column="CaminhoRemessa" type="string" length="120" />
+		<property name="CaminhoRetorno" column="CaminhoRetorno" type="string" length="120" />
+		<property name="NomeRemessa" column="NomeRemessa" type="string" length="50" />
+		<property name="NomeRetorno" column="NomeRetorno" type="string" length="50" />
+		<property name="CodigoBaixaDevolucao" />
+		<property name="NumDiasBaixaDevolucao" />
+		<property name="BGeraPDF" column="bGeraPDF" type="bool" />
+		<property name="BGeraImpressao" column="bGeraImpressao" type="bool" />
+		<property name="BGeraRemessa" column="bGeraRemessa" type="bool" />
+		<property name="BGeraEmail" column="bGeraEmail" type="bool" />
+		<property name="MensagemEmail" column="MensagemEmail" type="string" />
+		<property name="URLLogotipo" column="URLLogotipo" type="string" />
+		<property name="URLCodigodeBarras" column="URLCodigodeBarras" type="string" />
+		<property name="AssuntoEmail" column="AssuntoEmail" type="string" length="100" />
+		<property name="NomeDoEmail" column="NomeDoEmail" type="string" length="100" />
+		<property name="BancoEmiteBoleto" column="BancoEmiteBoleto" type="bool" />
+		<property name="CodigoProtesto" column="CodigoProtesto" type="string" length="1" />
+		<property name="NumeroDiasProtesto" column="NumeroDiasProtesto" type="string" length="2" />
+		<property name="EspecieTitulo" column="EspecieTitulo" type="string" length="2" />
+		<property name="VariacaoCarteira" column="VariacaoCarteira" type="string" length="3" />
+		<property name="ImpressoraNome" column="ImpressoraNome" type="string" length="255" />
+		<property name="Banco" column="Banco" type="Int32" />
+		<property name="SicrediTipoCobranca" column="SicrediTipoCobranca" type="bool" />
+		<property name="SicrediNumeroRemessa" column="SicrediNumeroRemessa" type="Int32" />
+		<property name="CaminhoHTML" column="CaminhoHTML" type="string" />
+		<property name="CaminhoLogBaixa" column="CaminhoLogBaixa" type="string" />
+		<property name="CaminhoPDF" column="CaminhoPDF" type="string" />
+		<property name="CaminhoBoleto_EmLote" column="CaminhoBoleto_EmLote " type="string" />
+		<property name="PadraoJuroBoleto" column="PadraoJuroBoleto " type="bool" />
+		<property name="SomaNossoNumero" column="SomaNossoNumero" type="int"/>
+		<property name="UtilizaDataCredito" column="UtilizaDataCredito" type="bool"/>
+		<property name="GeraMovTaxaDesconto" column="GeraMovTaxaDesconto" type="bool"/>
+		<property name="GeraMovTaxaBoleto" column="GeraMovTaxaBoleto" type="bool"/>
+		<property name="GeraMovTaxaIOF" column="GeraMovTaxaIOF" type="bool"/>
+		<many-to-one name="PlanoContaTaxaDesconto" column="IDPlanoContaTaxaDesconto" class="PlanoConta" lazy="false"  not-null="false" />
+		<many-to-one name="PlanoContaTaxaBoleto" column="IDPlanoContaTaxaBoleto" class="PlanoConta" lazy="false"  not-null="false" />
+		<many-to-one name="PlanoContaTaxaIOF" column="IDPlanoContaTaxaIOF" class="PlanoConta" lazy="false"  not-null="false" />
+		<many-to-one name="HistoricoTaxaDesconto" column="IDHistoricoTaxaDesconto" class="Historico" lazy="false"  not-null="false" />
+		<many-to-one name="HistoricoTaxaBoleto" column="IDHistoricoTaxaBoleto" class="Historico" lazy="false"  not-null="false" />
+		<many-to-one name="HistoricoTaxaIOF" column="IDHistoricoTaxaIOF" class="Historico" lazy="false"  not-null="false" />
+		<many-to-one name="PlanoContaEstornoTDesc" column="IDPlanoContaEstornoTDesc" class="PlanoConta" lazy="false"  not-null="false" />
+		<many-to-one name="HistoricoEstornoTDesc" column="IDHistoricoEstornoTDesc" class="Historico" lazy="false"  not-null="false" />
+		<property name="SolicitaConfirmaEmailBoleto" column="SolicitaConfirmaEmailBoleto" type="bool"/>
+		<property name="BNaoGeraMsgProtesto" column="BNaoGeraMsgProtesto" type="bool"/>
+		<property name="BExportaJurosMulta" column="BExportaJurosMulta" type="bool"/>
+		<property name="Convenio" column="Convenio" type="string" length="50" />
+		<property name="NumeroContrato" column="NumeroContrato" type="string" length="10" />
+		<property name="Carteira" column="Carteira" type="string" length="3" />
+		<property name="CodigoGeracao" column="CodigoGeracao" type="string" length="3" />
+		<property name="DataLimitePagamento" column="DataLimitePagamento" type="string" length="5" />
+	</class>
+</hibernate-mapping>

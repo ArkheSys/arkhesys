@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="CorreiosPrecoPrazo" table="CorreiosPrecoPrazo">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="IDPedido" column="IDPedido" class="Pedido" lazy="false"/>
+	<many-to-one name="IDRastreamento" column="IDRastreamento" class="RastreamentoCorreio" lazy="false"/>
+  <many-to-one name="FormatoPacoteTransporte" column="IDFormatoPacoteTransporte" class="FormatoPacoteTransporte" lazy="false"/>
+  <many-to-one name="TipoServicoTransporte" column="IDTipoServicoTransporte" class="TipoServicoTransporte" lazy="false"/>
+  <property name="bSelecionado" column="bSelecionado" type="bool" />
+  <property name="CepOrigem" column="CepOrigem" type="string" />
+  <property name="CepDestino" column="CepDestino" type="string" />
+	<property name="NCdServico" column="nCdServico" type="string" />
+  <property name="NVlPeso" column="nVlPeso" type="decimal"/>
+  <property name="NCdFormato" column="nCdFormato" type="Int32" />
+	<property name="NVlComprimento" column="nVlComprimento" type="decimal" />
+	<property name="NVlAltura" column="nVlAltura" type="decimal" />
+	<property name="NVlLargura" column="nVlLargura" type="decimal" />
+	<property name="NVlDiametro" column="nVlDiametro" type="decimal" />
+	<property name="SCdMaoPropria" column="sCdMaoPropria" type="string" />
+	<property name="NVlValorDeclarado" column="nVlValorDeclarado" type="decimal" />
+	<property name="SCdAvisoRecebimento" column="sCdAvisoRecebimento" type="string" />
+	<property name="bCalculadoPrecoEprazo" column="bCalculadoPrecoEprazo" type="bool" />
+	<property name="Valor" column="Valor" type="decimal" />
+	<property name="ValorMaoPropria" column="ValorMaoPropria" type="decimal" />
+	<property name="ValorAvisoRecebimento" column="ValorAvisoRecebimento" type="decimal" />
+	<property name="ValorValorDeclarado" column="ValorValorDeclarado" type="decimal" />
+	<property name="Erro" column="Erro" type="Int32" />
+	<property name="MsgErro" column="MsgErro" type="string" />
+  <property name="DtPrazoEntrega" column="DtPrazoEntrega" type="DateTime" />
+  <property name="bReplicado" column="bReplicado" type="bool" />
+
+  </class>
+</hibernate-mapping>

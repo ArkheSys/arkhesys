@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="BalancoItem" table="BalancoItem">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Balanco" column="IDBalanco" class="Balanco" />
+    <many-to-one name="Produto" column="IDProduto" class="Produto" />
+    <many-to-one name="NotaItem" column="IDNotaItem" class="NotaItem" />
+    <property name="Quantidade" column="Quantidade" type="decimal" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+  </class>
+</hibernate-mapping>

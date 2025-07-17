@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsProducao" targetNamespace="http://tempuri.org/dsProducao.xsd" xmlns:mstns="http://tempuri.org/dsProducao.xsd" xmlns="http://tempuri.org/dsProducao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsProducao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsProducao" msprop:Generator_DataSetName="dsProducao" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ApontamentoHoras" msprop:Generator_UserTableName="ApontamentoHoras" msprop:Generator_RowDeletedName="ApontamentoHorasRowDeleted" msprop:Generator_RowChangedName="ApontamentoHorasRowChanged" msprop:Generator_RowClassName="ApontamentoHorasRow" msprop:Generator_RowChangingName="ApontamentoHorasRowChanging" msprop:Generator_RowEvArgName="ApontamentoHorasRowChangeEvent" msprop:Generator_RowEvHandlerName="ApontamentoHorasRowChangeEventHandler" msprop:Generator_TableClassName="ApontamentoHorasDataTable" msprop:Generator_TableVarName="tableApontamentoHoras" msprop:Generator_RowDeletingName="ApontamentoHorasRowDeleting" msprop:Generator_TablePropName="ApontamentoHoras">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OP" msprop:Generator_UserColumnName="OP" msprop:Generator_ColumnPropNameInRow="OP" msprop:Generator_ColumnVarNameInTable="columnOP" msprop:Generator_ColumnPropNameInTable="OPColumn" type="xs:int" default="0" />
+              <xs:element name="DataInicio" msprop:Generator_UserColumnName="DataInicio" msprop:Generator_ColumnPropNameInRow="DataInicio" msprop:Generator_ColumnVarNameInTable="columnDataInicio" msprop:Generator_ColumnPropNameInTable="DataInicioColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="DataTermino" msprop:Generator_UserColumnName="DataTermino" msprop:Generator_ColumnPropNameInRow="DataTermino" msprop:Generator_ColumnVarNameInTable="columnDataTermino" msprop:Generator_ColumnPropNameInTable="DataTerminoColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="Servico" msprop:Generator_UserColumnName="Servico" msprop:Generator_ColumnPropNameInRow="Servico" msprop:Generator_ColumnVarNameInTable="columnServico" msprop:Generator_ColumnPropNameInTable="ServicoColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="Funcionario" msprop:Generator_UserColumnName="Funcionario" msprop:Generator_ColumnPropNameInRow="Funcionario" msprop:Generator_ColumnVarNameInTable="columnFuncionario" msprop:Generator_ColumnPropNameInTable="FuncionarioColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="TempoHoras" msprop:Generator_UserColumnName="TempoHoras" msprop:Generator_ColumnPropNameInRow="TempoHoras" msprop:Generator_ColumnVarNameInTable="columnTempoHoras" msprop:Generator_ColumnPropNameInTable="TempoHorasColumn" type="xs:decimal" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

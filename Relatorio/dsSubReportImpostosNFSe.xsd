@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsSubReportImpostosNFSe" targetNamespace="http://tempuri.org/dsSubReportImpostosNFSe.xsd" xmlns:mstns="http://tempuri.org/dsSubReportImpostosNFSe.xsd" xmlns="http://tempuri.org/dsSubReportImpostosNFSe.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkcwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkcwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkcwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtNFSeImpostosTableAdapter" GeneratorDataComponentClassName="dtNFSeImpostosTableAdapter" Name="dtNFSeImpostos" UserDataComponentName="dtNFSeImpostosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectName="SELECT f.Nome AS 'EmpNome', f.CNPJ AS 'EmpCNPJ', f.Telefone AS 'EmpTelefone', f.endereco + ', ' + f.Numero + ', ' + f.Bairro + ' - ' + c.Nome + ' - ' + uf.Sigla + ' - CEP: ' + f.CEP AS 'EmpEnd', n.Codigo AS 'NotaCodigo', n.numero AS 'NotaNumero', n.Serie AS 'NotaSerie', n.PessoaNome AS 'NotaNomePessoa', n.TotalNota AS 'NotaTotal', tn.Nome AS 'NotaTipo', n.Dt AS 'NotaData', [dbo].[InitCap](si.Nome) AS 'ImpostoNome', nis.BaseCalculo AS 'ImpostoBaseCalculo', CONVERT(VARCHAR, CONVERT(NUMERIC(18,2),nis.Aliquota)) + '%' AS 'ImpostoAliquota', nis.Valor AS 'ImpostoValor', nis.BaseRetencaoImposto AS 'ImpostoRetido' FROM Nota n /* JOINS PARA EMPRESA*/ INNER JOIN Filial f ON F.ID = N.IDFilial INNER JOIN Cidade c ON c.ID = f.IDCidade INNER JOIN UF uf ON uf.ID = c.IDUF /* JOINS PARA NOTA IMPOSTOS*/ INNER JOIN NotaImpostoServico nis ON nis.IDNota = n.ID INNER JOIN ServicoImposto si ON si.ID = nis.IDServicoImposto INNER JOIN TipoNota tn ON tn.ID = n.IDTipoNota WHERE n.Dt &gt;= @dtInicio AND n.Dt &lt;= @dtFinal AND f.ID = @idFilial AND ((@bBaseRet = 1 AND nis.BaseRetencaoImposto = 1) OR (@bBaseRet = 0)) AND tn.ID IN (SELECT * FROM F_RetornaTabelaLista(@idTipoNota, ',')) AND n.Status IN (SELECT * FROM F_RetornaTabelaLista(@idStatus, ','))" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText> SELECT T.ImpostoNome,
+	   T.IMPOSTORETIDO,
+	   SUM(T.ImpostoValor) ImpostoValor
+  FROM (
+		SELECT
+				f.Nome as 'EmpNome',
+				f.CNPJ as 'EmpCNPJ',
+				f.Telefone as 'EmpTelefone',
+				f.endereco + ', ' + f.Numero + ', '  + f.Bairro +  ' - ' + c.Nome + ' - ' + uf.Sigla + ' - CEP: ' + f.CEP   AS 'EmpEnd',
+				n.Codigo as 'NotaCodigo',
+				n.numero as 'NotaNumero', 
+				n.Serie as 'NotaSerie',
+				n.PessoaNome as 'NotaNomePessoa',
+				n.TotalNota as 'NotaTotal',
+				tn.Nome as 'NotaTipo',
+				n.Dt as 'NotaData',
+				[dbo].[InitCap](si.Nome) as 'ImpostoNome',
+				nis.BaseCalculo as 'ImpostoBaseCalculo',
+				CONVERT(VARCHAR, CONVERT(NUMERIC(18,2),nis.Aliquota)) + '%' as 'ImpostoAliquota',
+				nis.Valor as 'ImpostoValor',
+				nis.BaseRetencaoImposto as 'ImpostoRetido'		
+		FROM Nota n
+				-- JOINS PARA EMPRESA
+				INNER JOIN Filial f  ON F.ID  = N.IDFilial
+				INNER JOIN Cidade c  ON c.ID  = f.IDCidade
+				INNER JOIN UF     uf ON uf.ID = c.IDUF
+				-- JOINS PARA NOTA IMPOSTOS
+				INNER JOIN NotaImpostoServico nis 
+						ON nis.IDNota = n.ID
+				INNER JOIN ServicoImposto si  
+						ON si.ID = nis.IDServicoImposto
+				INNER JOIN TipoNota tn 
+						ON tn.ID = n.IDTipoNota
+		WHERE
+				 n.Dt &gt;= @dtInicio
+			 AND n.Dt &lt;= @dtFinal
+			 AND f.ID = @idFilial
+			 AND ((@bBaseRet = 1 AND nis.BaseRetencaoImposto = 1) OR
+				  (@bBaseRet = 0))
+				 
+			 AND tn.ID IN (SELECT * FROM F_RetornaTabelaLista(@idTipoNota, ','))
+			 AND n.Status IN (SELECT * FROM F_RetornaTabelaLista(@idStatus, ','))
+) T GROUP BY ImpostoNome,
+	   IMPOSTORETIDO
+	   ORDER BY ImpostoNome, ImpostoRetido</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="dtInicio" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dtInicio" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dtFinal" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dtFinal" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idFilial" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFilial" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="bBaseRet" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@bBaseRet" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idTipoNota" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@idTipoNota" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idStatus" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@idStatus" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ImpostoNome" DataSetColumn="ImpostoNome" />
+              <Mapping SourceColumn="IMPOSTORETIDO" DataSetColumn="IMPOSTORETIDO" />
+              <Mapping SourceColumn="ImpostoValor" DataSetColumn="ImpostoValor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsSubReportImpostosNFSe" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsSubReportImpostosNFSe" msprop:Generator_DataSetName="dsSubReportImpostosNFSe" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtNFSeImpostos" msprop:Generator_UserTableName="dtNFSeImpostos" msprop:Generator_RowDeletedName="dtNFSeImpostosRowDeleted" msprop:Generator_RowChangedName="dtNFSeImpostosRowChanged" msprop:Generator_RowClassName="dtNFSeImpostosRow" msprop:Generator_RowChangingName="dtNFSeImpostosRowChanging" msprop:Generator_RowEvArgName="dtNFSeImpostosRowChangeEvent" msprop:Generator_RowEvHandlerName="dtNFSeImpostosRowChangeEventHandler" msprop:Generator_TableClassName="dtNFSeImpostosDataTable" msprop:Generator_TableVarName="tabledtNFSeImpostos" msprop:Generator_RowDeletingName="dtNFSeImpostosRowDeleting" msprop:Generator_TablePropName="dtNFSeImpostos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImpostoNome" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ImpostoNome" msprop:Generator_ColumnVarNameInTable="columnImpostoNome" msprop:Generator_ColumnPropNameInRow="ImpostoNome" msprop:Generator_ColumnPropNameInTable="ImpostoNomeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPOSTORETIDO" msprop:Generator_UserColumnName="IMPOSTORETIDO" msprop:Generator_ColumnVarNameInTable="columnIMPOSTORETIDO" msprop:Generator_ColumnPropNameInRow="IMPOSTORETIDO" msprop:Generator_ColumnPropNameInTable="IMPOSTORETIDOColumn" type="xs:boolean" />
+              <xs:element name="ImpostoValor" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ImpostoValor" msprop:Generator_ColumnVarNameInTable="columnImpostoValor" msprop:Generator_ColumnPropNameInRow="ImpostoValor" msprop:Generator_ColumnPropNameInTable="ImpostoValorColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

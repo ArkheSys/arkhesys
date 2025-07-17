@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="TipoServicoTransporte" table="TipoServicoTransporte">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>	
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<property name="Descricao" column="Descricao" type="string" />
+	<property name="Correios" column="Correios" type="bool" />
+	<property name="ControleNumeracao" column="ControleNumeracao" type="bool" />
+  <property name="CaminhoImagem" column="CaminhoImagem" type="string" />
+  <property name="CodigoServico" column="CodigoServico" type="string" />
+  <many-to-one name="IDServicoEnvioCorreio" column="IDServicoEnvioCorreio" class="ServicoEnvioCorreio" lazy="false"/>
+  <property name="AcrescimoFrete" column="AcrescimoFrete" type="decimal" />
+
+    <bag name="CorreiosPrecoPrazo" table="CorreiosPrecoPrazo" inverse="true">
+      <key column="IDTipoServicoTransporte" />
+      <one-to-many class="CorreiosPrecoPrazo" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

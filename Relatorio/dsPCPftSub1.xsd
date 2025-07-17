@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPCPftSub1" targetNamespace="http://tempuri.org/dsPCPftSub1.xsd" xmlns:mstns="http://tempuri.org/dsPCPftSub1.xsd" xmlns="http://tempuri.org/dsPCPftSub1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtFTSubrelatorioTableAdapter" GeneratorDataComponentClassName="dtFTSubrelatorioTableAdapter" Name="dtFTSubrelatorio" UserDataComponentName="dtFTSubrelatorioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        p.Codigo AS 'Prod Código', p.Nome AS 'Matéria Prima', ftItem.Quantidade, ftItem.Aproveitamento, ftItem.IdFichaTecnicaPCPFilha AS 'Filha', u.Sigla AS 'Unidade', 
+                         ftPCP.Nome, CONVERT(VARCHAR(10), ftItem.DataVigor, 103) AS 'Data', CASE WHEN ftItem.IdFichaTecnicaPCPFilha IS NULL THEN 0 ELSE 1 END AS bit, 
+                         ftPCP.Codigo, ftPCP.Id as 'FT id'
+FROM            PCP_ItemFichaTecnica AS ftItem INNER JOIN
+                         Produto AS p ON p.ID = ftItem.IdProduto INNER JOIN
+                         Unidade AS u ON p.IDUnidade = u.ID INNER JOIN
+                        PCP_FichaTecnica AS ftPCP ON ftPCP.Id = ftItem.IdFichaTecnicaPCP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Prod Código" DataSetColumn="Prod Código" />
+              <Mapping SourceColumn="Matéria Prima" DataSetColumn="Matéria Prima" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+              <Mapping SourceColumn="Aproveitamento" DataSetColumn="Aproveitamento" />
+              <Mapping SourceColumn="Unidade" DataSetColumn="Unidade" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="Filha" DataSetColumn="Filha" />
+              <Mapping SourceColumn="bit" DataSetColumn="bit" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="FT id" DataSetColumn="FT id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPCPftSub1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:Generator_UserDSName="dsPCPftSub1" msprop:Generator_DataSetName="dsPCPftSub1" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFTSubrelatorio" msprop:Generator_UserTableName="dtFTSubrelatorio" msprop:Generator_RowDeletedName="dtFTSubrelatorioRowDeleted" msprop:Generator_RowChangedName="dtFTSubrelatorioRowChanged" msprop:Generator_RowClassName="dtFTSubrelatorioRow" msprop:Generator_RowChangingName="dtFTSubrelatorioRowChanging" msprop:Generator_RowEvArgName="dtFTSubrelatorioRowChangeEvent" msprop:Generator_RowEvHandlerName="dtFTSubrelatorioRowChangeEventHandler" msprop:Generator_TableClassName="dtFTSubrelatorioDataTable" msprop:Generator_TableVarName="tabledtFTSubrelatorio" msprop:Generator_RowDeletingName="dtFTSubrelatorioRowDeleting" msprop:Generator_TablePropName="dtFTSubrelatorio">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Prod_x0020_Código" msprop:Generator_UserColumnName="Prod Código" msprop:Generator_ColumnVarNameInTable="columnProd_Código" msprop:Generator_ColumnPropNameInRow="Prod_Código" msprop:Generator_ColumnPropNameInTable="Prod_CódigoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Matéria_x0020_Prima" msprop:Generator_UserColumnName="Matéria Prima" msprop:Generator_ColumnVarNameInTable="columnMatéria_Prima" msprop:Generator_ColumnPropNameInRow="Matéria_Prima" msprop:Generator_ColumnPropNameInTable="Matéria_PrimaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantidade" msprop:Generator_UserColumnName="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" type="xs:decimal" />
+              <xs:element name="Aproveitamento" msprop:Generator_UserColumnName="Aproveitamento" msprop:Generator_ColumnVarNameInTable="columnAproveitamento" msprop:Generator_ColumnPropNameInRow="Aproveitamento" msprop:Generator_ColumnPropNameInTable="AproveitamentoColumn" type="xs:decimal" />
+              <xs:element name="Unidade" msprop:Generator_UserColumnName="Unidade" msprop:Generator_ColumnVarNameInTable="columnUnidade" msprop:Generator_ColumnPropNameInRow="Unidade" msprop:Generator_ColumnPropNameInTable="UnidadeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Data" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInTable="DataColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Filha" msprop:Generator_UserColumnName="Filha" msprop:Generator_ColumnPropNameInRow="Filha" msprop:Generator_ColumnVarNameInTable="columnFilha" msprop:Generator_ColumnPropNameInTable="FilhaColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="bit" msdata:ReadOnly="true" msprop:Generator_UserColumnName="bit" msprop:Generator_ColumnVarNameInTable="columnbit" msprop:Generator_ColumnPropNameInRow="bit" msprop:Generator_ColumnPropNameInTable="bitColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Nome" msprop:Generator_UserColumnName="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codigo" msprop:Generator_UserColumnName="Codigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="FT id" msprop:Generator_ColumnPropNameInRow="FT_id" msprop:Generator_ColumnVarNameInTable="columnFT_id" msprop:Generator_ColumnPropNameInTable="FT_idColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtFTSubrelatorio" />
+      <xs:field xpath="mstns:FT_x0020_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

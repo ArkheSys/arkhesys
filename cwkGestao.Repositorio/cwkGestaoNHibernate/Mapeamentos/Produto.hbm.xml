@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Produto" table="Produto">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="string" length="20" />
+		<property name="Barra" column="Barra" type="string" length="20" />
+		<property name="Nome" column="Nome" type="string" length="200" />
+		<property name="DescReduzida" column="DescReduzida" type="string"/>
+		<many-to-one name="Unidade" column="IDUnidade" class="Unidade" lazy="false" />
+		<many-to-one name="GrupoEstoque" column="IDGrupoEstoque" class="GrupoEstoque" lazy="false" />
+		<many-to-one name="Grupo1" column="IDGrupo1" class="Grupo1" lazy="false"/>
+		<many-to-one name="Grupo2" column="IDGrupo2" class="Grupo2" lazy="false"/>
+		<many-to-one name="Grupo3" column="IDGrupo3" class="Grupo3" lazy="false"/>
+		<many-to-one name="Fornecedor" column="IDFornecedor" class="Pessoa" />
+		<many-to-one name="Fornecedor2" column="IDFornecedor2" class="Pessoa" />
+		<many-to-one name="Fornecedor3" column="IDFornecedor3" class="Pessoa" />
+		<many-to-one name="Fornecedor4" column="IDFornecedor4" class="Pessoa" />
+		<many-to-one name="Fornecedor5" column="IDFornecedor5" class="Pessoa" />
+		<property name="BarraFornecedor" column="BarraFornecedor" type="string" length="20" />
+		<property name="DescLonga1" column="DescLonga1" type="string" />
+		<property name="DescLonga2" column="DescLonga2" type="string"/>
+		<property name="DescLonga3" column="DescLonga3" type="string"/>
+		<property name="PesoLiquido" column="PesoLiquido" type="decimal" />
+		<property name="PesoBruto" column="PesoBruto" type="decimal" />
+		<property name="PrecoFornecedor" column="PrecoFornecedor" type="decimal" />
+		<property name="DescontoFornecedor" column="DescontoFornecedor" type="decimal" />
+		<property name="DtPrecoFornecedor" column="DtPrecoFornecedor" type="DateTime" />
+		<property name="UltimoCusto" column="UltimoCusto" type="decimal" />
+		<property name="DtUltimoCusto" column="DtUltimoCusto" type="DateTime" />
+		<property name="DtFornec1" column="DtFornec1" type="DateTime" />
+		<property name="DtFornec2" column="DtFornec2" type="DateTime" />
+		<property name="DtFornec3" column="DtFornec3" type="DateTime" />
+		<property name="DtFornec4" column="DtFornec4" type="DateTime" />
+		<property name="DtFornec5" column="DtFornec5" type="DateTime" />
+		<property name="BarraFornecedor2" column="BarraFornecedor2" type="string" />
+		<property name="BarraFornecedor3" column="BarraFornecedor3" type="string" />
+		<property name="BarraFornecedor4" column="BarraFornecedor4" type="string" />
+		<property name="BarraFornecedor5" column="BarraFornecedor5" type="string" />
+		<property name ="UltimoCusto1" column ="UltimoCusto1" type="decimal" precision="18" scale="2"/>
+		<property name ="UltimoCusto2" column ="UltimoCusto2" type="decimal" precision="18" scale="2"/>
+		<property name ="UltimoCusto3" column ="UltimoCusto3" type="decimal" precision="18" scale="2"/>
+		<property name ="UltimoCusto4" column ="UltimoCusto4" type="decimal" precision="18" scale="2"/>
+		<property name ="UltimoCusto5" column ="UltimoCusto5" type="decimal" precision="18" scale="2"/>
+		<property name="PrecoBase" column="PrecoBase" type="decimal" />
+		<property name="DtPrecoBase" column="DtPrecoBase" type="DateTime" />
+		<property name="AliqISS" column="AliqISS" type="decimal" />
+		<property name="IDPlanoConta_FinAV" column="IDPlanoConta_FinAV" type="Int32" />
+		<property name="IDPlanoConta_FinAP" column="IDPlanoConta_FinAP" type="Int32" />
+		<property name="BServico" column="bServico" type="bool" />
+		<many-to-one name="PlanoNegocio" column="IDPlanoNegocio" class="PlanoNegocio" />
+		<property name="ClassFiscal" column="ClassFiscal" type="string" length="15" />
+		<property name="CustoFrete" column="CustoFrete" type="decimal" />
+		<property name="CustoIPI" column="CustoIPI" type="decimal" />
+		<property name="CustoExtra" column="CustoExtra" type="decimal" />
+		<property name="Tributacao" column="Tributacao" type="Int32" />
+		<property name="OrigemProd" column="OrigemProd" type="Int32" />
+		<property name="ModBCICMS" column="modBCICMS" type="Int32" />
+		<property name="AliqContrib" column="AliqContrib" type="decimal" />
+		<property name="AliqContribNormal" column="AliqContribNormal" type="decimal" />
+		<property name="ReducaoContrib" column="ReducaoContrib" type="decimal" />
+		<property name="TextoLeiContrib" column="TextoLeiContrib" type="string" length="100" />
+		<property name="AliqNContrib" column="AliqNContrib" type="decimal" />
+		<property name="AliqNContribNormal" column="AliqNContribNormal" type="decimal" />
+		<property name="ReducaoNContrib" column="ReducaoNContrib" type="decimal" />
+		<property name="TextoLeiNContrib" column="TextoLeiNContrib" type="string" length="100" />
+		<property name="ModBCST" column="modBCST" type="Int32" />
+		<property name="LucroST" column="LucroST" type="decimal" />
+		<property name="PRedBCST" column="pRedBCST" type="decimal" />
+		<property name="AliqSubstTributaria" column="AliqSubstTributaria" type="decimal" />
+		<property name="AliqSimplesSubst" column="AliqSimplesSubst" type="decimal" />
+		<property name="CST_Pis" column="CST_Pis" type="Int32" />
+		<property name="PPIS_Q08" column="pPIS_Q08" type="decimal" />
+		<property name="CST_Cofins" column="CST_Cofins" type="Int32" />
+		<property name="PCOFINS_S08" column="pCOFINS_S08" type="decimal" />
+		<property name="ENQ_IPI" column="ENQ_IPI" type="Int32" />
+		<property name="CST_IPI" column="CST_IPI" type="Int32" />
+		<property name="AliquotaIPI" column="AliquotaIPI" type="decimal" />
+		<property name="NCM" column="NCM" type="string" length="8" />
+		<property name="ID_NCM" column="ID_NCM" type="Int32" />
+		<property name="DtCadastroProduto" column="DtCadastroProduto" type="DateTime" />
+		<property name="GENERO_NCM" column="GENERO_NCM" type="Int32" />
+		<many-to-one name="CFOP" column="IDCFOP" class="TabelaCFOP" lazy="false" />
+		<many-to-one name="CFOPForaDoEstado" column="IDCFOPForaDoEstado" class="TabelaCFOP" lazy="false"/>
+		<property name="InfAdicionais" column="InfAdicionais" type="string" length="500" />
+		<property name="AliqCupomContrib" column="AliqCupomContrib" type="string" length="2" />
+		<property name="AliqCupomNContrib" column="AliqCupomNContrib" type="string" length="2" />
+		<property name="CSOSN" column="CSOSN" type="Int32" />
+		<many-to-one name="PlanoContaEstoque" column="IDPlanoConta_Est" class="PlanoConta" />
+		<property name="CaminhoImagem" column="CaminhoImagem" type="string" length="8000" />
+		<property name="IncData" column="IncData" type="DateTime" />
+		<property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+		<property name="AltData" column="AltData" type="DateTime" />
+		<property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+		<property name="IDIntegracao" column="IDIntegracao" type="Int32" />
+		<property name="CodigoBarrasRegistrado" column="CodigoBarrasRegistrado" type="Boolean" />
+		<property name="UtilizaIdentificadorEstoque" column="UtilizaIdentificadorEstoque" type="Boolean" />
+		<property name="Inativo" column="Inativo" type="bool"/>
+		<property name="UtilizarIMEI" column="UtilizarIMEI" type="bool"/>
+		<property name="Observacao" column="Observacao" type="string" />
+		<property name="Localizacao" column="Localizacao" type="string" />
+		<property name="Largura" column="Largura" type="decimal" precision="18" scale="3"/>
+		<property name="Altura" column="Altura" type="decimal" precision="18" scale="3"/>
+		<property name="Comprimento" column="Comprimento" type="decimal" precision="18" scale="3"/>
+		<property name="Peso" column="Peso" type="decimal" precision="18" scale="3"/>
+		<property name="BEnviadoSHL" column="BEnviadoSHL" type="bool"/>
+		<property name="EscRelevante" column="EscRelevante" type="Int32" />
+		<property name="RAZAO_Fab" column="RAZAO_Fab" type="string"/>
+		<property name="CNPJ_Fab" column="CNPJ_Fab" type="string"/>
+		<property name="CBenef" column="CBenef" type="string"/>
+		<property name="IntegrarEcommerce" column="IntegrarEcommerce" type="Int32" />
+		<property name="IdEcommerce" column="IdEcommerce" type="Int32" />
+
+		<property name="cProdANP" column="cProdANP" type="string"/>
+		<property name="descANP" column="descANP" type="string"/>
+		<property name="UFCons" column="UFCons" type="string"/>
+	  <property name="Pesavel" column="Pesavel" type="bool" />
+
+		<property name="DataPromocionalInicial" column="DataPromocionalInicial" type="DateTime" />
+		<property name="DataPromocionalFinal" column="DataPromocionalFinal" type="DateTime" />
+
+		<property name="DataValidade" column="DataValidade" type="DateTime" />
+
+		<property name="CodigoReferencia" column="CodigoReferencia" type="string" length="500" />
+
+		<property name="CodigoFabricante" column="CodigoFabricante" type="string" length="500" />
+		<property name="CodigoOriginal" column="CodigoOriginal" type="string" length="500" />
+		<property name="Aplicacao" column="Aplicacao" type="string" length="500" />
+
+		<many-to-one name="UnidadeEntrada" column="IDUnidadeEntrada" class="Unidade" lazy = "false"/>
+    <many-to-one name="ClassificacaoFiscal" column="IDClassificacaoFiscal" class="ClassificacaoFiscal" lazy = "false"/>
+    <many-to-one name="PerfilPisCofins" column="IDPerfilPisCofins" class="PerfilPisCofins" lazy = "false"/>
+		<!--<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" property-ref="ID" lazy = "false" not-found="ignore" insert="false" update="false"/>-->
+		<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" lazy = "false" not-found="ignore" insert="false" update="false"/>
+
+		<bag name="LogAlteracaoPedidoItens" table="LogAlteracaoPedidoItem" inverse="true" cascade="all-delete-orphan" lazy="false" >
+			<key column="IDProduto" />
+			<one-to-many class="LogAlteracaoPedidoItem" />
+		</bag>
+
+		<bag name="TabelaPrecoProdutos" table="TabelaPrecoProdutos" inverse="true" cascade="all-delete-orphan" lazy="false" >
+			<key column="IDProduto" />
+			<one-to-many class="TabelaPrecoProduto" />
+		</bag>
+
+		<bag name="Produto_Icmss" table="Produto_Icms" inverse="true" cascade="all-delete-orphan" lazy="false" >
+			<key column="IDProduto" />
+			<one-to-many class="Produto_Icms" />
+		</bag>
+
+		<bag name="Estoques" table="Estoque" inverse="true" cascade="all-delete-orphan">
+			<key column="IDProduto" />
+			<one-to-many class="Estoque" />
+		</bag>
+
+		<bag name="ProdutoCodBarra" table="ProdutoCodBarra" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDProduto" />
+			<one-to-many class="ProdutoCodBarra" />
+		</bag>
+
+		<bag name="ProdutoSKU" table="ProdutoSKU" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDProduto" />
+			<one-to-many class="ProdutoSKU" />
+		</bag>
+
+		<bag name="FichaTecnicaPCP" table="FichaTecnicaPCP" inverse="true" cascade="all-delete-orphan">
+			<key column="IdProduto" />
+			<one-to-many class="FichaTecnicaPCP" />
+		</bag>
+
+		<bag name="Imeis" table="Imei" inverse="true" cascade="all-delete-orphan" lazy="false">
+			<key column="IDProduto" />
+			<one-to-many class="Imei" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

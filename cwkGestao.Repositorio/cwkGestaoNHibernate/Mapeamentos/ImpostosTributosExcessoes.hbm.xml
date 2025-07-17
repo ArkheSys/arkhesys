@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="ImpostosTributosExcessoes" table="ImpostosTributosExcessoes">
+
+   
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="ImpostosTributos" column="IDImpostosTributos" class="ImpostosTributos" />
+    <many-to-one name="UF" column="IDUF" class="UF" lazy="false" />
+    <many-to-one name="TabelaCFOP" column="IDTabelaCFOP" class="TabelaCFOP" lazy="false" />
+    
+    <property name="Codigo" column="Codigo" type="Int32" />
+
+    <property name="Descricao" column="Descricao" type="string" length="200" />
+    <property name="InfAdicionais" column="InfAdicionais" type="string" length="500" />
+
+    <property name="CSTCSOSNIcms" column="CSTCSOSNIcms" type="Int32" />
+
+    <property name="PIcms" column="PIcms" type="decimal" />
+    <property name="PReducaoIcms" column="PReducaoIcms" type="decimal" />
+    <property name="PIcmsSt" column="PIcmsSt" type="decimal" />
+    <property name="PReducaoIcmsSt" column="PReducaoIcmsSt" type="decimal" />
+    <property name="PMva" column="PMva" type="decimal" />
+    <property name="PDiferimento" column="PDiferimento" type="decimal" />
+    <property name="PDesoneracao" column="PDesoneracao" type="decimal" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="OrdemServico" table="OrdemServico">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Resumo" column="Resumo" type="string" length="100" />
+    <many-to-one name="Cliente" column="IDCliente" class="Pessoa" />
+    <property name="Contato" column="Contato" type="string" length="60" />
+    <many-to-one name="TipoAtendimento" column="IDTipoAtendimento" class="TipoAtendimento" />
+    <many-to-one name="Sistema" column="IDSistema" class="Sistema" />
+    <many-to-one name="Versao" column="IDVersao" class="Versao" />
+    <many-to-one name="Status" column="IDStatus" class="StatusOrdemServico" />
+    <many-to-one name="VersaoFechamento" column="IDVersaoFechamento" class="Versao" />
+    <property name="Descricao" column="Descricao" type="string" length="2147483647" />
+    <property name="DataPrevisao" column="DataPrevisao" type="DateTime" />
+    <property name="DataPrevisaoFinal" column="DataPrevisaoFinal" type="DateTime" />
+    <property name="Lancado" column="Lancado" type="bool" />
+    <property name="Incdata" column="Incdata" type="DateTime" />
+    <property name="Incusuario" column="Incusuario" type="string" length="20" />
+    <property name="Altdata" column="Altdata" type="DateTime" />
+    <property name="Altusuario" column="Altusuario" type="string" length="20" />
+    <many-to-one name="Responsavel" column="IDResponsavel" class="Cw_usuario" />
+    <many-to-one name="ClienteRevenda" column="IDClienteRevenda" class="ClienteRevenda" />
+ 
+   
+    <bag name="AcompanhamentoOS" table="AcompanhamentoOS" cascade="all" >
+      <key column="IDOrdemServico" />
+      <one-to-many class="AcompanhamentoOS" />
+    </bag>
+
+    <bag name="ServicoOS" table="ServicoOS" cascade="all" >
+      <key column="IDOrdemServico" />
+      <one-to-many class="ServicoOS" />
+    </bag>
+  </class>
+</hibernate-mapping>

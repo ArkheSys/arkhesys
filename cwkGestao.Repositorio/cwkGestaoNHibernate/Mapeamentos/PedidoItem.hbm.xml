@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="PedidoItem" table="PedidoItem">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Pedido" column="IDPedido" class="Pedido"  not-null="true" lazy="false" cascade="save-update"/>
+    <property name="Sequencia" column="Sequencia" type="Int32" />
+    <many-to-one name="Produto" column="IDProduto" class="Produto" lazy="false" />
+    <property name="ProdutoNome" column="ProdutoNome" type="string" length="100" />
+    <property name="ProdutoDescReduzida" column="ProdutoDescReduzida" type="string" length="30" />
+    <property name="Quantidade" column="Quantidade" type="decimal" precision="18" scale="4" />
+    <property name="Unidade" column="Unidade" type="string" length="5" />
+    <property name="ValorCalculado" column="ValorCalculado" type="decimal" precision="18" scale="4" />
+    <property name="Valor" column="Valor" type="decimal" precision="18" scale="4" />
+    <property name="SubTotal" column="SubTotal" type="decimal" precision="18" scale="3" />
+    <property name="PercDesconto" column="PercDesconto" type="decimal" precision="10" scale="6" />
+    <property name="ValorDesconto" column="ValorDesconto" type="decimal" precision="18" scale="3" />
+    <property name="RAT_Desconto" column="RAT_Desconto" type="decimal" precision="18" scale="2" />
+    <property name="RAT_Acrescimo" column="RAT_Acrescimo" type="decimal" precision="18" scale="2" />
+    <property name="RAT_Frete" column="RAT_Frete" type="decimal" precision="18" scale="2" />
+    <property name="Total" column="Total" type="decimal" precision="18" scale="3" />
+    <property name="PesoBruto" column="PesoBruto" type="decimal" precision="18" scale="4" />
+    <property name="PesoLiquido" column="PesoLiquido" type="decimal" precision="18" scale="4" />
+    <property name="Dt" column="Dt" type="DateTime" />
+    <property name="bReservaEstoque" column="bReservaEstoque" type="bool" />
+    <property name="Ent_Sai" column="Ent_Sai" type="Int32" />
+    <property name="PrazoEntrega" />
+    <property name="OS" column="OS" type="Int32" />
+    <property name="Gerente" column="Gerente" type="string" length="20"/>
+    <property name="BaseICMSSubst" column="BaseICMSSubst" type="decimal" precision="18" scale="2" />
+    <property name="ValorRetidoICMS" column="ValorRetidoICMS" type="decimal" precision="18" scale="2" />
+    <property name="QtdCancelada" column="QtdCancelada" type="decimal" precision="18" scale="4" />
+    <property name="QtdRetirada" column="QtdRetirada" type="decimal" precision="18" scale="4" />
+    <property name="InformacoesAdicionais" column="InformacoesAdicionais" type="string" length="400" />
+    <property name="NomeMagento" column="NomeMagento" type="string" />
+    <property name="AplicacaoCompra" column="AplicacaoCompra" type="string" length="20" />
+    <property name="IPICompra" column="IPICompra" type="decimal" precision="18" scale="2" />
+    <property name="ICMSCompra" column="ICMSCompra" type="decimal" precision="18" scale="2" />
+
+    <property name="ValorProduto" column="ValorProduto" type="decimal" precision="18" scale="4" />
+    <property name="AliquotaIPI" column="AliquotaIPI" type="decimal" precision="5" scale="2" />
+    <property name="BFaturado" column="BFaturado" type="bool" />
+
+    <property name="ValorIPI" column="ValorIPI" type="decimal" precision="15" scale="2" />
+    <property name="ValorICMS" column="ValorICMS" type="decimal" precision="18" scale="4" />
+    <property name="ValorICMSST" column="ValorICMSST" type="decimal" precision="18" scale="4" />
+    <property name="TotalIPI" column="TotalIPI" type="decimal" precision="18" scale="4" />
+
+    <property name="PercentualIPI" column="PercentualIPI" type="decimal" precision="18" scale="2" />
+    <property name="PercentualICMS" column="PercentualICMS" type="decimal" precision="18" scale="2" />
+    <property name="DataEntrega" column="DataEntrega" />
+
+    <property name="IDNcm" column="IDNcm" type="Int32" />
+
+	  <property name="Observacao" column="Observacao" type="string" length="5000" />
+
+    <bag name="Estoques" table="PedidoItemEstoque" lazy="false" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDPedidoItem" />
+      <one-to-many class="PedidoItemEstoque" />
+    </bag>
+
+    <!--<bag name="PedidoItens" table="NotaItemPedidoItem" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDPedidoItem" />
+      <one-to-many class="NotaItemPedidoItem" />
+    </bag>-->
+    
+  </class>
+</hibernate-mapping>

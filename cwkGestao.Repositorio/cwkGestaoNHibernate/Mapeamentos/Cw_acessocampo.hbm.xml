@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Cw_acessocampo" table="cw_acessocampo">
+
+	<id name="ID" column="id">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="codigo" type="Int32" />
+	<property name="Campo" column="campo" type="string" length="50" />
+	<property name="Display" column="display" type="string" length="50" />
+	<property name="Acesso" column="acesso" type="Int32" />
+	<property name="Incdata" column="incdata" type="DateTime" />
+	<property name="Inchora" column="inchora" type="DateTime" />
+	<property name="Incusuario" column="incusuario" type="string" length="20" />
+	<property name="Altdata" column="altdata" type="DateTime" />
+	<property name="Althora" column="althora" type="DateTime" />
+	<property name="Altusuario" column="altusuario" type="string" length="20" />
+
+  <many-to-one name="Cw_acesso" column="idacesso" class="Cw_acesso" />
+
+</class>
+</hibernate-mapping>
+		

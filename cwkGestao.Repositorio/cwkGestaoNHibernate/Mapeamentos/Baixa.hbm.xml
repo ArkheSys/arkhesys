@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Baixa" table="Baixa">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<property name="Tipo" column="Tipo" type="Int32" />
+	<property name="DtBaixa" column="DtBaixa" type="DateTime" />
+	<many-to-one name="Banco" column="IDBanco" class="Banco" />
+					<property name="CodBanco" column="CodBanco" type="Int32" />
+	<property name="Banco_Str" column="Banco_Str" type="string" length="60" />
+	<property name="Agencia" column="Agencia" type="string" length="6" />
+	<property name="Conta" column="Conta" type="string" length="15" />
+	<property name="Cheque" column="Cheque" type="string" length="6" />
+	<property name="Emitente" column="Emitente" type="string" length="60" />
+	<property name="Total" column="Total" type="decimal" />
+		<bag name="BaixaDocumentos" table="BaixaDocumento">					
+			<key column="IDBaixa" />
+			<one-to-many class="BaixaDocumento" />
+		</bag>
+</class>
+</hibernate-mapping>
+		

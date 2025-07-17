@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Ofd_PropostaMedicaoPerfuracao" table="Ofd_PropostaMedicaoPerfuracao">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="PropostaMedicao" column="IDPropostaMedicao" class="Ofd_PropostaMedicao" />
+	<property name="Sequencia" column="Sequencia" type="Int32" />
+	<property name="Estaca" column="Estaca" type="string" />
+	<property name="Diametro" column="Diametro" type="Int32" />
+	<property name="Quantidade" column="Quantidade" type="decimal" />
+	<property name="Profundidade" column="Profundidade" type="decimal" />
+	<property name="IncData" />
+	<property name="IncUsuario" column="IncUsuario" type="string" />
+	<property name="AltData" />
+	<property name="AltUsuario" column="AltUsuario" type="string" />
+
+  </class>
+</hibernate-mapping>

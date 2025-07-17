@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRelCentroCusto" targetNamespace="http://tempuri.org/dsRelCentroCusto.xsd" xmlns:mstns="http://tempuri.org/dsRelCentroCusto.xsd" xmlns="http://tempuri.org/dsRelCentroCusto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkcwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkcwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkcwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtCCTableAdapter" GeneratorDataComponentClassName="dtCCTableAdapter" Name="dtCC" UserDataComponentName="dtCCTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectName="SELECT f.Nome AS 'EmpNome', f.CNPJ AS 'EmpCNPJ', f.Telefone AS 'EmpTelefone', f.endereco + ', ' + f.Numero + ', ' + f.Bairro + ' - ' + c.Nome + ' - ' + uf.Sigla + ' - CEP: ' + f.CEP AS 'EmpEnd', pr.Nome AS 'CCnome', rm.Valor AS 'CCvalor', d.Codigo AS 'DocCodigo', f.ID AS 'DocFilial', d.NumDocumento AS 'DocNum', d.ComplementoHist AS 'HistNome', d.Parcela AS 'DocParc', d.DtVencimento AS 'DocVencimento', d.Situacao AS 'DocSituacao', d.Saldo AS 'DocSaldo', d.DtUltimaBaixa AS 'DocBaixa', CASE WHEN @bVencimento = 1 THEN CONVERT(DateTime, d.DtVencimento, 103) WHEN @bvencimento = 2 THEN CONVERT(DateTime, d.Dt, 103) ELSE CONVERT(DateTime, d.DtUltimaBaixa, 103) END AS 'DocData', td.Nome AS 'DocTipoDoc', p.Nome AS 'DocForn' FROM Documento d INNER JOIN Movimento m ON m.IDDocumento=d.ID INNER JOIN Filial f ON f.ID=d.IDFilial INNER JOIN Cidade c ON c.ID=f.IDCidade INNER JOIN UF uf ON uf.ID=c.IDUF INNER JOIN TipoDocumento td ON td.ID=d.IDTipoDocumento INNER JOIN Pessoa p ON p.ID=d.IDPessoa INNER JOIN Rateio_Mov rm ON rm.IDMovimento=m.ID INNER JOIN Projeto pr ON rm.IDProjeto=pr.ID WHERE ((@bVencimento = 1 AND d.DtVencimento BETWEEN @dtInicio AND @dtFinal) OR (@bVencimento = 2 AND CONVERT(date, d.Dt, 103) BETWEEN @dtInicio AND @dtFinal) OR (@bVencimento = 0 AND CONVERT(date, d.DtUltimaBaixa, 103) BETWEEN @dtInicio AND @dtFinal)) AND f.ID IN (SELECT * FROM f_RetornaTabelaLista(@idFilial, ',')) AND td.ID IN (SELECT * FROM F_RetornaTabelaLista(@idTipoDoc, ',')) AND d.Situacao IN (SELECT * FROM F_RetornaTabelaLista(@situacao, ',')) AND pr.ID IN (SELECT * FROM F_RetornaTabelaLista(@cC, ',')) AND p.ID IN (SELECT * FROM F_RetornaTabelaLista(@pessoa, ',')) AND d.Tipo = @eS" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from (
+
+SELECT
+	    f.Nome as 'EmpNome',
+		f.CNPJ as 'EmpCNPJ',
+		f.Telefone as 'EmpTelefone',
+		f.endereco + ', ' + f.Numero + ', '  + f.Bairro +  ' - ' + c.Nome + ' - ' + uf.Sigla + ' - CEP: ' + f.CEP   AS 'EmpEnd', 
+		pr.Nome as 'CCnome',
+		rm.Valor as 'CCvalor',	
+		d.Codigo as 'DocCodigo',
+			f.ID as 'DocFilial',
+		d.NumDocumento as 'DocNum',
+		d.ComplementoHist as 'HistNome',
+		d.Parcela as 'DocParc',
+		d.DtVencimento as 'DocVencimento', 
+		d.Situacao as 'DocSituacao',
+		d.Saldo as 'DocSaldo',
+		d.DtUltimaBaixa as 'DocBaixa',
+		case 
+		when @bVencimento = 1 then
+		convert(DateTime, d.DtVencimento, 103) 
+		when @bvencimento = 2 then
+		convert(DateTime, d.Dt, 103) 
+		else convert(DateTime, d.DtUltimaBaixa, 103) 
+		end as 'DocData',
+			td.Nome as 'DocTipoDoc',
+			p.Nome as 'DocForn'
+FROM Documento d
+		INNER JOIN Movimento m ON m.IDDocumento=d.ID
+		INNER JOIN Filial f ON f.ID=d.IDFilial
+		INNER JOIN Cidade c ON c.ID=f.IDCidade
+		INNER JOIN UF uf ON uf.ID=c.IDUF
+		INNER JOIN TipoDocumento td ON td.ID=d.IDTipoDocumento
+		INNER JOIN Pessoa p ON p.ID=d.IDPessoa
+		INNER JOIN Rateio_Mov rm ON rm.IDMovimento=m.ID
+		INNER JOIN Projeto pr ON rm.IDProjeto=pr.ID
+WHERE 
+		((@bVencimento = 1 and d.DtVencimento between @dtInicio and @dtFinal) or
+		 (@bVencimento = 2 and convert(date, d.Dt, 103) between @dtInicio and @dtFinal) or
+		 (@bVencimento = 0 and convert(date, d.DtUltimaBaixa, 103) between @dtInicio and @dtFinal)) and
+		f.ID in (select * from f_RetornaTabelaLista(@idFilial, ',')) and
+		td.ID in (select * from F_RetornaTabelaLista(@idTipoDoc, ',')) and
+		d.Situacao in (select * from F_RetornaTabelaLista(@situacao, ',')) and
+		pr.ID in (select * from F_RetornaTabelaLista(@cC, ',')) and
+		p.ID in (select * from F_RetornaTabelaLista(@pessoa, ',')) and
+		d.Tipo = @eS
+) x order by x.CCnome, x.DocData</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="bVencimento" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@bVencimento" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dtInicio" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dtInicio" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dtFinal" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dtFinal" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="eS" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@eS" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idFilial" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@idFilial" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idTipoDoc" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@idTipoDoc" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="situacao" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@situacao" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cC" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@cC" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="pessoa" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@pessoa" Precision="0" ProviderType="VarChar" Scale="0" Size="8000" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpNome" DataSetColumn="EmpNome" />
+              <Mapping SourceColumn="EmpCNPJ" DataSetColumn="EmpCNPJ" />
+              <Mapping SourceColumn="EmpTelefone" DataSetColumn="EmpTelefone" />
+              <Mapping SourceColumn="EmpEnd" DataSetColumn="EmpEnd" />
+              <Mapping SourceColumn="DocCodigo" DataSetColumn="DocCodigo" />
+              <Mapping SourceColumn="DocFilial" DataSetColumn="DocFilial" />
+              <Mapping SourceColumn="DocNum" DataSetColumn="DocNum" />
+              <Mapping SourceColumn="DocParc" DataSetColumn="DocParc" />
+              <Mapping SourceColumn="DocTipoDoc" DataSetColumn="DocTipoDoc" />
+              <Mapping SourceColumn="DocForn" DataSetColumn="DocForn" />
+              <Mapping SourceColumn="CCnome" DataSetColumn="CCnome" />
+              <Mapping SourceColumn="CCvalor" DataSetColumn="CCvalor" />
+              <Mapping SourceColumn="DocVencimento" DataSetColumn="DocVencimento" />
+              <Mapping SourceColumn="DocSituacao" DataSetColumn="DocSituacao" />
+              <Mapping SourceColumn="DocBaixa" DataSetColumn="DocBaixa" />
+              <Mapping SourceColumn="DocSaldo" DataSetColumn="DocSaldo" />
+              <Mapping SourceColumn="DocData" DataSetColumn="DocData" />
+              <Mapping SourceColumn="HistNome" DataSetColumn="HistNome" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRelCentroCusto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:Generator_UserDSName="dsRelCentroCusto" msprop:Generator_DataSetName="dsRelCentroCusto" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCC" msprop:Generator_UserTableName="dtCC" msprop:Generator_RowDeletedName="dtCCRowDeleted" msprop:Generator_RowChangedName="dtCCRowChanged" msprop:Generator_RowClassName="dtCCRow" msprop:Generator_RowChangingName="dtCCRowChanging" msprop:Generator_RowEvArgName="dtCCRowChangeEvent" msprop:Generator_RowEvHandlerName="dtCCRowChangeEventHandler" msprop:Generator_TableClassName="dtCCDataTable" msprop:Generator_TableVarName="tabledtCC" msprop:Generator_RowDeletingName="dtCCRowDeleting" msprop:Generator_TablePropName="dtCC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpNome" msprop:Generator_UserColumnName="EmpNome" msprop:Generator_ColumnPropNameInRow="EmpNome" msprop:Generator_ColumnVarNameInTable="columnEmpNome" msprop:Generator_ColumnPropNameInTable="EmpNomeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpCNPJ" msprop:Generator_UserColumnName="EmpCNPJ" msprop:Generator_ColumnPropNameInRow="EmpCNPJ" msprop:Generator_ColumnVarNameInTable="columnEmpCNPJ" msprop:Generator_ColumnPropNameInTable="EmpCNPJColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpTelefone" msprop:Generator_UserColumnName="EmpTelefone" msprop:Generator_ColumnPropNameInRow="EmpTelefone" msprop:Generator_ColumnVarNameInTable="columnEmpTelefone" msprop:Generator_ColumnPropNameInTable="EmpTelefoneColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEnd" msdata:ReadOnly="true" msprop:Generator_UserColumnName="EmpEnd" msprop:Generator_ColumnPropNameInRow="EmpEnd" msprop:Generator_ColumnVarNameInTable="columnEmpEnd" msprop:Generator_ColumnPropNameInTable="EmpEndColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocCodigo" msprop:Generator_UserColumnName="DocCodigo" msprop:Generator_ColumnPropNameInRow="DocCodigo" msprop:Generator_ColumnVarNameInTable="columnDocCodigo" msprop:Generator_ColumnPropNameInTable="DocCodigoColumn" type="xs:int" />
+              <xs:element name="DocFilial" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DocFilial" msprop:Generator_ColumnPropNameInRow="DocFilial" msprop:Generator_ColumnVarNameInTable="columnDocFilial" msprop:Generator_ColumnPropNameInTable="DocFilialColumn" type="xs:int" />
+              <xs:element name="DocNum" msprop:Generator_UserColumnName="DocNum" msprop:Generator_ColumnPropNameInRow="DocNum" msprop:Generator_ColumnVarNameInTable="columnDocNum" msprop:Generator_ColumnPropNameInTable="DocNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocParc" msprop:Generator_UserColumnName="DocParc" msprop:Generator_ColumnPropNameInRow="DocParc" msprop:Generator_ColumnVarNameInTable="columnDocParc" msprop:Generator_ColumnPropNameInTable="DocParcColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DocTipoDoc" msprop:Generator_UserColumnName="DocTipoDoc" msprop:Generator_ColumnPropNameInRow="DocTipoDoc" msprop:Generator_ColumnVarNameInTable="columnDocTipoDoc" msprop:Generator_ColumnPropNameInTable="DocTipoDocColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocForn" msprop:Generator_UserColumnName="DocForn" msprop:Generator_ColumnPropNameInRow="DocForn" msprop:Generator_ColumnVarNameInTable="columnDocForn" msprop:Generator_ColumnPropNameInTable="DocFornColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CCnome" msprop:Generator_UserColumnName="CCnome" msprop:Generator_ColumnPropNameInRow="CCnome" msprop:Generator_ColumnVarNameInTable="columnCCnome" msprop:Generator_ColumnPropNameInTable="CCnomeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CCvalor" msprop:Generator_UserColumnName="CCvalor" msprop:Generator_ColumnPropNameInRow="CCvalor" msprop:Generator_ColumnVarNameInTable="columnCCvalor" msprop:Generator_ColumnPropNameInTable="CCvalorColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocVencimento" msprop:Generator_UserColumnName="DocVencimento" msprop:Generator_ColumnPropNameInRow="DocVencimento" msprop:Generator_ColumnVarNameInTable="columnDocVencimento" msprop:Generator_ColumnPropNameInTable="DocVencimentoColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DocSituacao" msprop:Generator_UserColumnName="DocSituacao" msprop:Generator_ColumnPropNameInRow="DocSituacao" msprop:Generator_ColumnVarNameInTable="columnDocSituacao" msprop:Generator_ColumnPropNameInTable="DocSituacaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocBaixa" msprop:Generator_UserColumnName="DocBaixa" msprop:Generator_ColumnVarNameInTable="columnDocBaixa" msprop:Generator_ColumnPropNameInRow="DocBaixa" msprop:Generator_ColumnPropNameInTable="DocBaixaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DocSaldo" msprop:Generator_UserColumnName="DocSaldo" msprop:Generator_ColumnVarNameInTable="columnDocSaldo" msprop:Generator_ColumnPropNameInRow="DocSaldo" msprop:Generator_ColumnPropNameInTable="DocSaldoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocData" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DocData" msprop:Generator_ColumnVarNameInTable="columnDocData" msprop:Generator_ColumnPropNameInRow="DocData" msprop:Generator_ColumnPropNameInTable="DocDataColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HistNome" msprop:Generator_UserColumnName="HistNome" msprop:Generator_ColumnPropNameInRow="HistNome" msprop:Generator_ColumnVarNameInTable="columnHistNome" msprop:Generator_ColumnPropNameInTable="HistNomeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="180" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtCC" />
+      <xs:field xpath="mstns:DocFilial" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Ofd_MedicaoAcompanhamento" table="Ofd_MedicaoAcompanhamento">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="Ofd_Medicao" column="IDMedicao" class="Ofd_Medicao" />
+	<property name="DataHora" column="DataHora" type="DateTime" />
+	<property name="Ocorrencia" column="Ocorrencia" type="string" />
+	<property name="Usuario" column="Usuario" type="string" />
+	<property name="EhAutomatica" column="EhAutomatica" type="bool" />
+	
+  </class>
+</hibernate-mapping>

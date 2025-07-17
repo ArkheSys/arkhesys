@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="ContratoProduto" table="ContratoProduto">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="Contrato" column="IDContrato" class="Contrato" lazy="false" />
+	<property name="Sequencia" column="Sequencia" type="Int32" />
+	<many-to-one name="Produto" column="IDProduto" class="Produto" lazy="false" />
+	<property name="Quantidade" column="Quantidade" type="decimal" />
+	<property name="Valor" column="Valor" type="decimal" />
+	<property name="ValorDesconto" column="ValorDesconto" type="decimal" />
+	<property name="PercDesconto" column="PercDesconto" type="decimal" />
+	<property name="Total" column="Total" type="decimal" />
+	<property name="DataInicioFaturamento" column="DataInicioFaturamento" type="DateTime" />
+	<property name="BJaneiro" column="BJaneiro" type="bool" />
+	<property name="BFevereiro" column="BFevereiro" type="bool" />
+	<property name="BMarco" column="BMarco" type="bool" />
+	<property name="BAbril" column="BAbril" type="bool" />
+	<property name="BMaio" column="BMaio" type="bool" />
+	<property name="BJunho" column="BJunho" type="bool" />
+  <property name="BJulho" column="BJulho" type="bool" />
+	<property name="BAgosto" column="BAgosto" type="bool" />
+	<property name="BSetembro" column="BSetembro" type="bool" />
+	<property name="BOutubro" column="BOutubro" type="bool" />
+	<property name="BNovembro" column="BNovembro" type="bool" />
+	<property name="BDezembro" column="BDezembro" type="bool" />
+	<property name="DataCancelamento" column="DataCancelamento" type="DateTime" />
+	<property name="MotivoCancelamento" column="MotivoCancelamento" type="string" />
+	<property name="bDocumentosGerados" column="bDocumentosGerados" type="bool" />
+	<property name="DiaVencimento" column="DiaVencimento" type="Int32" />
+	<property name="IncUsuario" column="IncUsuario" type="string" />
+	<property name="IncData" column="IncData" type="DateTime" />
+	<property name="AltUsuario" column="AltUsuario" type="string" />
+	<property name="AltData" column="AltData" type="DateTime" />
+  <property name="InfAdicionais" column="InfAdicionais" type="string" />
+  <bag name="NotaItem" table="NotaItem" inverse="true" lazy="false">
+      <key column="IDContratoProduto" />
+      <one-to-many class="NotaItem" />
+  </bag>
+  </class>
+</hibernate-mapping>

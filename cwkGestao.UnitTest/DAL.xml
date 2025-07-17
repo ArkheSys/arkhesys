@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DAL>
+  <bancoDeDados>1</bancoDeDados>
+  <cwkConnectionString>
+    <Sql connectionString="RGF0YSBTb3VyY2U9Llxjd29yaztJbml0aWFsIENhdGFsb2c9Z2VzdGFvO1VzZXIgSUQ9c2E7UGFzc3dvcmQ9Y3dvcmsjMDExMA==" backupServidor="" backupCompartilhado="" />
+    <Fb connectionString="" />
+  </cwkConnectionString>
+</DAL>

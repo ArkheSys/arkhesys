@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="NCM" table="NCM">
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<property name="Ncm" column="Ncm" type="string" length="8" />
+		<property name="AliqCupom" column="AliqCupom" type="string" length="50" />
+		<property name="Ipi" column="Ipi" type="decimal"/>
+		<property name="Pis" column="Pis" type="decimal"/>
+		<property name="Cofins" column="Cofins" type="decimal"/>
+		<property name="CST_Ipi" column="CST_Ipi" type="int"/>
+		<property name="CST_Pis" column="CST_Pis" type="int"/>
+		<property name="CST_Cofins" column="CST_Cofins" type="int"/>
+		<property name="EnqGeral" column="EnqGeral" type="int"/>
+		<property name="Cest" column="Cest" type="string" length="7" />
+
+		<property name="NacionalFederal" column="NacionalFederal" type="decimal"/>
+		<property name="ImportadosFederal" column="ImportadosFederal" type="decimal"/>
+		<property name="Estadual" column="Estadual" type="decimal"/>
+		<property name="Municipal" column="Municipal" type="decimal"/>
+		<property name="DtRevogacao" column="DtRevogacao" type="DateTime" />
+		<property name="Descricao" column="Descricao" type="string" length="150" />
+
+		<bag name="NCMItens" table="NCMItem" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDNCM" />
+			<one-to-many class="NCMItem" />
+		</bag>
+	</class>
+</hibernate-mapping>

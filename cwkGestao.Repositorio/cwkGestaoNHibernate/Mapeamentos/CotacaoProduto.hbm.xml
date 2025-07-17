@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="CotacaoProduto" table="CotacaoProduto">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<many-to-one name="Cotacao" column="IDCotacao" class="Cotacao" />
+					<many-to-one name="Produto" column="IDProduto" class="Produto" />
+					<property name="DescricaoProduto" column="DescricaoProduto" type="string" length="100" />
+	<property name="Quantidade" column="Quantidade" type="decimal" />
+	<property name="Preco_01" column="Preco_01" type="decimal" />
+	<property name="Preco_02" column="Preco_02" type="decimal" />
+	<property name="Preco_03" column="Preco_03" type="decimal" />
+	<property name="Preco_04" column="Preco_04" type="decimal" />
+	<property name="Preco_05" column="Preco_05" type="decimal" />
+	<property name="Preco_06" column="Preco_06" type="decimal" />
+		<bag name="CotacaoProdutoPedidoItems" table="CotacaoProdutoPedidoItem">					
+			<key column="IDCotacaoProduto" />
+			<one-to-many class="CotacaoProdutoPedidoItem" />
+		</bag>
+</class>
+</hibernate-mapping>
+		

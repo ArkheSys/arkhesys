@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Entrega" table="Entrega">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+  <property name="Sequencia" column="Sequencia" type="Int32" />  
+  <property name="Data" column="Data" type="DateTime" />
+	<property name="NumeroEntrega" column="NumeroEntrega" type="string" />
+  <property name="QuantidadeEntrega" column="QuantidadeEntrega" type="decimal" />
+  <property name="Responsavel" column="Responsavel" type="string" />
+  <property name="Solicitante" column="Solicitante" type="string" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" />
+  <many-to-one name="Pedido" column="IDPedido" class="Pedido" lazy="false"/>
+
+  <bag name="ItensEntrega" table="EntregaItem" inverse="true" cascade="all-delete-orphan" lazy="false">
+    <key column="IDEntrega" />
+    <one-to-many class="EntregaItem" />
+  </bag>
+    
+  </class>
+</hibernate-mapping>

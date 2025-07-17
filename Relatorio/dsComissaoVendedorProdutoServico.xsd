@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsComissaoVendedorProdutoServico" targetNamespace="http://tempuri.org/dsComissaoVendedorProdutoServico.xsd" xmlns:mstns="http://tempuri.org/dsComissaoVendedorProdutoServico.xsd" xmlns="http://tempuri.org/dsComissaoVendedorProdutoServico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkcwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkcwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkcwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MULTI_2508ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MULTI_2508ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.MULTI_2508ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DemocwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DemocwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.DemocwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComissaoVendedorProdutoServicoTableAdapter" GeneratorDataComponentClassName="ComissaoVendedorProdutoServicoTableAdapter" Name="ComissaoVendedorProdutoServico" UserDataComponentName="ComissaoVendedorProdutoServicoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectName="SELECT n.ID IDNota, ni.ID IDItem, p.ID IDProduto, NULL IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, p.Nome Descricao, 'Produto' TipoComissao, ni.SubTotal ValorVenda, n.TotalProduto TotalItens, ni.RAT_Desconto ValorDesconto, CASE WHEN pvcProd.ID IS NOT NULL THEN pvcProd.ComissaoPct / 100 WHEN pvcGE.ID IS NOT NULL THEN pvcGE.ComissaoPctGrupoEstoque / 100 ELSE vendedor.ComissaoVendedor / 100 END PercComissao, CASE WHEN pvcProd.ID IS NOT NULL THEN (pvcProd.ComissaoPct / 100) * (ni.SubTotal - ni.RAT_Desconto) WHEN pvcGE.ID IS NOT NULL THEN (pvcGE.ComissaoPctGrupoEstoque / 100) * (ni.SubTotal - ni.RAT_Desconto) ELSE (vendedor.ComissaoVendedor / 100) * (ni.SubTotal - ni.RAT_Desconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItem ni ON n.ID = ni.IDNota JOIN Produto p ON p.ID = ni.IDProduto JOIN GrupoEstoque ge ON p.IDGrupoEstoque = ge.ID LEFT JOIN ProdutoVendedorComissao pvcProd ON pvcProd.IDProduto = p.ID LEFT JOIN ProdutoVendedorComissao pvcGE ON pvcGE.IDGrupoEstoque = ge.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim))) UNION SELECT n.ID IDNota, nis.ID IDItem, NULL IDProduto, s.id IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, s.Nome Descricao, 'Serviço' TipoComissao, nis.SubTotal ValorVenda, n.TotalServico TotalItens, CASE WHEN n.ValorDesconto &lt; 0 THEN 0 ELSE n.ValorDesconto END ValorDesconto, CASE WHEN pvcServ.ID IS NOT NULL THEN pvcServ.ComissaoPctServico / 100 ELSE vendedor.ComissaoServicoVendedor / 100 END PercComissao, CASE WHEN pvcServ.ID IS NOT NULL THEN (pvcServ.ComissaoPctServico / 100) * (nis.SubTotal - n.ValorDesconto) ELSE (vendedor.ComissaoServicoVendedor / 100) * (nis.SubTotal - n.ValorDesconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItemServico nis ON n.ID = nis.IDNota JOIN Servico s ON s.ID = nis.IDServico LEFT JOIN ProdutoVendedorComissao pvcServ ON pvcServ.IDServico = s.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim)))" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select *, 
+case 
+when itens.IDProduto is not null
+then itens.ValorVenda
+else 0 end as TotalProduto,
+case
+when itens.IDServico is not null
+then itens.ValorVenda
+else 0 end as TotalServico 
+from 
+(select n.ID IDNota, ni.ID IDItem, p.ID IDProduto, NULL IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, 
+p.Nome Descricao,
+'Produto' TipoComissao,
+ni.SubTotal ValorVenda,
+n.TotalProduto TotalItens,
+ni.RAT_Desconto ValorDesconto,
+case 
+	when pvcProd.ID is not null then pvcProd.ComissaoPct  / 100
+	when pvcGE.ID is not null then pvcGE.ComissaoPctGrupoEstoque  / 100
+	else vendedor.ComissaoVendedor  / 100
+end PercComissao,
+case 
+	when pvcProd.ID is not null then (pvcProd.ComissaoPct / 100) * (ni.SubTotal - ni.RAT_Desconto)
+	when pvcGE.ID is not null then (pvcGE.ComissaoPctGrupoEstoque / 100) * (ni.SubTotal - ni.RAT_Desconto)
+	else  (vendedor.ComissaoVendedor / 100) * (ni.SubTotal - ni.RAT_Desconto)
+end ValorComissao
+from Nota n
+join TipoNota tn on n.IDTipoNota = tn.ID
+join Pessoa cliente on cliente.ID = n.IDPessoa
+join PessoaVendedor vendedor on vendedor.ID = n.IDVendedor
+join Pessoa pesVendedor on pesVendedor.ID = vendedor.IDPessoa
+join NotaItem ni on n.ID = ni.IDNota
+join Produto p on p.ID = ni.IDProduto
+join GrupoEstoque ge on p.IDGrupoEstoque = ge.ID
+left join ProdutoVendedorComissao pvcProd on pvcProd.IDProduto = p.ID
+left join ProdutoVendedorComissao pvcGE on pvcGE.IDGrupoEstoque = ge.ID
+
+where (tn.ID in (select value from F_RetornaTabelaLista(@IDSTipoNota,','))) 
+and (((@IDVendedor != 0) and (pesVendedor.ID = @IDVendedor and n.Dt between @DataInicio and @DataFim)) or
+((@IDVendedor = 0) and (n.Dt between @DataInicio and @DataFim)))
+
+union 
+
+select n.ID IDNota, nis.ID IDItem, NULL IDProduto, s.id IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, 
+s.Nome Descricao,
+'Serviço' TipoComissao,
+nis.SubTotal ValorVenda,
+n.TotalServico TotalItens,
+case 
+when n.ValorDesconto &lt; 0 then 0
+else n.ValorDesconto
+end ValorDesconto,
+case 
+	when pvcServ.ID is not null then pvcServ.ComissaoPctServico  / 100
+	else vendedor.ComissaoServicoVendedor  / 100
+end PercComissao,
+case 
+	when pvcServ.ID is not null then (pvcServ.ComissaoPctServico / 100) * (nis.SubTotal - n.ValorDesconto)
+	else (vendedor.ComissaoServicoVendedor / 100) * (nis.SubTotal - n.ValorDesconto)
+end ValorComissao
+from Nota n
+join TipoNota tn on n.IDTipoNota = tn.ID
+join Pessoa cliente on cliente.ID = n.IDPessoa
+join PessoaVendedor vendedor on vendedor.ID = n.IDVendedor
+join Pessoa pesVendedor on pesVendedor.ID = vendedor.IDPessoa
+join NotaItemServico nis on n.ID = nis.IDNota
+join Servico s on s.ID = nis.IDServico
+left join ProdutoVendedorComissao pvcServ on pvcServ.IDServico = s.ID
+
+where (tn.ID in (select value from F_RetornaTabelaLista(@IDSTipoNota,','))) 
+and (((@IDVendedor != 0) and (pesVendedor.ID = @IDVendedor and n.Dt between @DataInicio and @DataFim)) or
+((@IDVendedor = 0) and (n.Dt between @DataInicio and @DataFim)))
+) itens</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDVendedor" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDVendedor" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DataInicio" ColumnName="Dt" DataSourceName="SELECT n.ID IDNota, ni.ID IDItem, p.ID IDProduto, NULL IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, p.Nome Descricao, 'Produto' TipoComissao, ni.SubTotal ValorVenda, n.TotalProduto TotalItens, ni.RAT_Desconto ValorDesconto, CASE WHEN pvcProd.ID IS NOT NULL THEN pvcProd.ComissaoPct / 100 WHEN pvcGE.ID IS NOT NULL THEN pvcGE.ComissaoPctGrupoEstoque / 100 ELSE vendedor.ComissaoVendedor / 100 END PercComissao, CASE WHEN pvcProd.ID IS NOT NULL THEN (pvcProd.ComissaoPct / 100) * (ni.SubTotal - ni.RAT_Desconto) WHEN pvcGE.ID IS NOT NULL THEN (pvcGE.ComissaoPctGrupoEstoque / 100) * (ni.SubTotal - ni.RAT_Desconto) ELSE (vendedor.ComissaoVendedor / 100) * (ni.SubTotal - ni.RAT_Desconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItem ni ON n.ID = ni.IDNota JOIN Produto p ON p.ID = ni.IDProduto JOIN GrupoEstoque ge ON p.IDGrupoEstoque = ge.ID LEFT JOIN ProdutoVendedorComissao pvcProd ON pvcProd.IDProduto = p.ID LEFT JOIN ProdutoVendedorComissao pvcGE ON pvcGE.IDGrupoEstoque = ge.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim))) UNION SELECT n.ID IDNota, nis.ID IDItem, NULL IDProduto, s.id IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, s.Nome Descricao, 'Serviço' TipoComissao, nis.SubTotal ValorVenda, n.TotalServico TotalItens, CASE WHEN n.ValorDesconto &lt; 0 THEN 0 ELSE n.ValorDesconto END ValorDesconto, CASE WHEN pvcServ.ID IS NOT NULL THEN pvcServ.ComissaoPctServico / 100 ELSE vendedor.ComissaoServicoVendedor / 100 END PercComissao, CASE WHEN pvcServ.ID IS NOT NULL THEN (pvcServ.ComissaoPctServico / 100) * (nis.SubTotal - n.ValorDesconto) ELSE (vendedor.ComissaoServicoVendedor / 100) * (nis.SubTotal - n.ValorDesconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItemServico nis ON n.ID = nis.IDNota JOIN Servico s ON s.ID = nis.IDServico LEFT JOIN ProdutoVendedorComissao pvcServ ON pvcServ.IDServico = s.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim)))" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DataInicio" Precision="0" Scale="0" Size="8" SourceColumn="Dt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DataFim" ColumnName="Dt" DataSourceName="SELECT n.ID IDNota, ni.ID IDItem, p.ID IDProduto, NULL IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, p.Nome Descricao, 'Produto' TipoComissao, ni.SubTotal ValorVenda, n.TotalProduto TotalItens, ni.RAT_Desconto ValorDesconto, CASE WHEN pvcProd.ID IS NOT NULL THEN pvcProd.ComissaoPct / 100 WHEN pvcGE.ID IS NOT NULL THEN pvcGE.ComissaoPctGrupoEstoque / 100 ELSE vendedor.ComissaoVendedor / 100 END PercComissao, CASE WHEN pvcProd.ID IS NOT NULL THEN (pvcProd.ComissaoPct / 100) * (ni.SubTotal - ni.RAT_Desconto) WHEN pvcGE.ID IS NOT NULL THEN (pvcGE.ComissaoPctGrupoEstoque / 100) * (ni.SubTotal - ni.RAT_Desconto) ELSE (vendedor.ComissaoVendedor / 100) * (ni.SubTotal - ni.RAT_Desconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItem ni ON n.ID = ni.IDNota JOIN Produto p ON p.ID = ni.IDProduto JOIN GrupoEstoque ge ON p.IDGrupoEstoque = ge.ID LEFT JOIN ProdutoVendedorComissao pvcProd ON pvcProd.IDProduto = p.ID LEFT JOIN ProdutoVendedorComissao pvcGE ON pvcGE.IDGrupoEstoque = ge.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim))) UNION SELECT n.ID IDNota, nis.ID IDItem, NULL IDProduto, s.id IDServico, pesVendedor.Nome Vendedor, n.Dt, cliente.Nome Cliente, s.Nome Descricao, 'Serviço' TipoComissao, nis.SubTotal ValorVenda, n.TotalServico TotalItens, CASE WHEN n.ValorDesconto &lt; 0 THEN 0 ELSE n.ValorDesconto END ValorDesconto, CASE WHEN pvcServ.ID IS NOT NULL THEN pvcServ.ComissaoPctServico / 100 ELSE vendedor.ComissaoServicoVendedor / 100 END PercComissao, CASE WHEN pvcServ.ID IS NOT NULL THEN (pvcServ.ComissaoPctServico / 100) * (nis.SubTotal - n.ValorDesconto) ELSE (vendedor.ComissaoServicoVendedor / 100) * (nis.SubTotal - n.ValorDesconto) END ValorComissao FROM Nota n JOIN TipoNota tn ON n.IDTipoNota = tn.ID JOIN Pessoa cliente ON cliente.ID = n.IDPessoa JOIN PessoaVendedor vendedor ON vendedor.ID = n.IDVendedor JOIN Pessoa pesVendedor ON pesVendedor.ID = vendedor.IDPessoa JOIN NotaItemServico nis ON n.ID = nis.IDNota JOIN Servico s ON s.ID = nis.IDServico LEFT JOIN ProdutoVendedorComissao pvcServ ON pvcServ.IDServico = s.ID WHERE (tn.ID IN (SELECT value FROM F_RetornaTabelaLista(@IDSTipoNota,','))) AND (((@IDVendedor != 0) AND (pesVendedor.ID = @IDVendedor AND n.Dt BETWEEN @DataInicio AND @DataFim)) OR ((@IDVendedor = 0) AND (n.Dt BETWEEN @DataInicio AND @DataFim)))" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DataFim" Precision="0" Scale="0" Size="8" SourceColumn="Dt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDSTipoNota" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@IDSTipoNota" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDNota" DataSetColumn="IDNota" />
+              <Mapping SourceColumn="IDItem" DataSetColumn="IDItem" />
+              <Mapping SourceColumn="IDProduto" DataSetColumn="IDProduto" />
+              <Mapping SourceColumn="IDServico" DataSetColumn="IDServico" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="Dt" DataSetColumn="Dt" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="TipoComissao" DataSetColumn="TipoComissao" />
+              <Mapping SourceColumn="ValorVenda" DataSetColumn="ValorVenda" />
+              <Mapping SourceColumn="ValorDesconto" DataSetColumn="ValorDesconto" />
+              <Mapping SourceColumn="PercComissao" DataSetColumn="PercComissao" />
+              <Mapping SourceColumn="ValorComissao" DataSetColumn="ValorComissao" />
+              <Mapping SourceColumn="TotalProduto" DataSetColumn="TotalProduto" />
+              <Mapping SourceColumn="TotalServico" DataSetColumn="TotalServico" />
+              <Mapping SourceColumn="TotalItens" DataSetColumn="TotalItens" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComissaoFinanceiroVendedorProdutoServicoTableAdapter" GeneratorDataComponentClassName="ComissaoFinanceiroVendedorProdutoServicoTableAdapter" Name="ComissaoFinanceiroVendedorProdutoServico" UserDataComponentName="ComissaoFinanceiroVendedorProdutoServicoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkcwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select d.ID IDDocumento, n.ID IDNota, n.PessoaNome Cliente, 
+-1 ComissaoPct,
+-1 ComissaoValor,
+n.Dt Data, 
+n.Numero Nota, 
+sum(m.Valor) Valor, 
+pv.Nome Vendedor, 
+n.TotalNota,
+d.Valor ValorDocumento,
+d.Codigo DocFin,
+Convert(varchar, d.Parcela) + ' de ' + Convert(varchar, d.QtParcela) Parcela,
+'' TipoComissao
+from Movimento m
+join Documento d on d.ID = m.IDDocumento and (m.Operacao = 2 or m.Operacao = 3)
+join Nota n on n.ID = d.IDNota
+join TipoNota tn on tn.ID = n.IDTipoNota
+join PessoaVendedor v on v.ID = n.IDVendedor
+join Pessoa pv on pv.ID = v.IDPessoa
+
+where (tn.ID in (select value from F_RetornaTabelaLista(@IDSTipoNota,','))) 
+and (((@IDVendedor != 0) and (pv.ID = @IDVendedor and n.Dt between @DataInicio and @DataFim)) or
+((@IDVendedor = 0) and (n.Dt between @DataInicio and @DataFim)))
+
+group by d.ID, n.ID, n.PessoaNome, n.Dt, n.Numero, n.PessoaNome, pv.Nome, n.TotalNota, d.Valor, d.Codigo, d.Parcela, d.QtParcela</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDVendedor" ColumnName="ID" DataSourceName="Demogestao.dbo.Pessoa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDVendedor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DataInicio" ColumnName="Dt" DataSourceName="Demogestao.dbo.Nota" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DataInicio" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DataFim" ColumnName="Dt" DataSourceName="Demogestao.dbo.Nota" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DataFim" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDSTipoNota" ColumnName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@IDSTipoNota" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="ComissaoPct" DataSetColumn="ComissaoPct" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="Nota" DataSetColumn="Nota" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="TotalNota" DataSetColumn="TotalNota" />
+              <Mapping SourceColumn="ValorDocumento" DataSetColumn="ValorDocumento" />
+              <Mapping SourceColumn="DocFin" DataSetColumn="DocFin" />
+              <Mapping SourceColumn="Parcela" DataSetColumn="Parcela" />
+              <Mapping SourceColumn="TipoComissao" DataSetColumn="TipoComissao" />
+              <Mapping SourceColumn="IDDocumento" DataSetColumn="IDDocumento" />
+              <Mapping SourceColumn="IDNota" DataSetColumn="IDNota" />
+              <Mapping SourceColumn="ComissaoValor" DataSetColumn="ComissaoValor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsComissaoVendedorProdutoServico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsComissaoVendedorProdutoServico" msprop:Generator_UserDSName="dsComissaoVendedorProdutoServico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ComissaoVendedorProdutoServico" msprop:Generator_TableClassName="ComissaoVendedorProdutoServicoDataTable" msprop:Generator_TableVarName="tableComissaoVendedorProdutoServico" msprop:Generator_TablePropName="ComissaoVendedorProdutoServico" msprop:Generator_RowDeletingName="ComissaoVendedorProdutoServicoRowDeleting" msprop:Generator_RowChangingName="ComissaoVendedorProdutoServicoRowChanging" msprop:Generator_RowEvHandlerName="ComissaoVendedorProdutoServicoRowChangeEventHandler" msprop:Generator_RowDeletedName="ComissaoVendedorProdutoServicoRowDeleted" msprop:Generator_UserTableName="ComissaoVendedorProdutoServico" msprop:Generator_RowChangedName="ComissaoVendedorProdutoServicoRowChanged" msprop:Generator_RowEvArgName="ComissaoVendedorProdutoServicoRowChangeEvent" msprop:Generator_RowClassName="ComissaoVendedorProdutoServicoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDNota" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIDNota" msprop:Generator_ColumnPropNameInRow="IDNota" msprop:Generator_ColumnPropNameInTable="IDNotaColumn" msprop:Generator_UserColumnName="IDNota" type="xs:int" minOccurs="0" />
+              <xs:element name="IDItem" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIDItem" msprop:Generator_ColumnPropNameInRow="IDItem" msprop:Generator_ColumnPropNameInTable="IDItemColumn" msprop:Generator_UserColumnName="IDItem" type="xs:int" minOccurs="0" />
+              <xs:element name="IDProduto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIDProduto" msprop:Generator_ColumnPropNameInRow="IDProduto" msprop:Generator_ColumnPropNameInTable="IDProdutoColumn" msprop:Generator_UserColumnName="IDProduto" type="xs:int" minOccurs="0" />
+              <xs:element name="IDServico" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIDServico" msprop:Generator_ColumnPropNameInRow="IDServico" msprop:Generator_ColumnPropNameInTable="IDServicoColumn" msprop:Generator_UserColumnName="IDServico" type="xs:int" minOccurs="0" />
+              <xs:element name="Vendedor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDt" msprop:Generator_ColumnPropNameInRow="Dt" msprop:Generator_ColumnPropNameInTable="DtColumn" msprop:Generator_UserColumnName="Dt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Cliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoComissao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTipoComissao" msprop:Generator_ColumnPropNameInRow="TipoComissao" msprop:Generator_ColumnPropNameInTable="TipoComissaoColumn" msprop:Generator_UserColumnName="TipoComissao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorVenda" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorVenda" msprop:Generator_ColumnPropNameInRow="ValorVenda" msprop:Generator_ColumnPropNameInTable="ValorVendaColumn" msprop:Generator_UserColumnName="ValorVenda" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ValorDesconto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorDesconto" msprop:Generator_ColumnPropNameInRow="ValorDesconto" msprop:Generator_ColumnPropNameInTable="ValorDescontoColumn" msprop:Generator_UserColumnName="ValorDesconto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PercComissao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPercComissao" msprop:Generator_ColumnPropNameInRow="PercComissao" msprop:Generator_ColumnPropNameInTable="PercComissaoColumn" msprop:Generator_UserColumnName="PercComissao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ValorComissao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorComissao" msprop:Generator_ColumnPropNameInRow="ValorComissao" msprop:Generator_ColumnPropNameInTable="ValorComissaoColumn" msprop:Generator_UserColumnName="ValorComissao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalProduto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalProduto" msprop:Generator_ColumnPropNameInRow="TotalProduto" msprop:Generator_ColumnPropNameInTable="TotalProdutoColumn" msprop:Generator_UserColumnName="TotalProduto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalServico" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalServico" msprop:Generator_ColumnPropNameInRow="TotalServico" msprop:Generator_ColumnPropNameInTable="TotalServicoColumn" msprop:Generator_UserColumnName="TotalServico" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalItens" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalItens" msprop:Generator_ColumnPropNameInRow="TotalItens" msprop:Generator_ColumnPropNameInTable="TotalItensColumn" msprop:Generator_UserColumnName="TotalItens" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComissaoFinanceiroVendedorProdutoServico" msprop:Generator_TableClassName="ComissaoFinanceiroVendedorProdutoServicoDataTable" msprop:Generator_TableVarName="tableComissaoFinanceiroVendedorProdutoServico" msprop:Generator_TablePropName="ComissaoFinanceiroVendedorProdutoServico" msprop:Generator_RowDeletingName="ComissaoFinanceiroVendedorProdutoServicoRowDeleting" msprop:Generator_RowChangingName="ComissaoFinanceiroVendedorProdutoServicoRowChanging" msprop:Generator_RowEvHandlerName="ComissaoFinanceiroVendedorProdutoServicoRowChangeEventHandler" msprop:Generator_RowDeletedName="ComissaoFinanceiroVendedorProdutoServicoRowDeleted" msprop:Generator_UserTableName="ComissaoFinanceiroVendedorProdutoServico" msprop:Generator_RowChangedName="ComissaoFinanceiroVendedorProdutoServicoRowChanged" msprop:Generator_RowEvArgName="ComissaoFinanceiroVendedorProdutoServicoRowChangeEvent" msprop:Generator_RowClassName="ComissaoFinanceiroVendedorProdutoServicoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ComissaoPct" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnComissaoPct" msprop:Generator_ColumnPropNameInRow="ComissaoPct" msprop:Generator_ColumnPropNameInTable="ComissaoPctColumn" msprop:Generator_UserColumnName="ComissaoPct" type="xs:int" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:dateTime" />
+              <xs:element name="Nota" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_UserColumnName="Nota" type="xs:int" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalNota" msprop:Generator_ColumnVarNameInTable="columnTotalNota" msprop:Generator_ColumnPropNameInRow="TotalNota" msprop:Generator_ColumnPropNameInTable="TotalNotaColumn" msprop:Generator_UserColumnName="TotalNota" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ValorDocumento" msprop:Generator_ColumnVarNameInTable="columnValorDocumento" msprop:Generator_ColumnPropNameInRow="ValorDocumento" msprop:Generator_ColumnPropNameInTable="ValorDocumentoColumn" msprop:Generator_UserColumnName="ValorDocumento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocFin" msprop:Generator_ColumnVarNameInTable="columnDocFin" msprop:Generator_ColumnPropNameInRow="DocFin" msprop:Generator_ColumnPropNameInTable="DocFinColumn" msprop:Generator_UserColumnName="DocFin" type="xs:int" />
+              <xs:element name="Parcela" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParcela" msprop:Generator_ColumnPropNameInRow="Parcela" msprop:Generator_ColumnPropNameInTable="ParcelaColumn" msprop:Generator_UserColumnName="Parcela" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoComissao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTipoComissao" msprop:Generator_ColumnPropNameInRow="TipoComissao" msprop:Generator_ColumnPropNameInTable="TipoComissaoColumn" msprop:Generator_UserColumnName="TipoComissao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDDocumento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDDocumento" msprop:Generator_ColumnPropNameInRow="IDDocumento" msprop:Generator_ColumnPropNameInTable="IDDocumentoColumn" msprop:Generator_UserColumnName="IDDocumento" type="xs:int" />
+              <xs:element name="IDNota" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDNota" msprop:Generator_ColumnPropNameInRow="IDNota" msprop:Generator_ColumnPropNameInTable="IDNotaColumn" msprop:Generator_UserColumnName="IDNota" type="xs:int" />
+              <xs:element name="ComissaoValor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnComissaoValor" msprop:Generator_ColumnPropNameInRow="ComissaoValor" msprop:Generator_ColumnPropNameInTable="ComissaoValorColumn" msprop:Generator_UserColumnName="ComissaoValor" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ComissaoFinanceiroVendedorProdutoServico" />
+      <xs:field xpath="mstns:IDDocumento" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEtiquetaExpedicao" targetNamespace="http://tempuri.org/dsEtiquetaExpedicao.xsd" xmlns:mstns="http://tempuri.org/dsEtiquetaExpedicao.xsd" xmlns="http://tempuri.org/dsEtiquetaExpedicao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEtiquetaExpedicao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEtiquetaExpedicao" msprop:Generator_DataSetName="dsEtiquetaExpedicao" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtEtiquetaExpedicao" msprop:Generator_UserTableName="dtEtiquetaExpedicao" msprop:Generator_RowDeletedName="dtEtiquetaExpedicaoRowDeleted" msprop:Generator_RowChangedName="dtEtiquetaExpedicaoRowChanged" msprop:Generator_RowClassName="dtEtiquetaExpedicaoRow" msprop:Generator_RowChangingName="dtEtiquetaExpedicaoRowChanging" msprop:Generator_RowEvArgName="dtEtiquetaExpedicaoRowChangeEvent" msprop:Generator_RowEvHandlerName="dtEtiquetaExpedicaoRowChangeEventHandler" msprop:Generator_TableClassName="dtEtiquetaExpedicaoDataTable" msprop:Generator_TableVarName="tabledtEtiquetaExpedicao" msprop:Generator_RowDeletingName="dtEtiquetaExpedicaoRowDeleting" msprop:Generator_TablePropName="dtEtiquetaExpedicao">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoRastreamento" msprop:Generator_UserColumnName="CodigoRastreamento" msprop:Generator_ColumnVarNameInTable="columnCodigoRastreamento" msprop:Generator_ColumnPropNameInRow="CodigoRastreamento" msprop:Generator_ColumnPropNameInTable="CodigoRastreamentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Cep" msprop:Generator_UserColumnName="Cep" msprop:Generator_ColumnVarNameInTable="columnCep" msprop:Generator_ColumnPropNameInRow="Cep" msprop:Generator_ColumnPropNameInTable="CepColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NotaFiscal" msprop:Generator_UserColumnName="NotaFiscal" msprop:Generator_ColumnVarNameInTable="columnNotaFiscal" msprop:Generator_ColumnPropNameInRow="NotaFiscal" msprop:Generator_ColumnPropNameInTable="NotaFiscalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Volume" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Destinatario" msprop:Generator_UserColumnName="Destinatario" msprop:Generator_ColumnVarNameInTable="columnDestinatario" msprop:Generator_ColumnPropNameInRow="Destinatario" msprop:Generator_ColumnPropNameInTable="DestinatarioColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Endereco" msprop:Generator_UserColumnName="Endereco" msprop:Generator_ColumnVarNameInTable="columnEndereco" msprop:Generator_ColumnPropNameInRow="Endereco" msprop:Generator_ColumnPropNameInTable="EnderecoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ComplementoBairro" msprop:Generator_UserColumnName="ComplementoBairro" msprop:Generator_ColumnVarNameInTable="columnComplementoBairro" msprop:Generator_ColumnPropNameInRow="ComplementoBairro" msprop:Generator_ColumnPropNameInTable="ComplementoBairroColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CidadeEstado" msprop:Generator_UserColumnName="CidadeEstado" msprop:Generator_ColumnVarNameInTable="columnCidadeEstado" msprop:Generator_ColumnPropNameInRow="CidadeEstado" msprop:Generator_ColumnPropNameInTable="CidadeEstadoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CepFormatado" msprop:Generator_UserColumnName="CepFormatado" msprop:Generator_ColumnVarNameInTable="columnCepFormatado" msprop:Generator_ColumnPropNameInRow="CepFormatado" msprop:Generator_ColumnPropNameInTable="CepFormatadoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Peso" msprop:Generator_UserColumnName="Peso" msprop:Generator_ColumnVarNameInTable="columnPeso" msprop:Generator_ColumnPropNameInRow="Peso" msprop:Generator_ColumnPropNameInTable="PesoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Remetente" msprop:Generator_UserColumnName="Remetente" msprop:Generator_ColumnVarNameInTable="columnRemetente" msprop:Generator_ColumnPropNameInRow="Remetente" msprop:Generator_ColumnPropNameInTable="RemetenteColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="EndRemetente" msprop:Generator_UserColumnName="EndRemetente" msprop:Generator_ColumnVarNameInTable="columnEndRemetente" msprop:Generator_ColumnPropNameInRow="EndRemetente" msprop:Generator_ColumnPropNameInTable="EndRemetenteColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompelementoBairroRemetente" msprop:Generator_UserColumnName="CompelementoBairroRemetente" msprop:Generator_ColumnVarNameInTable="columnCompelementoBairroRemetente" msprop:Generator_ColumnPropNameInRow="CompelementoBairroRemetente" msprop:Generator_ColumnPropNameInTable="CompelementoBairroRemetenteColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CepRemetente" msprop:Generator_UserColumnName="CepRemetente" msprop:Generator_ColumnVarNameInTable="columnCepRemetente" msprop:Generator_ColumnPropNameInRow="CepRemetente" msprop:Generator_ColumnPropNameInTable="CepRemetenteColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CidadeEstadoRemetente" msprop:Generator_UserColumnName="CidadeEstadoRemetente" msprop:Generator_ColumnVarNameInTable="columnCidadeEstadoRemetente" msprop:Generator_ColumnPropNameInRow="CidadeEstadoRemetente" msprop:Generator_ColumnPropNameInTable="CidadeEstadoRemetenteColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Observacao" msprop:Generator_UserColumnName="Observacao" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CaminhoImagem" msprop:Generator_UserColumnName="CaminhoImagem" msprop:Generator_ColumnPropNameInRow="CaminhoImagem" msprop:Generator_ColumnVarNameInTable="columnCaminhoImagem" msprop:Generator_ColumnPropNameInTable="CaminhoImagemColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

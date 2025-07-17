@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="PlanoContaReferencial" table="PlanoContaReferencial">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    
+    <property name="codigo" column="Codigo" type="Int32" />
+    <property name="classificacao" column="Classificacao" type="string" length="20" />
+    <property name="nome" column="Nome" type="string"  />
+    <property name="orientacoes" column="Orientacoes" type="string"  />
+    <property name="inicioValidade" column="InicioValidade" type="DateTime" />
+    <property name="fimValidade" column="FimValidade" type="DateTime" />
+    <property name="tipo" column="Tipo" type="string" />
+    
+  </class>
+</hibernate-mapping>

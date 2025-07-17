@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="MultiparafusosLoja" Class="dcNotaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=servidor\dev;Initial Catalog=gestao;User ID=SA" SettingsObjectName="Modelo.Properties.Settings" SettingsPropertyName="cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Nota" Member="NotaImpressao">
+    <Type Name="NotaImpressao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDFilial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDTipoNota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ent_Sai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtDigitacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDPessoa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PessoaNome" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="PessoaCNPJCPF" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PessoaInscRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PessoaEndereco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PessoaNumero" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Complemento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PessoaBairro" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="PessoaCidade" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="PessoaUF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PessoaTelefone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDVendedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTabelaPreco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCondicao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalProduto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PercDesconto" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="ValorDesconto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorAcrescimo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalNota" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Observacao1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observacao2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observacao3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ModeloDocto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Serie" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bGeraFinanceiro" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IDTransportadora" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransNome" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="TransEndereco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TransCidade" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="TransUF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="TransCNPJCPF" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TransPlaca" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TransPlacaUF" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VolumeQuant" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VolumeEspecie" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VolumeMarca" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VolumeNumero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VolumePesoBruto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VolumePesoLiquido" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CancUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CancMotivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CancDt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bPessoaContribuinte" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PessoaCidadeIBGE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PessoaCEP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ChaveNota" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroRecibo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroProtocolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LogEnvio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LogRecibo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observacao4" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Observacao5" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="bImpressa" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="bImprimeTextoCredidoICMS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ValorFrete" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ObservacaoSistema" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ObservacaoUsuario" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TipoFrete" Type="System.Int16" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IncData" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IncUsuario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AltData" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AltUsuario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDEnderecoDestinatario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Pessoa" table="Pessoa" lazy="false">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="BTransportadora" column="bTransportadora" type="Boolean" />
+    <property name="BCliente" column="bCliente" type="Boolean" />
+    <property name="BFornecedor" column="bFornecedor" type="Boolean" />
+    <property name="BVendedor" column="bVendedor" type="Boolean" />
+    <property name="BFuncionario" column="bFuncionario" type="Boolean" />
+    <property name="BRevenda" column="bRevenda" type="Boolean" />
+    <property name="BClienteRevenda" column="bClienteRevenda" type="Boolean" />
+    <property name="BFuncionarioCliente" column="bFuncionarioCliente" type="Boolean" />
+    <property name="BDelivery" column="bDelivery" type="Boolean" />
+    <property name="BEntregador" column="bEntregador" type="Boolean" />
+    <property name="BOrgaoPublico" column="bOrgaoPublico" type="Boolean" />
+    <property name="BContribuinte" column="bContribuinte" type="Boolean" />
+    <property name="NaoUtilizaLimite" column="NaoUtilizaLimite" type="Boolean" />
+    <property name="BAtivo" column="bAtivo" type="Boolean" />
+    <property name="Nome" column="Nome" type="string" length="80" />
+    <property name="TipoPessoa" column="TipoPessoa" type="string" length="10" />
+    <property name="Apelido" column="Apelido" type="string" length="50" />
+    <property name="Fantasia" column="Fantasia" type="string" length="50" />
+    <property name="CNPJ_CPF" column="CNPJ_CPF" type="string" length="20" />
+    <property name="Inscricao" column="Inscricao" type="string" length="20" />
+    <property name="RG" column="RG" type="string" length="30" />
+    <property name="Sexo" column="Sexo" type="string" length="15" />
+    <property name="EstadoCivil" column="EstadoCivil" type="string" length="30" />
+    <property name="Http" column="Http" type="string" length="100" />
+    <property name="Email1" column="Email1" type="string" length="100" />
+    <property name="Email2" column="Email2" type="string" length="100" />
+    <property name="DtFundacao" />
+    <property name="DtNascimento" />
+    <property name="DtCadastro" column="DtCadastro" type="DateTime" />
+    <many-to-one name="Filial" column="IDFilial" class="Filial" />
+    <many-to-one name="Classificacao" column="IDClassificacao" class="Classificacao" lazy="false"/>
+    <property name="Observacao" column="Observacao" type="string" length="2147483647" />
+    <property name="NumeroBanco" column="NumeroBanco" type="Int16" />
+    <property name="Agencia" column="Agencia" type="string" length="20" />
+    <property name="ContaCorrente" column="ContaCorrente" type="string" length="20" />
+    <property name="IncData" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData"  />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="Placa" column="Placa" type="string" length="8" />
+    <property name="PlacaUF" column="PlacaUF" type="string" length="2" />
+    <property name="IDIntegracao" column="IDIntegracao" type="Int32" />
+    <property name="InscricaoMunicipal" column="InscricaoMunicipal" type="string" />
+    <property name="bSTRevenda" column="bSTRevenda" type="Boolean" />
+    <property name="IDMercadoLivre" column="IDMercadoLivre" type="int"/>
+    <property name="IDSISeCommerce" column="IDSISeCommerce" type="int"/>
+    <property name="bCorreio" column="bCorreio" type="Boolean"/>
+    <property name="bShlTransportadora" column="bShlTransportadora" type="bool"/>
+    <property name="CodShl" column="CodShl" type="int"/>
+    <property name="bContabilista" column="bContabilista" type="Boolean"/>
+    <property name="bConsumidorFinal" column="bConsumidorFinal" type="Boolean"/>
+    
+    <many-to-one name="ServicoAtendimento" column="IDServico" class="Servico" lazy="false" />
+    <property name="Tratamento" column="Tratamento" type="string" length="15" />
+    <property name="SenhaLojaVirtual" column="SenhaLojaVirtual" type="string" length="20" />
+    <property name="ValorHoraAtendimento" column="ValorHoraAtendimento" type="decimal"/>
+    <property name="HorasContratadas" column="HorasContratadas" type="string" length="10" />
+    <property name="bFaturarPorPadrao" column="bFaturarPorPadrao" type="Boolean"/>
+    <property name="DiasPadraoLeitura" column="DiasPadraoLeitura" type="Int32"/>
+    
+    <property name="DiaVencimentoCartao" column="DiaVencimentoCartao" type="Int32"/>
+    <property name="TaxaDescontoCartao" column="TaxaDescontoCartao" type="decimal"/>
+    <property name="TaxaAntecipacaoCartao" column="TaxaAntecipacaoCartao" type="decimal"/>
+    
+    
+    <property name="IDRevendaCentralCliente" column="IDRevendaCentralCliente" type="Int32"/>
+    <property name="DataInativacao" column="DataInativacao" type="DateTime" />
+    <property name="MotivoInativacao" column="MotivoInativacao" type="string" length="200" />
+    <property name="SenhaRevenda" column="SenhaRevenda" type="string" length="50" />
+    <property name="InscSuframa" column="InscSuframa" type="string" length="9" />
+    <property name="CaminhoFoto" column="CaminhoFoto" type="string" length="8000" />
+
+    <many-to-one name="PerfilTributarioCliente" column="IDPerfilTributarioCliente" class="PerfilTributarioCliente" lazy="false"/>
+    
+    <!--<one-to-one name="ClienteTelefonia"
+                      constrained="false"
+                      foreign-key="none"
+                      class="Tel_Cliente" /> -->
+    
+    <bag name="ClientesTelefonia" table="Tel_Cliente" lazy="true">
+      <key column="IdPessoa" />
+      <one-to-many class="Tel_Cliente" />
+    </bag>
+
+    <bag name="PessoaAvisos" table="PessoaAviso" cascade="all" lazy="false">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaAviso" />
+    </bag>
+    <bag name="PessoaClientes" table="PessoaCliente" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaCliente" />
+    </bag>
+    
+    <bag name="PessoaContabilistas" table="PessoaContabilista" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaContabilista" />
+    </bag>
+    
+    <bag name="PessoaEmails" table="PessoaEmail" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaEmail" />
+    </bag>
+    <bag name="PessoaEnderecos" table="PessoaEndereco" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaEndereco" />
+    </bag>
+    <bag name="PessoaFuncionarios" table="PessoaFuncionario" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaFuncionario" />
+    </bag>
+    <bag name="PessoaSocios" table="PessoaSocio" cascade="all" lazy="false">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaSocio" />
+    </bag>
+
+    <bag name="PessoaTelefones" table="PessoaTelefone" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaTelefone" />
+    </bag>
+    <bag name="PessoaVendedores" table="PessoaVendedor" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaVendedor" />
+    </bag>
+    <bag name="ClientesRevenda" table="ClienteRevenda" cascade="all">
+      <key column="IDPessoa" />
+      <one-to-many class="ClienteRevenda" />
+    </bag>
+    <bag name="TiposServicosTransporte" table="PessoaTipoServicoTransporte" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="PessoaTipoServicoTransporte" />
+    </bag>
+    <bag name="PessoaMovCheque" table="MovimentacaoCheque" cascade="all-delete-orphan" lazy="false" inverse="true">
+      <key column="IDPessoa" />
+      <one-to-many class="MovimentacaoCheque" />
+    </bag>
+    
+
+  </class>
+</hibernate-mapping>

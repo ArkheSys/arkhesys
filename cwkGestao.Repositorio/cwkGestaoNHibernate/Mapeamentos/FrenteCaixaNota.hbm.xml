@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="FrenteCaixaNota" table="FrenteCaixaNota">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<property name="Status" column="Status" type="Byte" />
+		<property name="Data" column="Data" type="DateTime" />
+		<many-to-one name="Vendedor" column="IDVendedor" class="Pessoa" />
+		<many-to-one name="TipoPedido" column="IdTipoPedido" class="TipoPedido" />
+		<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+		<many-to-one name="Condicao" column="IDCondicao" class="Condicao" />
+		<many-to-one name="Nota" column="IDNota" class="Nota" />
+		<property name="TotalProdutos" column="TotalProdutos" type="decimal" />
+		<property name="Desconto" column="Desconto" type="decimal" />
+		<property name="PercDesconto" column="PercDesconto" type="decimal" />
+		<property name="TotalGeral" column="TotalGeral" type="decimal" />
+		<property name="IncData" column="IncData" type="DateTime" />
+		<property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+		<property name="AltData" column="AltData" type="DateTime" />
+		<property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+		<property name="GerenteDesconto" column="GerenteDesconto" type="string" />
+		<property name="NumeroPos" column="NumeroPos" type="string" />
+
+		<property name="TotalPago" column="TotalPago" type="decimal" />
+		<property name="Troco" column="Troco" type="decimal" />
+		<property name="DescFormaPagamento" column="DescFormaPagamento" type="string" length="100" />
+		<property name="IDFluxoCaixa" column="IDFluxoCaixa" type="Int32" />
+		<property name="IDPedido" column="IDPedido" type="Int32" />
+		<property name="Cancelado" column="Cancelado" type="bool" />
+		<property name="DescricaoPDV" column="DescricaoPDV" type="string" />
+		<property name="IDFilial" column="IDFilial" type="Int32" />
+
+		<bag name="ListaFrenteCaixaNotaItem" table="FrenteCaixaNotaItem" cascade="all" inverse="true" >
+			<key column="IdFrenteCaixaNota" />
+			<one-to-many class="FrenteCaixaNotaItem" />
+		</bag>
+
+
+	</class>
+</hibernate-mapping>

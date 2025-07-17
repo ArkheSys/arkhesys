@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="OSOrdemServico" table="OSOrdemServico">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <many-to-one name="Cliente" column="IDPessoa" class="Pessoa" />
+    <many-to-one name="Empresa" column="IDFilial" class="Filial" />
+    <many-to-one name="Equipamento" column="IDEquipamento" class="OSEquipamento" lazy="false" />
+    <property name="Data" column="Data" type="DateTime" />
+    <property name="UsuarioLogado" column="UsuarioLogado" type="string" length="50" />
+    <property name="ProblemaRelatado" column="ProblemaRelatado" type="string" length="2000"  />
+    <property name="Acessorios" column="Acessorios" type="string" length="500"  />
+    <property name="NecessitaAprovacaoCliente" column="NecessitaAprovacaoCliente" type="bool" />
+    <property name="Origem" />
+    <many-to-one name="Status" column="IDStatusOS" class="StatusOS" lazy="false"/>
+    <many-to-one name="Vendedor" column="IDVendedor" class="Pessoa" />
+    <many-to-one name="Condicao" column="IDCondicao" class="Condicao" lazy="false" />
+    <many-to-one name="Tecnico" column="IDTecnico" class="Pessoa" />
+    <many-to-one name="TabelaPreco" column="IDTabelaPreco" class="TabelaPreco" />
+    
+    <property name="ResultadoTecnico" column="ResultadoTecnico" type="string" length="1000"  />
+    <property name="ResultadoCliente" column="ResultadoCliente" type="string" length="1000"  />
+   
+    <property name="ProdutoSubTotal" column="ProdutoSubTotal" type="decimal" scale="2" precision="18"/>
+    <property name="ProdutoDescontoValor" column="ProdutoDescontoValor" type="decimal" scale="2" precision="18"/>
+    <property name="ProdutoDescontoPerc" column="ProdutoDescontoPerc" type="decimal" scale="4" precision="9"/>
+    <property name="ProdutoTotal" column="ProdutoTotal" type="decimal" scale="2" precision="18"/>
+
+    <property name="ServicoSubTotal" column="ServicoSubTotal" type="decimal" scale="2" precision="18"/>
+    <property name="ServicoDescontoValor" column="ServicoDescontoValor" type="decimal" scale="2" precision="18"/>
+    <property name="ServicoDescontoPerc" column="ServicoDescontoPerc" type="decimal" scale="4" precision="9"/>
+    <property name="ServicoTotal" column="ServicoTotal" type="decimal" scale="2" precision="18"/>
+    
+    <property name="Total" column="Total" type="decimal" scale="2" precision="18"/>
+    <property name="DespesasAdicionais" column="DespesasAdicionais" type="decimal" scale="2" precision="18"/>
+    
+    <property name="BGarantia" column="BGarantia" type="bool" />
+    <property name="HoraInicio" column="HoraInicio" type="DateTime" />
+    <property name="HoraFim" column="HoraFim" type="DateTime" />
+    <property name="HoraInicio2" column="HoraInicio2" type="DateTime" />
+    <property name="HoraFim2" column="HoraFim2" type="DateTime" />
+    
+    <property name="Solicitante" column="Solicitante" type="string" length="200"  />
+    
+    <property name="Imei" column="Imei" type="string"/>
+    <property name="NumSerie" column="NumSerie" type="string" length="100" />
+    <property name="UltimoEnvioEmail" column="UltimoEnvioEmail" type="DateTime" />
+    <property name="Observacao" column="Observacao" type="string" length="300" />
+
+      
+    <bag name="OSProdutoItems" table="OSProdutoItem" inverse="true" cascade="all-delete-orphan" lazy="false">
+      <key column="IDOSOrdemServico" />
+      <one-to-many class="OSProdutoItem" />
+    </bag>
+
+    <bag name="OSServicoItems" table="OSServicoItem" inverse="true" cascade="all-delete-orphan" lazy="false">
+      <key column="IDOSOrdemServico" />
+      <one-to-many class="OSServicoItem" />
+    </bag>
+
+    <bag name="OSAcompanhamentos" table="OSAcompanhamento" inverse="true" cascade="all-delete-orphan" lazy="false">
+      <key column="IDOSOrdemServico" />
+      <one-to-many class="OSAcompanhamento" />
+    </bag>
+   
+  </class>
+</hibernate-mapping>

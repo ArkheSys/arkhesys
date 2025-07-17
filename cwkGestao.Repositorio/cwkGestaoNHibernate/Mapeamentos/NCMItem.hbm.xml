@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="NCMItem" table="NCMItem">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<many-to-one name="NCM" column="IDNCM" class="NCM" />
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<many-to-one name="UFOrigem" column="IDUFOrigem" class="UF" lazy="false"/>
+	<many-to-one name="UFDestino" column="IDUFDestino" class="UF" lazy="false" />
+	<property name="Tributacao" column="Tributacao" type="Int32" />
+	<property name="OrigemProd" column="OrigemProd" type="Int32" />
+	<property name="ModBCICMS" column="modBCICMS" type="Int32" />
+	<property name="AliqContrib" column="AliqContrib" type="decimal" />
+	<property name="ReducaoContrib" column="ReducaoContrib" type="decimal" precision="18" scale="2" /> 
+	<property name="TextoLeiContrib" column="TextoLeiContrib" type="string" length="100" />
+	<property name="AliqNContrib" column="AliqNContrib" type="decimal" />
+	<property name="ReducaoNContrib" column="ReducaoNContrib" type="decimal" precision="18" scale="2" />
+	<property name="TextoLeiNContrib" column="TextoLeiNContrib" type="string" length="100" />
+	<property name="ModBCST" column="modBCST" type="Int32" />
+	<property name="LucroST" column="LucroST" type="decimal" />
+	<property name="PRedBCST" column="pRedBCST" type="decimal" />
+	<property name="AliqSubstTributaria" column="AliqSubstTributaria" type="decimal" />
+	<property name="AliqSimplesSubst" column="AliqSimplesSubst" type="decimal" />
+  <property name="CSOSN" column="CSOSN" type="Int32" />
+  <many-to-one name="TextoContribuinte" column="IDTextoCont" class="TextoLei" lazy="false" />
+  <many-to-one name="TextoNaoContribuinte" column="IDTextoNCont" class="TextoLei" lazy="false" />
+  <property name="ReducaoImpostoCont" column="ReducaoImpostoCont" type="decimal" />
+  <property name="ReducaoImpostoNCont" column="ReducaoImpostoNCont" type="decimal" />
+  <property name="AliqInterna" column="AliqInterna" type="decimal" />
+  <property name="AliqFCPNContrib" column="AliqFCPNContrib" type="decimal" />
+  <property name="AliqFCPNormal" column="AliqFCPNormal" type="decimal" />
+  <property name="AliqDiferimento" column="AliqDiferimento" type="decimal" />
+    
+  </class>
+</hibernate-mapping>
+		

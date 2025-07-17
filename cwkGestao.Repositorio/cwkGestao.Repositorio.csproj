@@ -1,0 +1,1687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EEF11AE-5542-4AA9-8B9E-DEB90EF9E32B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cwkGestao.Repositorio</RootNamespace>
+    <AssemblyName>cwkGestao.Repositorio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\Dependencias\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\Dependencias\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="cwkControleUsuario">
+      <HintPath>..\Dependencias\cwkControleUsuario.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUI.2.0.0\lib\net20\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.2.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.2.0\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.1002, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.1002, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cwkGestaoFileSystem\ConfiguracaoLocalRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Helpers\SessionProvider.cs" />
+    <Compile Include="cwkGestaoNHibernate\RepositoriosNHibernate.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ClassificacaoFiscalRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ImpostosTributosExcessoesRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ImpostosTributosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NaturezaOperacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaReferenciaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OpcaoTributacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PerfilPisCofinsRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PerfilTributarioClienteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PisCofinsNaturezaOperacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaCOFINSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaImpostosTributosExcessoesRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaPISRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_FaturaD8Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VeiculoTracaoMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VeiculoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SeguradoraMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SeguradoraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ResponsavelSeguroCargaMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProprietarioVeiculoMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PercursoMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NfeReferenciadaMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MovimentoFiscalMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LacreRodoviarioMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EventoMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContratanteMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CondutorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CarregamentoMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\AverbacaoSeguradoraMdfeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoEcommerceSimplificadoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CteCargaRepositorio - Cópia .cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CtePrestacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CteIdentificacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CteDocumentosInformadosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\AtendimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CtePrestacaoComplementoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CartaCorrecaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\cepbr_bairroRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\cepbr_cidadeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\cepbr_enderecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\cepbr_estadoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CodigoImpostoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CondicaoFornecimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ConfiguracaoManagerRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContatoDetalheRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContatoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContratoControleRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CotacaoMoedaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CotacaoTransportadoraPedidoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CustoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContratoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FechamentoCaixaRateioRepositorio .cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FollowUpRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LogExportacaoNotaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CteSeguradoraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ServicoResponsavelRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaResponsavelServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemServicoMaquinaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ResponsavelRepositorio .cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoMaquinaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MoedaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FabricanteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MaquinaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoAnexoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoAnexoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoVarejoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RelatorioModelo08Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SuprimentoCaixaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SangriaCaixaRepositorio .cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FluxoCaixaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ImeiRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContratoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ContratoServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ArquivoRemessaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ConversaoUnidadeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\DadosSubstitutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EntregaItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EntregaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FaturamentoAtendimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ImpostoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LogAlteracaoParticipanteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LogAlteracaoPedidoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MovimentacaoChequeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaItemServicoPedidoItemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_AgendamentoMaquinaOcorrenciaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_AgendamentoMaquinaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_MedicaoAcompanhamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CorreiosPrecoPrazoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FechamentoCaixaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FilaDavRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LogRetornoDetalheRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LogRetornoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EstoqueIdentificadorExpedicaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EventosCorreioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ExpedicaoHistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ExpedicaoRastreamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EstoqueIdentificadorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ExpedicaoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FichaTecnicaPCPItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FichaTecnicaPCPRegraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FichaTecnicaPCPRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FormatoPacoteTransporteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\IdentificadorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\InventarioProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\InventarioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\LocalEstoqueRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MercadoLivreConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaImpostoServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaInutilizadaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaItemEstoqueRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaItemPedidoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_MaquinasRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_MedicaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_MedicaoServicosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_ObraArquivosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_ObraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_ObraDiarioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_OcorrenciasRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaMedicaoOcorrenciasRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaMedicaoPerfuracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaMedicaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaOrcamentoServicosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaArquivosRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaPerfuracoesRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ofd_PropostaRevisaoPerfuracoesRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ParametrosContratoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PCP_LoteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoItemEstoqueRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoItemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoItemTrocaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PeriodoApuracaoContabilRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaContabilistaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaEngenheiroRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaTipoServicoTransporteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PlanoContaReferencialRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PLPDetalheRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PLPRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoCodBarraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoConversaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoFCIRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoMercadoLivreRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RastreamentoCorreioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoSKURepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusOSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RotaDetalheRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RotaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ServicoEnvioCorreioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SHLConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SincronismoPendenteMercadoLivreRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SincronismoPendenteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SincronismoPendenteSHLRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SincronismoPendenteSisECommerceRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SisECommerceConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusAtendimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusContatoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusEntEventoCorreioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusEntregaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_FaturaServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_FaturaLigacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_FaturaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ClienteTelefoneRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ClienteServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ClientePrecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ClienteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_GrupoClienteTelefoneRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_GrupoClientePrecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_GrupoClienteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\AdicaoNotaItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_ArquivoLigacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_LigacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MagentoConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FrenteCaixaNotaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FrenteCaixaNotaItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaItemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ChequeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ChequeHistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NCMItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NCMRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProjetoParcelaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Grupo3Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Grupo2Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Grupo1Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OSAgendamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OSOrdemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoHistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FormaPagamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaServicoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FeriadoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FormaPgtoMovimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RepositorioAbstrato.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\AcompanhamentoOSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\AcrescimoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\BaixaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\BaixaDocumentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\BalancoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\BalancoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\BancoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CentroCustoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CidadeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ClassificacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ClassificacaoOrdemProducaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ClienteRevendaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CondicaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CondicaoParcelaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ConfiguracaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ControleQualidadeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CotacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CotacaoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CotacaoProdutoPedidoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CQEquipamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CQFuncionarioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CQProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CwkPedidoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CwkPedidoEmpresaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Cw_acessoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Cw_acessocampoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Cw_grupoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Cw_usuarioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\DocumentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EmpresaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OSEquipamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EstoqueRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\EtapaProducaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FichaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FichaTecnicaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Ficha_ProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\FilialRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\GrupoEstoqueRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\HistMovimentoRemessaDocRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\HistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ICMSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ICMS_InterestadualRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ImpressoraRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ItemFichaTecnicaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MovCaixaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MovimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NFe_ErroRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaICMSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\NotaParcelaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OperacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemProducaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemProducaoExecucaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemProducaoExecucaoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemProducaoHistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OrdemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PaisRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PedidoParcelaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaAvisoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaClienteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaEmailRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaEnderecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaFuncionarioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaSocioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaTelefoneRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PessoaVendedorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PlanoContaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PlanoNegocioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PlanoNegocioOperacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\PortadorRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProdutoVendedorComissaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Produto_IcmsRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProjetoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ProjetoHistoricoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Projeto_MaterialRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Projeto_ProdutoServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Rateio_MovRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Rateio_NotaItemRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RegistrosTipo60Repositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\RemessaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ReparcelamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ReparcelamentoDocRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ServicoImpostoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\ServicoOSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SistemaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\SocioRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\StatusOrdemServicoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaCFOPRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaComissaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaComissaoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaFaixaFatSimplesRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaICMSRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaPrecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaPrecoProdutoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_TipoLigacaoPrecoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TextoLeiRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TipoAtendimentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TipoDocumentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\OSTipoEquipamentoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\Tel_TipoLigacaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\MovimentacaoCreditoPedidoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TipoNotaRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TipoPedidoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\TipoServicoTransporteRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\UFRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\UnidadeRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VersaoEfdIcmsIpiRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VersaoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VersaoBDRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\UnitOfWork.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\CteCargaInfoRepositorio.cs" />
+    <Compile Include="cwkGestaoNHibernate\Repositorios\VinculoRepositorio.cs" />
+    <Compile Include="Interfaces\IRepositorio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioClassificacaoFiscal.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributos.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributosExcessoes.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNaturezaOperacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaReferencia.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOpcaoTributacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPerfilPisCofins.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPerfilTributarioCliente.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPisCofinsNaturezaOperacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPromocaoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPromocao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaCOFINS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaImpostosTributosExcessoes.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaPIS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_FaturaD8.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVeiculoTracaoMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVeiculo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSeguradoraMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSeguradora.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioResponsavelSeguroCargaMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProprietarioVeiculoMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPercursoMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNfeReferenciadaMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMovimentoFiscalMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLacreRodoviarioMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEventoMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContratanteMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCondutor.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCarregamentoMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioAverbacaoSeguradoraMdfe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoEcommerceSimplificado.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCtePrestacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCteIdentificacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCteDocumentosInformados.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCteCargaInfo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCteCarga.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositoriocepbr_bairro.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositoriocepbr_cidade.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositoriocepbr_endereco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositoriocepbr_estado.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCtePrestacaoComplemento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLogExportacaoNota.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCondicaoFornecimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContato.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContatoDetalhe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCotacaoMoeda.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCotacaoTransportadoraPedido.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCusto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFechamentoCaixaRateio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFollowUp.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMoeda - Cópia  - Cópia .cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaResponsavelServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemServicoMaquina.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCteSeguradora.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioResponsavel.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoMaquina.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioServicoResponsavel.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFabricante.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMaquina .cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoAnexo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoAnexo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoVarejo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSuprimentoCaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSangriaCaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFluxoCaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioImei.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioDadosSubstituto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEntrega.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEntregaItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLogAlteracaoParticipante.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLogAlteracaoPedidoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioAtendimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCodigoImposto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContratoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFaturamentoAtendimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioImposto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMovimentacaoCheque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaItemServicoPedidoItemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_AgendamentoMaquina.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_AgendamentoMaquinaOcorrencia.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_MedicaoAcompanhamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioConversaoUnidade.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFechamentoCaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFilaDav.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLogRetornoDetalhe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLogRetorno.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioArquivoRemessa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioConfiguracaoManager.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContratoControle.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCorreiosPrecoPrazo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEstoqueIdentificadorExpedicao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEventosCorreio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioExpedicaoHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioExpedicaoRastreamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCartaCorrecao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEstoqueIdentificador.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioExpedicaoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFichaTecnicaPCP.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFichaTecnicaPCPItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFichaTecnicaPCPRegra.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFormatoPacoteTransporte.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioIdentificador.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioInventario.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioInventarioProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioLocalEstoque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMercadoLivreConfiguracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaImpostoServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContrato.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioContratoServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaInutilizada.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaItemEstoque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaItemPedidoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_Maquinas.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_Medicao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_MedicaoServicos.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_Obra.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_ObraArquivos.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_ObraDiario.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_Ocorrencias.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_Proposta.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaArquivos.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaMedicao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaMedicaoOcorrencias.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaMedicaoPerfuracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaOrcamentoServicos.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaPerfuracoes.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOfd_PropostaRevisaoPerfuracoes.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioParametrosContratoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPCP_Lote.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoItemEstoque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoItemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoItemTroca.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPeriodoApuracaoContabil.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaContabilista.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaEngenheiro.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaTipoServicoTransporte.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPlanoContaReferencial.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPLP.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPLPDetalhe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoCodBarra.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoConversao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoFCI.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoMercadoLivre.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRastreamentoCorreio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoSKU.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRota.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRotaDetalhe.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioServicoEnvioCorreio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSHLConfiguracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSincronismoPendente.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSincronismoPendenteMercadoLivre.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSincronismoPendenteSHL.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSincronismoPendenteSisECommerce.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSisECommerceConfiguracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusAtendimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusContato.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusEntEventoCorreio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusEntrega.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusOS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_Configuracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_FaturaServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_FaturaLigacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_Fatura.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_ClienteTelefone.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_Servico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_ClienteServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_ClientePreco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_Cliente.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_GrupoClienteTelefone.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_GrupoClientePreco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_GrupoCliente.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioAdicaoNotaItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_ArquivoLigacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_Ligacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMagentoConfiguracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCheque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioChequeHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFrenteCaixaNota.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFrenteCaixaNotaItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaItemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNCMItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNCM.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProjetoParcela.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOSAgendamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRegistrosTipo60.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioServicoImposto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioGrupo3.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioGrupo2.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioGrupo1.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOSOrdemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFormaPagamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaServicoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFeriado.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFormaPgtoMovimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioAcompanhamentoOS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioAcrescimo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioBaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioBaixaDocumento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioBalanco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioBalancoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioBanco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCentroCusto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioClassificacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioClassificacaoOrdemProducao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCondicao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCondicaoParcela.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioConfiguracao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioControleQualidade.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCor.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCotacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCotacaoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCotacaoProdutoPedidoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCQEquipamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCQFuncionario.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCQProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCwkPedido.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCwkPedidoEmpresa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCw_acesso.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCw_acessocampo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCw_grupo.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCw_usuario.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioDocumento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEmpresa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEquipamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEstoque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioEtapaProducao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFicha.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFichaTecnica.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFicha_Produto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioFilial.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioGrupoEstoque.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioHistMovimentoRemessaDoc.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioICMS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioICMS_Interestadual.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioImpressora.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioItemFichaTecnica.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMovCaixa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMovimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNFe_Erro.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaICMS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNotaParcela.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOperacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemProducao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemProducaoExecucao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemProducaoExecucaoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemProducaoHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedido.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPedidoParcela.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaAviso.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaCliente.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaEmail.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaEndereco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaFuncionario.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaSocio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaTelefone.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoaVendedor.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPlanoConta.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPlanoNegocio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPlanoNegocioOperacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPortador.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProdutoVendedorComissao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProduto_Icms.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProjeto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProjetoHistorico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProjeto_Material.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioProjeto_ProdutoServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRateio_Mov.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRateio_NotaItem.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioRemessa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioReparcelamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioReparcelamentoDoc.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioServicoOS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSocio.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaCFOP.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaComissao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaComissaoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaFaixaFatSimples.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaICMS.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaPreco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTabelaPrecoProduto.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_TipoLigacaoPreco.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTextoLei.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoDocumento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoEquipamento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTel_TipoLigacao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioMovimentacaoCreditoPedido.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoNota.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoPedido.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoServicoTransporte.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioUnidade.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVersao.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioOrdemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioSistema.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioStatusOrdemServico.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioTipoAtendimento.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioClienteRevenda.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioNota.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPessoa.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioPais.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioUF.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioCidade.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVersaoBD.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVersaoEfdIcmsIpi.cs" />
+    <Compile Include="Interfaces\Particulares\IRepositorioVinculo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioFactory.cs" />
+    <Compile Include="SqlServerUtil.cs" />
+    <Compile Include="Util\ConversorCsts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\AcompanhamentoOS.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Acrescimo.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Baixa.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\BaixaDocumento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Balanco.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\BalancoItem.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Banco.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CentroCusto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cidade.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Classificacao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ClassificacaoOrdemProducao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ClienteRevenda.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Condicao.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CondicaoParcela.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Configuracao.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ControleQualidade.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cor.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cotacao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CotacaoProduto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CotacaoProdutoPedidoItem.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CQEquipamento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CQFuncionario.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CQProduto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CwkPedido.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CwkPedidoEmpresa.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cw_acesso.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cw_acessocampo.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cw_grupo.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cw_usuario.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Documento.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Empresa.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Estoque.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EtapaProducao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ficha.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FichaTecnica.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ficha_Produto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Filial.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\GrupoEstoque.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\HistMovimentoRemessaDoc.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Historico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ICMS.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ICMS_Interestadual.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Impressora.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ItemFichaTecnica.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MovCaixa.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Movimento.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NFe_Erro.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Nota.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaICMS.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaParcela.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Operacao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemProducao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemProducaoExecucao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemProducaoExecucaoProduto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemProducaoHistorico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemServico.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Pais.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Pedido.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoParcela.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Pessoa.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaAviso.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaCliente.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaEmail.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaEndereco.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaFuncionario.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaSocio.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaTelefone.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaVendedor.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PlanoConta.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PlanoNegocio.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PlanoNegocioOperacao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Portador.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Produto.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoVendedorComissao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Produto_Icms.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Projeto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProjetoHistorico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Projeto_Material.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Projeto_ProdutoServico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Rateio_Mov.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Rateio_NotaItem.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Remessa.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Reparcelamento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ReparcelamentoDoc.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Servico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ServicoOS.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Sistema.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Socio.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusOrdemServico.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaCFOP.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaComissao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaComissaoProduto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaFaixaFatSimples.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaICMS.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaPreco.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaPrecoProduto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TipoAtendimento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TipoDocumento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TipoNota.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TipoPedido.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\UF.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Unidade.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Versao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\VersaoBD.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Feriado.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FormaPagamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaServicoItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FormaPgtoMovimento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoHistorico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSTipoEquipamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSEquipamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSOrdemServico.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Grupo1.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Grupo2.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Grupo3.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSAcompanhamento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSProdutoItem.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSServicoItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ServicoImposto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaItemServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ServicoServicoImposto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaImpostoServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProjetoParcela.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OSAgendamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NCM.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NCMItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\RegistrosTipo60.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Cheque.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ChequeHistorico.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FrenteCaixaNota.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FrenteCaixaNotaItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MagentoConfiguracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\AdicaoNotaItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_Ligacao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_ArquivoLigacao.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_TipoLigacao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_GrupoCliente.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_GrupoClientePreco.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_TipoLigacaoPreco.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_GrupoClienteTelefone.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_Cliente.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_ClientePreco.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_ClienteServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_Servico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_ClienteTelefone.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_Fatura.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_FaturaLigacao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_FaturaServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_Configuracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaEngenheiro.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_Maquinas.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_Obra.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_ObraDiario.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_Proposta.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaArquivos.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaPerfuracoes.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaMedicao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaMedicaoPerfuracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Contrato.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ContratoServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_ObraArquivos.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CartaCorrecao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Inventario.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\InventarioProduto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_Medicao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_MedicaoServicos.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaItemEstoque.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Identificador.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EstoqueIdentificador.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LocalEstoque.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SincronismoPendente.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoItemEstoque.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TextoLei.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoCodBarra.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TipoServicoTransporte.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\RastreamentoCorreio.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ExpedicaoItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoSKU.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaItemPedidoItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ExpedicaoRastreamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusEntrega.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EventosCorreio.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusEntEventoCorreio.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ExpedicaoHistorico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Vinculo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EstoqueIdentificadorExpedicao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ConfiguracaoManager.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PlanoContaReferencial.hbm.xml">
+      <SubType>Form</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CorreiosPrecoPrazo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FichaTecnicaPCP.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FichaTecnicaPCPItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FichaTecnicaPCPRegra.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cwkGestao.Modelo\cwkGestao.Modelo.csproj">
+      <Project>{55A7F92E-10A9-4DB0-8F8B-F359BF537C43}</Project>
+      <Name>cwkGestao.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{3BB9E501-1901-4180-B9D7-04AE4F913C99}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ArquivoRemessa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MercadoLivreConfiguracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PCP_Lote.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LogRetorno.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LogRetornoDetalhe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ContratoControle.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ServicoEnvioCorreio.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaInutilizada.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FormatoPacoteTransporte.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PLP.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PLPDetalhe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoMercadoLivre.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SincronismoPendenteMercadoLivre.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FechamentoCaixa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SisECommerceConfiguracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SincronismoPendenteSisECommerce.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SHLConfiguracao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoItemTroca.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoFCI.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SincronismoPendenteSHL.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaContabilista.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PeriodoApuracaoContabil.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ConversaoUnidade.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoConversao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaTipoServicoTransporte.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FilaDav.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_MedicaoAcompanhamento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_Ocorrencias.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaMedicaoOcorrencias.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaRevisaoPerfuracoes.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_PropostaOrcamentoServicos.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_AgendamentoMaquina.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ContratoProduto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Atendimento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ParametrosContratoProduto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusAtendimento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FaturamentoAtendimento.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CodigoImposto.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Imposto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoItemServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LogAlteracaoPedidoItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaItemServicoPedidoItemServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\cepbr_bairro.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\cepbr_cidade.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\cepbr_endereco.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\cepbr_estado.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\DadosSubstituto.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LogAlteracaoParticipante.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\VersaoEfdIcmsIpi.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Ofd_AgendamentoMaquinaOcorrencia.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Entrega.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EntregaItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusContato.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Contato.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ContatoDetalhe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoServico.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Rota.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\RotaDetalhe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MovimentacaoCheque.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Imei.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Custo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\StatusOS.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CotacaoTransportadoraPedido.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FluxoCaixa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SangriaCaixa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SuprimentoCaixa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoVarejo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FechamentoCaixaRateio.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MovimentacaoCreditoPedido.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CotacaoMoeda.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CondicaoFornecimento.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Moeda.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\FollowUp.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoAnexo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoAnexo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Fabricante.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Maquina.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OrdemServicoMaquina.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PedidoMaquina.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Responsavel.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PessoaResponsavelServico.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ServicoResponsavel.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LogExportacaoNota.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProdutoEcommerceSimplificado.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\AverbacaoSeguradoraMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\CarregamentoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Condutor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ContratanteMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\EventoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\LacreRodoviarioMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Mdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\MovimentoFiscalMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NfeReferenciadaMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PercursoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ProprietarioVeiculoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ResponsavelSeguroCargaMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Seguradora.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\SeguradoraMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Veiculo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\VeiculoTracaoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PromocaoProduto.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Promocao.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\Tel_FaturaD8.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NotaReferencia.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\OpcaoTributacao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ClassificacaoFiscal.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PerfilPisCofins.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PerfilTributarioCliente.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ImpostosTributos.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaImpostosTributosExcessoes.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\PisCofinsNaturezaOperacao.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\ImpostosTributosExcessoes.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaCOFINS.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\TabelaPIS.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NaturezaOperacao.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

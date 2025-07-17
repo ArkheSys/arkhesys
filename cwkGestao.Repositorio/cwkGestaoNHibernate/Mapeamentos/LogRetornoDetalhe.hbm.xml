@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="LogRetornoDetalhe" table="LogRetornoDetalhe">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+  <property name="NumeroDocumento" column="NumeroDocumento" type="String" />
+  <property name="NossoNumero" column="NossoNumero" type="String" />
+  <property name="Ocorrencia" column="Ocorrencia" type="String" />
+  <property name="ValorCredito" column="ValorCredito" type="Decimal" />
+  <property name="ValorDesconto" column="ValorDesconto" type="Decimal" />
+  <property name="ValorJurosPago" column="ValorJurosPago" type="Decimal" />
+  <property name="ValorMultaPaga" column="ValorMultaPaga" type="Decimal" />
+  <property name="ValorOutrosAcrescimos" column="ValorOutrosAcrescimos" type="Decimal" />
+  <property name="ValorPago" column="ValorPago" type="Decimal" />
+  <property name="ValorTaxaCobranca" column="ValorTaxaCobranca" type="Decimal" />
+  <property name="ValorIOF" column="ValorIOF" type="Decimal" />
+  <many-to-one name="logRetorno" column="IDLogRetorno" class="LogRetorno"/>
+  <many-to-one name="documento" column="IDDocumento" class="Documento" lazy="false"/>
+    
+  </class>
+</hibernate-mapping>

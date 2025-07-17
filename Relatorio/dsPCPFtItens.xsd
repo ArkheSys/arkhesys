@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPCPFtItens" targetNamespace="http://tempuri.org/dsPCPFtItens.xsd" xmlns:mstns="http://tempuri.org/dsPCPFtItens.xsd" xmlns="http://tempuri.org/dsPCPFtItens.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProdutoTableAdapter" GeneratorDataComponentClassName="ProdutoTableAdapter" Name="Produto" UserDataComponentName="ProdutoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.codigo                                    AS 'ProdCodigo', 
+       p.nome                                      AS 'MateriaPrima', 
+       ftItem.quantidade, 
+       ftItem.aproveitamento, 
+       ftItem.IdFichaTecnicaPCP                    AS 'idFT', 
+       CONVERT(VARCHAR(10), ftItem.datavigor, 103) AS 'Data', 
+       CASE 
+         WHEN ftItem.idfichatecnicapcpfilha IS NULL THEN 0 
+         ELSE 1 
+       END                                         AS bit, 
+       ftItem.idfichatecnicapcpfilha               AS 'Filha',
+       u.sigla                                     AS 'Unidade',
+       ftPCP.codigo, 
+       ftPCP.nome
+  FROM PCP_ItemFichaTecnica AS ftItem 
+       INNER JOIN produto AS p 
+               ON p.id = ftItem.idproduto 
+       INNER JOIN unidade AS u 
+               ON p.idunidade = u.id 
+       LEFT JOIN PCP_FichaTecnica AS ftPCP 
+               ON ftPCP.id = ftItem.IdFichaTecnicaPCPFilha</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Filha" DataSetColumn="Filha" />
+              <Mapping SourceColumn="Unidade" DataSetColumn="Unidade" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="bit" DataSetColumn="bit" />
+              <Mapping SourceColumn="ProdCodigo" DataSetColumn="ProdCodigo" />
+              <Mapping SourceColumn="MateriaPrima" DataSetColumn="MateriaPrima" />
+              <Mapping SourceColumn="quantidade" DataSetColumn="quantidade" />
+              <Mapping SourceColumn="aproveitamento" DataSetColumn="aproveitamento" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
+              <Mapping SourceColumn="idFT" DataSetColumn="idFT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPCPFtItens" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:Generator_UserDSName="dsPCPFtItens" msprop:Generator_DataSetName="dsPCPFtItens" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Produto" msprop:Generator_UserTableName="Produto" msprop:Generator_RowDeletedName="ProdutoRowDeleted" msprop:Generator_RowChangedName="ProdutoRowChanged" msprop:Generator_RowClassName="ProdutoRow" msprop:Generator_RowChangingName="ProdutoRowChanging" msprop:Generator_RowEvArgName="ProdutoRowChangeEvent" msprop:Generator_RowEvHandlerName="ProdutoRowChangeEventHandler" msprop:Generator_TableClassName="ProdutoDataTable" msprop:Generator_TableVarName="tableProduto" msprop:Generator_RowDeletingName="ProdutoRowDeleting" msprop:Generator_TablePropName="Produto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Filha" msprop:Generator_UserColumnName="Filha" msprop:Generator_ColumnVarNameInTable="columnFilha" msprop:Generator_ColumnPropNameInRow="Filha" msprop:Generator_ColumnPropNameInTable="FilhaColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Unidade" msprop:Generator_UserColumnName="Unidade" msprop:Generator_ColumnVarNameInTable="columnUnidade" msprop:Generator_ColumnPropNameInRow="Unidade" msprop:Generator_ColumnPropNameInTable="UnidadeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bit" msdata:ReadOnly="true" msprop:Generator_UserColumnName="bit" msprop:Generator_ColumnVarNameInTable="columnbit" msprop:Generator_ColumnPropNameInRow="bit" msprop:Generator_ColumnPropNameInTable="bitColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ProdCodigo" msprop:Generator_UserColumnName="ProdCodigo" msprop:Generator_ColumnVarNameInTable="columnProdCodigo" msprop:Generator_ColumnPropNameInRow="ProdCodigo" msprop:Generator_ColumnPropNameInTable="ProdCodigoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MateriaPrima" msprop:Generator_UserColumnName="MateriaPrima" msprop:Generator_ColumnVarNameInTable="columnMateriaPrima" msprop:Generator_ColumnPropNameInRow="MateriaPrima" msprop:Generator_ColumnPropNameInTable="MateriaPrimaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantidade" msprop:Generator_UserColumnName="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" type="xs:decimal" />
+              <xs:element name="aproveitamento" msprop:Generator_UserColumnName="aproveitamento" msprop:Generator_ColumnVarNameInTable="columnaproveitamento" msprop:Generator_ColumnPropNameInRow="aproveitamento" msprop:Generator_ColumnPropNameInTable="aproveitamentoColumn" type="xs:decimal" />
+              <xs:element name="nome" msprop:Generator_UserColumnName="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo" msprop:Generator_UserColumnName="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idFT" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idFT" msprop:Generator_ColumnVarNameInTable="columnidFT" msprop:Generator_ColumnPropNameInRow="idFT" msprop:Generator_ColumnPropNameInTable="idFTColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Produto" />
+      <xs:field xpath="mstns:idFT" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

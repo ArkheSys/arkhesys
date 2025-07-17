@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Nota" table="Nota">
+
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="Int32" />
+		<many-to-one name="Filial" column="IDFilial" class="Filial" lazy="false"/>
+		<many-to-one name="TipoNota" column="IDTipoNota" class="TipoNota" lazy="false"/>
+		<property name="Ent_Sai" column="Ent_Sai" type="Int32" />
+		<property name="Dt" column="Dt" type="DateTime" />
+		<property name="DtEnvio" />
+		<property name="DtDigitacao" />
+		<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" lazy="false" />
+		<many-to-one name="Intermediario" column="IDIntermediario" class="Pessoa" lazy="false" />
+		<property name="PessoaNome" column="PessoaNome" type="string" length="60" />
+		<property name="PessoaCNPJCPF" column="PessoaCNPJCPF" type="string" length="20" />
+		<property name="PessoaInscRG" column="PessoaInscRG" type="string" length="20" />
+		<property name="PessoaEndereco" column="PessoaEndereco" type="string" length="100" />
+		<property name="PessoaBairro" column="PessoaBairro" type="string" length="60" />
+		<property name="PessoaCidade" column="PessoaCidade" type="string" length="60" />
+		<property name="PessoaUF" column="PessoaUF" type="string" length="2" />
+		<property name="PessoaNumero" column="PessoaNumero" type="string" length="60" />
+		<property name="PessoaTelefone" column="PessoaTelefone" type="string" length="20" />
+		<many-to-one name="Vendedor" column="IDVendedor" class="PessoaVendedor"/>
+		<many-to-one name="TabelaPreco" column="IDTabelaPreco" class="TabelaPreco" />
+		<many-to-one name="Condicao" column="IDCondicao" class="Condicao" lazy="false" />
+		<property name="TotalProduto" column="TotalProduto" type="decimal" />
+		<property name="PercDesconto" column="PercDesconto" type="decimal" />
+		<property name="ValorDesconto" column="ValorDesconto" type="decimal" />
+		<property name="ValorAcrescimo" column="ValorAcrescimo" type="decimal" />
+		<property name="TotalNota" column="TotalNota" type="decimal" />
+		<property name="TotalServico" column="TotalServico" type="decimal" />
+		<property name="Observacao1" column="Observacao1" type="string" length="100" />
+		<property name="Observacao2" column="Observacao2" type="string" length="100" />
+		<property name="Observacao3" column="Observacao3" type="string" length="100" />
+		<property name="ModeloDocto" column="ModeloDocto" type="Int32" />
+		<property name="Serie" column="Serie" type="string" length="5" />
+		<property name="Numero" column="Numero" type="Int32" />
+		<property name="BGeraFinanceiro" column="bGeraFinanceiro" type="bool" />
+		<many-to-one name="PessoaTransportadora" column="IDPessoaTransportadora" class="Pessoa" />
+		<property name="TransNome" column="TransNome" type="string" length="60" />
+		<property name="TransEndereco" column="TransEndereco" type="string" length="100" />
+		<property name="TransCidade" column="TransCidade" type="string" length="60" />
+		<property name="TransUF" column="TransUF" type="string" length="2" />
+		<property name="TransCNPJCPF" column="TransCNPJCPF" type="string" length="20" />
+		<property name="TransPlaca" column="TransPlaca" type="string" length="15" />
+		<property name="TransPlacaUF" column="TransPlacaUF" type="string" length="50" />
+		<property name="VolumeQuant" column="VolumeQuant" type="decimal" />
+		<property name="VolumeEspecie" column="VolumeEspecie" type="string" length="20" />
+		<property name="VolumeMarca" column="VolumeMarca" type="string" length="20" />
+		<property name="VolumeNumero" column="VolumeNumero" type="string" length="50" />
+		<property name="VolumePesoBruto" column="VolumePesoBruto" type="decimal" />
+		<property name="VolumePesoLiquido" column="VolumePesoLiquido" type="decimal" />
+		<property name="CancUsuario" column="CancUsuario" type="string" length="50" />
+		<property name="CancMotivo" column="CancMotivo" type="string" length="100" />
+		<property name="CancDt" />
+		<property name="BPessoaContribuinte" column="bPessoaContribuinte" type="bool" />
+		<property name="PessoaCidadeIBGE" column="PessoaCidadeIBGE" type="string" length="20" />
+		<property name="PessoaCEP" column="PessoaCEP" type="string" length="15" />
+		<property name="ChaveNota" column="ChaveNota" type="string" length="100" />
+		<property name="NumeroRecibo" column="NumeroRecibo" type="string" length="100" />
+		<property name="NumeroProtocolo" column="NumeroProtocolo" type="string" length="100" />
+		<property name="LogEnvio" column="LogEnvio" type="string" length="100" />
+		<property name="LogRecibo" column="LogRecibo" type="string" length="100" />
+		<property name="Observacao4" column="Observacao4" type="string" length="60" />
+		<property name="Observacao5" column="Observacao5" type="string" length="60" />
+		<property name="BImpressa" column="bImpressa" type="bool" />
+		<property name="BImprimeTextoCredidoICMS" column="bImprimeTextoCredidoICMS" type="bool" />
+		<property name="ValorFrete" column="ValorFrete" type="decimal" />
+		<property name="ObservacaoSistema" column="ObservacaoSistema" type="string" length="2000" />
+		<property name="ObservacaoUsuario" column="ObservacaoUsuario" type="string" length="5000" />
+		<property name="TipoFrete" column="TipoFrete" type="byte" />
+		<property name="Complemento" column="Complemento" type="string" length="200" />
+		<property name="XmlLogEnvNFe" column="XmlLogEnvNFe" type="StringClob" />
+		<property name="XmlLogRecNFe" column="XmlLogRecNFe" type="StringClob" />
+		<property name="XmlDestinatarioNFe" column="XmlDestinatarioNFe" type="StringClob" />
+		<property name="UltimoXmlRecebido" column="UltimoXmlRecebido" type="StringClob" />
+		<property name="IncData" column="IncData" type="DateTime" />
+		<property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+		<property name="AltData" column="AltData" type="DateTime" />
+		<property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+		<property name="Status" column="Status" type="string" length="10" />
+		<property name="StatusMotivo" column="StatusMotivo" type="string" length="500" />
+		<property name="ZA02_UFEmbarq" column="ZA02_UFEmbarq" type="string" length="2" />
+		<property name="ZA03_xLocEmbarq" column="ZA03_xLocEmbarq" type="string" length="60" />
+		<property name="W11_vII" column="W11_vII" type="decimal" />
+		<property name="ValorSeguro" column="ValorSeguro" type="decimal" />
+		<property name="OutrasDespesas" column="OutrasDespesas" type="decimal" />
+		<property name="ServicoRealizadoCidadeCliente" column="ServicoRealizadoCidadeCliente" type="bool" />
+		<property name="NumeroNFSe" column="NumeroNFSe" type="Int32" />
+		<many-to-one name="LocalEstoqueNota" column="IDLocalEstoque" class="LocalEstoque"/>
+		<many-to-one name="EnderecoEntrega" column="IDEnderecoEntrega" class="PessoaEndereco" />
+		<many-to-one name="NotaComplementada" column="IDNotaComplementada" class="Nota" />
+		<many-to-one name="NotaReferenciada" column="IDNotaReferenciada" class="Nota" lazy = "false"/>
+		<many-to-one name="identificador" column="IDIdentificador" class="Identificador" lazy = "false" />
+		<property name="CodigoPedido" column="CodigoPedido" type="Int32" />
+		<property name="Handle" column="Handle" type="Int32"/>
+		<property name="LoteNFSe" column="LoteNFSe" type="Int32"/>
+		<property name="DtHoraCanc" column="DtHoraCanc" type="DateTime"/>
+		<property name="DtHoraAuto" column="DtHoraAuto" type="DateTime"/>
+		<property name="NumeroNfseSubstituida" column="NumeroNfseSubstituida" type="Int32"/>
+		<property name="DataEmissaoNfseSubstituida" column="DataEmissaoNfseSubstituida" type="DateTime"/>
+		<property name="FrasesNFSe" column="FrasesNFSe" type="string"/>
+		<property name="DataEnvioNfe" column="DataEnvioNfe" type="DateTime"/>
+		<property name="EnviaTagTotalImposto" column="EnviaTagTotalImposto" type="bool" />
+		<property name="ResponsavelRetencao" column="ResponsavelRetencao" type="Int32" />
+		<property name="NotaLimearMes" column="NotaLimearMes" type="bool" />
+		<property name="NumeroEmpenho" column="NumeroEmpenho" type="string" length="30" />
+		<property name="TipoDeEntrada" column="TipoEntrada" type="Int32" />
+		<property name="TipoCTe" column="TipoCTe" type="Int32" />
+		<property name="ChaveCTe" column="ChaveCTe" type="string" length="255" />
+		<property name="idDest" column="idDest" type="Int32" />
+		<property name="EmailDestinatario" column="EmailDestinatario" type="string" length="100" />
+		<property name="GerouPedidoCompra" column="GerouPedidoCompra" type="bool" />
+		<property name="StatusLocal" column="StatusLocal" type="string" length="1" />
+		<property name="IDEnderecoDestinatario" column="IDEnderecoDestinatario" type="Int32" />
+
+		<property name="ValorTroco" column="ValorTroco" type="decimal" />
+
+		<bag name="Documentos" table="Documento" inverse="true">
+			<key column="IDNota" />
+			<one-to-many class="Documento" />
+		</bag>
+		<bag name="NotaICMSs" table="NotaICMS" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDNota" />
+			<one-to-many class="NotaICMS" />
+		</bag>
+		<bag name="NotaItems" table="NotaItem" inverse="true" cascade="all-delete-orphan" lazy="true">
+			<key column="IDNota" />
+			<one-to-many class="NotaItem" />
+		</bag>
+		<bag name="NotaParcelas" table="NotaParcela" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDNota" />
+			<one-to-many class="NotaParcela" />
+		</bag>
+		<bag name="NotaItemsServicos" table="NotaItemServico" cascade="all-delete-orphan" lazy="false" inverse="true">
+			<key column="IDNota" />
+			<one-to-many class="NotaItemServico" />
+		</bag>
+
+		<bag name="NotaImpostoServicos" table="NotaImpostoServico" cascade="all-delete-orphan" lazy="false" inverse="true">
+			<key column="IDNota" />
+			<one-to-many class="NotaImpostoServico" />
+		</bag>
+
+		<bag name="FrenteCaixaNotas" table="FrenteCaixaNota" lazy="false" inverse="true" >
+			<key column="IDNota" />
+			<one-to-many class="FrenteCaixaNota" />
+		</bag>
+
+		<bag name="Custos" table="Custo" lazy="false" inverse="true">
+			<key column="IDNota" />
+			<one-to-many class="Custo" />
+		</bag>
+
+		<bag name="NotaReferencias" table="NotaReferencia" inverse="true" cascade="all-delete-orphan" >
+			<key column="IDNota" />
+			<one-to-many class="NotaReferencia" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

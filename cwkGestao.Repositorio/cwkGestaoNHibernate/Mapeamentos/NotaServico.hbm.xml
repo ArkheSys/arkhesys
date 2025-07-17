@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="NotaServico" table="NotaServico">
+
+    <id name="ID" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Numero" type="Int32" />
+    <many-to-one name="Cliente" column="IDCliente" class="Pessoa" />    
+    <many-to-one name="Condicao" column="IDCondicao" class="Condicao" />
+    <many-to-one name="Filial" column="IDFilial" class="Filial" />
+    <property name="ClienteEndereco" column="ClienteEndereco" type="string" length="60" />
+    <property name="ClienteBairro" column="ClienteBairro" type="string" length="60" />
+    <property name="ClienteCidade" column="ClienteCidade" type="string" length="60" />
+    <property name="ClienteUF" column="ClienteUF" type="string" length="2" />
+    <property name="ClienteCep" column="ClienteCep" type="string" length="10" />
+    <property name="ClienteFone" column="ClienteFone" type="string" length="20" />
+    <property name="ClienteCnpjCpf" column="ClienteCnpjCpf" type="string" length="20" />
+    <property name="ClienteInscricao" column="ClienteInscricao" type="string" length="20" />
+    <property name="Observacao" column="Observacao" type="string" length="1292" />
+    <property name="ClienteNome" column="ClienteNome" type="string" length="80" />
+    <property name="Data" column="Data" type="DateTime" />
+    <property name="Emissao" column="Emissao" type="DateTime" />
+    <property name="TotalNota" column="TotalNota" type="Decimal" precision="18" scale="2" />
+    <property name="TotalProduto" column="TotalProduto" type="Decimal" precision="18" scale="2" />
+    <property name="Desconto" column="Desconto" type="Decimal" precision="18" scale="2" />
+
+    <bag name="NotaServicoItems" table="NotaServicoItem" cascade="all-delete-orphan" inverse="true" >
+      <key column="idnota" />
+      <one-to-many class="NotaServicoItem" />
+    </bag>
+  </class>
+</hibernate-mapping>

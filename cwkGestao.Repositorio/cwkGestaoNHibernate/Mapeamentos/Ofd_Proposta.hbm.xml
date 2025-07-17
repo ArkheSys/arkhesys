@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="Ofd_Proposta" table="Ofd_Proposta">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<property name="NumeroProposta" column="NumeroProposta" type="string" />
+	<property name="Status" column="Status" type="Int32" />
+	<many-to-one name="Cliente" column="IDCliente" class="Pessoa" lazy="false" />
+	<many-to-one name="ClienteFaturamento" column="IDClienteFaturamento" class="Pessoa"/>
+	<property name="NomeObra" column="NomeObra" type="string" />
+	<property name="TipoPreco" column="TipoPreco" type="Int32" />
+	<property name="ValorTaxaMobilizacao" column="ValorTaxaMobilizacao" type="decimal" />
+	<property name="ValorHoraMaquinaParada" column="ValorHoraMaquinaParada" type="decimal" />
+  <property name="IncData" column="IncData" type="DateTime" />
+  <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+  <property name="AltData" column="AltData" type="DateTime" />
+  <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+  <property name="PrevisaoProjeto" column="PrevisaoProjeto" type="int"/>
+  <property name="QuantidadeTotal" column="QuantidadeTotal" type="int"/>  
+	<many-to-one name="Servico" column="IDServico" class="Servico" lazy="false" />
+  <many-to-one name="Obra" column="IDObra" class="Ofd_Obra" lazy="false" />
+  <many-to-one name="OrcamentoPropostaVinculada" column="IDOrcamentoPropostaVinculada" class="Ofd_Proposta" lazy="false" />
+  <bag name="Arquivos" table="Ofd_PropostaArquivos" inverse="true" cascade="all-delete-orphan" lazy="false" >
+    <key column="IDProposta" />
+    <one-to-many class="Ofd_PropostaArquivos" />
+  </bag>
+    <bag name="Medicoes" table="Ofd_PropostaMedicao" cascade="all-delete-orphan" lazy="false" >
+      <key column="IDProposta" />
+      <one-to-many class="Ofd_PropostaMedicao" />
+    </bag>
+    <bag name="Revisoes" table="Ofd_PropostaRevisaoPerfuracoes" inverse="true" cascade="all-delete-orphan" lazy="false" >
+      <key column="IDOfd_Proposta" />
+      <one-to-many class="Ofd_PropostaRevisaoPerfuracoes" />
+    </bag>
+    <property name="CodigoOrcamento" column="CodigoOrcamento" type="Int32" />
+    <property name="StatusOrcamento" column="StatusOrcamento" type="Int32" />
+    <property name="NomeClienteOrcamento" column="NomeClienteOrcamento" type="string" length="200"/>
+    <property name="TelefoneClienteOrcamento" column="TelefoneClienteOrcamento" type="string" length="20"/>
+    <property name="EmailClienteOrcamento" column="EmailClienteOrcamento" type="string" length="20"/>
+    <property name="NomeObraOrcamento" column="NomeObraOrcamento" type="string" length="200"/>
+    <property name="NomeConstrutoraOrcamento" column="NomeConstrutoraOrcamento" type="string" length="70"/>
+    <property name="TelefoneConstrutoraOrcamento" column="TelefoneConstrutoraOrcamento" type="string" length="20"/>
+    <property name="ObservacaoObraOrcamento" column="ObservacaoObraOrcamento" type="string" length="500"/>
+    <property name="AContatoOrcamento" column="AContatoOrcamento" type="string" length="200"/>
+    <property name="ACContatoOrcamento" column="ACContatoOrcamento" type="string" length="200"/>
+    <property name="TelefoneContatoOrcamento" column="TelefoneContatoOrcamento" type="string" length="20"/>
+    <property name="EmailContatoOrcamento" column="EmailContatoOrcamento" type="string" length="70"/>
+    <property name="ObservacaoOrcamento" column="ObservacaoOrcamento" type="string" length="500"/>
+    <property name="EnderecoObraOrcamento" column="EnderecoObraOrcamento" type="string" length="150"/>
+    <property name="TipoLancamento" column="TipoLancamento" type="int"/>
+    <property name="IDCidadeClienteOrcamento" column="IDCidadeClienteOrcamento" type="int"/>
+    <property name="IDCidadeObraOrcamento" column="IDCidadeObraOrcamento" type="int"/>
+    <bag name="Ofd_Servicos" table="Ofd_PropostaOrcamentoServicos" inverse="true" lazy="false" >
+      <key column="IDOfd_Proposta" />
+      <one-to-many class="Ofd_PropostaOrcamentoServicos" />
+    </bag>
+  </class>
+</hibernate-mapping>

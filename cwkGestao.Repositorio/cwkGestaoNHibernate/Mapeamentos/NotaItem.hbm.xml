@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="NotaItem" table="NotaItem">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Nota" column="IDNota" class="Nota" lazy="false"/>
+    <property name="Sequencia" column="Sequencia" type="Int32" />
+    <many-to-one name="Produto" column="IDProduto" class="Produto" lazy="false" />
+    <property name="ProdutoNome" column="ProdutoNome" type="string" length="100" />
+    <property name="ProdutoDescReduzida" column="ProdutoDescReduzida" type="string" length="50" />
+    <property name="Quantidade" column="Quantidade" type="decimal" />
+    <property name="Unidade" column="Unidade" type="string" length="5" />
+    <property name="ValorCalculado" column="ValorCalculado" type="decimal" />
+    <property name="Valor" column="Valor" type="decimal" />
+    <property name="SubTotal" column="SubTotal" type="decimal" />
+    <property name="PercDesconto" column="PercDesconto" type="decimal" />
+    <property name="ValorDesconto" column="ValorDesconto" type="decimal" />
+    <property name="RAT_Desconto" column="RAT_Desconto" type="decimal" />
+    <property name="RAT_Acrescimo" column="RAT_Acrescimo" type="decimal" />
+    <property name="Total" column="Total" type="decimal" />
+    <property name="PesoBruto" column="PesoBruto" type="decimal" />
+    <property name="PesoLiquido" column="PesoLiquido" type="decimal" />
+    <property name="Dt" column="Dt" type="DateTime" />
+    <property name="BAtualizaEstoque" column="bAtualizaEstoque" type="bool" />
+    <property name="Ent_Sai" column="Ent_Sai" type="Int32" />
+    <property name="CalcCustoMedio" column="CalcCustoMedio" type="bool" />
+    <property name="ValorCustoMedio" column="ValorCustoMedio" type="decimal" />
+    <many-to-one name="ICMS" column="IDICMS" class="ICMS" lazy="false"/>
+    <property name="BaseICMS" column="BaseICMS" type="decimal" />
+    <property name="AliqICMS" column="AliqICMS" type="decimal" />
+    <property name="AliqICMSNormal" column="AliqICMSNormal" type="decimal" />
+    <property name="ValorICMS" column="ValorICMS" type="decimal" />
+    <property name="ValorIsentoICMS" column="ValorIsentoICMS" type="decimal" />
+    <property name="ValorOutroICMS" column="ValorOutroICMS" type="decimal" />
+    <property name="ValorRetidoICMS" column="ValorRetidoICMS" type="decimal" />
+    <property name="BCancelado" column="bCancelado" type="bool" />
+    <property name="SitTrib" column="SitTrib" type="string" length="4" />
+    <property name="BaseICMSSubst" column="BaseICMSSubst" type="decimal" />
+    <property name="ValorICMSReducao" column="ValorICMSReducao" type="decimal" />
+    <property name="ValorICMSReducaoDif" column="ValorICMSReducaoDif" type="decimal" />
+    <many-to-one name="PedidoItem" column="IDPedidoItem" class="PedidoItem" lazy="false" />
+    <many-to-one name="CFOP" column="IDCFOP" class="TabelaCFOP" lazy="false" />
+    <property name="TextoLei" column="TextoLei" type="string" length="100" />
+    <property name="TAG_CST" column="TAG_CST" type="string" length="10" />
+    <property name="modBC_N13" column="modBC_N13" type="Int32" />
+    <property name="modBCST_N18" column="modBCST_N18" type="Int32" />
+    <property name="CST_Pis" column="CST_Pis" type="string" length="2" />
+    <property name="VBC_Q07" column="vBC_Q07" type="decimal" />
+    <property name="PPIS_Q08" column="pPIS_Q08" type="decimal" />
+    <property name="VPIS_Q09" column="vPIS_Q09" type="decimal" />
+    <property name="CST_Cofins" column="CST_Cofins" type="string" length="2" />
+    <property name="CST_Ipi" column="CST_Ipi" type="string" length="2" />
+    <property name="orig_N11" column="orig_N11" type="Int32" />
+    <property name="VBC_S07" column="vBC_S07" type="decimal" />
+    <property name="PCOFINS_S08" column="pCOFINS_S08" type="decimal" />
+    <property name="VCOFINS_S11" column="vCOFINS_S11" type="decimal" />
+    <property name="VBC_O10" column="vBC_O10" type="decimal" />
+    <property name="PIPI_O13" column="PIPI_O13" type="decimal" />
+    <property name="VIPI_O14" column="vIPI_O14" type="decimal" />
+    <property name="PRedBC_N14" column="pRedBC_N14" type="decimal" />
+    <property name="PICMSST_N22" column="pICMSST_N22" type="decimal" />
+    <property name="cEnq_O06" column="cEnq_O06" type="string" length="3" />
+    <property name="InfAdicionais" column="InfAdicionais" type="string" length="500" />
+    <property name="AliqCupom" column="AliqCupom" type="string" length="2" />
+    <property name="ComissaoPorcentagem" column="ComissaoPorcentagem" type="decimal" />
+    <property name="TipoComissao" column="TipoComissao" type="byte" />
+    <property name="PRedBCST_N20" column="pRedBCST_N20" type="decimal" precision="5" scale="2" />
+    <property name="PMVAST_N19" column="pMVAST_N19" type="decimal" precision="5" scale="2" />
+    <property name="PCredSN_N29" column="pCredSN_N29" type="decimal" precision="5" scale="2" />
+    <property name="VCredICMSSN_N30" column="vCredICMSSN_N30" type="decimal" precision="13" scale="2" />
+    <property name="I19_nDI"   column="I19_nDI" type="string" length="12" />
+    <property name="I20_dDI"  column="I20_dDI" />
+    <property name="I21_xLocDesemb"  column="I21_xLocDesemb" type="string" length="60" />
+    <property name="I22_UFDesemb"  column="I22_UFDesemb" type="string" length="2" />
+    <property name="I23_dDesemb"  column="I23_dDesemb" />
+    <property name="I24_cExportador" column="I24_cExportador" type="string" length="60" />    
+    <property name="P02_vBC"  column="P02_vBC" type="decimal" />
+    <property name="P03_vDespAdu"  column="P03_vDespAdu" type="decimal" />
+    <property name="P04_vII"  column="P04_vII" type="decimal" />
+    <property name="P05_vIOF"  column="P05_vIOF" type="decimal" />
+    <property name="RateioFrete"  column="RateioFrete" type="decimal" />
+    <property name="RateioCusto"  column="RateioCusto" type="decimal" />
+    <property name="RateioSeguro"  column="RateioSeguro" type="decimal" />
+    <property name="RateioOutrasDespesas"  column="RateioOutrasDespesas" type="decimal" />
+    <property name="CMVUnit" column="CMVUnit" type="decimal" />
+    <property name="CustoUnit" column="CustoUnit" type="decimal" />
+    <property name="PIS_CREDEB" column="Pis_CreDeb" type="bool" />
+    <property name="COFINS_CREDEB" column="Cofins__CreDeb" type="bool" />
+    <property name="ICMS_CREDEB" column="Icms_CreDeb" type="bool" />
+    <property name="IPI_CREDEB" column="Ipi_CreDeb" type="bool" />
+    <many-to-one name="Texto" column="IDTextoLei" class="TextoLei" lazy="false"/>
+    <many-to-one name="ProdutoFCI" column="IDProdutoFCI" class="ProdutoFCI" lazy="false"/>
+    <property name="ReducaoImposto" column="ReducaoImposto" type="decimal"/>
+    <property name="TotalImpostos" column="TotalImpostos" type="decimal" />
+    <property name="QuantidadeEntrada" column="QuantidadeEntrada" type="decimal" />
+    <property name="UnidadeEntrada" column="UnidadeEntrada" type="string" length="5" />
+    <property name="FatorConversao" column="FatorConversao" type="decimal" scale="5" precision="18"/>
+    <property name="ValorICMSDesoneracao" column="ValorICMSDesoneracao" type="decimal"/>
+    <property name="MotivoICMSDesoneracao" column="MotivoICMSDesoneracao" type="Int32"/>
+    <property name="NumDrawBack" column="NumDrawBack" type="string" length="11"/>
+    <property name="vBCFCP_N17a" column="vBCFCP_N17a" type="decimal" />
+    <property name="pFCP_N17b" column="pFCP_N17b" type="decimal" />
+    <property name="vFCP_N17c" column="vFCP_N17c" type="decimal" />
+    <property name="vBCFCPST_N23a" column="vBCFCPST_N23a" type="decimal" />
+    <property name="pFCPST_N23b" column="pFCPST_N23b" type="decimal" />
+    <property name="vFCPST_N23d" column="vFCPST_N23d" type="decimal" />
+    <property name="AliquotaDiferimento" column="AliquotaDiferimento" type="decimal" />
+    <property name="ValorIcmsDiferimento" column="ValorIcmsDiferimento" type="decimal" />
+    <property name="ValorIcmsOp" column="ValorIcmsOp" type="decimal" />
+    
+    <property name="ViaTransp" column="ViaTransp" type="Int32"/>
+    <property name="ValorFreteRenovacaoMarinhaMercante" column="ValorFreteRenovacaoMarinhaMercante" type="decimal"/>
+    
+    <property name="IDOSProdutoItem" column="IDOSProdutoItem" type="int"/>
+    <property name="Cest" column="Cest" type="string" length="7"/>
+    <property name="AliqInterna" column="AliqInterna" type="decimal"/>
+    <property name="vICMSUFDest_NA15" column="vICMSUFDest_NA15" type="decimal"/>
+    <property name="vICMSUFRemet_NA17" column="vICMSUFRemet_NA17" type="decimal"/>
+    <property name="pICMSInter" column="pICMSInter" type="decimal"/>
+
+    <property name="cBenef_I05f"  column="cBenef_I05f" type="string" length="20" />
+    <property name="CNPJFab_I05e"  column="CNPJFab_I05e" type="string" length="20" />
+    <property name="indEscala_I05d" column="indEscala_I05d" type="int"/>
+    
+    <property name="IDNcm" column="IDNcm" type="int"/>
+            
+    <many-to-one name="ContratoProduto" column="IDContratoProduto" class="ContratoProduto" lazy="false"/>
+    <bag name="Rateio_NotaItems" table="Rateio_NotaItem" lazy="false" inverse="true" cascade="all-delete-orphan"  >
+      <key column="IDNotaItem" />
+      <one-to-many class="Rateio_NotaItem" />
+    </bag>
+
+    <bag name="AdicoesNotaItem" table="AdicaoNotaItem" lazy="false" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDNotaItem" />
+      <one-to-many class="AdicaoNotaItem" />
+    </bag>
+
+    <bag name="Estoques" table="NotaItemEstoque" lazy="false" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDNotaItem" />
+      <one-to-many class="NotaItemEstoque" />
+    </bag>
+
+    <bag name="PedidoItens" table="NotaItemPedidoItem" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDNotaItem" />
+      <one-to-many class="NotaItemPedidoItem" />
+    </bag>
+
+    <bag name="ContratoControle" table="ContratoControle" inverse="true" cascade="all-delete-orphan" >
+      <key column="IDNotaItem" />
+      <one-to-many class="ContratoControle" />
+    </bag>
+
+    <bag name="ImeisEntrada" table="Imei" inverse="true" cascade="all-delete-orphan" lazy="false" >
+      <key column="IDNotaItemEntrada" />
+      <one-to-many class="Imei" />
+    </bag>
+
+    <bag name="ImeisSaida" table="Imei" lazy="false">
+      <key column="IDNotaItemSaida" />
+      <one-to-many class="Imei" />
+    </bag>
+
+    
+  </class>
+</hibernate-mapping>

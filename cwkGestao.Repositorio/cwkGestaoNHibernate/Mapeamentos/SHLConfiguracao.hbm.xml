@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="SHLConfiguracao" table="SHLConfiguracao">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+
+    <property name="ChaveSHL" column="Chave" type="string" length="255"/>
+    <property name="InterfaceSHL" column="Interface" type="Int32"/>
+    <property name="ChaveSHLHomologacao" column="ChaveSHLHomologacao" type="string" length="255"/>
+    <many-to-one name="Classificacao" column="IDClassificacao" class="Classificacao" />
+    <many-to-one name="TipoPedido" column="IDTipoPedido" class="TipoPedido" />
+    
+	
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="cwkGestao.Integracao.SHL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="cwkGestao_Integracao_SHL_SHLWsHomologacao_Webservice___HOMOLOGAÇÃO_SHL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://slomp.com.br/sistema/webservice/homologacao/server_nusoap.php</Value>
+    </Setting>
+    <Setting Name="cwkGestao_Integracao_SHL_SHLWs_Webservice___INLOCUS_SHL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://slomp.com.br/sistema/webservice/inlocus/server_nusoap.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

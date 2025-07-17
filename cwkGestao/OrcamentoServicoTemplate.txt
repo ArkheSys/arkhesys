@@ -1,0 +1,54 @@
+﻿<config alturaFolha="60" quebraPagina="7">
+	<oss multiplasLinhas="sim" />
+	<pq formato="F4" />
+	<ppu formato="F2" />
+	<ppt formato="F2" />
+
+	<spt formato="F2" />
+
+	<osst formato="F2" />
+	<osd formato="F2" />
+	<opst formato="F2" />
+	<opd formato="F2" />
+	<ot formato="F2" />
+</config>
+<cabecalho formatacao="condensado" repeteNovaFolha="sim">
+                                                                  |Orcamento: <oc                     >Emissao:<oe         >|
+                                                                  |                                                         |
+                                                                  |Cliente:<ocn                      >Fone.:<ocf           >|
+                                                                  |                                                         |
+                                                                  |Vendedor:<ovn                                           >|
+                                                                  |                                                         |
+                                                                  |Serviço Solicitado:                                      |
+                                                                  |<oss                                                    >|
+                                                                  |<oss                                                    >|
+                                                                  |<oss                                                    >|
+                                                                  |<oss                                                    >|
+                                                                  |Condicao de pagamento: <op          >                    |
+                                                                  |                                                         |
+                                                                  |                                                         |
+</cabecalho>
+                                                                  |                                                         |
+<produtos formatacao="condensado" >
+<pC>
+                                                                  |---------------------------------------------------------|
+                                                                  |Produto               Qtde.      Unitario          Total |
+                                                                  |---------------------------------------------------------|
+</pC>
+                                                                  |<pn                  ><pq     >  <ppu      >  <ppt      >|
+</produtos>
+                                                                  |                                                         |
+<servicos formatacao="condensado" >
+<sC>
+                                                                  |---------------------------------------------------------|
+                                                                  |Servico                                            Total |
+                                                                  |---------------------------------------------------------|
+</sC>
+                                                                  |<sn                                >             <spt   >|
+</servicos>
+                                                                  |                                                         |
+                                                                  |                         Sub-total Serviços: <osst     > |
+                                                                  | ______________________  Desconto Serviços:  <osd      > |
+                                                                  |                         Sub-total Produtos: <opst     > |
+                                                                  |                         Desconto Produtos:  <opd      > |
+                                                                  |                         Total:              <ot       > |

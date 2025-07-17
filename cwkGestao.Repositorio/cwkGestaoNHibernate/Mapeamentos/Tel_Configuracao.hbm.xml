@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Tel_Configuracao" table="Tel_Configuracao">
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="PlanoConta" column="IdPlanoConta" class="PlanoConta" lazy="false" />
+		<many-to-one name="Portador" column="IdPortador" class="Portador" lazy="false" />
+		<many-to-one name="Historico" column="IdHistorico" class="Historico" lazy="false" />
+		<many-to-one name="Condicao" column="IdCondicao" class="Condicao" lazy="false" />
+		<many-to-one name="TipoDocumento" column="IdTipoDocumento" class="TipoDocumento" lazy="false" />
+		<many-to-one name="Acrescimo" column="IdAcrescimo" class="Acrescimo" lazy="false" />
+		<many-to-one name="ServicoJuros" column="IdTel_ServicoJuros" class="Tel_Servico" lazy="false" />
+		<many-to-one name="ServicoMulta" column="IdTel_ServicoMulta" class="Tel_Servico" lazy="false" />
+		<many-to-one name="Filial" column="IdFilial" class="Filial" lazy="false" />
+
+		<property name="IncData" column="IncData" type="DateTime" />
+		<property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+		<property name="AltData" column="AltData" type="DateTime" />
+		<property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+		<property name="PeriodoListagemFaturas" column="PeriodoListagemFaturas" type="Int32" />
+		<property name="ConsideraFixo" column="ConsideraFixo" type="bool" />
+		<property name="SolicitaConfirmaEmailTelefonia" column="SolicitaConfirmaEmailTelefonia" type="bool" />
+		<property name="UrlBanco" column="UrlBanco" type="string" />
+		<property name="ClientIDBanco" column="ClientIDBanco" type="string" />
+		<property name="SecretIDBanco" column="SecretIDBanco" type="string"/>
+		<property name="UrlCertificado" column="UrlCertificado" type="string" />
+		<property name="ChavePix" column="ChavePix" type="string" />
+
+	</class>
+</hibernate-mapping>

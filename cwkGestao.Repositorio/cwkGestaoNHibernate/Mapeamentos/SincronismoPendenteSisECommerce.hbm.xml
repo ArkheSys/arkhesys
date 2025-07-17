@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="SincronismoPendenteSisECommerce" table="SincronismoPendenteSisECommerce">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+	<property name="Erro" column="Erro" type="string" />
+  <property name="CaminhoArquivo" column="CaminhoArquivo" type="string" />
+  <property name="NumPedidoSisEcommerce" column="NumPedidoSisEcommerce" type="Int32" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPCPFtRegras" targetNamespace="http://tempuri.org/dsPCPFtRegras.xsd" xmlns:mstns="http://tempuri.org/dsPCPFtRegras.xsd" xmlns="http://tempuri.org/dsPCPFtRegras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cwkGestaoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cwkGestaoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Relatorio.Properties.Settings.GlobalReference.Default.cwkGestaoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPCPRegraTableAdapter" GeneratorDataComponentClassName="dtPCPRegraTableAdapter" Name="dtPCPRegra" UserDataComponentName="dtPCPRegraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cwkGestaoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT r.Codigo as 'Regra Código', r.Descricao as 'Regra Descrição', ft.Codigo as 'FT Código', ft.Id as 'FT id'
+FROM PCP_RegraFichaTecnica r
+INNER JOIN PCP_FichaTecnica ft ON ft.Id = r.IdFichaTecnicaPCP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Regra Código" DataSetColumn="Regra Código" />
+              <Mapping SourceColumn="Regra Descrição" DataSetColumn="Regra Descrição" />
+              <Mapping SourceColumn="FT Código" DataSetColumn="FT Código" />
+              <Mapping SourceColumn="FT id" DataSetColumn="FT id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPCPFtRegras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsPCPFtRegras" msprop:Generator_DataSetName="dsPCPFtRegras" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPCPRegra" msprop:Generator_UserTableName="dtPCPRegra" msprop:Generator_RowDeletedName="dtPCPRegraRowDeleted" msprop:Generator_RowChangedName="dtPCPRegraRowChanged" msprop:Generator_RowClassName="dtPCPRegraRow" msprop:Generator_RowChangingName="dtPCPRegraRowChanging" msprop:Generator_RowEvArgName="dtPCPRegraRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPCPRegraRowChangeEventHandler" msprop:Generator_TableClassName="dtPCPRegraDataTable" msprop:Generator_TableVarName="tabledtPCPRegra" msprop:Generator_RowDeletingName="dtPCPRegraRowDeleting" msprop:Generator_TablePropName="dtPCPRegra">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Regra_x0020_Código" msprop:Generator_UserColumnName="Regra Código" msprop:Generator_ColumnPropNameInRow="Regra_Código" msprop:Generator_ColumnVarNameInTable="columnRegra_Código" msprop:Generator_ColumnPropNameInTable="Regra_CódigoColumn" type="xs:int" />
+              <xs:element name="Regra_x0020_Descrição" msprop:Generator_UserColumnName="Regra Descrição" msprop:Generator_ColumnPropNameInRow="Regra_Descrição" msprop:Generator_ColumnVarNameInTable="columnRegra_Descrição" msprop:Generator_ColumnPropNameInTable="Regra_DescriçãoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_Código" msprop:Generator_UserColumnName="FT Código" msprop:Generator_ColumnPropNameInRow="FT_Código" msprop:Generator_ColumnVarNameInTable="columnFT_Código" msprop:Generator_ColumnPropNameInTable="FT_CódigoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FT_x0020_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="FT id" msprop:Generator_ColumnVarNameInTable="columnFT_id" msprop:Generator_ColumnPropNameInRow="FT_id" msprop:Generator_ColumnPropNameInTable="FT_idColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtPCPRegra" />
+      <xs:field xpath="mstns:FT_x0020_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

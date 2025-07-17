@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="LogAlteracaoParticipante" table="LogAlteracaoParticipante">
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+	
+	<property name="DataAlteracao" column="DataAlteracao" type="DateTime" />
+	<property name="NomeCampoAlterado" column="NomeCampoAlterado" type="string" />
+	<property name="NumeroCampoAlterado" column="NumeroCampoAlterado" type="Int32" />
+	<property name="ConteudoAnterior" column="ConteudoAnterior" type="string" />
+	<many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+
+  </class>
+</hibernate-mapping>

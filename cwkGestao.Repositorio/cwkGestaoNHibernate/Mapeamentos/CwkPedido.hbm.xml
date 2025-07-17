@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+  <class name="CwkPedido" table="CwkPedido">
+
+    <id name="ID" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="Codigo" column="Codigo" type="Int32" />
+    <property name="Status" column="Status"  />
+    <property name="MotivoCancelamento" column="MotivoCancelamento" type="string" length="500" />
+    <property name="BDemonstracao" column="BDemonstracao" type="Boolean" />
+    <property name="Data" column="Data" type="DateTime" />
+    <property name="Hora" column="Hora" type="DateTime" />
+    
+    <many-to-one name="Pessoa" column="IDPessoa" class="Pessoa" />
+    <property name="Solicitante" column="Solicitante" type="string" length="100" />
+    <many-to-one name="Sistema" column="IDSistema" class="Sistema" />
+    <many-to-one name="Versao" column="IDVersao" class="Versao" />
+    <property name="Observacao" column="Observacao" type="string" length="1000" />
+    <property name="DataSite" column="DataSite" type="DateTime" />
+    <property name="HoraSite" column="HoraSite" type="DateTime" />
+    <property name="Liberado" column="Liberado" type="string" length="60" />
+    <property name="NumeroSerie" column="NumeroSerie" type="Int32" />
+    <property name="IncData" column="IncData" type="DateTime" />
+    <property name="IncHora" column="IncHora" type="DateTime" />
+    <property name="IncUsuario" column="IncUsuario" type="string" length="20" />
+    <property name="AltData" column="AltData" type="DateTime" />
+    <property name="AltHora" column="AltHora" type="DateTime" />
+    <property name="AltUsuario" column="AltUsuario" type="string" length="20" />
+    <property name="BloqueioUsuarios" column="BloqueioUsuarios" type="Boolean" />
+    <property name="Relatorioabsenteismo" column="Relatorioabsenteismo" type="Boolean" />
+    <property name="ExportacaoHorasAbonadas" column="ExportacaoHorasAbonadas" type="Boolean" />
+    <property name="ModuloRefeitorio" column="ModuloRefeitorio" type="Boolean" />
+    <property name="Idrevenda" column="Idrevenda" type="Int32" />
+    <property name="LicencaReservada" column="LicencaReservada" type="Boolean" />
+    <bag name="CwkPedidoEmpresas" table="CwkPedidoEmpresa" cascade="all-delete-orphan" inverse="true">
+      <key column="IDPedido" />
+      <one-to-many class="CwkPedidoEmpresa" />
+    </bag>
+  </class>
+</hibernate-mapping>

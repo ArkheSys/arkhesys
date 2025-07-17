@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="Cor" table="Cor">
+
+	<id name="ID" column="ID">
+		<generator class="identity" /> 
+	</id>
+	<property name="Codigo" column="Codigo" type="Int32" />
+	<property name="Descricao" column="Descricao" type="string" length="60" />
+		<bag name="CQFuncionarios" table="CQFuncionario">					
+			<key column="IDCor" />
+			<one-to-many class="CQFuncionario" />
+		</bag>
+</class>
+</hibernate-mapping>
+		
