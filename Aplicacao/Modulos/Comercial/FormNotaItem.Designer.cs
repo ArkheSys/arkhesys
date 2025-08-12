@@ -100,8 +100,6 @@
             this.lblAliquotaDiferimento = new DevExpress.XtraEditors.LabelControl();
             this.lkpFCI = new DevExpress.XtraEditors.TextEdit();
             this.lbFCI = new DevExpress.XtraEditors.LabelControl();
-            this.lkpCFOP = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbCFOP = new Cwork.Utilitarios.Componentes.LookupButton();
             this.txtValorRetidoICMS = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtValorICMS = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtAliqICMS = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
@@ -121,6 +119,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lkbCFOP = new Cwork.Utilitarios.Componentes.LookupButton();
             this.cbFCI = new DevExpress.XtraEditors.LookUpEdit();
             this.tpPIS_COFINS = new DevExpress.XtraTab.XtraTabPage();
             this.groupPIS = new DevExpress.XtraEditors.GroupControl();
@@ -210,6 +209,7 @@
             this.btnExcluirImei = new Cwork.Utilitarios.Componentes.DevButton();
             this.btnIncluirImei = new Cwork.Utilitarios.Componentes.DevButton();
             this.btnAlterarImei = new Cwork.Utilitarios.Componentes.DevButton();
+            this.lkpCFOP = new Cwork.Utilitarios.Componentes.Lookup();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -269,7 +269,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbMotivoICMSDesoneracao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMSDeson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFCI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorRetidoICMS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqICMS.Properties)).BeginInit();
@@ -335,6 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
@@ -1309,6 +1309,7 @@
             // 
             // groupICMS
             // 
+            this.groupICMS.Controls.Add(this.lkpCFOP);
             this.groupICMS.Controls.Add(this.labelControl35);
             this.groupICMS.Controls.Add(this.cbMotivoICMSDesoneracao);
             this.groupICMS.Controls.Add(this.txtValorICMSDeson);
@@ -1317,7 +1318,6 @@
             this.groupICMS.Controls.Add(this.lblAliquotaDiferimento);
             this.groupICMS.Controls.Add(this.lkpFCI);
             this.groupICMS.Controls.Add(this.lbFCI);
-            this.groupICMS.Controls.Add(this.lkpCFOP);
             this.groupICMS.Controls.Add(this.txtValorRetidoICMS);
             this.groupICMS.Controls.Add(this.txtValorICMS);
             this.groupICMS.Controls.Add(this.txtAliqICMS);
@@ -1425,59 +1425,6 @@
             this.lbFCI.Size = new System.Drawing.Size(21, 13);
             this.lbFCI.TabIndex = 24;
             this.lbFCI.Text = "FCI:";
-            // 
-            // lkpCFOP
-            // 
-            this.lkpCFOP.ButtonLookup = this.lkbCFOP;
-            this.lkpCFOP.CamposPesquisa = new string[] {
-        "CFOP",
-        "Nome"};
-            this.lkpCFOP.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesAND")));
-            this.lkpCFOP.CamposRestricoesNOT = null;
-            this.lkpCFOP.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesOR")));
-            this.lkpCFOP.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpCFOP.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpCFOP.ContextoLinq = null;
-            this.lkpCFOP.CwkFuncaoValidacao = null;
-            this.lkpCFOP.CwkMascara = null;
-            this.lkpCFOP.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpCFOP.Exemplo = null;
-            this.lkpCFOP.ID = 0;
-            this.lkpCFOP.Join = null;
-            this.lkpCFOP.Key = System.Windows.Forms.Keys.F5;
-            this.lkpCFOP.Location = new System.Drawing.Point(101, 23);
-            this.lkpCFOP.Name = "lkpCFOP";
-            this.lkpCFOP.OnIDChanged = null;
-            this.lkpCFOP.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpCFOP.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpCFOP.SelecionarTextoOnEnter = true;
-            this.lkpCFOP.Size = new System.Drawing.Size(234, 20);
-            this.lkpCFOP.Tabela = null;
-            this.lkpCFOP.TabIndex = 1;
-            this.lkpCFOP.TituloTelaPesquisa = null;
-            this.lkpCFOP.ToolTip = "Campos pesquisados: CFOP, Nome.";
-            this.lkpCFOP.Where = null;
-            this.lkpCFOP.Leave += new System.EventHandler(this.lkpCFOP_Leave);
-            // 
-            // lkbCFOP
-            // 
-            this.lkbCFOP.Location = new System.Drawing.Point(279, 23);
-            this.lkbCFOP.Lookup = null;
-            this.lkbCFOP.Name = "lkbCFOP";
-            this.lkbCFOP.Size = new System.Drawing.Size(24, 20);
-            this.lkbCFOP.SubForm = null;
-            this.lkbCFOP.SubFormType = null;
-            this.lkbCFOP.SubFormTypeParams = null;
-            this.lkbCFOP.TabIndex = 2;
-            this.lkbCFOP.TabStop = false;
-            this.lkbCFOP.Text = "...";
             // 
             // txtValorRetidoICMS
             // 
@@ -1726,6 +1673,20 @@
             this.labelControl3.Size = new System.Drawing.Size(52, 13);
             this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "Base Icms:";
+            // 
+            // lkbCFOP
+            // 
+            this.lkbCFOP.Location = new System.Drawing.Point(323, 23);
+            this.lkbCFOP.Lookup = null;
+            this.lkbCFOP.Name = "lkbCFOP";
+            this.lkbCFOP.Size = new System.Drawing.Size(24, 20);
+            this.lkbCFOP.SubForm = null;
+            this.lkbCFOP.SubFormType = null;
+            this.lkbCFOP.SubFormTypeParams = null;
+            this.lkbCFOP.TabIndex = 2;
+            this.lkbCFOP.TabStop = false;
+            this.lkbCFOP.Text = "...";
+            this.lkbCFOP.Click += new System.EventHandler(this.lkbCFOP_Click);
             // 
             // cbFCI
             // 
@@ -3171,6 +3132,48 @@
             this.btnAlterarImei.TabStop = false;
             this.btnAlterarImei.Text = "&Alterar";
             // 
+            // lkpCFOP
+            // 
+            this.lkpCFOP.ButtonLookup = null;
+            this.lkpCFOP.CamposPesquisa = new string[] {
+        "CFOP",
+        "Nome"};
+            this.lkpCFOP.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesAND")));
+            this.lkpCFOP.CamposRestricoesNOT = null;
+            this.lkpCFOP.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesOR")));
+            this.lkpCFOP.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpCFOP.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpCFOP.ContextoLinq = null;
+            this.lkpCFOP.CwkFuncaoValidacao = null;
+            this.lkpCFOP.CwkMascara = null;
+            this.lkpCFOP.CwkValidacao = null;
+            this.lkpCFOP.Exemplo = null;
+            this.lkpCFOP.ID = 0;
+            this.lkpCFOP.Join = null;
+            this.lkpCFOP.Key = System.Windows.Forms.Keys.F5;
+            this.lkpCFOP.Location = new System.Drawing.Point(101, 23);
+            this.lkpCFOP.Name = "lkpCFOP";
+            this.lkpCFOP.OnIDChanged = null;
+            this.lkpCFOP.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpCFOP.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpCFOP.SelecionarTextoOnEnter = true;
+            this.lkpCFOP.Size = new System.Drawing.Size(216, 20);
+            this.lkpCFOP.Tabela = null;
+            this.lkpCFOP.TabIndex = 28;
+            this.lkpCFOP.TituloTelaPesquisa = null;
+            this.lkpCFOP.ToolTip = "Campos pesquisados: CFOP, Nome.";
+            this.lkpCFOP.Where = null;
+            // 
             // FormNotaItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3246,7 +3249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbMotivoICMSDesoneracao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMSDeson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFCI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorRetidoICMS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqICMS.Properties)).EndInit();
@@ -3317,6 +3319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3397,7 +3400,6 @@
         private DevExpress.XtraEditors.GroupControl groupICMS;
         private DevExpress.XtraEditors.TextEdit lkpFCI;
         private DevExpress.XtraEditors.LabelControl lbFCI;
-        private Cwork.Utilitarios.Componentes.Lookup lkpCFOP;
         private Cwork.Utilitarios.Componentes.LookupButton lkbCFOP;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtValorRetidoICMS;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtValorICMS;
@@ -3504,5 +3506,6 @@
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNCM;
         private DevExpress.XtraEditors.LabelControl labelControl38;
         private Cwork.Utilitarios.Componentes.LookupButton lkbNCM;
+        private Cwork.Utilitarios.Componentes.Lookup lkpCFOP;
     }
 }

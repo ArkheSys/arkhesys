@@ -25,7 +25,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
             return "from ImpostosTributos i where i.ID = :id";
         }
 
-        public ImpostosTributos GetByClassificacaoFiscal(int pIDClassificacaoFiscal)
+        public ImpostosTributos GetByClassificacaoFiscal(int pIDClassificacaoFiscal, int pIDPerfilTributarioCliente)
         {
             using (var session = GetSession())
             {
@@ -33,9 +33,11 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
 
                 string hql = " from ImpostosTributos it " +
                 " left join fetch it.ClassificacaoFiscal cf " +
-                " where cf.ID = :IDClassificacaoFiscal ";
+                " left join fetch it.PerfilTributarioCliente pt " +
+                " where cf.ID = :IDClassificacaoFiscal and pt.ID = :IDPerfilTributarioCliente ";
 
-                var result = session.CreateQuery(hql).SetInt32("IDClassificacaoFiscal", pIDClassificacaoFiscal).List<ImpostosTributos>();
+                var result = session.CreateQuery(hql).SetInt32("IDClassificacaoFiscal", pIDClassificacaoFiscal).SetInt32("IDPerfilTributarioCliente", pIDPerfilTributarioCliente).List<ImpostosTributos>();
+
 
                 if (result.Count > 0)
                     return result[0];

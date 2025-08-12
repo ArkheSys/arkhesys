@@ -713,7 +713,6 @@
       <DependentUpon>PlanoConta.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Relatorios\AcompanhamentoObrasMaquinas.resx">
       <DependentUpon>AcompanhamentoObrasMaquinas.cs</DependentUpon>
       <SubType>Designer</SubType>

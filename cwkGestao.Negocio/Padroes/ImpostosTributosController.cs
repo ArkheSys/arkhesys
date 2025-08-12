@@ -57,9 +57,9 @@ namespace cwkGestao.Negocio.Padroes
             return new Dictionary<string, string>();
         }
 
-        public ImpostosTributos GetByClassificacaoFiscal(int pIDClassificacaoFiscal)
+        public ImpostosTributos GetByClassificacaoFiscal(int pIDClassificacaoFiscal, int pIDPerfilTributarioCliente)
         {
-            return repositorioImpostosTributos.GetByClassificacaoFiscal(pIDClassificacaoFiscal);
+            return repositorioImpostosTributos.GetByClassificacaoFiscal(pIDClassificacaoFiscal, pIDPerfilTributarioCliente);
         }
 
     }

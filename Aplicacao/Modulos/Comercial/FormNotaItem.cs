@@ -29,6 +29,8 @@ namespace Aplicacao
         private NotaItem clone;
         private NotaItem cloneLogicaTelaNotaItem;
         ProdutoFCI produtoFCICarregado;
+        public Pessoa PessoaSelecionada;
+        public Filial FilialSelecionada;
 
         private List<String> lstInfAdicionalImei = new List<String>();
 
@@ -39,6 +41,8 @@ namespace Aplicacao
             this.logicaTelaNotaItem = logicaTelaNotaItem;
             this.Selecionado = logicaTelaNotaItem.GetNotaItem;
             this.Selecionado.IDNcm = logicaTelaNotaItem.GetNotaItem.IDNcm;
+            this.PessoaSelecionada = logicaTelaNotaItem.PessoaSelecionada;
+            this.FilialSelecionada = logicaTelaNotaItem.FilialSelecionada;
             this.TotalLiberado = true;
 
             clone = new NotaItem();
@@ -466,8 +470,9 @@ namespace Aplicacao
             groupCSOSN.Tag = Selecionado;
             groupCONFINS.Tag = Selecionado;
             groupAdicao.Tag = Selecionado;
-            lkbCFOP.SubForm = new FormTabelaCFOP();
-            lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
+            
+            //lkbCFOP.SubForm = new FormTabelaCFOP();
+            //lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
 
             //btnIncluirRateio.SubForm = new FormRateioNotaItem(Selecionado);
             //var formAdicao = new FormAdicaoNotaItem(Selecionado);
@@ -508,8 +513,38 @@ namespace Aplicacao
                 try
                 {
                     var _produto = ProdutoController.Instancia.LoadObjectById(ProdutoSelecionado.ID);
-                    _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID);
-                    //_produto.ClassificacaoFiscal.ImpostosTributos = 
+                    
+
+                    if (_produto.ClassificacaoFiscal == null)
+                    {
+                        throw new ArgumentException("Classificação Fiscal do Produto é Inválida. Verifique!");
+                    }
+
+                    if (this.PessoaSelecionada.PerfilTributarioCliente == null)
+                    {
+                        throw new ArgumentException("Perfil Tributário do Cliente é Inválida. Verifique!");
+                    }
+
+                    _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID, this.PessoaSelecionada.PerfilTributarioCliente.ID);
+
+                    if (_produto.ClassificacaoFiscal.ImpostosTributos == null)
+                    {
+                        throw new ArgumentException("Perfil Tributário do Cliente e a Classificação Fiscal não foi encontrada em Impostos Tributos. Verifique!");
+                    }
+
+                    bool dentroDoEstado = PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla == FilialSelecionada.Cidade.UF.Sigla;
+
+                    if (dentroDoEstado)
+                    {
+                        _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisDentroEstado;
+                    }
+                    else
+                    {
+                        _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisForaEstado;
+                    }
+
+                    
+
                     if (ProdutoSelecionado.Inativo)
                     {
                         MessageBox.Show("Este produto está inativo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -666,6 +701,7 @@ namespace Aplicacao
             txtP03_vDespAdu.EditValue = notaItem.P03_vDespAdu;
             txtP04_vII.EditValue = notaItem.P04_vII;
             txtP05_vIOF.EditValue = notaItem.P05_vIOF;
+            lkpCFOP.EditValue = notaItem.CFOP;
             lkpTexto.EditValue = notaItem.Texto;
             notaItem.AliqICMSNormal = notaItem.AliqICMS;
 
@@ -1028,9 +1064,10 @@ namespace Aplicacao
         private void lkpCFOP_Leave(object sender, EventArgs e)
         {
             logicaTelaNotaItem.SetCfop((TabelaCFOP)lkpCFOP.Selecionado);
-            Selecionado.Produto.CFOP = (TabelaCFOP)lkpCFOP.Selecionado;
+            //logicaTelaNotaItem.SetCfop((TabelaCFOP)lkpCFOP.Selecionado);
+            //Selecionado.Produto.CFOP = (TabelaCFOP)lkpCFOP.Selecionado;
 
-            AtualizarDadosTela();
+            //AtualizarDadosTela();
         }
 
         private void lkpCFOP_IDChanged(object sender, EventArgs e)
@@ -1721,6 +1758,16 @@ namespace Aplicacao
             UnidadeAlterada = txtUnidade.Text;
 
             logicaTelaNotaItem.SetUnidade(Selecionado.Unidade);
+        }
+
+        private void lkbCFOP_Click(object sender, EventArgs e)
+        {
+            var grid = new GridGenerica<TextoLei>(TextoLeiController.Instancia.GetAll(), new FormTextoLei(), (TextoLei)lkpTexto.Selecionado, false);
+            grid.Selecionando = true;
+            if (cwkControleUsuario.Facade.ControleAcesso(grid))
+                grid.ShowDialog();
+
+            lkpTexto.EditValue = grid.Selecionado;
         }
     }
 }
