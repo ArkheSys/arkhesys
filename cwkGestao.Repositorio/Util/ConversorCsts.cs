@@ -128,6 +128,11 @@ namespace cwkGestao.Repositorio.Util
             RegimeNormal
         }
 
+        public static string ConverterIndiceParaTAG_CSTTributacao(int? indiceCST)
+        {
+            return ConverterIndiceParaCSTTributacao(indiceCST);
+        }
+
         public static string ConverterIndiceParaTributacao(int? indiceCST, int? indiceCSOSN, ModeloNota modeloNota, STEmpresa simplesNacional, bool temST)
         {
             try
@@ -149,6 +154,57 @@ namespace cwkGestao.Repositorio.Util
             catch (Exception exc)
             {
                 throw new Exception("Erro na conversão do campo de tributação, verifique no cadastro deste produto os campos de tributação CST e CSOSN e a situação tributária da empresa.", exc);
+            }
+        }
+
+        //public static string ConverterIndiceParaTributacao(int? indiceCST)
+        //{
+        //    try
+        //    {
+               
+        //        return ConverterIndiceParaCSTTributacao(indiceCST);
+
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        throw new Exception("Erro na conversão do campo de tributação, verifique no cadastro deste produto os campos de tributação CST e CSOSN e a situação tributária da empresa.", exc);
+        //    }
+        //}
+
+        private static string ConverterIndiceParaCSTTributacao(int? indiceCST)
+        {
+            try
+            {
+                switch (indiceCST.Value)
+                {
+                    case 0: return "00";
+                    case 1: return "10";
+                    case 2: return "20";
+                    case 3: return "30";
+                    case 4: return "40";
+                    case 5: return "41";
+                    case 6: return "50";
+                    case 7: return "51";
+                    case 8: return "60";
+                    case 9: return "70";
+                    case 10: return "90";
+                    case 11: return "101";
+                    case 12: return "102";
+                    case 13: return "103";
+                    case 14: return "201";
+                    case 15: return "202";
+                    case 16: return "203";
+                    case 17: return "300";
+                    case 18: return "400";
+                    case 19: return "500";
+                    case 20: return "900";
+
+                    default: throw new Exception();
+                }
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Erro na conversão do campo CST.", exc);
             }
         }
 

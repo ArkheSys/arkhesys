@@ -432,7 +432,7 @@ namespace Aplicacao
         protected override void InitializeChildComponents()
         {
             InitializeComponent();
-            //lkpCFOP.OnIDChanged += new EventHandler(lkpCFOP_IDChanged);
+            lkpCFOP.OnIDChanged += new EventHandler(lkpCFOP_IDChanged);
             AtribuiTags();
 
             InitializeComboBox(cbViaTransp, typeof(NotaItem.ViaTranspType));
@@ -471,8 +471,15 @@ namespace Aplicacao
             groupCONFINS.Tag = Selecionado;
             groupAdicao.Tag = Selecionado;
             
-            //lkbCFOP.SubForm = new FormTabelaCFOP();
-            //lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
+            gcAdicoesNotaItem.Tag = Selecionado;
+            tpExportacao.Tag = Selecionado;
+            gcImei.Tag = Selecionado;
+            tpImei.Tag = Selecionado;
+            gcRateio_NotaItems.Tag = Selecionado;
+            tpPIS_COFINS.Tag = Selecionado;
+
+            lkbCFOP.SubForm = new FormTabelaCFOP();
+            lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
 
             //btnIncluirRateio.SubForm = new FormRateioNotaItem(Selecionado);
             //var formAdicao = new FormAdicaoNotaItem(Selecionado);
@@ -562,7 +569,7 @@ namespace Aplicacao
                         txtValor.Properties.Mask.EditMask = "N2";
                     }
 
-                    LiberaCamposTributacaoParaEdicao();
+                    //LiberaCamposTributacaoParaEdicao();
                     if (!logicaTelaNotaItem.validaUnidadeEntrada(_produto, _produto.UnidadeEntrada.Sigla))
                     {
                         MessageBox.Show("Não foi encontrada conversão de " + _produto.UnidadeEntrada.Sigla + " para " + _produto.Unidade.Sigla + " Verifique a unidade de entrada do produto, ou cadastre a conversão no cadastro de Conversão de Unidades!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -621,7 +628,15 @@ namespace Aplicacao
                 }
                 else
                 {
-                    cbIcmsCst.SelectedIndex = notaItem.Produto.Tributacao;
+                    if (notaItem.Produto != null)
+                    {
+                        cbIcmsCst.SelectedIndex = notaItem.Produto.Tributacao;
+                    }
+                    else
+                    {
+                        cbIcmsCst.SelectedIndex = -1;
+                    }
+                    
                     cbCsosn.SelectedIndex = ConversorCsts.TributacaoParaIndice(notaItem.TAG_CST);
                 }
 
@@ -629,7 +644,7 @@ namespace Aplicacao
                 cbCofinsCst.SelectedIndex = ConversorCsts.CstCofinsParaIndice(notaItem.CST_Cofins);
                 cbIpiCst.SelectedIndex = ConversorCsts.CstIpiParaIndice(notaItem.CST_Ipi);
 
-                lkpCFOP.EditValue = notaItem.CFOP;
+                lkpCFOP.EditValue = $"{notaItem.CFOP.CFOP} | {notaItem.CFOP.Nome}";
                 lkpTexto.EditValue = notaItem.Texto;
             }
             catch { }
@@ -701,7 +716,7 @@ namespace Aplicacao
             txtP03_vDespAdu.EditValue = notaItem.P03_vDespAdu;
             txtP04_vII.EditValue = notaItem.P04_vII;
             txtP05_vIOF.EditValue = notaItem.P05_vIOF;
-            lkpCFOP.EditValue = notaItem.CFOP;
+            //lkpCFOP.EditValue = $"{notaItem.CFOP.CFOP} | {notaItem.CFOP.Nome}";
             lkpTexto.EditValue = notaItem.Texto;
             notaItem.AliqICMSNormal = notaItem.AliqICMS;
 
@@ -1762,12 +1777,12 @@ namespace Aplicacao
 
         private void lkbCFOP_Click(object sender, EventArgs e)
         {
-            var grid = new GridGenerica<TextoLei>(TextoLeiController.Instancia.GetAll(), new FormTextoLei(), (TextoLei)lkpTexto.Selecionado, false);
+            var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOP.Selecionado, false);
             grid.Selecionando = true;
             if (cwkControleUsuario.Facade.ControleAcesso(grid))
                 grid.ShowDialog();
 
-            lkpTexto.EditValue = grid.Selecionado;
+            lkpCFOP.EditValue = grid.Selecionado;
         }
     }
 }

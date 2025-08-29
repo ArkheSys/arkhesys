@@ -124,65 +124,65 @@ namespace cwkGestao.Negocio.Tributacao
 
         public void CalculaPis()
         {
-            if (EhParaCalcularPis(_tributavel.PisCST))
-            {
-                _tributavel.PisBaseCalculo = _tributavel.BaseCalculoGeral;
-                _tributavel.PisValor = CalcularValorAliquota(_tributavel.PisBaseCalculo, _tributavel.PisAliquota);
-            }
-            else
-            {
+            //if (EhParaCalcularPis(_tributavel.PisCST))
+            //{
+            //    _tributavel.PisBaseCalculo = _tributavel.BaseCalculoGeral;
+            //    _tributavel.PisValor = CalcularValorAliquota(_tributavel.PisBaseCalculo, _tributavel.PisAliquota);
+            //}
+            //else
+            //{
                 _tributavel.PisAliquota = 0;
                 _tributavel.PisBaseCalculo = 0;
                 _tributavel.PisValor = 0;
-            }
+            //}
         }
 
         public void CalculaIpi()
         {
-            if (EhParaCalcularIpi(_tributavel.IpiCST))
-            {
-                _tributavel.IpiBaseCalculo = _tributavel.BaseCalculoGeral;
-                _tributavel.IpiValor = CalcularValorAliquota(_tributavel.IpiBaseCalculo, _tributavel.IpiAliquota);
+            //if (EhParaCalcularIpi(_tributavel.IpiCST))
+            //{
+            //    _tributavel.IpiBaseCalculo = _tributavel.BaseCalculoGeral;
+            //    _tributavel.IpiValor = CalcularValorAliquota(_tributavel.IpiBaseCalculo, _tributavel.IpiAliquota);
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 _tributavel.IpiAliquota = 0;
                 _tributavel.IpiBaseCalculo = 0;
                 _tributavel.IpiValor = 0;
-            }
+            //}
         }
 
         public void CalculaCofins()
         {
-            if (EhParaCalcularCofins(_tributavel.CofinsCST))
-            {
-                _tributavel.CofinsBaseCalculo = _tributavel.BaseCalculoGeral;
-                _tributavel.CofinsValor = CalcularValorAliquota(_tributavel.CofinsBaseCalculo, _tributavel.CofinsAliquota);
-            }
-            else
-            {
+            //if (EhParaCalcularCofins(_tributavel.CofinsCST))
+            //{
+            //    _tributavel.CofinsBaseCalculo = _tributavel.BaseCalculoGeral;
+            //    _tributavel.CofinsValor = CalcularValorAliquota(_tributavel.CofinsBaseCalculo, _tributavel.CofinsAliquota);
+            //}
+            //else
+            //{
                 _tributavel.CofinsAliquota = 0;
                 _tributavel.CofinsBaseCalculo = 0;
                 _tributavel.CofinsValor = 0;
-            }
+            //}
         }
 
         public void CalculaCredito()
         {
-            if (_tributavel.EmpresaST == EmpresaST.Simples && EhParaCalcularCredito(_tributavel.IcmsCST))
-            {
-                decimal percentualReduzido = this.ReduzirBaseCalculo(_tributavel.CreditoPercentual, _tributavel.CreditoReducaoBasePercentual);
-                _tributavel.CreditoPercentualReduzido = percentualReduzido;
-                _tributavel.CreditoValor = this.CalcularValorAliquota(_tributavel.BaseCalculoGeral, percentualReduzido);
-            }
-            else
-            {
+            //if (_tributavel.EmpresaST == EmpresaST.Simples && EhParaCalcularCredito(_tributavel.IcmsCST))
+            //{
+            //    decimal percentualReduzido = this.ReduzirBaseCalculo(_tributavel.CreditoPercentual, _tributavel.CreditoReducaoBasePercentual);
+            //    _tributavel.CreditoPercentualReduzido = percentualReduzido;
+            //    _tributavel.CreditoValor = this.CalcularValorAliquota(_tributavel.BaseCalculoGeral, percentualReduzido);
+            //}
+            //else
+            //{
                 _tributavel.CreditoPercentual = 0;
                 _tributavel.CreditoReducaoBasePercentual = 0;
                 _tributavel.CreditoPercentualReduzido = 0;
                 _tributavel.CreditoValor = 0;
-            }
+            //}
         }
 
         private bool EhParaCalcularCredito(string cstIcms)

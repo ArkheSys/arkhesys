@@ -479,14 +479,14 @@ namespace cwkGestao.Negocio
             nota.NotaItems.Add(notaItem);
             nItem = notaItem;
             AtualizarTotalProduto();
-            if (notaItem.Ent_Sai == 2 && !notaItem.CFOP.BDevolucao)
-            {
+            //if (notaItem.Ent_Sai == 2 && !notaItem.CFOP.BDevolucao)
+            //{
                 RefazerRateiosEAtualizarImpostos();
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 NotaICMSController.Instancia.AtualizarICMS(nota);
-            }
+            //}
             AtualizaTotalNotaFiscal();
         }
 

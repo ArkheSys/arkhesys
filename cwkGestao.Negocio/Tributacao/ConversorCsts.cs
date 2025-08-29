@@ -39,9 +39,16 @@ namespace cwkGestao.Negocio.Tributacao
         public enum ModeloNota { Modelo1, NFe }
         public enum STEmpresa { RegimeSimples, RegimeNormal }
 
+
+        
+        public static string IndiceParaTAG_CSTTributacao(int? indiceCST)
+        {
+            return cwkGestao.Repositorio.Util.ConversorCsts.ConverterIndiceParaTAG_CSTTributacao(indiceCST);
+        }
         public static string IndiceParaTributacao(int? indiceCST, int? indiceCSOSN, ModeloNota modeloNota, STEmpresa simplesNacional, bool temST)
         {
             return cwkGestao.Repositorio.Util.ConversorCsts.ConverterIndiceParaTributacao(indiceCST, indiceCSOSN, ((cwkGestao.Repositorio.Util.ConversorCsts.ModeloNota)(int)modeloNota),((cwkGestao.Repositorio.Util.ConversorCsts.STEmpresa)(int)simplesNacional), temST);
+            //return cwkGestao.Repositorio.Util.ConversorCsts.ConverterIndiceParaTributacao(indiceCST);
         }
 
         public static int TributacaoParaIndice(string tributacao)
