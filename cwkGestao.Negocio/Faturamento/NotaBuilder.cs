@@ -638,7 +638,8 @@ namespace cwkGestao.Negocio.Faturamento
 
         private static void SetaCamposCofins(NotaItem notaItem)
         {
-            notaItem.Produto.PCOFINS_S08 = notaItem.Produto.PerfilPisCofins.AliquotaCOFINS;
+            notaItem.CST_Cofins = notaItem.Produto.PerfilPisCofins.SaiPisCofinsNaturezaOperacao.TabelaCOFINS.COFINS;
+            notaItem.PCOFINS_S08 = notaItem.Produto.PerfilPisCofins.AliquotaCOFINS;
             NCM ncm = null;
             try
             {
@@ -650,45 +651,45 @@ namespace cwkGestao.Negocio.Faturamento
                 ncm = null;
             }
 
-            if (notaItem.Nota.Ent_Sai == InOutType.Saída)
-            {
-                if (notaItem.Produto.PCOFINS_S08 != 0)
-                {
-                    notaItem.PCOFINS_S08 = notaItem.Produto.PCOFINS_S08;
-                }
-                else
-                {
-                    if (notaItem.Produto.NCM != null && ncm != null)
-                    {
-                        notaItem.PCOFINS_S08 = ncm.Cofins;
+            //if (notaItem.Nota.Ent_Sai == InOutType.Saída)
+            //{
+            //    if (notaItem.Produto.PCOFINS_S08 != 0)
+            //    {
+            //        notaItem.PCOFINS_S08 = notaItem.Produto.PCOFINS_S08;
+            //    }
+            //    else
+            //    {
+            //        if (notaItem.Produto.NCM != null && ncm != null)
+            //        {
+            //            notaItem.PCOFINS_S08 = ncm.Cofins;
 
-                        //Validação apenas para quando o cst começa com 01, que tem apenas 1 dígito por ser um inteiro.
-                        if (ncm.CST_Cofins.ToString().Length == 1)
-                            notaItem.CST_Cofins = "0" + ncm.CST_Cofins.ToString();
-                        else
-                            notaItem.CST_Cofins = ncm.CST_Cofins.ToString();
-                    }
-                    else
-                    {
-                        notaItem.PCOFINS_S08 = 0;
-                        if (ncm != null)
-                        {
-                            if (ncm.CST_Cofins.ToString().Length == 1)
-                                notaItem.CST_Cofins = "0" + ncm.CST_Cofins.ToString();
-                            else
-                                notaItem.CST_Cofins = ncm.CST_Cofins.ToString();
-                        }
-                        else
-                        {
-                            notaItem.CST_Cofins = notaItem.Produto.CST_Cofins.ToString(); ;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                notaItem.PCOFINS_S08 = notaItem.Produto.PCOFINS_S08;
-            }
+            //            //Validação apenas para quando o cst começa com 01, que tem apenas 1 dígito por ser um inteiro.
+            //            if (ncm.CST_Cofins.ToString().Length == 1)
+            //                notaItem.CST_Cofins = "0" + ncm.CST_Cofins.ToString();
+            //            else
+            //                notaItem.CST_Cofins = ncm.CST_Cofins.ToString();
+            //        }
+            //        else
+            //        {
+            //            notaItem.PCOFINS_S08 = 0;
+            //            if (ncm != null)
+            //            {
+            //                if (ncm.CST_Cofins.ToString().Length == 1)
+            //                    notaItem.CST_Cofins = "0" + ncm.CST_Cofins.ToString();
+            //                else
+            //                    notaItem.CST_Cofins = ncm.CST_Cofins.ToString();
+            //            }
+            //            else
+            //            {
+            //                notaItem.CST_Cofins = notaItem.Produto.CST_Cofins.ToString(); ;
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    notaItem.PCOFINS_S08 = notaItem.Produto.PCOFINS_S08;
+            //}
         }
 
         private static void SetaCamposPis(NotaItem notaItem)
@@ -702,46 +703,48 @@ namespace cwkGestao.Negocio.Faturamento
             {
                 ncm = null;
             }
-            if (notaItem.Nota.Ent_Sai == InOutType.Saída)
-            {
-                if (notaItem.Produto.PPIS_Q08 != 0)
-                {
-                    notaItem.PPIS_Q08 = notaItem.Produto.PPIS_Q08;
-                }
-                else
-                {
-                    if (notaItem.Produto.NCM != null && ncm != null)
-                    {
+            notaItem.CST_Pis = notaItem.Produto.PerfilPisCofins.SaiPisCofinsNaturezaOperacao.TabelaPIS.PIS;
+            notaItem.PPIS_Q08 = notaItem.Produto.PerfilPisCofins.AliquotaPIS;
+            //if (notaItem.Nota.Ent_Sai == InOutType.Saída)
+            //{
+            //    if (notaItem.Produto.PPIS_Q08 != 0)
+            //    {
+            //        notaItem.PPIS_Q08 = notaItem.Produto.PPIS_Q08;
+            //    }
+            //    else
+            //    {
+            //        if (notaItem.Produto.NCM != null && ncm != null)
+            //        {
 
-                        notaItem.PPIS_Q08 = ncm.Pis;
+            //            notaItem.PPIS_Q08 = ncm.Pis;
 
-                        if (ncm.CST_Pis.ToString().Length == 1)
-                            notaItem.CST_Pis = "0" + ncm.CST_Pis.ToString();
-                        else
-                            notaItem.CST_Pis = ncm.CST_Pis.ToString();
+            //            if (ncm.CST_Pis.ToString().Length == 1)
+            //                notaItem.CST_Pis = "0" + ncm.CST_Pis.ToString();
+            //            else
+            //                notaItem.CST_Pis = ncm.CST_Pis.ToString();
 
-                    }
-                    else
-                    {
-                        notaItem.PPIS_Q08 = 0;
-                        if (ncm != null)
-                        {
-                            if (ncm.CST_Pis.ToString().Length == 1)
-                                notaItem.CST_Pis = "0" + ncm.CST_Pis.ToString();
-                            else
-                                notaItem.CST_Pis = ncm.CST_Pis.ToString();
-                        }
-                        else
-                        {
-                            notaItem.CST_Pis = notaItem.Produto.CST_Pis.ToString(); ;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                notaItem.PPIS_Q08 = notaItem.Produto.PPIS_Q08;
-            }
+            //        }
+            //        else
+            //        {
+            //            notaItem.PPIS_Q08 = 0;
+            //            if (ncm != null)
+            //            {
+            //                if (ncm.CST_Pis.ToString().Length == 1)
+            //                    notaItem.CST_Pis = "0" + ncm.CST_Pis.ToString();
+            //                else
+            //                    notaItem.CST_Pis = ncm.CST_Pis.ToString();
+            //            }
+            //            else
+            //            {
+            //                notaItem.CST_Pis = notaItem.Produto.CST_Pis.ToString(); ;
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    notaItem.PPIS_Q08 = notaItem.Produto.PPIS_Q08;
+            //}
         }
 
         private static void SetaCamposIpi(NotaItem notaItem)
