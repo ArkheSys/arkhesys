@@ -533,6 +533,7 @@ namespace Aplicacao
                     }
 
                     _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID, this.PessoaSelecionada.PerfilTributarioCliente.ID);
+                    _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = null;
 
                     if (_produto.ClassificacaoFiscal.ImpostosTributos == null)
                     {
@@ -550,7 +551,22 @@ namespace Aplicacao
                         _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisForaEstado;
                     }
 
-                    
+
+                    if (!dentroDoEstado)
+                    {
+                        if ((_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens != null)&&
+                            (_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Count > 0))
+                        {
+
+                            var temExcessao = _produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Where(esse => esse.UF.Sigla == PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla).ToList();
+                            if (temExcessao.Count > 0)
+                            {
+                                _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = temExcessao[0];
+                            }
+                            
+                        }
+                    }
+
 
                     if (ProdutoSelecionado.Inativo)
                     {
