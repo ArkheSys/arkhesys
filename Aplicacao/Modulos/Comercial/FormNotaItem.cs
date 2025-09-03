@@ -478,8 +478,8 @@ namespace Aplicacao
             gcRateio_NotaItems.Tag = Selecionado;
             tpPIS_COFINS.Tag = Selecionado;
 
-            lkbCFOP.SubForm = new FormTabelaCFOP();
-            lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
+            //lkbCFOP.SubForm = new FormTabelaCFOP();
+            //lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
 
             //btnIncluirRateio.SubForm = new FormRateioNotaItem(Selecionado);
             //var formAdicao = new FormAdicaoNotaItem(Selecionado);
@@ -1777,12 +1777,12 @@ namespace Aplicacao
 
         private void lkbCFOP_Click(object sender, EventArgs e)
         {
-            var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOP.Selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
+            //var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOP.Selecionado, false);
+            //grid.Selecionando = true;
+            //if (cwkControleUsuario.Facade.ControleAcesso(grid))
+            //    grid.ShowDialog();
 
-            lkpCFOP.EditValue = grid.Selecionado;
+            //lkpCFOP.EditValue = grid.Selecionado;
         }
     }
 }
