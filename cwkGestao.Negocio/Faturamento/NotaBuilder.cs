@@ -758,45 +758,49 @@ namespace cwkGestao.Negocio.Faturamento
             {
                 ncm = null;
             }
-            if (notaItem.Nota.Ent_Sai == InOutType.Saída)
-            {
-                if (notaItem.Produto.AliquotaIPI != 0)
-                {
-                    notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
-                }
-                else
-                {
-                    if (notaItem.Produto.NCM != null && ncm != null)
-                    {
 
-                        notaItem.PIPI_O13 = ncm.Ipi;
+            notaItem.CST_Ipi = ConversorCsts.IndiceParaCstIpi(notaItem.Produto.CST_IPI);
+            notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
 
-                        if (ncm.CST_Ipi.ToString().Length == 1)
-                            notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
-                        else
-                            notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
-                    }
-                    else
-                    {
-                        notaItem.PIPI_O13 = 0;
-                        if (ncm != null)
-                        {
-                            if (ncm.CST_Ipi.ToString().Length == 1)
-                                notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
-                            else
-                                notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
-                        }
-                        else
-                        {
-                            notaItem.CST_Ipi = notaItem.Produto.CST_IPI.ToString(); ;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
-            }
+            //if (notaItem.Nota.Ent_Sai == InOutType.Saída)
+            //{
+            //    if (notaItem.Produto.AliquotaIPI != 0)
+            //    {
+            //        notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
+            //    }
+            //    else
+            //    {
+            //        if (notaItem.Produto.NCM != null && ncm != null)
+            //        {
+
+            //            notaItem.PIPI_O13 = ncm.Ipi;
+
+            //            if (ncm.CST_Ipi.ToString().Length == 1)
+            //                notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
+            //            else
+            //                notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
+            //        }
+            //        else
+            //        {
+            //            notaItem.PIPI_O13 = 0;
+            //            if (ncm != null)
+            //            {
+            //                if (ncm.CST_Ipi.ToString().Length == 1)
+            //                    notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
+            //                else
+            //                    notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
+            //            }
+            //            else
+            //            {
+            //                notaItem.CST_Ipi = notaItem.Produto.CST_IPI.ToString();
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
+            //}
         }
 
         private static void SetaCamposIcms(NotaItem notaItem)
