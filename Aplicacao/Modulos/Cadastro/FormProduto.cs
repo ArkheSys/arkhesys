@@ -658,7 +658,8 @@ namespace Aplicacao
             else
                 txtCodigo.CwkMascara = null;
 
-            produtoComCincoFornecedores(ConfiguracaoController.Instancia.GetAll()[0].CincoFornec);
+            //produtoComCincoFornecedores(ConfiguracaoController.Instancia.GetAll()[0].CincoFornec);
+            produtoComCincoFornecedores(false);
 
             validacaoCampoDataFornec();
         }

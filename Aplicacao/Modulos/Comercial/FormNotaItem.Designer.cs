@@ -92,6 +92,7 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.groupICMS = new DevExpress.XtraEditors.GroupControl();
+            this.lkpCFOP = new Cwork.Utilitarios.Componentes.Lookup();
             this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
             this.cbMotivoICMSDesoneracao = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtValorICMSDeson = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
@@ -119,7 +120,6 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lkbCFOP = new Cwork.Utilitarios.Componentes.LookupButton();
             this.cbFCI = new DevExpress.XtraEditors.LookUpEdit();
             this.tpPIS_COFINS = new DevExpress.XtraTab.XtraTabPage();
             this.groupPIS = new DevExpress.XtraEditors.GroupControl();
@@ -209,7 +209,6 @@
             this.btnExcluirImei = new Cwork.Utilitarios.Componentes.DevButton();
             this.btnIncluirImei = new Cwork.Utilitarios.Componentes.DevButton();
             this.btnAlterarImei = new Cwork.Utilitarios.Componentes.DevButton();
-            this.lkpCFOP = new Cwork.Utilitarios.Componentes.Lookup();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -266,6 +265,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbIpiCst.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupICMS)).BeginInit();
             this.groupICMS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMotivoICMSDesoneracao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMSDeson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFCI.Properties)).BeginInit();
@@ -334,7 +334,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
@@ -1337,13 +1336,54 @@
             this.groupICMS.Controls.Add(this.labelControl5);
             this.groupICMS.Controls.Add(this.labelControl4);
             this.groupICMS.Controls.Add(this.labelControl3);
-            this.groupICMS.Controls.Add(this.lkbCFOP);
             this.groupICMS.Controls.Add(this.cbFCI);
             this.groupICMS.Location = new System.Drawing.Point(9, 6);
             this.groupICMS.Name = "groupICMS";
             this.groupICMS.Size = new System.Drawing.Size(599, 149);
             this.groupICMS.TabIndex = 21;
             this.groupICMS.Text = "ICMS";
+            // 
+            // lkpCFOP
+            // 
+            this.lkpCFOP.ButtonLookup = null;
+            this.lkpCFOP.CamposPesquisa = new string[] {
+        "CFOP",
+        "Nome"};
+            this.lkpCFOP.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesAND")));
+            this.lkpCFOP.CamposRestricoesNOT = null;
+            this.lkpCFOP.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesOR")));
+            this.lkpCFOP.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpCFOP.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpCFOP.ContextoLinq = null;
+            this.lkpCFOP.CwkFuncaoValidacao = null;
+            this.lkpCFOP.CwkMascara = null;
+            this.lkpCFOP.CwkValidacao = null;
+            this.lkpCFOP.Exemplo = null;
+            this.lkpCFOP.ID = 0;
+            this.lkpCFOP.Join = null;
+            this.lkpCFOP.Key = System.Windows.Forms.Keys.F5;
+            this.lkpCFOP.Location = new System.Drawing.Point(101, 23);
+            this.lkpCFOP.Name = "lkpCFOP";
+            this.lkpCFOP.OnIDChanged = null;
+            this.lkpCFOP.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpCFOP.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpCFOP.SelecionarTextoOnEnter = true;
+            this.lkpCFOP.Size = new System.Drawing.Size(216, 20);
+            this.lkpCFOP.Tabela = null;
+            this.lkpCFOP.TabIndex = 28;
+            this.lkpCFOP.TituloTelaPesquisa = null;
+            this.lkpCFOP.ToolTip = "Campos pesquisados: CFOP, Nome.";
+            this.lkpCFOP.Where = null;
             // 
             // labelControl35
             // 
@@ -1673,20 +1713,6 @@
             this.labelControl3.Size = new System.Drawing.Size(52, 13);
             this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "Base Icms:";
-            // 
-            // lkbCFOP
-            // 
-            this.lkbCFOP.Location = new System.Drawing.Point(323, 23);
-            this.lkbCFOP.Lookup = null;
-            this.lkbCFOP.Name = "lkbCFOP";
-            this.lkbCFOP.Size = new System.Drawing.Size(24, 20);
-            this.lkbCFOP.SubForm = null;
-            this.lkbCFOP.SubFormType = null;
-            this.lkbCFOP.SubFormTypeParams = null;
-            this.lkbCFOP.TabIndex = 2;
-            this.lkbCFOP.TabStop = false;
-            this.lkbCFOP.Text = "...";
-            this.lkbCFOP.Click += new System.EventHandler(this.lkbCFOP_Click);
             // 
             // cbFCI
             // 
@@ -3132,48 +3158,6 @@
             this.btnAlterarImei.TabStop = false;
             this.btnAlterarImei.Text = "&Alterar";
             // 
-            // lkpCFOP
-            // 
-            this.lkpCFOP.ButtonLookup = null;
-            this.lkpCFOP.CamposPesquisa = new string[] {
-        "CFOP",
-        "Nome"};
-            this.lkpCFOP.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesAND")));
-            this.lkpCFOP.CamposRestricoesNOT = null;
-            this.lkpCFOP.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesOR")));
-            this.lkpCFOP.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
-        null,
-        null,
-        null};
-            this.lkpCFOP.ColunaTamanho = new string[] {
-        "50",
-        "20",
-        null,
-        null,
-        null};
-            this.lkpCFOP.ContextoLinq = null;
-            this.lkpCFOP.CwkFuncaoValidacao = null;
-            this.lkpCFOP.CwkMascara = null;
-            this.lkpCFOP.CwkValidacao = null;
-            this.lkpCFOP.Exemplo = null;
-            this.lkpCFOP.ID = 0;
-            this.lkpCFOP.Join = null;
-            this.lkpCFOP.Key = System.Windows.Forms.Keys.F5;
-            this.lkpCFOP.Location = new System.Drawing.Point(101, 23);
-            this.lkpCFOP.Name = "lkpCFOP";
-            this.lkpCFOP.OnIDChanged = null;
-            this.lkpCFOP.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpCFOP.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpCFOP.SelecionarTextoOnEnter = true;
-            this.lkpCFOP.Size = new System.Drawing.Size(216, 20);
-            this.lkpCFOP.Tabela = null;
-            this.lkpCFOP.TabIndex = 28;
-            this.lkpCFOP.TituloTelaPesquisa = null;
-            this.lkpCFOP.ToolTip = "Campos pesquisados: CFOP, Nome.";
-            this.lkpCFOP.Where = null;
-            // 
             // FormNotaItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3246,6 +3230,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupICMS)).EndInit();
             this.groupICMS.ResumeLayout(false);
             this.groupICMS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMotivoICMSDesoneracao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValorICMSDeson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFCI.Properties)).EndInit();
@@ -3319,7 +3304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3400,7 +3384,6 @@
         private DevExpress.XtraEditors.GroupControl groupICMS;
         private DevExpress.XtraEditors.TextEdit lkpFCI;
         private DevExpress.XtraEditors.LabelControl lbFCI;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbCFOP;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtValorRetidoICMS;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtValorICMS;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtAliqICMS;

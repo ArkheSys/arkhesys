@@ -758,45 +758,49 @@ namespace cwkGestao.Negocio.Faturamento
             {
                 ncm = null;
             }
-            if (notaItem.Nota.Ent_Sai == InOutType.Saída)
-            {
-                if (notaItem.Produto.AliquotaIPI != 0)
-                {
-                    notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
-                }
-                else
-                {
-                    if (notaItem.Produto.NCM != null && ncm != null)
-                    {
 
-                        notaItem.PIPI_O13 = ncm.Ipi;
+            notaItem.CST_Ipi = ConversorCsts.IndiceParaCstIpi(notaItem.Produto.CST_IPI);
+            notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
 
-                        if (ncm.CST_Ipi.ToString().Length == 1)
-                            notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
-                        else
-                            notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
-                    }
-                    else
-                    {
-                        notaItem.PIPI_O13 = 0;
-                        if (ncm != null)
-                        {
-                            if (ncm.CST_Ipi.ToString().Length == 1)
-                                notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
-                            else
-                                notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
-                        }
-                        else
-                        {
-                            notaItem.CST_Ipi = notaItem.Produto.CST_IPI.ToString(); ;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
-            }
+            //if (notaItem.Nota.Ent_Sai == InOutType.Saída)
+            //{
+            //    if (notaItem.Produto.AliquotaIPI != 0)
+            //    {
+            //        notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
+            //    }
+            //    else
+            //    {
+            //        if (notaItem.Produto.NCM != null && ncm != null)
+            //        {
+
+            //            notaItem.PIPI_O13 = ncm.Ipi;
+
+            //            if (ncm.CST_Ipi.ToString().Length == 1)
+            //                notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
+            //            else
+            //                notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
+            //        }
+            //        else
+            //        {
+            //            notaItem.PIPI_O13 = 0;
+            //            if (ncm != null)
+            //            {
+            //                if (ncm.CST_Ipi.ToString().Length == 1)
+            //                    notaItem.CST_Ipi = "0" + ncm.CST_Ipi.ToString();
+            //                else
+            //                    notaItem.CST_Ipi = ncm.CST_Ipi.ToString();
+            //            }
+            //            else
+            //            {
+            //                notaItem.CST_Ipi = notaItem.Produto.CST_IPI.ToString();
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    notaItem.PIPI_O13 = notaItem.Produto.AliquotaIPI;
+            //}
         }
 
         private static void SetaCamposIcms(NotaItem notaItem)
@@ -804,41 +808,63 @@ namespace cwkGestao.Negocio.Faturamento
             //IcmsBase tributacaoIcmsOriginal = NotaItemController.Instancia.RecuperaIcmsOriginal(notaItem);
 
             var impostostributos = notaItem.Produto.ClassificacaoFiscal.ImpostosTributos;
-
-            notaItem.pICMSInter = impostostributos.PIcmsInterno;
-            notaItem.AliqICMS = impostostributos.PIcmsInterno;
-            notaItem.ReducaoImposto = impostostributos.PReducaoIcms;
-            notaItem.PRedBC_N14 = impostostributos.PReducaoIcms;
-
-
-            notaItem.modBC_N13 = impostostributos.ModBaseCalculoIcms;
-            notaItem.modBCST_N18 = impostostributos.ModBaseCalculoIcms;
-
-            notaItem.AliquotaDiferimento = impostostributos.PDeferimento;
-            notaItem.AliqInterna = impostostributos.PIcmsInterno;
-            notaItem.CSOSN = Convert.ToInt32(ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms));
-            notaItem.PRedBCST_N20 = impostostributos.PReducaoIcmsST;
-            notaItem.PMVAST_N19 = impostostributos.PMVA;
-            notaItem.PICMSST_N22 = impostostributos.PReducaoIcmsST;
-
-            notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms); 
-            //TagCst(notaItem.Nota, tributacaoIcmsOriginal.CSOSN, notaItem.Nota.Filial, notaItem.Nota.Pessoa, tributacaoIcmsOriginal.Tributacao);
-
-
-            //SetaTabelaCfop(notaItem);
-
-            bool dentroDoEstado = notaItem.Nota.PessoaUF.IsNotNullOrEmpty()
-                ? notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.PessoaUF
-                : notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla;
-
-            if (dentroDoEstado)
+            if (impostostributos.UsarEssaExcessao != null)
             {
-                notaItem.CFOP = impostostributos.CfopDentroDoEstado;
+                notaItem.pICMSInter = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.AliqICMS = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.ReducaoImposto = impostostributos.UsarEssaExcessao.PReducaoIcms;
+                notaItem.PRedBC_N14 = impostostributos.UsarEssaExcessao.PReducaoIcms;
+
+
+                notaItem.modBC_N13 = impostostributos.ModBaseCalculoIcms;
+                notaItem.modBCST_N18 = impostostributos.ModBaseCalculoIcms;
+
+                notaItem.AliquotaDiferimento = impostostributos.UsarEssaExcessao.PDiferimento;
+                notaItem.AliqInterna = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.CSOSN = Convert.ToInt32(ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.UsarEssaExcessao.CSTCSOSNIcms));
+                notaItem.PRedBCST_N20 = impostostributos.UsarEssaExcessao.PReducaoIcmsSt;
+                notaItem.PMVAST_N19 = impostostributos.UsarEssaExcessao.PMva;
+                notaItem.PICMSST_N22 = impostostributos.UsarEssaExcessao.PIcmsSt;
+
+                notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.UsarEssaExcessao.CSTCSOSNIcms);
+                notaItem.CFOP = impostostributos.UsarEssaExcessao.TabelaCFOP;
+
             }
             else
             {
-                notaItem.CFOP = impostostributos.CfopForaDoEstado;
+
+                notaItem.pICMSInter = impostostributos.PIcmsInterno;
+                notaItem.AliqICMS = impostostributos.PIcmsInterno;
+                notaItem.ReducaoImposto = impostostributos.PReducaoIcms;
+                notaItem.PRedBC_N14 = impostostributos.PReducaoIcms;
+
+
+                notaItem.modBC_N13 = impostostributos.ModBaseCalculoIcms;
+                notaItem.modBCST_N18 = impostostributos.ModBaseCalculoIcms;
+
+                notaItem.AliquotaDiferimento = impostostributos.PDeferimento;
+                notaItem.AliqInterna = impostostributos.PIcmsInterno;
+                notaItem.CSOSN = Convert.ToInt32(ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms));
+                notaItem.PRedBCST_N20 = impostostributos.PReducaoIcmsST;
+                notaItem.PMVAST_N19 = impostostributos.PMVA;
+                notaItem.PICMSST_N22 = impostostributos.PReducaoIcmsST;
+
+                notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms);
+                bool dentroDoEstado = notaItem.Nota.PessoaUF.IsNotNullOrEmpty()
+                    ? notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.PessoaUF
+                    : notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla;
+
+                if (dentroDoEstado)
+                {
+                    notaItem.CFOP = impostostributos.CfopDentroDoEstado;
+                }
+                else
+                {
+                    notaItem.CFOP = impostostributos.CfopForaDoEstado;
+                }
+
             }
+
 
             //notaItem.BaseICMS
             notaItem.vICMSUFDest_NA15 = 0;

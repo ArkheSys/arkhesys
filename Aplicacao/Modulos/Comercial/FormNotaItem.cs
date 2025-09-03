@@ -478,8 +478,8 @@ namespace Aplicacao
             gcRateio_NotaItems.Tag = Selecionado;
             tpPIS_COFINS.Tag = Selecionado;
 
-            lkbCFOP.SubForm = new FormTabelaCFOP();
-            lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
+            //lkbCFOP.SubForm = new FormTabelaCFOP();
+            //lkbCFOP.SubFormType = typeof(FormTabelaCFOP);
 
             //btnIncluirRateio.SubForm = new FormRateioNotaItem(Selecionado);
             //var formAdicao = new FormAdicaoNotaItem(Selecionado);
@@ -533,6 +533,7 @@ namespace Aplicacao
                     }
 
                     _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID, this.PessoaSelecionada.PerfilTributarioCliente.ID);
+                    _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = null;
 
                     if (_produto.ClassificacaoFiscal.ImpostosTributos == null)
                     {
@@ -550,7 +551,22 @@ namespace Aplicacao
                         _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisForaEstado;
                     }
 
-                    
+
+                    if (!dentroDoEstado)
+                    {
+                        if ((_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens != null)&&
+                            (_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Count > 0))
+                        {
+
+                            var temExcessao = _produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Where(esse => esse.UF.Sigla == PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla).ToList();
+                            if (temExcessao.Count > 0)
+                            {
+                                _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = temExcessao[0];
+                            }
+                            
+                        }
+                    }
+
 
                     if (ProdutoSelecionado.Inativo)
                     {
@@ -1777,12 +1793,12 @@ namespace Aplicacao
 
         private void lkbCFOP_Click(object sender, EventArgs e)
         {
-            var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOP.Selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
+            //var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOP.Selecionado, false);
+            //grid.Selecionando = true;
+            //if (cwkControleUsuario.Facade.ControleAcesso(grid))
+            //    grid.ShowDialog();
 
-            lkpCFOP.EditValue = grid.Selecionado;
+            //lkpCFOP.EditValue = grid.Selecionado;
         }
     }
 }

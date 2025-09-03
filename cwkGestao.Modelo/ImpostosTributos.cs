@@ -52,6 +52,8 @@ namespace cwkGestao.Modelo
 
         public virtual IList<ImpostosTributosExcessoes> ImpostosTributosExcessoesItens { get; set; }
 
+        public virtual ImpostosTributosExcessoes UsarEssaExcessao { get; set; }
+
         public override string ToString()
         {
             return Descricao;
