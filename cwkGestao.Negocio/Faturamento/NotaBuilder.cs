@@ -828,7 +828,7 @@ namespace cwkGestao.Negocio.Faturamento
 
                 notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.UsarEssaExcessao.CSTCSOSNIcms);
                 notaItem.CFOP = impostostributos.UsarEssaExcessao.TabelaCFOP;
-
+                notaItem.InfAdicionais = impostostributos.UsarEssaExcessao.InfAdicionais;
             }
             else
             {

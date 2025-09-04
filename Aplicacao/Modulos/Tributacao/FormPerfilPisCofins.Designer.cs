@@ -73,8 +73,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.tabSaiGeral = new DevExpress.XtraTab.XtraTabPage();
             this.lkbSaiPisCofinsNaturezaOperacao = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpSaiPisCofinsNaturezaOperacao = new Cwork.Utilitarios.Componentes.Lookup();
-            this.cbeSaiNaturezaReceita = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.tabSaiAliquotaDiferenciada = new DevExpress.XtraTab.XtraTabPage();
             this.groupSaiCreditoAliquotaDiferenciada = new DevExpress.XtraEditors.GroupControl();
@@ -136,7 +134,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.xtraTabControl3.SuspendLayout();
             this.tabSaiGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkpSaiPisCofinsNaturezaOperacao.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
             this.tabSaiAliquotaDiferenciada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupSaiCreditoAliquotaDiferenciada)).BeginInit();
             this.groupSaiCreditoAliquotaDiferenciada.SuspendLayout();
@@ -692,8 +689,6 @@ namespace Aplicacao.Modulos.Tributacao
             // 
             this.tabSaiGeral.Controls.Add(this.lkbSaiPisCofinsNaturezaOperacao);
             this.tabSaiGeral.Controls.Add(this.lkpSaiPisCofinsNaturezaOperacao);
-            this.tabSaiGeral.Controls.Add(this.cbeSaiNaturezaReceita);
-            this.tabSaiGeral.Controls.Add(this.labelControl6);
             this.tabSaiGeral.Controls.Add(this.labelControl5);
             this.tabSaiGeral.Name = "tabSaiGeral";
             this.tabSaiGeral.Size = new System.Drawing.Size(710, 189);
@@ -730,55 +725,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.lkpSaiPisCofinsNaturezaOperacao.ColunaTamanho = new string[] {
         "150",
         "20"};
-            this.lkpSaiPisCofinsNaturezaOperacao.ContextoLinq = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.CwkFuncaoValidacao = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.CwkMascara = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpSaiPisCofinsNaturezaOperacao.Exemplo = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.ID = 0;
-            this.lkpSaiPisCofinsNaturezaOperacao.Join = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.Key = System.Windows.Forms.Keys.F5;
-            this.lkpSaiPisCofinsNaturezaOperacao.Location = new System.Drawing.Point(128, 22);
-            this.lkpSaiPisCofinsNaturezaOperacao.Name = "lkpSaiPisCofinsNaturezaOperacao";
-            this.lkpSaiPisCofinsNaturezaOperacao.OnIDChanged = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpSaiPisCofinsNaturezaOperacao.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpSaiPisCofinsNaturezaOperacao.SelecionarTextoOnEnter = true;
-            this.lkpSaiPisCofinsNaturezaOperacao.Size = new System.Drawing.Size(176, 20);
-            this.lkpSaiPisCofinsNaturezaOperacao.Tabela = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.TabIndex = 30;
-            this.lkpSaiPisCofinsNaturezaOperacao.TituloTelaPesquisa = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.ToolTip = "Campos pesquisados: Codigo, Descricao.";
-            this.lkpSaiPisCofinsNaturezaOperacao.Where = null;
-            this.lkpSaiPisCofinsNaturezaOperacao.EditValueChanged += new System.EventHandler(this.lkpPisCofinsNaturezaOperacao_EditValueChanged);
-            // 
-            // cbeSaiNaturezaReceita
-            // 
-            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(128, 64);
-            this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
-            this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeSaiNaturezaReceita.Properties.Items.AddRange(new object[] {
-            "01-Operação Tributável (Normal)",
-            "02-Operação Tributável (Diferenciada)",
-            "03-Operação Tributável",
-            "04-Operação Tributável (monofásica)",
-            "06-Operação Tributável (Aliq. Zero)",
-            "07-Operação Isenta da Contribuição",
-            "08-Operação Sem Incidência da Contribuição",
-            "09-Operação com Suspensão da Contribuição",
-            "99-Outras Operações"});
-            this.cbeSaiNaturezaReceita.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeSaiNaturezaReceita.Size = new System.Drawing.Size(176, 20);
-            this.cbeSaiNaturezaReceita.TabIndex = 21;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(17, 67);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(102, 13);
-            this.labelControl6.TabIndex = 4;
-            this.labelControl6.Text = "Natureza da Receita:";
             // 
             // labelControl5
             // 
@@ -1085,7 +1031,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.tabSaiGeral.ResumeLayout(false);
             this.tabSaiGeral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkpSaiPisCofinsNaturezaOperacao.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
             this.tabSaiAliquotaDiferenciada.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupSaiCreditoAliquotaDiferenciada)).EndInit();
             this.groupSaiCreditoAliquotaDiferenciada.ResumeLayout(false);
@@ -1141,7 +1086,6 @@ namespace Aplicacao.Modulos.Tributacao
         private DevExpress.XtraTab.XtraTabPage tabSaiGeral;
         private DevExpress.XtraTab.XtraTabPage tabSaiAliquotaDiferenciada;
         private DevExpress.XtraTab.XtraTabPage tabSaiUnidadeMedida;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.GroupControl groupSaiCreditoAliquotaDiferenciada;
         private Cwork.Utilitarios.Componentes.DevCalcEdit txtSaiAliquotaCOFINSDif;
@@ -1162,7 +1106,6 @@ namespace Aplicacao.Modulos.Tributacao
         private System.Windows.Forms.Label label9;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCodigo;
         private System.Windows.Forms.Label label8;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeSaiNaturezaReceita;
         private Cwork.Utilitarios.Componentes.LookupButton lkbUnidadeEntrada;
         private Cwork.Utilitarios.Componentes.Lookup lkpUnidadeEntrada;
         private Cwork.Utilitarios.Componentes.LookupButton lkbUnidadeSaida;

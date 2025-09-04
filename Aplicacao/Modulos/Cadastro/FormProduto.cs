@@ -1187,11 +1187,13 @@ namespace Aplicacao
             }
             else
             {
-                RedimensionaTelaFornecedorUnico(ref contador);
-                if (Size.Height != 650)
+                //contador = 0;
+                //RedimensionaTelaFornecedorUnico(ref contador);
+                if (Size.Height != 731)
                 {
-                    this.Size = new Size(776, 828);
-                    RedimencionaTela(-84);
+                    this.Size = new Size(776, 731);
+                    xtraTabControl1.Size = new Size(687, 602);
+                    RedimencionaTela(-97);
                 }
             }
 
@@ -1256,6 +1258,8 @@ namespace Aplicacao
             lbPerfilPisCofins.Location = new Point(lbPerfilPisCofins.Location.X, lbPerfilPisCofins.Location.Y + altura);
             lkpPerfilPisCofins.Location = new Point(lkpPerfilPisCofins.Location.X, lkpPerfilPisCofins.Location.Y + altura);
             lkbPerfilPisCofins.Location = new Point(lkbPerfilPisCofins.Location.X, lkbPerfilPisCofins.Location.Y + altura);
+            lbSaiNaturezaReceita.Location = new Point(lbSaiNaturezaReceita.Location.X, lbSaiNaturezaReceita.Location.Y + altura);
+            cbeSaiNaturezaReceita.Location = new Point(cbeSaiNaturezaReceita.Location.X, cbeSaiNaturezaReceita.Location.Y + altura);
 
             label60.Location = new Point(label60.Location.X, label60.Location.Y + altura);
             txtDataPromocionalInicial.Location = new Point(txtDataPromocionalInicial.Location.X, txtDataPromocionalInicial.Location.Y + altura);

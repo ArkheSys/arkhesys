@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabFoto = new DevExpress.XtraTab.XtraTabPage();
             this.ckbPrincipal = new System.Windows.Forms.CheckBox();
@@ -137,6 +137,8 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabDados = new DevExpress.XtraTab.XtraTabPage();
+            this.cbeSaiNaturezaReceita = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
+            this.lbSaiNaturezaReceita = new DevExpress.XtraEditors.LabelControl();
             this.lkbPerfilPisCofins = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpPerfilPisCofins = new Cwork.Utilitarios.Componentes.Lookup();
             this.lbPerfilPisCofins = new DevExpress.XtraEditors.LabelControl();
@@ -591,6 +593,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).BeginInit();
@@ -807,21 +810,21 @@
             // 
             this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
             this.sbAjuda.ImageOptions.ImageIndex = 0;
-            this.sbAjuda.Location = new System.Drawing.Point(12, 753);
+            this.sbAjuda.Location = new System.Drawing.Point(12, 748);
             this.sbAjuda.TabIndex = 1;
             // 
             // sbGravar
             // 
             this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
             this.sbGravar.ImageOptions.ImageIndex = 1;
-            this.sbGravar.Location = new System.Drawing.Point(592, 753);
+            this.sbGravar.Location = new System.Drawing.Point(592, 748);
             this.sbGravar.TabIndex = 2;
             // 
             // sbCancelar
             // 
             this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
             this.sbCancelar.ImageOptions.ImageIndex = 2;
-            this.sbCancelar.Location = new System.Drawing.Point(673, 753);
+            this.sbCancelar.Location = new System.Drawing.Point(673, 748);
             this.sbCancelar.TabIndex = 3;
             // 
             // imageList1
@@ -839,12 +842,12 @@
             // tpPrincipal
             // 
             this.tpPrincipal.Controls.Add(this.xtraTabControl1);
-            this.tpPrincipal.Size = new System.Drawing.Size(730, 729);
+            this.tpPrincipal.Size = new System.Drawing.Size(730, 724);
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
-            this.tcPrincipal.Size = new System.Drawing.Size(736, 735);
+            this.tcPrincipal.Size = new System.Drawing.Size(736, 730);
             // 
             // openFileDialog1
             // 
@@ -2580,6 +2583,8 @@
             // 
             // tabDados
             // 
+            this.tabDados.Controls.Add(this.cbeSaiNaturezaReceita);
+            this.tabDados.Controls.Add(this.lbSaiNaturezaReceita);
             this.tabDados.Controls.Add(this.lkbPerfilPisCofins);
             this.tabDados.Controls.Add(this.lkpPerfilPisCofins);
             this.tabDados.Controls.Add(this.lbPerfilPisCofins);
@@ -2690,9 +2695,37 @@
             this.tabDados.Size = new System.Drawing.Size(681, 666);
             this.tabDados.Text = "Dados";
             // 
+            // cbeSaiNaturezaReceita
+            // 
+            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(461, 558);
+            this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
+            this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbeSaiNaturezaReceita.Properties.Items.AddRange(new object[] {
+            "01-Operação Tributável (Normal)",
+            "02-Operação Tributável (Diferenciada)",
+            "03-Operação Tributável",
+            "04-Operação Tributável (monofásica)",
+            "06-Operação Tributável (Aliq. Zero)",
+            "07-Operação Isenta da Contribuição",
+            "08-Operação Sem Incidência da Contribuição",
+            "09-Operação com Suspensão da Contribuição",
+            "99-Outras Operações"});
+            this.cbeSaiNaturezaReceita.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbeSaiNaturezaReceita.Size = new System.Drawing.Size(176, 20);
+            this.cbeSaiNaturezaReceita.TabIndex = 105;
+            // 
+            // lbSaiNaturezaReceita
+            // 
+            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(350, 561);
+            this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
+            this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
+            this.lbSaiNaturezaReceita.TabIndex = 104;
+            this.lbSaiNaturezaReceita.Text = "Natureza da Receita:";
+            // 
             // lkbPerfilPisCofins
             // 
-            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(646, 557);
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(320, 557);
             this.lkbPerfilPisCofins.Lookup = null;
             this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
             this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
@@ -2739,7 +2772,7 @@
             this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lkpPerfilPisCofins.Properties.Appearance.Options.UseBackColor = true;
             this.lkpPerfilPisCofins.SelecionarTextoOnEnter = true;
-            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(532, 20);
+            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(209, 20);
             this.lkpPerfilPisCofins.Tabela = null;
             this.lkpPerfilPisCofins.TabIndex = 102;
             this.lkpPerfilPisCofins.TituloTelaPesquisa = null;
@@ -5826,9 +5859,9 @@
             // 
             this.gcArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gcArquivos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcArquivos.Location = new System.Drawing.Point(7, 3);
             this.gcArquivos.MainView = this.gvArquivos;
             this.gcArquivos.Name = "gcArquivos";
@@ -9328,7 +9361,7 @@
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(760, 789);
+            this.ClientSize = new System.Drawing.Size(760, 784);
             this.Name = "FormProduto";
             this.Shown += new System.EventHandler(this.FormProduto_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
@@ -9389,6 +9422,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.tabDados.ResumeLayout(false);
             this.tabDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).EndInit();
@@ -10118,5 +10152,7 @@
         private Cwork.Utilitarios.Componentes.LookupButton lkbClassificacaoFiscal;
         private Cwork.Utilitarios.Componentes.Lookup lkpClassificacaoFiscal;
         private DevExpress.XtraEditors.LabelControl lbClassificacaoFiscal;
+        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeSaiNaturezaReceita;
+        private DevExpress.XtraEditors.LabelControl lbSaiNaturezaReceita;
     }
 }

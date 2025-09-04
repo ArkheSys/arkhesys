@@ -34,8 +34,6 @@ namespace cwkGestao.Modelo
         public virtual decimal EntValorPis { get; set; }
         public virtual decimal EntValorCofins { get; set; }
 
-        public virtual string SaiNaturezaReceita { get; set; }
-
         public virtual decimal SaiAliquotaPISDif { get; set; }
         public virtual decimal SaiAliquotaCOFINSDif { get; set; }
 
