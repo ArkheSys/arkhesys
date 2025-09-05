@@ -696,7 +696,7 @@ namespace Aplicacao.Modulos.Tributacao
             // 
             // lkbSaiPisCofinsNaturezaOperacao
             // 
-            this.lkbSaiPisCofinsNaturezaOperacao.Location = new System.Drawing.Point(313, 22);
+            this.lkbSaiPisCofinsNaturezaOperacao.Location = new System.Drawing.Point(235, 32);
             this.lkbSaiPisCofinsNaturezaOperacao.Lookup = null;
             this.lkbSaiPisCofinsNaturezaOperacao.Name = "lkbSaiPisCofinsNaturezaOperacao";
             this.lkbSaiPisCofinsNaturezaOperacao.Size = new System.Drawing.Size(24, 20);
@@ -725,10 +725,28 @@ namespace Aplicacao.Modulos.Tributacao
             this.lkpSaiPisCofinsNaturezaOperacao.ColunaTamanho = new string[] {
         "150",
         "20"};
+            this.lkpSaiPisCofinsNaturezaOperacao.ContextoLinq = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.CwkFuncaoValidacao = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.CwkMascara = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.CwkValidacao = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.Exemplo = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.ID = 0;
+            this.lkpSaiPisCofinsNaturezaOperacao.Join = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.Key = System.Windows.Forms.Keys.F5;
+            this.lkpSaiPisCofinsNaturezaOperacao.Location = new System.Drawing.Point(62, 32);
+            this.lkpSaiPisCofinsNaturezaOperacao.Name = "lkpSaiPisCofinsNaturezaOperacao";
+            this.lkpSaiPisCofinsNaturezaOperacao.OnIDChanged = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.SelecionarTextoOnEnter = false;
+            this.lkpSaiPisCofinsNaturezaOperacao.Size = new System.Drawing.Size(167, 20);
+            this.lkpSaiPisCofinsNaturezaOperacao.Tabela = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.TabIndex = 32;
+            this.lkpSaiPisCofinsNaturezaOperacao.TituloTelaPesquisa = null;
+            this.lkpSaiPisCofinsNaturezaOperacao.ToolTip = "Campos pesquisados: Codigo, Descricao.";
+            this.lkpSaiPisCofinsNaturezaOperacao.Where = null;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(96, 25);
+            this.labelControl5.Location = new System.Drawing.Point(18, 35);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(23, 13);
             this.labelControl5.TabIndex = 2;
