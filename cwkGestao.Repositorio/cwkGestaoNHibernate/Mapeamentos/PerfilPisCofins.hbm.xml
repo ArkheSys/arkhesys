@@ -25,8 +25,6 @@
     <property name="EntValorPis" column="EntValorPis" type="decimal" />
     <property name="EntValorCofins" column="EntValorCofins" type="decimal" />
 
-    <property name="SaiNaturezaReceita" column="SaiNaturezaReceita" type="string"/>
-
     <property name="SaiAliquotaPISDif" column="SaiAliquotaPISDif" type="decimal" />
     <property name="SaiAliquotaCOFINSDif" column="SaiAliquotaCOFINSDif" type="decimal" />
     <many-to-one name="UnidadeSaida" column="IDUnidadeSaida" class="Unidade" lazy="false" />

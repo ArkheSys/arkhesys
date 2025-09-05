@@ -78,22 +78,6 @@ namespace Aplicacao.Modulos.Tributacao
             LookupUtil.GridLookup<PisCofinsNaturezaOperacao>(lkpSaiPisCofinsNaturezaOperacao, typeof(FormPisCofinsNaturezaOperacao));
         }
 
-        private void lkpPisCofinsNaturezaOperacao_EditValueChanged(object sender, EventArgs e)
-        {
-            var esse = (PisCofinsNaturezaOperacao)lkpSaiPisCofinsNaturezaOperacao.Selecionado;
-
-            if (esse != null)
-            {
-                cbeSaiNaturezaReceita.Properties.Items.Clear();
-
-                foreach (NaturezaOperacao itemNaturezaOperacao in esse.NaturezaOperacao)
-                {
-                    cbeSaiNaturezaReceita.Properties.Items.Add(itemNaturezaOperacao.Codigo + "-" + itemNaturezaOperacao.Descricao);
-                }
-                cbeSaiNaturezaReceita.SelectedIndex = 0;
-            }
-        }
-
         private void lkbEntPisCofinsNaturezaOperacao_Click(object sender, EventArgs e)
         {
             LookupUtil.GridLookup<PisCofinsNaturezaOperacao>(lkpEntPisCofinsNaturezaOperacao, typeof(FormPisCofinsNaturezaOperacao));

@@ -649,6 +649,7 @@ namespace cwkGestao.Modelo
         public virtual decimal PrecoBaseNovo { get; set; } // Não existe em banco, somente em tela
         public virtual bool Pesavel { get; set; }
         public virtual DateTime? DataValidade { get; set; }
+        public virtual string SaiNaturezaReceita { get; set; }
 
         [InformacaoExibicao(19, "Código Fabricante", 200)]
         public virtual string CodigoFabricante { get; set; }
