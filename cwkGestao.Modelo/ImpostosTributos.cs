@@ -43,7 +43,6 @@ namespace cwkGestao.Modelo
         public virtual bool IcmsFazBasePisCofins { get; set; }
 
         public virtual ClassificacaoFiscal ClassificacaoFiscal { get; set; }
-        public virtual TipoNota TipoNota { get; set; }
         public virtual PerfilTributarioCliente PerfilTributarioCliente { get; set; }
         
         public virtual TabelaCFOP CfopDentroDoEstado { get; set; }

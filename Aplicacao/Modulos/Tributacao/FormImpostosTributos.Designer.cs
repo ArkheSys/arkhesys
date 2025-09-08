@@ -37,9 +37,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.lkbPerfilTributarioCliente = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpPerfilTributarioCliente = new Cwork.Utilitarios.Componentes.Lookup();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.lkbTipoNota = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpTipoNota = new Cwork.Utilitarios.Componentes.Lookup();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.mInfAdicionaisDentroEstado = new Cwork.Utilitarios.Componentes.DevMemoEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.btnlkpCfopForaDoEstado = new Cwork.Utilitarios.Componentes.LookupButton();
@@ -98,7 +95,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.xtraTabControl1.SuspendLayout();
             this.tabDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilTributarioCliente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpTipoNota.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mInfAdicionaisDentroEstado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpCfopForaDoEstado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpCfopDentroDoEstado.Properties)).BeginInit();
@@ -211,9 +207,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.tabDadosPrincipais.Controls.Add(this.lkbPerfilTributarioCliente);
             this.tabDadosPrincipais.Controls.Add(this.lkpPerfilTributarioCliente);
             this.tabDadosPrincipais.Controls.Add(this.labelControl14);
-            this.tabDadosPrincipais.Controls.Add(this.lkbTipoNota);
-            this.tabDadosPrincipais.Controls.Add(this.lkpTipoNota);
-            this.tabDadosPrincipais.Controls.Add(this.labelControl13);
             this.tabDadosPrincipais.Controls.Add(this.mInfAdicionaisDentroEstado);
             this.tabDadosPrincipais.Controls.Add(this.label1);
             this.tabDadosPrincipais.Controls.Add(this.btnlkpCfopForaDoEstado);
@@ -319,64 +312,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.labelControl14.Size = new System.Drawing.Size(128, 13);
             this.labelControl14.TabIndex = 80;
             this.labelControl14.Text = "Perfil Tributário do Cliente:";
-            // 
-            // lkbTipoNota
-            // 
-            this.lkbTipoNota.Location = new System.Drawing.Point(422, 41);
-            this.lkbTipoNota.Lookup = null;
-            this.lkbTipoNota.Name = "lkbTipoNota";
-            this.lkbTipoNota.Size = new System.Drawing.Size(24, 20);
-            this.lkbTipoNota.SubForm = null;
-            this.lkbTipoNota.SubFormType = null;
-            this.lkbTipoNota.SubFormTypeParams = null;
-            this.lkbTipoNota.TabIndex = 79;
-            this.lkbTipoNota.TabStop = false;
-            this.lkbTipoNota.Text = "...";
-            this.lkbTipoNota.Click += new System.EventHandler(this.lkbTipoNota_Click);
-            // 
-            // lkpTipoNota
-            // 
-            this.lkpTipoNota.ButtonLookup = this.lkbTipoNota;
-            this.lkpTipoNota.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpTipoNota.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpTipoNota.CamposRestricoesAND")));
-            this.lkpTipoNota.CamposRestricoesNOT = null;
-            this.lkpTipoNota.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpTipoNota.CamposRestricoesOR")));
-            this.lkpTipoNota.ColunaDescricao = new string[] {
-        "Nome",
-        "Código"};
-            this.lkpTipoNota.ColunaTamanho = new string[] {
-        "100",
-        "20"};
-            this.lkpTipoNota.ContextoLinq = null;
-            this.lkpTipoNota.CwkFuncaoValidacao = null;
-            this.lkpTipoNota.CwkMascara = null;
-            this.lkpTipoNota.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpTipoNota.Exemplo = null;
-            this.lkpTipoNota.ID = 0;
-            this.lkpTipoNota.Join = null;
-            this.lkpTipoNota.Key = System.Windows.Forms.Keys.F5;
-            this.lkpTipoNota.Location = new System.Drawing.Point(144, 39);
-            this.lkpTipoNota.Name = "lkpTipoNota";
-            this.lkpTipoNota.OnIDChanged = null;
-            this.lkpTipoNota.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpTipoNota.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpTipoNota.SelecionarTextoOnEnter = false;
-            this.lkpTipoNota.Size = new System.Drawing.Size(272, 20);
-            this.lkpTipoNota.Tabela = null;
-            this.lkpTipoNota.TabIndex = 78;
-            this.lkpTipoNota.TituloTelaPesquisa = null;
-            this.lkpTipoNota.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpTipoNota.Where = null;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Location = new System.Drawing.Point(82, 42);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(56, 13);
-            this.labelControl13.TabIndex = 77;
-            this.labelControl13.Text = "Movimento:";
             // 
             // mInfAdicionaisDentroEstado
             // 
@@ -1140,7 +1075,6 @@ namespace Aplicacao.Modulos.Tributacao
             this.tabDadosPrincipais.ResumeLayout(false);
             this.tabDadosPrincipais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilTributarioCliente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpTipoNota.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mInfAdicionaisDentroEstado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpCfopForaDoEstado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpCfopDentroDoEstado.Properties)).EndInit();
@@ -1226,8 +1160,5 @@ namespace Aplicacao.Modulos.Tributacao
         private Cwork.Utilitarios.Componentes.LookupButton lkbPerfilTributarioCliente;
         private Cwork.Utilitarios.Componentes.Lookup lkpPerfilTributarioCliente;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbTipoNota;
-        private Cwork.Utilitarios.Componentes.Lookup lkpTipoNota;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
     }
 }

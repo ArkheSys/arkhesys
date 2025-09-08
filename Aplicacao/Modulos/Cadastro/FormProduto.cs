@@ -113,6 +113,7 @@ namespace Aplicacao
 
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
+            lkpNaturezaReceita.Exemplo = new NaturezaOperacao();
 
 
             FormataGrupos();
@@ -1259,7 +1260,8 @@ namespace Aplicacao
             lkpPerfilPisCofins.Location = new Point(lkpPerfilPisCofins.Location.X, lkpPerfilPisCofins.Location.Y + altura);
             lkbPerfilPisCofins.Location = new Point(lkbPerfilPisCofins.Location.X, lkbPerfilPisCofins.Location.Y + altura);
             lbSaiNaturezaReceita.Location = new Point(lbSaiNaturezaReceita.Location.X, lbSaiNaturezaReceita.Location.Y + altura);
-            cbeSaiNaturezaReceita.Location = new Point(cbeSaiNaturezaReceita.Location.X, cbeSaiNaturezaReceita.Location.Y + altura);
+            lkbNaturezaReceita.Location = new Point(lkbNaturezaReceita.Location.X, lkbNaturezaReceita.Location.Y + altura);
+            lkpNaturezaReceita.Location = new Point(lkpNaturezaReceita.Location.X, lkpNaturezaReceita.Location.Y + altura);
 
             label60.Location = new Point(label60.Location.X, label60.Location.Y + altura);
             txtDataPromocionalInicial.Location = new Point(txtDataPromocionalInicial.Location.X, txtDataPromocionalInicial.Location.Y + altura);
@@ -2110,7 +2112,12 @@ namespace Aplicacao
 
         private void lkbPerfilPisCofins_Click(object sender, EventArgs e)
         {
-            LookupUtil.GridLookup<PerfilPisCofins>(lkpClassificacaoFiscal, typeof(FormPerfilPisCofins));
+            LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
+        }
+
+        private void lkbNaturezaReceita_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<NaturezaOperacao>(lkpNaturezaReceita, typeof(FormNaturezaOperacao));
         }
     }
 

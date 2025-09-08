@@ -34,7 +34,6 @@
 
 
     <many-to-one name="ClassificacaoFiscal" column="IDClassificacaoFiscal" class="ClassificacaoFiscal"  lazy ="false" />
-    <many-to-one name="TipoNota" column="IDMovimento" class="TipoNota"  lazy ="false" />
     <many-to-one name="PerfilTributarioCliente" column="IDPerfilTributarioCliente" class="PerfilTributarioCliente"  lazy ="false" />
     <many-to-one name="CfopDentroDoEstado" column="IDCfopDentroDoEstado" class="TabelaCFOP" lazy ="false" />
     <many-to-one name="CfopForaDoEstado" column="IDCfopForaDoEstado" class="TabelaCFOP" lazy ="false"  />

@@ -69,11 +69,6 @@ namespace Aplicacao.Modulos.Tributacao
             LookupUtil.GridLookup<TabelaCFOP>(lkpCfopForaDoEstado, typeof(FormTabelaCFOP));
         }
 
-        private void lkbTipoNota_Click(object sender, EventArgs e)
-        {
-            LookupUtil.GridLookup<TipoNota>(lkpTipoNota, typeof(FormTipoNota));
-        }
-
         private void lkbPerfilTributarioCliente_Click(object sender, EventArgs e)
         {
             LookupUtil.GridLookup<PerfilTributarioCliente>(lkpPerfilTributarioCliente, typeof(FormPerfilTributarioCliente));

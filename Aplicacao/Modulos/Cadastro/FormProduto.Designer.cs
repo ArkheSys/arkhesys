@@ -137,7 +137,8 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabDados = new DevExpress.XtraTab.XtraTabPage();
-            this.cbeSaiNaturezaReceita = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
+            this.lkbNaturezaReceita = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpNaturezaReceita = new Cwork.Utilitarios.Componentes.Lookup();
             this.lbSaiNaturezaReceita = new DevExpress.XtraEditors.LabelControl();
             this.lkbPerfilPisCofins = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpPerfilPisCofins = new Cwork.Utilitarios.Componentes.Lookup();
@@ -593,7 +594,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabDados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNaturezaReceita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).BeginInit();
@@ -2583,7 +2584,8 @@
             // 
             // tabDados
             // 
-            this.tabDados.Controls.Add(this.cbeSaiNaturezaReceita);
+            this.tabDados.Controls.Add(this.lkbNaturezaReceita);
+            this.tabDados.Controls.Add(this.lkpNaturezaReceita);
             this.tabDados.Controls.Add(this.lbSaiNaturezaReceita);
             this.tabDados.Controls.Add(this.lkbPerfilPisCofins);
             this.tabDados.Controls.Add(this.lkpPerfilPisCofins);
@@ -2695,29 +2697,65 @@
             this.tabDados.Size = new System.Drawing.Size(681, 666);
             this.tabDados.Text = "Dados";
             // 
-            // cbeSaiNaturezaReceita
+            // lkbNaturezaReceita
             // 
-            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(461, 558);
-            this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
-            this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeSaiNaturezaReceita.Properties.Items.AddRange(new object[] {
-            "01-Operação Tributável (Normal)",
-            "02-Operação Tributável (Diferenciada)",
-            "03-Operação Tributável",
-            "04-Operação Tributável (monofásica)",
-            "06-Operação Tributável (Aliq. Zero)",
-            "07-Operação Isenta da Contribuição",
-            "08-Operação Sem Incidência da Contribuição",
-            "09-Operação com Suspensão da Contribuição",
-            "99-Outras Operações"});
-            this.cbeSaiNaturezaReceita.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeSaiNaturezaReceita.Size = new System.Drawing.Size(176, 20);
-            this.cbeSaiNaturezaReceita.TabIndex = 105;
+            this.lkbNaturezaReceita.Location = new System.Drawing.Point(646, 558);
+            this.lkbNaturezaReceita.Lookup = null;
+            this.lkbNaturezaReceita.Name = "lkbNaturezaReceita";
+            this.lkbNaturezaReceita.Size = new System.Drawing.Size(24, 20);
+            this.lkbNaturezaReceita.SubForm = null;
+            this.lkbNaturezaReceita.SubFormType = null;
+            this.lkbNaturezaReceita.SubFormTypeParams = null;
+            this.lkbNaturezaReceita.TabIndex = 106;
+            this.lkbNaturezaReceita.TabStop = false;
+            this.lkbNaturezaReceita.Text = "...";
+            this.lkbNaturezaReceita.Click += new System.EventHandler(this.lkbNaturezaReceita_Click);
+            // 
+            // lkpNaturezaReceita
+            // 
+            this.lkpNaturezaReceita.ButtonLookup = this.lkbNaturezaReceita;
+            this.lkpNaturezaReceita.CamposPesquisa = new string[] {
+        "Codigo",
+        "Descricao"};
+            this.lkpNaturezaReceita.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNaturezaReceita.CamposRestricoesAND")));
+            this.lkpNaturezaReceita.CamposRestricoesNOT = null;
+            this.lkpNaturezaReceita.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNaturezaReceita.CamposRestricoesOR")));
+            this.lkpNaturezaReceita.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpNaturezaReceita.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpNaturezaReceita.ContextoLinq = null;
+            this.lkpNaturezaReceita.CwkFuncaoValidacao = null;
+            this.lkpNaturezaReceita.CwkMascara = null;
+            this.lkpNaturezaReceita.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpNaturezaReceita.Exemplo = null;
+            this.lkpNaturezaReceita.ID = 0;
+            this.lkpNaturezaReceita.Join = null;
+            this.lkpNaturezaReceita.Key = System.Windows.Forms.Keys.F5;
+            this.lkpNaturezaReceita.Location = new System.Drawing.Point(428, 558);
+            this.lkpNaturezaReceita.Name = "lkpNaturezaReceita";
+            this.lkpNaturezaReceita.OnIDChanged = null;
+            this.lkpNaturezaReceita.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpNaturezaReceita.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpNaturezaReceita.SelecionarTextoOnEnter = true;
+            this.lkpNaturezaReceita.Size = new System.Drawing.Size(209, 20);
+            this.lkpNaturezaReceita.Tabela = null;
+            this.lkpNaturezaReceita.TabIndex = 105;
+            this.lkpNaturezaReceita.TituloTelaPesquisa = null;
+            this.lkpNaturezaReceita.ToolTip = "Campos pesquisados: Codigo, Descricao.";
+            this.lkpNaturezaReceita.Where = null;
             // 
             // lbSaiNaturezaReceita
             // 
-            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(350, 561);
+            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(320, 564);
             this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
             this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
             this.lbSaiNaturezaReceita.TabIndex = 104;
@@ -2725,7 +2763,7 @@
             // 
             // lkbPerfilPisCofins
             // 
-            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(320, 557);
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(283, 558);
             this.lkbPerfilPisCofins.Lookup = null;
             this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
             this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
@@ -2772,7 +2810,7 @@
             this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lkpPerfilPisCofins.Properties.Appearance.Options.UseBackColor = true;
             this.lkpPerfilPisCofins.SelecionarTextoOnEnter = true;
-            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(209, 20);
+            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(171, 20);
             this.lkpPerfilPisCofins.Tabela = null;
             this.lkpPerfilPisCofins.TabIndex = 102;
             this.lkpPerfilPisCofins.TituloTelaPesquisa = null;
@@ -9422,7 +9460,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.tabDados.ResumeLayout(false);
             this.tabDados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNaturezaReceita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).EndInit();
@@ -10152,7 +10190,8 @@
         private Cwork.Utilitarios.Componentes.LookupButton lkbClassificacaoFiscal;
         private Cwork.Utilitarios.Componentes.Lookup lkpClassificacaoFiscal;
         private DevExpress.XtraEditors.LabelControl lbClassificacaoFiscal;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeSaiNaturezaReceita;
         private DevExpress.XtraEditors.LabelControl lbSaiNaturezaReceita;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbNaturezaReceita;
+        private Cwork.Utilitarios.Componentes.Lookup lkpNaturezaReceita;
     }
 }
