@@ -113,7 +113,6 @@ namespace Aplicacao
 
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
-            lkpNaturezaReceita.Exemplo = new NaturezaOperacao();
 
 
             FormataGrupos();
@@ -132,6 +131,8 @@ namespace Aplicacao
 
             //Inicia botoes Imeis
             IniciaBotoesImeis();
+
+            CarregaCbeSaiNaturezaOperacao();
         }
         private void IniciaBotoesProduto_ICMS()
         {
@@ -281,7 +282,18 @@ namespace Aplicacao
             lkbGrupo2.Click += new EventHandler(lkbGrupo1_Click);
             lkbGrupo3.Click += new EventHandler(lkbGrupo1_Click);
         }
+        private void CarregaCbeSaiNaturezaOperacao()
+        {
+            var naturezaOperacoes = NaturezaOperacaoController.Instancia.GetAll();
 
+            cbeSaiNaturezaReceita.Properties.Items.Clear();
+
+            foreach (NaturezaOperacao itemNaturezaOperacao in naturezaOperacoes)
+            {
+                cbeSaiNaturezaReceita.Properties.Items.Add(itemNaturezaOperacao.Codigo + "-" + itemNaturezaOperacao.Descricao);
+            }
+            cbeSaiNaturezaReceita.SelectedIndex = 0;
+        }
         void lkbGrupo1_Click(object sender, EventArgs e)
         {
             Lookup lkp;
@@ -1260,8 +1272,7 @@ namespace Aplicacao
             lkpPerfilPisCofins.Location = new Point(lkpPerfilPisCofins.Location.X, lkpPerfilPisCofins.Location.Y + altura);
             lkbPerfilPisCofins.Location = new Point(lkbPerfilPisCofins.Location.X, lkbPerfilPisCofins.Location.Y + altura);
             lbSaiNaturezaReceita.Location = new Point(lbSaiNaturezaReceita.Location.X, lbSaiNaturezaReceita.Location.Y + altura);
-            lkbNaturezaReceita.Location = new Point(lkbNaturezaReceita.Location.X, lkbNaturezaReceita.Location.Y + altura);
-            lkpNaturezaReceita.Location = new Point(lkpNaturezaReceita.Location.X, lkpNaturezaReceita.Location.Y + altura);
+            cbeSaiNaturezaReceita.Location = new Point(cbeSaiNaturezaReceita.Location.X, cbeSaiNaturezaReceita.Location.Y + altura);
 
             label60.Location = new Point(label60.Location.X, label60.Location.Y + altura);
             txtDataPromocionalInicial.Location = new Point(txtDataPromocionalInicial.Location.X, txtDataPromocionalInicial.Location.Y + altura);
@@ -2112,12 +2123,49 @@ namespace Aplicacao
 
         private void lkbPerfilPisCofins_Click(object sender, EventArgs e)
         {
-            LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
+            GridGenerica<PerfilPisCofins> a = new GridGenerica<PerfilPisCofins>(PerfilPisCofinsController.Instancia.GetAll(), new FormPerfilPisCofins(), (PerfilPisCofins)lkpPerfilPisCofins.Selecionado, false);
+            a.Selecionando = true;
+            a.Text = "Tabela de Perfil PisCofins";
+            a.ShowDialog();
+            if (a.Selecionado != null)
+            {
+                lkpPerfilPisCofins.EditValue = a.Selecionado;
+                if (a.Selecionado.SaiPisCofinsNaturezaOperacao.NaturezaOperacao != null)
+                {
+                    var esse = (PisCofinsNaturezaOperacao)a.Selecionado.SaiPisCofinsNaturezaOperacao;
+
+                    if (esse != null)
+                    {
+                        cbeSaiNaturezaReceita.Properties.Items.Clear();
+
+                        foreach (NaturezaOperacao itemNaturezaOperacao in esse.NaturezaOperacao)
+                        {
+                            cbeSaiNaturezaReceita.Properties.Items.Add(itemNaturezaOperacao.Codigo + "-" + itemNaturezaOperacao.Descricao);
+                        }
+                        cbeSaiNaturezaReceita.SelectedIndex = 0;
+                    }
+                }
+            }
         }
 
-        private void lkbNaturezaReceita_Click(object sender, EventArgs e)
+        private void lkpPerfilPisCofins_EditValueChanged(object sender, EventArgs e)
         {
-            LookupUtil.GridLookup<NaturezaOperacao>(lkpNaturezaReceita, typeof(FormNaturezaOperacao));
+            //var EsseObjeto = (PerfilPisCofins)lkpPerfilPisCofins.Selecionado;
+            //if (EsseObjeto != null)
+            //{
+            //    var esse = (PisCofinsNaturezaOperacao)EsseObjeto.SaiPisCofinsNaturezaOperacao;
+
+            //    if (esse != null)
+            //    {
+            //        cbeSaiNaturezaReceita.Properties.Items.Clear();
+
+            //        foreach (NaturezaOperacao itemNaturezaOperacao in esse.NaturezaOperacao)
+            //        {
+            //            cbeSaiNaturezaReceita.Properties.Items.Add(itemNaturezaOperacao.Codigo + "-" + itemNaturezaOperacao.Descricao);
+            //        }
+            //        cbeSaiNaturezaReceita.SelectedIndex = 0;
+            //    }
+            //}
         }
     }
 
