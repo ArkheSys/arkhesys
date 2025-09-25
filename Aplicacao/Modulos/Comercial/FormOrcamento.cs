@@ -337,7 +337,8 @@ namespace Aplicacao
                 {
                     try
                     {
-                        if (Selecionado.Pessoa.PessoaClientes.Count > 0)
+                        if (Selecionado.Pessoa != null && Selecionado.Pessoa.PessoaClientes != null && Selecionado.Pessoa.PessoaClientes.Count > 0)
+                        {
                             if (Selecionado.Pessoa.PessoaClientes[0].BBloqueiaVendedor)
                             {
                                 lkpVendedor.EditValue = Selecionado.Pessoa.PessoaClientes[0].Vendedor;
@@ -346,13 +347,13 @@ namespace Aplicacao
                                     lkpVendedor.Enabled = false;
                                     lkbVendedor.Enabled = false;
                                 }
-
                             }
                             else
                             {
                                 lkpVendedor.Enabled = true;
                                 lkbVendedor.Enabled = true;
                             }
+                        }
                     }
                     catch (Exception f)
                     {
@@ -365,8 +366,12 @@ namespace Aplicacao
 
                 AjustaNCMS();
 
-                gvItems.Columns["Observacao"].Visible = ConfiguracaoController.Instancia.GetConfiguracao().ObservacaoNoItemPedido == 1;
+                var colunaObservacao = gvItems.Columns["Observacao"];
 
+                if (colunaObservacao != null)
+                {
+                    colunaObservacao.Visible = ConfiguracaoController.Instancia.GetConfiguracao().ObservacaoNoItemPedido == 1;
+                }
                 setarItensConfig();
                 ajustarWidthColunas();
             }
@@ -3802,5 +3807,6 @@ namespace Aplicacao
 
             gcItems.RefreshDataSource();
         }
+
     }
 }

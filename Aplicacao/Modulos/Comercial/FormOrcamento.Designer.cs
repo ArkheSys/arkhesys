@@ -4283,7 +4283,7 @@
             // 
             this.ObservacaoItem.Caption = "Observaçoes";
             this.ObservacaoItem.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.ObservacaoItem.FieldName = "ObservacaoItem";
+            this.ObservacaoItem.FieldName = "Observacao";
             this.ObservacaoItem.MaxWidth = 250;
             this.ObservacaoItem.MinWidth = 250;
             this.ObservacaoItem.Name = "ObservacaoItem";
