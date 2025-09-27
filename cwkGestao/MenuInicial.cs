@@ -4094,6 +4094,15 @@ namespace cwkGestao.Visual.Desktop
             GridGenerica<TabelaCOFINS> grid = new GridGenerica<TabelaCOFINS>(TabelaCOFINSController.Instancia.GetAll(), new FormTabelaCOFINS(), false);
             ShowForm(grid);
         }
+
+        private void toolStripMenuCEST_Click(object sender, EventArgs e)
+        {
+            // var grid = new GridGenerica<CEST>(CEST.Instancia.GetAll(), new FormCEST(), false);
+            //GridGenerica<PerfilTributarioCliente> grid = new GridGenerica<PerfilTributarioCliente>(PerfilTributarioClienteController.Instancia.GetAll(), new FormPerfilTributarioCliente(), false);
+            //ShowForm(grid);
+            GridGenerica<CEST> grid = new GridGenerica<CEST>(CESTController.Instancia.GetAll(), new FormCEST(), false);
+            ShowForm(grid);
+        }
     }
 
     internal class Config_Backup

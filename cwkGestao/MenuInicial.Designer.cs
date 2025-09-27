@@ -66,6 +66,7 @@
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripMenuItem();
             this.ProdutosInativos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem39 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuCEST = new System.Windows.Forms.ToolStripMenuItem();
             this.nCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsSubproduto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMateriaPrima = new System.Windows.Forms.ToolStripMenuItem();
@@ -698,6 +699,7 @@
             this.toolStripMenuItem40,
             this.ProdutosInativos,
             this.toolStripMenuItem39,
+            this.toolStripMenuCEST,
             this.nCMToolStripMenuItem,
             this.tsSubproduto,
             this.tsMateriaPrima,
@@ -975,6 +977,14 @@
             this.toolStripMenuItem39.Size = new System.Drawing.Size(241, 22);
             this.toolStripMenuItem39.Text = "NCM";
             this.toolStripMenuItem39.Click += new System.EventHandler(this.toolStripMenuItem39_Click);
+            // 
+            // toolStripMenuCEST
+            // 
+            this.toolStripMenuCEST.Name = "toolStripMenuCEST";
+            this.toolStripMenuCEST.ShortcutKeyDisplayString = "";
+            this.toolStripMenuCEST.Size = new System.Drawing.Size(241, 22);
+            this.toolStripMenuCEST.Text = "CEST";
+            this.toolStripMenuCEST.Click += new System.EventHandler(this.toolStripMenuCEST_Click);
             // 
             // nCMToolStripMenuItem
             // 
@@ -6145,5 +6155,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroPISToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroCONFISToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator49;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuCEST;
     }
 }

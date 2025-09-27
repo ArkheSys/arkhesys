@@ -139,6 +139,8 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate
             Repositorios.Add(typeof(ServicoImposto), new ServicoImpostoRepositorio());
             Repositorios.Add(typeof(ProjetoParcela), new ProjetoParcelaRepositorio());
             Repositorios.Add(typeof(NCM), new NCMRepositorio());
+            Repositorios.Add(typeof(CEST), new CESTRepositorio());
+            Repositorios.Add(typeof(CEST_Segmento), new RepositorioCEST_Segmento());
             Repositorios.Add(typeof(NCMItem), new NCMItemRepositorio());
             Repositorios.Add(typeof(RegistrosTipo60), new RegistrosTipo60Repositorio());
             Repositorios.Add(typeof(Cheque), new ChequeRepositorio());

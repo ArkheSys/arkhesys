@@ -314,6 +314,9 @@
       <DependentUpon>FormMsgVencimentoCertificado.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\EnumHelper.cs" />
+    <Compile Include="IntermediariasTela\FormManutCESTIntermediaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IntermediariasTela\FormManutClassificacaoFiscalIntermediaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +464,12 @@
     <Compile Include="Modulos\Cadastro\FormCadMoeda.Designer.cs">
       <DependentUpon>FormCadMoeda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Cadastro\FormCEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cadastro\FormCEST.Designer.cs">
+      <DependentUpon>FormCEST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Cadastro\FormCotacaoDeMoedas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -562,6 +571,12 @@
     </Compile>
     <Compile Include="Modulos\Cadastro\FormStatusOS.Designer.cs">
       <DependentUpon>FormStatusOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cadastro\GridCEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cadastro\GridCEST.Designer.cs">
+      <DependentUpon>GridCEST.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Cadastro\GridFabricante.cs">
       <SubType>Form</SubType>
@@ -4906,6 +4921,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormCadMoeda.resx">
       <DependentUpon>FormCadMoeda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cadastro\FormCEST.resx">
+      <DependentUpon>FormCEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormCotacaoDeMoedas.resx">
       <DependentUpon>FormCotacaoDeMoedas.cs</DependentUpon>

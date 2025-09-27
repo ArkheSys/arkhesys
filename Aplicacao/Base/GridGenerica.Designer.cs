@@ -236,6 +236,7 @@
             this.gcPrincipal.EmbeddedNavigator.Buttons.EnabledAutoRepeat = false;
             this.gcPrincipal.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gcPrincipal.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gcPrincipal.EmbeddedNavigator.TextStringFormat = "Registro {0} of {1}";
             gridLevelNode1.RelationName = "Level1";
             this.gcPrincipal.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});

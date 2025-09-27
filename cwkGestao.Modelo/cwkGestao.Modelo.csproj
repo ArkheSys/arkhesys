@@ -238,6 +238,8 @@
     <Compile Include="cepbr_cidade.cs" />
     <Compile Include="cepbr_endereco.cs" />
     <Compile Include="cepbr_estado.cs" />
+    <Compile Include="CEST.cs" />
+    <Compile Include="CEST_Segmento.cs" />
     <Compile Include="ClassificacaoFiscal.cs" />
     <Compile Include="CodigoImposto.cs" />
     <Compile Include="CondicaoFornecimento.cs" />
