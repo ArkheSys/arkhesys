@@ -536,10 +536,10 @@ namespace Aplicacao.Base
             {
                 ConfiguraGrid((DevExpress.XtraGrid.GridControl)controle);
             }
-            else if (controle.GetType().Equals(typeof(DevExpress.XtraEditors.GroupControl)))
+            /*else if (controle.GetType().Equals(typeof(DevExpress.XtraEditors.GroupControl)))
             {
                 //ConfiguraGrid((DevExpress.XtraGrid.GridControl)controle);
-            }
+            }*/
             else if (((System.Windows.Forms.Control)controle).Controls.Count > 0)
                 ConfiguraDataSources((System.Windows.Forms.Control)controle);
 
