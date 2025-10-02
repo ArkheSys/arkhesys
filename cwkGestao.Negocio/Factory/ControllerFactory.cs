@@ -138,6 +138,8 @@ namespace cwkGestao.Negocio.Factory
             _controladoras.Add(typeof(OSAgendamento), OSAgendamentoController.Instancia);
             _controladoras.Add(typeof(FinanceiroPlanoContas), FinanceiroPlanoContasController.Instancia);
             _controladoras.Add(typeof(NCM), NCMController.Instancia);
+            _controladoras.Add(typeof(CEST), CESTController.Instancia);
+            _controladoras.Add(typeof(CEST_Segmento), CEST_SegmentoController.Instancia);
             _controladoras.Add(typeof(NCMItem), NCMItemController.Instancia);
             _controladoras.Add(typeof(NotaItemServico), NotaItemServicoController.Instancia);
             _controladoras.Add(typeof(Cheque), ChequeController.Instancia);

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
+	<class name="CEST" table="CEST">
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="Codigo" column="Codigo" type="string" />
+		<property name="Descricao" column="Descricao" type="string" length="200" />
+		<many-to-one name="Segmento" class="cwkGestao.Modelo.CEST_Segmento, cwkGestao" column="ID_Segmento" />
+	</class>
+</hibernate-mapping>
