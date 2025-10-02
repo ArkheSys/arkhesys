@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabFoto = new DevExpress.XtraTab.XtraTabPage();
             this.ckbPrincipal = new System.Windows.Forms.CheckBox();
@@ -70,57 +70,22 @@
             this.lkpPlanoContaEstoque = new Cwork.Utilitarios.Componentes.Lookup();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.tabImpostoDentroEstado = new DevExpress.XtraTab.XtraTabPage();
-            this.btnImportarTributacao = new DevExpress.XtraEditors.SimpleButton();
+            this.lbPerfilPisCofins = new DevExpress.XtraEditors.LabelControl();
+            this.lkpClassificacaoFiscal = new Cwork.Utilitarios.Componentes.Lookup();
+            this.lkbClassificacaoFiscal = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lbClassificacaoFiscal = new DevExpress.XtraEditors.LabelControl();
+            this.cbeSaiNaturezaReceita = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
+            this.lbSaiNaturezaReceita = new DevExpress.XtraEditors.LabelControl();
+            this.lkbPerfilPisCofins = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpPerfilPisCofins = new Cwork.Utilitarios.Componentes.Lookup();
             this.txtCBenef = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl41 = new DevExpress.XtraEditors.LabelControl();
-            this.txtRAZAO_Fab = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.txtCNPJ_Fab = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
-            this.cbeEscRelevante = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.txtClassFiscal = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.btConsultarProduto_Icms = new Cwork.Utilitarios.Componentes.DevButton();
-            this.btExcluirProduto_Icms = new Cwork.Utilitarios.Componentes.DevButton();
-            this.btAlterarProduto_Icms = new Cwork.Utilitarios.Componentes.DevButton();
-            this.btIncluirProduto_Icms = new Cwork.Utilitarios.Componentes.DevButton();
-            this.gcProduto_Icmss = new DevExpress.XtraGrid.GridControl();
-            this.gvProduto_Icmss = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.origemProdutoIcms = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.destinoProdutoIcms = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.aliquotaProdutoIcms = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtID_NCM = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtNCM = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtGENERO_NCM = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.label10 = new System.Windows.Forms.Label();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lkbNCM = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkbCFOPForaDoEstado = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpCFOPForaDoEstado = new Cwork.Utilitarios.Componentes.Lookup();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.btnlkpCFOP = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpCFOP = new Cwork.Utilitarios.Componentes.Lookup();
-            this.groupIPI = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.txtENQ_IPI = new Cwork.Utilitarios.Componentes.DevCalcEdit();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.txtAliquotaIPI = new Cwork.Utilitarios.Componentes.DevCalcEdit();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.cbeCST_IPI = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.groupCofins = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPCOFINS_S08 = new Cwork.Utilitarios.Componentes.DevCalcEdit();
-            this.cbeCST_Cofins = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.groupPIS = new DevExpress.XtraEditors.GroupControl();
-            this.txtPPIS_Q08 = new Cwork.Utilitarios.Componentes.DevCalcEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.cbeCST_Pis = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.tabTabelaPreco = new DevExpress.XtraTab.XtraTabPage();
             this.btConsultarTabelaPreco = new Cwork.Utilitarios.Componentes.DevButton();
             this.btExcluirTabelaPreco = new Cwork.Utilitarios.Componentes.DevButton();
@@ -137,14 +102,6 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabDados = new DevExpress.XtraTab.XtraTabPage();
-            this.cbeSaiNaturezaReceita = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
-            this.lbSaiNaturezaReceita = new DevExpress.XtraEditors.LabelControl();
-            this.lkbPerfilPisCofins = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPerfilPisCofins = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lbPerfilPisCofins = new DevExpress.XtraEditors.LabelControl();
-            this.lkbClassificacaoFiscal = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpClassificacaoFiscal = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lbClassificacaoFiscal = new DevExpress.XtraEditors.LabelControl();
             this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
             this.txtCProd = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtDataValidade = new Cwork.Utilitarios.Componentes.DevDateEdit();
@@ -260,6 +217,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.txtRAZAO_Fab = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
+            this.txtCNPJ_Fab = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
+            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
+            this.cbeEscRelevante = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
+            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl46 = new DevExpress.XtraEditors.LabelControl();
             this.txtAplicacao = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl45 = new DevExpress.XtraEditors.LabelControl();
@@ -542,6 +505,7 @@
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridView11 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.origemProdutoIcms = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -560,32 +524,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupoEstoque.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).BeginInit();
             this.tabImpostoDentroEstado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCBenef.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRAZAO_Fab.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCNPJ_Fab.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeEscRelevante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClassFiscal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcProduto_Icmss)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvProduto_Icmss)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID_NCM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNCM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGENERO_NCM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOPForaDoEstado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupIPI)).BeginInit();
-            this.groupIPI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtENQ_IPI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAliquotaIPI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_IPI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupCofins)).BeginInit();
-            this.groupCofins.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPCOFINS_S08.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_Cofins.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPIS)).BeginInit();
-            this.groupPIS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPPIS_Q08.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_Pis.Properties)).BeginInit();
             this.tabTabelaPreco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcTabelaPrecoProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTabelaPrecoProdutos)).BeginInit();
@@ -593,9 +538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabDados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDataValidade.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDataValidade.Properties)).BeginInit();
@@ -669,6 +611,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescLonga2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescLonga1.Properties)).BeginInit();
             this.xtraTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRAZAO_Fab.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCNPJ_Fab.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeEscRelevante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAplicacao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoOriginal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoFabricante.Properties)).BeginInit();
@@ -810,21 +755,21 @@
             // 
             this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
             this.sbAjuda.ImageOptions.ImageIndex = 0;
-            this.sbAjuda.Location = new System.Drawing.Point(12, 748);
+            this.sbAjuda.Location = new System.Drawing.Point(12, 728);
             this.sbAjuda.TabIndex = 1;
             // 
             // sbGravar
             // 
             this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
             this.sbGravar.ImageOptions.ImageIndex = 1;
-            this.sbGravar.Location = new System.Drawing.Point(592, 748);
+            this.sbGravar.Location = new System.Drawing.Point(569, 728);
             this.sbGravar.TabIndex = 2;
             // 
             // sbCancelar
             // 
             this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
             this.sbCancelar.ImageOptions.ImageIndex = 2;
-            this.sbCancelar.Location = new System.Drawing.Point(673, 748);
+            this.sbCancelar.Location = new System.Drawing.Point(650, 728);
             this.sbCancelar.TabIndex = 3;
             // 
             // imageList1
@@ -842,12 +787,12 @@
             // tpPrincipal
             // 
             this.tpPrincipal.Controls.Add(this.xtraTabControl1);
-            this.tpPrincipal.Size = new System.Drawing.Size(730, 724);
+            this.tpPrincipal.Size = new System.Drawing.Size(707, 704);
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
-            this.tcPrincipal.Size = new System.Drawing.Size(736, 730);
+            this.tcPrincipal.Size = new System.Drawing.Size(713, 710);
             // 
             // openFileDialog1
             // 
@@ -871,7 +816,7 @@
             this.tabFoto.Controls.Add(this.sbDiretorio);
             this.tabFoto.Controls.Add(this.pbCaminhoImagem);
             this.tabFoto.Name = "tabFoto";
-            this.tabFoto.Size = new System.Drawing.Size(681, 666);
+            this.tabFoto.Size = new System.Drawing.Size(681, 642);
             this.tabFoto.Text = "Imagem";
             // 
             // ckbPrincipal
@@ -976,7 +921,7 @@
             this.btnImagemAnterior.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnImagemAnterior.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImagemAnterior.ImageOptions.Image")));
             this.btnImagemAnterior.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnImagemAnterior.Location = new System.Drawing.Point(-181, 426);
+            this.btnImagemAnterior.Location = new System.Drawing.Point(-181, 414);
             this.btnImagemAnterior.Name = "btnImagemAnterior";
             this.btnImagemAnterior.Size = new System.Drawing.Size(35, 24);
             this.btnImagemAnterior.TabIndex = 38;
@@ -1040,7 +985,7 @@
             this.tabEstoque.Controls.Add(this.lkpPlanoContaEstoque);
             this.tabEstoque.Controls.Add(this.labelControl30);
             this.tabEstoque.Name = "tabEstoque";
-            this.tabEstoque.Size = new System.Drawing.Size(681, 666);
+            this.tabEstoque.Size = new System.Drawing.Size(681, 642);
             this.tabEstoque.Text = "Estoque";
             // 
             // btnlkpUnidade
@@ -1147,7 +1092,7 @@
             this.gridListaEstoque.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit1,
             this.repositoryItemCalcEdit2});
-            this.gridListaEstoque.Size = new System.Drawing.Size(654, 567);
+            this.gridListaEstoque.Size = new System.Drawing.Size(654, 543);
             this.gridListaEstoque.TabIndex = 8;
             this.gridListaEstoque.UseEmbeddedNavigator = true;
             this.gridListaEstoque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1280,7 +1225,7 @@
             this.EstLocalidade.OptionsColumn.AllowEdit = false;
             this.EstLocalidade.Visible = true;
             this.EstLocalidade.VisibleIndex = 0;
-            this.EstLocalidade.Width = 295;
+            this.EstLocalidade.Width = 298;
             // 
             // EstFisico
             // 
@@ -1394,13 +1339,13 @@
             this.lkpGrupoEstoque.ID = 0;
             this.lkpGrupoEstoque.Join = null;
             this.lkpGrupoEstoque.Key = System.Windows.Forms.Keys.F5;
-            this.lkpGrupoEstoque.Location = new System.Drawing.Point(94, 10);
+            this.lkpGrupoEstoque.Location = new System.Drawing.Point(78, 10);
             this.lkpGrupoEstoque.Name = "lkpGrupoEstoque";
             this.lkpGrupoEstoque.OnIDChanged = null;
             this.lkpGrupoEstoque.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lkpGrupoEstoque.Properties.Appearance.Options.UseBackColor = true;
             this.lkpGrupoEstoque.SelecionarTextoOnEnter = true;
-            this.lkpGrupoEstoque.Size = new System.Drawing.Size(543, 20);
+            this.lkpGrupoEstoque.Size = new System.Drawing.Size(559, 20);
             this.lkpGrupoEstoque.Tabela = null;
             this.lkpGrupoEstoque.TabIndex = 1;
             this.lkpGrupoEstoque.TituloTelaPesquisa = null;
@@ -1410,7 +1355,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 13);
+            this.label8.Location = new System.Drawing.Point(10, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 0;
@@ -1461,13 +1406,13 @@
             this.lkpPlanoContaEstoque.ID = 0;
             this.lkpPlanoContaEstoque.Join = null;
             this.lkpPlanoContaEstoque.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoContaEstoque.Location = new System.Drawing.Point(94, 36);
+            this.lkpPlanoContaEstoque.Location = new System.Drawing.Point(136, 36);
             this.lkpPlanoContaEstoque.Name = "lkpPlanoContaEstoque";
             this.lkpPlanoContaEstoque.OnIDChanged = null;
             this.lkpPlanoContaEstoque.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lkpPlanoContaEstoque.Properties.Appearance.Options.UseBackColor = true;
             this.lkpPlanoContaEstoque.SelecionarTextoOnEnter = true;
-            this.lkpPlanoContaEstoque.Size = new System.Drawing.Size(543, 20);
+            this.lkpPlanoContaEstoque.Size = new System.Drawing.Size(501, 20);
             this.lkpPlanoContaEstoque.Tabela = null;
             this.lkpPlanoContaEstoque.TabIndex = 3;
             this.lkpPlanoContaEstoque.TituloTelaPesquisa = null;
@@ -1478,401 +1423,199 @@
             // 
             this.labelControl30.Location = new System.Drawing.Point(13, 39);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(75, 13);
+            this.labelControl30.Size = new System.Drawing.Size(117, 13);
             this.labelControl30.TabIndex = 3;
-            this.labelControl30.Text = "Conta Estoque:";
+            this.labelControl30.Text = "Conta Contábil Estoque:";
             // 
             // tabImpostoDentroEstado
             // 
-            this.tabImpostoDentroEstado.Controls.Add(this.btnImportarTributacao);
+            this.tabImpostoDentroEstado.Controls.Add(this.lbPerfilPisCofins);
+            this.tabImpostoDentroEstado.Controls.Add(this.lkpClassificacaoFiscal);
+            this.tabImpostoDentroEstado.Controls.Add(this.lbClassificacaoFiscal);
+            this.tabImpostoDentroEstado.Controls.Add(this.cbeSaiNaturezaReceita);
+            this.tabImpostoDentroEstado.Controls.Add(this.lbSaiNaturezaReceita);
+            this.tabImpostoDentroEstado.Controls.Add(this.lkbPerfilPisCofins);
+            this.tabImpostoDentroEstado.Controls.Add(this.lkpPerfilPisCofins);
+            this.tabImpostoDentroEstado.Controls.Add(this.lkbClassificacaoFiscal);
             this.tabImpostoDentroEstado.Controls.Add(this.txtCBenef);
             this.tabImpostoDentroEstado.Controls.Add(this.labelControl41);
-            this.tabImpostoDentroEstado.Controls.Add(this.txtRAZAO_Fab);
-            this.tabImpostoDentroEstado.Controls.Add(this.txtCNPJ_Fab);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl40);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl39);
-            this.tabImpostoDentroEstado.Controls.Add(this.cbeEscRelevante);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl38);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl22);
-            this.tabImpostoDentroEstado.Controls.Add(this.txtClassFiscal);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl6);
-            this.tabImpostoDentroEstado.Controls.Add(this.btConsultarProduto_Icms);
-            this.tabImpostoDentroEstado.Controls.Add(this.btExcluirProduto_Icms);
-            this.tabImpostoDentroEstado.Controls.Add(this.btAlterarProduto_Icms);
-            this.tabImpostoDentroEstado.Controls.Add(this.btIncluirProduto_Icms);
-            this.tabImpostoDentroEstado.Controls.Add(this.gcProduto_Icmss);
             this.tabImpostoDentroEstado.Controls.Add(this.txtID_NCM);
             this.tabImpostoDentroEstado.Controls.Add(this.txtNCM);
             this.tabImpostoDentroEstado.Controls.Add(this.txtGENERO_NCM);
             this.tabImpostoDentroEstado.Controls.Add(this.label10);
             this.tabImpostoDentroEstado.Controls.Add(this.labelControl3);
             this.tabImpostoDentroEstado.Controls.Add(this.lkbNCM);
-            this.tabImpostoDentroEstado.Controls.Add(this.lkbCFOPForaDoEstado);
-            this.tabImpostoDentroEstado.Controls.Add(this.lkpCFOPForaDoEstado);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl4);
-            this.tabImpostoDentroEstado.Controls.Add(this.btnlkpCFOP);
-            this.tabImpostoDentroEstado.Controls.Add(this.lkpCFOP);
-            this.tabImpostoDentroEstado.Controls.Add(this.groupIPI);
-            this.tabImpostoDentroEstado.Controls.Add(this.groupCofins);
-            this.tabImpostoDentroEstado.Controls.Add(this.groupPIS);
-            this.tabImpostoDentroEstado.Controls.Add(this.labelControl23);
             this.tabImpostoDentroEstado.Name = "tabImpostoDentroEstado";
-            this.tabImpostoDentroEstado.Size = new System.Drawing.Size(681, 666);
+            this.tabImpostoDentroEstado.Size = new System.Drawing.Size(681, 642);
             this.tabImpostoDentroEstado.Text = "Tributação";
             // 
-            // btnImportarTributacao
+            // lbPerfilPisCofins
             // 
-            this.btnImportarTributacao.Location = new System.Drawing.Point(15, 447);
-            this.btnImportarTributacao.Name = "btnImportarTributacao";
-            this.btnImportarTributacao.Size = new System.Drawing.Size(197, 23);
-            this.btnImportarTributacao.TabIndex = 29;
-            this.btnImportarTributacao.Text = "Importar Tributação";
-            this.btnImportarTributacao.Click += new System.EventHandler(this.btnImportarTributacao_Click);
+            this.lbPerfilPisCofins.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.lbPerfilPisCofins.Location = new System.Drawing.Point(16, 71);
+            this.lbPerfilPisCofins.Name = "lbPerfilPisCofins";
+            this.lbPerfilPisCofins.Size = new System.Drawing.Size(86, 13);
+            this.lbPerfilPisCofins.TabIndex = 109;
+            this.lbPerfilPisCofins.Text = "Perfil Pis e Cofins:";
+            // 
+            // lkpClassificacaoFiscal
+            // 
+            this.lkpClassificacaoFiscal.ButtonLookup = this.lkbClassificacaoFiscal;
+            this.lkpClassificacaoFiscal.CamposPesquisa = new string[] {
+        "Codigo",
+        "Descricao"};
+            this.lkpClassificacaoFiscal.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesAND")));
+            this.lkpClassificacaoFiscal.CamposRestricoesNOT = null;
+            this.lkpClassificacaoFiscal.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesOR")));
+            this.lkpClassificacaoFiscal.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpClassificacaoFiscal.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpClassificacaoFiscal.ContextoLinq = null;
+            this.lkpClassificacaoFiscal.CwkFuncaoValidacao = null;
+            this.lkpClassificacaoFiscal.CwkMascara = null;
+            this.lkpClassificacaoFiscal.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpClassificacaoFiscal.Exemplo = null;
+            this.lkpClassificacaoFiscal.ID = 0;
+            this.lkpClassificacaoFiscal.Join = null;
+            this.lkpClassificacaoFiscal.Key = System.Windows.Forms.Keys.F5;
+            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(114, 40);
+            this.lkpClassificacaoFiscal.Name = "lkpClassificacaoFiscal";
+            this.lkpClassificacaoFiscal.OnIDChanged = null;
+            this.lkpClassificacaoFiscal.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpClassificacaoFiscal.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpClassificacaoFiscal.SelecionarTextoOnEnter = true;
+            this.lkpClassificacaoFiscal.Size = new System.Drawing.Size(509, 20);
+            this.lkpClassificacaoFiscal.Tabela = null;
+            this.lkpClassificacaoFiscal.TabIndex = 107;
+            this.lkpClassificacaoFiscal.TituloTelaPesquisa = null;
+            this.lkpClassificacaoFiscal.ToolTip = "Campos pesquisados: Codigo, Descricao.";
+            this.lkpClassificacaoFiscal.Where = null;
+            // 
+            // lkbClassificacaoFiscal
+            // 
+            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(629, 40);
+            this.lkbClassificacaoFiscal.Lookup = null;
+            this.lkbClassificacaoFiscal.Name = "lkbClassificacaoFiscal";
+            this.lkbClassificacaoFiscal.Size = new System.Drawing.Size(24, 20);
+            this.lkbClassificacaoFiscal.SubForm = null;
+            this.lkbClassificacaoFiscal.SubFormType = null;
+            this.lkbClassificacaoFiscal.SubFormTypeParams = null;
+            this.lkbClassificacaoFiscal.TabIndex = 108;
+            this.lkbClassificacaoFiscal.TabStop = false;
+            this.lkbClassificacaoFiscal.Text = "...";
+            this.lkbClassificacaoFiscal.Click += new System.EventHandler(this.lkbClassificacaoFiscal_Click);
+            // 
+            // lbClassificacaoFiscal
+            // 
+            this.lbClassificacaoFiscal.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(8, 43);
+            this.lbClassificacaoFiscal.Name = "lbClassificacaoFiscal";
+            this.lbClassificacaoFiscal.Size = new System.Drawing.Size(94, 13);
+            this.lbClassificacaoFiscal.TabIndex = 106;
+            this.lbClassificacaoFiscal.Text = "Classificação Fiscal:";
+            // 
+            // cbeSaiNaturezaReceita
+            // 
+            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(454, 68);
+            this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
+            this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbeSaiNaturezaReceita.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbeSaiNaturezaReceita.Size = new System.Drawing.Size(199, 20);
+            this.cbeSaiNaturezaReceita.TabIndex = 113;
+            // 
+            // lbSaiNaturezaReceita
+            // 
+            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(335, 71);
+            this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
+            this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
+            this.lbSaiNaturezaReceita.TabIndex = 112;
+            this.lbSaiNaturezaReceita.Text = "Natureza da Receita:";
+            // 
+            // lkbPerfilPisCofins
+            // 
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(292, 68);
+            this.lkbPerfilPisCofins.Lookup = null;
+            this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
+            this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
+            this.lkbPerfilPisCofins.SubForm = null;
+            this.lkbPerfilPisCofins.SubFormType = null;
+            this.lkbPerfilPisCofins.SubFormTypeParams = null;
+            this.lkbPerfilPisCofins.TabIndex = 111;
+            this.lkbPerfilPisCofins.TabStop = false;
+            this.lkbPerfilPisCofins.Text = "...";
+            this.lkbPerfilPisCofins.Click += new System.EventHandler(this.lkbPerfilPisCofins_Click_1);
+            // 
+            // lkpPerfilPisCofins
+            // 
+            this.lkpPerfilPisCofins.ButtonLookup = this.lkbPerfilPisCofins;
+            this.lkpPerfilPisCofins.CamposPesquisa = new string[] {
+        "Codigo",
+        "Descricao"};
+            this.lkpPerfilPisCofins.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesAND")));
+            this.lkpPerfilPisCofins.CamposRestricoesNOT = null;
+            this.lkpPerfilPisCofins.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesOR")));
+            this.lkpPerfilPisCofins.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpPerfilPisCofins.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpPerfilPisCofins.ContextoLinq = null;
+            this.lkpPerfilPisCofins.CwkFuncaoValidacao = null;
+            this.lkpPerfilPisCofins.CwkMascara = null;
+            this.lkpPerfilPisCofins.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpPerfilPisCofins.Exemplo = null;
+            this.lkpPerfilPisCofins.ID = 0;
+            this.lkpPerfilPisCofins.Join = null;
+            this.lkpPerfilPisCofins.Key = System.Windows.Forms.Keys.F5;
+            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(114, 68);
+            this.lkpPerfilPisCofins.Name = "lkpPerfilPisCofins";
+            this.lkpPerfilPisCofins.OnIDChanged = null;
+            this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpPerfilPisCofins.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpPerfilPisCofins.SelecionarTextoOnEnter = true;
+            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(171, 20);
+            this.lkpPerfilPisCofins.Tabela = null;
+            this.lkpPerfilPisCofins.TabIndex = 110;
+            this.lkpPerfilPisCofins.TituloTelaPesquisa = null;
+            this.lkpPerfilPisCofins.ToolTip = "Campos pesquisados: Codigo, Descricao.";
+            this.lkpPerfilPisCofins.Where = null;
             // 
             // txtCBenef
             // 
             this.txtCBenef.CwkFuncaoValidacao = null;
             this.txtCBenef.CwkMascara = null;
             this.txtCBenef.CwkValidacao = null;
-            this.txtCBenef.Location = new System.Drawing.Point(123, 227);
+            this.txtCBenef.Location = new System.Drawing.Point(115, 98);
             this.txtCBenef.Name = "txtCBenef";
             this.txtCBenef.Properties.MaxLength = 30;
             this.txtCBenef.SelecionarTextoOnEnter = true;
-            this.txtCBenef.Size = new System.Drawing.Size(157, 20);
+            this.txtCBenef.Size = new System.Drawing.Size(170, 20);
             this.txtCBenef.TabIndex = 21;
             // 
             // labelControl41
             // 
-            this.labelControl41.Location = new System.Drawing.Point(15, 231);
+            this.labelControl41.Location = new System.Drawing.Point(3, 105);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(102, 13);
             this.labelControl41.TabIndex = 20;
             this.labelControl41.Text = "Cód. Benefício Fiscal:\t\r\n";
-            // 
-            // txtRAZAO_Fab
-            // 
-            this.txtRAZAO_Fab.CwkFuncaoValidacao = null;
-            this.txtRAZAO_Fab.CwkMascara = null;
-            this.txtRAZAO_Fab.CwkValidacao = null;
-            this.txtRAZAO_Fab.Location = new System.Drawing.Point(381, 201);
-            this.txtRAZAO_Fab.Name = "txtRAZAO_Fab";
-            this.txtRAZAO_Fab.Properties.MaxLength = 30;
-            this.txtRAZAO_Fab.SelecionarTextoOnEnter = true;
-            this.txtRAZAO_Fab.Size = new System.Drawing.Size(283, 20);
-            this.txtRAZAO_Fab.TabIndex = 19;
-            // 
-            // txtCNPJ_Fab
-            // 
-            this.txtCNPJ_Fab.CausesValidation = false;
-            this.txtCNPJ_Fab.CwkFuncaoValidacao = null;
-            this.txtCNPJ_Fab.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.CNPJ;
-            this.txtCNPJ_Fab.CwkValidacao = null;
-            this.txtCNPJ_Fab.Location = new System.Drawing.Point(381, 227);
-            this.txtCNPJ_Fab.Name = "txtCNPJ_Fab";
-            this.txtCNPJ_Fab.Properties.Mask.EditMask = "\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}";
-            this.txtCNPJ_Fab.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.txtCNPJ_Fab.Properties.Mask.ShowPlaceHolders = false;
-            this.txtCNPJ_Fab.Properties.MaxLength = 20;
-            this.txtCNPJ_Fab.SelecionarTextoOnEnter = false;
-            this.txtCNPJ_Fab.Size = new System.Drawing.Size(163, 20);
-            this.txtCNPJ_Fab.TabIndex = 23;
-            // 
-            // labelControl40
-            // 
-            this.labelControl40.Location = new System.Drawing.Point(292, 231);
-            this.labelControl40.Name = "labelControl40";
-            this.labelControl40.Size = new System.Drawing.Size(83, 13);
-            this.labelControl40.TabIndex = 22;
-            this.labelControl40.Text = "CNPJ Fabricante:";
-            // 
-            // labelControl39
-            // 
-            this.labelControl39.Location = new System.Drawing.Point(287, 205);
-            this.labelControl39.Name = "labelControl39";
-            this.labelControl39.Size = new System.Drawing.Size(88, 13);
-            this.labelControl39.TabIndex = 18;
-            this.labelControl39.Text = "Razão Fabricante:";
-            // 
-            // cbeEscRelevante
-            // 
-            this.cbeEscRelevante.Location = new System.Drawing.Point(123, 201);
-            this.cbeEscRelevante.Name = "cbeEscRelevante";
-            this.cbeEscRelevante.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeEscRelevante.Properties.Items.AddRange(new object[] {
-            "S - Produzido em Escala Relevante",
-            "N – Produzido em Escala NÃO Relevante"});
-            this.cbeEscRelevante.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeEscRelevante.Size = new System.Drawing.Size(157, 20);
-            this.cbeEscRelevante.TabIndex = 17;
-            // 
-            // labelControl38
-            // 
-            this.labelControl38.Location = new System.Drawing.Point(31, 205);
-            this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Size = new System.Drawing.Size(86, 13);
-            this.labelControl38.TabIndex = 16;
-            this.labelControl38.Text = "Escala Relevante:";
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Location = new System.Drawing.Point(500, 38);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(62, 13);
-            this.labelControl22.TabIndex = 11;
-            this.labelControl22.Text = "Class. Fiscal:";
-            // 
-            // txtClassFiscal
-            // 
-            this.txtClassFiscal.CwkFuncaoValidacao = null;
-            this.txtClassFiscal.CwkMascara = null;
-            this.txtClassFiscal.CwkValidacao = null;
-            this.txtClassFiscal.Location = new System.Drawing.Point(567, 35);
-            this.txtClassFiscal.Name = "txtClassFiscal";
-            this.txtClassFiscal.SelecionarTextoOnEnter = true;
-            this.txtClassFiscal.Size = new System.Drawing.Size(100, 20);
-            this.txtClassFiscal.TabIndex = 12;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(17, 261);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(131, 13);
-            this.labelControl6.TabIndex = 24;
-            this.labelControl6.Text = "Regra para fora estado";
-            // 
-            // btConsultarProduto_Icms
-            // 
-            this.btConsultarProduto_Icms.GridControl = null;
-            this.btConsultarProduto_Icms.GridControlType = null;
-            this.btConsultarProduto_Icms.GridControlTypeParams = null;
-            this.btConsultarProduto_Icms.ImageOptions.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
-            this.btConsultarProduto_Icms.Location = new System.Drawing.Point(361, 447);
-            this.btConsultarProduto_Icms.Name = "btConsultarProduto_Icms";
-            this.btConsultarProduto_Icms.Size = new System.Drawing.Size(75, 23);
-            this.btConsultarProduto_Icms.SubForm = null;
-            this.btConsultarProduto_Icms.SubFormType = null;
-            this.btConsultarProduto_Icms.SubFormTypeParams = null;
-            this.btConsultarProduto_Icms.TabIndex = 26;
-            this.btConsultarProduto_Icms.TabStop = false;
-            this.btConsultarProduto_Icms.Text = "&Consultar";
-            // 
-            // btExcluirProduto_Icms
-            // 
-            this.btExcluirProduto_Icms.GridControl = null;
-            this.btExcluirProduto_Icms.GridControlType = null;
-            this.btExcluirProduto_Icms.GridControlTypeParams = null;
-            this.btExcluirProduto_Icms.ImageOptions.Image = global::Aplicacao.Properties.Resources.Excluir_copy;
-            this.btExcluirProduto_Icms.Location = new System.Drawing.Point(595, 447);
-            this.btExcluirProduto_Icms.Name = "btExcluirProduto_Icms";
-            this.btExcluirProduto_Icms.Size = new System.Drawing.Size(75, 23);
-            this.btExcluirProduto_Icms.SubForm = null;
-            this.btExcluirProduto_Icms.SubFormType = null;
-            this.btExcluirProduto_Icms.SubFormTypeParams = null;
-            this.btExcluirProduto_Icms.TabIndex = 28;
-            this.btExcluirProduto_Icms.TabStop = false;
-            this.btExcluirProduto_Icms.Text = "&Excluir";
-            // 
-            // btAlterarProduto_Icms
-            // 
-            this.btAlterarProduto_Icms.GridControl = null;
-            this.btAlterarProduto_Icms.GridControlType = null;
-            this.btAlterarProduto_Icms.GridControlTypeParams = null;
-            this.btAlterarProduto_Icms.ImageOptions.Image = global::Aplicacao.Properties.Resources.Alterar_copy;
-            this.btAlterarProduto_Icms.Location = new System.Drawing.Point(517, 447);
-            this.btAlterarProduto_Icms.Name = "btAlterarProduto_Icms";
-            this.btAlterarProduto_Icms.Size = new System.Drawing.Size(75, 23);
-            this.btAlterarProduto_Icms.SubForm = null;
-            this.btAlterarProduto_Icms.SubFormType = null;
-            this.btAlterarProduto_Icms.SubFormTypeParams = null;
-            this.btAlterarProduto_Icms.TabIndex = 27;
-            this.btAlterarProduto_Icms.TabStop = false;
-            this.btAlterarProduto_Icms.Text = "&Alterar";
-            // 
-            // btIncluirProduto_Icms
-            // 
-            this.btIncluirProduto_Icms.GridControl = null;
-            this.btIncluirProduto_Icms.GridControlType = null;
-            this.btIncluirProduto_Icms.GridControlTypeParams = null;
-            this.btIncluirProduto_Icms.ImageOptions.Image = global::Aplicacao.Properties.Resources.Inserir_copy;
-            this.btIncluirProduto_Icms.Location = new System.Drawing.Point(439, 447);
-            this.btIncluirProduto_Icms.Name = "btIncluirProduto_Icms";
-            this.btIncluirProduto_Icms.Size = new System.Drawing.Size(75, 23);
-            this.btIncluirProduto_Icms.SubForm = null;
-            this.btIncluirProduto_Icms.SubFormType = null;
-            this.btIncluirProduto_Icms.SubFormTypeParams = null;
-            this.btIncluirProduto_Icms.TabIndex = 26;
-            this.btIncluirProduto_Icms.TabStop = false;
-            this.btIncluirProduto_Icms.Text = "&Incluir";
-            // 
-            // gcProduto_Icmss
-            // 
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Edit.Visible = false;
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.First.Hint = "Primeiro registro";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Last.Hint = "Último registro";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Next.Hint = "Próximo registro";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.NextPage.Hint = "Próxima página";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Prev.Hint = "Registro anterior";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.PrevPage.Hint = "Página anterior";
-            this.gcProduto_Icmss.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gcProduto_Icmss.EmbeddedNavigator.TextStringFormat = "Registro {0} de {1}";
-            this.gcProduto_Icmss.Location = new System.Drawing.Point(15, 279);
-            this.gcProduto_Icmss.MainView = this.gvProduto_Icmss;
-            this.gcProduto_Icmss.Name = "gcProduto_Icmss";
-            this.gcProduto_Icmss.Size = new System.Drawing.Size(655, 162);
-            this.gcProduto_Icmss.TabIndex = 25;
-            this.gcProduto_Icmss.UseEmbeddedNavigator = true;
-            this.gcProduto_Icmss.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvProduto_Icmss,
-            this.gridView2});
-            // 
-            // gvProduto_Icmss
-            // 
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.Empty.BackColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.Empty.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.EvenRow.BorderColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvProduto_Icmss.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvProduto_Icmss.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvProduto_Icmss.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvProduto_Icmss.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvProduto_Icmss.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.gvProduto_Icmss.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.gvProduto_Icmss.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.OddRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.OddRow.Options.UseBorderColor = true;
-            this.gvProduto_Icmss.Appearance.OddRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gvProduto_Icmss.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.Preview.Options.UseFont = true;
-            this.gvProduto_Icmss.Appearance.Preview.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvProduto_Icmss.Appearance.Row.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.RowSeparator.BackColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvProduto_Icmss.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black;
-            this.gvProduto_Icmss.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gvProduto_Icmss.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gvProduto_Icmss.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gvProduto_Icmss.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.origemProdutoIcms,
-            this.destinoProdutoIcms,
-            this.aliquotaProdutoIcms});
-            this.gvProduto_Icmss.GridControl = this.gcProduto_Icmss;
-            this.gvProduto_Icmss.Name = "gvProduto_Icmss";
-            this.gvProduto_Icmss.OptionsBehavior.Editable = false;
-            this.gvProduto_Icmss.OptionsBehavior.FocusLeaveOnTab = true;
-            this.gvProduto_Icmss.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvProduto_Icmss.OptionsView.EnableAppearanceOddRow = true;
-            this.gvProduto_Icmss.OptionsView.ShowGroupPanel = false;
-            // 
-            // origemProdutoIcms
-            // 
-            this.origemProdutoIcms.Caption = "Origem";
-            this.origemProdutoIcms.FieldName = "UFOrigemStr";
-            this.origemProdutoIcms.Name = "origemProdutoIcms";
-            this.origemProdutoIcms.Visible = true;
-            this.origemProdutoIcms.VisibleIndex = 0;
-            // 
-            // destinoProdutoIcms
-            // 
-            this.destinoProdutoIcms.Caption = "Destino";
-            this.destinoProdutoIcms.FieldName = "UFDestinoStr";
-            this.destinoProdutoIcms.Name = "destinoProdutoIcms";
-            this.destinoProdutoIcms.Visible = true;
-            this.destinoProdutoIcms.VisibleIndex = 1;
-            // 
-            // aliquotaProdutoIcms
-            // 
-            this.aliquotaProdutoIcms.Caption = "Alíquota";
-            this.aliquotaProdutoIcms.FieldName = "AliqContrib";
-            this.aliquotaProdutoIcms.Name = "aliquotaProdutoIcms";
-            this.aliquotaProdutoIcms.Visible = true;
-            this.aliquotaProdutoIcms.VisibleIndex = 2;
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gcProduto_Icmss;
-            this.gridView2.Name = "gridView2";
             // 
             // txtID_NCM
             // 
@@ -1880,7 +1623,7 @@
             this.txtID_NCM.CwkMascara = null;
             this.txtID_NCM.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
             this.txtID_NCM.EditValue = "";
-            this.txtID_NCM.Location = new System.Drawing.Point(50, 35);
+            this.txtID_NCM.Location = new System.Drawing.Point(236, 9);
             this.txtID_NCM.Name = "txtID_NCM";
             this.txtID_NCM.Properties.Appearance.Options.UseTextOptions = true;
             this.txtID_NCM.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1896,7 +1639,7 @@
             this.txtNCM.CwkMascara = null;
             this.txtNCM.CwkValidacao = null;
             this.txtNCM.EditValue = "";
-            this.txtNCM.Location = new System.Drawing.Point(100, 35);
+            this.txtNCM.Location = new System.Drawing.Point(292, 9);
             this.txtNCM.Name = "txtNCM";
             this.txtNCM.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNCM.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -1910,7 +1653,7 @@
             this.txtGENERO_NCM.CwkFuncaoValidacao = null;
             this.txtGENERO_NCM.CwkMascara = null;
             this.txtGENERO_NCM.CwkValidacao = null;
-            this.txtGENERO_NCM.Location = new System.Drawing.Point(438, 35);
+            this.txtGENERO_NCM.Location = new System.Drawing.Point(116, 9);
             this.txtGENERO_NCM.Name = "txtGENERO_NCM";
             this.txtGENERO_NCM.Properties.Appearance.Options.UseTextOptions = true;
             this.txtGENERO_NCM.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -1923,7 +1666,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(361, 38);
+            this.label10.Location = new System.Drawing.Point(39, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 9;
@@ -1932,7 +1675,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(20, 38);
+            this.labelControl3.Location = new System.Drawing.Point(195, 12);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(26, 13);
             this.labelControl3.TabIndex = 6;
@@ -1940,7 +1683,7 @@
             // 
             // lkbNCM
             // 
-            this.lkbNCM.Location = new System.Drawing.Point(284, 35);
+            this.lkbNCM.Location = new System.Drawing.Point(481, 9);
             this.lkbNCM.Lookup = null;
             this.lkbNCM.Name = "lkbNCM";
             this.lkbNCM.Size = new System.Drawing.Size(24, 20);
@@ -1952,336 +1695,6 @@
             this.lkbNCM.Text = "...";
             this.lkbNCM.Click += new System.EventHandler(this.lkbNCM_Click);
             // 
-            // lkbCFOPForaDoEstado
-            // 
-            this.lkbCFOPForaDoEstado.Location = new System.Drawing.Point(643, 8);
-            this.lkbCFOPForaDoEstado.Lookup = null;
-            this.lkbCFOPForaDoEstado.Name = "lkbCFOPForaDoEstado";
-            this.lkbCFOPForaDoEstado.Size = new System.Drawing.Size(24, 20);
-            this.lkbCFOPForaDoEstado.SubForm = null;
-            this.lkbCFOPForaDoEstado.SubFormType = null;
-            this.lkbCFOPForaDoEstado.SubFormTypeParams = null;
-            this.lkbCFOPForaDoEstado.TabIndex = 5;
-            this.lkbCFOPForaDoEstado.TabStop = false;
-            this.lkbCFOPForaDoEstado.Text = "...";
-            this.lkbCFOPForaDoEstado.Click += new System.EventHandler(this.lkbCFOPForaDoEstado_Click);
-            // 
-            // lkpCFOPForaDoEstado
-            // 
-            this.lkpCFOPForaDoEstado.ButtonLookup = this.lkbCFOPForaDoEstado;
-            this.lkpCFOPForaDoEstado.CamposPesquisa = new string[] {
-        "CFOP",
-        "Nome"};
-            this.lkpCFOPForaDoEstado.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOPForaDoEstado.CamposRestricoesAND")));
-            this.lkpCFOPForaDoEstado.CamposRestricoesNOT = null;
-            this.lkpCFOPForaDoEstado.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOPForaDoEstado.CamposRestricoesOR")));
-            this.lkpCFOPForaDoEstado.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
-        null,
-        null,
-        null};
-            this.lkpCFOPForaDoEstado.ColunaTamanho = new string[] {
-        "50",
-        "20",
-        null,
-        null,
-        null};
-            this.lkpCFOPForaDoEstado.ContextoLinq = null;
-            this.lkpCFOPForaDoEstado.CwkFuncaoValidacao = null;
-            this.lkpCFOPForaDoEstado.CwkMascara = null;
-            this.lkpCFOPForaDoEstado.CwkValidacao = null;
-            this.lkpCFOPForaDoEstado.Exemplo = null;
-            this.lkpCFOPForaDoEstado.ID = 0;
-            this.lkpCFOPForaDoEstado.Join = null;
-            this.lkpCFOPForaDoEstado.Key = System.Windows.Forms.Keys.F5;
-            this.lkpCFOPForaDoEstado.Location = new System.Drawing.Point(438, 8);
-            this.lkpCFOPForaDoEstado.Name = "lkpCFOPForaDoEstado";
-            this.lkpCFOPForaDoEstado.OnIDChanged = null;
-            this.lkpCFOPForaDoEstado.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpCFOPForaDoEstado.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpCFOPForaDoEstado.SelecionarTextoOnEnter = true;
-            this.lkpCFOPForaDoEstado.Size = new System.Drawing.Size(200, 20);
-            this.lkpCFOPForaDoEstado.Tabela = null;
-            this.lkpCFOPForaDoEstado.TabIndex = 4;
-            this.lkpCFOPForaDoEstado.TituloTelaPesquisa = null;
-            this.lkpCFOPForaDoEstado.ToolTip = "Campos pesquisados: CFOP, Nome.";
-            this.lkpCFOPForaDoEstado.Where = null;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(332, 11);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(101, 13);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "CFOP (Fora do Est.):";
-            // 
-            // btnlkpCFOP
-            // 
-            this.btnlkpCFOP.Location = new System.Drawing.Point(284, 8);
-            this.btnlkpCFOP.Lookup = null;
-            this.btnlkpCFOP.Name = "btnlkpCFOP";
-            this.btnlkpCFOP.Size = new System.Drawing.Size(24, 20);
-            this.btnlkpCFOP.SubForm = null;
-            this.btnlkpCFOP.SubFormType = null;
-            this.btnlkpCFOP.SubFormTypeParams = null;
-            this.btnlkpCFOP.TabIndex = 2;
-            this.btnlkpCFOP.TabStop = false;
-            this.btnlkpCFOP.Text = "...";
-            this.btnlkpCFOP.Click += new System.EventHandler(this.btnlkpCFOP_Click);
-            // 
-            // lkpCFOP
-            // 
-            this.lkpCFOP.ButtonLookup = this.btnlkpCFOP;
-            this.lkpCFOP.CamposPesquisa = new string[] {
-        "CFOP",
-        "Nome"};
-            this.lkpCFOP.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesAND")));
-            this.lkpCFOP.CamposRestricoesNOT = null;
-            this.lkpCFOP.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCFOP.CamposRestricoesOR")));
-            this.lkpCFOP.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
-        null,
-        null,
-        null};
-            this.lkpCFOP.ColunaTamanho = new string[] {
-        "50",
-        "20",
-        null,
-        null,
-        null};
-            this.lkpCFOP.ContextoLinq = null;
-            this.lkpCFOP.CwkFuncaoValidacao = null;
-            this.lkpCFOP.CwkMascara = null;
-            this.lkpCFOP.CwkValidacao = null;
-            this.lkpCFOP.Exemplo = null;
-            this.lkpCFOP.ID = 0;
-            this.lkpCFOP.Join = null;
-            this.lkpCFOP.Key = System.Windows.Forms.Keys.F5;
-            this.lkpCFOP.Location = new System.Drawing.Point(50, 8);
-            this.lkpCFOP.Name = "lkpCFOP";
-            this.lkpCFOP.OnIDChanged = null;
-            this.lkpCFOP.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpCFOP.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpCFOP.SelecionarTextoOnEnter = true;
-            this.lkpCFOP.Size = new System.Drawing.Size(230, 20);
-            this.lkpCFOP.Tabela = null;
-            this.lkpCFOP.TabIndex = 1;
-            this.lkpCFOP.TituloTelaPesquisa = null;
-            this.lkpCFOP.ToolTip = "Campos pesquisados: CFOP, Nome.";
-            this.lkpCFOP.Where = null;
-            // 
-            // groupIPI
-            // 
-            this.groupIPI.Controls.Add(this.labelControl26);
-            this.groupIPI.Controls.Add(this.txtENQ_IPI);
-            this.groupIPI.Controls.Add(this.labelControl25);
-            this.groupIPI.Controls.Add(this.txtAliquotaIPI);
-            this.groupIPI.Controls.Add(this.labelControl24);
-            this.groupIPI.Controls.Add(this.cbeCST_IPI);
-            this.groupIPI.Location = new System.Drawing.Point(15, 128);
-            this.groupIPI.Name = "groupIPI";
-            this.groupIPI.Size = new System.Drawing.Size(654, 57);
-            this.groupIPI.TabIndex = 15;
-            this.groupIPI.Text = "IPI";
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Location = new System.Drawing.Point(433, 30);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(159, 13);
-            this.labelControl26.TabIndex = 4;
-            this.labelControl26.Text = "Código de Enquadramento Legal:";
-            // 
-            // txtENQ_IPI
-            // 
-            this.txtENQ_IPI.Location = new System.Drawing.Point(598, 27);
-            this.txtENQ_IPI.Name = "txtENQ_IPI";
-            this.txtENQ_IPI.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtENQ_IPI.Properties.MaxLength = 3;
-            this.txtENQ_IPI.Properties.Precision = 0;
-            this.txtENQ_IPI.Size = new System.Drawing.Size(51, 20);
-            this.txtENQ_IPI.TabIndex = 5;
-            // 
-            // labelControl25
-            // 
-            this.labelControl25.Location = new System.Drawing.Point(215, 30);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(43, 13);
-            this.labelControl25.TabIndex = 2;
-            this.labelControl25.Text = "Alíquota:";
-            // 
-            // txtAliquotaIPI
-            // 
-            this.txtAliquotaIPI.Location = new System.Drawing.Point(264, 27);
-            this.txtAliquotaIPI.Name = "txtAliquotaIPI";
-            this.txtAliquotaIPI.Properties.DisplayFormat.FormatString = "F2";
-            this.txtAliquotaIPI.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtAliquotaIPI.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtAliquotaIPI.Properties.Precision = 2;
-            this.txtAliquotaIPI.Size = new System.Drawing.Size(51, 20);
-            this.txtAliquotaIPI.TabIndex = 3;
-            // 
-            // labelControl24
-            // 
-            this.labelControl24.Location = new System.Drawing.Point(5, 30);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(23, 13);
-            this.labelControl24.TabIndex = 0;
-            this.labelControl24.Text = "CST:";
-            // 
-            // cbeCST_IPI
-            // 
-            this.cbeCST_IPI.Location = new System.Drawing.Point(34, 27);
-            this.cbeCST_IPI.Name = "cbeCST_IPI";
-            this.cbeCST_IPI.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeCST_IPI.Properties.Items.AddRange(new object[] {
-            "00-Entrada com recuperação de crédito",
-            "01-Entrada tributada com alíquota zero",
-            "02-Entrada isenta",
-            "03-Entrada não-tributada",
-            "04-Entrada imune",
-            "05-Entrada com suspensão",
-            "49-Outras entradas",
-            "50-Saída tributada",
-            "51-Saída tributada com alíquota zero",
-            "52-Saída isenta",
-            "53-Saída não-tributada",
-            "54-Saída imune",
-            "55-Saída com suspensão",
-            "99-Outras saídas"});
-            this.cbeCST_IPI.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeCST_IPI.Size = new System.Drawing.Size(176, 20);
-            this.cbeCST_IPI.TabIndex = 1;
-            // 
-            // groupCofins
-            // 
-            this.groupCofins.Controls.Add(this.labelControl17);
-            this.groupCofins.Controls.Add(this.labelControl18);
-            this.groupCofins.Controls.Add(this.txtPCOFINS_S08);
-            this.groupCofins.Controls.Add(this.cbeCST_Cofins);
-            this.groupCofins.Location = new System.Drawing.Point(341, 64);
-            this.groupCofins.Name = "groupCofins";
-            this.groupCofins.Size = new System.Drawing.Size(328, 58);
-            this.groupCofins.TabIndex = 14;
-            this.groupCofins.Text = "Cofins";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Location = new System.Drawing.Point(10, 31);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(23, 13);
-            this.labelControl17.TabIndex = 0;
-            this.labelControl17.Text = "CST:";
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Location = new System.Drawing.Point(223, 31);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(43, 13);
-            this.labelControl18.TabIndex = 2;
-            this.labelControl18.Text = "Alíquota:";
-            // 
-            // txtPCOFINS_S08
-            // 
-            this.txtPCOFINS_S08.Location = new System.Drawing.Point(272, 28);
-            this.txtPCOFINS_S08.Name = "txtPCOFINS_S08";
-            this.txtPCOFINS_S08.Properties.DisplayFormat.FormatString = "F2";
-            this.txtPCOFINS_S08.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtPCOFINS_S08.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtPCOFINS_S08.Properties.Precision = 2;
-            this.txtPCOFINS_S08.Size = new System.Drawing.Size(51, 20);
-            this.txtPCOFINS_S08.TabIndex = 3;
-            // 
-            // cbeCST_Cofins
-            // 
-            this.cbeCST_Cofins.Location = new System.Drawing.Point(38, 28);
-            this.cbeCST_Cofins.Name = "cbeCST_Cofins";
-            this.cbeCST_Cofins.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeCST_Cofins.Properties.Items.AddRange(new object[] {
-            "01-Operação Tributável (Normal)",
-            "02-Operação Tributável (Diferenciada)",
-            "03-Operação Tributável",
-            "04-Operação Tributável (monofásica)",
-            "06-Operação Tributável (Aliq. Zero)",
-            "07-Operação Isenta da Contribuição",
-            "08-Operação Sem Incidência da Contribuição",
-            "09-Operação com Suspensão da Contribuição",
-            "99-Outras Operações"});
-            this.cbeCST_Cofins.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeCST_Cofins.Size = new System.Drawing.Size(169, 20);
-            this.cbeCST_Cofins.TabIndex = 1;
-            // 
-            // groupPIS
-            // 
-            this.groupPIS.Controls.Add(this.txtPPIS_Q08);
-            this.groupPIS.Controls.Add(this.labelControl16);
-            this.groupPIS.Controls.Add(this.labelControl15);
-            this.groupPIS.Controls.Add(this.cbeCST_Pis);
-            this.groupPIS.Location = new System.Drawing.Point(15, 64);
-            this.groupPIS.Name = "groupPIS";
-            this.groupPIS.Size = new System.Drawing.Size(320, 58);
-            this.groupPIS.TabIndex = 13;
-            this.groupPIS.Text = "PIS";
-            // 
-            // txtPPIS_Q08
-            // 
-            this.txtPPIS_Q08.Location = new System.Drawing.Point(264, 28);
-            this.txtPPIS_Q08.Name = "txtPPIS_Q08";
-            this.txtPPIS_Q08.Properties.DisplayFormat.FormatString = "F2";
-            this.txtPPIS_Q08.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtPPIS_Q08.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtPPIS_Q08.Properties.Precision = 2;
-            this.txtPPIS_Q08.Size = new System.Drawing.Size(51, 20);
-            this.txtPPIS_Q08.TabIndex = 3;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Location = new System.Drawing.Point(5, 31);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(23, 13);
-            this.labelControl16.TabIndex = 0;
-            this.labelControl16.Text = "CST:";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(215, 31);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(43, 13);
-            this.labelControl15.TabIndex = 2;
-            this.labelControl15.Text = "Alíquota:";
-            // 
-            // cbeCST_Pis
-            // 
-            this.cbeCST_Pis.Location = new System.Drawing.Point(34, 28);
-            this.cbeCST_Pis.Name = "cbeCST_Pis";
-            this.cbeCST_Pis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeCST_Pis.Properties.Items.AddRange(new object[] {
-            "01-Operação Tributável (Normal)",
-            "02-Operação Tributável (Diferenciada)",
-            "03-Operação Tributável",
-            "04-Operação Tributável (monofásica)",
-            "06-Operação Tributável (Aliq. Zero)",
-            "07-Operação Isenta da Contribuição",
-            "08-Operação Sem Incidência da Contribuição",
-            "09-Operação com Suspensão da Contribuição",
-            "99-Outras Operações"});
-            this.cbeCST_Pis.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeCST_Pis.Size = new System.Drawing.Size(176, 20);
-            this.cbeCST_Pis.TabIndex = 1;
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Location = new System.Drawing.Point(15, 11);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(31, 13);
-            this.labelControl23.TabIndex = 0;
-            this.labelControl23.Text = "CFOP:";
-            // 
             // tabTabelaPreco
             // 
             this.tabTabelaPreco.Controls.Add(this.btConsultarTabelaPreco);
@@ -2290,7 +1703,7 @@
             this.tabTabelaPreco.Controls.Add(this.btIncluirTabelaPreco);
             this.tabTabelaPreco.Controls.Add(this.gcTabelaPrecoProdutos);
             this.tabTabelaPreco.Name = "tabTabelaPreco";
-            this.tabTabelaPreco.Size = new System.Drawing.Size(681, 666);
+            this.tabTabelaPreco.Size = new System.Drawing.Size(681, 642);
             this.tabTabelaPreco.Text = "Tabela Preço";
             // 
             // btConsultarTabelaPreco
@@ -2560,7 +1973,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(14, 18);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.tabDados;
-            this.xtraTabControl1.Size = new System.Drawing.Size(687, 694);
+            this.xtraTabControl1.Size = new System.Drawing.Size(687, 670);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabDados,
@@ -2583,14 +1996,6 @@
             // 
             // tabDados
             // 
-            this.tabDados.Controls.Add(this.cbeSaiNaturezaReceita);
-            this.tabDados.Controls.Add(this.lbSaiNaturezaReceita);
-            this.tabDados.Controls.Add(this.lkbPerfilPisCofins);
-            this.tabDados.Controls.Add(this.lkpPerfilPisCofins);
-            this.tabDados.Controls.Add(this.lbPerfilPisCofins);
-            this.tabDados.Controls.Add(this.lkbClassificacaoFiscal);
-            this.tabDados.Controls.Add(this.lkpClassificacaoFiscal);
-            this.tabDados.Controls.Add(this.lbClassificacaoFiscal);
             this.tabDados.Controls.Add(this.labelControl43);
             this.tabDados.Controls.Add(this.txtCProd);
             this.tabDados.Controls.Add(this.txtDataValidade);
@@ -2692,157 +2097,9 @@
             this.tabDados.Controls.Add(this.label5);
             this.tabDados.Controls.Add(this.label1);
             this.tabDados.Name = "tabDados";
-            this.tabDados.Size = new System.Drawing.Size(681, 666);
+            this.tabDados.Size = new System.Drawing.Size(681, 642);
             this.tabDados.Text = "Dados";
-            // 
-            // cbeSaiNaturezaReceita
-            // 
-            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(438, 558);
-            this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
-            this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeSaiNaturezaReceita.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbeSaiNaturezaReceita.Size = new System.Drawing.Size(199, 20);
-            this.cbeSaiNaturezaReceita.TabIndex = 105;
-            // 
-            // lbSaiNaturezaReceita
-            // 
-            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(320, 564);
-            this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
-            this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
-            this.lbSaiNaturezaReceita.TabIndex = 104;
-            this.lbSaiNaturezaReceita.Text = "Natureza da Receita:";
-            // 
-            // lkbPerfilPisCofins
-            // 
-            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(283, 558);
-            this.lkbPerfilPisCofins.Lookup = null;
-            this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
-            this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
-            this.lkbPerfilPisCofins.SubForm = null;
-            this.lkbPerfilPisCofins.SubFormType = null;
-            this.lkbPerfilPisCofins.SubFormTypeParams = null;
-            this.lkbPerfilPisCofins.TabIndex = 103;
-            this.lkbPerfilPisCofins.TabStop = false;
-            this.lkbPerfilPisCofins.Text = "...";
-            this.lkbPerfilPisCofins.Click += new System.EventHandler(this.lkbPerfilPisCofins_Click);
-            // 
-            // lkpPerfilPisCofins
-            // 
-            this.lkpPerfilPisCofins.ButtonLookup = this.lkbPerfilPisCofins;
-            this.lkpPerfilPisCofins.CamposPesquisa = new string[] {
-        "Codigo",
-        "Descricao"};
-            this.lkpPerfilPisCofins.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesAND")));
-            this.lkpPerfilPisCofins.CamposRestricoesNOT = null;
-            this.lkpPerfilPisCofins.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesOR")));
-            this.lkpPerfilPisCofins.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
-        null,
-        null,
-        null};
-            this.lkpPerfilPisCofins.ColunaTamanho = new string[] {
-        "50",
-        "20",
-        null,
-        null,
-        null};
-            this.lkpPerfilPisCofins.ContextoLinq = null;
-            this.lkpPerfilPisCofins.CwkFuncaoValidacao = null;
-            this.lkpPerfilPisCofins.CwkMascara = null;
-            this.lkpPerfilPisCofins.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpPerfilPisCofins.Exemplo = null;
-            this.lkpPerfilPisCofins.ID = 0;
-            this.lkpPerfilPisCofins.Join = null;
-            this.lkpPerfilPisCofins.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(105, 557);
-            this.lkpPerfilPisCofins.Name = "lkpPerfilPisCofins";
-            this.lkpPerfilPisCofins.OnIDChanged = null;
-            this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPerfilPisCofins.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPerfilPisCofins.SelecionarTextoOnEnter = true;
-            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(171, 20);
-            this.lkpPerfilPisCofins.Tabela = null;
-            this.lkpPerfilPisCofins.TabIndex = 102;
-            this.lkpPerfilPisCofins.TituloTelaPesquisa = null;
-            this.lkpPerfilPisCofins.ToolTip = "Campos pesquisados: Codigo, Descricao.";
-            this.lkpPerfilPisCofins.Where = null;
-            this.lkpPerfilPisCofins.EditValueChanged += new System.EventHandler(this.lkpPerfilPisCofins_EditValueChanged);
-            // 
-            // lbPerfilPisCofins
-            // 
-            this.lbPerfilPisCofins.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbPerfilPisCofins.Location = new System.Drawing.Point(16, 560);
-            this.lbPerfilPisCofins.Name = "lbPerfilPisCofins";
-            this.lbPerfilPisCofins.Size = new System.Drawing.Size(86, 13);
-            this.lbPerfilPisCofins.TabIndex = 101;
-            this.lbPerfilPisCofins.Text = "Perfil Pis e Cofins:";
-            // 
-            // lkbClassificacaoFiscal
-            // 
-            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(647, 531);
-            this.lkbClassificacaoFiscal.Lookup = null;
-            this.lkbClassificacaoFiscal.Name = "lkbClassificacaoFiscal";
-            this.lkbClassificacaoFiscal.Size = new System.Drawing.Size(24, 20);
-            this.lkbClassificacaoFiscal.SubForm = null;
-            this.lkbClassificacaoFiscal.SubFormType = null;
-            this.lkbClassificacaoFiscal.SubFormTypeParams = null;
-            this.lkbClassificacaoFiscal.TabIndex = 100;
-            this.lkbClassificacaoFiscal.TabStop = false;
-            this.lkbClassificacaoFiscal.Text = "...";
-            this.lkbClassificacaoFiscal.Click += new System.EventHandler(this.lkbClassificacaoFiscal_Click);
-            // 
-            // lkpClassificacaoFiscal
-            // 
-            this.lkpClassificacaoFiscal.ButtonLookup = this.lkbClassificacaoFiscal;
-            this.lkpClassificacaoFiscal.CamposPesquisa = new string[] {
-        "Codigo",
-        "Descricao"};
-            this.lkpClassificacaoFiscal.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesAND")));
-            this.lkpClassificacaoFiscal.CamposRestricoesNOT = null;
-            this.lkpClassificacaoFiscal.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesOR")));
-            this.lkpClassificacaoFiscal.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
-        null,
-        null,
-        null};
-            this.lkpClassificacaoFiscal.ColunaTamanho = new string[] {
-        "50",
-        "20",
-        null,
-        null,
-        null};
-            this.lkpClassificacaoFiscal.ContextoLinq = null;
-            this.lkpClassificacaoFiscal.CwkFuncaoValidacao = null;
-            this.lkpClassificacaoFiscal.CwkMascara = null;
-            this.lkpClassificacaoFiscal.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpClassificacaoFiscal.Exemplo = null;
-            this.lkpClassificacaoFiscal.ID = 0;
-            this.lkpClassificacaoFiscal.Join = null;
-            this.lkpClassificacaoFiscal.Key = System.Windows.Forms.Keys.F5;
-            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(106, 530);
-            this.lkpClassificacaoFiscal.Name = "lkpClassificacaoFiscal";
-            this.lkpClassificacaoFiscal.OnIDChanged = null;
-            this.lkpClassificacaoFiscal.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpClassificacaoFiscal.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpClassificacaoFiscal.SelecionarTextoOnEnter = true;
-            this.lkpClassificacaoFiscal.Size = new System.Drawing.Size(531, 20);
-            this.lkpClassificacaoFiscal.Tabela = null;
-            this.lkpClassificacaoFiscal.TabIndex = 99;
-            this.lkpClassificacaoFiscal.TituloTelaPesquisa = null;
-            this.lkpClassificacaoFiscal.ToolTip = "Campos pesquisados: Codigo, Descricao.";
-            this.lkpClassificacaoFiscal.Where = null;
-            // 
-            // lbClassificacaoFiscal
-            // 
-            this.lbClassificacaoFiscal.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(6, 531);
-            this.lbClassificacaoFiscal.Name = "lbClassificacaoFiscal";
-            this.lbClassificacaoFiscal.Size = new System.Drawing.Size(94, 13);
-            this.lbClassificacaoFiscal.TabIndex = 98;
-            this.lbClassificacaoFiscal.Text = "Classificação Fiscal:";
+            this.tabDados.Paint += new System.Windows.Forms.PaintEventHandler(this.tabDados_Paint);
             // 
             // labelControl43
             // 
@@ -2871,7 +2128,7 @@
             // txtDataValidade
             // 
             this.txtDataValidade.EditValue = null;
-            this.txtDataValidade.Location = new System.Drawing.Point(255, 635);
+            this.txtDataValidade.Location = new System.Drawing.Point(255, 593);
             this.txtDataValidade.Name = "txtDataValidade";
             this.txtDataValidade.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -2884,7 +2141,7 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(180, 638);
+            this.label62.Location = new System.Drawing.Point(180, 596);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(69, 13);
             this.label62.TabIndex = 94;
@@ -2894,7 +2151,7 @@
             // txtDataPromocionalFinal
             // 
             this.txtDataPromocionalFinal.EditValue = null;
-            this.txtDataPromocionalFinal.Location = new System.Drawing.Point(531, 635);
+            this.txtDataPromocionalFinal.Location = new System.Drawing.Point(531, 593);
             this.txtDataPromocionalFinal.Name = "txtDataPromocionalFinal";
             this.txtDataPromocionalFinal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -2907,7 +2164,7 @@
             // txtDataPromocionalInicial
             // 
             this.txtDataPromocionalInicial.EditValue = null;
-            this.txtDataPromocionalInicial.Location = new System.Drawing.Point(438, 635);
+            this.txtDataPromocionalInicial.Location = new System.Drawing.Point(438, 593);
             this.txtDataPromocionalInicial.Name = "txtDataPromocionalInicial";
             this.txtDataPromocionalInicial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -2920,7 +2177,7 @@
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(349, 638);
+            this.label60.Location = new System.Drawing.Point(349, 596);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(86, 13);
             this.label60.TabIndex = 90;
@@ -2932,7 +2189,7 @@
             this.txtLocalizacao.CwkFuncaoValidacao = null;
             this.txtLocalizacao.CwkMascara = null;
             this.txtLocalizacao.CwkValidacao = null;
-            this.txtLocalizacao.Location = new System.Drawing.Point(87, 584);
+            this.txtLocalizacao.Location = new System.Drawing.Point(87, 542);
             this.txtLocalizacao.Name = "txtLocalizacao";
             this.txtLocalizacao.SelecionarTextoOnEnter = true;
             this.txtLocalizacao.Size = new System.Drawing.Size(455, 20);
@@ -2941,7 +2198,7 @@
             // lbLocalizacao
             // 
             this.lbLocalizacao.AutoSize = true;
-            this.lbLocalizacao.Location = new System.Drawing.Point(19, 587);
+            this.lbLocalizacao.Location = new System.Drawing.Point(19, 545);
             this.lbLocalizacao.Name = "lbLocalizacao";
             this.lbLocalizacao.Size = new System.Drawing.Size(65, 13);
             this.lbLocalizacao.TabIndex = 70;
@@ -2949,7 +2206,7 @@
             // 
             // chbIntegrarEcommerce
             // 
-            this.chbIntegrarEcommerce.Location = new System.Drawing.Point(548, 584);
+            this.chbIntegrarEcommerce.Location = new System.Drawing.Point(548, 542);
             this.chbIntegrarEcommerce.Name = "chbIntegrarEcommerce";
             this.chbIntegrarEcommerce.Properties.Caption = "Integrar Ecommerce";
             this.chbIntegrarEcommerce.Size = new System.Drawing.Size(122, 19);
@@ -2958,7 +2215,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(8, 641);
+            this.label57.Location = new System.Drawing.Point(8, 599);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(73, 13);
             this.label57.TabIndex = 88;
@@ -2968,7 +2225,7 @@
             // txtDtCadastroProduto
             // 
             this.txtDtCadastroProduto.EditValue = null;
-            this.txtDtCadastroProduto.Location = new System.Drawing.Point(87, 635);
+            this.txtDtCadastroProduto.Location = new System.Drawing.Point(87, 593);
             this.txtDtCadastroProduto.Name = "txtDtCadastroProduto";
             this.txtDtCadastroProduto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -3064,7 +2321,7 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(138, 613);
+            this.label56.Location = new System.Drawing.Point(138, 571);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(23, 13);
             this.label56.TabIndex = 74;
@@ -3073,7 +2330,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(253, 613);
+            this.label55.Location = new System.Drawing.Point(253, 571);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(23, 13);
             this.label55.TabIndex = 77;
@@ -3082,7 +2339,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(405, 613);
+            this.label54.Location = new System.Drawing.Point(405, 571);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(23, 13);
             this.label54.TabIndex = 80;
@@ -3091,7 +2348,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(515, 610);
+            this.label7.Location = new System.Drawing.Point(515, 568);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 83;
@@ -3100,7 +2357,7 @@
             // lbPeso
             // 
             this.lbPeso.AutoSize = true;
-            this.lbPeso.Location = new System.Drawing.Point(431, 612);
+            this.lbPeso.Location = new System.Drawing.Point(431, 570);
             this.lbPeso.Name = "lbPeso";
             this.lbPeso.Size = new System.Drawing.Size(34, 13);
             this.lbPeso.TabIndex = 81;
@@ -3111,7 +2368,7 @@
             this.txtPeso.CwkFuncaoValidacao = null;
             this.txtPeso.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.NUMERAL;
             this.txtPeso.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.SomenteNumeral;
-            this.txtPeso.Location = new System.Drawing.Point(466, 609);
+            this.txtPeso.Location = new System.Drawing.Point(466, 567);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPeso.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -3125,7 +2382,7 @@
             // lbComprimento
             // 
             this.lbComprimento.AutoSize = true;
-            this.lbComprimento.Location = new System.Drawing.Point(277, 612);
+            this.lbComprimento.Location = new System.Drawing.Point(277, 570);
             this.lbComprimento.Name = "lbComprimento";
             this.lbComprimento.Size = new System.Drawing.Size(74, 13);
             this.lbComprimento.TabIndex = 78;
@@ -3136,7 +2393,7 @@
             this.txtComprimento.CwkFuncaoValidacao = null;
             this.txtComprimento.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.NUMERAL;
             this.txtComprimento.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.SomenteNumeral;
-            this.txtComprimento.Location = new System.Drawing.Point(352, 609);
+            this.txtComprimento.Location = new System.Drawing.Point(352, 567);
             this.txtComprimento.Name = "txtComprimento";
             this.txtComprimento.Properties.Appearance.Options.UseTextOptions = true;
             this.txtComprimento.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -3150,7 +2407,7 @@
             // lbAltura
             // 
             this.lbAltura.AutoSize = true;
-            this.lbAltura.Location = new System.Drawing.Point(160, 612);
+            this.lbAltura.Location = new System.Drawing.Point(160, 570);
             this.lbAltura.Name = "lbAltura";
             this.lbAltura.Size = new System.Drawing.Size(40, 13);
             this.lbAltura.TabIndex = 75;
@@ -3161,7 +2418,7 @@
             this.txtAltura.CwkFuncaoValidacao = null;
             this.txtAltura.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.NUMERAL;
             this.txtAltura.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.SomenteNumeral;
-            this.txtAltura.Location = new System.Drawing.Point(201, 609);
+            this.txtAltura.Location = new System.Drawing.Point(201, 567);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Properties.Appearance.Options.UseTextOptions = true;
             this.txtAltura.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -3175,7 +2432,7 @@
             // lbLargura
             // 
             this.lbLargura.AutoSize = true;
-            this.lbLargura.Location = new System.Drawing.Point(35, 612);
+            this.lbLargura.Location = new System.Drawing.Point(35, 570);
             this.lbLargura.Name = "lbLargura";
             this.lbLargura.Size = new System.Drawing.Size(48, 13);
             this.lbLargura.TabIndex = 72;
@@ -3186,7 +2443,7 @@
             this.txtLargura.CwkFuncaoValidacao = null;
             this.txtLargura.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.NUMERAL;
             this.txtLargura.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.SomenteNumeral;
-            this.txtLargura.Location = new System.Drawing.Point(87, 609);
+            this.txtLargura.Location = new System.Drawing.Point(87, 567);
             this.txtLargura.Name = "txtLargura";
             this.txtLargura.Properties.Appearance.Options.UseTextOptions = true;
             this.txtLargura.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -3375,7 +2632,7 @@
             // 
             this.DtFornec1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtFornec1.EditValue = null;
-            this.DtFornec1.Location = new System.Drawing.Point(431, 144);
+            this.DtFornec1.Location = new System.Drawing.Point(431, 132);
             this.DtFornec1.Name = "DtFornec1";
             this.DtFornec1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -3670,7 +2927,7 @@
             // 
             // chbInativo
             // 
-            this.chbInativo.Location = new System.Drawing.Point(624, 634);
+            this.chbInativo.Location = new System.Drawing.Point(624, 592);
             this.chbInativo.Name = "chbInativo";
             this.chbInativo.Properties.Caption = "Inativo";
             this.chbInativo.Size = new System.Drawing.Size(54, 19);
@@ -3729,7 +2986,7 @@
             // 
             // chbCodigoBarrasRegistrado
             // 
-            this.chbCodigoBarrasRegistrado.Location = new System.Drawing.Point(534, 609);
+            this.chbCodigoBarrasRegistrado.Location = new System.Drawing.Point(534, 567);
             this.chbCodigoBarrasRegistrado.Name = "chbCodigoBarrasRegistrado";
             this.chbCodigoBarrasRegistrado.Properties.Caption = "Enviar SEM GTIN";
             this.chbCodigoBarrasRegistrado.Size = new System.Drawing.Size(134, 19);
@@ -4405,6 +3662,12 @@
             // 
             // xtraTabPage5
             // 
+            this.xtraTabPage5.Controls.Add(this.txtRAZAO_Fab);
+            this.xtraTabPage5.Controls.Add(this.txtCNPJ_Fab);
+            this.xtraTabPage5.Controls.Add(this.labelControl40);
+            this.xtraTabPage5.Controls.Add(this.labelControl39);
+            this.xtraTabPage5.Controls.Add(this.cbeEscRelevante);
+            this.xtraTabPage5.Controls.Add(this.labelControl38);
             this.xtraTabPage5.Controls.Add(this.labelControl46);
             this.xtraTabPage5.Controls.Add(this.txtAplicacao);
             this.xtraTabPage5.Controls.Add(this.labelControl45);
@@ -4412,15 +3675,80 @@
             this.xtraTabPage5.Controls.Add(this.labelControl44);
             this.xtraTabPage5.Controls.Add(this.txtCodigoFabricante);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(681, 666);
+            this.xtraTabPage5.Size = new System.Drawing.Size(681, 642);
             this.xtraTabPage5.Text = "Inf. Adicionais";
+            // 
+            // txtRAZAO_Fab
+            // 
+            this.txtRAZAO_Fab.CwkFuncaoValidacao = null;
+            this.txtRAZAO_Fab.CwkMascara = null;
+            this.txtRAZAO_Fab.CwkValidacao = null;
+            this.txtRAZAO_Fab.Location = new System.Drawing.Point(123, 44);
+            this.txtRAZAO_Fab.Name = "txtRAZAO_Fab";
+            this.txtRAZAO_Fab.Properties.MaxLength = 30;
+            this.txtRAZAO_Fab.SelecionarTextoOnEnter = true;
+            this.txtRAZAO_Fab.Size = new System.Drawing.Size(283, 20);
+            this.txtRAZAO_Fab.TabIndex = 107;
+            // 
+            // txtCNPJ_Fab
+            // 
+            this.txtCNPJ_Fab.CausesValidation = false;
+            this.txtCNPJ_Fab.CwkFuncaoValidacao = null;
+            this.txtCNPJ_Fab.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.CNPJ;
+            this.txtCNPJ_Fab.CwkValidacao = null;
+            this.txtCNPJ_Fab.Location = new System.Drawing.Point(510, 44);
+            this.txtCNPJ_Fab.Name = "txtCNPJ_Fab";
+            this.txtCNPJ_Fab.Properties.Mask.EditMask = "\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}";
+            this.txtCNPJ_Fab.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtCNPJ_Fab.Properties.Mask.ShowPlaceHolders = false;
+            this.txtCNPJ_Fab.Properties.MaxLength = 20;
+            this.txtCNPJ_Fab.SelecionarTextoOnEnter = false;
+            this.txtCNPJ_Fab.Size = new System.Drawing.Size(163, 20);
+            this.txtCNPJ_Fab.TabIndex = 109;
+            // 
+            // labelControl40
+            // 
+            this.labelControl40.Location = new System.Drawing.Point(421, 47);
+            this.labelControl40.Name = "labelControl40";
+            this.labelControl40.Size = new System.Drawing.Size(83, 13);
+            this.labelControl40.TabIndex = 108;
+            this.labelControl40.Text = "CNPJ Fabricante:";
+            // 
+            // labelControl39
+            // 
+            this.labelControl39.Location = new System.Drawing.Point(26, 47);
+            this.labelControl39.Name = "labelControl39";
+            this.labelControl39.Size = new System.Drawing.Size(88, 13);
+            this.labelControl39.TabIndex = 106;
+            this.labelControl39.Text = "Razão Fabricante:";
+            // 
+            // cbeEscRelevante
+            // 
+            this.cbeEscRelevante.Location = new System.Drawing.Point(123, 96);
+            this.cbeEscRelevante.Name = "cbeEscRelevante";
+            this.cbeEscRelevante.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbeEscRelevante.Properties.Items.AddRange(new object[] {
+            "S - Produzido em Escala Relevante",
+            "N – Produzido em Escala NÃO Relevante"});
+            this.cbeEscRelevante.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbeEscRelevante.Size = new System.Drawing.Size(157, 20);
+            this.cbeEscRelevante.TabIndex = 105;
+            // 
+            // labelControl38
+            // 
+            this.labelControl38.Location = new System.Drawing.Point(28, 99);
+            this.labelControl38.Name = "labelControl38";
+            this.labelControl38.Size = new System.Drawing.Size(86, 13);
+            this.labelControl38.TabIndex = 104;
+            this.labelControl38.Text = "Escala Relevante:";
             // 
             // labelControl46
             // 
             this.labelControl46.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl46.Location = new System.Drawing.Point(12, 39);
+            this.labelControl46.Location = new System.Drawing.Point(62, 71);
             this.labelControl46.Name = "labelControl46";
-            this.labelControl46.Size = new System.Drawing.Size(114, 17);
+            this.labelControl46.Size = new System.Drawing.Size(59, 17);
             this.labelControl46.TabIndex = 103;
             this.labelControl46.Text = "Aplicação:";
             // 
@@ -4430,11 +3758,11 @@
             this.txtAplicacao.CwkMascara = null;
             this.txtAplicacao.CwkValidacao = null;
             this.txtAplicacao.EditValue = "";
-            this.txtAplicacao.Location = new System.Drawing.Point(132, 38);
+            this.txtAplicacao.Location = new System.Drawing.Point(123, 70);
             this.txtAplicacao.Name = "txtAplicacao";
             this.txtAplicacao.Properties.MaxLength = 200;
             this.txtAplicacao.SelecionarTextoOnEnter = true;
-            this.txtAplicacao.Size = new System.Drawing.Size(527, 20);
+            this.txtAplicacao.Size = new System.Drawing.Size(550, 20);
             this.txtAplicacao.TabIndex = 102;
             // 
             // labelControl45
@@ -4462,7 +3790,7 @@
             // labelControl44
             // 
             this.labelControl44.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl44.Location = new System.Drawing.Point(12, 13);
+            this.labelControl44.Location = new System.Drawing.Point(7, 13);
             this.labelControl44.Name = "labelControl44";
             this.labelControl44.Size = new System.Drawing.Size(114, 17);
             this.labelControl44.TabIndex = 99;
@@ -4474,7 +3802,7 @@
             this.txtCodigoFabricante.CwkMascara = null;
             this.txtCodigoFabricante.CwkValidacao = null;
             this.txtCodigoFabricante.EditValue = "";
-            this.txtCodigoFabricante.Location = new System.Drawing.Point(132, 12);
+            this.txtCodigoFabricante.Location = new System.Drawing.Point(123, 12);
             this.txtCodigoFabricante.Name = "txtCodigoFabricante";
             this.txtCodigoFabricante.Properties.MaxLength = 200;
             this.txtCodigoFabricante.SelecionarTextoOnEnter = true;
@@ -4489,7 +3817,7 @@
             this.tabCodigoBarra.Controls.Add(this.btIncluirProdutoCodBarra);
             this.tabCodigoBarra.Controls.Add(this.gcProdutoCodBarra);
             this.tabCodigoBarra.Name = "tabCodigoBarra";
-            this.tabCodigoBarra.Size = new System.Drawing.Size(681, 666);
+            this.tabCodigoBarra.Size = new System.Drawing.Size(681, 642);
             this.tabCodigoBarra.Text = "Código Barra";
             // 
             // btConsultarProdutoCodBarra
@@ -4705,7 +4033,7 @@
             // 
             // CodigoBarra
             // 
-            this.CodigoBarra.Caption = "Código de Barra";
+            this.CodigoBarra.Caption = "Código de Barras";
             this.CodigoBarra.FieldName = "CodigoBarra";
             this.CodigoBarra.Name = "CodigoBarra";
             this.CodigoBarra.Visible = true;
@@ -4714,7 +4042,7 @@
             // 
             // ControleIdentificacao
             // 
-            this.ControleIdentificacao.Caption = "Controle de Identificacao";
+            this.ControleIdentificacao.Caption = "Controle de Identificação";
             this.ControleIdentificacao.FieldName = "BControleIdentificacao";
             this.ControleIdentificacao.Name = "ControleIdentificacao";
             this.ControleIdentificacao.Visible = true;
@@ -4732,7 +4060,7 @@
             this.tabFCI.Controls.Add(this.sbConsultarFCI);
             this.tabFCI.Controls.Add(this.gcFCI);
             this.tabFCI.Name = "tabFCI";
-            this.tabFCI.Size = new System.Drawing.Size(681, 666);
+            this.tabFCI.Size = new System.Drawing.Size(681, 642);
             this.tabFCI.Text = "FCI";
             // 
             // sbAlterarFCI
@@ -4944,7 +4272,7 @@
             this.tpConversoes.Controls.Add(this.btConvIncluir);
             this.tpConversoes.Controls.Add(this.gcProdutoConversao);
             this.tpConversoes.Name = "tpConversoes";
-            this.tpConversoes.Size = new System.Drawing.Size(681, 666);
+            this.tpConversoes.Size = new System.Drawing.Size(681, 642);
             this.tpConversoes.Text = "Conversões";
             // 
             // btConvExcluir
@@ -5166,7 +4494,7 @@
             this.tpImei.Controls.Add(this.btAlterarImeis);
             this.tpImei.Controls.Add(this.gcImeis);
             this.tpImei.Name = "tpImei";
-            this.tpImei.Size = new System.Drawing.Size(681, 666);
+            this.tpImei.Size = new System.Drawing.Size(681, 642);
             this.tpImei.Text = "Imei";
             // 
             // btConsultarImeis
@@ -5409,7 +4737,7 @@
             this.tpVarejo.Controls.Add(this.simpleButton7);
             this.tpVarejo.Controls.Add(this.GC_ProdutoVarejo);
             this.tpVarejo.Name = "tpVarejo";
-            this.tpVarejo.Size = new System.Drawing.Size(681, 666);
+            this.tpVarejo.Size = new System.Drawing.Size(681, 642);
             this.tpVarejo.Text = "Preço Atacado/Varejo";
             // 
             // simpleButton5
@@ -5417,7 +4745,7 @@
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.ImageOptions.ImageIndex = 2;
             this.simpleButton5.ImageOptions.ImageList = this.imageList1;
-            this.simpleButton5.Location = new System.Drawing.Point(589, 368);
+            this.simpleButton5.Location = new System.Drawing.Point(589, 344);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(75, 23);
             this.simpleButton5.TabIndex = 32;
@@ -5429,7 +4757,7 @@
             this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton6.ImageOptions.ImageIndex = 5;
             this.simpleButton6.ImageOptions.ImageList = this.imageList1;
-            this.simpleButton6.Location = new System.Drawing.Point(511, 368);
+            this.simpleButton6.Location = new System.Drawing.Point(511, 344);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(75, 23);
             this.simpleButton6.TabIndex = 31;
@@ -5441,7 +4769,7 @@
             this.simpleButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton7.ImageOptions.ImageIndex = 4;
             this.simpleButton7.ImageOptions.ImageList = this.imageList1;
-            this.simpleButton7.Location = new System.Drawing.Point(433, 368);
+            this.simpleButton7.Location = new System.Drawing.Point(433, 344);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(75, 23);
             this.simpleButton7.TabIndex = 30;
@@ -5632,7 +4960,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gcCotacaoMoeda);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(681, 666);
+            this.xtraTabPage2.Size = new System.Drawing.Size(681, 642);
             this.xtraTabPage2.Text = "Cotação Moeda";
             // 
             // gcCotacaoMoeda
@@ -5843,20 +5171,20 @@
             this.xtraTabPage3.Controls.Add(this.btIncluirArquivo);
             this.xtraTabPage3.Controls.Add(this.sbAbrirArquivo);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(681, 666);
+            this.xtraTabPage3.Size = new System.Drawing.Size(681, 642);
             this.xtraTabPage3.Text = "Arquivos";
             // 
             // gcArquivos
             // 
             this.gcArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gcArquivos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcArquivos.Location = new System.Drawing.Point(7, 3);
             this.gcArquivos.MainView = this.gvArquivos;
             this.gcArquivos.Name = "gcArquivos";
-            this.gcArquivos.Size = new System.Drawing.Size(660, 359);
+            this.gcArquivos.Size = new System.Drawing.Size(660, 335);
             this.gcArquivos.TabIndex = 16;
             this.gcArquivos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvArquivos});
@@ -5990,7 +5318,7 @@
             this.btExcluirArquivo.GridControlType = null;
             this.btExcluirArquivo.GridControlTypeParams = null;
             this.btExcluirArquivo.ImageOptions.Image = global::Aplicacao.Properties.Resources.Excluir_copy;
-            this.btExcluirArquivo.Location = new System.Drawing.Point(590, 368);
+            this.btExcluirArquivo.Location = new System.Drawing.Point(590, 344);
             this.btExcluirArquivo.Name = "btExcluirArquivo";
             this.btExcluirArquivo.Size = new System.Drawing.Size(75, 23);
             this.btExcluirArquivo.SubForm = null;
@@ -6008,7 +5336,7 @@
             this.btAlterarArquivo.GridControlType = null;
             this.btAlterarArquivo.GridControlTypeParams = null;
             this.btAlterarArquivo.ImageOptions.Image = global::Aplicacao.Properties.Resources.Alterar_copy;
-            this.btAlterarArquivo.Location = new System.Drawing.Point(512, 368);
+            this.btAlterarArquivo.Location = new System.Drawing.Point(512, 344);
             this.btAlterarArquivo.Name = "btAlterarArquivo";
             this.btAlterarArquivo.Size = new System.Drawing.Size(75, 23);
             this.btAlterarArquivo.SubForm = null;
@@ -6026,7 +5354,7 @@
             this.btIncluirArquivo.GridControlType = null;
             this.btIncluirArquivo.GridControlTypeParams = null;
             this.btIncluirArquivo.ImageOptions.Image = global::Aplicacao.Properties.Resources.Inserir_copy;
-            this.btIncluirArquivo.Location = new System.Drawing.Point(434, 368);
+            this.btIncluirArquivo.Location = new System.Drawing.Point(434, 344);
             this.btIncluirArquivo.Name = "btIncluirArquivo";
             this.btIncluirArquivo.Size = new System.Drawing.Size(75, 23);
             this.btIncluirArquivo.SubForm = null;
@@ -6041,7 +5369,7 @@
             // 
             this.sbAbrirArquivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.sbAbrirArquivo.ImageOptions.Image = global::Aplicacao.Properties.Resources.folder1;
-            this.sbAbrirArquivo.Location = new System.Drawing.Point(7, 368);
+            this.sbAbrirArquivo.Location = new System.Drawing.Point(7, 344);
             this.sbAbrirArquivo.Name = "sbAbrirArquivo";
             this.sbAbrirArquivo.Size = new System.Drawing.Size(116, 23);
             this.sbAbrirArquivo.TabIndex = 12;
@@ -6057,7 +5385,7 @@
             this.xtraTabPage4.Controls.Add(this.label58);
             this.xtraTabPage4.Controls.Add(this.labelControl42);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(681, 666);
+            this.xtraTabPage4.Size = new System.Drawing.Size(681, 642);
             this.xtraTabPage4.Text = "Combustível";
             // 
             // txtUFCons
@@ -6066,7 +5394,7 @@
             this.txtUFCons.CwkMascara = null;
             this.txtUFCons.CwkValidacao = null;
             this.txtUFCons.EditValue = "";
-            this.txtUFCons.Location = new System.Drawing.Point(80, 66);
+            this.txtUFCons.Location = new System.Drawing.Point(102, 66);
             this.txtUFCons.Name = "txtUFCons";
             this.txtUFCons.Properties.MaxLength = 200;
             this.txtUFCons.SelecionarTextoOnEnter = true;
@@ -6079,7 +5407,7 @@
             this.txtdescANP.CwkMascara = null;
             this.txtdescANP.CwkValidacao = null;
             this.txtdescANP.EditValue = "";
-            this.txtdescANP.Location = new System.Drawing.Point(80, 40);
+            this.txtdescANP.Location = new System.Drawing.Point(102, 40);
             this.txtdescANP.Name = "txtdescANP";
             this.txtdescANP.Properties.MaxLength = 200;
             this.txtdescANP.SelecionarTextoOnEnter = true;
@@ -6091,9 +5419,9 @@
             this.label59.AutoSize = true;
             this.label59.Location = new System.Drawing.Point(16, 43);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(53, 13);
+            this.label59.Size = new System.Drawing.Size(80, 13);
             this.label59.TabIndex = 19;
-            this.label59.Text = "descANP:";
+            this.label59.Text = "Descrição ANP:";
             this.label59.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtcProdANP
@@ -6102,7 +5430,7 @@
             this.txtcProdANP.CwkMascara = null;
             this.txtcProdANP.CwkValidacao = null;
             this.txtcProdANP.EditValue = "";
-            this.txtcProdANP.Location = new System.Drawing.Point(80, 14);
+            this.txtcProdANP.Location = new System.Drawing.Point(102, 14);
             this.txtcProdANP.Name = "txtcProdANP";
             this.txtcProdANP.Properties.MaxLength = 200;
             this.txtcProdANP.SelecionarTextoOnEnter = true;
@@ -6112,21 +5440,21 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(16, 17);
+            this.label58.Location = new System.Drawing.Point(29, 17);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(58, 13);
+            this.label58.Size = new System.Drawing.Size(67, 13);
             this.label58.TabIndex = 17;
-            this.label58.Text = "cProdANP:";
+            this.label58.Text = "Código ANP:";
             this.label58.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelControl42
             // 
             this.labelControl42.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl42.Location = new System.Drawing.Point(19, 69);
+            this.labelControl42.Location = new System.Drawing.Point(79, 69);
             this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(41, 13);
+            this.labelControl42.Size = new System.Drawing.Size(17, 13);
             this.labelControl42.TabIndex = 14;
-            this.labelControl42.Text = "UFCons:";
+            this.labelControl42.Text = "UF:";
             // 
             // tabSKU
             // 
@@ -6137,7 +5465,7 @@
             this.tabSKU.Controls.Add(this.gcProdutoSKU);
             this.tabSKU.Name = "tabSKU";
             this.tabSKU.PageVisible = false;
-            this.tabSKU.Size = new System.Drawing.Size(681, 666);
+            this.tabSKU.Size = new System.Drawing.Size(681, 642);
             this.tabSKU.Text = "SKU";
             // 
             // btConsultarProdutoSKU
@@ -6373,7 +5701,7 @@
             this.xtraTabPage1.Controls.Add(this.gcML);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.Size = new System.Drawing.Size(681, 666);
+            this.xtraTabPage1.Size = new System.Drawing.Size(681, 642);
             this.xtraTabPage1.Text = "Mercado Livre";
             // 
             // sbExcluirML
@@ -9349,10 +8677,18 @@
             this.gridView11.GridControl = this.gridControl2;
             this.gridView11.Name = "gridView11";
             // 
+            // origemProdutoIcms
+            // 
+            this.origemProdutoIcms.Caption = "Origem";
+            this.origemProdutoIcms.FieldName = "UFOrigemStr";
+            this.origemProdutoIcms.Name = "origemProdutoIcms";
+            this.origemProdutoIcms.Visible = true;
+            this.origemProdutoIcms.VisibleIndex = 0;
+            // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(760, 784);
+            this.ClientSize = new System.Drawing.Size(737, 764);
             this.Name = "FormProduto";
             this.Shown += new System.EventHandler(this.FormProduto_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
@@ -9376,35 +8712,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).EndInit();
             this.tabImpostoDentroEstado.ResumeLayout(false);
             this.tabImpostoDentroEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCBenef.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRAZAO_Fab.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCNPJ_Fab.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeEscRelevante.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClassFiscal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcProduto_Icmss)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvProduto_Icmss)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID_NCM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNCM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGENERO_NCM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOPForaDoEstado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCFOP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupIPI)).EndInit();
-            this.groupIPI.ResumeLayout(false);
-            this.groupIPI.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtENQ_IPI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAliquotaIPI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_IPI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupCofins)).EndInit();
-            this.groupCofins.ResumeLayout(false);
-            this.groupCofins.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPCOFINS_S08.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_Cofins.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPIS)).EndInit();
-            this.groupPIS.ResumeLayout(false);
-            this.groupPIS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPPIS_Q08.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeCST_Pis.Properties)).EndInit();
             this.tabTabelaPreco.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcTabelaPrecoProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTabelaPrecoProdutos)).EndInit();
@@ -9413,9 +8727,6 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.tabDados.ResumeLayout(false);
             this.tabDados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCProd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDataValidade.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDataValidade.Properties)).EndInit();
@@ -9490,6 +8801,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescLonga2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescLonga1.Properties)).EndInit();
             this.xtraTabPage5.ResumeLayout(false);
+            this.xtraTabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRAZAO_Fab.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCNPJ_Fab.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeEscRelevante.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAplicacao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoOriginal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoFabricante.Properties)).EndInit();
@@ -9645,49 +8960,16 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gvTabelaPrecoProdutos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraTab.XtraTabPage tabImpostoDentroEstado;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private Cwork.Utilitarios.Componentes.DevButton btConsultarProduto_Icms;
-        private Cwork.Utilitarios.Componentes.DevButton btExcluirProduto_Icms;
-        private Cwork.Utilitarios.Componentes.DevButton btAlterarProduto_Icms;
-        private Cwork.Utilitarios.Componentes.DevButton btIncluirProduto_Icms;
-        public DevExpress.XtraGrid.GridControl gcProduto_Icmss;
-        public DevExpress.XtraGrid.Views.Grid.GridView gvProduto_Icmss;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNCM;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtGENERO_NCM;
         private System.Windows.Forms.Label label10;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private Cwork.Utilitarios.Componentes.LookupButton lkbNCM;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbCFOPForaDoEstado;
-        private Cwork.Utilitarios.Componentes.Lookup lkpCFOPForaDoEstado;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private Cwork.Utilitarios.Componentes.LookupButton btnlkpCFOP;
-        private Cwork.Utilitarios.Componentes.Lookup lkpCFOP;
-        private DevExpress.XtraEditors.GroupControl groupIPI;
-        private DevExpress.XtraEditors.LabelControl labelControl26;
-        private Cwork.Utilitarios.Componentes.DevCalcEdit txtENQ_IPI;
-        private DevExpress.XtraEditors.LabelControl labelControl25;
-        private Cwork.Utilitarios.Componentes.DevCalcEdit txtAliquotaIPI;
-        private DevExpress.XtraEditors.LabelControl labelControl24;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeCST_IPI;
-        private DevExpress.XtraEditors.GroupControl groupCofins;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.LabelControl labelControl18;
-        private Cwork.Utilitarios.Componentes.DevCalcEdit txtPCOFINS_S08;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeCST_Cofins;
-        private DevExpress.XtraEditors.GroupControl groupPIS;
-        private Cwork.Utilitarios.Componentes.DevCalcEdit txtPPIS_Q08;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeCST_Pis;
-        private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraTab.XtraTabPage tabEstoque;
         private DevExpress.XtraTab.XtraTabPage tabFoto;
         private DevExpress.XtraEditors.SimpleButton sbCapturar;
         private DevExpress.XtraEditors.SimpleButton sbDiretorio;
         private System.Windows.Forms.PictureBox pbCaminhoImagem;
-        private DevExpress.XtraEditors.LabelControl labelControl22;
-        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtClassFiscal;
         private Cwork.Utilitarios.Componentes.LookupButton btnlkpGrupoEstoque;
         private Cwork.Utilitarios.Componentes.Lookup lkpGrupoEstoque;
         private System.Windows.Forms.Label label8;
@@ -9708,9 +8990,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn lucroTabPrecoProduto;
         private DevExpress.XtraGrid.Columns.GridColumn descontoTabPrecoProduto;
         private DevExpress.XtraGrid.Columns.GridColumn acrescimoTabPrecoProduto;
-        private DevExpress.XtraGrid.Columns.GridColumn origemProdutoIcms;
-        private DevExpress.XtraGrid.Columns.GridColumn destinoProdutoIcms;
-        private DevExpress.XtraGrid.Columns.GridColumn aliquotaProdutoIcms;
         private DevExpress.XtraTab.XtraTabPage tabCodigoBarra;
         private Cwork.Utilitarios.Componentes.DevButton btConsultarProdutoCodBarra;
         private Cwork.Utilitarios.Componentes.DevButton btExcluirProdutoCodBarra;
@@ -10061,12 +9340,6 @@
         private Cwork.Utilitarios.Componentes.DevButton btAlterarImeis;
         private DevExpress.XtraGrid.Columns.GridColumn NumNotaEntrada;
         private DevExpress.XtraGrid.Columns.GridColumn NumNotaSaida;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeEscRelevante;
-        private DevExpress.XtraEditors.LabelControl labelControl38;
-        private DevExpress.XtraEditors.LabelControl labelControl39;
-        private DevExpress.XtraEditors.LabelControl labelControl40;
-        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCNPJ_Fab;
-        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtRAZAO_Fab;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCBenef;
         private DevExpress.XtraEditors.LabelControl labelControl41;
         private DevExpress.XtraTab.XtraTabPage tpVarejo;
@@ -10126,7 +9399,6 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label62;
         private Cwork.Utilitarios.Componentes.DevDateEdit txtDataValidade;
-        private DevExpress.XtraEditors.SimpleButton btnImportarTributacao;
         private DevExpress.XtraEditors.LabelControl labelControl43;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCProd;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
@@ -10137,13 +9409,20 @@
         private DevExpress.XtraEditors.LabelControl labelControl46;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtAplicacao;
         private DevExpress.XtraEditors.CheckEdit chkPesavel;
+        private DevExpress.XtraGrid.Columns.GridColumn origemProdutoIcms;
+        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeSaiNaturezaReceita;
+        private DevExpress.XtraEditors.LabelControl lbSaiNaturezaReceita;
         private Cwork.Utilitarios.Componentes.LookupButton lkbPerfilPisCofins;
         private Cwork.Utilitarios.Componentes.Lookup lkpPerfilPisCofins;
         private DevExpress.XtraEditors.LabelControl lbPerfilPisCofins;
         private Cwork.Utilitarios.Componentes.LookupButton lkbClassificacaoFiscal;
         private Cwork.Utilitarios.Componentes.Lookup lkpClassificacaoFiscal;
         private DevExpress.XtraEditors.LabelControl lbClassificacaoFiscal;
-        private DevExpress.XtraEditors.LabelControl lbSaiNaturezaReceita;
-        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeSaiNaturezaReceita;
+        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtRAZAO_Fab;
+        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCNPJ_Fab;
+        private DevExpress.XtraEditors.LabelControl labelControl40;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeEscRelevante;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
     }
 }
