@@ -99,9 +99,6 @@ namespace Aplicacao
             tabDados.Tag = Selecionado;
             tabImpostoDentroEstado.Tag = Selecionado;
             groupCompPreco.Tag = Selecionado;
-            groupCofins.Tag = Selecionado;
-            groupIPI.Tag = Selecionado;
-            groupPIS.Tag = Selecionado;
             tabTabelaPreco.Tag = Selecionado;
         }
 
@@ -138,8 +135,6 @@ namespace Aplicacao
         {
             Type formType = typeof(FormProduto_Icms);
             object[] parms = new[] { new Produto_Icms() { Produto = Selecionado } };
-            btIncluirProduto_Icms.SubFormType = btAlterarProduto_Icms.SubFormType = btExcluirProduto_Icms.SubFormType = btConsultarProduto_Icms.SubFormType = formType;
-            btIncluirProduto_Icms.SubFormTypeParams = btAlterarProduto_Icms.SubFormTypeParams = btExcluirProduto_Icms.SubFormTypeParams = btConsultarProduto_Icms.SubFormTypeParams = parms;
         }
 
         private void IniciaBotoesProdutoSKU()
@@ -472,9 +467,6 @@ namespace Aplicacao
         protected override void TelaProObjeto(Control pai)
         {
             base.TelaProObjeto(pai);
-            Selecionado.CST_Cofins = cbeCST_Cofins.SelectedIndex;
-            Selecionado.CST_IPI = cbeCST_IPI.SelectedIndex;
-            Selecionado.CST_Pis = cbeCST_Pis.SelectedIndex;
         }
 
         private void VerificaTabImei(Boolean bUtilizaControleImei)
@@ -565,13 +557,6 @@ namespace Aplicacao
                 retorno = false;
             }
 
-            if (!String.IsNullOrEmpty(lkpCFOP.Text) && txtENQ_IPI.Text == "" || !String.IsNullOrEmpty(lkpCFOP.Text) && Convert.ToInt32(txtENQ_IPI.Text) == 0)
-            {
-                dxErroProvider.SetError(txtENQ_IPI, "Valor não pode ser nulo ou igual a 0 ");
-                retorno = false;
-            }
-
-
             if (!chbCodigoBarrasRegistrado.Checked) // SEM GTIN
             {
                 IList<Produto> barrasencontradas = ProdutoController.Instancia.CodigoDeBarrasExistente(txtBarra.Text.Trim(), Selecionado?.ID ?? -1);
@@ -657,9 +642,6 @@ namespace Aplicacao
             gcProdutoConversao.DataSource = ProdutoConversaoController.Instancia.GetByIdProduto(Selecionado.ID);
             gcImeis.DataSource = ImeiController.Instancia.GetAllByIDProduto(Selecionado.ID, true);
 
-            cbeCST_Cofins.SelectedIndex = Selecionado.CST_Cofins;
-            cbeCST_IPI.SelectedIndex = Selecionado.CST_IPI;
-            cbeCST_Pis.SelectedIndex = Selecionado.CST_Pis;
             cbeOrigemProd.SelectedIndex = Selecionado.OrigemProd;
 
             HabilitarDesabilitarTabFCI();
@@ -726,16 +708,6 @@ namespace Aplicacao
                 grid.ShowDialog();
 
             lkpPlanoContaEstoque.EditValue = grid.Selecionado;
-        }
-
-        private void btnlkpCFOP_Click(object sender, EventArgs e)
-        {
-            GridGenerica<cwkGestao.Modelo.TabelaCFOP> grid = new GridGenerica<cwkGestao.Modelo.TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (cwkGestao.Modelo.TabelaCFOP)lkpCFOP.Selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
-
-            lkpCFOP.EditValue = grid.Selecionado;
         }
 
         private void txtPrecoFornecedor_Validated(object sender, EventArgs e)
@@ -1005,15 +977,6 @@ namespace Aplicacao
                 txtID_NCM.EditValue = grid.Selecionado.ID;
             }
         }
-        private void lkbCFOPForaDoEstado_Click(object sender, EventArgs e)
-        {
-            var grid = new GridGenerica<TabelaCFOP>(TabelaCFOPController.Instancia.GetAll(), new FormTabelaCFOP(), (TabelaCFOP)lkpCFOPForaDoEstado.Selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
-
-            lkpCFOPForaDoEstado.EditValue = grid.Selecionado;
-        }
         protected override void AcoesDepoisSalvar()
         {
             if (Convert.ToInt32(XDocument.Load(caminhoConfCwork).Element("Cwork").Element("UtilizaSHL").Value) == 1)
@@ -1265,14 +1228,14 @@ namespace Aplicacao
 
             lbLocalizacao.Location = new Point(lbLocalizacao.Location.X, lbLocalizacao.Location.Y + altura);
             txtLocalizacao.Location = new Point(txtLocalizacao.Location.X, txtLocalizacao.Location.Y + altura);
-            lbClassificacaoFiscal.Location = new Point(lbClassificacaoFiscal.Location.X, lbClassificacaoFiscal.Location.Y + altura);
-            lkpClassificacaoFiscal.Location = new Point(lkpClassificacaoFiscal.Location.X, lkpClassificacaoFiscal.Location.Y + altura);
-            lkbClassificacaoFiscal.Location = new Point(lkbClassificacaoFiscal.Location.X, lkbClassificacaoFiscal.Location.Y + altura);
-            lbPerfilPisCofins.Location = new Point(lbPerfilPisCofins.Location.X, lbPerfilPisCofins.Location.Y + altura);
-            lkpPerfilPisCofins.Location = new Point(lkpPerfilPisCofins.Location.X, lkpPerfilPisCofins.Location.Y + altura);
-            lkbPerfilPisCofins.Location = new Point(lkbPerfilPisCofins.Location.X, lkbPerfilPisCofins.Location.Y + altura);
-            lbSaiNaturezaReceita.Location = new Point(lbSaiNaturezaReceita.Location.X, lbSaiNaturezaReceita.Location.Y + altura);
-            cbeSaiNaturezaReceita.Location = new Point(cbeSaiNaturezaReceita.Location.X, cbeSaiNaturezaReceita.Location.Y + altura);
+            //lbClassificacaoFiscal.Location = new Point(lbClassificacaoFiscal.Location.X, lbClassificacaoFiscal.Location.Y + altura);
+            //lkpClassificacaoFiscal.Location = new Point(lkpClassificacaoFiscal.Location.X, lkpClassificacaoFiscal.Location.Y + altura);
+            //lkbClassificacaoFiscal.Location = new Point(lkbClassificacaoFiscal.Location.X, lkbClassificacaoFiscal.Location.Y + altura);
+            //lbPerfilPisCofins.Location = new Point(lbPerfilPisCofins.Location.X, lbPerfilPisCofins.Location.Y + altura);
+            //lkpPerfilPisCofins.Location = new Point(lkpPerfilPisCofins.Location.X, lkpPerfilPisCofins.Location.Y + altura);
+            //lkbPerfilPisCofins.Location = new Point(lkbPerfilPisCofins.Location.X, lkbPerfilPisCofins.Location.Y + altura);
+            //lbSaiNaturezaReceita.Location = new Point(lbSaiNaturezaReceita.Location.X, lbSaiNaturezaReceita.Location.Y + altura);
+            //cbeSaiNaturezaReceita.Location = new Point(cbeSaiNaturezaReceita.Location.X, cbeSaiNaturezaReceita.Location.Y + altura);
 
             label60.Location = new Point(label60.Location.X, label60.Location.Y + altura);
             txtDataPromocionalInicial.Location = new Point(txtDataPromocionalInicial.Location.X, txtDataPromocionalInicial.Location.Y + altura);
@@ -2108,18 +2071,9 @@ namespace Aplicacao
                 }
             }
 
-            gcProduto_Icmss.DataSource = Selecionado.Produto_Icmss;
-            gcProduto_Icmss.RefreshDataSource();
-            gvProduto_Icmss.RefreshData();
-            gcProduto_Icmss.Refresh();
-
             MessageBox.Show($"Importação de tributação realizada com sucesso!\r\n\r\nTotal de regras importadas: {quantidadeImportados}", "Importação de Tributação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void lkbClassificacaoFiscal_Click(object sender, EventArgs e)
-        {
-            LookupUtil.GridLookup<ClassificacaoFiscal>(lkpClassificacaoFiscal, typeof(FormClassificacaoFiscal));
-        }
 
         private void lkbPerfilPisCofins_Click(object sender, EventArgs e)
         {
@@ -2166,6 +2120,22 @@ namespace Aplicacao
             //        cbeSaiNaturezaReceita.SelectedIndex = 0;
             //    }
             //}
+        }
+
+        private void tabDados_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lkbClassificacaoFiscal_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<ClassificacaoFiscal>(lkpClassificacaoFiscal, typeof(FormClassificacaoFiscal));
+        }
+
+        private void lkbPerfilPisCofins_Click_1(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
+
         }
     }
 
