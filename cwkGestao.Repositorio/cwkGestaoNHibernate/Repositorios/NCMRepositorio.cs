@@ -11,9 +11,11 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
     {
         protected override string HqlLoadById()
         {
-            return   "select n from NCM n "
-                   + " left join fetch n.NCMItens ni "
-                   + " where n.ID = :id";
+            return "select n from NCM n "
+                    //" left join fetch n.NCMItens ni "
+                    + " left join fetch n.CestsVinculados cv "
+                    + " left join fetch cv.CEST "
+                    + " where n.ID = :id";
         }
 
         protected override string hqlGetAll()
@@ -26,8 +28,10 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
             using (var session = GetSession())
             {
                 string hql = "select n from NCM n "
-                   + " left join fetch n.NCMItens ni "
-                   + " where n.Ncm = :ncm";
+                       //+ " left join fetch n.NCMItens ni "
+                       + " left join fetch n.CestsVinculados cv "
+                       + " left join fetch cv.CEST "
+                       + " where n.Ncm = :ncm";
 
                 var result = session.CreateQuery(hql).SetString("ncm", ncm).List<NCM>();
 

@@ -248,6 +248,7 @@
     <Compile Include="ImpostosTributos.cs" />
     <Compile Include="ImpostosTributosExcessoes.cs" />
     <Compile Include="NaturezaOperacao.cs" />
+    <Compile Include="NCMCEST.cs" />
     <Compile Include="NotaReferencia.cs" />
     <Compile Include="OpcaoTributacao.cs" />
     <Compile Include="PerfilPisCofins.cs" />

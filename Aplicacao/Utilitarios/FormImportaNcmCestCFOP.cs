@@ -112,56 +112,6 @@ namespace Aplicacao.Utilitarios
 
         #region Métodos
 
-        ////Código Antigo onde importava apenas os campos do NCM com Excel - 18/01/2024
-        //private void ImportarNcm()
-        //{
-        //    // 0 Codigo
-        //    // 1 Descricao
-        //    // 2 Fim Vigência
-        //    // 3 CEST
-
-        //    var configuracao = ConfiguracaoController.Instancia.GetConfiguracao();
-        //    var dataTable = (DataTable)dgvDados.DataSource;
-        //    var ncmImportados = 0;
-        //    var ncmAtualizados = 0;
-
-        //    foreach (DataRow item in dataTable.Rows)
-        //    {
-        //        if (item["NCM"].ToString().IsNullOrEmpty())
-        //            continue;
-
-        //        Acao _Acao = Acao.Alterar;
-        //        var _Ncm = NCMController.Instancia.GetByNcm(item["NCM"].ToString());
-        //        if (_Ncm == null)
-        //        {
-        //            _Acao = Acao.Incluir;
-        //            _Ncm = new NCM
-        //            {
-        //                Codigo = NCMController.Instancia.MaxCodigo(),
-        //                Ncm = item["NCM"].ToString(),
-        //                Descricao = item["DESCRICAO"].ToString().TrimCk(),
-        //                DtRevogacao = item["FIM VIGENCIA"].ToString().IsNullOrEmpty() ? null : (DateTime?)Convert.ToDateTime(item["FIM VIGENCIA"]),
-        //                Cest = item["CEST"].ToString().TrimCk(),
-        //                EnqGeral = configuracao.CodigoEnquadramentoIPI ?? 999
-        //            };
-        //            ncmImportados++;
-        //        }
-        //        else
-        //        {
-        //            _Ncm.Descricao = item["DESCRICAO"].ToString().TrimCk();
-        //            _Ncm.DtRevogacao = item["FIM VIGENCIA"].ToString().IsNullOrEmpty() ? null : (DateTime?)Convert.ToDateTime(item["FIM VIGENCIA"]);
-        //            _Ncm.Cest = item["CEST"].ToString().TrimCk();
-        //            _Ncm.EnqGeral = configuracao.CodigoEnquadramentoIPI ?? 999;
-        //            ncmAtualizados++;
-        //        }
-
-        //        NCMController.Instancia.Salvar(_Ncm, _Acao);
-        //    }
-        //    MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}Importados: {ncmImportados},{Environment.NewLine}Atualizados: {ncmAtualizados}");
-        //}
-
-        //Código Antigo onde importava apenas os campos do NCM com Excel - 18/01/2024
-
         private void ImportarNcm()
         {
             var configuracao = ConfiguracaoController.Instancia.GetConfiguracao();
@@ -194,14 +144,6 @@ namespace Aplicacao.Utilitarios
                     dtRevogacao = null; 
                 }
 
-
-                decimal? nacionalFederal = 0;
-                decimal? importadosFederal = 0;
-                decimal? estadual = 0;
-                decimal? municipal = 0;
-
-                ConverterValores(item, out nacionalFederal, out importadosFederal, out estadual, out municipal);
-
                 if (_Ncm == null)
                 {
                     _Acao = Acao.Incluir;
@@ -211,12 +153,6 @@ namespace Aplicacao.Utilitarios
                         Codigo = NCMController.Instancia.MaxCodigo(),
                         Ncm = item["ncm"].ToString(),
                         Descricao = item["descricao"].ToString().TrimCk().ToUpper().Substring(0, Math.Min(100, item["descricao"].ToString().TrimCk().Length)),
-                        Nacionalfederal = nacionalFederal,
-                        Importadosfederal = importadosFederal,
-                        Estadual = estadual,
-                        Municipal = municipal,
-                        DtRevogacao = null,
-                        EnqGeral = 999
                     };
 
                     ncmImportados++;
@@ -224,12 +160,7 @@ namespace Aplicacao.Utilitarios
                 else
                 {
                     _Ncm.Descricao = item["descricao"].ToString().TrimCk();
-                    _Ncm.Nacionalfederal = nacionalFederal;
-                    _Ncm.Importadosfederal = importadosFederal;
-                    _Ncm.Estadual = estadual;
-                    _Ncm.Municipal = municipal;
                     _Ncm.DtRevogacao = null;
-                    _Ncm.EnqGeral = 999;
 
                     ncmAtualizados++;
                 }
@@ -291,7 +222,51 @@ namespace Aplicacao.Utilitarios
 
         private void ImportarCest()
         {
+            var dataTable = (DataTable)dgvDados.DataSource;
+            if (dataTable == null)
+            {
+                MessageBox.Show("Não há dados para importar.", "Atenção");
+                return;
+            }
 
+            var cestImportados = 0;
+            var cestAtualizados = 0;
+
+            foreach (DataRow item in dataTable.Rows)
+            {
+                var codigoDoArquivo = item["CODIGO"].ToString().Trim();
+                if (string.IsNullOrEmpty(codigoDoArquivo))
+                    continue;
+
+                Acao acao;
+                var cestExistente = CESTController.Instancia.GetByCodigo(codigoDoArquivo);
+
+                CEST cestParaSalvar;
+
+                if (cestExistente == null) 
+                {
+                    acao = Acao.Incluir;
+
+                    cestParaSalvar = new CEST
+                    {
+                        Codigo = codigoDoArquivo,
+                        Descricao = item["DESCRICAO"].ToString().Trim()
+                    };
+                    cestImportados++;
+                }
+                else 
+                {
+                    acao = Acao.Alterar;
+                    cestParaSalvar = cestExistente; 
+
+                    cestParaSalvar.Descricao = item["DESCRICAO"].ToString().Trim();
+                    cestAtualizados++;
+                }
+
+                CESTController.Instancia.Salvar(cestParaSalvar, acao);
+            }
+
+            MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}Importados: {cestImportados}{Environment.NewLine}Atualizados: {cestAtualizados}", "Importação Concluída");
         }
 
         private void ImportarCFOP()

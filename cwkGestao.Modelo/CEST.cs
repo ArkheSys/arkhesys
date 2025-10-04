@@ -21,6 +21,8 @@ namespace cwkGestao.Modelo
 
         public virtual IList<NCM> NCMs { get; set; } = new List<NCM>();
 
+        public virtual IList<NCMCEST> NCMCESTs { get; set; }
+
         public override string ToString()
         {
             return $"{ID} - {Codigo} - {Descricao}";

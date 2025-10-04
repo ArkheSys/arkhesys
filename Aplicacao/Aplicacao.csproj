@@ -4924,6 +4924,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormCEST.resx">
       <DependentUpon>FormCEST.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormCotacaoDeMoedas.resx">
       <DependentUpon>FormCotacaoDeMoedas.cs</DependentUpon>
@@ -4996,6 +4997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormStatusOS.resx">
       <DependentUpon>FormStatusOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cadastro\GridCEST.resx">
+      <DependentUpon>GridCEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\GridFabricante.resx">
       <DependentUpon>GridFabricante.cs</DependentUpon>

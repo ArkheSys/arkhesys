@@ -317,6 +317,7 @@
     <Compile Include="Padroes\ImpostosTributosController.cs" />
     <Compile Include="Padroes\ImpostosTributosExcessoesController.cs" />
     <Compile Include="Padroes\NaturezaOperacaoController.cs" />
+    <Compile Include="Padroes\NCMCESTController.cs" />
     <Compile Include="Padroes\PisCofinsNaturezaOperacaoController.cs" />
     <Compile Include="Padroes\TabelaCOFINSController.cs" />
     <Compile Include="Padroes\TabelaImpostosTributosExcessoesController.cs" />
