@@ -6,13 +6,13 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cwork Gestão Plus")]
+[assembly: AssemblyTitle("Arkhesys Gestão Plus")]
 [assembly: AssemblyDescription("Sistema de Gestão")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Cwork Sistemas")]
-[assembly: AssemblyProduct("Cwork Gestão Plus")]
-[assembly: AssemblyCopyright("Copyright © Cwork Sistemas 2014")]
-[assembly: AssemblyTrademark("Cwork Sistemas")]
+[assembly: AssemblyCompany("Arkhesys Sistemas")]
+[assembly: AssemblyProduct("Arkhesys Gestão Plus")]
+[assembly: AssemblyCopyright("Copyright © Arkhesys Sistemas 2025")]
+[assembly: AssemblyTrademark("Arkhesys Sistemas")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

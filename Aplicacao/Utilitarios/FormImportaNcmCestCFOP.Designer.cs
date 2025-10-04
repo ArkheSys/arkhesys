@@ -37,6 +37,7 @@
             this.txtRegistros = new System.Windows.Forms.Label();
             this.lblNumeroRegistros = new System.Windows.Forms.Label();
             this.btnImportarRegistros = new System.Windows.Forms.Button();
+            this.btnVerModelo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             this.txtCaminhoArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCaminhoArquivo.Location = new System.Drawing.Point(139, 12);
             this.txtCaminhoArquivo.Name = "txtCaminhoArquivo";
-            this.txtCaminhoArquivo.Size = new System.Drawing.Size(519, 21);
+            this.txtCaminhoArquivo.Size = new System.Drawing.Size(398, 21);
             this.txtCaminhoArquivo.TabIndex = 6;
             // 
             // dgvDados
@@ -146,11 +147,23 @@
             this.btnImportarRegistros.UseVisualStyleBackColor = true;
             this.btnImportarRegistros.Click += new System.EventHandler(this.btnImportarRegistros_Click);
             // 
+            // btnVerModelo
+            // 
+            this.btnVerModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVerModelo.Location = new System.Drawing.Point(543, 10);
+            this.btnVerModelo.Name = "btnVerModelo";
+            this.btnVerModelo.Size = new System.Drawing.Size(115, 26);
+            this.btnVerModelo.TabIndex = 14;
+            this.btnVerModelo.Text = "Instruções";
+            this.btnVerModelo.UseVisualStyleBackColor = true;
+            this.btnVerModelo.Click += new System.EventHandler(this.btnVerModelo_Click);
+            // 
             // FormImportaNcmCestCFOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 537);
+            this.Controls.Add(this.btnVerModelo);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.txtRegistros);
             this.Controls.Add(this.lblNumeroRegistros);
@@ -180,5 +193,6 @@
         private System.Windows.Forms.Label txtRegistros;
         private System.Windows.Forms.Label lblNumeroRegistros;
         private System.Windows.Forms.Button btnImportarRegistros;
+        private System.Windows.Forms.Button btnVerModelo;
     }
 }
