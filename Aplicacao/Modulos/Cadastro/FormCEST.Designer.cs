@@ -32,14 +32,14 @@ namespace Aplicacao
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtCodigo = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNome = new Cwork.Utilitarios.Componentes.DevMemoEdit();
+            this.txtDescricao = new Cwork.Utilitarios.Componentes.DevMemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).BeginInit();
             this.tcPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
@@ -74,7 +74,7 @@ namespace Aplicacao
             // 
             // tpPrincipal
             // 
-            this.tpPrincipal.Controls.Add(this.txtNome);
+            this.tpPrincipal.Controls.Add(this.txtDescricao);
             this.tpPrincipal.Controls.Add(this.labelControl2);
             this.tpPrincipal.Controls.Add(this.txtCodigo);
             this.tpPrincipal.Controls.Add(this.labelControl1);
@@ -82,6 +82,7 @@ namespace Aplicacao
             // 
             // tcPrincipal
             // 
+            this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
             this.tcPrincipal.Size = new System.Drawing.Size(766, 138);
             // 
             // labelControl1
@@ -114,14 +115,14 @@ namespace Aplicacao
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Descrição:";
             // 
-            // txtNome
+            // txtDescricao
             // 
-            this.txtNome.Location = new System.Drawing.Point(66, 39);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Properties.MaxLength = 2000;
-            this.txtNome.Size = new System.Drawing.Size(683, 90);
-            this.txtNome.TabIndex = 71;
-            this.txtNome.EditValueChanged += new System.EventHandler(this.txtNome_EditValueChanged);
+            this.txtDescricao.Location = new System.Drawing.Point(66, 39);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Properties.MaxLength = 2000;
+            this.txtDescricao.Size = new System.Drawing.Size(683, 90);
+            this.txtDescricao.TabIndex = 71;
+            this.txtDescricao.EditValueChanged += new System.EventHandler(this.txtNome_EditValueChanged);
             // 
             // FormCEST
             // 
@@ -129,7 +130,6 @@ namespace Aplicacao
             this.ClientSize = new System.Drawing.Size(790, 197);
             this.Name = "FormCEST";
             this.Text = "Cadastro de CEST";
-            this.Load += new System.EventHandler(this.FormCEST_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tpPrincipal.ResumeLayout(false);
@@ -137,7 +137,7 @@ namespace Aplicacao
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).EndInit();
             this.tcPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +147,6 @@ namespace Aplicacao
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCodigo;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private Cwork.Utilitarios.Componentes.DevMemoEdit txtNome;
+        private Cwork.Utilitarios.Componentes.DevMemoEdit txtDescricao;
     }
 }

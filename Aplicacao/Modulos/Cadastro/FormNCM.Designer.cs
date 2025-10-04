@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNCM));
             this.btConsultarNCMItens = new Cwork.Utilitarios.Componentes.DevButton();
-            this.btExcluirNCMItens = new Cwork.Utilitarios.Componentes.DevButton();
+            this.btExcluirCest = new Cwork.Utilitarios.Componentes.DevButton();
             this.btAlterarNCMItens = new Cwork.Utilitarios.Componentes.DevButton();
-            this.btIncluirNCMItens = new Cwork.Utilitarios.Componentes.DevButton();
-            this.gcNCMItens = new DevExpress.XtraGrid.GridControl();
-            this.gvNCMItens = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btIncluirCest = new Cwork.Utilitarios.Componentes.DevButton();
+            this.gcCestsVinculados = new DevExpress.XtraGrid.GridControl();
+            this.gvCestsVinculados = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCodigo = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtNcm = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
@@ -50,8 +51,8 @@
             this.tpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).BeginInit();
             this.tcPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNCMItens)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNCMItens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCestsVinculados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCestsVinculados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNcm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqCupom.Properties)).BeginInit();
@@ -103,10 +104,10 @@
             this.tpPrincipal.Controls.Add(this.txtCodigo);
             this.tpPrincipal.Controls.Add(this.labelControl7);
             this.tpPrincipal.Controls.Add(this.btConsultarNCMItens);
-            this.tpPrincipal.Controls.Add(this.btExcluirNCMItens);
+            this.tpPrincipal.Controls.Add(this.btExcluirCest);
             this.tpPrincipal.Controls.Add(this.btAlterarNCMItens);
-            this.tpPrincipal.Controls.Add(this.btIncluirNCMItens);
-            this.tpPrincipal.Controls.Add(this.gcNCMItens);
+            this.tpPrincipal.Controls.Add(this.btIncluirCest);
+            this.tpPrincipal.Controls.Add(this.gcCestsVinculados);
             this.tpPrincipal.Size = new System.Drawing.Size(935, 352);
             // 
             // tcPrincipal
@@ -130,21 +131,22 @@
             this.btConsultarNCMItens.TabStop = false;
             this.btConsultarNCMItens.Text = "&Consultar";
             // 
-            // btExcluirNCMItens
+            // btExcluirCest
             // 
-            this.btExcluirNCMItens.GridControl = null;
-            this.btExcluirNCMItens.GridControlType = null;
-            this.btExcluirNCMItens.GridControlTypeParams = null;
-            this.btExcluirNCMItens.ImageOptions.Image = global::Aplicacao.Properties.Resources.Excluir_copy;
-            this.btExcluirNCMItens.Location = new System.Drawing.Point(828, 309);
-            this.btExcluirNCMItens.Name = "btExcluirNCMItens";
-            this.btExcluirNCMItens.Size = new System.Drawing.Size(75, 23);
-            this.btExcluirNCMItens.SubForm = null;
-            this.btExcluirNCMItens.SubFormType = null;
-            this.btExcluirNCMItens.SubFormTypeParams = null;
-            this.btExcluirNCMItens.TabIndex = 13;
-            this.btExcluirNCMItens.TabStop = false;
-            this.btExcluirNCMItens.Text = "&Excluir";
+            this.btExcluirCest.GridControl = null;
+            this.btExcluirCest.GridControlType = null;
+            this.btExcluirCest.GridControlTypeParams = null;
+            this.btExcluirCest.ImageOptions.Image = global::Aplicacao.Properties.Resources.Excluir_copy;
+            this.btExcluirCest.Location = new System.Drawing.Point(828, 309);
+            this.btExcluirCest.Name = "btExcluirCest";
+            this.btExcluirCest.Size = new System.Drawing.Size(75, 23);
+            this.btExcluirCest.SubForm = null;
+            this.btExcluirCest.SubFormType = null;
+            this.btExcluirCest.SubFormTypeParams = null;
+            this.btExcluirCest.TabIndex = 13;
+            this.btExcluirCest.TabStop = false;
+            this.btExcluirCest.Text = "&Excluir";
+            this.btExcluirCest.Click += new System.EventHandler(this.btExcluirCest_Click);
             // 
             // btAlterarNCMItens
             // 
@@ -162,154 +164,167 @@
             this.btAlterarNCMItens.TabStop = false;
             this.btAlterarNCMItens.Text = "&Alterar";
             // 
-            // btIncluirNCMItens
+            // btIncluirCest
             // 
-            this.btIncluirNCMItens.GridControl = null;
-            this.btIncluirNCMItens.GridControlType = null;
-            this.btIncluirNCMItens.GridControlTypeParams = null;
-            this.btIncluirNCMItens.ImageOptions.Image = global::Aplicacao.Properties.Resources.Inserir_copy;
-            this.btIncluirNCMItens.Location = new System.Drawing.Point(666, 309);
-            this.btIncluirNCMItens.Name = "btIncluirNCMItens";
-            this.btIncluirNCMItens.Size = new System.Drawing.Size(75, 23);
-            this.btIncluirNCMItens.SubForm = null;
-            this.btIncluirNCMItens.SubFormType = null;
-            this.btIncluirNCMItens.SubFormTypeParams = null;
-            this.btIncluirNCMItens.TabIndex = 11;
-            this.btIncluirNCMItens.TabStop = false;
-            this.btIncluirNCMItens.Text = "&Incluir";
+            this.btIncluirCest.GridControl = null;
+            this.btIncluirCest.GridControlType = null;
+            this.btIncluirCest.GridControlTypeParams = null;
+            this.btIncluirCest.ImageOptions.Image = global::Aplicacao.Properties.Resources.Inserir_copy;
+            this.btIncluirCest.Location = new System.Drawing.Point(666, 309);
+            this.btIncluirCest.Name = "btIncluirCest";
+            this.btIncluirCest.Size = new System.Drawing.Size(75, 23);
+            this.btIncluirCest.SubForm = null;
+            this.btIncluirCest.SubFormType = null;
+            this.btIncluirCest.SubFormTypeParams = null;
+            this.btIncluirCest.TabIndex = 11;
+            this.btIncluirCest.TabStop = false;
+            this.btIncluirCest.Text = "&Incluir";
+            this.btIncluirCest.Click += new System.EventHandler(this.btIncluirCest_Click);
             // 
-            // gcNCMItens
+            // gcCestsVinculados
             // 
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gcNCMItens.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Edit.Visible = false;
-            this.gcNCMItens.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gcNCMItens.EmbeddedNavigator.Buttons.First.Hint = "Primeiro registro";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Last.Hint = "Último registro";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Next.Hint = "Próximo registro";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.NextPage.Hint = "Próxima página";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Prev.Hint = "Registro anterior";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.PrevPage.Hint = "Página anterior";
-            this.gcNCMItens.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gcNCMItens.EmbeddedNavigator.TextStringFormat = "Registro {0} de {1}";
-            this.gcNCMItens.Location = new System.Drawing.Point(7, 112);
-            this.gcNCMItens.MainView = this.gvNCMItens;
-            this.gcNCMItens.Name = "gcNCMItens";
-            this.gcNCMItens.Size = new System.Drawing.Size(896, 191);
-            this.gcNCMItens.TabIndex = 9;
-            this.gcNCMItens.UseEmbeddedNavigator = true;
-            this.gcNCMItens.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvNCMItens});
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.First.Hint = "Primeiro registro";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Last.Hint = "Último registro";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Next.Hint = "Próximo registro";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.NextPage.Hint = "Próxima página";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Prev.Hint = "Registro anterior";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.PrevPage.Hint = "Página anterior";
+            this.gcCestsVinculados.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gcCestsVinculados.EmbeddedNavigator.TextStringFormat = "Registro {0} de {1}";
+            this.gcCestsVinculados.Location = new System.Drawing.Point(7, 112);
+            this.gcCestsVinculados.MainView = this.gvCestsVinculados;
+            this.gcCestsVinculados.Name = "gcCestsVinculados";
+            this.gcCestsVinculados.Size = new System.Drawing.Size(896, 191);
+            this.gcCestsVinculados.TabIndex = 9;
+            this.gcCestsVinculados.UseEmbeddedNavigator = true;
+            this.gcCestsVinculados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCestsVinculados});
             // 
-            // gvNCMItens
+            // gvCestsVinculados
             // 
-            this.gvNCMItens.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.Empty.BackColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.Empty.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.EvenRow.BorderColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvNCMItens.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.gvNCMItens.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvNCMItens.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvNCMItens.Appearance.FocusedCell.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvNCMItens.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvNCMItens.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.gvNCMItens.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.gvNCMItens.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.gvNCMItens.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvNCMItens.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.HideSelectionRow.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.OddRow.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.OddRow.Options.UseBorderColor = true;
-            this.gvNCMItens.Appearance.OddRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gvNCMItens.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.Preview.Options.UseFont = true;
-            this.gvNCMItens.Appearance.Preview.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
-            this.gvNCMItens.Appearance.Row.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.RowSeparator.BackColor = System.Drawing.Color.Black;
-            this.gvNCMItens.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
-            this.gvNCMItens.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gvNCMItens.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gvNCMItens.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gvNCMItens.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gvNCMItens.GridControl = this.gcNCMItens;
-            this.gvNCMItens.Name = "gvNCMItens";
-            this.gvNCMItens.OptionsBehavior.Editable = false;
-            this.gvNCMItens.OptionsBehavior.FocusLeaveOnTab = true;
-            this.gvNCMItens.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvNCMItens.OptionsView.EnableAppearanceOddRow = true;
-            this.gvNCMItens.OptionsView.ShowGroupPanel = false;
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.Empty.BackColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.Empty.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.EvenRow.BorderColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.EvenRow.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvCestsVinculados.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
+            this.gvCestsVinculados.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvCestsVinculados.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
+            this.gvCestsVinculados.Appearance.FocusedCell.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
+            this.gvCestsVinculados.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
+            this.gvCestsVinculados.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FocusedRow.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.gvCestsVinculados.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
+            this.gvCestsVinculados.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
+            this.gvCestsVinculados.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
+            this.gvCestsVinculados.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.HideSelectionRow.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.OddRow.Options.UseBorderColor = true;
+            this.gvCestsVinculados.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.gvCestsVinculados.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.Preview.Options.UseFont = true;
+            this.gvCestsVinculados.Appearance.Preview.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(229)))), ((int)(((byte)(231)))));
+            this.gvCestsVinculados.Appearance.Row.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.RowSeparator.BackColor = System.Drawing.Color.Black;
+            this.gvCestsVinculados.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(206)))), ((int)(((byte)(57)))));
+            this.gvCestsVinculados.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvCestsVinculados.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gvCestsVinculados.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.gvCestsVinculados.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.codigo});
+            this.gvCestsVinculados.GridControl = this.gcCestsVinculados;
+            this.gvCestsVinculados.Name = "gvCestsVinculados";
+            this.gvCestsVinculados.OptionsBehavior.Editable = false;
+            this.gvCestsVinculados.OptionsBehavior.FocusLeaveOnTab = true;
+            this.gvCestsVinculados.OptionsPrint.PrintFooter = false;
+            this.gvCestsVinculados.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvCestsVinculados.OptionsView.EnableAppearanceOddRow = true;
+            this.gvCestsVinculados.OptionsView.ShowGroupPanel = false;
+            // 
+            // codigo
+            // 
+            this.codigo.Caption = "Código CEST";
+            this.codigo.FieldName = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.codigo.Visible = true;
+            this.codigo.VisibleIndex = 0;
             // 
             // txtCodigo
             // 
@@ -444,8 +459,8 @@
             this.tpPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).EndInit();
             this.tcPrincipal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcNCMItens)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNCMItens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCestsVinculados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCestsVinculados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNcm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqCupom.Properties)).EndInit();
@@ -459,11 +474,11 @@
         #endregion
 
         private Cwork.Utilitarios.Componentes.DevButton btConsultarNCMItens;
-        private Cwork.Utilitarios.Componentes.DevButton btExcluirNCMItens;
+        private Cwork.Utilitarios.Componentes.DevButton btExcluirCest;
         private Cwork.Utilitarios.Componentes.DevButton btAlterarNCMItens;
-        private Cwork.Utilitarios.Componentes.DevButton btIncluirNCMItens;
-        public DevExpress.XtraGrid.GridControl gcNCMItens;
-        public DevExpress.XtraGrid.Views.Grid.GridView gvNCMItens;
+        private Cwork.Utilitarios.Componentes.DevButton btIncluirCest;
+        public DevExpress.XtraGrid.GridControl gcCestsVinculados;
+        public DevExpress.XtraGrid.Views.Grid.GridView gvCestsVinculados;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCodigo;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNcm;
@@ -474,5 +489,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private Cwork.Utilitarios.Componentes.DevDateEdit txtDtRevogacao;
+        private DevExpress.XtraGrid.Columns.GridColumn codigo;
     }
 }

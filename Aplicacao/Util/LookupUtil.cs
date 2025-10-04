@@ -138,6 +138,25 @@ namespace Aplicacao.Util
             }
             lookup.Focus();
         }
+        public static void GridLookup<T>(Cwork.Utilitarios.Componentes.Lookup lookup, Type formManutType, IList<T> dataSource) where T : cwkGestao.Modelo.ModeloBase, new()
+        {
+            T selecionado = null;
+            if (lookup.ID > 0)
+                selecionado = ControllerFactory<T>.Produce().LoadObjectById(lookup.ID);
+
+            GridGenerica<T> grid = new GridGenerica<T>(dataSource, (IFormManut<T>)Activator.CreateInstance(formManutType), selecionado, false);
+            grid.Selecionando = true;
+
+            if (cwkControleUsuario.Facade.ControleAcesso(grid))
+                grid.ShowDialog();
+
+            if (grid.Selecionado != null)
+            {
+                lookup.HLocalizar(grid.Selecionado.ID);
+                lookup.BeginInvoke(((Action)(() => { lookup.EditValue = lookup.Selecionado; })));
+            }
+            lookup.Focus();
+        }
 
         public static void GridComboLookupPessoa(LookUpEdit lookup, IFormManut<Pessoa> formManut, IList<Pessoa> lista, string titulo)
         {

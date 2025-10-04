@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Aplicacao")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Cwork Sistemas")]
+[assembly: AssemblyCompany("Arkhesys Sistemas")]
 [assembly: AssemblyProduct("Aplicacao")]
-[assembly: AssemblyCopyright("Copyright © Default 2009")]
+[assembly: AssemblyCopyright("Copyright © Default 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

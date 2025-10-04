@@ -13,6 +13,10 @@ using Microsoft.VisualBasic.FileIO;
 using DevExpress;
 using System.Globalization;
 using ExcelDataReader;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System.Text;
+using System.Collections.Generic;
 
 namespace Aplicacao.Utilitarios
 {
@@ -112,56 +116,6 @@ namespace Aplicacao.Utilitarios
 
         #region Métodos
 
-        ////Código Antigo onde importava apenas os campos do NCM com Excel - 18/01/2024
-        //private void ImportarNcm()
-        //{
-        //    // 0 Codigo
-        //    // 1 Descricao
-        //    // 2 Fim Vigência
-        //    // 3 CEST
-
-        //    var configuracao = ConfiguracaoController.Instancia.GetConfiguracao();
-        //    var dataTable = (DataTable)dgvDados.DataSource;
-        //    var ncmImportados = 0;
-        //    var ncmAtualizados = 0;
-
-        //    foreach (DataRow item in dataTable.Rows)
-        //    {
-        //        if (item["NCM"].ToString().IsNullOrEmpty())
-        //            continue;
-
-        //        Acao _Acao = Acao.Alterar;
-        //        var _Ncm = NCMController.Instancia.GetByNcm(item["NCM"].ToString());
-        //        if (_Ncm == null)
-        //        {
-        //            _Acao = Acao.Incluir;
-        //            _Ncm = new NCM
-        //            {
-        //                Codigo = NCMController.Instancia.MaxCodigo(),
-        //                Ncm = item["NCM"].ToString(),
-        //                Descricao = item["DESCRICAO"].ToString().TrimCk(),
-        //                DtRevogacao = item["FIM VIGENCIA"].ToString().IsNullOrEmpty() ? null : (DateTime?)Convert.ToDateTime(item["FIM VIGENCIA"]),
-        //                Cest = item["CEST"].ToString().TrimCk(),
-        //                EnqGeral = configuracao.CodigoEnquadramentoIPI ?? 999
-        //            };
-        //            ncmImportados++;
-        //        }
-        //        else
-        //        {
-        //            _Ncm.Descricao = item["DESCRICAO"].ToString().TrimCk();
-        //            _Ncm.DtRevogacao = item["FIM VIGENCIA"].ToString().IsNullOrEmpty() ? null : (DateTime?)Convert.ToDateTime(item["FIM VIGENCIA"]);
-        //            _Ncm.Cest = item["CEST"].ToString().TrimCk();
-        //            _Ncm.EnqGeral = configuracao.CodigoEnquadramentoIPI ?? 999;
-        //            ncmAtualizados++;
-        //        }
-
-        //        NCMController.Instancia.Salvar(_Ncm, _Acao);
-        //    }
-        //    MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}Importados: {ncmImportados},{Environment.NewLine}Atualizados: {ncmAtualizados}");
-        //}
-
-        //Código Antigo onde importava apenas os campos do NCM com Excel - 18/01/2024
-
         private void ImportarNcm()
         {
             var configuracao = ConfiguracaoController.Instancia.GetConfiguracao();
@@ -194,14 +148,6 @@ namespace Aplicacao.Utilitarios
                     dtRevogacao = null; 
                 }
 
-
-                decimal? nacionalFederal = 0;
-                decimal? importadosFederal = 0;
-                decimal? estadual = 0;
-                decimal? municipal = 0;
-
-                ConverterValores(item, out nacionalFederal, out importadosFederal, out estadual, out municipal);
-
                 if (_Ncm == null)
                 {
                     _Acao = Acao.Incluir;
@@ -211,12 +157,6 @@ namespace Aplicacao.Utilitarios
                         Codigo = NCMController.Instancia.MaxCodigo(),
                         Ncm = item["ncm"].ToString(),
                         Descricao = item["descricao"].ToString().TrimCk().ToUpper().Substring(0, Math.Min(100, item["descricao"].ToString().TrimCk().Length)),
-                        Nacionalfederal = nacionalFederal,
-                        Importadosfederal = importadosFederal,
-                        Estadual = estadual,
-                        Municipal = municipal,
-                        DtRevogacao = null,
-                        EnqGeral = 999
                     };
 
                     ncmImportados++;
@@ -224,12 +164,7 @@ namespace Aplicacao.Utilitarios
                 else
                 {
                     _Ncm.Descricao = item["descricao"].ToString().TrimCk();
-                    _Ncm.Nacionalfederal = nacionalFederal;
-                    _Ncm.Importadosfederal = importadosFederal;
-                    _Ncm.Estadual = estadual;
-                    _Ncm.Municipal = municipal;
                     _Ncm.DtRevogacao = null;
-                    _Ncm.EnqGeral = 999;
 
                     ncmAtualizados++;
                 }
@@ -291,7 +226,51 @@ namespace Aplicacao.Utilitarios
 
         private void ImportarCest()
         {
+            var dataTable = (DataTable)dgvDados.DataSource;
+            if (dataTable == null)
+            {
+                MessageBox.Show("Não há dados para importar.", "Atenção");
+                return;
+            }
 
+            var cestImportados = 0;
+            var cestAtualizados = 0;
+
+            foreach (DataRow item in dataTable.Rows)
+            {
+                var codigoDoArquivo = item["CODIGO"].ToString().Trim();
+                if (string.IsNullOrEmpty(codigoDoArquivo))
+                    continue;
+
+                Acao acao;
+                var cestExistente = CESTController.Instancia.GetByCodigo(codigoDoArquivo);
+
+                CEST cestParaSalvar;
+
+                if (cestExistente == null) 
+                {
+                    acao = Acao.Incluir;
+
+                    cestParaSalvar = new CEST
+                    {
+                        Codigo = codigoDoArquivo,
+                        Descricao = item["DESCRICAO"].ToString().Trim()
+                    };
+                    cestImportados++;
+                }
+                else 
+                {
+                    acao = Acao.Alterar;
+                    cestParaSalvar = cestExistente; 
+
+                    cestParaSalvar.Descricao = item["DESCRICAO"].ToString().Trim();
+                    cestAtualizados++;
+                }
+
+                CESTController.Instancia.Salvar(cestParaSalvar, acao);
+            }
+
+            MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}Importados: {cestImportados}{Environment.NewLine}Atualizados: {cestAtualizados}", "Importação Concluída");
         }
 
         private void ImportarCFOP()
@@ -481,7 +460,27 @@ namespace Aplicacao.Utilitarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar o arquivo: " + ex.Message);
+                // Este código vai extrair TODOS os detalhes do erro, incluindo as causas internas.
+                StringBuilder sb = new StringBuilder();
+                Exception inner = ex;
+                int level = 0;
+
+                sb.AppendLine("Ocorreu um erro ao gerar o modelo:");
+                sb.AppendLine("=============================================");
+
+                while (inner != null)
+                {
+                    sb.AppendLine($"\n--- Nível de Erro {level} ---");
+                    sb.AppendLine($"Tipo: {inner.GetType().Name}");
+                    sb.AppendLine($"Mensagem: {inner.Message}");
+                    sb.AppendLine($"Origem: {inner.Source}");
+                    sb.AppendLine($"Stack Trace: {inner.StackTrace}");
+
+                    inner = inner.InnerException;
+                    level++;
+                }
+
+                MessageBox.Show(sb.ToString(), "Erro Detalhado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return dataTable;
@@ -505,5 +504,103 @@ namespace Aplicacao.Utilitarios
         }
 
         #endregion
+        private void btnVerModelo_Click(object sender, EventArgs e)
+        {
+            // Pega a lista de colunas necessárias usando o método que já temos.
+            List<string> headers = GetHeadersParaModelo();
+
+            if (headers == null)
+            {
+                MessageBox.Show("Selecione um tipo de registro válido (NCM, CEST ou CFOP).", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Usa um StringBuilder para construir uma mensagem de ajuda bem formatada.
+            StringBuilder mensagem = new StringBuilder();
+
+            mensagem.AppendLine($"Para importar '{cboTipoRegistro.Text}', seu arquivo Excel ou CSV deve conter as seguintes colunas, exatamente com estes nomes e na ordem sugerida:");
+            mensagem.AppendLine("----------------------------------------------------------");
+
+            // Adiciona cada nome de coluna à mensagem
+            foreach (string header in headers)
+            {
+                mensagem.AppendLine($"- {header}");
+            }
+
+            mensagem.AppendLine("----------------------------------------------------------");
+            mensagem.AppendLine("\nObservações:");
+            mensagem.AppendLine("• A primeira linha do seu arquivo deve ser o cabeçalho com os nomes das colunas.");
+            mensagem.AppendLine("• Para arquivos CSV, o separador utilizado deve ser o ponto e vírgula (;).");
+
+            // Exibe a mensagem final em uma MessageBox informativa.
+            MessageBox.Show(mensagem.ToString(), $"Modelo para Importação de {cboTipoRegistro.Text}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBaixarModelo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Este método decide quais colunas o modelo deve ter
+        private List<string> GetHeadersParaModelo()
+        {
+            switch (cboTipoRegistro.Text)
+            {
+                case "NCM":
+                    // Colunas exatas usadas no seu método ImportarNcm
+                    return new List<string> { "ncm", "descricao",  };
+                case "CEST":
+                    // Colunas exatas usadas no seu método ImportarCest
+                    return new List<string> { "CODIGO", "DESCRICAO" };
+                case "CFOP":
+                    // Colunas exatas usadas no seu método ImportarCFOP
+                    return new List<string> { "CODIGO", "DESCRICAO" };
+                default:
+                    return null;
+            }
+        }
+
+        // Este método usa o ClosedXML para criar o arquivo Excel
+        // APAGUE o método GerarPlanilhaModelo antigo e SUBSTITUA por este:
+        private void GerarPlanilhaModelo(string caminhoArquivo, List<string> headers)
+        {
+            // Cria um novo arquivo no formato .xlsx
+            IWorkbook workbook = new XSSFWorkbook();
+
+            // Cria uma nova planilha chamada "Dados"
+            ISheet sheet = workbook.CreateSheet("Dados");
+
+            // Cria um estilo para o cabeçalho (negrito, fundo cinza)
+            ICellStyle headerStyle = workbook.CreateCellStyle();
+            IFont headerFont = workbook.CreateFont();
+            headerFont.IsBold = true;
+            headerStyle.SetFont(headerFont);
+            headerStyle.FillForegroundColor = IndexedColors.Grey25Percent.Index;
+            headerStyle.FillPattern = FillPattern.SolidForeground;
+
+            // Cria a primeira linha para o cabeçalho
+            IRow headerRow = sheet.CreateRow(0);
+
+            // Escreve os cabeçalhos na primeira linha
+            for (int i = 0; i < headers.Count; i++)
+            {
+                ICell cell = headerRow.CreateCell(i);
+                cell.SetCellValue(headers[i]);
+                cell.CellStyle = headerStyle;
+            }
+
+            // Ajusta a largura das colunas ao conteúdo
+            for (int i = 0; i < headers.Count; i++)
+            {
+                sheet.AutoSizeColumn(i);
+            }
+
+            // Salva o arquivo no disco
+            using (var fileData = new FileStream(caminhoArquivo, FileMode.Create, FileAccess.Write))
+            {
+                workbook.Write(fileData);
+            }
+        }
+
     }
 }

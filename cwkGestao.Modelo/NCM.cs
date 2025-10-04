@@ -9,6 +9,7 @@ namespace cwkGestao.Modelo
         public NCM()
         {
             NCMItens = new List<NCMItem>();
+            CestsVinculados = new List<NCMCEST>();
         }
 
         public override int ID { get; set; }
@@ -60,6 +61,8 @@ namespace cwkGestao.Modelo
         public virtual decimal? ImportadosFederal { get; set; }
 
         public virtual IList<NCMItem> NCMItens { get; set; }
+
+        public virtual IList<NCMCEST> CestsVinculados { get; set; } = new List<NCMCEST>();
 
         public virtual DateTime? DtRevogacao { get; set; }
         public override string ToString() { return Ncm; }

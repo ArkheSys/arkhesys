@@ -70,6 +70,9 @@
             this.lkpPlanoContaEstoque = new Cwork.Utilitarios.Componentes.Lookup();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.tabImpostoDentroEstado = new DevExpress.XtraTab.XtraTabPage();
+            this.lkpCEST = new Cwork.Utilitarios.Componentes.Lookup();
+            this.lkbCEST = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lbPerfilPisCofins = new DevExpress.XtraEditors.LabelControl();
             this.lkpClassificacaoFiscal = new Cwork.Utilitarios.Componentes.Lookup();
             this.lkbClassificacaoFiscal = new Cwork.Utilitarios.Componentes.LookupButton();
@@ -524,6 +527,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupoEstoque.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).BeginInit();
             this.tabImpostoDentroEstado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
@@ -1429,6 +1433,9 @@
             // 
             // tabImpostoDentroEstado
             // 
+            this.tabImpostoDentroEstado.Controls.Add(this.lkpCEST);
+            this.tabImpostoDentroEstado.Controls.Add(this.labelControl4);
+            this.tabImpostoDentroEstado.Controls.Add(this.lkbCEST);
             this.tabImpostoDentroEstado.Controls.Add(this.lbPerfilPisCofins);
             this.tabImpostoDentroEstado.Controls.Add(this.lkpClassificacaoFiscal);
             this.tabImpostoDentroEstado.Controls.Add(this.lbClassificacaoFiscal);
@@ -1449,10 +1456,76 @@
             this.tabImpostoDentroEstado.Size = new System.Drawing.Size(681, 642);
             this.tabImpostoDentroEstado.Text = "Tributação";
             // 
+            // lkpCEST
+            // 
+            this.lkpCEST.ButtonLookup = this.lkbCEST;
+            this.lkpCEST.CamposPesquisa = new string[] {
+        "ID",
+        "Codigo",
+        "Descricao"};
+            this.lkpCEST.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesAND")));
+            this.lkpCEST.CamposRestricoesNOT = null;
+            this.lkpCEST.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesOR")));
+            this.lkpCEST.ColunaDescricao = new string[] {
+        "ID",
+        "Código",
+        "Descrição",
+        null,
+        null};
+            this.lkpCEST.ColunaTamanho = new string[] {
+        "10",
+        "50",
+        "20",
+        null,
+        null};
+            this.lkpCEST.ContextoLinq = null;
+            this.lkpCEST.CwkFuncaoValidacao = null;
+            this.lkpCEST.CwkMascara = null;
+            this.lkpCEST.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpCEST.Exemplo = null;
+            this.lkpCEST.ID = 0;
+            this.lkpCEST.Join = null;
+            this.lkpCEST.Key = System.Windows.Forms.Keys.F5;
+            this.lkpCEST.Location = new System.Drawing.Point(116, 35);
+            this.lkpCEST.Name = "lkpCEST";
+            this.lkpCEST.OnIDChanged = null;
+            this.lkpCEST.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpCEST.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpCEST.SelecionarTextoOnEnter = true;
+            this.lkpCEST.Size = new System.Drawing.Size(509, 20);
+            this.lkpCEST.Tabela = null;
+            this.lkpCEST.TabIndex = 115;
+            this.lkpCEST.TituloTelaPesquisa = null;
+            this.lkpCEST.ToolTip = "Campos pesquisados: ID, Codigo, Descricao.";
+            this.lkpCEST.Where = null;
+            // 
+            // lkbCEST
+            // 
+            this.lkbCEST.Location = new System.Drawing.Point(631, 35);
+            this.lkbCEST.Lookup = null;
+            this.lkbCEST.Name = "lkbCEST";
+            this.lkbCEST.Size = new System.Drawing.Size(24, 20);
+            this.lkbCEST.SubForm = null;
+            this.lkbCEST.SubFormType = null;
+            this.lkbCEST.SubFormTypeParams = null;
+            this.lkbCEST.TabIndex = 116;
+            this.lkbCEST.TabStop = false;
+            this.lkbCEST.Text = "...";
+            this.lkbCEST.Click += new System.EventHandler(this.lkbCEST_Click);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.labelControl4.Location = new System.Drawing.Point(75, 38);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(29, 13);
+            this.labelControl4.TabIndex = 114;
+            this.labelControl4.Text = "CEST:";
+            // 
             // lbPerfilPisCofins
             // 
             this.lbPerfilPisCofins.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbPerfilPisCofins.Location = new System.Drawing.Point(16, 71);
+            this.lbPerfilPisCofins.Location = new System.Drawing.Point(18, 92);
             this.lbPerfilPisCofins.Name = "lbPerfilPisCofins";
             this.lbPerfilPisCofins.Size = new System.Drawing.Size(86, 13);
             this.lbPerfilPisCofins.TabIndex = 109;
@@ -1487,7 +1560,7 @@
             this.lkpClassificacaoFiscal.ID = 0;
             this.lkpClassificacaoFiscal.Join = null;
             this.lkpClassificacaoFiscal.Key = System.Windows.Forms.Keys.F5;
-            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(114, 40);
+            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(116, 61);
             this.lkpClassificacaoFiscal.Name = "lkpClassificacaoFiscal";
             this.lkpClassificacaoFiscal.OnIDChanged = null;
             this.lkpClassificacaoFiscal.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1502,7 +1575,7 @@
             // 
             // lkbClassificacaoFiscal
             // 
-            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(629, 40);
+            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(631, 61);
             this.lkbClassificacaoFiscal.Lookup = null;
             this.lkbClassificacaoFiscal.Name = "lkbClassificacaoFiscal";
             this.lkbClassificacaoFiscal.Size = new System.Drawing.Size(24, 20);
@@ -1517,7 +1590,7 @@
             // lbClassificacaoFiscal
             // 
             this.lbClassificacaoFiscal.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(8, 43);
+            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(10, 64);
             this.lbClassificacaoFiscal.Name = "lbClassificacaoFiscal";
             this.lbClassificacaoFiscal.Size = new System.Drawing.Size(94, 13);
             this.lbClassificacaoFiscal.TabIndex = 106;
@@ -1525,7 +1598,7 @@
             // 
             // cbeSaiNaturezaReceita
             // 
-            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(454, 68);
+            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(456, 89);
             this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
             this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1535,7 +1608,7 @@
             // 
             // lbSaiNaturezaReceita
             // 
-            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(335, 71);
+            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(337, 92);
             this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
             this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
             this.lbSaiNaturezaReceita.TabIndex = 112;
@@ -1543,7 +1616,7 @@
             // 
             // lkbPerfilPisCofins
             // 
-            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(292, 68);
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(294, 89);
             this.lkbPerfilPisCofins.Lookup = null;
             this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
             this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
@@ -1584,7 +1657,7 @@
             this.lkpPerfilPisCofins.ID = 0;
             this.lkpPerfilPisCofins.Join = null;
             this.lkpPerfilPisCofins.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(114, 68);
+            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(116, 89);
             this.lkpPerfilPisCofins.Name = "lkpPerfilPisCofins";
             this.lkpPerfilPisCofins.OnIDChanged = null;
             this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1602,7 +1675,7 @@
             this.txtCBenef.CwkFuncaoValidacao = null;
             this.txtCBenef.CwkMascara = null;
             this.txtCBenef.CwkValidacao = null;
-            this.txtCBenef.Location = new System.Drawing.Point(115, 98);
+            this.txtCBenef.Location = new System.Drawing.Point(117, 119);
             this.txtCBenef.Name = "txtCBenef";
             this.txtCBenef.Properties.MaxLength = 30;
             this.txtCBenef.SelecionarTextoOnEnter = true;
@@ -1611,7 +1684,7 @@
             // 
             // labelControl41
             // 
-            this.labelControl41.Location = new System.Drawing.Point(3, 105);
+            this.labelControl41.Location = new System.Drawing.Point(5, 126);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(102, 13);
             this.labelControl41.TabIndex = 20;
@@ -8712,6 +8785,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).EndInit();
             this.tabImpostoDentroEstado.ResumeLayout(false);
             this.tabImpostoDentroEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
@@ -9424,5 +9498,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl39;
         private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeEscRelevante;
         private DevExpress.XtraEditors.LabelControl labelControl38;
+        private Cwork.Utilitarios.Componentes.Lookup lkpCEST;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbCEST;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

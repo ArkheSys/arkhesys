@@ -27,5 +27,11 @@
 			<key column="IDNCM" />
 			<one-to-many class="NCMItem" />
 		</bag>
+
+		<bag name="CestsVinculados" inverse="true" cascade="all-delete-orphan">
+			<key column="IDNCM" />
+			<one-to-many class="NCMCEST" />
+		</bag>
+
 	</class>
 </hibernate-mapping>

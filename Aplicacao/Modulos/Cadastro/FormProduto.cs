@@ -110,6 +110,7 @@ namespace Aplicacao
 
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
+            lkpCEST.Exemplo = new CEST();
 
 
             FormataGrupos();
@@ -225,6 +226,7 @@ namespace Aplicacao
             MontarCotacoesMoeda();
             CarregarAnexos();
             AdicionarTabelasDePreco();
+
 
             chbIntegrarEcommerce.Checked = Selecionado.IntegrarEcommerce == 1;
 
@@ -1639,6 +1641,7 @@ namespace Aplicacao
 
             Selecionado.CaminhoImagem = caminhoImagem.IsNotNullOrEmpty() ? caminhoImagem : "";
             SalvarArquivos();
+            Selecionado.CEST = lkpCEST.Tag as CEST;
 
             base.sbGravar_Click(sender, e);
         }
@@ -2126,7 +2129,6 @@ namespace Aplicacao
         {
 
         }
-
         private void lkbClassificacaoFiscal_Click(object sender, EventArgs e)
         {
             LookupUtil.GridLookup<ClassificacaoFiscal>(lkpClassificacaoFiscal, typeof(FormClassificacaoFiscal));
@@ -2136,6 +2138,34 @@ namespace Aplicacao
         {
             LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
 
+        }
+
+        private void lkbCEST_Click(object sender, EventArgs e)
+        {
+            var ncmSelecionado = txtID_NCM.EditValue as NCM;
+            if (ncmSelecionado == null && txtID_NCM.EditValue is int)
+            {
+                int idNcm = (int)txtID_NCM.EditValue;
+                if (idNcm > 0)
+                    ncmSelecionado = NCMController.Instancia.LoadObjectById(idNcm);
+            }
+
+            if (ncmSelecionado == null || ncmSelecionado.ID == 0)
+            {
+                MessageBox.Show("Por favor, selecione um NCM para o produto antes de escolher o CEST.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNCM.Focus();
+                return;
+            }
+
+            var cestsFiltrados = ncmSelecionado.CestsVinculados.Select(vinculo => vinculo.CEST).ToList();
+
+            if (!cestsFiltrados.Any())
+            {
+                MessageBox.Show("O NCM selecionado não possui nenhum CEST vinculado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            LookupUtil.GridLookup<CEST>(lkpCEST, typeof(FormCEST), cestsFiltrados);
         }
     }
 

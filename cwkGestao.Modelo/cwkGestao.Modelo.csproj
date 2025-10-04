@@ -239,7 +239,6 @@
     <Compile Include="cepbr_endereco.cs" />
     <Compile Include="cepbr_estado.cs" />
     <Compile Include="CEST.cs" />
-    <Compile Include="CEST_Segmento.cs" />
     <Compile Include="ClassificacaoFiscal.cs" />
     <Compile Include="CodigoImposto.cs" />
     <Compile Include="CondicaoFornecimento.cs" />
@@ -249,6 +248,7 @@
     <Compile Include="ImpostosTributos.cs" />
     <Compile Include="ImpostosTributosExcessoes.cs" />
     <Compile Include="NaturezaOperacao.cs" />
+    <Compile Include="NCMCEST.cs" />
     <Compile Include="NotaReferencia.cs" />
     <Compile Include="OpcaoTributacao.cs" />
     <Compile Include="PerfilPisCofins.cs" />

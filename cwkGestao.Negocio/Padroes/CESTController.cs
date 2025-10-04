@@ -2,6 +2,7 @@
 using cwkGestao.Modelo;
 using cwkGestao.Repositorio;
 using cwkGestao.Repositorio.Interfaces.Particulares;
+using System.Linq;
 
 namespace cwkGestao.Negocio
 {
@@ -39,8 +40,12 @@ namespace cwkGestao.Negocio
 
         public CEST GetByCEST(string Codigo)
         {
-            //return repositorioCEST.GetByCEST(Codigo);
             return ((IRepositorioCEST)repositorioT).GetByCEST(Codigo);
+        }
+
+        public CEST GetByCodigo(string codigo)
+        {
+            return repositorioT.GetAll().FirstOrDefault(c => c.Codigo == codigo);
         }
     }
 }

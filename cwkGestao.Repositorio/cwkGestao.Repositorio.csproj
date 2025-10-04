@@ -250,7 +250,6 @@
     <Compile Include="cwkGestaoNHibernate\Repositorios\PisCofinsNaturezaOperacaoRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoProdutoRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoRepositorio.cs" />
-    <Compile Include="cwkGestaoNHibernate\Repositorios\RepositorioCEST_Segmento.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaCOFINSRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaImpostosTributosExcessoesRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaPISRepositorio.cs" />
@@ -558,7 +557,6 @@
     <Compile Include="cwkGestaoNHibernate\Repositorios\VinculoRepositorio.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioCEST.cs" />
-    <Compile Include="Interfaces\Particulares\IRepositorioCEST_Segmento.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioClassificacaoFiscal.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributos.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributosExcessoes.cs" />
@@ -1676,7 +1674,7 @@
     <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NaturezaOperacao.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cwkGestaoNHibernate\Mapeamentos\CEST_Segmento.hbm.xml" />
+    <EmbeddedResource Include="cwkGestaoNHibernate\Mapeamentos\NCMCEST.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

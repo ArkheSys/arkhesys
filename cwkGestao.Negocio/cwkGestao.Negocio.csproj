@@ -312,12 +312,12 @@
     <Compile Include="Obras_Fundacoes\FaturadorPropostaMedicao.cs" />
     <Compile Include="Padroes\AtendimentoController.cs" />
     <Compile Include="Padroes\CESTController.cs" />
-    <Compile Include="Padroes\CEST_SegmentoController.cs" />
     <Compile Include="Padroes\ClassificacaoFiscalController.cs" />
     <Compile Include="Padroes\EventoMdfeController.cs" />
     <Compile Include="Padroes\ImpostosTributosController.cs" />
     <Compile Include="Padroes\ImpostosTributosExcessoesController.cs" />
     <Compile Include="Padroes\NaturezaOperacaoController.cs" />
+    <Compile Include="Padroes\NCMCESTController.cs" />
     <Compile Include="Padroes\PisCofinsNaturezaOperacaoController.cs" />
     <Compile Include="Padroes\TabelaCOFINSController.cs" />
     <Compile Include="Padroes\TabelaImpostosTributosExcessoesController.cs" />
