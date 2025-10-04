@@ -27,15 +27,15 @@ namespace Aplicacao
             //lkbPortador.SubForm = new FormPortador();
             //lkbLocalEstoqueTipoNota.SubForm = new FormLocalEstoque();
 
-            lkbBanco.SubFormType = typeof(FormBanco);
-            lkbHistorico.SubFormType = typeof(FormHistorico);
-            lkbOperacao.SubFormType = typeof(FormOperacao);
-            lkbPlanoConta.SubFormType = typeof(FormPlanoConta);
-            lkbPlanoContaFrete.SubFormType = typeof(FormPlanoConta);
-            lkbPlanoContaIPI.SubFormType = typeof(FormPlanoConta);
-            lkbPlanoContaServico.SubFormType = typeof(FormPlanoConta);
-            lkbPortador.SubFormType = typeof(FormPortador);
-            lkbLocalEstoqueTipoNota.SubFormType = typeof(FormLocalEstoque);
+            //lkbBanco.SubFormType = typeof(FormBanco);
+            //lkbHistorico.SubFormType = typeof(FormHistorico);
+            //lkbOperacao.SubFormType = typeof(FormOperacao);
+            //lkbPlanoConta.SubFormType = typeof(FormPlanoConta);
+            //lkbPlanoContaFrete.SubFormType = typeof(FormPlanoConta);
+            //lkbPlanoContaIPI.SubFormType = typeof(FormPlanoConta);
+            //lkbPlanoContaServico.SubFormType = typeof(FormPlanoConta);
+            //lkbPortador.SubFormType = typeof(FormPortador);
+            //lkbLocalEstoqueTipoNota.SubFormType = typeof(FormLocalEstoque);
 
             InitializeComboBox(cbCategoria, typeof(TipoNota.CategoriaMovimentacao));
             InitializeComboBox(cbModeloDocto, typeof(TipoNota.ModeloDocumento));
@@ -44,7 +44,7 @@ namespace Aplicacao
             InicializaComboEditado(cbIndPres, typeof(TipoNota.IndPres));
             InicializaComboEditado(cbIndIntermed, typeof(TipoNota.IndInter));
 
-            lkpHistorico.OnIDChanged += new EventHandler(lkpHistorico_OnIDChanged);
+            //lkpHistorico.OnIDChanged += new EventHandler(lkpHistorico_OnIDChanged);
 
             tpDados.Tag = Selecionado;
             tpConfiguracao.Tag = Selecionado;
@@ -64,7 +64,7 @@ namespace Aplicacao
 
         }
 
-        private void lkpHistorico_OnIDChanged(object sender, EventArgs e)
+        /*private void lkpHistorico_OnIDChanged(object sender, EventArgs e)
         {
             if(lkpHistorico.Selecionado != null)
             {
@@ -119,19 +119,19 @@ namespace Aplicacao
                 lkpPlanoContaServico.CwkFuncaoValidacao = null;
                 lkpPortador.CwkFuncaoValidacao = null;
             }
-        }
+        }*/
 
         private void CamposFinanceiroLiberar(bool enabled)
         {
-            lkpAcrescimo.Enabled = lkbAcrescimo.Enabled = enabled;
-            lkpBanco.Enabled = lkbBanco.Enabled = enabled;
-            lkpHistorico.Enabled = lkbHistorico.Enabled = enabled;
-            lkpPlanoConta.Enabled = lkbPlanoConta.Enabled = enabled;
-            lkpPlanoContaFrete.Enabled = lkbPlanoContaFrete.Enabled = enabled;
-            lkpPlanoContaIPI.Enabled = lkbPlanoContaIPI.Enabled = enabled;
-            lkpPlanoContaServico.Enabled = lkbPlanoContaServico.Enabled = enabled;
-            lkpPortador.Enabled = lkbPortador.Enabled = enabled;
-            txtComplementoHist.Enabled = enabled;
+            //lkpAcrescimo.Enabled = lkbAcrescimo.Enabled = enabled;
+            //lkpBanco.Enabled = lkbBanco.Enabled = enabled;
+            //lkpHistorico.Enabled = lkbHistorico.Enabled = enabled;
+            //lkpPlanoConta.Enabled = lkbPlanoConta.Enabled = enabled;
+            //lkpPlanoContaFrete.Enabled = lkbPlanoContaFrete.Enabled = enabled;
+            //lkpPlanoContaIPI.Enabled = lkbPlanoContaIPI.Enabled = enabled;
+            //lkpPlanoContaServico.Enabled = lkbPlanoContaServico.Enabled = enabled;
+            //lkpPortador.Enabled = lkbPortador.Enabled = enabled;
+            //txtComplementoHist.Enabled = enabled;
             cbModeloDocto_SelectedIndexChanged(null, null);
         }
 
@@ -143,7 +143,7 @@ namespace Aplicacao
 
         private void FormTipoNota_Shown(object sender, EventArgs e)
         {
-            CamposFinanceiroLiberar(chkBGeraFinanceiro.Checked);
+            //CamposFinanceiroLiberar(chkBGeraFinanceiro.Checked);
 
             switch (Selecionado.TipoFrete)
             {
@@ -227,7 +227,7 @@ namespace Aplicacao
         }
 
 
-        private void lkbAcrescimo_Click(object sender, EventArgs e)
+        /*private void lkbAcrescimo_Click(object sender, EventArgs e)
         {
             GridGenerica<cwkGestao.Modelo.Acrescimo> grid = new GridGenerica<cwkGestao.Modelo.Acrescimo>(cwkGestao.Negocio.AcrescimoController.Instancia.GetAll(), new FormAcrescimo(), (cwkGestao.Modelo.Acrescimo)lkpAcrescimo.Selecionado, false);
             grid.Selecionando = true;
@@ -238,7 +238,7 @@ namespace Aplicacao
                 lkpAcrescimo.Localizar(grid.Selecionado.ID);
             }
             lkpAcrescimo.Focus();
-        }
+        }*/
 
         protected void GridSelecao(string ptitulo, Cwork.Utilitarios.Componentes.Lookup pCb)
         {
@@ -294,7 +294,7 @@ namespace Aplicacao
 
         private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CamposFinanceiroAlterarValidacao(chkBGeraFinanceiro.Checked);
+            //CamposFinanceiroAlterarValidacao(chkBGeraFinanceiro.Checked);
         }
 
         protected override void sbGravar_Click(object sender, EventArgs e)
@@ -457,6 +457,11 @@ namespace Aplicacao
             {
 
             }
+        }
+
+        private void labelControl10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
