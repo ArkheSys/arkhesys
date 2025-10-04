@@ -30,20 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTipoNota));
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cbNFOrigem = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.chkBGeraFinanceiro = new DevExpress.XtraEditors.CheckEdit();
             this.chkBPermiteEstqueNegativo = new DevExpress.XtraEditors.CheckEdit();
             this.chkBAtualizaPedido = new DevExpress.XtraEditors.CheckEdit();
             this.chkBAtualizaEstoque = new DevExpress.XtraEditors.CheckEdit();
@@ -56,35 +47,13 @@
             this.txtNome = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtOrdem = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.txtSerie = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.txtComplementoHist = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.lkpBanco = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbBanco = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkbAcrescimo = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpAcrescimo = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbPortador = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPortador = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbHistorico = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpHistorico = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbPlanoConta = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPlanoConta = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbPlanoContaFrete = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPlanoContaFrete = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbPlanoContaIPI = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPlanoContaIPI = new Cwork.Utilitarios.Componentes.Lookup();
-            this.lkbOperacao = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpOperacao = new Cwork.Utilitarios.Componentes.Lookup();
             this.cbCategoria = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.cbModeloDocto = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.lkbPlanoContaServico = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpPlanoContaServico = new Cwork.Utilitarios.Componentes.Lookup();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.chkBCalcCustoMedio = new DevExpress.XtraEditors.CheckEdit();
             this.chbValorSTPrimeiraParcela = new DevExpress.XtraEditors.CheckEdit();
             this.chTotalizarVolumes = new DevExpress.XtraEditors.CheckEdit();
             this.chbAgruparItensFaturamentoLote = new DevExpress.XtraEditors.CheckEdit();
-            this.lkbLocalEstoqueTipoNota = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpLocalEstoqueTipoNota = new Cwork.Utilitarios.Componentes.Lookup();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tpDados = new DevExpress.XtraTab.XtraTabPage();
             this.lkbFilial = new Cwork.Utilitarios.Componentes.LookupButton();
@@ -94,8 +63,8 @@
             this.cbTipoFrete = new Cwork.Utilitarios.Componentes.DevComboBoxEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.cbTipoValorNotaCompra = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tpConfiguracao = new DevExpress.XtraTab.XtraTabPage();
+            this.chkDestinoSempreInterno = new DevExpress.XtraEditors.CheckEdit();
             this.chkBImportacaoXmlManual = new DevExpress.XtraEditors.CheckEdit();
             this.chkSemPagamento = new DevExpress.XtraEditors.CheckEdit();
             this.cbIndIntermed = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -112,14 +81,12 @@
             this.chbPIS_CREDEB = new DevExpress.XtraEditors.CheckEdit();
             this.chbICMS_CREDEB = new DevExpress.XtraEditors.CheckEdit();
             this.chbCOFINS_CREDEB = new DevExpress.XtraEditors.CheckEdit();
-            this.chkDestinoSempreInterno = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).BeginInit();
             this.tcPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbNFOrigem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkBGeraFinanceiro.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBPermiteEstqueNegativo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBAtualizaPedido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBAtualizaEstoque.Properties)).BeginInit();
@@ -130,23 +97,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrdem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerie.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtComplementoHist.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpBanco.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpAcrescimo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPortador.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpHistorico.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoConta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaFrete.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaIPI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpOperacao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbModeloDocto.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaServico.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBCalcCustoMedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbValorSTPrimeiraParcela.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTotalizarVolumes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbAgruparItensFaturamentoLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpLocalEstoqueTipoNota.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tpDados.SuspendLayout();
@@ -154,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTipoFrete.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTipoValorNotaCompra.Properties)).BeginInit();
             this.tpConfiguracao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDestinoSempreInterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBImportacaoXmlManual.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSemPagamento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIndIntermed.Properties)).BeginInit();
@@ -167,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chbPIS_CREDEB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbICMS_CREDEB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbCOFINS_CREDEB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDestinoSempreInterno.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
@@ -220,70 +176,6 @@
             this.labelControl13.TabIndex = 13;
             this.labelControl13.Text = "Observação:";
             // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(341, 220);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(75, 13);
-            this.labelControl15.TabIndex = 38;
-            this.labelControl15.Text = "P. Conta Frete:";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(353, 246);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(63, 13);
-            this.labelControl14.TabIndex = 45;
-            this.labelControl14.Text = "P. Conta IPI:";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Location = new System.Drawing.Point(20, 246);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(45, 13);
-            this.labelControl12.TabIndex = 41;
-            this.labelControl12.Text = "Histórico:";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(365, 142);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(51, 13);
-            this.labelControl11.TabIndex = 22;
-            this.labelControl11.Text = "Operação:";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(354, 194);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(62, 13);
-            this.labelControl10.TabIndex = 32;
-            this.labelControl10.Text = "Plano Conta:";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(364, 168);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(52, 13);
-            this.labelControl9.TabIndex = 26;
-            this.labelControl9.Text = "Acréscimo:";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(19, 220);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(46, 13);
-            this.labelControl8.TabIndex = 35;
-            this.labelControl8.Text = "Portador:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(32, 194);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(33, 13);
-            this.labelControl7.TabIndex = 29;
-            this.labelControl7.Text = "Banco:";
-            // 
             // cbNFOrigem
             // 
             this.cbNFOrigem.EditValue = "Terceiro";
@@ -329,15 +221,6 @@
             this.labelControl3.Size = new System.Drawing.Size(31, 13);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Nome:";
-            // 
-            // chkBGeraFinanceiro
-            // 
-            this.chkBGeraFinanceiro.Location = new System.Drawing.Point(72, 165);
-            this.chkBGeraFinanceiro.Name = "chkBGeraFinanceiro";
-            this.chkBGeraFinanceiro.Properties.Caption = "Gera Financeiro";
-            this.chkBGeraFinanceiro.Size = new System.Drawing.Size(99, 19);
-            this.chkBGeraFinanceiro.TabIndex = 25;
-            this.chkBGeraFinanceiro.CheckedChanged += new System.EventHandler(this.chkBGeraFinanceiro_CheckedChanged);
             // 
             // chkBPermiteEstqueNegativo
             // 
@@ -466,440 +349,9 @@
             this.txtSerie.Size = new System.Drawing.Size(44, 20);
             this.txtSerie.TabIndex = 8;
             // 
-            // txtComplementoHist
-            // 
-            this.txtComplementoHist.CwkFuncaoValidacao = null;
-            this.txtComplementoHist.CwkMascara = null;
-            this.txtComplementoHist.CwkValidacao = null;
-            this.txtComplementoHist.Location = new System.Drawing.Point(71, 269);
-            this.txtComplementoHist.Name = "txtComplementoHist";
-            this.txtComplementoHist.SelecionarTextoOnEnter = true;
-            this.txtComplementoHist.Size = new System.Drawing.Size(227, 20);
-            this.txtComplementoHist.TabIndex = 43;
-            // 
-            // lkpBanco
-            // 
-            this.lkpBanco.ButtonLookup = this.lkbBanco;
-            this.lkpBanco.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpBanco.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpBanco.CamposRestricoesAND")));
-            this.lkpBanco.CamposRestricoesNOT = null;
-            this.lkpBanco.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpBanco.CamposRestricoesOR")));
-            this.lkpBanco.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpBanco.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpBanco.ContextoLinq = null;
-            this.lkpBanco.CwkFuncaoValidacao = null;
-            this.lkpBanco.CwkMascara = null;
-            this.lkpBanco.CwkValidacao = null;
-            this.lkpBanco.Exemplo = null;
-            this.lkpBanco.ID = 0;
-            this.lkpBanco.Join = null;
-            this.lkpBanco.Key = System.Windows.Forms.Keys.F5;
-            this.lkpBanco.Location = new System.Drawing.Point(71, 191);
-            this.lkpBanco.Name = "lkpBanco";
-            this.lkpBanco.OnIDChanged = null;
-            this.lkpBanco.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpBanco.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpBanco.SelecionarTextoOnEnter = true;
-            this.lkpBanco.Size = new System.Drawing.Size(227, 20);
-            this.lkpBanco.Tabela = null;
-            this.lkpBanco.TabIndex = 30;
-            this.lkpBanco.TituloTelaPesquisa = null;
-            this.lkpBanco.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpBanco.Where = null;
-            // 
-            // lkbBanco
-            // 
-            this.lkbBanco.Location = new System.Drawing.Point(304, 191);
-            this.lkbBanco.Lookup = null;
-            this.lkbBanco.Name = "lkbBanco";
-            this.lkbBanco.Size = new System.Drawing.Size(24, 20);
-            this.lkbBanco.SubForm = null;
-            this.lkbBanco.SubFormType = null;
-            this.lkbBanco.SubFormTypeParams = null;
-            this.lkbBanco.TabIndex = 31;
-            this.lkbBanco.TabStop = false;
-            this.lkbBanco.Text = "...";
-            // 
-            // lkbAcrescimo
-            // 
-            this.lkbAcrescimo.Location = new System.Drawing.Point(642, 165);
-            this.lkbAcrescimo.Lookup = null;
-            this.lkbAcrescimo.Name = "lkbAcrescimo";
-            this.lkbAcrescimo.Size = new System.Drawing.Size(24, 20);
-            this.lkbAcrescimo.SubForm = null;
-            this.lkbAcrescimo.SubFormType = null;
-            this.lkbAcrescimo.SubFormTypeParams = null;
-            this.lkbAcrescimo.TabIndex = 28;
-            this.lkbAcrescimo.TabStop = false;
-            this.lkbAcrescimo.Text = "...";
-            this.lkbAcrescimo.Click += new System.EventHandler(this.lkbAcrescimo_Click);
-            // 
-            // lkpAcrescimo
-            // 
-            this.lkpAcrescimo.ButtonLookup = this.lkbAcrescimo;
-            this.lkpAcrescimo.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpAcrescimo.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpAcrescimo.CamposRestricoesAND")));
-            this.lkpAcrescimo.CamposRestricoesNOT = null;
-            this.lkpAcrescimo.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpAcrescimo.CamposRestricoesOR")));
-            this.lkpAcrescimo.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpAcrescimo.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpAcrescimo.ContextoLinq = null;
-            this.lkpAcrescimo.CwkFuncaoValidacao = null;
-            this.lkpAcrescimo.CwkMascara = null;
-            this.lkpAcrescimo.CwkValidacao = null;
-            this.lkpAcrescimo.Exemplo = null;
-            this.lkpAcrescimo.ID = 0;
-            this.lkpAcrescimo.Join = null;
-            this.lkpAcrescimo.Key = System.Windows.Forms.Keys.F5;
-            this.lkpAcrescimo.Location = new System.Drawing.Point(422, 165);
-            this.lkpAcrescimo.Name = "lkpAcrescimo";
-            this.lkpAcrescimo.OnIDChanged = null;
-            this.lkpAcrescimo.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpAcrescimo.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpAcrescimo.SelecionarTextoOnEnter = true;
-            this.lkpAcrescimo.Size = new System.Drawing.Size(214, 20);
-            this.lkpAcrescimo.Tabela = null;
-            this.lkpAcrescimo.TabIndex = 27;
-            this.lkpAcrescimo.TituloTelaPesquisa = null;
-            this.lkpAcrescimo.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpAcrescimo.Where = null;
-            // 
-            // lkbPortador
-            // 
-            this.lkbPortador.Location = new System.Drawing.Point(304, 217);
-            this.lkbPortador.Lookup = null;
-            this.lkbPortador.Name = "lkbPortador";
-            this.lkbPortador.Size = new System.Drawing.Size(24, 20);
-            this.lkbPortador.SubForm = null;
-            this.lkbPortador.SubFormType = null;
-            this.lkbPortador.SubFormTypeParams = null;
-            this.lkbPortador.TabIndex = 37;
-            this.lkbPortador.TabStop = false;
-            this.lkbPortador.Text = "...";
-            // 
-            // lkpPortador
-            // 
-            this.lkpPortador.ButtonLookup = this.lkbPortador;
-            this.lkpPortador.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpPortador.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPortador.CamposRestricoesAND")));
-            this.lkpPortador.CamposRestricoesNOT = null;
-            this.lkpPortador.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPortador.CamposRestricoesOR")));
-            this.lkpPortador.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpPortador.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpPortador.ContextoLinq = null;
-            this.lkpPortador.CwkFuncaoValidacao = null;
-            this.lkpPortador.CwkMascara = null;
-            this.lkpPortador.CwkValidacao = null;
-            this.lkpPortador.Exemplo = null;
-            this.lkpPortador.ID = 0;
-            this.lkpPortador.Join = null;
-            this.lkpPortador.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPortador.Location = new System.Drawing.Point(71, 217);
-            this.lkpPortador.Name = "lkpPortador";
-            this.lkpPortador.OnIDChanged = null;
-            this.lkpPortador.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPortador.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPortador.SelecionarTextoOnEnter = true;
-            this.lkpPortador.Size = new System.Drawing.Size(227, 20);
-            this.lkpPortador.Tabela = null;
-            this.lkpPortador.TabIndex = 36;
-            this.lkpPortador.TituloTelaPesquisa = null;
-            this.lkpPortador.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpPortador.Where = null;
-            // 
-            // lkbHistorico
-            // 
-            this.lkbHistorico.Location = new System.Drawing.Point(304, 243);
-            this.lkbHistorico.Lookup = null;
-            this.lkbHistorico.Name = "lkbHistorico";
-            this.lkbHistorico.Size = new System.Drawing.Size(24, 20);
-            this.lkbHistorico.SubForm = null;
-            this.lkbHistorico.SubFormType = null;
-            this.lkbHistorico.SubFormTypeParams = null;
-            this.lkbHistorico.TabIndex = 44;
-            this.lkbHistorico.TabStop = false;
-            this.lkbHistorico.Text = "...";
-            // 
-            // lkpHistorico
-            // 
-            this.lkpHistorico.ButtonLookup = this.lkbHistorico;
-            this.lkpHistorico.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpHistorico.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpHistorico.CamposRestricoesAND")));
-            this.lkpHistorico.CamposRestricoesNOT = null;
-            this.lkpHistorico.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpHistorico.CamposRestricoesOR")));
-            this.lkpHistorico.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpHistorico.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpHistorico.ContextoLinq = null;
-            this.lkpHistorico.CwkFuncaoValidacao = null;
-            this.lkpHistorico.CwkMascara = null;
-            this.lkpHistorico.CwkValidacao = null;
-            this.lkpHistorico.Exemplo = null;
-            this.lkpHistorico.ID = 0;
-            this.lkpHistorico.Join = null;
-            this.lkpHistorico.Key = System.Windows.Forms.Keys.F5;
-            this.lkpHistorico.Location = new System.Drawing.Point(71, 243);
-            this.lkpHistorico.Name = "lkpHistorico";
-            this.lkpHistorico.OnIDChanged = null;
-            this.lkpHistorico.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpHistorico.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpHistorico.SelecionarTextoOnEnter = true;
-            this.lkpHistorico.Size = new System.Drawing.Size(227, 20);
-            this.lkpHistorico.Tabela = null;
-            this.lkpHistorico.TabIndex = 42;
-            this.lkpHistorico.TituloTelaPesquisa = null;
-            this.lkpHistorico.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpHistorico.Where = null;
-            // 
-            // lkbPlanoConta
-            // 
-            this.lkbPlanoConta.Location = new System.Drawing.Point(642, 191);
-            this.lkbPlanoConta.Lookup = null;
-            this.lkbPlanoConta.Name = "lkbPlanoConta";
-            this.lkbPlanoConta.Size = new System.Drawing.Size(24, 20);
-            this.lkbPlanoConta.SubForm = null;
-            this.lkbPlanoConta.SubFormType = null;
-            this.lkbPlanoConta.SubFormTypeParams = null;
-            this.lkbPlanoConta.TabIndex = 34;
-            this.lkbPlanoConta.TabStop = false;
-            this.lkbPlanoConta.Text = "...";
-            // 
-            // lkpPlanoConta
-            // 
-            this.lkpPlanoConta.ButtonLookup = this.lkbPlanoConta;
-            this.lkpPlanoConta.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpPlanoConta.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoConta.CamposRestricoesAND")));
-            this.lkpPlanoConta.CamposRestricoesNOT = null;
-            this.lkpPlanoConta.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoConta.CamposRestricoesOR")));
-            this.lkpPlanoConta.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpPlanoConta.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpPlanoConta.ContextoLinq = null;
-            this.lkpPlanoConta.CwkFuncaoValidacao = null;
-            this.lkpPlanoConta.CwkMascara = null;
-            this.lkpPlanoConta.CwkValidacao = null;
-            this.lkpPlanoConta.Exemplo = null;
-            this.lkpPlanoConta.ID = 0;
-            this.lkpPlanoConta.Join = null;
-            this.lkpPlanoConta.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoConta.Location = new System.Drawing.Point(422, 191);
-            this.lkpPlanoConta.Name = "lkpPlanoConta";
-            this.lkpPlanoConta.OnIDChanged = null;
-            this.lkpPlanoConta.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPlanoConta.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPlanoConta.SelecionarTextoOnEnter = true;
-            this.lkpPlanoConta.Size = new System.Drawing.Size(214, 20);
-            this.lkpPlanoConta.Tabela = null;
-            this.lkpPlanoConta.TabIndex = 33;
-            this.lkpPlanoConta.TituloTelaPesquisa = null;
-            this.lkpPlanoConta.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpPlanoConta.Where = null;
-            // 
-            // lkbPlanoContaFrete
-            // 
-            this.lkbPlanoContaFrete.Location = new System.Drawing.Point(642, 217);
-            this.lkbPlanoContaFrete.Lookup = null;
-            this.lkbPlanoContaFrete.Name = "lkbPlanoContaFrete";
-            this.lkbPlanoContaFrete.Size = new System.Drawing.Size(24, 20);
-            this.lkbPlanoContaFrete.SubForm = null;
-            this.lkbPlanoContaFrete.SubFormType = null;
-            this.lkbPlanoContaFrete.SubFormTypeParams = null;
-            this.lkbPlanoContaFrete.TabIndex = 40;
-            this.lkbPlanoContaFrete.TabStop = false;
-            this.lkbPlanoContaFrete.Text = "...";
-            // 
-            // lkpPlanoContaFrete
-            // 
-            this.lkpPlanoContaFrete.ButtonLookup = this.lkbPlanoContaFrete;
-            this.lkpPlanoContaFrete.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpPlanoContaFrete.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaFrete.CamposRestricoesAND")));
-            this.lkpPlanoContaFrete.CamposRestricoesNOT = null;
-            this.lkpPlanoContaFrete.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaFrete.CamposRestricoesOR")));
-            this.lkpPlanoContaFrete.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpPlanoContaFrete.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpPlanoContaFrete.ContextoLinq = null;
-            this.lkpPlanoContaFrete.CwkFuncaoValidacao = null;
-            this.lkpPlanoContaFrete.CwkMascara = null;
-            this.lkpPlanoContaFrete.CwkValidacao = null;
-            this.lkpPlanoContaFrete.Exemplo = null;
-            this.lkpPlanoContaFrete.ID = 0;
-            this.lkpPlanoContaFrete.Join = null;
-            this.lkpPlanoContaFrete.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoContaFrete.Location = new System.Drawing.Point(422, 217);
-            this.lkpPlanoContaFrete.Name = "lkpPlanoContaFrete";
-            this.lkpPlanoContaFrete.OnIDChanged = null;
-            this.lkpPlanoContaFrete.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPlanoContaFrete.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPlanoContaFrete.SelecionarTextoOnEnter = true;
-            this.lkpPlanoContaFrete.Size = new System.Drawing.Size(214, 20);
-            this.lkpPlanoContaFrete.Tabela = null;
-            this.lkpPlanoContaFrete.TabIndex = 39;
-            this.lkpPlanoContaFrete.TituloTelaPesquisa = null;
-            this.lkpPlanoContaFrete.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpPlanoContaFrete.Where = null;
-            // 
-            // lkbPlanoContaIPI
-            // 
-            this.lkbPlanoContaIPI.Location = new System.Drawing.Point(642, 243);
-            this.lkbPlanoContaIPI.Lookup = null;
-            this.lkbPlanoContaIPI.Name = "lkbPlanoContaIPI";
-            this.lkbPlanoContaIPI.Size = new System.Drawing.Size(24, 20);
-            this.lkbPlanoContaIPI.SubForm = null;
-            this.lkbPlanoContaIPI.SubFormType = null;
-            this.lkbPlanoContaIPI.SubFormTypeParams = null;
-            this.lkbPlanoContaIPI.TabIndex = 47;
-            this.lkbPlanoContaIPI.TabStop = false;
-            this.lkbPlanoContaIPI.Text = "...";
-            // 
-            // lkpPlanoContaIPI
-            // 
-            this.lkpPlanoContaIPI.ButtonLookup = this.lkbPlanoContaIPI;
-            this.lkpPlanoContaIPI.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpPlanoContaIPI.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaIPI.CamposRestricoesAND")));
-            this.lkpPlanoContaIPI.CamposRestricoesNOT = null;
-            this.lkpPlanoContaIPI.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaIPI.CamposRestricoesOR")));
-            this.lkpPlanoContaIPI.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpPlanoContaIPI.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpPlanoContaIPI.ContextoLinq = null;
-            this.lkpPlanoContaIPI.CwkFuncaoValidacao = null;
-            this.lkpPlanoContaIPI.CwkMascara = null;
-            this.lkpPlanoContaIPI.CwkValidacao = null;
-            this.lkpPlanoContaIPI.Exemplo = null;
-            this.lkpPlanoContaIPI.ID = 0;
-            this.lkpPlanoContaIPI.Join = null;
-            this.lkpPlanoContaIPI.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoContaIPI.Location = new System.Drawing.Point(422, 243);
-            this.lkpPlanoContaIPI.Name = "lkpPlanoContaIPI";
-            this.lkpPlanoContaIPI.OnIDChanged = null;
-            this.lkpPlanoContaIPI.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPlanoContaIPI.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPlanoContaIPI.SelecionarTextoOnEnter = true;
-            this.lkpPlanoContaIPI.Size = new System.Drawing.Size(214, 20);
-            this.lkpPlanoContaIPI.Tabela = null;
-            this.lkpPlanoContaIPI.TabIndex = 46;
-            this.lkpPlanoContaIPI.TituloTelaPesquisa = null;
-            this.lkpPlanoContaIPI.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpPlanoContaIPI.Where = null;
-            // 
-            // lkbOperacao
-            // 
-            this.lkbOperacao.Location = new System.Drawing.Point(642, 139);
-            this.lkbOperacao.Lookup = null;
-            this.lkbOperacao.Name = "lkbOperacao";
-            this.lkbOperacao.Size = new System.Drawing.Size(24, 20);
-            this.lkbOperacao.SubForm = null;
-            this.lkbOperacao.SubFormType = null;
-            this.lkbOperacao.SubFormTypeParams = null;
-            this.lkbOperacao.TabIndex = 24;
-            this.lkbOperacao.TabStop = false;
-            this.lkbOperacao.Text = "...";
-            // 
-            // lkpOperacao
-            // 
-            this.lkpOperacao.ButtonLookup = this.lkbOperacao;
-            this.lkpOperacao.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpOperacao.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpOperacao.CamposRestricoesAND")));
-            this.lkpOperacao.CamposRestricoesNOT = null;
-            this.lkpOperacao.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpOperacao.CamposRestricoesOR")));
-            this.lkpOperacao.ColunaDescricao = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpOperacao.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpOperacao.ContextoLinq = null;
-            this.lkpOperacao.CwkFuncaoValidacao = null;
-            this.lkpOperacao.CwkMascara = null;
-            this.lkpOperacao.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpOperacao.Exemplo = null;
-            this.lkpOperacao.ID = 0;
-            this.lkpOperacao.Join = null;
-            this.lkpOperacao.Key = System.Windows.Forms.Keys.F5;
-            this.lkpOperacao.Location = new System.Drawing.Point(422, 139);
-            this.lkpOperacao.Name = "lkpOperacao";
-            this.lkpOperacao.OnIDChanged = null;
-            this.lkpOperacao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpOperacao.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpOperacao.SelecionarTextoOnEnter = true;
-            this.lkpOperacao.Size = new System.Drawing.Size(214, 20);
-            this.lkpOperacao.Tabela = null;
-            this.lkpOperacao.TabIndex = 23;
-            this.lkpOperacao.TituloTelaPesquisa = null;
-            this.lkpOperacao.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpOperacao.Where = null;
-            // 
             // cbCategoria
             // 
-            this.cbCategoria.Location = new System.Drawing.Point(71, 139);
+            this.cbCategoria.Location = new System.Drawing.Point(439, 113);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -910,7 +362,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(14, 142);
+            this.labelControl16.Location = new System.Drawing.Point(382, 116);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(51, 13);
             this.labelControl16.TabIndex = 20;
@@ -926,66 +378,6 @@
             this.cbModeloDocto.Size = new System.Drawing.Size(118, 20);
             this.cbModeloDocto.TabIndex = 10;
             this.cbModeloDocto.SelectedIndexChanged += new System.EventHandler(this.cbModeloDocto_SelectedIndexChanged);
-            // 
-            // lkbPlanoContaServico
-            // 
-            this.lkbPlanoContaServico.Location = new System.Drawing.Point(642, 269);
-            this.lkbPlanoContaServico.Lookup = null;
-            this.lkbPlanoContaServico.Name = "lkbPlanoContaServico";
-            this.lkbPlanoContaServico.Size = new System.Drawing.Size(24, 20);
-            this.lkbPlanoContaServico.SubForm = null;
-            this.lkbPlanoContaServico.SubFormType = null;
-            this.lkbPlanoContaServico.SubFormTypeParams = null;
-            this.lkbPlanoContaServico.TabIndex = 50;
-            this.lkbPlanoContaServico.TabStop = false;
-            this.lkbPlanoContaServico.Text = "...";
-            // 
-            // lkpPlanoContaServico
-            // 
-            this.lkpPlanoContaServico.ButtonLookup = this.lkbPlanoContaServico;
-            this.lkpPlanoContaServico.CamposPesquisa = new string[] {
-        "Codigo",
-        "Nome"};
-            this.lkpPlanoContaServico.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaServico.CamposRestricoesAND")));
-            this.lkpPlanoContaServico.CamposRestricoesNOT = null;
-            this.lkpPlanoContaServico.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPlanoContaServico.CamposRestricoesOR")));
-            this.lkpPlanoContaServico.ColunaDescricao = new string[] {
-        "Código",
-        "Nome"};
-            this.lkpPlanoContaServico.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpPlanoContaServico.ContextoLinq = null;
-            this.lkpPlanoContaServico.CwkFuncaoValidacao = null;
-            this.lkpPlanoContaServico.CwkMascara = null;
-            this.lkpPlanoContaServico.CwkValidacao = null;
-            this.lkpPlanoContaServico.Exemplo = null;
-            this.lkpPlanoContaServico.ID = 0;
-            this.lkpPlanoContaServico.Join = null;
-            this.lkpPlanoContaServico.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoContaServico.Location = new System.Drawing.Point(422, 269);
-            this.lkpPlanoContaServico.Name = "lkpPlanoContaServico";
-            this.lkpPlanoContaServico.OnIDChanged = null;
-            this.lkpPlanoContaServico.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpPlanoContaServico.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpPlanoContaServico.SelecionarTextoOnEnter = true;
-            this.lkpPlanoContaServico.Size = new System.Drawing.Size(214, 20);
-            this.lkpPlanoContaServico.Tabela = null;
-            this.lkpPlanoContaServico.TabIndex = 49;
-            this.lkpPlanoContaServico.TituloTelaPesquisa = null;
-            this.lkpPlanoContaServico.ToolTip = "Campos pesquisados: Codigo, Nome.";
-            this.lkpPlanoContaServico.Where = null;
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Location = new System.Drawing.Point(332, 272);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(84, 13);
-            this.labelControl17.TabIndex = 48;
-            this.labelControl17.Text = "P. Conta Serviço:";
             // 
             // chkBCalcCustoMedio
             // 
@@ -1020,55 +412,6 @@
             this.chbAgruparItensFaturamentoLote.TabIndex = 7;
             this.chbAgruparItensFaturamentoLote.Visible = false;
             // 
-            // lkbLocalEstoqueTipoNota
-            // 
-            this.lkbLocalEstoqueTipoNota.Location = new System.Drawing.Point(642, 113);
-            this.lkbLocalEstoqueTipoNota.Lookup = null;
-            this.lkbLocalEstoqueTipoNota.Name = "lkbLocalEstoqueTipoNota";
-            this.lkbLocalEstoqueTipoNota.Size = new System.Drawing.Size(24, 20);
-            this.lkbLocalEstoqueTipoNota.SubForm = null;
-            this.lkbLocalEstoqueTipoNota.SubFormType = null;
-            this.lkbLocalEstoqueTipoNota.SubFormTypeParams = null;
-            this.lkbLocalEstoqueTipoNota.TabIndex = 19;
-            this.lkbLocalEstoqueTipoNota.TabStop = false;
-            this.lkbLocalEstoqueTipoNota.Text = "...";
-            // 
-            // lkpLocalEstoqueTipoNota
-            // 
-            this.lkpLocalEstoqueTipoNota.ButtonLookup = this.lkbLocalEstoqueTipoNota;
-            this.lkpLocalEstoqueTipoNota.CamposPesquisa = new string[] {
-        "Codigo",
-        "Descricao"};
-            this.lkpLocalEstoqueTipoNota.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpLocalEstoqueTipoNota.CamposRestricoesAND")));
-            this.lkpLocalEstoqueTipoNota.CamposRestricoesNOT = null;
-            this.lkpLocalEstoqueTipoNota.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpLocalEstoqueTipoNota.CamposRestricoesOR")));
-            this.lkpLocalEstoqueTipoNota.ColunaDescricao = new string[] {
-        "Código",
-        "Descrição"};
-            this.lkpLocalEstoqueTipoNota.ColunaTamanho = new string[] {
-        "80",
-        "150"};
-            this.lkpLocalEstoqueTipoNota.ContextoLinq = null;
-            this.lkpLocalEstoqueTipoNota.CwkFuncaoValidacao = null;
-            this.lkpLocalEstoqueTipoNota.CwkMascara = null;
-            this.lkpLocalEstoqueTipoNota.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.lkpLocalEstoqueTipoNota.Exemplo = null;
-            this.lkpLocalEstoqueTipoNota.ID = 0;
-            this.lkpLocalEstoqueTipoNota.Join = null;
-            this.lkpLocalEstoqueTipoNota.Key = System.Windows.Forms.Keys.F5;
-            this.lkpLocalEstoqueTipoNota.Location = new System.Drawing.Point(422, 113);
-            this.lkpLocalEstoqueTipoNota.Name = "lkpLocalEstoqueTipoNota";
-            this.lkpLocalEstoqueTipoNota.OnIDChanged = null;
-            this.lkpLocalEstoqueTipoNota.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpLocalEstoqueTipoNota.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpLocalEstoqueTipoNota.SelecionarTextoOnEnter = true;
-            this.lkpLocalEstoqueTipoNota.Size = new System.Drawing.Size(214, 20);
-            this.lkpLocalEstoqueTipoNota.Tabela = null;
-            this.lkpLocalEstoqueTipoNota.TabIndex = 18;
-            this.lkpLocalEstoqueTipoNota.TituloTelaPesquisa = null;
-            this.lkpLocalEstoqueTipoNota.ToolTip = "Campos pesquisados: Codigo, Descricao.";
-            this.lkpLocalEstoqueTipoNota.Where = null;
-            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Location = new System.Drawing.Point(6, 3);
@@ -1089,17 +432,9 @@
             this.tpDados.Controls.Add(this.cbTipoFrete);
             this.tpDados.Controls.Add(this.labelControl19);
             this.tpDados.Controls.Add(this.cbTipoValorNotaCompra);
-            this.tpDados.Controls.Add(this.labelControl18);
-            this.tpDados.Controls.Add(this.lkpPortador);
-            this.tpDados.Controls.Add(this.lkbLocalEstoqueTipoNota);
             this.tpDados.Controls.Add(this.labelControl1);
-            this.tpDados.Controls.Add(this.lkpLocalEstoqueTipoNota);
             this.tpDados.Controls.Add(this.labelControl2);
             this.tpDados.Controls.Add(this.rgEnt_Sai);
-            this.tpDados.Controls.Add(this.lkbPlanoContaServico);
-            this.tpDados.Controls.Add(this.lkpPlanoContaServico);
-            this.tpDados.Controls.Add(this.chkBGeraFinanceiro);
-            this.tpDados.Controls.Add(this.labelControl17);
             this.tpDados.Controls.Add(this.labelControl3);
             this.tpDados.Controls.Add(this.cbModeloDocto);
             this.tpDados.Controls.Add(this.labelControl4);
@@ -1107,37 +442,13 @@
             this.tpDados.Controls.Add(this.labelControl5);
             this.tpDados.Controls.Add(this.cbCategoria);
             this.tpDados.Controls.Add(this.labelControl6);
-            this.tpDados.Controls.Add(this.lkbOperacao);
             this.tpDados.Controls.Add(this.cbNFOrigem);
-            this.tpDados.Controls.Add(this.lkpOperacao);
-            this.tpDados.Controls.Add(this.labelControl7);
-            this.tpDados.Controls.Add(this.lkbPlanoContaIPI);
-            this.tpDados.Controls.Add(this.labelControl8);
-            this.tpDados.Controls.Add(this.lkpPlanoContaIPI);
-            this.tpDados.Controls.Add(this.labelControl9);
-            this.tpDados.Controls.Add(this.lkbPlanoContaFrete);
-            this.tpDados.Controls.Add(this.labelControl10);
-            this.tpDados.Controls.Add(this.lkpPlanoContaFrete);
-            this.tpDados.Controls.Add(this.labelControl11);
-            this.tpDados.Controls.Add(this.lkbPlanoConta);
-            this.tpDados.Controls.Add(this.labelControl12);
-            this.tpDados.Controls.Add(this.lkpPlanoConta);
-            this.tpDados.Controls.Add(this.lkbHistorico);
-            this.tpDados.Controls.Add(this.labelControl14);
-            this.tpDados.Controls.Add(this.lkpHistorico);
-            this.tpDados.Controls.Add(this.labelControl15);
-            this.tpDados.Controls.Add(this.lkbPortador);
             this.tpDados.Controls.Add(this.labelControl13);
             this.tpDados.Controls.Add(this.txtCodigo);
-            this.tpDados.Controls.Add(this.lkbAcrescimo);
             this.tpDados.Controls.Add(this.txtOrdem);
-            this.tpDados.Controls.Add(this.lkpAcrescimo);
             this.tpDados.Controls.Add(this.txtObservacao);
-            this.tpDados.Controls.Add(this.lkbBanco);
             this.tpDados.Controls.Add(this.txtNome);
-            this.tpDados.Controls.Add(this.lkpBanco);
             this.tpDados.Controls.Add(this.txtSerie);
-            this.tpDados.Controls.Add(this.txtComplementoHist);
             this.tpDados.Name = "tpDados";
             this.tpDados.Size = new System.Drawing.Size(672, 297);
             this.tpDados.Text = "Dados";
@@ -1247,14 +558,6 @@
             this.cbTipoValorNotaCompra.Size = new System.Drawing.Size(227, 20);
             this.cbTipoValorNotaCompra.TabIndex = 16;
             // 
-            // labelControl18
-            // 
-            this.labelControl18.Location = new System.Drawing.Point(346, 116);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(70, 13);
-            this.labelControl18.TabIndex = 17;
-            this.labelControl18.Text = "Local Estoque:";
-            // 
             // tpConfiguracao
             // 
             this.tpConfiguracao.Controls.Add(this.chkDestinoSempreInterno);
@@ -1285,6 +588,14 @@
             this.tpConfiguracao.Name = "tpConfiguracao";
             this.tpConfiguracao.Size = new System.Drawing.Size(672, 297);
             this.tpConfiguracao.Text = "Configurações";
+            // 
+            // chkDestinoSempreInterno
+            // 
+            this.chkDestinoSempreInterno.Location = new System.Drawing.Point(496, 220);
+            this.chkDestinoSempreInterno.Name = "chkDestinoSempreInterno";
+            this.chkDestinoSempreInterno.Properties.Caption = "Destino Sempre Interno";
+            this.chkDestinoSempreInterno.Size = new System.Drawing.Size(146, 19);
+            this.chkDestinoSempreInterno.TabIndex = 24;
             // 
             // chkBImportacaoXmlManual
             // 
@@ -1420,14 +731,6 @@
             this.chbCOFINS_CREDEB.Size = new System.Drawing.Size(166, 19);
             this.chbCOFINS_CREDEB.TabIndex = 9;
             // 
-            // chkDestinoSempreInterno
-            // 
-            this.chkDestinoSempreInterno.Location = new System.Drawing.Point(496, 220);
-            this.chkDestinoSempreInterno.Name = "chkDestinoSempreInterno";
-            this.chkDestinoSempreInterno.Properties.Caption = "Destino Sempre Interno";
-            this.chkDestinoSempreInterno.Size = new System.Drawing.Size(146, 19);
-            this.chkDestinoSempreInterno.TabIndex = 24;
-            // 
             // FormTipoNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1440,7 +743,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tcPrincipal)).EndInit();
             this.tcPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbNFOrigem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkBGeraFinanceiro.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBPermiteEstqueNegativo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBAtualizaPedido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBAtualizaEstoque.Properties)).EndInit();
@@ -1451,23 +753,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrdem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSerie.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtComplementoHist.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpBanco.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpAcrescimo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPortador.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpHistorico.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoConta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaFrete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaIPI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpOperacao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbModeloDocto.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaServico.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBCalcCustoMedio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbValorSTPrimeiraParcela.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTotalizarVolumes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbAgruparItensFaturamentoLote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpLocalEstoqueTipoNota.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.tpDados.ResumeLayout(false);
@@ -1477,6 +768,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTipoValorNotaCompra.Properties)).EndInit();
             this.tpConfiguracao.ResumeLayout(false);
             this.tpConfiguracao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDestinoSempreInterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkBImportacaoXmlManual.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSemPagamento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIndIntermed.Properties)).EndInit();
@@ -1490,7 +782,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chbPIS_CREDEB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbICMS_CREDEB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbCOFINS_CREDEB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDestinoSempreInterno.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1498,20 +789,11 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.ComboBoxEdit cbNFOrigem;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.CheckEdit chkBGeraFinanceiro;
         private DevExpress.XtraEditors.CheckEdit chkBPermiteEstqueNegativo;
         private DevExpress.XtraEditors.CheckEdit chkBAtualizaPedido;
         private DevExpress.XtraEditors.CheckEdit chkBAtualizaEstoque;
@@ -1519,40 +801,18 @@
         private DevExpress.XtraEditors.RadioGroup rgEnt_Sai;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private Cwork.Utilitarios.Componentes.CwkBaseEditor txtComplementoHist;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtSerie;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNome;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtObservacao;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtOrdem;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCodigo;
-        private Cwork.Utilitarios.Componentes.Lookup lkpBanco;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbBanco;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbAcrescimo;
-        private Cwork.Utilitarios.Componentes.Lookup lkpAcrescimo;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbHistorico;
-        private Cwork.Utilitarios.Componentes.Lookup lkpHistorico;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbPortador;
-        private Cwork.Utilitarios.Componentes.Lookup lkpPortador;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbPlanoContaIPI;
-        private Cwork.Utilitarios.Componentes.Lookup lkpPlanoContaIPI;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbPlanoContaFrete;
-        private Cwork.Utilitarios.Componentes.Lookup lkpPlanoContaFrete;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbPlanoConta;
-        private Cwork.Utilitarios.Componentes.Lookup lkpPlanoConta;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbOperacao;
-        private Cwork.Utilitarios.Componentes.Lookup lkpOperacao;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.ComboBoxEdit cbCategoria;
         private DevExpress.XtraEditors.ComboBoxEdit cbModeloDocto;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbPlanoContaServico;
-        private Cwork.Utilitarios.Componentes.Lookup lkpPlanoContaServico;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.CheckEdit chkBCalcCustoMedio;
         private DevExpress.XtraEditors.CheckEdit chbValorSTPrimeiraParcela;
         private DevExpress.XtraEditors.CheckEdit chTotalizarVolumes;
         private DevExpress.XtraEditors.CheckEdit chbAgruparItensFaturamentoLote;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbLocalEstoqueTipoNota;
-        private Cwork.Utilitarios.Componentes.Lookup lkpLocalEstoqueTipoNota;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage tpDados;
         private DevExpress.XtraEditors.CheckEdit chbIPI_CREDEB;
@@ -1560,7 +820,6 @@
         private DevExpress.XtraEditors.CheckEdit chbCOFINS_CREDEB;
         private DevExpress.XtraEditors.CheckEdit chbPIS_CREDEB;
         private DevExpress.XtraTab.XtraTabPage tpConfiguracao;
-        private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.ComboBoxEdit cbTipoValorNotaCompra;
         private DevExpress.XtraEditors.LabelControl labelControl20;
