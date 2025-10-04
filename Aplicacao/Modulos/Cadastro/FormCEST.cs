@@ -38,21 +38,5 @@ namespace Aplicacao
         {
 
         }
-
-        private void FormCEST_Load(object sender, EventArgs e)
-        {
-            // Preenche o lookup com todos os segmentos cadastrados
-            lkpSegmento.Sessao = CEST_SegmentoController.Instancia.getSession();
-            lkpSegmento.Exemplo = new CEST_Segmento();
-            lkpSegmento.CamposPesquisa = new[] { "Codigo", "Descricao" };
-            lkpSegmento.ColunaDescricao = new[] { "Código", "Descrição" };
-            lkpSegmento.ColunaTamanho = new[] { "50", "350" };
-
-            if (Operacao != Acao.Incluir)
-            {
-                lkpSegmento.Localizar(Selecionado.Segmento.ID);
-            }
-
-        }
     }
 }

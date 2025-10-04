@@ -19,13 +19,11 @@ namespace cwkGestao.Modelo
         [InformacaoExibicao(2, "Descrição", 300)]
         public virtual string Descricao { get; set; }
 
-        public virtual CEST_Segmento Segmento { get; set; }
-
         public virtual IList<NCM> NCMs { get; set; } = new List<NCM>();
 
         public override string ToString()
         {
-            return $"{Codigo} - {Descricao}";
+            return $"{ID} - {Codigo} - {Descricao}";
         }
     }
 }

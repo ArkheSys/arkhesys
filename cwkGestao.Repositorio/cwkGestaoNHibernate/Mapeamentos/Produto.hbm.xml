@@ -129,13 +129,14 @@
 		<property name="CodigoOriginal" column="CodigoOriginal" type="string" length="500" />
 		<property name="Aplicacao" column="Aplicacao" type="string" length="500" />
 
-    <property name="SaiNaturezaReceita" column="SaiNaturezaReceita" type="string"/>
+		<property name="SaiNaturezaReceita" column="SaiNaturezaReceita" type="string"/>
     
 		<many-to-one name="UnidadeEntrada" column="IDUnidadeEntrada" class="Unidade" lazy = "false"/>
-    <many-to-one name="ClassificacaoFiscal" column="IDClassificacaoFiscal" class="ClassificacaoFiscal" lazy = "false"/>
-    <many-to-one name="PerfilPisCofins" column="IDPerfilPisCofins" class="PerfilPisCofins" lazy = "false"/>
+		<many-to-one name="ClassificacaoFiscal" column="IDClassificacaoFiscal" class="ClassificacaoFiscal" lazy = "false"/>
+		<many-to-one name="PerfilPisCofins" column="IDPerfilPisCofins" class="PerfilPisCofins" lazy = "false"/>
 		<!--<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" property-ref="ID" lazy = "false" not-found="ignore" insert="false" update="false"/>-->
 		<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" lazy = "false" not-found="ignore" insert="false" update="false"/>
+		<many-to-one name="CEST" column="IdCest" class="CEST" lazy = "false"/>
 
 		<bag name="LogAlteracaoPedidoItens" table="LogAlteracaoPedidoItem" inverse="true" cascade="all-delete-orphan" lazy="false" >
 			<key column="IDProduto" />

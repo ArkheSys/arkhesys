@@ -110,6 +110,7 @@ namespace Aplicacao
 
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
+            lkpCEST.Exemplo = new CEST();
 
 
             FormataGrupos();
@@ -2136,6 +2137,11 @@ namespace Aplicacao
         {
             LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
 
+        }
+
+        private void lkbCEST_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<CEST>(lkpCEST, typeof(FormCEST));
         }
     }
 

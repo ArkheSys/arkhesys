@@ -129,7 +129,6 @@ namespace Aplicacao
             this.ClientSize = new System.Drawing.Size(790, 197);
             this.Name = "FormCEST";
             this.Text = "Cadastro de CEST";
-            this.Load += new System.EventHandler(this.FormCEST_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tpPrincipal.ResumeLayout(false);

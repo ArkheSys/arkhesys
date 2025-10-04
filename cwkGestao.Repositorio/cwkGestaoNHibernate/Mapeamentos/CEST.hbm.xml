@@ -6,6 +6,5 @@
 		</id>
 		<property name="Codigo" column="Codigo" type="string" />
 		<property name="Descricao" column="Descricao" type="string" length="200" />
-		<many-to-one name="Segmento" class="cwkGestao.Modelo.CEST_Segmento, cwkGestao" column="ID_Segmento" />
 	</class>
 </hibernate-mapping>

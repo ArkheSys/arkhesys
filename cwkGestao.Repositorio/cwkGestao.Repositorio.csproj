@@ -250,7 +250,6 @@
     <Compile Include="cwkGestaoNHibernate\Repositorios\PisCofinsNaturezaOperacaoRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoProdutoRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\PromocaoRepositorio.cs" />
-    <Compile Include="cwkGestaoNHibernate\Repositorios\RepositorioCEST_Segmento.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaCOFINSRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaImpostosTributosExcessoesRepositorio.cs" />
     <Compile Include="cwkGestaoNHibernate\Repositorios\TabelaPISRepositorio.cs" />
@@ -558,7 +557,6 @@
     <Compile Include="cwkGestaoNHibernate\Repositorios\VinculoRepositorio.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioCEST.cs" />
-    <Compile Include="Interfaces\Particulares\IRepositorioCEST_Segmento.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioClassificacaoFiscal.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributos.cs" />
     <Compile Include="Interfaces\Particulares\IRepositorioImpostosTributosExcessoes.cs" />

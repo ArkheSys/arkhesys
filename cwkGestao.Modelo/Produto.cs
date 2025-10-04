@@ -244,6 +244,9 @@ namespace cwkGestao.Modelo
         private ClassificacaoFiscal _ClassificacaoFiscal;
         public virtual ClassificacaoFiscal ClassificacaoFiscal { get { return _ClassificacaoFiscal; } set { _ClassificacaoFiscal = value; } }
 
+        private CEST _cest;
+        public virtual CEST CEST { get { return _cest; } set { _cest = value; } }
+
         private PerfilPisCofins _PerfilPisCofins;
         public virtual PerfilPisCofins PerfilPisCofins { get { return _PerfilPisCofins; } set { _PerfilPisCofins = value; } }
 
