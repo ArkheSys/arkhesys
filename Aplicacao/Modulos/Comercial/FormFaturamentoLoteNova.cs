@@ -652,9 +652,41 @@ namespace Aplicacao
                     }
 
                     IList<FinanceiroParcela> financeiroParcelas = TransformaListaParcelas(Parcelas);
-                    Condicao condicao = CondicaoController.Instancia.LoadObjectById(((Condicao)lkpCondicao.Selecionado).ID);
-                    TipoNota tipoNota = TipoNotaController.Instancia.LoadObjectById(((TipoNota)lkpTipoMovimentacao.Selecionado).ID);
 
+                    Condicao condicao = null;
+                    if (lkpCondicao.Selecionado != null)
+                        condicao = CondicaoController.Instancia.LoadObjectById(((Condicao)lkpCondicao.Selecionado).ID);
+
+                    if (condicao == null)
+                    {
+                        MessageBox.Show("A Condição de Pagamento selecionada é inválida ou não foi encontrada. Verifique o cadastro.", "Erro de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Aborta a operação
+                    }
+
+                    // --- VALIDAÇÃO 2: Garante que o TIPO DE NOTA foi carregado ---
+                    TipoNota tipoNota = null;
+                    if (lkpTipoMovimentacao.Selecionado != null)
+                        tipoNota = TipoNotaController.Instancia.LoadObjectById(((TipoNota)lkpTipoMovimentacao.Selecionado).ID);
+
+                    if (tipoNota == null)
+                    {
+                        MessageBox.Show("O Tipo de Nota selecionado é inválido ou não foi encontrado. Verifique o vínculo no cadastro de Tipo de Pedido.", "Erro de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Aborta a operação
+                    }
+
+                    // --- VALIDAÇÃO 3: Garante que a lista de PEDIDOS não está vazia e que o primeiro pedido está completo ---
+                    if (!pedidos.Any())
+                    {
+                        MessageBox.Show("Nenhum pedido válido foi selecionado para faturamento.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    var primeiroPedido = pedidos.First();
+                    if (primeiroPedido.Filial == null || primeiroPedido.Pessoa == null)
+                    {
+                        MessageBox.Show($"O pedido código '{primeiroPedido.Codigo}' está com dados essenciais (Filial ou Cliente) faltando. Cancele e recarregue os pedidos.", "Erro de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     int Parcial = Convert.ToInt32(ConfiguracaoController.Instancia.GetTipoNfe());
                     Nota nota;
 
