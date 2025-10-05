@@ -515,111 +515,84 @@ namespace Aplicacao
 
         private void ProdutoAlterado()
         {
-            if (ProdutoSelecionado != null && (Selecionado.Produto == null || ProdutoSelecionado.ID != Selecionado.Produto.ID))
+            // Verifica se a alteração é necessária
+            if (ProdutoSelecionado == null || (Selecionado.Produto != null && ProdutoSelecionado.ID == Selecionado.Produto.ID))
             {
-                try
+                return;
+            }
+
+            try
+            {
+                alterandoProduto = true;
+
+                // --- FASE 1: CARREGAR PRODUTO E REGRAS FISCAIS (INCLUINDO EXCEÇÕES) ---
+                var _produto = ProdutoController.Instancia.LoadObjectById(ProdutoSelecionado.ID);
+
+                // Validações essenciais
+                if (_produto.ClassificacaoFiscal == null)
+                    throw new ArgumentException("Classificação Fiscal do Produto é Inválida. Verifique!");
+                if (this.PessoaSelecionada.PerfilTributarioCliente == null)
+                    throw new ArgumentException("Perfil Tributário do Cliente é Inválido. Verifique!");
+
+                // Carrega a regra tributária principal
+                _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID, this.PessoaSelecionada.PerfilTributarioCliente.ID);
+                if (_produto.ClassificacaoFiscal.ImpostosTributos == null)
+                    throw new ArgumentException("A combinação de Perfil Tributário do Cliente e Classificação Fiscal não foi encontrada em 'Impostos e Tributos'. Verifique!");
+
+                _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = null;
+
+                bool dentroDoEstado = PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla == FilialSelecionada.Cidade.UF.Sigla;
+                _produto.InfAdicionais = dentroDoEstado
+                    ? _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisDentroEstado
+                    : _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisForaEstado;
+
+                // LÓGICA DE EXCEÇÃO: Se for fora do estado, procura por uma regra de exceção
+                if (!dentroDoEstado && _produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens?.Count > 0)
                 {
-                    var _produto = ProdutoController.Instancia.LoadObjectById(ProdutoSelecionado.ID);
-                    
-
-                    if (_produto.ClassificacaoFiscal == null)
+                    var excecao = _produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens
+                                          .FirstOrDefault(e => e.UF.Sigla == PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla);
+                    if (excecao != null)
                     {
-                        throw new ArgumentException("Classificação Fiscal do Produto é Inválida. Verifique!");
-                    }
-
-                    if (this.PessoaSelecionada.PerfilTributarioCliente == null)
-                    {
-                        throw new ArgumentException("Perfil Tributário do Cliente é Inválida. Verifique!");
-                    }
-
-                    _produto.ClassificacaoFiscal.ImpostosTributos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(_produto.ClassificacaoFiscal.ID, this.PessoaSelecionada.PerfilTributarioCliente.ID);
-                    _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = null;
-
-                    if (_produto.ClassificacaoFiscal.ImpostosTributos == null)
-                    {
-                        throw new ArgumentException("Perfil Tributário do Cliente e a Classificação Fiscal não foi encontrada em Impostos Tributos. Verifique!");
-                    }
-
-                    bool dentroDoEstado = PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla == FilialSelecionada.Cidade.UF.Sigla;
-
-                    if (dentroDoEstado)
-                    {
-                        _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisDentroEstado;
-                    }
-                    else
-                    {
-                        _produto.InfAdicionais = _produto.ClassificacaoFiscal.ImpostosTributos.InfAdicionaisForaEstado;
-                    }
-
-
-                    if (!dentroDoEstado)
-                    {
-                        if ((_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens != null)&&
-                            (_produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Count > 0))
-                        {
-
-                            var temExcessao = _produto.ClassificacaoFiscal.ImpostosTributos.ImpostosTributosExcessoesItens.Where(esse => esse.UF.Sigla == PessoaSelecionada.PessoaEnderecos[0].Cidade.UF.Sigla).ToList();
-                            if (temExcessao.Count > 0)
-                            {
-                                _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = temExcessao[0];
-                            }
-                            
-                        }
-                    }
-
-
-                    if (ProdutoSelecionado.Inativo)
-                    {
-                        MessageBox.Show("Este produto está inativo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtProduto.EditValue = null;
-                        txtProduto.Focus();
-
-                        return;
-                    }
-
-                    alterandoProduto = true;
-                    string mascara = logicaTelaNotaItem.SetProduto(_produto);
-                    if ((mascara == "N4") && (Selecionado.Nota.TipoNota.ModeloDocto == TipoNota.ModeloDocumento.CupomFiscal))
-                    {
-                        mascara = "N3";
-                        txtValor.Properties.Mask.EditMask = "N2";
-                    }
-
-                    //LiberaCamposTributacaoParaEdicao();
-                    if (!logicaTelaNotaItem.validaUnidadeEntrada(_produto, _produto.UnidadeEntrada.Sigla))
-                    {
-                        MessageBox.Show("Não foi encontrada conversão de " + _produto.UnidadeEntrada.Sigla + " para " + _produto.Unidade.Sigla + " Verifique a unidade de entrada do produto, ou cadastre a conversão no cadastro de Conversão de Unidades!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        logicaTelaNotaItem.SetUnidadeEntrada("");
-                        lkpUnidadeEntrada.EditValue = "";
-                    }
-                    CarregaUnidadesEntrada(_produto, true);
-                    AtualizarDadosTela();
-
-                    txtQuantidade.Properties.Mask.EditMask = mascara;
-                    txtQuantidadeEntrada.Properties.Mask.EditMask = logicaTelaNotaItem.MascaraUnidadeEntrada(_produto);
-
-                    var produto = ProdutoController.Instancia.LoadObjectById(ProdutoSelecionado.ID);
-                    if (Selecionado.Nota.TipoNota.TipoValorNotaCompra == TipoValorProduto.PrecoBase)
-                    {
-                        txtValor.EditValue = Selecionado.Valor = produto.PrecoFornecedor;
-
-                        logicaTelaNotaItem.SetValor(Convert.ToDecimal(txtValor.EditValue));
-
-                        logicaTelaNotaItem.SetSubTotalETotal();
-
-                        AtualizarDadosTela();
+                        _produto.ClassificacaoFiscal.ImpostosTributos.UsarEssaExcessao = excecao;
                     }
                 }
-                catch (Exception ex)
+
+                if (_produto.Inativo)
                 {
-                    new FormErro(ex).ShowDialog();
+                    MessageBox.Show("Este produto está inativo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtProduto.EditValue = null;
                     txtProduto.Focus();
+                    return;
                 }
-                finally
+
+                // --- FASE 2: EXECUTAR A LÓGICA DE NEGÓCIO ---
+                string mascara = logicaTelaNotaItem.SetProduto(_produto);
+                logicaTelaNotaItem.RecalcularTributacaoCompleta(); // <- Chama nosso novo método mestre!
+
+                // --- FASE 3: ATUALIZAR A INTERFACE ---
+                if ((mascara == "N4") && (Selecionado.Nota.TipoNota.ModeloDocto == TipoNota.ModeloDocumento.CupomFiscal))
                 {
-                    alterandoProduto = false;
+                    txtQuantidade.Properties.Mask.EditMask = "N3";
+                    txtValor.Properties.Mask.EditMask = "N2";
                 }
+                else
+                {
+                    txtQuantidade.Properties.Mask.EditMask = mascara;
+                }
+
+                CarregaUnidadesEntrada(_produto, true);
+                AtualizarDadosTela(); // Atualiza a tela UMA ÚNICA VEZ com todos os resultados.
+            }
+            catch (Exception ex)
+            {
+                new FormErro(ex).ShowDialog();
+                if (logicaTelaNotaItem.GetNotaItem != null) logicaTelaNotaItem.GetNotaItem.Produto = null;
+                txtProduto.EditValue = null;
+                txtProduto.Focus();
+            }
+            finally
+            {
+                alterandoProduto = false;
             }
         }
 
