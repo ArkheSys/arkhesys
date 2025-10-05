@@ -8,6 +8,7 @@ using cwkGestao.Negocio.Tributacao;
 using cwkGestao.Negocio.Tributacao.Impl;
 using cwkGestao.Modelo.Util;
 using cwkGestao.Negocio.Utils;
+using cwkGestao.Negocio.Padroes;
 
 namespace cwkGestao.Negocio.Faturamento
 {
@@ -541,6 +542,33 @@ namespace cwkGestao.Negocio.Faturamento
 
         private void CalcularTributacaoNotaItem(TabelaCFOP tabelaCFOP, NotaItem notaItem)
         {
+            // Verificamos se os dados fiscais já foram carregados. Se não foram (cenário do faturamento em lote),
+            // nós os carregamos agora, replicando a lógica que funciona no FormNotaItem.
+            if (notaItem.Produto.ClassificacaoFiscal.ImpostosTributos == null)
+            {
+                var perfilCliente = this.Nota.Pessoa.PerfilTributarioCliente;
+                if (perfilCliente == null)
+                    throw new InvalidOperationException($"O cliente '{this.Nota.Pessoa.Nome}' não possui um Perfil Tributário definido.");
+
+                var impostos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(notaItem.Produto.ClassificacaoFiscal.ID, perfilCliente.ID);
+                if (impostos == null)
+                    throw new InvalidOperationException($"Não foi encontrada regra de 'Impostos e Tributos' para o produto '{notaItem.Produto.Nome}' e o perfil do cliente.");
+
+                // Anexamos as regras fiscais carregadas ao objeto do produto.
+                notaItem.Produto.ClassificacaoFiscal.ImpostosTributos = impostos;
+
+
+                bool dentroDoEstado = this.Nota.Filial.Cidade.UF.Sigla == this.Nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla;
+                if (!dentroDoEstado && impostos.ImpostosTributosExcessoesItens?.Count > 0)
+                {
+                    var excecao = impostos.ImpostosTributosExcessoesItens
+                                          .FirstOrDefault(e => e.UF.Sigla == this.Nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla);
+                    if (excecao != null)
+                    {
+                        impostos.UsarEssaExcessao = excecao;
+                    }
+                }
+            }
             //SetaCamposIcms(notaItem);
             //SetaCamposIpi(notaItem);
             //SetaCamposPis(notaItem);
@@ -806,6 +834,14 @@ namespace cwkGestao.Negocio.Faturamento
         private static void SetaCamposIcms(NotaItem notaItem)
         {
             //IcmsBase tributacaoIcmsOriginal = NotaItemController.Instancia.RecuperaIcmsOriginal(notaItem);
+
+            if (notaItem.Produto?.ClassificacaoFiscal?.ImpostosTributos == null)
+            {
+                string nomeProduto = notaItem.Produto?.Nome ?? "Produto Desconhecido";
+                string codigoProduto = notaItem.Produto?.Codigo ?? "Sem Código";
+
+                throw new InvalidOperationException($"Erro de dados: As regras fiscais ('ImpostosTributos') para o produto '{nomeProduto}' (Código: {codigoProduto}) não foram carregadas antes do cálculo. Verifique a rotina de faturamento.");
+            }
 
             var impostostributos = notaItem.Produto.ClassificacaoFiscal.ImpostosTributos;
             if (impostostributos.UsarEssaExcessao != null)
