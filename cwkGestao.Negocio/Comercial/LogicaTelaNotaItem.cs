@@ -42,7 +42,7 @@ namespace cwkGestao.Negocio
                                            || (nota.NotaComplementada != null);
         }
 
-        public string SetProduto(Produto produto)
+        /*public string SetProduto(Produto produto)
         {
             try
             {
@@ -67,6 +67,53 @@ namespace cwkGestao.Negocio
                 notaItem.Valor = 0;
                 throw (ex);
             }
+        }*/
+        /// <summary>
+        /// Este método agora é responsável APENAS por carregar os dados básicos do produto no item da nota.
+        /// A tributação foi movida para um método separado para melhor controle.
+        /// </summary>
+        public string SetProduto(Produto produto)
+        {
+            try
+            {
+                SetDadosBasicos(produto); // Transfere dados como nome, unidade, peso, etc.
+                SetComissao(produto);     // Define a comissão do vendedor para o item.
+
+                // Define o valor inicial do produto com base no tipo de nota.
+                SetValorEValorCalculado();
+
+                // Retorna a máscara de quantidade para o formulário.
+                if (produto.Unidade.BQtdFracionada)
+                    return "N4";
+                else
+                    return "N0";
+            }
+            catch (Exception ex)
+            {
+                notaItem.Produto = null;
+                notaItem.Valor = 0;
+                throw (ex);
+            }
+        }
+
+        /// <summary>
+        /// NOVO MÉTODO: Centraliza e executa a rotina de cálculo de tributos.
+        /// Ele prepara os totais e invoca a rotina principal do NotaBuilder.
+        /// </summary>
+        public void RecalcularTributacaoCompleta()
+        {
+            if (notaItem.Produto == null) return;
+
+            // 1. Garante que o SubTotal e o Total do item estejam corretos antes de calcular impostos.
+            decimal totalBruto = notaItem.Quantidade * notaItem.Valor;
+            notaItem.ValorDesconto = Math.Round(totalBruto * (notaItem.PercDesconto / 100), 2);
+            notaItem.Total = totalBruto - notaItem.ValorDesconto;
+            notaItem.SubTotal = notaItem.Total; // Ou conforme sua regra de negócio
+
+            // 2. Invoca o método estático e poderoso do NotaBuilder.
+            // Ele fará todo o trabalho pesado: verificar exceções, setar alíquotas, MVA, CST,
+            // e chamar a classe de cálculo final.
+            NotaBuilder.IniciaTributacao(this.GetNotaItem);
         }
 
         private void SetComissao(Produto produto)
