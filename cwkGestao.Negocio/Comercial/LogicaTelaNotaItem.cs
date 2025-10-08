@@ -2,6 +2,7 @@
 using cwkGestao.Modelo.Proxy;
 using cwkGestao.Negocio.Faturamento;
 using cwkGestao.Negocio.Tributacao;
+using cwkGestao.Negocio.Padroes;
 
 using System;
 using System.Collections.Generic;
@@ -110,10 +111,12 @@ namespace cwkGestao.Negocio
             notaItem.Total = totalBruto - notaItem.ValorDesconto;
             notaItem.SubTotal = notaItem.Total; // Ou conforme sua regra de negócio
 
-            // 2. Invoca o método estático e poderoso do NotaBuilder.
-            // Ele fará todo o trabalho pesado: verificar exceções, setar alíquotas, MVA, CST,
-            // e chamar a classe de cálculo final.
-            NotaBuilder.IniciaTributacao(this.GetNotaItem);
+            // 2. Inicia o processo, carregando todas as regras, alíquotas e bases.
+            tributavel = NotaBuilder.IniciaTributacao(this.GetNotaItem);
+
+            // 3. [A CORREÇÃO] EXECUTA O CÁLCULO FINAL DOS IMPOSTOS.
+            // Esta é a linha que faltava. Ela pega as bases e alíquotas e calcula os valores.
+            CalculaTributacao();
         }
 
         private void SetComissao(Produto produto)
@@ -146,8 +149,6 @@ namespace cwkGestao.Negocio
             }
             notaItem.SubTotal = _total;
             notaItem.Total = notaItem.SubTotal;
-
-            IniciaTributacao();
         }
 
         private decimal quantidade()
@@ -166,6 +167,33 @@ namespace cwkGestao.Negocio
         {
             if (nota.Pessoa != null && nota.Filial != null && notaItem.Produto != null)
             {
+                // =================================================================
+                // =========== INÍCIO DO BLOCO DE CÓDIGO DA CORREÇÃO ==============
+                // Este bloco força o sistema a recarregar a regra fiscal correta ANTES de calcular.
+
+                var perfilCliente = nota.Pessoa.PerfilTributarioCliente;
+                if (perfilCliente == null)
+                    throw new InvalidOperationException($"O cliente '{nota.Pessoa.Nome}' não possui um Perfil Tributário definido.");
+
+                var impostos = ImpostosTributosController.Instancia.GetByClassificacaoFiscal(notaItem.Produto.ClassificacaoFiscal.ID, perfilCliente.ID);
+                if (impostos == null)
+                    throw new InvalidOperationException($"Não foi encontrada regra de 'Impostos e Tributos' para o produto '{notaItem.Produto.Nome}'.");
+
+                // Anexa a regra correta ao produto
+                notaItem.Produto.ClassificacaoFiscal.ImpostosTributos = impostos;
+                impostos.UsarEssaExcessao = null; // Limpa qualquer exceção antiga
+
+                // Verifica e aplica a exceção para operações interestaduais
+                bool dentroDoEstado = nota.Filial.Cidade.UF.Sigla == nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla;
+                if (!dentroDoEstado && impostos.ImpostosTributosExcessoesItens?.Count > 0)
+                {
+                    var excecao = impostos.ImpostosTributosExcessoesItens
+                                            .FirstOrDefault(e => e.UF.Sigla == nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla);
+                    if (excecao != null)
+                    {
+                        impostos.UsarEssaExcessao = excecao;
+                    }
+                }
                 notaItem.VBC_S07 = 0;
                 notaItem.BaseICMS = 0;
                 notaItem.VBC_O10 = 0;
@@ -186,10 +214,12 @@ namespace cwkGestao.Negocio
 
         public void CalculaTributacao()
         {
-            if (!TributacaoLiberadaParaEdicao() && tributavel != null)
+            // A condição !TributacaoLiberadaParaEdicao() foi removida para forçar o cálculo
+            if (tributavel != null)
+            {
                 NotaBuilder.CalculaTributacao(tributavel);
+            }
         }
-
         private void SetValorEValorCalculado()
         {
             decimal preco = 0M;
@@ -247,7 +277,7 @@ namespace cwkGestao.Negocio
             if (notaItem.Quantidade != quantidade)
             {
                 notaItem.Quantidade = quantidade;
-                SetSubTotalETotal();
+                RecalcularTributacaoCompleta();
             }
         }
 
@@ -256,7 +286,7 @@ namespace cwkGestao.Negocio
             if (notaItem.Valor != valor)
             {
                 notaItem.Valor = valor;
-                SetSubTotalETotal();
+                RecalcularTributacaoCompleta();
             }
         }
 
@@ -264,9 +294,7 @@ namespace cwkGestao.Negocio
         {
             if (notaItem.PercDesconto != desconto)
             {
-                notaItem.PercDesconto = desconto;
-                notaItem.ValorDesconto = Math.Round((((notaItem.Valor * notaItem.Quantidade) * desconto) / 100), 2);
-                SetSubTotalETotal();
+                RecalcularTributacaoCompleta();
             }
         }
 

@@ -1481,7 +1481,7 @@
             this.lkpCEST.ContextoLinq = null;
             this.lkpCEST.CwkFuncaoValidacao = null;
             this.lkpCEST.CwkMascara = null;
-            this.lkpCEST.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpCEST.CwkValidacao = null;
             this.lkpCEST.Exemplo = null;
             this.lkpCEST.ID = 0;
             this.lkpCEST.Join = null;
