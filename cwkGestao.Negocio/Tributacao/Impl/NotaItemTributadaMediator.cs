@@ -59,6 +59,19 @@ namespace cwkGestao.Negocio.Tributacao.Impl
             }
         }
 
+        public decimal CreditoPercentual
+        {
+            get { return notaItem.PCredSN_N29; }
+            set { notaItem.PCredSN_N29 = value; }
+        }
+
+        // Esta propriedade implementa o "CreditoValor" da interface ITributavel
+        // e o conecta ao campo VCredICMSSN_N30 do seu NotaItem.
+        public decimal CreditoValor
+        {
+            get { return notaItem.VCredICMSSN_N30; }
+            set { notaItem.VCredICMSSN_N30 = value; }
+        }
         public decimal BaseCalculoGeral
         {
             get
@@ -228,14 +241,8 @@ namespace cwkGestao.Negocio.Tributacao.Impl
 
         public decimal IcmsBaseCalculo
         {
-            get
-            {
-                return notaItem.BaseICMS;
-            }
-            set
-            {
-                notaItem.BaseICMS = value;
-             }
+            get { return notaItem.BaseICMS; }
+            set { notaItem.BaseICMS = value; }
         }
 
         public decimal IcmsReducaoBaseCalculo
@@ -252,14 +259,8 @@ namespace cwkGestao.Negocio.Tributacao.Impl
 
         public decimal IcmsAliquota
         {
-            get
-            {
-                return notaItem.AliqICMS;
-            }
-            set
-            {
-                notaItem.AliqICMS = value;
-            }
+            get { return notaItem.AliqICMS; }
+            set { notaItem.AliqICMS = value; }
         }
 
         public decimal IcmsAliquotaNormal
@@ -500,37 +501,16 @@ namespace cwkGestao.Negocio.Tributacao.Impl
             }
         }
 
-        public decimal CreditoValor
+        public decimal VCredICMSSN_N30
         {
-            get
-            {
-                return notaItem.VCredICMSSN_N30;
-            }
-            set
-            {
-                notaItem.VCredICMSSN_N30 = value;
-            }
+            get { return notaItem.VCredICMSSN_N30; } // Use o nome do campo que você criou em NotaItem
+            set { notaItem.VCredICMSSN_N30 = value; } // Use o nome do campo que você criou em NotaItem
         }
 
-        public decimal CreditoPercentual
+        public decimal PCredSN_N29
         {
-            get
-            {
-                try
-                {
-                    if (tabelaFaixa == null)
-                    {
-                        tabelaFaixa = TabelaFaixaFatSimplesController.Instancia.LoadObjectById(nota.Filial.TabelaFaixaFatSimples.ID);
-                    }
-                    return tabelaFaixa.ICMS;
-                }
-                catch
-                {
-                    return 66.6m;
-                }
-            }
-            set
-            { }
+            get { return notaItem.PCredSN_N29; } // Use o nome do campo que você criou em NotaItem
+            set { notaItem.PCredSN_N29 = value; } // Use o nome do campo que você criou em NotaItem
         }
 
         public decimal EmpresaAliquota

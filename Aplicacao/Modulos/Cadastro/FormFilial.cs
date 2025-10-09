@@ -238,16 +238,6 @@ namespace Aplicacao
             return ok && !dxErroProvider.HasErrors;
 
         }
-        private void lkbTabelaFaixaFatSimples_Click(object sender, EventArgs e)
-        {
-            var selecionado = (cwkGestao.Modelo.TabelaFaixaFatSimples)lkpTabelaFaixaFatSimples.Selecionado;
-            GridGenerica<cwkGestao.Modelo.TabelaFaixaFatSimples> grid = new GridGenerica<cwkGestao.Modelo.TabelaFaixaFatSimples>(cwkGestao.Negocio.TabelaFaixaFatSimplesController.Instancia.GetAll(), new FormTabelaFaixaFatSimples(), selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
-            if (grid.Selecionado != null)
-                lkpTabelaFaixaFatSimples.EditValue = grid.Selecionado;
-        }
         protected override void OK()
         {
             TelaProObjeto(this);

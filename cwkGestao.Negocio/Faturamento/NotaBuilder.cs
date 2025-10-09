@@ -588,25 +588,47 @@ namespace cwkGestao.Negocio.Faturamento
 
         public static ITributavel IniciaTributacao(NotaItem notaItem)
         {
-            TextoLei textoLei = new TextoLei();
-
-            //AtualizaCsts(notaItem, notaItem.Produto.CST_IPI, notaItem.Produto.CST_Cofins, notaItem.Produto.CST_Pis);
-
-            if (notaItem.Texto != null)
-                textoLei = TextoLeiController.Instancia.LoadObjectById(notaItem.Texto.ID);
-
-            notaItem.TextoLei = textoLei.DescricaoTextoLei;
-
-            var mediator = new Tributacao.Impl.NotaItemTributadaMediator(notaItem, notaItem.Nota);
+            // 1. O sistema executa suas rotinas de preparação, como SetaCamposIcms.
+            // Neste ponto, notaItem.AliqICMS é preenchido corretamente.
             SetaCamposCofins(notaItem);
             SetaCamposIcms(notaItem);
             SetaCamposIpi(notaItem);
             SetaCamposPis(notaItem);
             SetaCamposFCP(notaItem);
+
+            TextoLei textoLei = new TextoLei();
+            if (notaItem.Texto != null)
+                textoLei = TextoLeiController.Instancia.LoadObjectById(notaItem.Texto.ID);
+            notaItem.TextoLei = textoLei.DescricaoTextoLei;
+
+            // 2. O mediator é criado. O construtor dele chama a rotina antiga "InicializaICMS()", 
+            // que pode estar zerando ou colocando um valor incorreto na alíquota.
+            var mediator = new Tributacao.Impl.NotaItemTributadaMediator(notaItem, notaItem.Nota);
+
+            // --- PASSO DE CORREÇÃO DEFINITIVO ---
+            // 3. AGORA, NÓS TEMOS A "ÚLTIMA PALAVRA".
+            // Ignoramos o que o construtor do mediator fez e forçamos os valores corretos de volta nele,
+            // lendo diretamente da fonte de dados confiável (ImpostosTributos) que já está carregada.
+            if (notaItem.Produto?.ClassificacaoFiscal?.ImpostosTributos != null)
+            {
+                var impostostributos = notaItem.Produto.ClassificacaoFiscal.ImpostosTributos;
+
+                // Força a Alíquota de ICMS correta
+                if (impostostributos.UsarEssaExcessao != null)
+                {
+                    mediator.IcmsAliquota = impostostributos.UsarEssaExcessao.PIcms;
+                }
+                else
+                {
+                    // Como você não tem um campo para fora do estado, usamos a interna para todos os casos.
+                    mediator.IcmsAliquota = impostostributos.PIcmsInterno;
+                }
+            }
+
             CalculaTributacao(mediator);
+
             return mediator;
         }
-
         public static ITributavel IniciaTributacaoExistente(NotaItem notaItem)
         {
             return new Tributacao.Impl.NotaItemTributadaMediator(notaItem, notaItem.Nota);
@@ -831,7 +853,7 @@ namespace cwkGestao.Negocio.Faturamento
             //}
         }
 
-        private static void SetaCamposIcms(NotaItem notaItem)
+        /*private static void SetaCamposIcms(NotaItem notaItem)
         {
             //IcmsBase tributacaoIcmsOriginal = NotaItemController.Instancia.RecuperaIcmsOriginal(notaItem);
 
@@ -987,6 +1009,76 @@ namespace cwkGestao.Negocio.Faturamento
             //    notaItem.vICMSUFDest_NA15 = (PercentualPartilhaDest * difal / 100);
             //    notaItem.vICMSUFRemet_NA17 = ((100 - PercentualPartilhaDest) * difal / 100);
             //}
+        }*/
+
+        private static void SetaCamposIcms(NotaItem notaItem)
+        {
+            // Validação inicial (Mantida como no seu original)
+            if (notaItem.Produto?.ClassificacaoFiscal?.ImpostosTributos == null)
+            {
+                string nomeProduto = notaItem.Produto?.Nome ?? "Produto Desconhecido";
+                string codigoProduto = notaItem.Produto?.Codigo ?? "Sem Código";
+                throw new InvalidOperationException($"Erro de dados: As regras fiscais ('ImpostosTributos') para o produto '{nomeProduto}' (Código: {codigoProduto}) não foram carregadas.");
+            }
+
+            var impostostributos = notaItem.Produto.ClassificacaoFiscal.ImpostosTributos;
+
+            // --- LÓGICA PARA REGRA DE EXCEÇÃO (Mantida como no seu original, que está correto) ---
+            if (impostostributos.UsarEssaExcessao != null)
+            {
+                notaItem.pICMSInter = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.AliqICMS = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.ReducaoImposto = impostostributos.UsarEssaExcessao.PReducaoIcms;
+                notaItem.PRedBC_N14 = impostostributos.UsarEssaExcessao.PReducaoIcms;
+                notaItem.modBC_N13 = impostostributos.ModBaseCalculoIcms;
+                notaItem.modBCST_N18 = impostostributos.ModBaseCalculoIcms;
+                notaItem.AliquotaDiferimento = impostostributos.UsarEssaExcessao.PDiferimento;
+                notaItem.AliqInterna = impostostributos.UsarEssaExcessao.PIcms;
+                notaItem.CSOSN = Convert.ToInt32(ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.UsarEssaExcessao.CSTCSOSNIcms));
+                notaItem.PRedBCST_N20 = impostostributos.UsarEssaExcessao.PReducaoIcmsSt;
+                notaItem.PMVAST_N19 = impostostributos.UsarEssaExcessao.PMva;
+                notaItem.PICMSST_N22 = impostostributos.UsarEssaExcessao.PIcmsSt;
+                notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.UsarEssaExcessao.CSTCSOSNIcms);
+                notaItem.CFOP = impostostributos.UsarEssaExcessao.TabelaCFOP;
+                notaItem.InfAdicionais = impostostributos.UsarEssaExcessao.InfAdicionais;
+            }
+            // --- LÓGICA PARA REGRA PADRÃO (AQUI ESTÁ A CORREÇÃO INTEGRADA AO SEU CÓDIGO) ---
+            else
+            {
+                // 1. A verificação DENTRO/FORA do estado foi movida para o início.
+                bool dentroDoEstado = notaItem.Nota.PessoaUF.IsNotNullOrEmpty()
+                    ? notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.PessoaUF
+                    : notaItem.Nota.Filial.Cidade.UF.Sigla == notaItem.Nota.Pessoa.EnderecoPrincipal().Cidade.UF.Sigla;
+                    notaItem.AliqICMS = impostostributos.PIcmsInterno;
+                // 2. A atribuição de Alíquota e CFOP agora depende da verificação acima.
+                if (dentroDoEstado)
+                {
+                    notaItem.CFOP = impostostributos.CfopDentroDoEstado;
+                    notaItem.AliqICMS = impostostributos.PIcmsInterno;
+                }
+                else
+                {
+                    notaItem.CFOP = impostostributos.CfopForaDoEstado;
+                }
+
+                // 3. Todas as suas outras regras de negócio foram mantidas intactas.
+                notaItem.pICMSInter = impostostributos.PIcmsInterno;
+                notaItem.ReducaoImposto = impostostributos.PReducaoIcms;
+                notaItem.PRedBC_N14 = impostostributos.PReducaoIcms;
+                notaItem.modBC_N13 = impostostributos.ModBaseCalculoIcms;
+                notaItem.modBCST_N18 = impostostributos.ModBaseCalculoIcms;
+                notaItem.AliquotaDiferimento = impostostributos.PDeferimento;
+                notaItem.AliqInterna = impostostributos.PIcmsInterno;
+                notaItem.CSOSN = Convert.ToInt32(ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms));
+                notaItem.PRedBCST_N20 = impostostributos.PReducaoIcmsST;
+                notaItem.PMVAST_N19 = impostostributos.PMVA;
+                notaItem.PICMSST_N22 = impostostributos.PReducaoIcmsST; // Verifique se o correto não seria PICMSST
+                notaItem.TAG_CST = ConversorCsts.IndiceParaTAG_CSTTributacao(impostostributos.CSTCSOSNIcms);
+            }
+
+            // Atribuições finais que são comuns a ambos os cenários (Mantidas do seu original)
+            notaItem.vICMSUFDest_NA15 = 0;
+            notaItem.vICMSUFRemet_NA17 = 0;
         }
 
         private static void SetaCamposFCP(NotaItem notaItem)

@@ -17,7 +17,10 @@ namespace cwkGestao.Modelo
 
         private string _Nome;
         [InformacaoExibicao(2, "Nome", 500, InformacaoExibicao.FormaOrdenacao.Crescente)]
+
         public virtual string Nome { get { return _Nome; } set { _Nome = value; } }
+
+        public virtual string Aplicacao { get; set; }
 
         private bool _bCalcICMS;
         public virtual bool BCalcICMS { get { return _bCalcICMS; } set { _bCalcICMS = value; } }

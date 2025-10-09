@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFilial));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -120,9 +118,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtAmbiente = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.lkbTabelaFaixaFatSimples = new Cwork.Utilitarios.Componentes.LookupButton();
-            this.lkpTabelaFaixaFatSimples = new Cwork.Utilitarios.Componentes.Lookup();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.cbSimplesNacional = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtAliqSimplesSubst = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
@@ -406,7 +401,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSerieScan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbFormaEmissao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmbiente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpTabelaFaixaFatSimples.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSimplesNacional.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqSimplesSubst.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsDsSenha.Properties)).BeginInit();
@@ -531,9 +525,6 @@
             this.tpPrincipal.Controls.Add(this.txtAliqSimplesSubst);
             this.tpPrincipal.Controls.Add(this.labelControl29);
             this.tpPrincipal.Controls.Add(this.labelControl25);
-            this.tpPrincipal.Controls.Add(this.lkbTabelaFaixaFatSimples);
-            this.tpPrincipal.Controls.Add(this.lkpTabelaFaixaFatSimples);
-            this.tpPrincipal.Controls.Add(this.labelControl26);
             this.tpPrincipal.Controls.Add(this.lkbEmpresa);
             this.tpPrincipal.Controls.Add(this.lkbCidade);
             this.tpPrincipal.Controls.Add(this.lkpEmpresa);
@@ -1619,71 +1610,6 @@
             this.labelControl16.TabIndex = 4;
             this.labelControl16.Text = "Ambiente:";
             // 
-            // lkbTabelaFaixaFatSimples
-            // 
-            this.lkbTabelaFaixaFatSimples.Location = new System.Drawing.Point(610, 411);
-            this.lkbTabelaFaixaFatSimples.Lookup = null;
-            this.lkbTabelaFaixaFatSimples.Name = "lkbTabelaFaixaFatSimples";
-            this.lkbTabelaFaixaFatSimples.Size = new System.Drawing.Size(24, 20);
-            this.lkbTabelaFaixaFatSimples.SubForm = null;
-            this.lkbTabelaFaixaFatSimples.SubFormType = null;
-            this.lkbTabelaFaixaFatSimples.SubFormTypeParams = null;
-            this.lkbTabelaFaixaFatSimples.TabIndex = 44;
-            this.lkbTabelaFaixaFatSimples.TabStop = false;
-            this.lkbTabelaFaixaFatSimples.Text = "...";
-            this.lkbTabelaFaixaFatSimples.Click += new System.EventHandler(this.lkbTabelaFaixaFatSimples_Click);
-            // 
-            // lkpTabelaFaixaFatSimples
-            // 
-            this.lkpTabelaFaixaFatSimples.ButtonLookup = this.lkbTabelaFaixaFatSimples;
-            this.lkpTabelaFaixaFatSimples.CamposPesquisa = new string[] {
-        "Faixa_I",
-        "Faixa_F",
-        "Codigo"};
-            this.lkpTabelaFaixaFatSimples.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpTabelaFaixaFatSimples.CamposRestricoesAND")));
-            this.lkpTabelaFaixaFatSimples.CamposRestricoesNOT = null;
-            this.lkpTabelaFaixaFatSimples.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpTabelaFaixaFatSimples.CamposRestricoesOR")));
-            this.lkpTabelaFaixaFatSimples.ColunaDescricao = new string[] {
-        "Faixa_I",
-        "Faixa_F"};
-            this.lkpTabelaFaixaFatSimples.ColunaTamanho = new string[] {
-        null,
-        null,
-        null,
-        null,
-        null};
-            this.lkpTabelaFaixaFatSimples.ContextoLinq = null;
-            this.lkpTabelaFaixaFatSimples.CwkFuncaoValidacao = null;
-            this.lkpTabelaFaixaFatSimples.CwkMascara = null;
-            this.lkpTabelaFaixaFatSimples.CwkValidacao = null;
-            this.lkpTabelaFaixaFatSimples.Exemplo = null;
-            this.lkpTabelaFaixaFatSimples.ID = 0;
-            this.lkpTabelaFaixaFatSimples.Join = null;
-            this.lkpTabelaFaixaFatSimples.Key = System.Windows.Forms.Keys.F5;
-            this.lkpTabelaFaixaFatSimples.Location = new System.Drawing.Point(81, 411);
-            this.lkpTabelaFaixaFatSimples.Name = "lkpTabelaFaixaFatSimples";
-            this.lkpTabelaFaixaFatSimples.OnIDChanged = null;
-            this.lkpTabelaFaixaFatSimples.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpTabelaFaixaFatSimples.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpTabelaFaixaFatSimples.SelecionarTextoOnEnter = false;
-            this.lkpTabelaFaixaFatSimples.Size = new System.Drawing.Size(523, 20);
-            toolTipItem1.Text = "Faixa de Faturamento Simples Nacional";
-            superToolTip1.Items.Add(toolTipItem1);
-            this.lkpTabelaFaixaFatSimples.SuperTip = superToolTip1;
-            this.lkpTabelaFaixaFatSimples.Tabela = null;
-            this.lkpTabelaFaixaFatSimples.TabIndex = 43;
-            this.lkpTabelaFaixaFatSimples.TituloTelaPesquisa = null;
-            this.lkpTabelaFaixaFatSimples.ToolTip = "Campos pesquisados: Faixa_I, Faixa_F, Codigo.";
-            this.lkpTabelaFaixaFatSimples.Where = null;
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Location = new System.Drawing.Point(25, 414);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(53, 13);
-            this.labelControl26.TabIndex = 42;
-            this.labelControl26.Text = "Faixa Fat.:";
-            // 
             // cbSimplesNacional
             // 
             this.cbSimplesNacional.Location = new System.Drawing.Point(81, 385);
@@ -1692,10 +1618,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbSimplesNacional.Properties.Items.AddRange(new object[] {
             "Simples Nacional",
-            "Simples Nacional - excesso de sublimite de receita bruta",
-            "Regime Normal"});
+            "Simples Nacional – Excesso de Sublimite de Receita Bruta",
+            "Regime Normal",
+            "Simples Nacional - Microempreendedor Individual"});
             this.cbSimplesNacional.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbSimplesNacional.Size = new System.Drawing.Size(116, 20);
+            this.cbSimplesNacional.Size = new System.Drawing.Size(211, 20);
             this.cbSimplesNacional.TabIndex = 37;
             this.cbSimplesNacional.EditValueChanged += new System.EventHandler(this.cbSimplesNacional_EditValueChanged);
             // 
@@ -1704,7 +1631,7 @@
             this.txtAliqSimplesSubst.CwkFuncaoValidacao = null;
             this.txtAliqSimplesSubst.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.PERCENTAGEM;
             this.txtAliqSimplesSubst.CwkValidacao = null;
-            this.txtAliqSimplesSubst.Location = new System.Drawing.Point(330, 385);
+            this.txtAliqSimplesSubst.Location = new System.Drawing.Point(410, 385);
             this.txtAliqSimplesSubst.Name = "txtAliqSimplesSubst";
             this.txtAliqSimplesSubst.Properties.Appearance.Options.UseTextOptions = true;
             this.txtAliqSimplesSubst.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -1725,11 +1652,11 @@
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(228, 389);
+            this.labelControl25.Location = new System.Drawing.Point(298, 389);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(97, 13);
+            this.labelControl25.Size = new System.Drawing.Size(106, 13);
             this.labelControl25.TabIndex = 38;
-            this.labelControl25.Text = "Aliq. Simples Subst.:";
+            this.labelControl25.Text = "Aliq. Simples Nacional:";
             // 
             // txtsDsSenha
             // 
@@ -1747,7 +1674,7 @@
             // labelControl41
             // 
             this.labelControl41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl41.Location = new System.Drawing.Point(-25071, 67);
+            this.labelControl41.Location = new System.Drawing.Point(-25257, 67);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(34, 13);
             this.labelControl41.TabIndex = 45;
@@ -4426,7 +4353,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSerieScan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbFormaEmissao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmbiente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpTabelaFaixaFatSimples.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSimplesNacional.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAliqSimplesSubst.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsDsSenha.Properties)).EndInit();
@@ -4548,9 +4474,6 @@
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtResponsavel;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNome;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtCNPJ;
-        private Cwork.Utilitarios.Componentes.LookupButton lkbTabelaFaixaFatSimples;
-        private Cwork.Utilitarios.Componentes.Lookup lkpTabelaFaixaFatSimples;
-        private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraTab.XtraTabPage tcNFe;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtDiretorioPadraoNFe;
         private DevExpress.XtraEditors.LabelControl labelControl35;

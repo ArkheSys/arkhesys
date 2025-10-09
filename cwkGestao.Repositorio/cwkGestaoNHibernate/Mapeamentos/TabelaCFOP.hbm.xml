@@ -12,5 +12,7 @@
 		<property name="Codigo" column="Codigo" type="Int32" />
 		<property name="CfopVinculadoEntrada" column="CfopVinculadoEntrada" type="string" length="4" />
 		<many-to-one name="PlanoConta" column="IDPlanoConta" class="PlanoConta" />
+		<property name="Aplicacao" column="aplicacao" type="string" />
+
 	</class>
 </hibernate-mapping>

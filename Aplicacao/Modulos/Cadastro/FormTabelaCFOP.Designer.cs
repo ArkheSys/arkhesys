@@ -42,6 +42,8 @@
             this.lkbPlanoConta = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpPlanoConta = new Cwork.Utilitarios.Componentes.Lookup();
             this.txtNome = new Cwork.Utilitarios.Componentes.DevMemoEdit();
+            this.txtAplicacao = new Cwork.Utilitarios.Componentes.DevMemoEdit();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -54,26 +56,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCfopVinculadoEntrada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoConta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAplicacao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
             // 
             this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
             this.sbAjuda.ImageOptions.ImageIndex = 0;
-            this.sbAjuda.Location = new System.Drawing.Point(12, 179);
+            this.sbAjuda.Location = new System.Drawing.Point(12, 288);
             // 
             // sbGravar
             // 
             this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
             this.sbGravar.ImageOptions.ImageIndex = 1;
-            this.sbGravar.Location = new System.Drawing.Point(454, 179);
+            this.sbGravar.Location = new System.Drawing.Point(540, 288);
             this.sbGravar.TabIndex = 0;
             // 
             // sbCancelar
             // 
             this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
             this.sbCancelar.ImageOptions.ImageIndex = 2;
-            this.sbCancelar.Location = new System.Drawing.Point(535, 179);
+            this.sbCancelar.Location = new System.Drawing.Point(621, 288);
             this.sbCancelar.TabIndex = 1;
             // 
             // imageList1
@@ -90,6 +93,8 @@
             // 
             // tpPrincipal
             // 
+            this.tpPrincipal.Controls.Add(this.txtAplicacao);
+            this.tpPrincipal.Controls.Add(this.label6);
             this.tpPrincipal.Controls.Add(this.txtNome);
             this.tpPrincipal.Controls.Add(this.lkbPlanoConta);
             this.tpPrincipal.Controls.Add(this.lkpPlanoConta);
@@ -103,12 +108,12 @@
             this.tpPrincipal.Controls.Add(this.txtCFOP);
             this.tpPrincipal.Controls.Add(this.label2);
             this.tpPrincipal.Controls.Add(this.label1);
-            this.tpPrincipal.Size = new System.Drawing.Size(592, 155);
+            this.tpPrincipal.Size = new System.Drawing.Size(678, 264);
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
-            this.tcPrincipal.Size = new System.Drawing.Size(598, 161);
+            this.tcPrincipal.Size = new System.Drawing.Size(684, 270);
             // 
             // label2
             // 
@@ -123,7 +128,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(439, 6);
+            this.label1.Location = new System.Drawing.Point(531, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
@@ -135,7 +140,7 @@
             this.txtCFOP.CwkFuncaoValidacao = null;
             this.txtCFOP.CwkMascara = null;
             this.txtCFOP.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.txtCFOP.Location = new System.Drawing.Point(483, 3);
+            this.txtCFOP.Location = new System.Drawing.Point(575, 3);
             this.txtCFOP.Name = "txtCFOP";
             this.txtCFOP.Properties.Mask.EditMask = "\\d\\d\\d\\d";
             this.txtCFOP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -145,7 +150,7 @@
             // 
             // chkBDevolucao
             // 
-            this.chkBDevolucao.Location = new System.Drawing.Point(157, 100);
+            this.chkBDevolucao.Location = new System.Drawing.Point(226, 186);
             this.chkBDevolucao.Name = "chkBDevolucao";
             this.chkBDevolucao.Properties.Caption = "Devolução";
             this.chkBDevolucao.Size = new System.Drawing.Size(75, 19);
@@ -153,7 +158,7 @@
             // 
             // chkBCalcICMS
             // 
-            this.chkBCalcICMS.Location = new System.Drawing.Point(53, 100);
+            this.chkBCalcICMS.Location = new System.Drawing.Point(66, 186);
             this.chkBCalcICMS.Name = "chkBCalcICMS";
             this.chkBCalcICMS.Properties.Caption = "Calcula ICMS";
             this.chkBCalcICMS.Size = new System.Drawing.Size(98, 19);
@@ -164,7 +169,7 @@
             this.txtCodigo.CwkFuncaoValidacao = null;
             this.txtCodigo.CwkMascara = Cwork.Utilitarios.Componentes.Mascaras.Mascara.NUMERAL;
             this.txtCodigo.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.txtCodigo.Location = new System.Drawing.Point(53, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(64, 5);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCodigo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -179,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 6);
+            this.label3.Location = new System.Drawing.Point(2, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 0;
@@ -191,7 +196,7 @@
             this.txtCfopVinculadoEntrada.CwkFuncaoValidacao = null;
             this.txtCfopVinculadoEntrada.CwkMascara = null;
             this.txtCfopVinculadoEntrada.CwkValidacao = null;
-            this.txtCfopVinculadoEntrada.Location = new System.Drawing.Point(483, 100);
+            this.txtCfopVinculadoEntrada.Location = new System.Drawing.Point(575, 189);
             this.txtCfopVinculadoEntrada.Name = "txtCfopVinculadoEntrada";
             this.txtCfopVinculadoEntrada.Properties.Mask.EditMask = "\\d\\d\\d\\d";
             this.txtCfopVinculadoEntrada.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -202,7 +207,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(350, 103);
+            this.label4.Location = new System.Drawing.Point(442, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 8;
@@ -212,7 +217,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 129);
+            this.label5.Location = new System.Drawing.Point(63, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 13);
             this.label5.TabIndex = 23;
@@ -221,10 +226,10 @@
             // 
             // lkbPlanoConta
             // 
-            this.lkbPlanoConta.Location = new System.Drawing.Point(559, 126);
+            this.lkbPlanoConta.Location = new System.Drawing.Point(634, 215);
             this.lkbPlanoConta.Lookup = null;
             this.lkbPlanoConta.Name = "lkbPlanoConta";
-            this.lkbPlanoConta.Size = new System.Drawing.Size(24, 20);
+            this.lkbPlanoConta.Size = new System.Drawing.Size(40, 20);
             this.lkbPlanoConta.SubForm = null;
             this.lkbPlanoConta.SubFormType = null;
             this.lkbPlanoConta.SubFormTypeParams = null;
@@ -256,13 +261,13 @@
             this.lkpPlanoConta.ID = 0;
             this.lkpPlanoConta.Join = null;
             this.lkpPlanoConta.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPlanoConta.Location = new System.Drawing.Point(195, 126);
+            this.lkpPlanoConta.Location = new System.Drawing.Point(250, 215);
             this.lkpPlanoConta.Name = "lkpPlanoConta";
             this.lkpPlanoConta.OnIDChanged = null;
             this.lkpPlanoConta.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lkpPlanoConta.Properties.Appearance.Options.UseBackColor = true;
             this.lkpPlanoConta.SelecionarTextoOnEnter = true;
-            this.lkpPlanoConta.Size = new System.Drawing.Size(358, 20);
+            this.lkpPlanoConta.Size = new System.Drawing.Size(378, 20);
             this.lkpPlanoConta.Tabela = "Filial";
             this.lkpPlanoConta.TabIndex = 24;
             this.lkpPlanoConta.TabStop = false;
@@ -272,16 +277,34 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(53, 29);
+            this.txtNome.Location = new System.Drawing.Point(64, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Properties.MaxLength = 2000;
-            this.txtNome.Size = new System.Drawing.Size(530, 65);
+            this.txtNome.Size = new System.Drawing.Size(611, 65);
             this.txtNome.TabIndex = 70;
+            // 
+            // txtAplicacao
+            // 
+            this.txtAplicacao.Location = new System.Drawing.Point(64, 118);
+            this.txtAplicacao.Name = "txtAplicacao";
+            this.txtAplicacao.Properties.MaxLength = 2000;
+            this.txtAplicacao.Size = new System.Drawing.Size(611, 65);
+            this.txtAplicacao.TabIndex = 72;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(2, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 71;
+            this.label6.Text = "Aplicação:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormTabelaCFOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(622, 214);
+            this.ClientSize = new System.Drawing.Size(708, 323);
             this.Name = "FormTabelaCFOP";
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -296,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCfopVinculadoEntrada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoConta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAplicacao.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +339,7 @@
         private Cwork.Utilitarios.Componentes.LookupButton lkbPlanoConta;
         private Cwork.Utilitarios.Componentes.Lookup lkpPlanoConta;
         private Cwork.Utilitarios.Componentes.DevMemoEdit txtNome;
+        private Cwork.Utilitarios.Componentes.DevMemoEdit txtAplicacao;
+        private System.Windows.Forms.Label label6;
     }
 }

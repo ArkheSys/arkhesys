@@ -136,7 +136,6 @@ namespace cwkGestao.Modelo
         public virtual decimal ValorICMSReducao { get; set; }
 
         public virtual decimal ValorICMSReducaoDif { get; set; }
-
         public virtual PedidoItem PedidoItem { get; set; }
 
         public virtual TabelaCFOP CFOP { get; set; }
@@ -224,6 +223,9 @@ namespace cwkGestao.Modelo
         public virtual decimal PMVAST_N19 { get; set; }
         public virtual decimal PCredSN_N29 { get; set; }
         public virtual decimal VCredICMSSN_N30 { get; set; }
+
+        public virtual decimal CreditoPercentual { get; set; }
+        public virtual decimal CreditoValor { get; set; }
 
 
         public virtual string I19_nDI { get; set; }

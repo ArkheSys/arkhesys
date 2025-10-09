@@ -683,6 +683,7 @@ namespace Aplicacao
             txtVBC_S07.EditValue = notaItem.VBC_S07;
             txtVCOFINS_S11.EditValue = notaItem.VCOFINS_S11;
             txtVCredICMSSN_N30.EditValue = notaItem.VCredICMSSN_N30;
+
             txtVIPI_O14.EditValue = notaItem.VIPI_O14;
             txtVPIS_Q09.EditValue = notaItem.VPIS_Q09;
             mInfAdicionais.EditValue = notaItem.InfAdicionais;

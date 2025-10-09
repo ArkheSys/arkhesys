@@ -24,17 +24,32 @@ namespace Aplicacao
             object sessao = ConfiguracaoController.Instancia.getSession();
             lkpPlanoConta.Sessao = sessao;
             lkpPlanoConta.Exemplo = new PlanoConta();
-        }
+           }
 
         private void btnlkpPlanoConta_Click(object sender, EventArgs e)
         {
-            GridGenerica<cwkGestao.Modelo.PlanoConta> grid = new GridGenerica<cwkGestao.Modelo.PlanoConta>(PlanoContaController.Instancia.GetAll().Where(p => p.PlanoContaReferencial != null).ToList(),
-                new FormPlanoConta(), (cwkGestao.Modelo.PlanoConta)lkpPlanoConta.Selecionado, false);
-            grid.Selecionando = true;
-            if (cwkControleUsuario.Facade.ControleAcesso(grid))
-                grid.ShowDialog();
+            try
+            {
+                var listaPlanoContas = PlanoContaController.Instancia.GetAll()
+                                           .Where(p => p.PlanoContaReferencial != null).ToList();
 
-            lkpPlanoConta.EditValue = grid.Selecionado;
+                GridGenerica<cwkGestao.Modelo.PlanoConta> grid = new GridGenerica<cwkGestao.Modelo.PlanoConta>(listaPlanoContas,
+                    new FormPlanoConta(), (cwkGestao.Modelo.PlanoConta)lkpPlanoConta.Selecionado, false);
+
+                grid.Selecionando = true;
+                if (cwkControleUsuario.Facade.ControleAcesso(grid))
+                    grid.ShowDialog();
+
+                if (grid.Selecionado != null)
+                {
+                    lkpPlanoConta.EditValue = grid.Selecionado;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao buscar o plano de contas.\n\nErro: {ex.Message}",
+                                "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

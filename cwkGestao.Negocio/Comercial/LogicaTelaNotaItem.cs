@@ -117,8 +117,35 @@ namespace cwkGestao.Negocio
             // 3. [A CORREÇÃO] EXECUTA O CÁLCULO FINAL DOS IMPOSTOS.
             // Esta é a linha que faltava. Ela pega as bases e alíquotas e calcula os valores.
             CalculaTributacao();
+            CalcularCreditoIcmsSimplesNacional();
         }
 
+        private void CalcularCreditoIcmsSimplesNacional()
+        {
+            // Garante que os campos comecem zerados
+            notaItem.PCredSN_N29 = 0;
+            notaItem.VCredICMSSN_N30 = 0;
+
+            // CONDIÇÕES PARA O CÁLCULO:
+            // 1. A empresa da nota precisa ser do Simples Nacional
+            // 2. O CSOSN do item precisa ser '101' ou '201'
+            if (nota.Filial.SimplesNacional != 2 && // 2 = Regime Normal, então qualquer valor diferente é Simples
+                (notaItem.TAG_CST == "101" || notaItem.TAG_CST == "201"))
+            {
+                // Busca a alíquota diretamente da Filial, como confirmado
+                decimal aliquotaCredito = nota.Filial.AliqSimplesSubst;
+
+                if (aliquotaCredito > 0)
+                {
+                    // Usa o Total do item como base de cálculo
+                    decimal baseCalculo = notaItem.Total;
+
+                    // Atribui os valores aos campos corretos do NotaItem
+                    notaItem.PCredSN_N29 = aliquotaCredito;
+                    notaItem.VCredICMSSN_N30 = Math.Round(baseCalculo * (aliquotaCredito / 100), 2);
+                }
+            }
+        }
         private void SetComissao(Produto produto)
         {
             if (nota.Vendedor != null)
@@ -358,12 +385,6 @@ namespace cwkGestao.Negocio
 
         public void SetPorcetagemCredito(decimal valor)
         {
-            if (TributacaoLiberadaParaEdicao())
-            {
-                notaItem.PCredSN_N29 = valor;
-                return;
-            }
-
             if (tributavel != null)
             {
                 tributavel.CreditoPercentual = valor;
@@ -373,14 +394,10 @@ namespace cwkGestao.Negocio
 
         public void SetValorCsosn(decimal valor)
         {
-            if (TributacaoLiberadaParaEdicao())
-            {
-                notaItem.VCredICMSSN_N30 = valor;
-                return;
-            }
-
             if (tributavel != null)
+            {
                 tributavel.CreditoValor = valor;
+            }
         }
 
         public void SetBaseIpi(decimal valor)
