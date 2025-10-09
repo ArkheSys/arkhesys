@@ -605,11 +605,7 @@ namespace cwkGestao.Negocio.Faturamento
             // que pode estar zerando ou colocando um valor incorreto na alíquota.
             var mediator = new Tributacao.Impl.NotaItemTributadaMediator(notaItem, notaItem.Nota);
 
-            // --- PASSO DE CORREÇÃO DEFINITIVO ---
-            // 3. AGORA, NÓS TEMOS A "ÚLTIMA PALAVRA".
-            // Ignoramos o que o construtor do mediator fez e forçamos os valores corretos de volta nele,
-            // lendo diretamente da fonte de dados confiável (ImpostosTributos) que já está carregada.
-            if (notaItem.Produto?.ClassificacaoFiscal?.ImpostosTributos != null)
+             if (notaItem.Produto?.ClassificacaoFiscal?.ImpostosTributos != null)
             {
                 var impostostributos = notaItem.Produto.ClassificacaoFiscal.ImpostosTributos;
 
