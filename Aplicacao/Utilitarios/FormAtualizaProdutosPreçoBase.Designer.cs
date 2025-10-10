@@ -40,6 +40,7 @@ namespace Aplicacao.Utilitarios
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoReferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nome = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +67,7 @@ namespace Aplicacao.Utilitarios
             this.btnlkpFornecedor = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpFornecedor = new Cwork.Utilitarios.Componentes.Lookup();
             this.button1 = new System.Windows.Forms.Button();
-            this.CodigoReferencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAtualizaPrecoBaseProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAtualizaPrecoBaseProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -89,6 +90,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chbbTodos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupo1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFornecedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbFechar
@@ -327,6 +329,15 @@ namespace Aplicacao.Utilitarios
             this.ID.OptionsColumn.AllowFocus = false;
             this.ID.OptionsColumn.TabStop = false;
             this.ID.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // CodigoReferencia
+            // 
+            this.CodigoReferencia.Caption = "Referencia";
+            this.CodigoReferencia.FieldName = "CodigoReferencia";
+            this.CodigoReferencia.Name = "CodigoReferencia";
+            this.CodigoReferencia.Visible = true;
+            this.CodigoReferencia.VisibleIndex = 3;
+            this.CodigoReferencia.Width = 80;
             // 
             // Codigo
             // 
@@ -609,20 +620,20 @@ namespace Aplicacao.Utilitarios
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CodigoReferencia
+            // checkEdit1
             // 
-            this.CodigoReferencia.Caption = "Referencia";
-            this.CodigoReferencia.FieldName = "CodigoReferencia";
-            this.CodigoReferencia.Name = "CodigoReferencia";
-            this.CodigoReferencia.Visible = true;
-            this.CodigoReferencia.VisibleIndex = 3;
-            this.CodigoReferencia.Width = 80;
+            this.checkEdit1.Location = new System.Drawing.Point(13, 535);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Todos";
+            this.checkEdit1.Size = new System.Drawing.Size(54, 19);
+            this.checkEdit1.TabIndex = 68;
             // 
             // FormAtualizaProdutosPreçoBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 566);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnlkpFornecedor);
             this.Controls.Add(this.lkpFornecedor);
@@ -659,6 +670,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chbbTodos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupo1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFornecedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,5 +715,6 @@ namespace Aplicacao.Utilitarios
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoReferencia;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }

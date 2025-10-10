@@ -347,6 +347,20 @@ namespace cwkGestao.Negocio.Tributacao
                     break;
 
                 case "202":
+
+                    decimal icmsProprioParaDeducao = Math.Round(baseCalculo * (trib.IcmsAliquota / 100), 2);
+                    
+                    trib.IcmsBaseCalculo = baseCalculo;
+                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+
+                    // Chama o cálculo da ST, passando o valor calculado para ser deduzido.
+                    CalcularValoresST(trib, baseCalculo, valorIpi, icmsProprioParaDeducao);
+                    break;
+
+                  /*  trib.IcmsBaseCalculo = baseCalculo;
+                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+                    CalcularValoresST(trib, baseCalculo, valorIpi, 0);
+                    break;*/
                 case "203":
                     CalcularValoresST(trib, baseCalculo, valorIpi, 0);
                     break;
@@ -358,6 +372,9 @@ namespace cwkGestao.Negocio.Tributacao
                     break;
 
                 case "102":
+                    trib.IcmsBaseCalculo = baseCalculo;
+                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+                    break;
                 case "103":
                 case "300":
                 case "400":
@@ -409,7 +426,7 @@ namespace cwkGestao.Negocio.Tributacao
         private void CalcularValoresST(ITributavel trib, decimal baseCalculoIcmsProprio, decimal valorIpi, decimal valorIcmsProprio)
         {
             decimal mva = trib.IcmsSTMargemValorAgregado / 100;
-            decimal aliquotaExterna = trib.IcmsSTAliquota / 100;
+            decimal aliquotaExterna = trib.IcmsAliquota / 100;
             decimal percReducaoST = trib.IcmsSTReducaoBaseCalculo / 100;
 
             // Fórmula da base de cálculo do ST
