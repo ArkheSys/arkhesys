@@ -27,6 +27,13 @@ namespace Aplicacao
             InitializeComponent();
             //lkbTipoDocumento.SubForm = new FormTipoDocumento();
             lkbTipoDocumento.SubFormType = typeof(FormTipoDocumento);
+            lkbBanco.SubFormType = typeof(FormBanco);
+            lkbHistorico.SubFormType = typeof(FormHistorico);
+            lkbPlanoConta.SubFormType = typeof(FormPlanoConta);
+            lkbPlanoContaFrete.SubFormType = typeof(FormPlanoConta);
+            lkbPlanoContaIPI.SubFormType = typeof(FormPlanoConta);
+            lkbPlanoContaServico.SubFormType = typeof(FormPlanoConta);
+            lkbPortador.SubFormType = typeof(FormPortador);
             if (Selecionado != null)
             {
                 Selecionado.Dt = null;
@@ -129,6 +136,36 @@ namespace Aplicacao
                         }
                     }
                 }
+            }
+        }
+
+        private void lkbFilial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtVlrPerc_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lkbAcrescimo_Click(object sender, EventArgs e)
+        {
+            {
+                GridGenerica<cwkGestao.Modelo.Acrescimo> grid = new GridGenerica<cwkGestao.Modelo.Acrescimo>(cwkGestao.Negocio.AcrescimoController.Instancia.GetAll(), new FormAcrescimo(), (cwkGestao.Modelo.Acrescimo)lkpAcrescimo.Selecionado, false);
+                grid.Selecionando = true;
+                if (cwkControleUsuario.Facade.ControleAcesso(grid))
+                    grid.ShowDialog();
+                if (grid.Selecionado != null)
+                {
+                    lkpAcrescimo.Localizar(grid.Selecionado.ID);
+                }
+                lkpAcrescimo.Focus();
             }
         }
     }

@@ -1,20 +1,28 @@
-<?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
 	<class name="CondicaoParcela" table="CondicaoParcela">
 
-	<id name="ID" column="ID">
-		<generator class="identity" /> 
-	</id>
-	<many-to-one name="Condicao" column="IDCondicao" class="Condicao" lazy="false"/>
-					<property name="Parcela" column="Parcela" type="Int32" />
-	<property name="TipoDt" column="TipoDt" type="string" length="10" />
-	<property name="Dt" column="Dt" type="DateTime" />
-	<property name="DiaMes" column="DiaMes" type="Int32" />
-	<property name="TipoVlr" column="TipoVlr" type="string" length="15" />
-	<property name="VlrPerc" column="VlrPerc" type="decimal" />
-	<property name="Entrada" column="Entrada" type="bool" />
-	<many-to-one name="TipoDocumento" column="IDTipoDocumento" class="TipoDocumento" lazy="false" />
-					<property name="BAVista" column="bAVista" type="bool" />
-</class>
+		<id name="ID" column="ID">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Condicao" column="IDCondicao" class="Condicao" lazy="false"/>
+		<property name="Parcela" column="Parcela" type="Int32" />
+		<property name="TipoDt" column="TipoDt" type="string" length="10" />
+		<property name="Dt" column="Dt" type="DateTime" />
+		<property name="DiaMes" column="DiaMes" type="Int32" />
+		<property name="TipoVlr" column="TipoVlr" type="string" length="15" />
+		<property name="VlrPerc" column="VlrPerc" type="decimal" />
+		<property name="Entrada" column="Entrada" type="bool" />
+		<many-to-one name="TipoDocumento" column="IDTipoDocumento" class="TipoDocumento" lazy="false" />
+		<property name="BAVista" column="bAVista" type="bool" />
+
+		<many-to-one name="Banco" column="ID_Banco" class="Banco" />
+
+		<many-to-one name="Portador" column="ID_Portador" class="Portador" />
+		<many-to-one name="Historico" column="ID_Historico" class="Historico" />
+		<many-to-one name="PlanoConta" column="ID_PlanoConta" class="PlanoConta" />
+		<many-to-one name="PlanoContaFrete" column="ID_PlanoContaFrete" class="PlanoConta" />
+		<many-to-one name="PlanoContaIPI" column="ID_PlanoContaIPI" class="PlanoConta" />
+		<many-to-one name="PlanoContaServico" column="ID_PlanoContaServico" class="PlanoConta" />
+	</class>
 </hibernate-mapping>
-		

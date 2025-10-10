@@ -48,6 +48,14 @@ namespace cwkGestao.Modelo
 
         [InformacaoExibicao(4, "Tipo Documento")]
         public virtual string TipoDocumentoStr { get { return TipoDocumento?.Nome; } }
+        public virtual Banco Banco { get; set; }
+        public virtual Portador Portador { get; set; }
+        public virtual Historico Historico { get; set; }
+        public virtual decimal ValorAcrescimo { get; set; }
+        public virtual PlanoConta PlanoConta { get; set; }
+        public virtual PlanoConta PlanoContaFrete { get; set; }
+        public virtual PlanoConta PlanoContaIPI { get; set; }
+        public virtual PlanoConta PlanoContaServico { get; set; }
     }
 }
 		
