@@ -20,7 +20,10 @@ namespace cwkGestao.Modelo
 
         public virtual string Nome { get { return _Nome; } set { _Nome = value; } }
 
-        public virtual string Aplicacao { get; set; }
+        private string _Aplicacao;
+        [InformacaoExibicao(2, "Aplicacao", 500, InformacaoExibicao.FormaOrdenacao.Crescente)]
+
+        public virtual string Aplicacao { get { return _Aplicacao; } set { _Aplicacao = value; } }
 
         private bool _bCalcICMS;
         public virtual bool BCalcICMS { get { return _bCalcICMS; } set { _bCalcICMS = value; } }

@@ -43,36 +43,6 @@ namespace cwkGestao.Negocio
                                            || (nota.NotaComplementada != null);
         }
 
-        /*public string SetProduto(Produto produto)
-        {
-            try
-            {
-                SetDadosBasicos(produto);
-                SetComissao(produto);
-                IniciaTributacao();
-
-                SetValorEValorCalculado();
-                SetSubTotalETotal();
-
-                if (nota.Ent_Sai == InOutType.Saída)
-                    notaItem.CMVUnit = NotaItemController.Instancia.BuscaValorDoCustoMedio(nota.TipoNota.LocalEstoqueTipoNota, produto);
-
-                if (produto.Unidade.BQtdFracionada)
-                    return "N4";
-                else
-                    return "N0";
-            }
-            catch (Exception ex)
-            {
-                notaItem.Produto = null;
-                notaItem.Valor = 0;
-                throw (ex);
-            }
-        }*/
-        /// <summary>
-        /// Este método agora é responsável APENAS por carregar os dados básicos do produto no item da nota.
-        /// A tributação foi movida para um método separado para melhor controle.
-        /// </summary>
         public string SetProduto(Produto produto)
         {
             try

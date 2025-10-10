@@ -295,13 +295,15 @@ namespace Aplicacao.Utilitarios
                     {
                         Codigo = TabelaCFOPController.Instancia.MaxCodigo(),
                         CFOP = item["CODIGO"].ToString(),
-                        Nome = item["DESCRICAO"].ToString().TrimCk()
+                        Nome = item["DESCRICAO"].ToString().TrimCk(),
+                        Aplicacao = item["APLICACAO"].ToString().TrimCk()
                     };
                     cfopImportados++;
                 }
                 else
                 {
                     _Cfop.Nome = item["DESCRICAO"].ToString().TrimCk();
+                    _Cfop.Aplicacao = item["APLICACAO"].ToString().TrimCk();
                     cfopAtualizados++;
                 }
 
@@ -554,7 +556,7 @@ namespace Aplicacao.Utilitarios
                     return new List<string> { "CODIGO", "DESCRICAO" };
                 case "CFOP":
                     // Colunas exatas usadas no seu método ImportarCFOP
-                    return new List<string> { "CODIGO", "DESCRICAO" };
+                    return new List<string> { "CODIGO", "DESCRICAO", "APLICACAO" };
                 default:
                     return null;
             }
