@@ -216,8 +216,6 @@ namespace cwkGestao.Negocio.Tributacao
             CalculaICMSeST(_tributavel);
         }
 
-        // 1. MÉTODO PRINCIPAL (SUBSTITUA O SEU MÉTODO ATUAL POR ESTE)
-        // Este método agora atua como um "diretor", zerando os campos e chamando o cálculo correto para o regime tributário.
         private void CalculaICMSeST(ITributavel trib)
             {
                 // Passo 1: Garante que todos os campos comecem zerados a cada novo cálculo.
@@ -234,18 +232,14 @@ namespace cwkGestao.Negocio.Tributacao
                 {
                     CalcularIcms_RegimeNormal(trib);
                 }
-
-                // Passo 3 (Opcional): Lógicas comuns que rodam no final, como o Texto da Lei.
-                // ... seu código de Texto-Lei pode vir aqui se necessário ...
             }
 
-        // 2. MÉTODO PARA REGIME NORMAL (CST)
-        // Contém todas as regras para empresas de Lucro Presumido/Real.
         private void CalcularIcms_RegimeNormal(ITributavel trib)
         {
             // Valores base para os cálculos
             decimal baseCalculo = CalcularBaseCalculoIcmsProprio(trib);
             decimal valorIpi = trib.IpiValor;
+
 
             switch (trib.IcmsCST)
             {
@@ -301,22 +295,27 @@ namespace cwkGestao.Negocio.Tributacao
             }
         }
 
-        // 3. MÉTODO PARA SIMPLES NACIONAL (CSOSN)
-        // Contém todas as regras para empresas optantes pelo Simples Nacional
         private void CalcularIcms_SimplesNacional(ITributavel trib)
         {
             decimal baseCalculo = CalcularBaseCalculoIcmsProprio(trib);
             decimal valorIpi = trib.IpiValor;
 
-            // Bloco de lógica para o crédito do Simples Nacional
-            // Será usado nos casos 101 e 201
+            void CalcularIcmsProprioComReducao()
+            {
+                decimal baseCalculoIcms = baseCalculo;
+                if (trib.ReducaoImposto > 0)
+                {
+                    baseCalculoIcms = ReduzirBaseCalculo(baseCalculoIcms, trib.ReducaoImposto);
+                }
+                trib.IcmsBaseCalculo = baseCalculoIcms;
+                trib.IcmsValor = CalcularValorIcmsProprio(trib.IcmsBaseCalculo, trib.IcmsAliquota);
+            }
             Action calcularCreditoSN = () => {
-                // Respeita a alíquota de crédito se ela foi digitada manualmente na tela
                 if (trib.CreditoPercentual > 0)
                 {
                     trib.CreditoValor = CalcularValorIcmsProprio(baseCalculo, trib.CreditoPercentual);
                 }
-                else // Senão, faz o cálculo automático buscando da Filial
+                else
                 {
                     trib.CreditoPercentual = trib.Filial.AliqSimplesSubst;
                     trib.CreditoValor = CalcularValorIcmsProprio(baseCalculo, trib.CreditoPercentual);
@@ -327,8 +326,8 @@ namespace cwkGestao.Negocio.Tributacao
             {
                 case "101":
                     // 1. Calcula o ICMS próprio para uso interno
-                    trib.IcmsBaseCalculo = baseCalculo;
-                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+
+                    CalcularIcmsProprioComReducao();
 
                     // 2. Executa a lógica de cálculo de crédito
                     calcularCreditoSN();
@@ -336,8 +335,7 @@ namespace cwkGestao.Negocio.Tributacao
 
                 case "201":
                     // 1. Calcula o ICMS próprio para uso interno
-                    trib.IcmsBaseCalculo = baseCalculo;
-                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+                    CalcularIcmsProprioComReducao();
 
                     // 2. Executa a lógica de cálculo de crédito
                     calcularCreditoSN();
@@ -345,22 +343,25 @@ namespace cwkGestao.Negocio.Tributacao
                     // 3. Calcula o ICMS-ST
                     CalcularValoresST(trib, baseCalculo, valorIpi, trib.IcmsValor);
                     break;
-
+                
                 case "202":
+                    decimal baseCalculoIcmsProprio = baseCalculo;
 
-                    decimal icmsProprioParaDeducao = Math.Round(baseCalculo * (trib.IcmsAliquota / 100), 2);
-                    
-                    trib.IcmsBaseCalculo = baseCalculo;
-                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
+                    if (trib.ReducaoImposto > 0)
+                    {
+                        // 3. Se houver, chamamos sua função para reduzir a base
+                        baseCalculoIcmsProprio = ReduzirBaseCalculo(baseCalculoIcmsProprio, trib.ReducaoImposto);
+                    }
 
-                    // Chama o cálculo da ST, passando o valor calculado para ser deduzido.
+                    decimal icmsProprioParaDeducao = Math.Round(baseCalculoIcmsProprio * (trib.IcmsAliquota / 100), 2);
+
+                    // Zeramos os campos de ICMS próprio da nota, pois não há destaque no Simples Nacional (CSOSN 202/203)
+                    trib.IcmsBaseCalculo = 0;
+                    trib.IcmsValor = 0;
+
                     CalcularValoresST(trib, baseCalculo, valorIpi, icmsProprioParaDeducao);
                     break;
 
-                  /*  trib.IcmsBaseCalculo = baseCalculo;
-                    trib.IcmsValor = CalcularValorIcmsProprio(baseCalculo, trib.IcmsAliquota);
-                    CalcularValoresST(trib, baseCalculo, valorIpi, 0);
-                    break;*/
                 case "203":
                     CalcularValoresST(trib, baseCalculo, valorIpi, 0);
                     break;
@@ -387,7 +388,6 @@ namespace cwkGestao.Negocio.Tributacao
 
         #region Métodos Auxiliares (Helpers)
 
-        // HELPER 1: Zera todos os campos de ICMS para garantir um cálculo limpo.
         private void ZerarCamposIcms(ITributavel trib)
         {
            // trib.IcmsAliquota = 0;
@@ -402,12 +402,8 @@ namespace cwkGestao.Negocio.Tributacao
             trib.ValorIcmsDiferimento = 0;
             trib.ValorICMSDesoneracao = 0;
 
-            // Usando os nomes da sua interface
-            //trib.PCredSN_N29 = 0;
-            //trib.VCredICMSSN_N30 = 0;
         }
 
-        // HELPER 2: Calcula a Base de Cálculo do ICMS Próprio, já aplicando a redução.
         private decimal CalcularBaseCalculoIcmsProprio(ITributavel trib)
         {
             decimal baseCheia = trib.BaseCalculoGeral;

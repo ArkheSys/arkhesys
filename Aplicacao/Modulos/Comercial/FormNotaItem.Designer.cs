@@ -1543,7 +1543,7 @@
             this.txtAliquotaDiferimento.Name = "txtAliquotaDiferimento";
             this.txtAliquotaDiferimento.Properties.Appearance.Options.UseTextOptions = true;
             this.txtAliquotaDiferimento.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtAliquotaDiferimento.Properties.Mask.EditMask = "c2";
+            this.txtAliquotaDiferimento.Properties.Mask.EditMask = "P4";
             this.txtAliquotaDiferimento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtAliquotaDiferimento.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtAliquotaDiferimento.SelecionarTextoOnEnter = false;
