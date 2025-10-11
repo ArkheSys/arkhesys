@@ -85,6 +85,8 @@ namespace Aplicacao.Utilitarios
 
             if (ValidateWithMessage(dgvDados.DataSource == null, "Sem dados para importação!")) return;
 
+            if (ValidarColunasObrigatorias()) return;
+
             #endregion
 
             if (MessageBox.Show("Deseja Importar os Dados?", "Importar os Dados", MessageBoxButtons.YesNo) == DialogResult.No) return;
@@ -227,14 +229,37 @@ namespace Aplicacao.Utilitarios
         private void ImportarCest()
         {
             var dataTable = (DataTable)dgvDados.DataSource;
-            if (dataTable == null)
+            if (dataTable == null || dataTable.Rows.Count == 0)
             {
-                MessageBox.Show("Não há dados para importar.", "Atenção");
+                MessageBox.Show("Não há dados para importar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var dialogo = MessageBox.Show(
+                "Atenção! Este processo irá APAGAR TODOS os registros de CEST existentes e substituí-los pelos dados da planilha." +
+                $"{Environment.NewLine}{Environment.NewLine}Deseja continuar?",
+                "Confirmação de Importação Destrutiva",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (dialogo == DialogResult.No)
+            {
+                MessageBox.Show("Importação cancelada pelo usuário.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                CESTController.Instancia.ExcluirTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao limpar os dados antigos. A importação foi cancelada.{Environment.NewLine}Erro: {ex.Message}", "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             var cestImportados = 0;
-            var cestAtualizados = 0;
 
             foreach (DataRow item in dataTable.Rows)
             {
@@ -242,35 +267,31 @@ namespace Aplicacao.Utilitarios
                 if (string.IsNullOrEmpty(codigoDoArquivo))
                     continue;
 
-                Acao acao;
-                var cestExistente = CESTController.Instancia.GetByCodigo(codigoDoArquivo);
-
-                CEST cestParaSalvar;
-
-                if (cestExistente == null) 
+                int segmento = 0; // Valor padrão caso a conversão falhe
+                if (item.Table.Columns.Contains("SEGMENTO") && item["SEGMENTO"] != DBNull.Value)
                 {
-                    acao = Acao.Incluir;
-
-                    cestParaSalvar = new CEST
-                    {
-                        Codigo = codigoDoArquivo,
-                        Descricao = item["DESCRICAO"].ToString().Trim()
-                    };
-                    cestImportados++;
-                }
-                else 
-                {
-                    acao = Acao.Alterar;
-                    cestParaSalvar = cestExistente; 
-
-                    cestParaSalvar.Descricao = item["DESCRICAO"].ToString().Trim();
-                    cestAtualizados++;
+                    int.TryParse(item["SEGMENTO"].ToString().Trim(), out segmento);
                 }
 
-                CESTController.Instancia.Salvar(cestParaSalvar, acao);
+                string ncm = null;
+                if (item.Table.Columns.Contains("NCM") && item["NCM"] != DBNull.Value)
+                {
+                    ncm = item["NCM"].ToString().Trim();
+                }
+
+                var cestParaSalvar = new CEST
+                {
+                    Codigo = codigoDoArquivo,
+                    Descricao = item["DESCRICAO"].ToString().Trim(),
+                    Segmento = segmento, // Campo novo
+                    NCM = ncm            // Campo novo
+                };
+
+                CESTController.Instancia.Salvar(cestParaSalvar, Acao.Incluir);
+                cestImportados++;
             }
 
-            MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}Importados: {cestImportados}{Environment.NewLine}Atualizados: {cestAtualizados}", "Importação Concluída");
+            MessageBox.Show($"Dados importados com sucesso!{Environment.NewLine}{Environment.NewLine}Total de registros importados: {cestImportados}", "Importação Concluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ImportarCFOP()
@@ -508,7 +529,6 @@ namespace Aplicacao.Utilitarios
         #endregion
         private void btnVerModelo_Click(object sender, EventArgs e)
         {
-            // Pega a lista de colunas necessárias usando o método que já temos.
             List<string> headers = GetHeadersParaModelo();
 
             if (headers == null)
@@ -517,30 +537,30 @@ namespace Aplicacao.Utilitarios
                 return;
             }
 
-            // Usa um StringBuilder para construir uma mensagem de ajuda bem formatada.
             StringBuilder mensagem = new StringBuilder();
 
-            mensagem.AppendLine($"Para importar '{cboTipoRegistro.Text}', seu arquivo Excel ou CSV deve conter as seguintes colunas, exatamente com estes nomes e na ordem sugerida:");
+            mensagem.AppendLine($"Para importar '{cboTipoRegistro.Text}', seu arquivo Excel ou CSV deve conter as seguintes colunas:");
             mensagem.AppendLine("----------------------------------------------------------");
 
-            // Adiciona cada nome de coluna à mensagem
             foreach (string header in headers)
             {
-                mensagem.AppendLine($"- {header}");
+                mensagem.AppendLine($"• {header}");
             }
 
             mensagem.AppendLine("----------------------------------------------------------");
-            mensagem.AppendLine("\nObservações:");
-            mensagem.AppendLine("• A primeira linha do seu arquivo deve ser o cabeçalho com os nomes das colunas.");
-            mensagem.AppendLine("• Para arquivos CSV, o separador utilizado deve ser o ponto e vírgula (;).");
+            mensagem.AppendLine("\nObservações Importantes:");
+            mensagem.AppendLine("1. A primeira linha do arquivo DEVE ser o cabeçalho com os nomes exatos das colunas.");
+            mensagem.AppendLine("2. Para arquivos CSV, utilize ponto e vírgula (;) como separador.");
 
-            // Exibe a mensagem final em uma MessageBox informativa.
+            // Adiciona exemplos específicos para o tipo de registro selecionado
+            if (cboTipoRegistro.Text == "CEST")
+            {
+                mensagem.AppendLine("\nExemplo para CEST:");
+                mensagem.AppendLine("   - SEGMENTO: Informe apenas o número (Ex: 1, 10, 28).");
+                mensagem.AppendLine("   - NCM: Informe o NCM completo ou parcial, apenas números (Ex: 39269090 ou 3926).");
+            }
+
             MessageBox.Show(mensagem.ToString(), $"Modelo para Importação de {cboTipoRegistro.Text}", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnBaixarModelo_Click(object sender, EventArgs e)
-        {
-
         }
 
         // Este método decide quais colunas o modelo deve ter
@@ -549,21 +569,58 @@ namespace Aplicacao.Utilitarios
             switch (cboTipoRegistro.Text)
             {
                 case "NCM":
-                    // Colunas exatas usadas no seu método ImportarNcm
-                    return new List<string> { "ncm", "descricao",  };
+                    return new List<string> { "NCM", "DESCRICAO",  };
                 case "CEST":
-                    // Colunas exatas usadas no seu método ImportarCest
-                    return new List<string> { "CODIGO", "DESCRICAO" };
+                    return new List<string> { "CODIGO", "DESCRICAO", "SEGMENTO", "NCM" };
                 case "CFOP":
-                    // Colunas exatas usadas no seu método ImportarCFOP
                     return new List<string> { "CODIGO", "DESCRICAO", "APLICACAO" };
                 default:
                     return null;
             }
         }
 
-        // Este método usa o ClosedXML para criar o arquivo Excel
-        // APAGUE o método GerarPlanilhaModelo antigo e SUBSTITUA por este:
+        private bool ValidarColunasObrigatorias()
+        {
+            var dataTable = (DataTable)dgvDados.DataSource;
+
+            // Pega a lista de nomes de colunas que são obrigatórias para o tipo de importação.
+            List<string> headersObrigatorios = GetHeadersParaModelo();
+            if (headersObrigatorios == null)
+            {
+                // Se não houver headers definidos, não há o que validar.
+                return false;
+            }
+
+            // Pega a lista de nomes de colunas que realmente existem no arquivo importado.
+            // Usamos um HashSet para uma verificação rápida e case-insensitive.
+            var headersExistentes = new HashSet<string>(
+                dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName.ToUpper())
+            );
+
+            // Encontra quais colunas obrigatórias estão faltando no arquivo.
+            var headersFaltantes = headersObrigatorios
+                .Where(h => !headersExistentes.Contains(h.ToUpper()))
+                .ToList();
+
+            // Se a lista de colunas faltantes tiver algum item, a validação falhou.
+            if (headersFaltantes.Any())
+            {
+                // Monta uma mensagem de erro clara para o usuário.
+                string colunasFaltantesTexto = string.Join(", ", headersFaltantes);
+
+                MessageBox.Show(
+                    $"O arquivo importado não contém as colunas obrigatórias.{Environment.NewLine}{Environment.NewLine}" +
+                    $"Coluna(s) ausente(s): {colunasFaltantesTexto}{Environment.NewLine}{Environment.NewLine}" +
+                    "Por favor, corrija o cabeçalho do arquivo e tente novamente.",
+                    "Colunas Inválidas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return true; // Indica que a validação falhou.
+            }
+
+            return false; // Indica que a validação passou com sucesso.
+        }
         private void GerarPlanilhaModelo(string caminhoArquivo, List<string> headers)
         {
             // Cria um novo arquivo no formato .xlsx

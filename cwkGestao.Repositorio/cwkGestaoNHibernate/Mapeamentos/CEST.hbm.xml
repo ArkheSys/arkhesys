@@ -6,5 +6,7 @@
 		</id>
 		<property name="Codigo" column="Codigo" type="string" />
 		<property name="Descricao" column="Descricao" type="string" length="200" />
+		<property name="Segmento" column="Segmento" type="int" />
+		<property name="NCM" column="NCM" type="string" />
 	</class>
 </hibernate-mapping>

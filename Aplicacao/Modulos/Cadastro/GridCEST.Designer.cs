@@ -1,4 +1,4 @@
-namespace Aplicacao
+namespace Aplicacao.Cadastro
 {
     partial class GridCEST
     {

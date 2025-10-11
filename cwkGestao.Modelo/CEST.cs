@@ -16,6 +16,12 @@ namespace cwkGestao.Modelo
         [InformacaoExibicao(1, "Código", 10)]
         public virtual string Codigo { get; set; }
 
+        [InformacaoExibicao(1, "Segmento", 2)]
+        public virtual int Segmento { get; set; }
+
+        [InformacaoExibicao(1, "NCM", 10)]
+        public virtual string NCM { get; set; }
+
         [InformacaoExibicao(2, "Descrição", 300)]
         public virtual string Descricao { get; set; }
 

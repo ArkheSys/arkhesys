@@ -47,5 +47,10 @@ namespace cwkGestao.Negocio
         {
             return repositorioT.GetAll().FirstOrDefault(c => c.Codigo == codigo);
         }
+
+        public void ExcluirTodos()
+        {
+            repositorioCEST.ExcluirTodos();
+        }
     }
 }

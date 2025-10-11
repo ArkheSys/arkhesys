@@ -9,6 +9,7 @@ namespace cwkGestao.Repositorio.Interfaces.Particulares
     public interface IRepositorioCEST : IRepositorio<CEST>
     {
         CEST GetByCEST(string Codigo);
+        void ExcluirTodos();
     }
 }
 

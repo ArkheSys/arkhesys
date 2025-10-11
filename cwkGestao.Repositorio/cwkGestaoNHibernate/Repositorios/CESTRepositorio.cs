@@ -20,7 +20,26 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
             return "from CEST n";
         }
 
-        public CEST GetByCEST(string Codigo)
+        public void ExcluirTodos()
+        {
+            using (var session = GetSession())
+            using (var transacao = session.BeginTransaction())
+            {
+                try
+                {
+                    string hqlDelete = "delete from CEST";
+                    session.CreateQuery(hqlDelete).ExecuteUpdate();
+                    transacao.Commit();
+                }
+                catch (Exception)
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
+
+            public CEST GetByCEST(string Codigo)
         {
             using (var session = GetSession())
             
