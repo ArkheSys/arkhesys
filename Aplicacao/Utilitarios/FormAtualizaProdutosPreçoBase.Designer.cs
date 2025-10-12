@@ -67,7 +67,23 @@ namespace Aplicacao.Utilitarios
             this.btnlkpFornecedor = new Cwork.Utilitarios.Componentes.LookupButton();
             this.lkpFornecedor = new Cwork.Utilitarios.Componentes.Lookup();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.chkAtualizarNCM = new DevExpress.XtraEditors.CheckEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lkbNCM = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpNCM = new Cwork.Utilitarios.Componentes.Lookup();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkbCEST = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpCEST = new Cwork.Utilitarios.Componentes.Lookup();
+            this.chkAtualizarCEST = new DevExpress.XtraEditors.CheckEdit();
+            this.lkbPerfilPisCofins = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpPerfilPisCofins = new Cwork.Utilitarios.Componentes.Lookup();
+            this.chkAtualizarPisCofins = new DevExpress.XtraEditors.CheckEdit();
+            this.lkbNaturezaReceita = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpNaturezaReceita = new Cwork.Utilitarios.Componentes.Lookup();
+            this.chkAtualizarNatureza = new DevExpress.XtraEditors.CheckEdit();
+            this.lkbClassificacaoFiscal = new Cwork.Utilitarios.Componentes.LookupButton();
+            this.lkpClassificacaoFiscal = new Cwork.Utilitarios.Componentes.Lookup();
+            this.chkAtualizarClassificacaoFiscal = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAtualizaPrecoBaseProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAtualizaPrecoBaseProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -90,7 +106,18 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chbbTodos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupo1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFornecedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarNCM.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarPisCofins.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNaturezaReceita.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarNatureza.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarClassificacaoFiscal.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbFechar
@@ -99,9 +126,9 @@ namespace Aplicacao.Utilitarios
             this.sbFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.sbFechar.ImageOptions.Image = global::Aplicacao.Properties.Resources.Fechar;
             this.sbFechar.ImageOptions.ImageIndex = 2;
-            this.sbFechar.Location = new System.Drawing.Point(801, 531);
+            this.sbFechar.Location = new System.Drawing.Point(1062, 538);
             this.sbFechar.Name = "sbFechar";
-            this.sbFechar.Size = new System.Drawing.Size(75, 23);
+            this.sbFechar.Size = new System.Drawing.Size(107, 23);
             this.sbFechar.TabIndex = 26;
             this.sbFechar.Text = "&Fechar";
             this.sbFechar.Click += new System.EventHandler(this.sbFechar_Click);
@@ -134,7 +161,7 @@ namespace Aplicacao.Utilitarios
             this.repositoryItemSpinEdit1,
             this.repositoryItemCalcEdit2,
             this.repositoryItemCalcEdit3});
-            this.gcAtualizaPrecoBaseProdutos.Size = new System.Drawing.Size(864, 464);
+            this.gcAtualizaPrecoBaseProdutos.Size = new System.Drawing.Size(1157, 442);
             this.gcAtualizaPrecoBaseProdutos.TabIndex = 36;
             this.gcAtualizaPrecoBaseProdutos.UseEmbeddedNavigator = true;
             this.gcAtualizaPrecoBaseProdutos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -245,7 +272,8 @@ namespace Aplicacao.Utilitarios
             this.CodigoReferencia,
             this.Codigo,
             this.Barra,
-            this.Nome});
+            this.Nome,
+            this.gridColumn3});
             this.gvAtualizaPrecoBaseProdutos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvAtualizaPrecoBaseProdutos.GridControl = this.gcAtualizaPrecoBaseProdutos;
             this.gvAtualizaPrecoBaseProdutos.GroupPanelText = "Arraste uma coluna aqui para agrupar os registros";
@@ -477,7 +505,7 @@ namespace Aplicacao.Utilitarios
             this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton1.ImageOptions.Image = global::Aplicacao.Properties.Resources.Fechar;
             this.simpleButton1.ImageOptions.ImageIndex = 2;
-            this.simpleButton1.Location = new System.Drawing.Point(688, 531);
+            this.simpleButton1.Location = new System.Drawing.Point(1062, 509);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(107, 23);
             this.simpleButton1.TabIndex = 46;
@@ -620,20 +648,363 @@ namespace Aplicacao.Utilitarios
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkEdit1
+            // chkAtualizarNCM
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(13, 535);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Todos";
-            this.checkEdit1.Size = new System.Drawing.Size(54, 19);
-            this.checkEdit1.TabIndex = 68;
+            this.chkAtualizarNCM.Location = new System.Drawing.Point(10, 27);
+            this.chkAtualizarNCM.Name = "chkAtualizarNCM";
+            this.chkAtualizarNCM.Properties.Caption = "NCM:";
+            this.chkAtualizarNCM.Size = new System.Drawing.Size(54, 19);
+            this.chkAtualizarNCM.TabIndex = 69;
+            this.chkAtualizarNCM.CheckedChanged += new System.EventHandler(this.chkAtualizarNCM_CheckedChanged);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupControl1.Controls.Add(this.lkbClassificacaoFiscal);
+            this.groupControl1.Controls.Add(this.lkpClassificacaoFiscal);
+            this.groupControl1.Controls.Add(this.chkAtualizarClassificacaoFiscal);
+            this.groupControl1.Controls.Add(this.lkbNaturezaReceita);
+            this.groupControl1.Controls.Add(this.lkpNaturezaReceita);
+            this.groupControl1.Controls.Add(this.chkAtualizarNatureza);
+            this.groupControl1.Controls.Add(this.lkbPerfilPisCofins);
+            this.groupControl1.Controls.Add(this.lkpPerfilPisCofins);
+            this.groupControl1.Controls.Add(this.chkAtualizarPisCofins);
+            this.groupControl1.Controls.Add(this.lkbCEST);
+            this.groupControl1.Controls.Add(this.lkpCEST);
+            this.groupControl1.Controls.Add(this.chkAtualizarCEST);
+            this.groupControl1.Controls.Add(this.lkbNCM);
+            this.groupControl1.Controls.Add(this.lkpNCM);
+            this.groupControl1.Controls.Add(this.chkAtualizarNCM);
+            this.groupControl1.Location = new System.Drawing.Point(12, 515);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1044, 100);
+            this.groupControl1.TabIndex = 70;
+            this.groupControl1.Text = "Campos para Atualizar";
+            // 
+            // lkbNCM
+            // 
+            this.lkbNCM.Location = new System.Drawing.Point(254, 27);
+            this.lkbNCM.Lookup = null;
+            this.lkbNCM.Name = "lkbNCM";
+            this.lkbNCM.Size = new System.Drawing.Size(24, 20);
+            this.lkbNCM.SubForm = null;
+            this.lkbNCM.SubFormType = null;
+            this.lkbNCM.SubFormTypeParams = null;
+            this.lkbNCM.TabIndex = 71;
+            this.lkbNCM.TabStop = false;
+            this.lkbNCM.Text = "...";
+            this.lkbNCM.Click += new System.EventHandler(this.lookupButton1_Click);
+            // 
+            // lkpNCM
+            // 
+            this.lkpNCM.ButtonLookup = this.lkbNCM;
+            this.lkpNCM.CamposPesquisa = new string[] {
+        "Nome",
+        "Codigo"};
+            this.lkpNCM.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNCM.CamposRestricoesAND")));
+            this.lkpNCM.CamposRestricoesNOT = null;
+            this.lkpNCM.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNCM.CamposRestricoesOR")));
+            this.lkpNCM.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpNCM.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpNCM.ContextoLinq = null;
+            this.lkpNCM.CwkFuncaoValidacao = null;
+            this.lkpNCM.CwkMascara = null;
+            this.lkpNCM.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpNCM.Exemplo = null;
+            this.lkpNCM.ID = 0;
+            this.lkpNCM.Join = null;
+            this.lkpNCM.Key = System.Windows.Forms.Keys.F5;
+            this.lkpNCM.Location = new System.Drawing.Point(70, 27);
+            this.lkpNCM.Name = "lkpNCM";
+            this.lkpNCM.OnIDChanged = null;
+            this.lkpNCM.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpNCM.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpNCM.SelecionarTextoOnEnter = true;
+            this.lkpNCM.Size = new System.Drawing.Size(178, 20);
+            this.lkpNCM.Tabela = null;
+            this.lkpNCM.TabIndex = 70;
+            this.lkpNCM.TituloTelaPesquisa = null;
+            this.lkpNCM.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpNCM.Where = null;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "NCM";
+            this.gridColumn3.FieldName = "NCM";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 7;
+            // 
+            // lkbCEST
+            // 
+            this.lkbCEST.Location = new System.Drawing.Point(254, 65);
+            this.lkbCEST.Lookup = null;
+            this.lkbCEST.Name = "lkbCEST";
+            this.lkbCEST.Size = new System.Drawing.Size(24, 20);
+            this.lkbCEST.SubForm = null;
+            this.lkbCEST.SubFormType = null;
+            this.lkbCEST.SubFormTypeParams = null;
+            this.lkbCEST.TabIndex = 74;
+            this.lkbCEST.TabStop = false;
+            this.lkbCEST.Text = "...";
+            // 
+            // lkpCEST
+            // 
+            this.lkpCEST.ButtonLookup = this.lkbCEST;
+            this.lkpCEST.CamposPesquisa = new string[] {
+        "Nome",
+        "Codigo"};
+            this.lkpCEST.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesAND")));
+            this.lkpCEST.CamposRestricoesNOT = null;
+            this.lkpCEST.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesOR")));
+            this.lkpCEST.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpCEST.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpCEST.ContextoLinq = null;
+            this.lkpCEST.CwkFuncaoValidacao = null;
+            this.lkpCEST.CwkMascara = null;
+            this.lkpCEST.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpCEST.Exemplo = null;
+            this.lkpCEST.ID = 0;
+            this.lkpCEST.Join = null;
+            this.lkpCEST.Key = System.Windows.Forms.Keys.F5;
+            this.lkpCEST.Location = new System.Drawing.Point(70, 65);
+            this.lkpCEST.Name = "lkpCEST";
+            this.lkpCEST.OnIDChanged = null;
+            this.lkpCEST.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpCEST.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpCEST.SelecionarTextoOnEnter = true;
+            this.lkpCEST.Size = new System.Drawing.Size(178, 20);
+            this.lkpCEST.Tabela = null;
+            this.lkpCEST.TabIndex = 73;
+            this.lkpCEST.TituloTelaPesquisa = null;
+            this.lkpCEST.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpCEST.Where = null;
+            // 
+            // chkAtualizarCEST
+            // 
+            this.chkAtualizarCEST.Location = new System.Drawing.Point(10, 65);
+            this.chkAtualizarCEST.Name = "chkAtualizarCEST";
+            this.chkAtualizarCEST.Properties.Caption = "CEST:";
+            this.chkAtualizarCEST.Size = new System.Drawing.Size(54, 19);
+            this.chkAtualizarCEST.TabIndex = 72;
+            // 
+            // lkbPerfilPisCofins
+            // 
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(605, 27);
+            this.lkbPerfilPisCofins.Lookup = null;
+            this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
+            this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
+            this.lkbPerfilPisCofins.SubForm = null;
+            this.lkbPerfilPisCofins.SubFormType = null;
+            this.lkbPerfilPisCofins.SubFormTypeParams = null;
+            this.lkbPerfilPisCofins.TabIndex = 77;
+            this.lkbPerfilPisCofins.TabStop = false;
+            this.lkbPerfilPisCofins.Text = "...";
+            // 
+            // lkpPerfilPisCofins
+            // 
+            this.lkpPerfilPisCofins.ButtonLookup = this.lkbPerfilPisCofins;
+            this.lkpPerfilPisCofins.CamposPesquisa = new string[] {
+        "Nome",
+        "Codigo"};
+            this.lkpPerfilPisCofins.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesAND")));
+            this.lkpPerfilPisCofins.CamposRestricoesNOT = null;
+            this.lkpPerfilPisCofins.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpPerfilPisCofins.CamposRestricoesOR")));
+            this.lkpPerfilPisCofins.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpPerfilPisCofins.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpPerfilPisCofins.ContextoLinq = null;
+            this.lkpPerfilPisCofins.CwkFuncaoValidacao = null;
+            this.lkpPerfilPisCofins.CwkMascara = null;
+            this.lkpPerfilPisCofins.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpPerfilPisCofins.Exemplo = null;
+            this.lkpPerfilPisCofins.ID = 0;
+            this.lkpPerfilPisCofins.Join = null;
+            this.lkpPerfilPisCofins.Key = System.Windows.Forms.Keys.F5;
+            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(421, 27);
+            this.lkpPerfilPisCofins.Name = "lkpPerfilPisCofins";
+            this.lkpPerfilPisCofins.OnIDChanged = null;
+            this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpPerfilPisCofins.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpPerfilPisCofins.SelecionarTextoOnEnter = true;
+            this.lkpPerfilPisCofins.Size = new System.Drawing.Size(178, 20);
+            this.lkpPerfilPisCofins.Tabela = null;
+            this.lkpPerfilPisCofins.TabIndex = 76;
+            this.lkpPerfilPisCofins.TituloTelaPesquisa = null;
+            this.lkpPerfilPisCofins.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpPerfilPisCofins.Where = null;
+            // 
+            // chkAtualizarPisCofins
+            // 
+            this.chkAtualizarPisCofins.Location = new System.Drawing.Point(310, 27);
+            this.chkAtualizarPisCofins.Name = "chkAtualizarPisCofins";
+            this.chkAtualizarPisCofins.Properties.Caption = "Perfil PIS/COFINS:";
+            this.chkAtualizarPisCofins.Size = new System.Drawing.Size(116, 19);
+            this.chkAtualizarPisCofins.TabIndex = 75;
+            // 
+            // lkbNaturezaReceita
+            // 
+            this.lkbNaturezaReceita.Location = new System.Drawing.Point(605, 62);
+            this.lkbNaturezaReceita.Lookup = null;
+            this.lkbNaturezaReceita.Name = "lkbNaturezaReceita";
+            this.lkbNaturezaReceita.Size = new System.Drawing.Size(24, 20);
+            this.lkbNaturezaReceita.SubForm = null;
+            this.lkbNaturezaReceita.SubFormType = null;
+            this.lkbNaturezaReceita.SubFormTypeParams = null;
+            this.lkbNaturezaReceita.TabIndex = 80;
+            this.lkbNaturezaReceita.TabStop = false;
+            this.lkbNaturezaReceita.Text = "...";
+            // 
+            // lkpNaturezaReceita
+            // 
+            this.lkpNaturezaReceita.ButtonLookup = this.lkbNaturezaReceita;
+            this.lkpNaturezaReceita.CamposPesquisa = new string[] {
+        "Nome",
+        "Codigo"};
+            this.lkpNaturezaReceita.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNaturezaReceita.CamposRestricoesAND")));
+            this.lkpNaturezaReceita.CamposRestricoesNOT = null;
+            this.lkpNaturezaReceita.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNaturezaReceita.CamposRestricoesOR")));
+            this.lkpNaturezaReceita.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpNaturezaReceita.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpNaturezaReceita.ContextoLinq = null;
+            this.lkpNaturezaReceita.CwkFuncaoValidacao = null;
+            this.lkpNaturezaReceita.CwkMascara = null;
+            this.lkpNaturezaReceita.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpNaturezaReceita.Exemplo = null;
+            this.lkpNaturezaReceita.ID = 0;
+            this.lkpNaturezaReceita.Join = null;
+            this.lkpNaturezaReceita.Key = System.Windows.Forms.Keys.F5;
+            this.lkpNaturezaReceita.Location = new System.Drawing.Point(421, 62);
+            this.lkpNaturezaReceita.Name = "lkpNaturezaReceita";
+            this.lkpNaturezaReceita.OnIDChanged = null;
+            this.lkpNaturezaReceita.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpNaturezaReceita.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpNaturezaReceita.SelecionarTextoOnEnter = true;
+            this.lkpNaturezaReceita.Size = new System.Drawing.Size(178, 20);
+            this.lkpNaturezaReceita.Tabela = null;
+            this.lkpNaturezaReceita.TabIndex = 79;
+            this.lkpNaturezaReceita.TituloTelaPesquisa = null;
+            this.lkpNaturezaReceita.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpNaturezaReceita.Where = null;
+            // 
+            // chkAtualizarNatureza
+            // 
+            this.chkAtualizarNatureza.Location = new System.Drawing.Point(310, 62);
+            this.chkAtualizarNatureza.Name = "chkAtualizarNatureza";
+            this.chkAtualizarNatureza.Properties.Caption = "Natureza Receita:";
+            this.chkAtualizarNatureza.Size = new System.Drawing.Size(116, 19);
+            this.chkAtualizarNatureza.TabIndex = 78;
+            // 
+            // lkbClassificacaoFiscal
+            // 
+            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(959, 27);
+            this.lkbClassificacaoFiscal.Lookup = null;
+            this.lkbClassificacaoFiscal.Name = "lkbClassificacaoFiscal";
+            this.lkbClassificacaoFiscal.Size = new System.Drawing.Size(24, 20);
+            this.lkbClassificacaoFiscal.SubForm = null;
+            this.lkbClassificacaoFiscal.SubFormType = null;
+            this.lkbClassificacaoFiscal.SubFormTypeParams = null;
+            this.lkbClassificacaoFiscal.TabIndex = 83;
+            this.lkbClassificacaoFiscal.TabStop = false;
+            this.lkbClassificacaoFiscal.Text = "...";
+            // 
+            // lkpClassificacaoFiscal
+            // 
+            this.lkpClassificacaoFiscal.ButtonLookup = this.lkbClassificacaoFiscal;
+            this.lkpClassificacaoFiscal.CamposPesquisa = new string[] {
+        "Nome",
+        "Codigo"};
+            this.lkpClassificacaoFiscal.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesAND")));
+            this.lkpClassificacaoFiscal.CamposRestricoesNOT = null;
+            this.lkpClassificacaoFiscal.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpClassificacaoFiscal.CamposRestricoesOR")));
+            this.lkpClassificacaoFiscal.ColunaDescricao = new string[] {
+        "Nome",
+        "Código",
+        null,
+        null,
+        null};
+            this.lkpClassificacaoFiscal.ColunaTamanho = new string[] {
+        "50",
+        "20",
+        null,
+        null,
+        null};
+            this.lkpClassificacaoFiscal.ContextoLinq = null;
+            this.lkpClassificacaoFiscal.CwkFuncaoValidacao = null;
+            this.lkpClassificacaoFiscal.CwkMascara = null;
+            this.lkpClassificacaoFiscal.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
+            this.lkpClassificacaoFiscal.Exemplo = null;
+            this.lkpClassificacaoFiscal.ID = 0;
+            this.lkpClassificacaoFiscal.Join = null;
+            this.lkpClassificacaoFiscal.Key = System.Windows.Forms.Keys.F5;
+            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(775, 27);
+            this.lkpClassificacaoFiscal.Name = "lkpClassificacaoFiscal";
+            this.lkpClassificacaoFiscal.OnIDChanged = null;
+            this.lkpClassificacaoFiscal.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lkpClassificacaoFiscal.Properties.Appearance.Options.UseBackColor = true;
+            this.lkpClassificacaoFiscal.SelecionarTextoOnEnter = true;
+            this.lkpClassificacaoFiscal.Size = new System.Drawing.Size(178, 20);
+            this.lkpClassificacaoFiscal.Tabela = null;
+            this.lkpClassificacaoFiscal.TabIndex = 82;
+            this.lkpClassificacaoFiscal.TituloTelaPesquisa = null;
+            this.lkpClassificacaoFiscal.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpClassificacaoFiscal.Where = null;
+            // 
+            // chkAtualizarClassificacaoFiscal
+            // 
+            this.chkAtualizarClassificacaoFiscal.Location = new System.Drawing.Point(653, 27);
+            this.chkAtualizarClassificacaoFiscal.Name = "chkAtualizarClassificacaoFiscal";
+            this.chkAtualizarClassificacaoFiscal.Properties.Caption = "Classificação Fiscal:";
+            this.chkAtualizarClassificacaoFiscal.Size = new System.Drawing.Size(116, 19);
+            this.chkAtualizarClassificacaoFiscal.TabIndex = 81;
             // 
             // FormAtualizaProdutosPreçoBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 566);
-            this.Controls.Add(this.checkEdit1);
+            this.ClientSize = new System.Drawing.Size(1181, 627);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnlkpFornecedor);
             this.Controls.Add(this.lkpFornecedor);
@@ -647,7 +1018,7 @@ namespace Aplicacao.Utilitarios
             this.Controls.Add(this.sbFechar);
             this.Name = "FormAtualizaProdutosPreçoBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tabela de Atualização de Preço Base de Produtos";
+            this.Text = "Atualização de Preço Base e Campos em Lote";
             ((System.ComponentModel.ISupportInitialize)(this.gcAtualizaPrecoBaseProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAtualizaPrecoBaseProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -670,7 +1041,18 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chbbTodos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupo1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpFornecedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarNCM.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarPisCofins.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpNaturezaReceita.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarNatureza.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarClassificacaoFiscal.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,6 +1097,22 @@ namespace Aplicacao.Utilitarios
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoReferencia;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit chkAtualizarNCM;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbNCM;
+        private Cwork.Utilitarios.Componentes.Lookup lkpNCM;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbNaturezaReceita;
+        private Cwork.Utilitarios.Componentes.Lookup lkpNaturezaReceita;
+        private DevExpress.XtraEditors.CheckEdit chkAtualizarNatureza;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbPerfilPisCofins;
+        private Cwork.Utilitarios.Componentes.Lookup lkpPerfilPisCofins;
+        private DevExpress.XtraEditors.CheckEdit chkAtualizarPisCofins;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbCEST;
+        private Cwork.Utilitarios.Componentes.Lookup lkpCEST;
+        private DevExpress.XtraEditors.CheckEdit chkAtualizarCEST;
+        private Cwork.Utilitarios.Componentes.LookupButton lkbClassificacaoFiscal;
+        private Cwork.Utilitarios.Componentes.Lookup lkpClassificacaoFiscal;
+        private DevExpress.XtraEditors.CheckEdit chkAtualizarClassificacaoFiscal;
     }
 }

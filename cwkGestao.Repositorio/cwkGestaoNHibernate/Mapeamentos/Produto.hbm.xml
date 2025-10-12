@@ -136,8 +136,8 @@
 		<many-to-one name="PerfilPisCofins" column="IDPerfilPisCofins" class="PerfilPisCofins" lazy = "false"/>
 		<!--<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" property-ref="ID" lazy = "false" not-found="ignore" insert="false" update="false"/>-->
 		<many-to-one name="TabelaNCM" column="ID_NCM" class="NCM" lazy = "false" not-found="ignore" insert="false" update="false"/>
-		<many-to-one name="CEST" column="IdCest" class="CEST" lazy = "false"/>
-
+		<property name="CEST" column="CEST" type="string" length="10" />
+		
 		<bag name="LogAlteracaoPedidoItens" table="LogAlteracaoPedidoItem" inverse="true" cascade="all-delete-orphan" lazy="false" >
 			<key column="IDProduto" />
 			<one-to-many class="LogAlteracaoPedidoItem" />

@@ -244,9 +244,6 @@ namespace cwkGestao.Modelo
         private ClassificacaoFiscal _ClassificacaoFiscal;
         public virtual ClassificacaoFiscal ClassificacaoFiscal { get { return _ClassificacaoFiscal; } set { _ClassificacaoFiscal = value; } }
 
-        private CEST _cest;
-        public virtual CEST CEST { get { return _cest; } set { _cest = value; } }
-
         private PerfilPisCofins _PerfilPisCofins;
         public virtual PerfilPisCofins PerfilPisCofins { get { return _PerfilPisCofins; } set { _PerfilPisCofins = value; } }
 
@@ -444,6 +441,10 @@ namespace cwkGestao.Modelo
         private string _NCM;
         [InformacaoExibicao(9, "NCM", 80)]
         public virtual string NCM { get { return _NCM; } set { _NCM = value; } }
+
+        private string _CEST;
+        [InformacaoExibicao(9, "CEST", 80)]
+        public virtual string CEST { get { return _CEST; } set { _CEST = value; } }
 
         private int _ID_NCM;
         public virtual int ID_NCM { get { return _ID_NCM; } set { _ID_NCM = value; } }

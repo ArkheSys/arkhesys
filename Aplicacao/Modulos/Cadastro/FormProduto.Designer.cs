@@ -70,7 +70,7 @@
             this.lkpPlanoContaEstoque = new Cwork.Utilitarios.Componentes.Lookup();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.tabImpostoDentroEstado = new DevExpress.XtraTab.XtraTabPage();
-            this.lkpCEST = new Cwork.Utilitarios.Componentes.Lookup();
+            this.txtCEST = new Cwork.Utilitarios.Componentes.Lookup();
             this.lkbCEST = new Cwork.Utilitarios.Componentes.LookupButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lbPerfilPisCofins = new DevExpress.XtraEditors.LabelControl();
@@ -527,7 +527,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpGrupoEstoque.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).BeginInit();
             this.tabImpostoDentroEstado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCEST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).BeginInit();
@@ -1433,7 +1433,7 @@
             // 
             // tabImpostoDentroEstado
             // 
-            this.tabImpostoDentroEstado.Controls.Add(this.lkpCEST);
+            this.tabImpostoDentroEstado.Controls.Add(this.txtCEST);
             this.tabImpostoDentroEstado.Controls.Add(this.labelControl4);
             this.tabImpostoDentroEstado.Controls.Add(this.lkbCEST);
             this.tabImpostoDentroEstado.Controls.Add(this.lbPerfilPisCofins);
@@ -1456,48 +1456,48 @@
             this.tabImpostoDentroEstado.Size = new System.Drawing.Size(681, 642);
             this.tabImpostoDentroEstado.Text = "Tributação";
             // 
-            // lkpCEST
+            // txtCEST
             // 
-            this.lkpCEST.ButtonLookup = this.lkbCEST;
-            this.lkpCEST.CamposPesquisa = new string[] {
-        "ID",
+            this.txtCEST.ButtonLookup = this.lkbCEST;
+            this.txtCEST.CamposPesquisa = new string[] {
         "Codigo",
-        "Descricao"};
-            this.lkpCEST.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesAND")));
-            this.lkpCEST.CamposRestricoesNOT = null;
-            this.lkpCEST.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpCEST.CamposRestricoesOR")));
-            this.lkpCEST.ColunaDescricao = new string[] {
-        "ID",
+        "Descricao",
+        "NCM"};
+            this.txtCEST.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("txtCEST.CamposRestricoesAND")));
+            this.txtCEST.CamposRestricoesNOT = null;
+            this.txtCEST.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("txtCEST.CamposRestricoesOR")));
+            this.txtCEST.ColunaDescricao = new string[] {
         "Código",
         "Descrição",
-        null,
+        "NCM",
+        "",
         null};
-            this.lkpCEST.ColunaTamanho = new string[] {
+            this.txtCEST.ColunaTamanho = new string[] {
         "10",
         "50",
         "20",
-        null,
+        "",
         null};
-            this.lkpCEST.ContextoLinq = null;
-            this.lkpCEST.CwkFuncaoValidacao = null;
-            this.lkpCEST.CwkMascara = null;
-            this.lkpCEST.CwkValidacao = null;
-            this.lkpCEST.Exemplo = null;
-            this.lkpCEST.ID = 0;
-            this.lkpCEST.Join = null;
-            this.lkpCEST.Key = System.Windows.Forms.Keys.F5;
-            this.lkpCEST.Location = new System.Drawing.Point(116, 35);
-            this.lkpCEST.Name = "lkpCEST";
-            this.lkpCEST.OnIDChanged = null;
-            this.lkpCEST.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lkpCEST.Properties.Appearance.Options.UseBackColor = true;
-            this.lkpCEST.SelecionarTextoOnEnter = true;
-            this.lkpCEST.Size = new System.Drawing.Size(509, 20);
-            this.lkpCEST.Tabela = null;
-            this.lkpCEST.TabIndex = 115;
-            this.lkpCEST.TituloTelaPesquisa = null;
-            this.lkpCEST.ToolTip = "Campos pesquisados: ID, Codigo, Descricao.";
-            this.lkpCEST.Where = null;
+            this.txtCEST.ContextoLinq = null;
+            this.txtCEST.CwkFuncaoValidacao = null;
+            this.txtCEST.CwkMascara = null;
+            this.txtCEST.CwkValidacao = null;
+            this.txtCEST.Exemplo = null;
+            this.txtCEST.ID = 0;
+            this.txtCEST.Join = null;
+            this.txtCEST.Key = System.Windows.Forms.Keys.None;
+            this.txtCEST.Location = new System.Drawing.Point(116, 35);
+            this.txtCEST.Name = "txtCEST";
+            this.txtCEST.OnIDChanged = null;
+            this.txtCEST.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtCEST.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCEST.SelecionarTextoOnEnter = true;
+            this.txtCEST.Size = new System.Drawing.Size(509, 20);
+            this.txtCEST.Tabela = null;
+            this.txtCEST.TabIndex = 115;
+            this.txtCEST.TituloTelaPesquisa = null;
+            this.txtCEST.ToolTip = "Campos pesquisados: ID, Codigo, Descricao.";
+            this.txtCEST.Where = null;
             // 
             // lkbCEST
             // 
@@ -8785,7 +8785,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkpPlanoContaEstoque.Properties)).EndInit();
             this.tabImpostoDentroEstado.ResumeLayout(false);
             this.tabImpostoDentroEstado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCEST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpClassificacaoFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeSaiNaturezaReceita.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpPerfilPisCofins.Properties)).EndInit();
@@ -9498,7 +9498,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl39;
         private Cwork.Utilitarios.Componentes.DevComboBoxEdit cbeEscRelevante;
         private DevExpress.XtraEditors.LabelControl labelControl38;
-        private Cwork.Utilitarios.Componentes.Lookup lkpCEST;
+        private Cwork.Utilitarios.Componentes.Lookup txtCEST;
         private Cwork.Utilitarios.Componentes.LookupButton lkbCEST;
         private DevExpress.XtraEditors.LabelControl labelControl4;
     }

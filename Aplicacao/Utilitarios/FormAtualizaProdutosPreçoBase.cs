@@ -111,5 +111,15 @@ namespace Aplicacao.Utilitarios
         {
             AtualizarFiltros();
         }
+
+        private void chkAtualizarNCM_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lookupButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

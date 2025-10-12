@@ -110,7 +110,7 @@ namespace Aplicacao
 
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
-            lkpCEST.Exemplo = new CEST();
+            txtCEST.Exemplo = new CEST();
 
 
             FormataGrupos();
@@ -227,7 +227,24 @@ namespace Aplicacao
             CarregarAnexos();
             AdicionarTabelasDePreco();
 
+            txtCEST.EditValue = null;
+            if (!string.IsNullOrEmpty(Selecionado.CEST) && !string.IsNullOrEmpty(Selecionado.NCM))
+            {
+                try
+                {
+                    var oCest = CESTController.Instancia.GetAll()
+                                .FirstOrDefault(c => c.Codigo == Selecionado.CEST && c.NCM == Selecionado.NCM);
 
+                    if (oCest != null)
+                    {
+                        txtCEST.EditValue = oCest;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao carregar o CEST do produto: " + ex.Message);
+                }
+            }
             chbIntegrarEcommerce.Checked = Selecionado.IntegrarEcommerce == 1;
 
             txtcProdANP.Text = Selecionado.cProdANP;
@@ -404,6 +421,14 @@ namespace Aplicacao
             Selecionado.descANP = txtdescANP.Text;
             Selecionado.UFCons = txtUFCons.Text;
 
+            if(txtCEST.Selecionado is CEST cestSelecionado)
+            {
+                Selecionado.CEST = cestSelecionado.Codigo;
+            }
+            else
+            {
+               Selecionado.CEST = null;
+            }
             Selecionado.Aplicacao = txtAplicacao.Text;
             Selecionado.CodigoFabricante = txtCodigoFabricante.Text;
             Selecionado.CodigoOriginal = txtCodigoOriginal.Text;
@@ -1641,7 +1666,6 @@ namespace Aplicacao
 
             Selecionado.CaminhoImagem = caminhoImagem.IsNotNullOrEmpty() ? caminhoImagem : "";
             SalvarArquivos();
-            Selecionado.CEST = lkpCEST.Tag as CEST;
 
             base.sbGravar_Click(sender, e);
         }
@@ -2142,30 +2166,9 @@ namespace Aplicacao
 
         private void lkbCEST_Click(object sender, EventArgs e)
         {
-            var ncmSelecionado = txtID_NCM.EditValue as NCM;
-            if (ncmSelecionado == null && txtID_NCM.EditValue is int)
-            {
-                int idNcm = (int)txtID_NCM.EditValue;
-                if (idNcm > 0)
-                    ncmSelecionado = NCMController.Instancia.LoadObjectById(idNcm);
-            }
+            var todosOsCests = CESTController.Instancia.GetAll();
 
-            if (ncmSelecionado == null || ncmSelecionado.ID == 0)
-            {
-                MessageBox.Show("Por favor, selecione um NCM para o produto antes de escolher o CEST.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNCM.Focus();
-                return;
-            }
-
-            var cestsFiltrados = ncmSelecionado.CestsVinculados.Select(vinculo => vinculo.CEST).ToList();
-
-            if (!cestsFiltrados.Any())
-            {
-                MessageBox.Show("O NCM selecionado não possui nenhum CEST vinculado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            LookupUtil.GridLookup<CEST>(lkpCEST, typeof(FormCEST), cestsFiltrados);
+            LookupUtil.GridLookup<CEST>(txtCEST, typeof(FormCEST), todosOsCests);
         }
     }
 
