@@ -690,7 +690,7 @@ namespace cwkGestao.Negocio.Faturamento
             try
             {
                 ncm = NCMController.Instancia.LoadObjectById(notaItem.Produto.ID_NCM);
-                notaItem.Cest = ncm.Cest;
+                notaItem.Cest = notaItem.Produto.CEST;
             }
             catch (Exception)
             {

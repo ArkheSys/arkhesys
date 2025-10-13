@@ -192,8 +192,6 @@ namespace Aplicacao.Utilitarios
                             Codigo = NCMController.Instancia.MaxCodigo(),
                             Ncm = item[4].ToString().TrimCk(),
                             Descricao = item[4].ToString().TrimCk(),
-                            EnqGeral = enquadracaoIpi,
-                            Cest = item[5].ToString()
                         },
                         Acao.Incluir
                     );
@@ -202,7 +200,6 @@ namespace Aplicacao.Utilitarios
                 }
                 else
                 {
-                    ncm.Cest = item[5].ToString();
                     NCMController.Instancia.Salvar(ncm, Acao.Alterar);
                 }
 

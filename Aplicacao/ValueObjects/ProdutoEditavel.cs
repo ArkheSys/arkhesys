@@ -196,7 +196,7 @@ namespace Aplicacao.ValueObjects
                 var valorOriginal = (ProdutoController.Instancia.getPreco(produto.PrecoBase, tabelaPrecoProduto.MargemLucro, tabelaPrecoProduto.PAcrescimo, tabelaPrecoProduto.PDesconto, TipoPrecoType.Normal));
                 donoProduto.ValorOriginal = Condicao.CalculaVariacao(valorOriginal);
 
-                if (ConfiguracaoController.Instancia.GetConfiguracao().NaoSomarIpiTotalNota == 1)
+                /*if (ConfiguracaoController.Instancia.GetConfiguracao().NaoSomarIpiTotalNota == 1)
                 {
                     //Tive que copiar aqui, por uma questão de sequência de eventos.
                     try
@@ -208,7 +208,7 @@ namespace Aplicacao.ValueObjects
                     catch (Exception)
                     {
                     }
-                }
+                }*/
 
                 donoProduto.Valor = donoProduto.ValorOriginal;
                 donoProduto.DescontoPerc = 0m;

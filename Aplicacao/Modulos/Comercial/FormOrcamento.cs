@@ -680,7 +680,7 @@ namespace Aplicacao
                     try
                     {
                         NCM ncm = NCMController.Instancia.LoadObjectById(item.Produto.ID_NCM);
-                        item.Produto.AliquotaIPI = item.Produto.AliquotaIPI == 0 ? ncm.Ipi : item.Produto.AliquotaIPI;
+                        //item.Produto.AliquotaIPI = item.Produto.AliquotaIPI == 0 ? ncm.Ipi : item.Produto.AliquotaIPI;
                     }
                     catch (Exception)
                     {

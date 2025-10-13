@@ -151,12 +151,12 @@ namespace Aplicacao
                     if (pessoa != null)
                         Item.Produto.Fornecedor = pessoa;
 
-                    if (NCM != null)
+                    /*if (NCM != null)
                     {
                         Item.Produto.ID_NCM = NCM.ID;
                         if (objCfg.CodigoEnquadramentoIPI.HasValue)
                             NCM.EnqGeral = objCfg.CodigoEnquadramentoIPI.Value;
-                    }
+                    }*/
 
                     /* A unidade de medida de entrada deve ser a que vem da NFe de importação, caso não exista pela sigla, vem de configurações. */
                     var UnidadeEncontrada = string.IsNullOrEmpty(Item.UnidadeEntradaSigla) ? null : UnidadesMedidas.FirstOrDefault(o => o.Sigla.ToUpper() == Item.UnidadeEntradaSigla.ToUpper());
@@ -348,7 +348,7 @@ namespace Aplicacao
                             Codigo = NCMController.Instancia.MaxCodigo(),
                             Ncm = item.Ncm,
                             Descricao = item.Ncm,
-                            EnqGeral = ConfiguracaoController.Instancia.GetConfiguracao().CodigoEnquadramentoIPI ?? 999
+                            //EnqGeral = ConfiguracaoController.Instancia.GetConfiguracao().CodigoEnquadramentoIPI ?? 999
                         }, Acao.Incluir);
 
                     item.Produto.Codigo = ProdutoController.Instancia.MaxCodigo() + "";

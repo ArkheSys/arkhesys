@@ -7,14 +7,14 @@
 		<property name="Codigo" column="Codigo" type="Int32" />
 		<property name="Ncm" column="Ncm" type="string" length="8" />
 		<property name="AliqCupom" column="AliqCupom" type="string" length="50" />
-		<property name="Ipi" column="Ipi" type="decimal"/>
+		<!--<property name="Ipi" column="Ipi" type="decimal"/>
 		<property name="Pis" column="Pis" type="decimal"/>
 		<property name="Cofins" column="Cofins" type="decimal"/>
 		<property name="CST_Ipi" column="CST_Ipi" type="int"/>
 		<property name="CST_Pis" column="CST_Pis" type="int"/>
 		<property name="CST_Cofins" column="CST_Cofins" type="int"/>
 		<property name="EnqGeral" column="EnqGeral" type="int"/>
-		<property name="Cest" column="Cest" type="string" length="7" />
+		<property name="Cest" column="Cest" type="string" length="7" />!-->
 
 		<property name="NacionalFederal" column="NacionalFederal" type="decimal"/>
 		<property name="ImportadosFederal" column="ImportadosFederal" type="decimal"/>

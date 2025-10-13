@@ -624,7 +624,7 @@ namespace Aplicacao
                     StringBuilder erro = new StringBuilder();
                     //validação verificando se a movimentação é de cupom, se sim nenhum produto pode estar com a AliqCupom vazia.
                     //se tiver vazia e retornado um erro ao usuário informando os produtos e o porque ocorreu o erro.
-                    if (((TipoNota)lkpTipoMovimentacao.Selecionado).ModeloDocto == TipoNota.ModeloDocumento.CupomFiscal)
+                    /*if (((TipoNota)lkpTipoMovimentacao.Selecionado).ModeloDocto == TipoNota.ModeloDocumento.CupomFiscal)
                     {
                         IList<Produto> listProd = new List<Produto>();
 
@@ -649,7 +649,7 @@ namespace Aplicacao
 
                         MessageBox.Show(erro.ToString(), "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
-                    }
+                    }*/
 
                     IList<FinanceiroParcela> financeiroParcelas = TransformaListaParcelas(Parcelas);
 
@@ -912,7 +912,7 @@ namespace Aplicacao
                         if (objNota.Pessoa.BContribuinte)
                         {
 
-                            if (String.IsNullOrEmpty(item.AliqCupom))
+                            /*if (String.IsNullOrEmpty(item.AliqCupom))
                             {
                                 if (ncm != null)
                                 {
@@ -959,7 +959,7 @@ namespace Aplicacao
                                     podeImprimir = false;
                                 }
 
-                            }
+                            }*/
                         }
                     }
                     if (podeImprimir)

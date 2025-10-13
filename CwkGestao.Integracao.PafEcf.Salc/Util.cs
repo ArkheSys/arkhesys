@@ -185,7 +185,7 @@ namespace CwkGestao.Integracao.PafEcf.Salc
                 row += PreparaCampo(p.Produto.Unidade.Sigla, 5, ' ');
                 row += PreparaCampo("", 15, ' '); // Referência => referência poderá ser utilizada pelo funcionário para busca de produtos.  
                 row += PreparaCampo(valorP, 12, '0'); // Preço unitário de venda.
-                row += PreparaCampo(NCMController.Instancia.LoadObjectById(p.Produto.ID_NCM).AliqCupom, 2, '0'); // Código do tributo. 
+                //row += PreparaCampo(NCMController.Instancia.LoadObjectById(p.Produto.ID_NCM).AliqCupom, 2, '0'); // Código do tributo. 
                 row += PreparaCampo(p.Produto.Barra != null ? p.Produto.Barra.Length > 13 ? p.Produto.Barra.Substring(0, 12) : p.Produto.Barra : "", 13, '0'); // Código de barras.
                 row += PreparaCampo("S", 1, ' '); // Situação. Ativo ou Inativo.
                 row += PreparaCampo("S", 1, ' '); // Aceita desconto ou acrescimo após o registro de um item no cupom

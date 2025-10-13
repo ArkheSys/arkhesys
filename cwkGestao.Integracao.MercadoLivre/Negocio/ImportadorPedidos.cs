@@ -79,7 +79,7 @@ namespace cwkGestao.Integracao.MercadoLivre.Negocio
                                 try
                                 {
                                     NCM ncm = NCMController.Instancia.LoadObjectById(pItem.Produto.ID_NCM);
-                                    pItem.AliquotaIPI = pItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pItem.Produto.AliquotaIPI;
+                                    //pItem.AliquotaIPI = pItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pItem.Produto.AliquotaIPI;
                                 }
                                 catch (Exception)
                                 {
@@ -141,7 +141,7 @@ namespace cwkGestao.Integracao.MercadoLivre.Negocio
                     try
                     {
                         NCM ncm = NCMController.Instancia.LoadObjectById(pItem.Produto.ID_NCM);
-                        pItem.AliquotaIPI = pItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pItem.Produto.AliquotaIPI;
+                        //pItem.AliquotaIPI = pItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pItem.Produto.AliquotaIPI;
                     }
                     catch (Exception)
                     {

@@ -330,7 +330,7 @@ namespace cwkGestao.Integracao.SISeCommerce.Util
                     try
                     {
                         NCM ncm = NCMController.Instancia.LoadObjectById(pedidoItem.Produto.ID_NCM);
-                        pedidoItem.AliquotaIPI = pedidoItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pedidoItem.Produto.AliquotaIPI;
+                        //pedidoItem.AliquotaIPI = pedidoItem.Produto.AliquotaIPI == 0 ? ncm.Ipi : pedidoItem.Produto.AliquotaIPI;
                     }
                     catch (Exception)
                     {

@@ -227,24 +227,6 @@ namespace Aplicacao
             CarregarAnexos();
             AdicionarTabelasDePreco();
 
-            txtCEST.EditValue = null;
-            if (!string.IsNullOrEmpty(Selecionado.CEST) && !string.IsNullOrEmpty(Selecionado.NCM))
-            {
-                try
-                {
-                    var oCest = CESTController.Instancia.GetAll()
-                                .FirstOrDefault(c => c.Codigo == Selecionado.CEST && c.NCM == Selecionado.NCM);
-
-                    if (oCest != null)
-                    {
-                        txtCEST.EditValue = oCest;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Erro ao carregar o CEST do produto: " + ex.Message);
-                }
-            }
             chbIntegrarEcommerce.Checked = Selecionado.IntegrarEcommerce == 1;
 
             txtcProdANP.Text = Selecionado.cProdANP;
@@ -259,6 +241,26 @@ namespace Aplicacao
             txtDataPromocionalFinal.EditValue = Selecionado.DataPromocionalFinal;
 
             txtCProd.Text = Selecionado.CodigoReferencia;
+
+            txtCEST.EditValue = null;
+            if (!string.IsNullOrEmpty(Selecionado.CEST))
+            {
+                try
+                {
+                    // Use a versão robusta com .Trim() para garantir
+                    var oCest = CESTController.Instancia.GetAll()
+                                .FirstOrDefault(c => c.Codigo.Trim().Equals(Selecionado.CEST.Trim()));
+
+                    if (oCest != null)
+                    {
+                        txtCEST.EditValue = oCest;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao carregar o CEST do produto: " + ex.Message);
+                }
+            }
         }
 
         private void AdicionarTabelasDePreco()

@@ -21,7 +21,6 @@ namespace Aplicacao.Modulos.Rel
 
             dt.Columns.Add("CODIGO");
             dt.Columns.Add("NOME");
-            dt.Columns.Add("CEST");
             dt.Columns.Add("REVOGACAO");
 
             var Todos = string.IsNullOrEmpty(inicial) && string.IsNullOrEmpty(final);
@@ -48,7 +47,6 @@ namespace Aplicacao.Modulos.Rel
                 var dr = dt.NewRow();
                 dr["CODIGO"] = ncm.Ncm;
                 dr["NOME"] = ncm.Descricao;
-                dr["CEST"] = ncm.Cest;
                 dr["REVOGACAO"] = ncm.DtRevogacao?.ToString("dd/MM/yyyy");
                 dt.Rows.Add(dr);
             }

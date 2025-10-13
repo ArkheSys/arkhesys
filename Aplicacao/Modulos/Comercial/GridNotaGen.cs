@@ -832,7 +832,7 @@ namespace Aplicacao
                                     var ncm =
                                             NCMController.Instancia.GetAll().Where(s => s.Ncm == item.Produto.NCM).FirstOrDefault();
 
-                                    if (String.IsNullOrEmpty(item.AliqCupom))
+                                    /*if (String.IsNullOrEmpty(item.AliqCupom))
                                     {
                                         if (ncm != null)
                                         {
@@ -853,7 +853,7 @@ namespace Aplicacao
                                                    + " não possui Configuração de tributação de contribuinte");
                                             podeImprimir = false;
                                         }
-                                    }
+                                    }*/
                                 }
                                 if (podeImprimir)
                                 {

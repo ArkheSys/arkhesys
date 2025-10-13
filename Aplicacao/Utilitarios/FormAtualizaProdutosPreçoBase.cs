@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
+using Aplicacao.Util;
+using Aplicacao.Modulos.Tributacao;
 using cwkGestao.Modelo;
 using cwkGestao.Negocio;
+using cwkGestao.Negocio.Padroes;
 
 namespace Aplicacao.Utilitarios
 {
@@ -22,6 +24,21 @@ namespace Aplicacao.Utilitarios
             lkpFornecedor.Sessao = PessoaController.Instancia.getSession();
             lkpFornecedor.Exemplo = new Pessoa() { BFornecedor = true };
             lkpFornecedor.CamposRestricoesAND = new List<String>() { "bFornecedor" };
+
+            lkpNCM.Sessao = NCMController.Instancia.getSession();
+            lkpNCM.Exemplo = new NCM();
+
+            lkpCEST.Sessao = CESTController.Instancia.getSession();
+            lkpCEST.Exemplo = new CEST();
+
+            lkpPerfilPisCofins.Sessao = PerfilPisCofinsController.Instancia.getSession();
+            lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
+
+            lkpNaturezaReceita.Sessao = NaturezaOperacaoController.Instancia.getSession();
+            lkpNaturezaReceita.Exemplo = new NaturezaOperacao();
+
+            lkpClassificacaoFiscal.Sessao = ClassificacaoFiscalController.Instancia.getSession();
+            lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();          
 
             lkpGrupo1.Exemplo = new Grupo1();
             lkpGrupo1.Sessao = Grupo1Controller.Instancia.getSession();
@@ -117,9 +134,160 @@ namespace Aplicacao.Utilitarios
 
         }
 
-        private void lookupButton1_Click(object sender, EventArgs e)
+        private void lkbNCM_Click(object sender, EventArgs e)
         {
+            {
+                var TodosOsNCM = NCMController.Instancia.GetAll();
+                NCM NCMSelecionado = null;
 
+                int.TryParse(lkpNCM.EditValue?.ToString(), out var idSelecionado);
+                if (!idSelecionado.Equals(0))
+                    NCMSelecionado = TodosOsNCM.Where(o => o.ID == idSelecionado).FirstOrDefault();
+
+                var grid = new GridGenerica<NCM>(TodosOsNCM, new FormNCM(), NCMSelecionado, false);
+                grid.Selecionando = true;
+                if (cwkControleUsuario.Facade.ControleAcesso(grid))
+                    grid.ShowDialog();
+
+                if (grid.Selecionado != null)
+                {
+                    lkpNCM.EditValue = grid.Selecionado.Ncm;
+                }
+            }
+        }
+
+        private void lkbCEST_Click(object sender, EventArgs e)
+        {
+            var todosOsCests = CESTController.Instancia.GetAll();
+
+            LookupUtil.GridLookup<CEST>(lkpCEST, typeof(FormCEST), todosOsCests);
+        }
+
+        private void lkbPerfilPisCofins_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<PerfilPisCofins>(lkpPerfilPisCofins, typeof(FormPerfilPisCofins));
+        }
+
+        private void lkbClassificacaoFiscal_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<ClassificacaoFiscal>(lkpClassificacaoFiscal, typeof(FormClassificacaoFiscal));
+        }
+
+        private void lkbNaturezaReceita_Click(object sender, EventArgs e)
+        {
+            LookupUtil.GridLookup<NaturezaOperacao>(lkpNaturezaReceita, typeof(FormNaturezaOperacao));
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            AtualizarFiltros();
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            var produtosSelecionados = GetSelecionados();
+            if (produtosSelecionados.Count == 0)
+            {
+                MessageBox.Show("Nenhum produto selecionado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validação: Verifica se algum campo foi selecionado para atualização
+            if (!chkAtualizarNCM.Checked && !chkAtualizarCEST.Checked &&
+        !chkAtualizarPisCofins.Checked && !chkAtualizarClassificacaoFiscal.Checked && !chkAtualizarNatureza.Checked)
+            {
+                MessageBox.Show("Selecione pelo menos um campo para atualizar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Valida se os campos marcados foram preenchidos
+            
+            if (chkAtualizarNCM.Checked && lkpNCM.Selecionado == null)
+            {
+                MessageBox.Show("Selecione um NCM.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (chkAtualizarCEST.Checked && lkpCEST.Selecionado == null)
+            {
+                MessageBox.Show("Selecione um CEST.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (chkAtualizarPisCofins.Checked && lkpPerfilPisCofins.Selecionado == null)
+            {
+                MessageBox.Show("Selecione um Perfil PIS/COFINS.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (chkAtualizarClassificacaoFiscal.Checked && lkpClassificacaoFiscal.Selecionado == null)
+            {
+                MessageBox.Show("Selecione uma Classificação Fiscal.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (chkAtualizarNatureza.Checked && lkpNaturezaReceita.Selecionado == null)
+            {
+                MessageBox.Show("Selecione uma Natureza da Receita.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // --- FIM DA VALIDAÇÃO ---
+
+            string msg = $"Deseja atualizar os {produtosSelecionados.Count} produtos selecionados?\nEsta operação não pode ser desfeita.";
+            if (MessageBox.Show(this, msg, "CONFIRMAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            // Pega os valores dos campos UMA VEZ antes do loop para melhor performance
+            var novoNCM = lkpNCM.Selecionado as NCM;
+            var novoCEST = lkpCEST.Selecionado as CEST;
+            var novoPerfilPisCofins = lkpPerfilPisCofins.Selecionado as PerfilPisCofins;
+            var novaClassificacao = lkpClassificacaoFiscal.Selecionado as ClassificacaoFiscal;
+            var novaNatureza = lkpNaturezaReceita.Selecionado as NaturezaOperacao; // A classe é NaturezaOperacao
+
+            // --- TRANSAÇÃO PARA GARANTIR INTEGRIDADE ---
+            var session = ProdutoController.Instancia.getSession();
+            //var transacao = session.BeginTransaction();
+
+            try
+            {
+                foreach (var produtoDaGrid in produtosSelecionados)
+                {
+                    var produtoParaSalvar = ProdutoController.Instancia.LoadObjectById(produtoDaGrid.ID);
+
+                    if (chkAtualizarNCM.Checked)
+                    {
+                        produtoParaSalvar.TabelaNCM = novoNCM;
+                        produtoParaSalvar.NCM = novoNCM?.Ncm; // O campo NCM é a string com o código
+                    }
+                    if (chkAtualizarCEST.Checked)
+                    {
+                        //produtoParaSalvar.CEST = novoCEST;
+                    }
+                    if (chkAtualizarPisCofins.Checked)
+                    {
+                        produtoParaSalvar.PerfilPisCofins = novoPerfilPisCofins;
+                    }
+                    if (chkAtualizarClassificacaoFiscal.Checked)
+                    {
+                        produtoParaSalvar.ClassificacaoFiscal = novaClassificacao;
+                    }
+                    if (chkAtualizarNatureza.Checked)
+                    {
+                        // O campo no produto é uma string, então pegamos o código da Natureza
+                        //produtoParaSalvar.SaiNaturezaReceita = novaNatureza?.Codigo;
+                    }
+
+                    ProdutoController.Instancia.Salvar(produtoParaSalvar, Acao.Alterar);
+                }
+
+                //transacao.Commit();
+                MessageBox.Show("Produtos atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Recarrega os dados para refletir as alterações na tela
+                Produtos = ProdutoController.Instancia.GetAll();
+                AtualizarFiltros();
+            }
+            catch (Exception ex)
+            {
+                //transacao.Rollback();
+                MessageBox.Show("Ocorreu um erro ao atualizar os produtos.\n\nDetalhes: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

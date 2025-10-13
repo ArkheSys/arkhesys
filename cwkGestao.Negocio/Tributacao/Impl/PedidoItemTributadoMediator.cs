@@ -190,7 +190,7 @@ namespace cwkGestao.Negocio.Tributacao.Impl
                     }
                     else
                     {
-                        return ((pedidoItem.Valor + pedidoItem.RAT_Acrescimo + pedidoItem.RAT_Frete) * pedidoItem.Quantidade) * (ncm.Ipi / 100);
+                        return ((pedidoItem.Valor + pedidoItem.RAT_Acrescimo + pedidoItem.RAT_Frete) * pedidoItem.Quantidade); //* (ncm.Ipi / 100);
                     }
                 }
             }
