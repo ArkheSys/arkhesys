@@ -75,7 +75,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
                         , produto.DataValidade
                         , produto.CodigoFabricante
                         , produto.CodigoOriginal
-                        , produto.Aplicacao) 
+                        , produto.Aplicacao, produto.CEST) 
                         from Produto produto 
                     join produto.Unidade unidade 
                     left join produto.GrupoEstoque grupo
@@ -222,7 +222,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
         {
             using (var session = GetSession())
             {
-                string hql = @" select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada , produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef)
+                string hql = @" select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada , produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, produto.CEST)
                                from Produto produto 
                                left join produto.Unidade unidade 
                                left join produto.UnidadeEntrada unidadeEntrada 
@@ -330,7 +330,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
         {
             using (var session = GetSession())
             {
-                string hql = @"   select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef) 
+                string hql = @"   select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, produto.CEST) 
                                 from Produto produto 
                                 join produto.Unidade unidade 
                                 join produto.UnidadeEntrada unidadeEntrada
@@ -348,7 +348,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
         {
             using (var session = GetSession())
             {
-                string hql = @"   select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef) 
+                string hql = @"   select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, produto.CEST) 
                                 from Produto produto 
                                 join produto.Unidade unidade 
                                 join produto.UnidadeEntrada unidadeEntrada

@@ -97,7 +97,7 @@ namespace cwkGestao.Modelo
                     , string razao_fab, string cnpj_fab, string cbenef, decimal precoBase, string fornecedor
                     , DateTime? DtCadastroProduto = null, string codigoReferencia = ""  
                     , DateTime? dataValidade = null, string codigoFabricante = "", string codigoOriginal = ""
-                    , string aplicacao = "")
+                    , string aplicacao = "", string cest = "")
         {
             ID = id;
             Codigo = codigo;
@@ -132,6 +132,7 @@ namespace cwkGestao.Modelo
             CodigoFabricante = codigoFabricante;
             CodigoOriginal = codigoOriginal;
             Aplicacao = aplicacao;
+            this.CEST = cest;
         }
 
         public Produto(int id, string codigo, String nome, Unidade unidade, String barra
