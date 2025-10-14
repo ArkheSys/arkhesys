@@ -34,8 +34,8 @@ namespace Aplicacao.Utilitarios
             lkpPerfilPisCofins.Sessao = PerfilPisCofinsController.Instancia.getSession();
             lkpPerfilPisCofins.Exemplo = new PerfilPisCofins();
 
-            lkpNaturezaReceita.Sessao = NaturezaOperacaoController.Instancia.getSession();
-            lkpNaturezaReceita.Exemplo = new NaturezaOperacao();
+            lkpNaturezaReceita.Sessao = PisCofinsNaturezaOperacaoController.Instancia.getSession();
+            lkpNaturezaReceita.Exemplo = new PisCofinsNaturezaOperacao();
 
             lkpClassificacaoFiscal.Sessao = ClassificacaoFiscalController.Instancia.getSession();
             lkpClassificacaoFiscal.Exemplo = new ClassificacaoFiscal();          
@@ -151,7 +151,7 @@ namespace Aplicacao.Utilitarios
 
                 if (grid.Selecionado != null)
                 {
-                    lkpNCM.EditValue = grid.Selecionado.Ncm;
+                    lkpNCM.EditValue = grid.Selecionado;
                 }
             }
         }
@@ -175,7 +175,7 @@ namespace Aplicacao.Utilitarios
 
         private void lkbNaturezaReceita_Click(object sender, EventArgs e)
         {
-            LookupUtil.GridLookup<NaturezaOperacao>(lkpNaturezaReceita, typeof(FormNaturezaOperacao));
+            LookupUtil.GridLookup<PisCofinsNaturezaOperacao>(lkpNaturezaReceita, typeof(FormPisCofinsNaturezaOperacao));
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -227,20 +227,17 @@ namespace Aplicacao.Utilitarios
                 MessageBox.Show("Selecione uma Natureza da Receita.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // --- FIM DA VALIDAÇÃO ---
 
             string msg = $"Deseja atualizar os {produtosSelecionados.Count} produtos selecionados?\nEsta operação não pode ser desfeita.";
             if (MessageBox.Show(this, msg, "CONFIRMAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 return;
 
-            // Pega os valores dos campos UMA VEZ antes do loop para melhor performance
             var novoNCM = lkpNCM.Selecionado as NCM;
             var novoCEST = lkpCEST.Selecionado as CEST;
             var novoPerfilPisCofins = lkpPerfilPisCofins.Selecionado as PerfilPisCofins;
             var novaClassificacao = lkpClassificacaoFiscal.Selecionado as ClassificacaoFiscal;
-            var novaNatureza = lkpNaturezaReceita.Selecionado as NaturezaOperacao; // A classe é NaturezaOperacao
+            var novaNatureza = lkpNaturezaReceita.Selecionado as PisCofinsNaturezaOperacao; 
 
-            // --- TRANSAÇÃO PARA GARANTIR INTEGRIDADE ---
             var session = ProdutoController.Instancia.getSession();
             //var transacao = session.BeginTransaction();
 
@@ -253,11 +250,12 @@ namespace Aplicacao.Utilitarios
                     if (chkAtualizarNCM.Checked)
                     {
                         produtoParaSalvar.TabelaNCM = novoNCM;
-                        produtoParaSalvar.NCM = novoNCM?.Ncm; // O campo NCM é a string com o código
+                        produtoParaSalvar.NCM = novoNCM?.Ncm;
+                        produtoParaSalvar.ID_NCM = novoNCM?.ID ?? 0;
                     }
                     if (chkAtualizarCEST.Checked)
                     {
-                        //produtoParaSalvar.CEST = novoCEST;
+                        produtoParaSalvar.CEST = novoCEST?.Codigo;
                     }
                     if (chkAtualizarPisCofins.Checked)
                     {
@@ -269,8 +267,7 @@ namespace Aplicacao.Utilitarios
                     }
                     if (chkAtualizarNatureza.Checked)
                     {
-                        // O campo no produto é uma string, então pegamos o código da Natureza
-                        //produtoParaSalvar.SaiNaturezaReceita = novaNatureza?.Codigo;
+                        produtoParaSalvar.SaiNaturezaReceita = novaNatureza?.Codigo.ToString();
                     }
 
                     ProdutoController.Instancia.Salvar(produtoParaSalvar, Acao.Alterar);
@@ -279,7 +276,6 @@ namespace Aplicacao.Utilitarios
                 //transacao.Commit();
                 MessageBox.Show("Produtos atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Recarrega os dados para refletir as alterações na tela
                 Produtos = ProdutoController.Instancia.GetAll();
                 AtualizarFiltros();
             }
@@ -287,6 +283,29 @@ namespace Aplicacao.Utilitarios
             {
                 //transacao.Rollback();
                 MessageBox.Show("Ocorreu um erro ao atualizar os produtos.\n\nDetalhes: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chbbMarca_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = sender as DevExpress.XtraEditors.CheckEdit;
+            if (checkBox == null) return;
+
+            bool selecionar = checkBox.Checked;
+
+            gvAtualizaPrecoBaseProdutos.BeginUpdate();
+            try
+            {
+                for (int i = 0; i < gvAtualizaPrecoBaseProdutos.DataRowCount; i++)
+                {
+                    int rowHandle = gvAtualizaPrecoBaseProdutos.GetRowHandle(i);
+
+                    gvAtualizaPrecoBaseProdutos.SetRowCellValue(rowHandle, "Selecionado", selecionar);
+                }
+            }
+            finally
+            {
+                gvAtualizaPrecoBaseProdutos.EndUpdate();
             }
         }
     }

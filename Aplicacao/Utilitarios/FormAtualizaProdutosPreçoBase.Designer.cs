@@ -73,6 +73,7 @@ namespace Aplicacao.Utilitarios
             this.lkpNCM = new Cwork.Utilitarios.Componentes.Lookup();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.chbbMarca = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).BeginInit();
@@ -94,6 +95,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbbMarca.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemCheckEdit1
@@ -126,7 +128,7 @@ namespace Aplicacao.Utilitarios
             this.sbFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.sbFechar.ImageOptions.ImageIndex = 2;
             this.sbFechar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("sbFechar.ImageOptions.SvgImage")));
-            this.sbFechar.Location = new System.Drawing.Point(1081, 603);
+            this.sbFechar.Location = new System.Drawing.Point(1081, 611);
             this.sbFechar.Name = "sbFechar";
             this.sbFechar.Size = new System.Drawing.Size(131, 36);
             this.sbFechar.TabIndex = 26;
@@ -143,6 +145,7 @@ namespace Aplicacao.Utilitarios
             this.gcAtualizaPrecoBaseProdutos.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gcAtualizaPrecoBaseProdutos.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gcAtualizaPrecoBaseProdutos.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gcAtualizaPrecoBaseProdutos.EmbeddedNavigator.TextStringFormat = "Registro {0} of {1}";
             this.gcAtualizaPrecoBaseProdutos.Location = new System.Drawing.Point(12, 61);
             this.gcAtualizaPrecoBaseProdutos.MainView = this.gvAtualizaPrecoBaseProdutos;
             this.gcAtualizaPrecoBaseProdutos.Name = "gcAtualizaPrecoBaseProdutos";
@@ -325,6 +328,8 @@ namespace Aplicacao.Utilitarios
             this.CodigoReferencia.Caption = "Referencia";
             this.CodigoReferencia.FieldName = "CodigoReferencia";
             this.CodigoReferencia.Name = "CodigoReferencia";
+            this.CodigoReferencia.OptionsColumn.AllowEdit = false;
+            this.CodigoReferencia.OptionsColumn.AllowFocus = false;
             this.CodigoReferencia.Visible = true;
             this.CodigoReferencia.VisibleIndex = 3;
             this.CodigoReferencia.Width = 80;
@@ -371,6 +376,8 @@ namespace Aplicacao.Utilitarios
             this.NCM.Caption = "NCM";
             this.NCM.FieldName = "NCM";
             this.NCM.Name = "NCM";
+            this.NCM.OptionsColumn.AllowEdit = false;
+            this.NCM.OptionsColumn.AllowFocus = false;
             this.NCM.Visible = true;
             this.NCM.VisibleIndex = 7;
             // 
@@ -379,6 +386,8 @@ namespace Aplicacao.Utilitarios
             this.CEST.Caption = "CEST";
             this.CEST.FieldName = "CEST";
             this.CEST.Name = "CEST";
+            this.CEST.OptionsColumn.AllowEdit = false;
+            this.CEST.OptionsColumn.AllowFocus = false;
             this.CEST.Visible = true;
             this.CEST.VisibleIndex = 8;
             // 
@@ -400,7 +409,7 @@ namespace Aplicacao.Utilitarios
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.ImageOptions.ImageIndex = 2;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(1081, 506);
+            this.simpleButton1.Location = new System.Drawing.Point(1081, 520);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(131, 41);
             this.simpleButton1.TabIndex = 46;
@@ -562,9 +571,9 @@ namespace Aplicacao.Utilitarios
             this.groupControl1.Controls.Add(this.lkbNCM);
             this.groupControl1.Controls.Add(this.lkpNCM);
             this.groupControl1.Controls.Add(this.chkAtualizarNCM);
-            this.groupControl1.Location = new System.Drawing.Point(12, 506);
+            this.groupControl1.Location = new System.Drawing.Point(12, 520);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1044, 144);
+            this.groupControl1.Size = new System.Drawing.Size(1044, 130);
             this.groupControl1.TabIndex = 70;
             this.groupControl1.Text = "Campos para Atualizar";
             // 
@@ -842,14 +851,14 @@ namespace Aplicacao.Utilitarios
             // 
             this.lkpNCM.ButtonLookup = this.lkbNCM;
             this.lkpNCM.CamposPesquisa = new string[] {
-        "Nome",
-        "Codigo"};
+        "ID",
+        "Ncm"};
             this.lkpNCM.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNCM.CamposRestricoesAND")));
             this.lkpNCM.CamposRestricoesNOT = null;
             this.lkpNCM.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("lkpNCM.CamposRestricoesOR")));
             this.lkpNCM.ColunaDescricao = new string[] {
-        "Nome",
-        "Código",
+        "ID",
+        "Ncm",
         null,
         null,
         null};
@@ -877,7 +886,7 @@ namespace Aplicacao.Utilitarios
             this.lkpNCM.Tabela = null;
             this.lkpNCM.TabIndex = 70;
             this.lkpNCM.TituloTelaPesquisa = null;
-            this.lkpNCM.ToolTip = "Campos pesquisados: Nome, Codigo.";
+            this.lkpNCM.ToolTip = "Campos pesquisados: Id, NCM.";
             this.lkpNCM.Where = null;
             // 
             // simpleButton2
@@ -885,7 +894,7 @@ namespace Aplicacao.Utilitarios
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.ImageOptions.ImageIndex = 2;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(1081, 553);
+            this.simpleButton2.Location = new System.Drawing.Point(1081, 567);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(131, 38);
             this.simpleButton2.TabIndex = 71;
@@ -904,11 +913,21 @@ namespace Aplicacao.Utilitarios
             this.simpleButton3.Text = "&Consultar";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
+            // chbbMarca
+            // 
+            this.chbbMarca.Location = new System.Drawing.Point(13, 495);
+            this.chbbMarca.Name = "chbbMarca";
+            this.chbbMarca.Properties.Caption = "Marcar/Desmarcar Todos";
+            this.chbbMarca.Size = new System.Drawing.Size(152, 19);
+            this.chbbMarca.TabIndex = 73;
+            this.chbbMarca.CheckedChanged += new System.EventHandler(this.chbbMarca_CheckedChanged);
+            // 
             // FormAtualizaProdutosPreçoBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 662);
+            this.Controls.Add(this.chbbMarca);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.groupControl1);
@@ -947,6 +966,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.lkpCEST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbbMarca.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,5 +1017,6 @@ namespace Aplicacao.Utilitarios
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit4;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit2;
+        private DevExpress.XtraEditors.CheckEdit chbbMarca;
     }
 }

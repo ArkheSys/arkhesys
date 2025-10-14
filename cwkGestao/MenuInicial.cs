@@ -3984,8 +3984,12 @@ namespace cwkGestao.Visual.Desktop
 
         private void atualizaPreçoBaseProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAtualizaProdutosPreçoBase f = new FormAtualizaProdutosPreçoBase();
-            f.ShowDialog();
+            /*FormAtualizaProdutosPreçoBase f = new FormAtualizaProdutosPreçoBase();
+            f.MdiParent = this;
+            f.ShowDialog();*/
+
+            var formPrecoBase = new FormAtualizaProdutosPreçoBase();
+            ShowForm(formPrecoBase);
         }
 
         private void consultaDeClientesComCréditoToolStripMenuItem_Click(object sender, EventArgs e)
