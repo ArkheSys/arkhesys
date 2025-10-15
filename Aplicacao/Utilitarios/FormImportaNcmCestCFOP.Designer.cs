@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImportaNcmCestCFOP));
             this.cboTipoRegistro = new System.Windows.Forms.ComboBox();
             this.btnExibir = new System.Windows.Forms.Button();
             this.btnProcurarArquivo = new System.Windows.Forms.Button();
@@ -173,6 +174,7 @@
             this.Controls.Add(this.btnExibir);
             this.Controls.Add(this.btnProcurarArquivo);
             this.Controls.Add(this.cboTipoRegistro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormImportaNcmCestCFOP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importa NCM Cest CFOP";

@@ -24,7 +24,7 @@ namespace cwkGestao.Modelo
         public Produto(int id, string codigo, String nome, Unidade unidade, Unidade unidadeEntrada, String barra,
             String barraForn, String grupo, String descReduzida, String caminhoImagem, Decimal precoBase,
             String ncm, String grupo1, String grupo2, String grupo3, bool inativo, string observacao,
-            string localizacao, bool utilizarIMEI, int escrelevante, string razao_fab, string cnpj_fab, string cbenef)
+            string localizacao, bool utilizarIMEI, int escrelevante, string razao_fab, string cnpj_fab, string cbenef, string cest)
         {
             ID = id;
             Codigo = codigo;
@@ -49,6 +49,7 @@ namespace cwkGestao.Modelo
             RAZAO_Fab = razao_fab;
             CNPJ_Fab = cnpj_fab;
             CBenef = cbenef;
+            this.CEST = cest;
         }
 
         public Produto(int id, string codigo, String nome, Unidade unidade, String barra

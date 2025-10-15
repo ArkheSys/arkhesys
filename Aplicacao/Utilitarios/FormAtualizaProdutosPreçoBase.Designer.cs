@@ -556,6 +556,7 @@ namespace Aplicacao.Utilitarios
             this.groupControl1.Appearance.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupControl1.Appearance.Options.UseBackColor = true;
             this.groupControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
             this.groupControl1.Controls.Add(this.lkbClassificacaoFiscal);
             this.groupControl1.Controls.Add(this.lkpClassificacaoFiscal);
             this.groupControl1.Controls.Add(this.chkAtualizarClassificacaoFiscal);

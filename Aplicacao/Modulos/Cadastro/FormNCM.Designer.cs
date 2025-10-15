@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescricao = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDtRevogacao = new Cwork.Utilitarios.Componentes.DevDateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -45,27 +43,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNcm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDtRevogacao.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDtRevogacao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
             // 
             this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
             this.sbAjuda.ImageOptions.ImageIndex = 0;
-            this.sbAjuda.Location = new System.Drawing.Point(12, 376);
+            this.sbAjuda.Location = new System.Drawing.Point(12, 131);
             // 
             // sbGravar
             // 
             this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
             this.sbGravar.ImageOptions.ImageIndex = 1;
-            this.sbGravar.Location = new System.Drawing.Point(797, 376);
+            this.sbGravar.Location = new System.Drawing.Point(797, 131);
             // 
             // sbCancelar
             // 
             this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
             this.sbCancelar.ImageOptions.ImageIndex = 2;
-            this.sbCancelar.Location = new System.Drawing.Point(878, 376);
+            this.sbCancelar.Location = new System.Drawing.Point(878, 131);
             // 
             // imageList1
             // 
@@ -81,20 +77,18 @@
             // 
             // tpPrincipal
             // 
-            this.tpPrincipal.Controls.Add(this.txtDtRevogacao);
-            this.tpPrincipal.Controls.Add(this.label5);
             this.tpPrincipal.Controls.Add(this.txtDescricao);
             this.tpPrincipal.Controls.Add(this.txtNcm);
             this.tpPrincipal.Controls.Add(this.label4);
             this.tpPrincipal.Controls.Add(this.label3);
             this.tpPrincipal.Controls.Add(this.txtCodigo);
             this.tpPrincipal.Controls.Add(this.labelControl7);
-            this.tpPrincipal.Size = new System.Drawing.Size(935, 352);
+            this.tpPrincipal.Size = new System.Drawing.Size(935, 107);
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
-            this.tcPrincipal.Size = new System.Drawing.Size(941, 358);
+            this.tcPrincipal.Size = new System.Drawing.Size(941, 113);
             // 
             // txtCodigo
             // 
@@ -167,33 +161,11 @@
             this.txtDescricao.Size = new System.Drawing.Size(836, 20);
             this.txtDescricao.TabIndex = 2;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(224, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Data Revogação:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtDtRevogacao
-            // 
-            this.txtDtRevogacao.EditValue = null;
-            this.txtDtRevogacao.Location = new System.Drawing.Point(321, 32);
-            this.txtDtRevogacao.Name = "txtDtRevogacao";
-            this.txtDtRevogacao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtDtRevogacao.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtDtRevogacao.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.txtDtRevogacao.Size = new System.Drawing.Size(87, 20);
-            this.txtDtRevogacao.TabIndex = 21;
-            // 
             // FormNCM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(965, 411);
+            this.ClientSize = new System.Drawing.Size(965, 166);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNCM";
             this.Load += new System.EventHandler(this.FormNCM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
@@ -205,8 +177,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNcm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDtRevogacao.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDtRevogacao.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,7 +188,5 @@
         private System.Windows.Forms.Label label3;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtDescricao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private Cwork.Utilitarios.Componentes.DevDateEdit txtDtRevogacao;
     }
 }
