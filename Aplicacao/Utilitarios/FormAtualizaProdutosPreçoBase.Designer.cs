@@ -46,6 +46,9 @@ namespace Aplicacao.Utilitarios
             this.Nome = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NCM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CEST = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDClassificacaoFiscal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDPerfilPisCofins = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SaiNaturezaReceita = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -124,11 +127,11 @@ namespace Aplicacao.Utilitarios
             // 
             // sbFechar
             // 
-            this.sbFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sbFechar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sbFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.sbFechar.ImageOptions.ImageIndex = 2;
             this.sbFechar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("sbFechar.ImageOptions.SvgImage")));
-            this.sbFechar.Location = new System.Drawing.Point(1081, 611);
+            this.sbFechar.Location = new System.Drawing.Point(1090, 509);
             this.sbFechar.Name = "sbFechar";
             this.sbFechar.Size = new System.Drawing.Size(131, 36);
             this.sbFechar.TabIndex = 26;
@@ -149,7 +152,7 @@ namespace Aplicacao.Utilitarios
             this.gcAtualizaPrecoBaseProdutos.Location = new System.Drawing.Point(12, 61);
             this.gcAtualizaPrecoBaseProdutos.MainView = this.gvAtualizaPrecoBaseProdutos;
             this.gcAtualizaPrecoBaseProdutos.Name = "gcAtualizaPrecoBaseProdutos";
-            this.gcAtualizaPrecoBaseProdutos.Size = new System.Drawing.Size(1209, 428);
+            this.gcAtualizaPrecoBaseProdutos.Size = new System.Drawing.Size(1209, 326);
             this.gcAtualizaPrecoBaseProdutos.TabIndex = 36;
             this.gcAtualizaPrecoBaseProdutos.UseEmbeddedNavigator = true;
             this.gcAtualizaPrecoBaseProdutos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -262,7 +265,10 @@ namespace Aplicacao.Utilitarios
             this.Barra,
             this.Nome,
             this.NCM,
-            this.CEST});
+            this.CEST,
+            this.IDClassificacaoFiscal,
+            this.IDPerfilPisCofins,
+            this.SaiNaturezaReceita});
             this.gvAtualizaPrecoBaseProdutos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvAtualizaPrecoBaseProdutos.GridControl = this.gcAtualizaPrecoBaseProdutos;
             this.gvAtualizaPrecoBaseProdutos.GroupPanelText = "Arraste uma coluna aqui para agrupar os registros";
@@ -391,6 +397,36 @@ namespace Aplicacao.Utilitarios
             this.CEST.Visible = true;
             this.CEST.VisibleIndex = 8;
             // 
+            // IDClassificacaoFiscal
+            // 
+            this.IDClassificacaoFiscal.Caption = "Classificacao Fiscal";
+            this.IDClassificacaoFiscal.FieldName = "IDClassificacaoFiscal";
+            this.IDClassificacaoFiscal.Name = "IDClassificacaoFiscal";
+            this.IDClassificacaoFiscal.OptionsColumn.AllowEdit = false;
+            this.IDClassificacaoFiscal.OptionsColumn.AllowFocus = false;
+            this.IDClassificacaoFiscal.Visible = true;
+            this.IDClassificacaoFiscal.VisibleIndex = 9;
+            // 
+            // IDPerfilPisCofins
+            // 
+            this.IDPerfilPisCofins.Caption = "Perfil Pis Cofins";
+            this.IDPerfilPisCofins.FieldName = "IDPerfilPisCofins";
+            this.IDPerfilPisCofins.Name = "IDPerfilPisCofins";
+            this.IDPerfilPisCofins.OptionsColumn.AllowEdit = false;
+            this.IDPerfilPisCofins.OptionsColumn.AllowFocus = false;
+            this.IDPerfilPisCofins.Visible = true;
+            this.IDPerfilPisCofins.VisibleIndex = 10;
+            // 
+            // SaiNaturezaReceita
+            // 
+            this.SaiNaturezaReceita.Caption = "Natureza Receita";
+            this.SaiNaturezaReceita.FieldName = "SaiNaturezaReceita";
+            this.SaiNaturezaReceita.Name = "SaiNaturezaReceita";
+            this.SaiNaturezaReceita.OptionsColumn.AllowEdit = false;
+            this.SaiNaturezaReceita.OptionsColumn.AllowFocus = false;
+            this.SaiNaturezaReceita.Visible = true;
+            this.SaiNaturezaReceita.VisibleIndex = 11;
+            // 
             // cardView1
             // 
             this.cardView1.GridControl = this.gcAtualizaPrecoBaseProdutos;
@@ -406,10 +442,10 @@ namespace Aplicacao.Utilitarios
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.simpleButton1.ImageOptions.ImageIndex = 2;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(1081, 520);
+            this.simpleButton1.Location = new System.Drawing.Point(1090, 418);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(131, 41);
             this.simpleButton1.TabIndex = 46;
@@ -553,6 +589,7 @@ namespace Aplicacao.Utilitarios
             // 
             // groupControl1
             // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl1.Appearance.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupControl1.Appearance.Options.UseBackColor = true;
             this.groupControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -572,9 +609,9 @@ namespace Aplicacao.Utilitarios
             this.groupControl1.Controls.Add(this.lkbNCM);
             this.groupControl1.Controls.Add(this.lkpNCM);
             this.groupControl1.Controls.Add(this.chkAtualizarNCM);
-            this.groupControl1.Location = new System.Drawing.Point(12, 520);
+            this.groupControl1.Location = new System.Drawing.Point(8, 422);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1044, 130);
+            this.groupControl1.Size = new System.Drawing.Size(1076, 125);
             this.groupControl1.TabIndex = 70;
             this.groupControl1.Text = "Campos para Atualizar";
             // 
@@ -892,10 +929,10 @@ namespace Aplicacao.Utilitarios
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.simpleButton2.ImageOptions.ImageIndex = 2;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(1081, 567);
+            this.simpleButton2.Location = new System.Drawing.Point(1090, 465);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(131, 38);
             this.simpleButton2.TabIndex = 71;
@@ -904,7 +941,7 @@ namespace Aplicacao.Utilitarios
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.ImageOptions.ImageIndex = 2;
             this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
             this.simpleButton3.Location = new System.Drawing.Point(1090, 9);
@@ -916,7 +953,10 @@ namespace Aplicacao.Utilitarios
             // 
             // chbbMarca
             // 
-            this.chbbMarca.Location = new System.Drawing.Point(13, 495);
+            this.chbbMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbbMarca.Location = new System.Drawing.Point(8, 397);
             this.chbbMarca.Name = "chbbMarca";
             this.chbbMarca.Properties.Caption = "Marcar/Desmarcar Todos";
             this.chbbMarca.Size = new System.Drawing.Size(152, 19);
@@ -927,7 +967,8 @@ namespace Aplicacao.Utilitarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 662);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1233, 548);
             this.Controls.Add(this.chbbMarca);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
@@ -1019,5 +1060,8 @@ namespace Aplicacao.Utilitarios
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit4;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit2;
         private DevExpress.XtraEditors.CheckEdit chbbMarca;
+        private DevExpress.XtraGrid.Columns.GridColumn IDClassificacaoFiscal;
+        private DevExpress.XtraGrid.Columns.GridColumn IDPerfilPisCofins;
+        private DevExpress.XtraGrid.Columns.GridColumn SaiNaturezaReceita;
     }
 }
