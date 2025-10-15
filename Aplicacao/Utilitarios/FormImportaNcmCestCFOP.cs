@@ -267,10 +267,10 @@ namespace Aplicacao.Utilitarios
                 if (string.IsNullOrEmpty(codigoDoArquivo))
                     continue;
 
-                int segmento = 0; // Valor padrão caso a conversão falhe
+                string segmento = null; // Valor padrão caso a conversão falhe
                 if (item.Table.Columns.Contains("SEGMENTO") && item["SEGMENTO"] != DBNull.Value)
                 {
-                    int.TryParse(item["SEGMENTO"].ToString().Trim(), out segmento);
+                    segmento = item["SEGMENTO"].ToString().Trim();
                 }
 
                 string ncm = null;
@@ -556,7 +556,7 @@ namespace Aplicacao.Utilitarios
             if (cboTipoRegistro.Text == "CEST")
             {
                 mensagem.AppendLine("\nExemplo para CEST:");
-                mensagem.AppendLine("   - SEGMENTO: Informe apenas o número (Ex: 1, 10, 28).");
+                mensagem.AppendLine("   - SEGMENTO: Informe a descriçäo");
                 mensagem.AppendLine("   - NCM: Informe o NCM completo ou parcial, apenas números (Ex: 39269090 ou 3926).");
             }
 

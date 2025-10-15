@@ -36,7 +36,7 @@ namespace Aplicacao
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNCM = new Cwork.Utilitarios.Componentes.CwkBaseEditor();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.cbSegmento = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtSegmento = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tpPrincipal.SuspendLayout();
@@ -45,7 +45,7 @@ namespace Aplicacao
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNCM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSegmento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegmento.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sbAjuda
@@ -87,11 +87,12 @@ namespace Aplicacao
             this.tpPrincipal.Controls.Add(this.labelControl2);
             this.tpPrincipal.Controls.Add(this.txtCodigo);
             this.tpPrincipal.Controls.Add(this.labelControl1);
-            this.tpPrincipal.Controls.Add(this.cbSegmento);
+            this.tpPrincipal.Controls.Add(this.txtSegmento);
             this.tpPrincipal.Size = new System.Drawing.Size(760, 132);
             // 
             // tcPrincipal
             // 
+            this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
             this.tcPrincipal.Size = new System.Drawing.Size(766, 138);
             // 
             // labelControl1
@@ -157,43 +158,12 @@ namespace Aplicacao
             this.labelControl4.TabIndex = 74;
             this.labelControl4.Text = "NCM:";
             // 
-            // cbSegmento
+            // txtSegmento
             // 
-            this.cbSegmento.Location = new System.Drawing.Point(258, 11);
-            this.cbSegmento.Name = "cbSegmento";
-            this.cbSegmento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbSegmento.Properties.Items.AddRange(new object[] {
-            "",
-            "01.  Autopeças ",
-            "02.  Bebidas alcoólicas, exceto cerveja e chope ",
-            "03.  Cervejas, chopes, refrigerantes, águas e outras bebidas ",
-            "04.  Cigarros e outros produtos derivados do fumo ",
-            "05.  Cimentos ",
-            "06.  Combustíveis e lubrificantes ",
-            "07.  Energia elétrica ",
-            "08.  Ferramentas ",
-            "09.  Lâmpadas, reatores e “starter” ",
-            "10.  Materiais de construção e congêneres ",
-            "11.  Materiais de limpeza ",
-            "12.  Materiais elétricos ",
-            "13.  Medicamentos e outros produtos farmacêuticos para uso humano ",
-            "14.  Papéis ",
-            "15.  Plásticos ",
-            "16.  Pneumáticos, câmaras de ar e protetores de borracha ",
-            "17.  Produtos alimentícios 18. Produtos cerâmicos ",
-            "19.  Produtos de papelaria ",
-            "20.  Produtos de perfumaria e de higiene pessoal e cosméticos ",
-            "21.  Produtos eletrônicos, eletroeletrônicos e eletrodomésticos ",
-            "22.  Rações para animais domésticos ",
-            "23.  Sorvetes e preparados para fabricação de sorvetes em máquinas ",
-            "24.  Tintas e vernizes ",
-            "25.  Veículos automotores ",
-            "26.  Veículos de duas e três rodas motorizados ",
-            "27.  Vidros ",
-            "28.  Venda de mercadorias pelo sistema porta a porta"});
-            this.cbSegmento.Size = new System.Drawing.Size(313, 20);
-            this.cbSegmento.TabIndex = 73;
+            this.txtSegmento.Location = new System.Drawing.Point(258, 11);
+            this.txtSegmento.Name = "txtSegmento";
+            this.txtSegmento.Size = new System.Drawing.Size(313, 20);
+            this.txtSegmento.TabIndex = 73;
             // 
             // FormCEST
             // 
@@ -212,7 +182,7 @@ namespace Aplicacao
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescricao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNCM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSegmento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSegmento.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,6 +196,6 @@ namespace Aplicacao
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private Cwork.Utilitarios.Componentes.CwkBaseEditor txtNCM;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit cbSegmento;
+        private DevExpress.XtraEditors.TextEdit txtSegmento;
     }
 }

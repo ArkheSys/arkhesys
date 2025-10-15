@@ -19,18 +19,7 @@ namespace Aplicacao
                 txtCodigo.EditValue = Selecionado.Codigo;
                 txtDescricao.EditValue = Selecionado.Descricao;
                 txtNCM.EditValue = Selecionado.NCM;
-
-                int indexParaSelecionar = Selecionado.Segmento;
-
-                // Garante que o índice (valor salvo) seja válido para a lista de itens.
-                if (indexParaSelecionar >= 0 && indexParaSelecionar < cbSegmento.Properties.Items.Count)
-                {
-                    cbSegmento.SelectedIndex = indexParaSelecionar;
-                }
-                else
-                {
-                    cbSegmento.SelectedIndex = -1;
-                }
+                txtSegmento.EditValue = Selecionado.Segmento;
             }
         }
 
@@ -61,6 +50,7 @@ namespace Aplicacao
 
             Selecionado.Codigo = txtCodigo.Text;
             Selecionado.Descricao = txtDescricao.Text;
+            Selecionado.Segmento = txtSegmento.Text;
 
             if (txtNCM.EditValue != null)
             {
@@ -71,8 +61,6 @@ namespace Aplicacao
             {
                 Selecionado.NCM = null; // Garante que o campo fique nulo se estiver vazio
             }
-
-            Selecionado.Segmento = Math.Max(0, cbSegmento.SelectedIndex);
 
             base.sbGravar_Click(sender, e);
 

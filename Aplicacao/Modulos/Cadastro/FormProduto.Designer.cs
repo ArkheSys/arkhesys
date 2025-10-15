@@ -1455,27 +1455,28 @@
             this.tabImpostoDentroEstado.Name = "tabImpostoDentroEstado";
             this.tabImpostoDentroEstado.Size = new System.Drawing.Size(681, 642);
             this.tabImpostoDentroEstado.Text = "Tributação";
+            this.tabImpostoDentroEstado.Paint += new System.Windows.Forms.PaintEventHandler(this.tabImpostoDentroEstado_Paint);
             // 
             // txtCEST
             // 
             this.txtCEST.ButtonLookup = this.lkbCEST;
             this.txtCEST.CamposPesquisa = new string[] {
         "Codigo",
-        "Descricao",
-        "NCM"};
+        "",
+        ""};
             this.txtCEST.CamposRestricoesAND = ((System.Collections.Generic.List<string>)(resources.GetObject("txtCEST.CamposRestricoesAND")));
             this.txtCEST.CamposRestricoesNOT = null;
             this.txtCEST.CamposRestricoesOR = ((System.Collections.Generic.List<string>)(resources.GetObject("txtCEST.CamposRestricoesOR")));
             this.txtCEST.ColunaDescricao = new string[] {
         "Código",
-        "Descrição",
-        "NCM",
+        "",
+        "",
         "",
         null};
             this.txtCEST.ColunaTamanho = new string[] {
         "10",
-        "50",
-        "20",
+        "",
+        "",
         "",
         null};
             this.txtCEST.ContextoLinq = null;
@@ -1486,13 +1487,13 @@
             this.txtCEST.ID = 0;
             this.txtCEST.Join = null;
             this.txtCEST.Key = System.Windows.Forms.Keys.None;
-            this.txtCEST.Location = new System.Drawing.Point(116, 35);
+            this.txtCEST.Location = new System.Drawing.Point(522, 9);
             this.txtCEST.Name = "txtCEST";
             this.txtCEST.OnIDChanged = null;
             this.txtCEST.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtCEST.Properties.Appearance.Options.UseBackColor = true;
             this.txtCEST.SelecionarTextoOnEnter = true;
-            this.txtCEST.Size = new System.Drawing.Size(509, 20);
+            this.txtCEST.Size = new System.Drawing.Size(105, 20);
             this.txtCEST.Tabela = null;
             this.txtCEST.TabIndex = 115;
             this.txtCEST.TituloTelaPesquisa = null;
@@ -1501,7 +1502,7 @@
             // 
             // lkbCEST
             // 
-            this.lkbCEST.Location = new System.Drawing.Point(631, 35);
+            this.lkbCEST.Location = new System.Drawing.Point(633, 9);
             this.lkbCEST.Lookup = null;
             this.lkbCEST.Name = "lkbCEST";
             this.lkbCEST.Size = new System.Drawing.Size(24, 20);
@@ -1516,7 +1517,7 @@
             // labelControl4
             // 
             this.labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl4.Location = new System.Drawing.Point(75, 38);
+            this.labelControl4.Location = new System.Drawing.Point(487, 12);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 13);
             this.labelControl4.TabIndex = 114;
@@ -1525,7 +1526,7 @@
             // lbPerfilPisCofins
             // 
             this.lbPerfilPisCofins.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbPerfilPisCofins.Location = new System.Drawing.Point(18, 92);
+            this.lbPerfilPisCofins.Location = new System.Drawing.Point(20, 66);
             this.lbPerfilPisCofins.Name = "lbPerfilPisCofins";
             this.lbPerfilPisCofins.Size = new System.Drawing.Size(86, 13);
             this.lbPerfilPisCofins.TabIndex = 109;
@@ -1560,7 +1561,7 @@
             this.lkpClassificacaoFiscal.ID = 0;
             this.lkpClassificacaoFiscal.Join = null;
             this.lkpClassificacaoFiscal.Key = System.Windows.Forms.Keys.F5;
-            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(116, 61);
+            this.lkpClassificacaoFiscal.Location = new System.Drawing.Point(116, 35);
             this.lkpClassificacaoFiscal.Name = "lkpClassificacaoFiscal";
             this.lkpClassificacaoFiscal.OnIDChanged = null;
             this.lkpClassificacaoFiscal.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1575,7 +1576,7 @@
             // 
             // lkbClassificacaoFiscal
             // 
-            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(631, 61);
+            this.lkbClassificacaoFiscal.Location = new System.Drawing.Point(633, 35);
             this.lkbClassificacaoFiscal.Lookup = null;
             this.lkbClassificacaoFiscal.Name = "lkbClassificacaoFiscal";
             this.lkbClassificacaoFiscal.Size = new System.Drawing.Size(24, 20);
@@ -1590,7 +1591,7 @@
             // lbClassificacaoFiscal
             // 
             this.lbClassificacaoFiscal.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(10, 64);
+            this.lbClassificacaoFiscal.Location = new System.Drawing.Point(12, 38);
             this.lbClassificacaoFiscal.Name = "lbClassificacaoFiscal";
             this.lbClassificacaoFiscal.Size = new System.Drawing.Size(94, 13);
             this.lbClassificacaoFiscal.TabIndex = 106;
@@ -1598,7 +1599,7 @@
             // 
             // cbeSaiNaturezaReceita
             // 
-            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(456, 89);
+            this.cbeSaiNaturezaReceita.Location = new System.Drawing.Point(458, 63);
             this.cbeSaiNaturezaReceita.Name = "cbeSaiNaturezaReceita";
             this.cbeSaiNaturezaReceita.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1608,7 +1609,7 @@
             // 
             // lbSaiNaturezaReceita
             // 
-            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(337, 92);
+            this.lbSaiNaturezaReceita.Location = new System.Drawing.Point(342, 66);
             this.lbSaiNaturezaReceita.Name = "lbSaiNaturezaReceita";
             this.lbSaiNaturezaReceita.Size = new System.Drawing.Size(102, 13);
             this.lbSaiNaturezaReceita.TabIndex = 112;
@@ -1616,7 +1617,7 @@
             // 
             // lkbPerfilPisCofins
             // 
-            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(294, 89);
+            this.lkbPerfilPisCofins.Location = new System.Drawing.Point(296, 63);
             this.lkbPerfilPisCofins.Lookup = null;
             this.lkbPerfilPisCofins.Name = "lkbPerfilPisCofins";
             this.lkbPerfilPisCofins.Size = new System.Drawing.Size(24, 20);
@@ -1657,7 +1658,7 @@
             this.lkpPerfilPisCofins.ID = 0;
             this.lkpPerfilPisCofins.Join = null;
             this.lkpPerfilPisCofins.Key = System.Windows.Forms.Keys.F5;
-            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(116, 89);
+            this.lkpPerfilPisCofins.Location = new System.Drawing.Point(116, 63);
             this.lkpPerfilPisCofins.Name = "lkpPerfilPisCofins";
             this.lkpPerfilPisCofins.OnIDChanged = null;
             this.lkpPerfilPisCofins.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1675,7 +1676,7 @@
             this.txtCBenef.CwkFuncaoValidacao = null;
             this.txtCBenef.CwkMascara = null;
             this.txtCBenef.CwkValidacao = null;
-            this.txtCBenef.Location = new System.Drawing.Point(117, 119);
+            this.txtCBenef.Location = new System.Drawing.Point(116, 89);
             this.txtCBenef.Name = "txtCBenef";
             this.txtCBenef.Properties.MaxLength = 30;
             this.txtCBenef.SelecionarTextoOnEnter = true;
@@ -1684,7 +1685,7 @@
             // 
             // labelControl41
             // 
-            this.labelControl41.Location = new System.Drawing.Point(5, 126);
+            this.labelControl41.Location = new System.Drawing.Point(7, 100);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(102, 13);
             this.labelControl41.TabIndex = 20;
@@ -1696,7 +1697,7 @@
             this.txtID_NCM.CwkMascara = null;
             this.txtID_NCM.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
             this.txtID_NCM.EditValue = "";
-            this.txtID_NCM.Location = new System.Drawing.Point(236, 9);
+            this.txtID_NCM.Location = new System.Drawing.Point(214, 9);
             this.txtID_NCM.Name = "txtID_NCM";
             this.txtID_NCM.Properties.Appearance.Options.UseTextOptions = true;
             this.txtID_NCM.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1712,7 +1713,7 @@
             this.txtNCM.CwkMascara = null;
             this.txtNCM.CwkValidacao = null;
             this.txtNCM.EditValue = "";
-            this.txtNCM.Location = new System.Drawing.Point(292, 9);
+            this.txtNCM.Location = new System.Drawing.Point(264, 9);
             this.txtNCM.Name = "txtNCM";
             this.txtNCM.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNCM.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -1748,7 +1749,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(195, 12);
+            this.labelControl3.Location = new System.Drawing.Point(182, 12);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(26, 13);
             this.labelControl3.TabIndex = 6;
@@ -1756,7 +1757,7 @@
             // 
             // lkbNCM
             // 
-            this.lkbNCM.Location = new System.Drawing.Point(481, 9);
+            this.lkbNCM.Location = new System.Drawing.Point(450, 9);
             this.lkbNCM.Lookup = null;
             this.lkbNCM.Name = "lkbNCM";
             this.lkbNCM.Size = new System.Drawing.Size(24, 20);
@@ -8762,6 +8763,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(737, 764);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProduto";
             this.Shown += new System.EventHandler(this.FormProduto_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();

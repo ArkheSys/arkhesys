@@ -2172,6 +2172,11 @@ namespace Aplicacao
 
             LookupUtil.GridLookup<CEST>(txtCEST, typeof(FormCEST), todosOsCests);
         }
+
+        private void tabImpostoDentroEstado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public class EcommerceApi
