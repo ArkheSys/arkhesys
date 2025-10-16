@@ -55,20 +55,20 @@
             // 
             this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
             this.sbAjuda.ImageOptions.ImageIndex = 0;
-            this.sbAjuda.Location = new System.Drawing.Point(12, 247);
+            this.sbAjuda.Location = new System.Drawing.Point(12, 232);
             // 
             // sbGravar
             // 
             this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
             this.sbGravar.ImageOptions.ImageIndex = 1;
-            this.sbGravar.Location = new System.Drawing.Point(540, 247);
+            this.sbGravar.Location = new System.Drawing.Point(543, 232);
             this.sbGravar.TabIndex = 0;
             // 
             // sbCancelar
             // 
             this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
             this.sbCancelar.ImageOptions.ImageIndex = 2;
-            this.sbCancelar.Location = new System.Drawing.Point(621, 247);
+            this.sbCancelar.Location = new System.Drawing.Point(624, 232);
             this.sbCancelar.TabIndex = 1;
             // 
             // imageList1
@@ -95,12 +95,12 @@
             this.tpPrincipal.Controls.Add(this.txtCFOP);
             this.tpPrincipal.Controls.Add(this.label2);
             this.tpPrincipal.Controls.Add(this.label1);
-            this.tpPrincipal.Size = new System.Drawing.Size(678, 223);
+            this.tpPrincipal.Size = new System.Drawing.Size(681, 208);
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
-            this.tcPrincipal.Size = new System.Drawing.Size(684, 229);
+            this.tcPrincipal.Size = new System.Drawing.Size(687, 214);
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(531, 6);
+            this.label1.Location = new System.Drawing.Point(225, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.txtCFOP.CwkFuncaoValidacao = null;
             this.txtCFOP.CwkMascara = null;
             this.txtCFOP.CwkValidacao = Cwork.Utilitarios.Componentes.FuncoesValidacao.FuncaoValidacao.NaoNulo;
-            this.txtCFOP.Location = new System.Drawing.Point(575, 3);
+            this.txtCFOP.Location = new System.Drawing.Point(269, 5);
             this.txtCFOP.Name = "txtCFOP";
             this.txtCFOP.Properties.Mask.EditMask = "\\d\\d\\d\\d";
             this.txtCFOP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -167,7 +167,7 @@
             this.txtCfopVinculadoEntrada.CwkFuncaoValidacao = null;
             this.txtCfopVinculadoEntrada.CwkMascara = null;
             this.txtCfopVinculadoEntrada.CwkValidacao = null;
-            this.txtCfopVinculadoEntrada.Location = new System.Drawing.Point(575, 189);
+            this.txtCfopVinculadoEntrada.Location = new System.Drawing.Point(575, 5);
             this.txtCfopVinculadoEntrada.Name = "txtCfopVinculadoEntrada";
             this.txtCfopVinculadoEntrada.Properties.Mask.EditMask = "\\d\\d\\d\\d";
             this.txtCfopVinculadoEntrada.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -178,7 +178,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(442, 192);
+            this.label4.Location = new System.Drawing.Point(442, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 8;
@@ -214,7 +214,7 @@
             // FormTabelaCFOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(708, 282);
+            this.ClientSize = new System.Drawing.Size(711, 267);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTabelaCFOP";
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
