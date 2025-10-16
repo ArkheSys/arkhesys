@@ -127,7 +127,7 @@ namespace Aplicacao.Utilitarios
             // 
             // sbFechar
             // 
-            this.sbFechar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sbFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.sbFechar.ImageOptions.ImageIndex = 2;
             this.sbFechar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("sbFechar.ImageOptions.SvgImage")));
@@ -442,7 +442,7 @@ namespace Aplicacao.Utilitarios
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.ImageOptions.ImageIndex = 2;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.Location = new System.Drawing.Point(1090, 418);
@@ -929,7 +929,7 @@ namespace Aplicacao.Utilitarios
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.ImageOptions.ImageIndex = 2;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
             this.simpleButton2.Location = new System.Drawing.Point(1090, 465);
@@ -953,9 +953,7 @@ namespace Aplicacao.Utilitarios
             // 
             // chbbMarca
             // 
-            this.chbbMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbbMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chbbMarca.Location = new System.Drawing.Point(8, 397);
             this.chbbMarca.Name = "chbbMarca";
             this.chbbMarca.Properties.Caption = "Marcar/Desmarcar Todos";

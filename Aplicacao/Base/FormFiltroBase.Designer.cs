@@ -45,9 +45,9 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
@@ -57,25 +57,24 @@
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
-            this.xtraTabControl1.Text = "xtraTabControl1";
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(759, 504);
+            this.xtraTabPage1.Size = new System.Drawing.Size(762, 507);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(759, 504);
+            this.xtraTabPage2.Size = new System.Drawing.Size(762, 507);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // sbFechar
             // 
             this.sbFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbFechar.ImageIndex = 1;
-            this.sbFechar.ImageList = this.imageList1;
+            this.sbFechar.ImageOptions.ImageIndex = 1;
+            this.sbFechar.ImageOptions.ImageList = this.imageList1;
             this.sbFechar.Location = new System.Drawing.Point(705, 531);
             this.sbFechar.Name = "sbFechar";
             this.sbFechar.Size = new System.Drawing.Size(75, 23);
@@ -94,8 +93,8 @@
             // sbImprimir
             // 
             this.sbImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbImprimir.ImageIndex = 2;
-            this.sbImprimir.ImageList = this.imageList1;
+            this.sbImprimir.ImageOptions.ImageIndex = 2;
+            this.sbImprimir.ImageOptions.ImageList = this.imageList1;
             this.sbImprimir.Location = new System.Drawing.Point(624, 531);
             this.sbImprimir.Name = "sbImprimir";
             this.sbImprimir.Size = new System.Drawing.Size(75, 23);
@@ -110,8 +109,8 @@
             // sbAjuda
             // 
             this.sbAjuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sbAjuda.ImageIndex = 0;
-            this.sbAjuda.ImageList = this.imageList1;
+            this.sbAjuda.ImageOptions.ImageIndex = 0;
+            this.sbAjuda.ImageOptions.ImageList = this.imageList1;
             this.sbAjuda.Location = new System.Drawing.Point(12, 531);
             this.sbAjuda.Name = "sbAjuda";
             this.sbAjuda.Size = new System.Drawing.Size(75, 23);
@@ -128,6 +127,7 @@
             this.Controls.Add(this.sbFechar);
             this.Controls.Add(this.xtraTabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFiltroBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtro";

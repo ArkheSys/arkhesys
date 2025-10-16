@@ -31,7 +31,7 @@ namespace Aplicacao
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNota));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.btSelecionarOrcamento = new DevExpress.XtraEditors.SimpleButton();
             this.lkpPessoa = new Cwork.Utilitarios.Componentes.Lookup();
             this.lkbPessoa = new Cwork.Utilitarios.Componentes.LookupButton();
@@ -2578,9 +2578,9 @@ namespace Aplicacao
             this.gcNotaItemsServicos.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gcNotaItemsServicos.EmbeddedNavigator.Buttons.Remove.Enabled = false;
             this.gcNotaItemsServicos.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gcNotaItemsServicos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcNotaItemsServicos.Location = new System.Drawing.Point(3, 3);
             this.gcNotaItemsServicos.MainView = this.gvNotaItemsServicos;
             this.gcNotaItemsServicos.Name = "gcNotaItemsServicos";
@@ -3576,6 +3576,7 @@ namespace Aplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(843, 711);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNota";
             this.Shown += new System.EventHandler(this.FormNota_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();

@@ -723,6 +723,7 @@ namespace cwkGestao.Modelo
         {
             get { return PerfilPisCofins?.Descricao; }
         }
+
         public virtual string NomeGrupo1
         {
             get { return (Grupo1 == null? "": (string.IsNullOrEmpty(Grupo1.Nome) ? "": Grupo1.Nome)); }

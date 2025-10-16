@@ -51,8 +51,8 @@
             // sbAjuda
             // 
             this.sbAjuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sbAjuda.Image = global::Aplicacao.Properties.Resources.Help_copy;
-            this.sbAjuda.ImageIndex = 0;
+            this.sbAjuda.ImageOptions.Image = global::Aplicacao.Properties.Resources.Help_copy;
+            this.sbAjuda.ImageOptions.ImageIndex = 0;
             this.sbAjuda.Location = new System.Drawing.Point(12, 470);
             this.sbAjuda.Name = "sbAjuda";
             this.sbAjuda.Size = new System.Drawing.Size(75, 23);
@@ -63,8 +63,8 @@
             // sbGravar
             // 
             this.sbGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbGravar.Image = global::Aplicacao.Properties.Resources.Gravar_copy;
-            this.sbGravar.ImageIndex = 1;
+            this.sbGravar.ImageOptions.Image = global::Aplicacao.Properties.Resources.Gravar_copy;
+            this.sbGravar.ImageOptions.ImageIndex = 1;
             this.sbGravar.Location = new System.Drawing.Point(693, 470);
             this.sbGravar.Name = "sbGravar";
             this.sbGravar.Size = new System.Drawing.Size(75, 23);
@@ -94,8 +94,8 @@
             // 
             this.sbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.sbCancelar.Image = global::Aplicacao.Properties.Resources.cancelar_copy;
-            this.sbCancelar.ImageIndex = 2;
+            this.sbCancelar.ImageOptions.Image = global::Aplicacao.Properties.Resources.cancelar_copy;
+            this.sbCancelar.ImageOptions.ImageIndex = 2;
             this.sbCancelar.Location = new System.Drawing.Point(774, 470);
             this.sbCancelar.Name = "sbCancelar";
             this.sbCancelar.Size = new System.Drawing.Size(75, 23);

@@ -48,9 +48,9 @@
             // 
             // TabControl1
             // 
-            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl1.Location = new System.Drawing.Point(12, 12);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedTabPage = this.tabPage1;
@@ -70,8 +70,8 @@
             // btOk
             // 
             this.btOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btOk.ImageIndex = 0;
-            this.btOk.ImageList = this.imageList1;
+            this.btOk.ImageOptions.ImageIndex = 0;
+            this.btOk.ImageOptions.ImageList = this.imageList1;
             this.btOk.Location = new System.Drawing.Point(570, 518);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
@@ -90,8 +90,8 @@
             // btCancelar
             // 
             this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancelar.ImageIndex = 1;
-            this.btCancelar.ImageList = this.imageList1;
+            this.btCancelar.ImageOptions.ImageIndex = 1;
+            this.btCancelar.ImageOptions.ImageList = this.imageList1;
             this.btCancelar.Location = new System.Drawing.Point(649, 518);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
@@ -106,8 +106,8 @@
             // simpleButton2
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.ImageIndex = 2;
-            this.simpleButton2.ImageList = this.imageList1;
+            this.simpleButton2.ImageOptions.ImageIndex = 2;
+            this.simpleButton2.ImageOptions.ImageList = this.imageList1;
             this.simpleButton2.Location = new System.Drawing.Point(12, 518);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);

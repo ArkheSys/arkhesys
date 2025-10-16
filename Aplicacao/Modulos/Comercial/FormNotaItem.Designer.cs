@@ -3162,6 +3162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(666, 598);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNotaItem";
             this.Load += new System.EventHandler(this.FormNotaItem_Load);
             this.Shown += new System.EventHandler(this.FormNotaItem_Shown);
