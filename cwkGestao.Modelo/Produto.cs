@@ -22,43 +22,65 @@ namespace cwkGestao.Modelo
         }
 
         public Produto(int id, string codigo, String nome, Unidade unidade, Unidade unidadeEntrada, String barra,
-            String barraForn, String grupo, String descReduzida, String caminhoImagem, Decimal precoBase,
-            String ncm, String grupo1, String grupo2, String grupo3, bool inativo, string observacao,
-            string localizacao, bool utilizarIMEI, int escrelevante, string razao_fab, string cnpj_fab, string cbenef, string cest)
+        String barraForn, String grupo, String descReduzida, String caminhoImagem,
+        ClassificacaoProduto classProduto, String ncm, String grupo1, String grupo2, String grupo3,
+        DateTime? incData, string incUsuario, DateTime? altData, string altUsuario, bool inativo,
+        string observacao, string localizacao, bool utilizarIMEI, int escrelevante,
+        string razao_fab, string cnpj_fab, string cbenef, decimal precoBase, string fornecedor,
+        DateTime? dtCadastroProduto, string codigoReferencia, DateTime? dataValidade,
+        string codigoFabricante, string codigoOriginal, string aplicacao, string cest,
+        string nomeClassificacaoFiscal, string nomePerfilPisCofins, string saiNaturezaReceita)
         {
-            ID = id;
-            Codigo = codigo;
-            Nome = nome;
-            Unidade = unidade;
-            UnidadeEntrada = unidadeEntrada;
-            Barra = barra;
-            BarraFornecedor = barraForn;
-            GrupoEstoque = new GrupoEstoque() { Nome = grupo };
-            Grupo1 = new Grupo1 { Nome = grupo1 };
-            Grupo2 = new Grupo2 { Nome = grupo2 };
-            Grupo3 = new Grupo3 { Nome = grupo3 };
-            DescReduzida = descReduzida;
-            CaminhoImagem = caminhoImagem;
-            PrecoBase = precoBase;
-            NCM = ncm;
-            Inativo = inativo;
-            Observacao = observacao;
-            Localizacao = localizacao;
-            UtilizarIMEI = utilizarIMEI;
-            EscRelevante = escrelevante;
-            RAZAO_Fab = razao_fab;
-            CNPJ_Fab = cnpj_fab;
-            CBenef = cbenef;
+            this.ID = id;
+            this.Codigo = codigo;
+            this.Nome = nome;
+            this.Unidade = unidade;
+            this.UnidadeEntrada = unidadeEntrada;
+            this.Barra = barra;
+            this.BarraFornecedor = barraForn;
+            this.GrupoEstoque = new GrupoEstoque() { Nome = grupo, ClassificacaoProduto = classProduto };
+            this.Grupo1 = new Grupo1 { Nome = grupo1 };
+            this.Grupo2 = new Grupo2 { Nome = grupo2 };
+            this.Grupo3 = new Grupo3 { Nome = grupo3 };
+            this.DescReduzida = descReduzida;
+            this.CaminhoImagem = caminhoImagem;
+            this.NCM = ncm;
+            this.IncData = incData;
+            this.IncUsuario = incUsuario;
+            this.AltData = altData;
+            this.AltUsuario = altUsuario;
+            this.Inativo = inativo;
+            this.Observacao = observacao;
+            this.Localizacao = localizacao;
+            this.UtilizarIMEI = utilizarIMEI;
+            this.EscRelevante = escrelevante;
+            this.RAZAO_Fab = razao_fab;
+            this.CNPJ_Fab = cnpj_fab;
+            this.CBenef = cbenef;
+            this.PrecoBase = precoBase;
+            this.Fornecedor = new Pessoa { Nome = fornecedor };
+            this.DtCadastroProduto = dtCadastroProduto;
+            this.CodigoReferencia = codigoReferencia;
+            this.DataValidade = dataValidade;
+            this.CodigoFabricante = codigoFabricante;
+            this.CodigoOriginal = codigoOriginal;
+            this.Aplicacao = aplicacao;
             this.CEST = cest;
-        }
+            //this.ClassificacaoFiscal = new ClassificacaoFiscal { Descricao = nomeClassificacaoFiscal };
+            //this.PerfilPisCofins = new PerfilPisCofins { Descricao = nomePerfilPisCofins };
+            this.ClassificacaoFiscal = new ClassificacaoFiscal { Descricao = nomeClassificacaoFiscal };
+            this.PerfilPisCofins = new PerfilPisCofins { Descricao = nomePerfilPisCofins };
+            this.SaiNaturezaReceita = saiNaturezaReceita;
 
+        }
         public Produto(int id, string codigo, String nome, Unidade unidade, String barra
                     , String barraForn, String grupo, String descReduzida, String caminhoImagem
                     , ClassificacaoProduto classProduto, String ncm, String grupo1, String grupo2
                     , String grupo3, DateTime incData, string incUsuario, DateTime altData, string altUsuario
                     , bool inativo, string observacao, string localizacao, bool utilizarIMEI, int escrelevante
                     , string razao_fab, string cnpj_fab, string cbenef, DateTime? DtCadastroProduto = null
-                    , string codigoReferencia = "", DateTime? dataValidade = null)
+                    , string codigoReferencia = "", DateTime? dataValidade = null
+                    , int idClassificacaoFiscal = 0, int idPerfilPisCofins = 0, string saiNaturezaReceita = "")
         {
             ID = id;
             Codigo = codigo;
@@ -88,6 +110,9 @@ namespace cwkGestao.Modelo
             this.DtCadastroProduto = DtCadastroProduto;
             CodigoReferencia = codigoReferencia;
             DataValidade = dataValidade;
+            this.IDClassificacaoFiscal = idClassificacaoFiscal;
+            this.IDPerfilPisCofins = idPerfilPisCofins; 
+            this.SaiNaturezaReceita = saiNaturezaReceita;
         }
 
         public Produto(int id, string codigo, String nome, Unidade unidade, String barra
@@ -134,6 +159,10 @@ namespace cwkGestao.Modelo
             CodigoOriginal = codigoOriginal;
             Aplicacao = aplicacao;
             this.CEST = cest;
+            IDClassificacaoFiscal = IDClassificacaoFiscal;
+            IDPerfilPisCofins = IDPerfilPisCofins;
+            SaiNaturezaReceita = SaiNaturezaReceita;
+
         }
 
         public Produto(int id, string codigo, String nome, Unidade unidade, String barra
@@ -248,6 +277,12 @@ namespace cwkGestao.Modelo
 
         private PerfilPisCofins _PerfilPisCofins;
         public virtual PerfilPisCofins PerfilPisCofins { get { return _PerfilPisCofins; } set { _PerfilPisCofins = value; } }
+        /// <summary>
+        /// //////////////////
+        /// </summary>
+        public virtual int IDClassificacaoFiscal { get; set; }
+        public virtual int IDPerfilPisCofins { get; set; }
+        //public virtual string SaiNaturezaReceita { get; set; }
 
         private GrupoEstoque _GrupoEstoque;
         [InformacaoExibicao(7, "Grupo", 170)]
@@ -677,6 +712,17 @@ namespace cwkGestao.Modelo
             get { return string.IsNullOrEmpty(Aplicacao) ? "" : Aplicacao; }
         }
 
+        public virtual string DescricaoClassificacaoFiscal
+        {
+            // O operador '?' (null-conditional) evita erros se ClassificacaoFiscal for nulo.
+            // Ele retorna a Descricao se o objeto existir, ou null se não existir.
+            get { return ClassificacaoFiscal?.Descricao; }
+        }
+
+        public virtual string DescricaoPerfilPisCofins
+        {
+            get { return PerfilPisCofins?.Descricao; }
+        }
         public virtual string NomeGrupo1
         {
             get { return (Grupo1 == null? "": (string.IsNullOrEmpty(Grupo1.Nome) ? "": Grupo1.Nome)); }

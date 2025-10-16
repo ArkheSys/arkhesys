@@ -56,33 +56,26 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
 
         protected override string hqlGetAll()
         {
-            return @"   select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade
-                        , produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida
-                        , produto.CaminhoImagem, grupo.ClassificacaoProduto, produto.NCM, grupo1.Nome
-                        , grupo2.Nome, grupo3.Nome, produto.IncData, produto.IncUsuario, produto.AltData, produto.AltUsuario
-                        , produto.Inativo
-                        , produto.Observacao
-                        , produto.Localizacao
-                        , produto.UtilizarIMEI
-                        , produto.EscRelevante
-                        , produto.RAZAO_Fab
-                        , produto.CNPJ_Fab
-                        , produto.CBenef
-                        , produto.PrecoBase
-                        , forn.Nome
-                        , produto.DtCadastroProduto
-                        , produto.CodigoReferencia
-                        , produto.DataValidade
-                        , produto.CodigoFabricante
-                        , produto.CodigoOriginal
-                        , produto.Aplicacao, produto.CEST) 
-                        from Produto produto 
-                    join produto.Unidade unidade 
-                    left join produto.GrupoEstoque grupo
-                    left join produto.Grupo1 grupo1  
-                    left join produto.Grupo2 grupo2
-                    left join produto.Grupo3 grupo3
-                    left join produto.Fornecedor forn";
+            return @"  select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, 
+                                 produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, 
+                                 produto.CaminhoImagem, grupo.ClassificacaoProduto, produto.NCM, grupo1.Nome, 
+                                 grupo2.Nome, grupo3.Nome, produto.IncData, produto.IncUsuario, produto.AltData, produto.AltUsuario, 
+                                 produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, 
+                                 produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, 
+                                 produto.PrecoBase, forn.Nome, 
+                                 produto.DtCadastroProduto, produto.CodigoReferencia, produto.DataValidade, 
+                                 produto.CodigoFabricante, produto.CodigoOriginal, produto.Aplicacao, produto.CEST, 
+                                 cf.Descricao, pc.Descricao, produto.SaiNaturezaReceita)
+                from Produto produto 
+                left join produto.Unidade unidade
+                left join produto.UnidadeEntrada unidadeEntrada
+                left join produto.GrupoEstoque grupo
+                left join produto.Grupo1 grupo1  
+                left join produto.Grupo2 grupo2
+                left join produto.Grupo3 grupo3
+                left join produto.Fornecedor forn
+                left join produto.ClassificacaoFiscal cf
+                left join produto.PerfilPisCofins pc";
         }
 
         public IList<Produto> GetAllAtivos()
@@ -222,16 +215,31 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
         {
             using (var session = GetSession())
             {
-                string hql = @" select new Produto(produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada , produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, produto.CaminhoImagem, produto.PrecoBase, produto.NCM, grupo1.Nome, grupo2.Nome, grupo3.Nome, produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, produto.CEST)
-                               from Produto produto 
-                               left join produto.Unidade unidade 
-                               left join produto.UnidadeEntrada unidadeEntrada 
-                               left join produto.GrupoEstoque grupo
-                               left join produto.Grupo1 grupo1  
-                               left join produto.Grupo2 grupo2
-                               left join produto.Grupo3 grupo3
-                               where produto.Codigo like :barrrr 
-                               or produto.Nome like :barrrr";
+                // Consulta HQL corrigida para ser igual à do hqlGetAll, mas com a cláusula WHERE
+                string hql = @"  select new Produto(
+                             produto.ID, produto.Codigo, produto.Nome, unidade, unidadeEntrada, 
+                             produto.Barra, produto.BarraFornecedor, grupo.Nome, produto.DescReduzida, 
+                             produto.CaminhoImagem, grupo.ClassificacaoProduto, produto.NCM, grupo1.Nome, 
+                             grupo2.Nome, grupo3.Nome, produto.IncData, produto.IncUsuario, produto.AltData, produto.AltUsuario, 
+                             produto.Inativo, produto.Observacao, produto.Localizacao, produto.UtilizarIMEI, produto.EscRelevante, 
+                             produto.RAZAO_Fab, produto.CNPJ_Fab, produto.CBenef, 
+                             produto.PrecoBase, forn.Nome, 
+                             produto.DtCadastroProduto, produto.CodigoReferencia, produto.DataValidade, 
+                             produto.CodigoFabricante, produto.CodigoOriginal, produto.Aplicacao, produto.CEST, 
+                             cf.Descricao, pc.Descricao, produto.SaiNaturezaReceita
+                         )
+                         from Produto produto 
+                         left join produto.Unidade unidade
+                         left join produto.UnidadeEntrada unidadeEntrada
+                         left join produto.GrupoEstoque grupo
+                         left join produto.Grupo1 grupo1  
+                         left join produto.Grupo2 grupo2
+                         left join produto.Grupo3 grupo3
+                         left join produto.Fornecedor forn
+                         left join produto.ClassificacaoFiscal cf
+                         left join produto.PerfilPisCofins pc
+                         where produto.Codigo like :barrrr 
+                         or produto.Nome like :barrrr";
 
                 var produtos = session.CreateQuery(hql).SetString("barrrr", p + "%").List<Produto>();
                 return produtos;

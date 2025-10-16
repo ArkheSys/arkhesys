@@ -400,7 +400,7 @@ namespace Aplicacao.Utilitarios
             // IDClassificacaoFiscal
             // 
             this.IDClassificacaoFiscal.Caption = "Classificacao Fiscal";
-            this.IDClassificacaoFiscal.FieldName = "IDClassificacaoFiscal";
+            this.IDClassificacaoFiscal.FieldName = "ClassificacaoFiscal.Descricao";
             this.IDClassificacaoFiscal.Name = "IDClassificacaoFiscal";
             this.IDClassificacaoFiscal.OptionsColumn.AllowEdit = false;
             this.IDClassificacaoFiscal.OptionsColumn.AllowFocus = false;
@@ -410,7 +410,7 @@ namespace Aplicacao.Utilitarios
             // IDPerfilPisCofins
             // 
             this.IDPerfilPisCofins.Caption = "Perfil Pis Cofins";
-            this.IDPerfilPisCofins.FieldName = "IDPerfilPisCofins";
+            this.IDPerfilPisCofins.FieldName = "PerfilPisCofins.Descricao";
             this.IDPerfilPisCofins.Name = "IDPerfilPisCofins";
             this.IDPerfilPisCofins.OptionsColumn.AllowEdit = false;
             this.IDPerfilPisCofins.OptionsColumn.AllowFocus = false;
