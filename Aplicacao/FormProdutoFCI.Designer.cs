@@ -35,9 +35,21 @@ namespace Aplicacao
             this.tcPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
+            // sbAjuda
+            // 
+            this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
+            this.sbAjuda.ImageOptions.ImageIndex = 0;
+            // 
             // sbGravar
             // 
+            this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
+            this.sbGravar.ImageOptions.ImageIndex = 1;
             this.sbGravar.Click += new System.EventHandler(this.sbGravar_Click_1);
+            // 
+            // sbCancelar
+            // 
+            this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
+            this.sbCancelar.ImageOptions.ImageIndex = 2;
             // 
             // imageList1
             // 
@@ -51,10 +63,15 @@ namespace Aplicacao
             this.imageList1.Images.SetKeyName(6, "");
             this.imageList1.Images.SetKeyName(7, "");
             // 
+            // tcPrincipal
+            // 
+            this.tcPrincipal.SelectedTabPage = this.tpPrincipal;
+            // 
             // FormProdutoFCI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(861, 505);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProdutoFCI";
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

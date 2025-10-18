@@ -211,7 +211,7 @@ namespace Aplicacao
             this.pnVinculo.Controls.Add(this.gcVinculo);
             this.pnVinculo.Location = new System.Drawing.Point(3, 62);
             this.pnVinculo.Name = "pnVinculo";
-            this.pnVinculo.Size = new System.Drawing.Size(1001, 455);
+            this.pnVinculo.Size = new System.Drawing.Size(1177, 529);
             this.pnVinculo.TabIndex = 37;
             this.pnVinculo.Text = "Produtos";
             // 
@@ -228,7 +228,7 @@ namespace Aplicacao
             this.gcVinculo.Name = "gcVinculo";
             this.gcVinculo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit1});
-            this.gcVinculo.Size = new System.Drawing.Size(991, 429);
+            this.gcVinculo.Size = new System.Drawing.Size(1167, 503);
             this.gcVinculo.TabIndex = 0;
             this.gcVinculo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVinculo});
@@ -551,6 +551,7 @@ namespace Aplicacao
             this.Controls.Add(this.PBControle);
             this.Controls.Add(this.txtQuantidadeItens);
             this.Controls.Add(this.sbCFOP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = true;
             this.Name = "FormVinculo";
             this.Text = "Importação XML Fornecedor";

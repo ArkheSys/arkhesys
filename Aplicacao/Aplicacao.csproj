@@ -4898,11 +4898,29 @@
     <EmbeddedResource Include="FormConfigSAT.resx">
       <DependentUpon>FormConfigSAT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFilaDav.resx">
+      <DependentUpon>FormFilaDav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogAlteracaoPedidoItem.resx">
+      <DependentUpon>FormLogAlteracaoPedidoItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMsgVencimentoCertificado.resx">
       <DependentUpon>FormMsgVencimentoCertificado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPedidoItemTroca.resx">
+      <DependentUpon>FormPedidoItemTroca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPLPDetalhe.resx">
+      <DependentUpon>FormPLPDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdutoConversao.resx">
+      <DependentUpon>FormProdutoConversao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProdutoFCI.resx">
       <DependentUpon>FormProdutoFCI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSincronismoPendenteSHL.resx">
+      <DependentUpon>FormSincronismoPendenteSHL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntermediariasTela\GridNotaIntermediaria.resx">
       <DependentUpon>GridNotaIntermediaria.cs</DependentUpon>

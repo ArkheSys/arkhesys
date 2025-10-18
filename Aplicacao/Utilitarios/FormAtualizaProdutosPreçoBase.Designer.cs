@@ -77,6 +77,7 @@ namespace Aplicacao.Utilitarios
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.chbbMarca = new DevExpress.XtraEditors.CheckEdit();
+            this.btnInverterSelecao = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).BeginInit();
@@ -99,6 +100,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbbMarca.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInverterSelecao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemCheckEdit1
@@ -954,12 +956,22 @@ namespace Aplicacao.Utilitarios
             // chbbMarca
             // 
             this.chbbMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chbbMarca.Location = new System.Drawing.Point(8, 397);
+            this.chbbMarca.Location = new System.Drawing.Point(12, 397);
             this.chbbMarca.Name = "chbbMarca";
             this.chbbMarca.Properties.Caption = "Marcar/Desmarcar Todos";
             this.chbbMarca.Size = new System.Drawing.Size(152, 19);
             this.chbbMarca.TabIndex = 73;
             this.chbbMarca.CheckedChanged += new System.EventHandler(this.chbbMarca_CheckedChanged);
+            // 
+            // btnInverterSelecao
+            // 
+            this.btnInverterSelecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInverterSelecao.Location = new System.Drawing.Point(178, 397);
+            this.btnInverterSelecao.Name = "btnInverterSelecao";
+            this.btnInverterSelecao.Properties.Caption = "Inverter Seleção";
+            this.btnInverterSelecao.Size = new System.Drawing.Size(108, 19);
+            this.btnInverterSelecao.TabIndex = 74;
+            this.btnInverterSelecao.Click += new System.EventHandler(this.btnInverterSelecao_Click);
             // 
             // FormAtualizaProdutosPreçoBase
             // 
@@ -967,6 +979,7 @@ namespace Aplicacao.Utilitarios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1233, 548);
+            this.Controls.Add(this.btnInverterSelecao);
             this.Controls.Add(this.chbbMarca);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
@@ -1007,6 +1020,7 @@ namespace Aplicacao.Utilitarios
             ((System.ComponentModel.ISupportInitialize)(this.chkAtualizarCEST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpNCM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbbMarca.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInverterSelecao.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1061,5 +1075,6 @@ namespace Aplicacao.Utilitarios
         private DevExpress.XtraGrid.Columns.GridColumn IDClassificacaoFiscal;
         private DevExpress.XtraGrid.Columns.GridColumn IDPerfilPisCofins;
         private DevExpress.XtraGrid.Columns.GridColumn SaiNaturezaReceita;
+        private DevExpress.XtraEditors.CheckEdit btnInverterSelecao;
     }
 }

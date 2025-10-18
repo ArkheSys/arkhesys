@@ -308,5 +308,27 @@ namespace Aplicacao.Utilitarios
                 gvAtualizaPrecoBaseProdutos.EndUpdate();
             }
         }
+
+        private void btnInverterSelecao_Click(object sender, EventArgs e)
+        {
+            gvAtualizaPrecoBaseProdutos.BeginUpdate();
+            try
+            {
+                for (int i = 0; i < gvAtualizaPrecoBaseProdutos.DataRowCount; i++)
+                {
+                    int rowHandle = gvAtualizaPrecoBaseProdutos.GetRowHandle(i);
+
+                    bool valorAtual = Convert.ToBoolean(gvAtualizaPrecoBaseProdutos.GetRowCellValue(rowHandle, "Selecionado"));
+
+                    bool novoValor = !valorAtual;
+
+                    gvAtualizaPrecoBaseProdutos.SetRowCellValue(rowHandle, "Selecionado", novoValor);
+                }
+            }
+            finally
+            {
+                gvAtualizaPrecoBaseProdutos.EndUpdate();
+            }
+        }
     }
 }
