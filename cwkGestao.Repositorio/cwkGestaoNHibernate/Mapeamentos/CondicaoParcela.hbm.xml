@@ -19,6 +19,7 @@
 		<many-to-one name="Banco" column="ID_Banco" class="Banco" />
 
 		<many-to-one name="Portador" column="ID_Portador" class="Portador" />
+		<many-to-one name="Acrescimo" column="IDAcrescimo" class="Acrescimo" />
 		<many-to-one name="Historico" column="ID_Historico" class="Historico" />
 		<many-to-one name="PlanoConta" column="ID_PlanoConta" class="PlanoConta" />
 		<many-to-one name="PlanoContaFrete" column="ID_PlanoContaFrete" class="PlanoConta" />

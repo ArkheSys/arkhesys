@@ -44,10 +44,14 @@ namespace cwkGestao.Modelo
         public virtual TipoDocumento TipoDocumento { get { return _TipoDocumento; } set { _TipoDocumento = value; } }
 
         private bool _BAVista;
+
+        private Acrescimo _Acrescimo;
+        public virtual Acrescimo Acrescimo { get { return _Acrescimo; } set { _Acrescimo = value; } }
         public virtual bool BAVista { get { return _BAVista; } set { _BAVista = value; } }
 
         [InformacaoExibicao(4, "Tipo Documento")]
         public virtual string TipoDocumentoStr { get { return TipoDocumento?.Nome; } }
+
         public virtual Banco Banco { get; set; }
         public virtual Portador Portador { get; set; }
         public virtual Historico Historico { get; set; }
