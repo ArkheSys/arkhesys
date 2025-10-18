@@ -4882,6 +4882,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(880, 701);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormOrcamento";
             this.Shown += new System.EventHandler(this.FormOrcamento_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormOrcamento_KeyDown);

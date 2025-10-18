@@ -1,7 +1,8 @@
 using System;
 using System.Windows.Forms;
-using cwkGestao.Negocio;
 using cwkGestao.Modelo;
+using cwkGestao.Negocio;
+using Cwork.Utilitarios.Componentes;
 
 namespace Aplicacao
 {
@@ -9,61 +10,56 @@ namespace Aplicacao
     {
         public FormCEST()
         {
-            InitializeComponent();
         }
-        private void FormCEST_Load(object sender, EventArgs e)
+
+        protected override void InitializeChildComponents()
         {
-            if (Selecionado != null)
+            InitializeComponent();
+            Type formType = typeof(FormNCMCEST);
+
+            btIncluirNCM.SubFormType = btAlterarNCM.SubFormType = btExcluirNCM.SubFormType = btConsultarNCM.SubFormType = formType;
+
+            btIncluirNCM.GridControl = gcNcmVinculados;
+            btAlterarNCM.GridControl = gcNcmVinculados;
+            btExcluirNCM.GridControl = gcNcmVinculados;
+            btConsultarNCM.GridControl = gcNcmVinculados;
+        }
+
+        protected override void btSubRegistro_Click(object sender, EventArgs e)
+        {
+            TelaProObjeto(tcPrincipal);
+
+            if (sender is DevButton botao)
             {
-                // Carrega os campos de texto simples
-                txtCodigo.EditValue = Selecionado.Codigo;
-                txtDescricao.EditValue = Selecionado.Descricao;
-                txtNCM.EditValue = Selecionado.NCM;
-                txtSegmento.EditValue = Selecionado.Segmento;
+                object[] parms = new[] { new NCMCEST() { CEST = Selecionado } };
+                botao.SubFormTypeParams = parms;
             }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            if (Operacao == Acao.Incluir)
+            {
+                ControlaBotoesSubGrid(false);
+            }
+        }
+
+        private void ControlaBotoesSubGrid(bool habilitar)
+        {
+            btIncluirNCM.Enabled = habilitar;
+            btAlterarNCM.Enabled = habilitar;
+            btExcluirNCM.Enabled = habilitar;
         }
 
         protected override void sbGravar_Click(object sender, EventArgs e)
         {
-            // Suas validações existentes (estão corretas)
-            dxErroProvider.ClearErrors();
-
-            if (string.IsNullOrEmpty(txtCodigo.Text))
-            {
-                dxErroProvider.SetError(txtCodigo, "O campo código é obrigatório.");
-                return;
-            }
-            if (string.IsNullOrEmpty(txtDescricao.Text))
-            {
-                dxErroProvider.SetError(txtDescricao, "O campo descrição é obrigatório.");
-                return;
-            }
-
-            string codigoDigitado = txtCodigo.Text;
-            CEST cestExistente = CESTController.Instancia.GetByCodigo(codigoDigitado);
-
-            if (cestExistente != null && cestExistente.ID != Selecionado.ID)
-            {
-                dxErroProvider.SetError(txtCodigo, "Código CEST já cadastrado.");
-                return;
-            }
-
-            Selecionado.Codigo = txtCodigo.Text;
-            Selecionado.Descricao = txtDescricao.Text;
-            Selecionado.Segmento = txtSegmento.Text;
-
-            if (txtNCM.EditValue != null)
-            {
-                // Remove pontos e traços que possam vir da máscara
-                Selecionado.NCM = txtNCM.Text.Replace(".", "").Replace("-", "");
-            }
-            else
-            {
-                Selecionado.NCM = null; // Garante que o campo fique nulo se estiver vazio
-            }
-
             base.sbGravar_Click(sender, e);
-
+            if (this.Operacao == Acao.Alterar)
+            {
+                ControlaBotoesSubGrid(true);
+            }
         }
     }
 }

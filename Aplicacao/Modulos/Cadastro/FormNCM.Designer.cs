@@ -167,7 +167,6 @@
             this.ClientSize = new System.Drawing.Size(965, 166);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNCM";
-            this.Load += new System.EventHandler(this.FormNCM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tpPrincipal.ResumeLayout(false);

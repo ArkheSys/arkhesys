@@ -434,6 +434,9 @@
     <Compile Include="IntermediariasTela\GridUsuarioIntermediaria.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IntermediariasTela\FormManutNCMCESTIntermediaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\BackupSistema\FormBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +496,12 @@
     </Compile>
     <Compile Include="Modulos\Cadastro\FormImei.Designer.cs">
       <DependentUpon>FormImei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cadastro\FormNCMCEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cadastro\FormNCMCEST.Designer.cs">
+      <DependentUpon>FormNCMCEST.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Cadastro\FormOpcaoTributacao.cs">
       <SubType>Form</SubType>
@@ -4960,6 +4969,9 @@
     <EmbeddedResource Include="Modulos\Cadastro\FormDadosSubstituto.resx">
       <DependentUpon>FormDadosSubstituto.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cadastro\FormNCMCEST.resx">
+      <DependentUpon>FormNCMCEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cadastro\FormOpcaoTributacao.resx">
       <DependentUpon>FormOpcaoTributacao.cs</DependentUpon>

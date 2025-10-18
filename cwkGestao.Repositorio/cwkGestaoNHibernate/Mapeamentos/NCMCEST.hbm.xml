@@ -6,7 +6,7 @@
 			<generator class="identity" />
 		</id>
 
-		<many-to-one name="NCM" column="IDNCM" class="NCM" not-null="true" />
+		<property name="NCMCodigo" column="NCMCodigo" type="String" not-null="true" length="20" />
 
 		<many-to-one name="CEST" column="IDCEST" class="CEST" not-null="true" />
 

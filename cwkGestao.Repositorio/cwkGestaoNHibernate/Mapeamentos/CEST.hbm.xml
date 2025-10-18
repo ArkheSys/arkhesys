@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="cwkGestao.Modelo" namespace="cwkGestao.Modelo">
 	<class name="CEST" table="CEST">
+
 		<id name="ID" column="ID">
 			<generator class="identity" />
 		</id>
-		<property name="Codigo" column="Codigo" type="string" />
-		<property name="Descricao" column="Descricao" type="string" length="200" />
-		<property name="Segmento" column="Segmento" type="string" />
-		<property name="NCM" column="NCM" type="string" />
+
+		<property name="Codigo" column="Codigo" />
+		<property name="Descricao" column="Descricao" />
+		<property name="Segmento" column="Segmento" />
+
+		<bag name="NCMCESTs" table="NCMCEST" cascade="all-delete-orphan" inverse="true" lazy="false">
+			<key column="IDCEST" />
+			<one-to-many class="NCMCEST" />
+		</bag>
+
 	</class>
 </hibernate-mapping>
