@@ -226,7 +226,7 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
                              produto.PrecoBase, forn.Nome, 
                              produto.DtCadastroProduto, produto.CodigoReferencia, produto.DataValidade, 
                              produto.CodigoFabricante, produto.CodigoOriginal, produto.Aplicacao, produto.CEST, 
-                             cf.Descricao, pc.Descricao, produto.SaiNaturezaReceita, no.Descricao
+                             cf.Descricao, pc.Descricao, produto.SaiNaturezaReceita
                          )
                          from Produto produto 
                          left join produto.Unidade unidade
@@ -238,7 +238,6 @@ namespace cwkGestao.Repositorio.cwkGestaoNHibernate.Repositorios
                          left join produto.Fornecedor forn
                          left join produto.ClassificacaoFiscal cf
                          left join produto.PerfilPisCofins pc
-                         left join produto.NaturezaOperacao no
                          where produto.Codigo like :barrrr 
                          or produto.Nome like :barrrr";
 
