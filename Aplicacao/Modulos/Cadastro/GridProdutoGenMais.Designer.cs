@@ -568,6 +568,9 @@
             this.colComprimento1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPeso1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBEnviadoSHL1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlFiltro)).BeginInit();
+            this.pnlFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTabelaPreco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTabelaPreco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusca.Properties)).BeginInit();
@@ -575,31 +578,43 @@
             // 
             // sbSelecionar
             // 
+            this.sbSelecionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbSelecionar.ImageOptions.Image")));
+            this.sbSelecionar.ImageOptions.ImageIndex = 1;
             this.sbSelecionar.Location = new System.Drawing.Point(99, 561);
             this.sbSelecionar.TabIndex = 7;
             // 
             // sbFechar
             // 
+            this.sbFechar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbFechar.ImageOptions.Image")));
+            this.sbFechar.ImageOptions.ImageIndex = 6;
             this.sbFechar.Location = new System.Drawing.Point(753, 561);
             this.sbFechar.TabIndex = 8;
             // 
             // sbExcluir
             // 
+            this.sbExcluir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbExcluir.ImageOptions.Image")));
+            this.sbExcluir.ImageOptions.ImageIndex = 5;
             this.sbExcluir.Location = new System.Drawing.Point(753, 419);
             this.sbExcluir.TabIndex = 6;
             // 
             // sbAlterar
             // 
+            this.sbAlterar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAlterar.ImageOptions.Image")));
+            this.sbAlterar.ImageOptions.ImageIndex = 4;
             this.sbAlterar.Location = new System.Drawing.Point(675, 419);
             this.sbAlterar.TabIndex = 5;
             // 
             // sbIncluir
             // 
+            this.sbIncluir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbIncluir.ImageOptions.Image")));
+            this.sbIncluir.ImageOptions.ImageIndex = 3;
             this.sbIncluir.Location = new System.Drawing.Point(597, 419);
             this.sbIncluir.TabIndex = 4;
             // 
             // sbConsultar
             // 
+            this.sbConsultar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbConsultar.ImageOptions.Image")));
+            this.sbConsultar.ImageOptions.ImageIndex = 2;
             this.sbConsultar.Location = new System.Drawing.Point(519, 419);
             this.sbConsultar.TabIndex = 3;
             // 
@@ -607,7 +622,8 @@
             // 
             this.sbFuncao10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbFuncao10.Enabled = true;
-            this.sbFuncao10.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
+            this.sbFuncao10.ImageOptions.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
+            this.sbFuncao10.ImageOptions.ImageIndex = 1;
             this.sbFuncao10.Location = new System.Drawing.Point(392, 419);
             this.sbFuncao10.Size = new System.Drawing.Size(123, 23);
             this.sbFuncao10.TabIndex = 2;
@@ -619,7 +635,7 @@
             // 
             this.sbFuncao11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbFuncao11.Enabled = true;
-            this.sbFuncao11.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
+            this.sbFuncao11.ImageOptions.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
             this.sbFuncao11.Location = new System.Drawing.Point(275, 419);
             this.sbFuncao11.Size = new System.Drawing.Size(113, 23);
             this.sbFuncao11.TabIndex = 1;
@@ -629,25 +645,42 @@
             // 
             // sbFuncao12
             // 
+            this.sbFuncao12.ImageOptions.ImageIndex = 1;
             this.sbFuncao12.Location = new System.Drawing.Point(426, 561);
             // 
             // sbFuncao22
             // 
-            this.sbFuncao22.Image = ((System.Drawing.Image)(resources.GetObject("sbFuncao22.Image")));
+            this.sbFuncao22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbFuncao22.ImageOptions.Image")));
+            this.sbFuncao22.ImageOptions.ImageIndex = 1;
             this.sbFuncao22.Location = new System.Drawing.Point(188, 561);
             this.sbFuncao22.Size = new System.Drawing.Size(113, 23);
             this.sbFuncao22.Click += new System.EventHandler(this.sbFuncao22_Click);
             // 
             // sbFuncao13
             // 
+            this.sbFuncao13.ImageOptions.ImageIndex = 1;
             this.sbFuncao13.Location = new System.Drawing.Point(515, 561);
             // 
             // sbFuncao23
             // 
-            this.sbFuncao23.Image = ((System.Drawing.Image)(resources.GetObject("sbFuncao23.Image")));
+            this.sbFuncao23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbFuncao23.ImageOptions.Image")));
+            this.sbFuncao23.ImageOptions.ImageIndex = 1;
             this.sbFuncao23.Location = new System.Drawing.Point(307, 561);
             this.sbFuncao23.Size = new System.Drawing.Size(113, 23);
             this.sbFuncao23.Click += new System.EventHandler(this.sbFuncao23_Click);
+            // 
+            // sbImprimirFiltro
+            // 
+            this.sbImprimirFiltro.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbImprimirFiltro.ImageOptions.Image")));
+            this.sbImprimirFiltro.ImageOptions.ImageIndex = 6;
+            // 
+            // btTrocarProduto
+            // 
+            this.btTrocarProduto.ImageOptions.ImageIndex = 1;
+            // 
+            // sbFuncao25
+            // 
+            this.sbFuncao25.ImageOptions.ImageIndex = 1;
             // 
             // colCodigo
             // 
@@ -728,8 +761,8 @@
             // 
             // gcTabelaPreco
             // 
-            this.gcTabelaPreco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcTabelaPreco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTabelaPreco.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gcTabelaPreco.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gcTabelaPreco.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -866,6 +899,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 423);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(140, 19);
@@ -5892,7 +5926,9 @@
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.gcTabelaPreco);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GridProdutoGenMais";
+            this.Controls.SetChildIndex(this.sbFuncao25, 0);
             this.Controls.SetChildIndex(this.btTrocarProduto, 0);
             this.Controls.SetChildIndex(this.sbImprimirFiltro, 0);
             this.Controls.SetChildIndex(this.sbFuncao22, 0);
@@ -5910,6 +5946,9 @@
             this.Controls.SetChildIndex(this.labelControl1, 0);
             this.Controls.SetChildIndex(this.gcTabelaPreco, 0);
             this.Controls.SetChildIndex(this.txtBusca, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlFiltro)).EndInit();
+            this.pnlFiltro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTabelaPreco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTabelaPreco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBusca.Properties)).EndInit();

@@ -69,8 +69,8 @@
             // 
             this.sbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.sbCancelar.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.Image")));
-            this.sbCancelar.ImageIndex = 2;
+            this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
+            this.sbCancelar.ImageOptions.ImageIndex = 2;
             this.sbCancelar.Location = new System.Drawing.Point(705, 531);
             this.sbCancelar.Name = "sbCancelar";
             this.sbCancelar.Size = new System.Drawing.Size(75, 23);
@@ -94,8 +94,8 @@
             // sbGravar
             // 
             this.sbGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbGravar.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.Image")));
-            this.sbGravar.ImageIndex = 1;
+            this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
+            this.sbGravar.ImageOptions.ImageIndex = 1;
             this.sbGravar.Location = new System.Drawing.Point(624, 531);
             this.sbGravar.Name = "sbGravar";
             this.sbGravar.Size = new System.Drawing.Size(75, 23);
@@ -115,8 +115,8 @@
             // sbAjuda
             // 
             this.sbAjuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sbAjuda.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.Image")));
-            this.sbAjuda.ImageIndex = 0;
+            this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
+            this.sbAjuda.ImageOptions.ImageIndex = 0;
             this.sbAjuda.Location = new System.Drawing.Point(12, 531);
             this.sbAjuda.Name = "sbAjuda";
             this.sbAjuda.Size = new System.Drawing.Size(75, 23);

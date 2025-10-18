@@ -180,7 +180,6 @@
             this.dataGridView1.Appearance.SelectedRow.Options.UseForeColor = true;
             this.dataGridView1.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.dataGridView1.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.dataGridView1.BestFitMaxRowCount = 5;
             this.dataGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dataGridView1.GridControl = this.gridControl1;
             this.dataGridView1.GroupPanelText = "Arraste uma coluna aqui para agrupar os registros";
@@ -189,6 +188,7 @@
             this.dataGridView1.OptionsBehavior.Editable = false;
             this.dataGridView1.OptionsDetail.EnableMasterViewMode = false;
             this.dataGridView1.OptionsSelection.EnableAppearanceHideSelection = false;
+            this.dataGridView1.OptionsView.BestFitMaxRowCount = 5;
             this.dataGridView1.OptionsView.ColumnAutoWidth = false;
             this.dataGridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.dataGridView1.OptionsView.EnableAppearanceOddRow = true;
@@ -228,9 +228,9 @@
             // 
             // btConsultar
             // 
-            this.btConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btConsultar.Image")));
-            this.btConsultar.ImageIndex = 2;
-            this.btConsultar.ImageList = this.imageList1;
+            this.btConsultar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btConsultar.ImageOptions.Image")));
+            this.btConsultar.ImageOptions.ImageIndex = 2;
+            this.btConsultar.ImageOptions.ImageList = this.imageList1;
             this.btConsultar.Location = new System.Drawing.Point(516, 406);
             this.btConsultar.Name = "btConsultar";
             this.btConsultar.Size = new System.Drawing.Size(75, 23);
@@ -240,9 +240,9 @@
             // 
             // btIncluir
             // 
-            this.btIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btIncluir.Image")));
-            this.btIncluir.ImageIndex = 3;
-            this.btIncluir.ImageList = this.imageList1;
+            this.btIncluir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btIncluir.ImageOptions.Image")));
+            this.btIncluir.ImageOptions.ImageIndex = 3;
+            this.btIncluir.ImageOptions.ImageList = this.imageList1;
             this.btIncluir.Location = new System.Drawing.Point(594, 406);
             this.btIncluir.Name = "btIncluir";
             this.btIncluir.Size = new System.Drawing.Size(75, 23);
@@ -252,9 +252,9 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btAlterar.Image")));
-            this.btAlterar.ImageIndex = 4;
-            this.btAlterar.ImageList = this.imageList1;
+            this.btAlterar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btAlterar.ImageOptions.Image")));
+            this.btAlterar.ImageOptions.ImageIndex = 4;
+            this.btAlterar.ImageOptions.ImageList = this.imageList1;
             this.btAlterar.Location = new System.Drawing.Point(672, 406);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 23);
@@ -264,9 +264,9 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btExcluir.Image")));
-            this.btExcluir.ImageIndex = 5;
-            this.btExcluir.ImageList = this.imageList1;
+            this.btExcluir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btExcluir.ImageOptions.Image")));
+            this.btExcluir.ImageOptions.ImageIndex = 5;
+            this.btExcluir.ImageOptions.ImageList = this.imageList1;
             this.btExcluir.Location = new System.Drawing.Point(750, 406);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(75, 23);
@@ -276,9 +276,9 @@
             // 
             // sbFechar
             // 
-            this.sbFechar.Image = ((System.Drawing.Image)(resources.GetObject("sbFechar.Image")));
-            this.sbFechar.ImageIndex = 6;
-            this.sbFechar.ImageList = this.imageList1;
+            this.sbFechar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbFechar.ImageOptions.Image")));
+            this.sbFechar.ImageOptions.ImageIndex = 6;
+            this.sbFechar.ImageOptions.ImageList = this.imageList1;
             this.sbFechar.Location = new System.Drawing.Point(750, 434);
             this.sbFechar.Name = "sbFechar";
             this.sbFechar.Size = new System.Drawing.Size(75, 23);
@@ -288,9 +288,9 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageIndex = 0;
-            this.simpleButton2.ImageList = this.imageList1;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.ImageOptions.ImageIndex = 0;
+            this.simpleButton2.ImageOptions.ImageList = this.imageList1;
             this.simpleButton2.Location = new System.Drawing.Point(12, 434);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
@@ -299,9 +299,9 @@
             // 
             // btSelecionar
             // 
-            this.btSelecionar.Image = ((System.Drawing.Image)(resources.GetObject("btSelecionar.Image")));
-            this.btSelecionar.ImageIndex = 1;
-            this.btSelecionar.ImageList = this.imageList1;
+            this.btSelecionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSelecionar.ImageOptions.Image")));
+            this.btSelecionar.ImageOptions.ImageIndex = 1;
+            this.btSelecionar.ImageOptions.ImageList = this.imageList1;
             this.btSelecionar.Location = new System.Drawing.Point(90, 434);
             this.btSelecionar.Name = "btSelecionar";
             this.btSelecionar.Size = new System.Drawing.Size(83, 23);

@@ -2179,6 +2179,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gcTabelaPreco);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GridProdutoGen";
             this.Shown += new System.EventHandler(this.GridProdutoGen_Shown);
             this.Controls.SetChildIndex(this.sbImprimirFiltro, 0);

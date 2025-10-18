@@ -55,6 +55,8 @@
             // 
             // sbCancelar
             // 
+            this.sbCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCancelar.ImageOptions.Image")));
+            this.sbCancelar.ImageOptions.ImageIndex = 2;
             this.sbCancelar.Location = new System.Drawing.Point(467, 74);
             // 
             // imageList1
@@ -71,11 +73,15 @@
             // 
             // sbGravar
             // 
+            this.sbGravar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbGravar.ImageOptions.Image")));
+            this.sbGravar.ImageOptions.ImageIndex = 1;
             this.sbGravar.Location = new System.Drawing.Point(386, 74);
             this.sbGravar.Text = "&Ok";
             // 
             // sbAjuda
             // 
+            this.sbAjuda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbAjuda.ImageOptions.Image")));
+            this.sbAjuda.ImageOptions.ImageIndex = 0;
             this.sbAjuda.Location = new System.Drawing.Point(12, 74);
             // 
             // simpleButton1
@@ -111,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(554, 109);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBackupRestaurar";
             this.Text = "Restaurar Backup do Banco de Dados";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();

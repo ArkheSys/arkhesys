@@ -6022,6 +6022,7 @@
             this.ClientSize = new System.Drawing.Size(839, 591);
             this.Controls.Add(this.gcTabelaPreco);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GridProdutoGenMaisDetalhado";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridProdutoGenMaisDetalhado_KeyDown);
             this.Controls.SetChildIndex(this.labelControl1, 0);

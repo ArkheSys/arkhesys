@@ -1846,8 +1846,7 @@
             this.sbFuncao22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sbFuncao22.ImageOptions.ImageIndex = 1;
             this.sbFuncao22.Size = new System.Drawing.Size(103, 23);
-
-            //
+            // 
             // sbFuncao13
             // 
             this.sbFuncao13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -14381,6 +14380,7 @@
             this.Controls.Add(this.btNFSe);
             this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btNotaComplementar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GridNotaGen";
             this.Controls.SetChildIndex(this.btNotaComplementar, 0);
             this.Controls.SetChildIndex(this.btImprimir, 0);
