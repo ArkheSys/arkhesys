@@ -95,7 +95,7 @@ namespace cwkGestao.Visual.Desktop
 
             menu = pMenu;
             versao = pVersao;
-            Text = "Cwork Gestão Plus (v " + pVersao + ")";
+            Text = "ArkheSys Sistemas (v " + pVersao + ")";
         }
 
         private void EnvioAutomaticoXml()

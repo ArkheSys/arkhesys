@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ApplicationIcon>LogoArkhesys.ico</ApplicationIcon>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>2A6BA529F4FC8E0B6AECA3AFD674883653EF0F62</ManifestCertificateThumbprint>
     <ManifestKeyFile>cwkGestao_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
@@ -1824,10 +1824,10 @@
     <Content Include="license.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Logo.ico">
+    <Content Include="aLogo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="LogoArkhesys.ico" />
+    <Content Include="Logo.ico" />
     <Content Include="OrcamentoServicoTemplate.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

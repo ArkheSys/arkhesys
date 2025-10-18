@@ -305,8 +305,8 @@
             // btConsultarEstoque
             // 
             this.btConsultarEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btConsultarEstoque.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
-            this.btConsultarEstoque.ImageIndex = 1;
+            this.btConsultarEstoque.ImageOptions.Image = global::Aplicacao.Properties.Resources.Consulta_copy;
+            this.btConsultarEstoque.ImageOptions.ImageIndex = 1;
             this.btConsultarEstoque.Location = new System.Drawing.Point(654, 33);
             this.btConsultarEstoque.Name = "btConsultarEstoque";
             this.btConsultarEstoque.Size = new System.Drawing.Size(135, 22);
@@ -379,8 +379,8 @@
             // btAjuda
             // 
             this.btAjuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btAjuda.ImageIndex = 0;
-            this.btAjuda.ImageList = this.imageList1;
+            this.btAjuda.ImageOptions.ImageIndex = 0;
+            this.btAjuda.ImageOptions.ImageList = this.imageList1;
             this.btAjuda.Location = new System.Drawing.Point(12, 455);
             this.btAjuda.Name = "btAjuda";
             this.btAjuda.Size = new System.Drawing.Size(75, 23);
@@ -390,8 +390,8 @@
             // btFechar
             // 
             this.btFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFechar.ImageIndex = 2;
-            this.btFechar.ImageList = this.imageList1;
+            this.btFechar.ImageOptions.ImageIndex = 2;
+            this.btFechar.ImageOptions.ImageList = this.imageList1;
             this.btFechar.Location = new System.Drawing.Point(738, 455);
             this.btFechar.Name = "btFechar";
             this.btFechar.Size = new System.Drawing.Size(75, 23);
@@ -425,8 +425,8 @@
             // sbMovimentos
             // 
             this.sbMovimentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbMovimentos.ImageIndex = 1;
-            this.sbMovimentos.ImageList = this.imageList1;
+            this.sbMovimentos.ImageOptions.ImageIndex = 1;
+            this.sbMovimentos.ImageOptions.ImageList = this.imageList1;
             this.sbMovimentos.Location = new System.Drawing.Point(604, 455);
             this.sbMovimentos.Name = "sbMovimentos";
             this.sbMovimentos.Size = new System.Drawing.Size(128, 23);

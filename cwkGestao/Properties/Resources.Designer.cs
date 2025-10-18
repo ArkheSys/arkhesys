@@ -271,6 +271,16 @@ namespace CworkGestaoPlus.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        public static System.Drawing.Icon LogoArkhesys {
+            get {
+                object obj = ResourceManager.GetObject("LogoArkhesys", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Muda_turno_de_trabalho_copy {

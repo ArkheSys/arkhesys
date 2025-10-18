@@ -1674,7 +1674,7 @@
             // labelControl41
             // 
             this.labelControl41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl41.Location = new System.Drawing.Point(-25257, 67);
+            this.labelControl41.Location = new System.Drawing.Point(-25443, 67);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(34, 13);
             this.labelControl41.TabIndex = 45;
@@ -4299,6 +4299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(675, 538);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFilial";
             this.Shown += new System.EventHandler(this.FormFilial_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dxErroProvider)).EndInit();
